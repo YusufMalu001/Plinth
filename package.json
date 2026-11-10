@@ -1,0 +1,56 @@
+{
+  "name": "synergy-erp",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "npm@9.2.0",
+  "description": "Synergy ERP Production Boilerplate Foundation",
+  "workspaces": [
+    "apps/*",
+    "services/*",
+    "packages/*",
+    "database"
+  ],
+  "scripts": {
+    "dev": "bash scripts/dev-local.sh",
+    "dev:turbo": "turbo run dev --parallel",
+    "dev:db": "docker compose -f docker-compose.dev.yml up -d postgres",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "test:e2e": "turbo run test:e2e",
+    "typecheck": "turbo run typecheck",
+    "clean": "turbo run clean",
+    "db:generate": "npm run db:generate --workspace=@synergy/database",
+    "db:migrate": "npm run db:migrate --workspace=@synergy/database",
+    "db:deploy": "npm run db:deploy --workspace=@synergy/database",
+    "db:seed": "npm run db:seed --workspace=@synergy/database",
+    "db:seed-shop-floor-demo": "npm run db:seed-shop-floor-demo --workspace=@synergy/database",
+    "db:seed-hsn-sac": "npm run db:seed-hsn-sac --workspace=@synergy/database",
+    "db:verify-hsn-sac": "npm run db:verify-hsn-sac --workspace=@synergy/database",
+    "db:verify-hsn-sac-db": "npm run db:verify-hsn-sac-db --workspace=@synergy/database",
+    "db:purge-dummy-uoms": "npm run db:purge-dummy-uoms --workspace=@synergy/database",
+    "db:seed-rbac": "npm run db:seed-rbac --workspace=@synergy/database",
+    "db:seed-accounts-rbac": "npm run db:seed-accounts-rbac --workspace=@synergy/database",
+    "db:seed-accounts-test-user": "npm run db:seed-accounts-test-user --workspace=@synergy/database",
+    "db:cleanup-demo": "npm run db:cleanup-demo --workspace=@synergy/database --",
+    "db:reset-sales": "npm run db:reset-sales --workspace=@synergy/database --",
+    "db:reset-procurement": "npm run db:reset-procurement --workspace=@synergy/database --",
+    "db:disambiguate-boms": "npm run db:disambiguate-boms --workspace=@synergy/database --",
+    "db:reset-client-master-data": "npm run db:reset-client-master-data --workspace=@synergy/database --",
+    "db:import-client": "npm run db:import-client --workspace=@synergy/database --",
+    "db:seed-all": "npm run db:seed-all --workspace=@synergy/database",
+    "db:studio": "npm run db:studio --workspace=@synergy/database",
+    "db:sync": "npm exec --yes --package=node@22.23.4 -- node scripts/sync-database.cjs"
+  },
+  "devDependencies": {
+    "turbo": "^2.0.14",
+    "typescript": "^5.5.4"
+  },
+  "engines": {
+    "node": ">=22.0.0 <23",
+    "npm": ">=9.0.0"
+  },
+  "dependencies": {
+    "lockfile": "^1.0.4"
+  }
+}

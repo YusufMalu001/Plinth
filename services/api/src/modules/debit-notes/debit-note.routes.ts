@@ -1,0 +1,20 @@
+import { Router } from 'express';
+import { authenticate } from '../../common/middleware/auth';
+import { authorize } from '../../common/middleware/authorize';
+import { DbPermissionChecker } from '../../common/rbac/db-permission-checker';
+import { DbAuditWriter } from '../../common/audit/db-audit-writer';
+import { DebitNoteService } from './debit-note.service';
+
+const router = Router(); const permissions = new DbPermissionChecker(); const service = new DebitNoteService(permissions, new DbAuditWriter());
+router.use(authenticate);
+router.get('/', authorize('read', 'DebitNote', permissions), async (req, res, next) => { try { res.json({ success: true, data: await service.list(req.query.status as string | undefined, req.query.grnId as string | undefined), requestId: req.id }); } catch (e) { next(e); } });
+router.get('/:id', authorize('read', 'DebitNote', permissions), async (req, res, next) => { try { res.json({ success: true, data: await service.getById(req.params.id), requestId: req.id }); } catch (e) { next(e); } });
+router.post('/from-grn/:grnId', authorize('create', 'DebitNote', permissions), async (req, res, next) => { try { res.status(201).json({ success: true, data: await service.createFromGrn(req.params.grnId, req.user?.id || 'system', req.body.reason, req.id, { discrepancyIds: req.body.discrepancyIds, reasonCategory: req.body.reasonCategory, responsiblePersonId: req.body.responsiblePersonId }), requestId: req.id }); } catch (e) { next(e); } });
+router.post('/from-bill/:billId', authorize('create', 'DebitNote', permissions), async (req, res, next) => { try { res.status(201).json({ success: true, data: await service.createFromBill(req.params.billId, req.user?.id || 'system', req.body, req.id), requestId: req.id }); } catch (e) { next(e); } });
+router.patch('/:id', authorize('update', 'DebitNote', permissions), async (req, res, next) => { try { res.json({ success: true, data: await service.updateGrnClaim(req.params.id, req.user?.id || 'system', req.body, req.id), requestId: req.id }); } catch (e) { next(e); } });
+router.post('/:id/send-to-vendor', authorize('update', 'DebitNote', permissions), async (req, res, next) => { try { res.json({ success: true, data: await service.sendToVendor(req.params.id, req.user?.id || 'system', req.body, req.id), requestId: req.id }); } catch (e) { next(e); } });
+router.post('/:id/submit', authorize('submit', 'DebitNote', permissions), async (req, res, next) => { try { res.json({ success: true, data: await service.submit(req.params.id, req.user?.id || 'system', req.id), requestId: req.id }); } catch (e) { next(e); } });
+router.post('/:id/approve', authorize('approve', 'DebitNote', permissions), async (req, res, next) => { try { res.json({ success: true, data: await service.approve(req.params.id, req.user?.id || 'system', req.id), requestId: req.id }); } catch (e) { next(e); } });
+router.post('/:id/cancel', authorize('update', 'DebitNote', permissions), async (req, res, next) => { try { res.json({ success: true, data: await service.cancel(req.params.id, req.user?.id || 'system', req.id), requestId: req.id }); } catch (e) { next(e); } });
+router.post('/:id/reject', authorize('update', 'DebitNote', permissions), async (req, res, next) => { try { res.json({ success: true, data: await service.reject(req.params.id, req.user?.id || 'system', req.body.reason, req.id), requestId: req.id }); } catch (e) { next(e); } });
+export default router;

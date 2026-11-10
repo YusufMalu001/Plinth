@@ -1,0 +1,86 @@
+export interface ReservedCombo {
+  key: string;
+  ctrl?: boolean;
+  shift?: boolean;
+  alt?: boolean;
+  meta?: boolean;
+  why: string;
+}
+
+export const RESERVED_COMBOS: readonly ReservedCombo[] = [
+  // Navigation / focus
+  { key: 'Tab', why: 'Focus traversal' },
+  { key: 'Tab', shift: true, why: 'Reverse focus traversal' },
+  { key: 'Tab', ctrl: true, why: 'Browser tab cycling' },
+  { key: 'Tab', ctrl: true, shift: true, why: 'Browser tab cycling reverse' },
+  { key: 'Escape', why: 'Cancel / close' },
+  { key: 'Home', why: 'Start of line' },
+  { key: 'End', why: 'End of line' },
+  { key: 'PageUp', why: 'Scroll page' },
+  { key: 'PageDown', why: 'Scroll page' },
+  { key: 'ArrowLeft', why: 'Cursor left' },
+  { key: 'ArrowRight', why: 'Cursor right' },
+  { key: 'ArrowUp', why: 'Cursor / list up' },
+  { key: 'ArrowDown', why: 'Cursor / list down' },
+  { key: 'Backspace', why: 'Delete backward' },
+  { key: 'Delete', why: 'Delete forward' },
+  { key: 'Space', why: 'Activate / scroll' },
+  // Ctrl editing
+  { key: 'a', ctrl: true, why: 'Select all' },
+  { key: 'c', ctrl: true, why: 'Copy' },
+  { key: 'v', ctrl: true, why: 'Paste' },
+  { key: 'x', ctrl: true, why: 'Cut' },
+  { key: 'z', ctrl: true, why: 'Undo' },
+  { key: 'y', ctrl: true, why: 'Redo (Windows)' },
+  { key: 'z', ctrl: true, shift: true, why: 'Redo (Mac)' },
+  { key: 'Backspace', ctrl: true, why: 'Delete word backward' },
+  { key: 'Delete', ctrl: true, why: 'Delete word forward' },
+  { key: 'ArrowLeft', ctrl: true, why: 'Jump word left' },
+  { key: 'ArrowRight', ctrl: true, why: 'Jump word right' },
+  { key: 'Home', ctrl: true, why: 'Start of document' },
+  { key: 'End', ctrl: true, why: 'End of document' },
+  // Ctrl browser
+  { key: 'n', ctrl: true, why: 'New window' },
+  { key: 't', ctrl: true, why: 'New tab' },
+  { key: 'w', ctrl: true, why: 'Close tab' },
+  { key: 'n', ctrl: true, shift: true, why: 'New incognito window' },
+  { key: 't', ctrl: true, shift: true, why: 'Reopen tab' },
+  { key: 'w', ctrl: true, shift: true, why: 'Close window' },
+  { key: 's', ctrl: true, why: 'Save page' },
+  { key: 'p', ctrl: true, why: 'Print' },
+  { key: 'f', ctrl: true, why: 'Find in page' },
+  { key: 'g', ctrl: true, why: 'Find next' },
+  { key: 'k', ctrl: true, why: 'Address bar / quick find' },
+  { key: 'l', ctrl: true, why: 'Focus address bar' },
+  { key: 'd', ctrl: true, why: 'Bookmark page' },
+  { key: 'r', ctrl: true, why: 'Reload' },
+  { key: 'h', ctrl: true, why: 'History' },
+  { key: 'j', ctrl: true, why: 'Downloads' },
+  { key: 'u', ctrl: true, why: 'View source' },
+  { key: 'o', ctrl: true, why: 'Open file' },
+  { key: ' ', ctrl: true, why: 'Ctrl+Space (IME trigger / IDE)' },
+  // Alt navigation
+  { key: 'ArrowLeft', alt: true, why: 'Browser back' },
+  { key: 'ArrowRight', alt: true, why: 'Browser forward' },
+  { key: 'Home', alt: true, why: 'Browser home page' },
+  { key: 'F4', alt: true, why: 'Close window' },
+  { key: 'd', alt: true, why: 'Focus address bar (IE/Edge)' },
+  { key: 'f', alt: true, why: 'File menu' },
+  { key: 'e', alt: true, why: 'Edit menu' },
+  { key: 'Enter', alt: true, why: 'Properties dialog / Indic layout variant' },
+  { key: 'Enter', ctrl: true, alt: true, why: 'Ctrl+Alt+Enter (screen reader pass-through)' },
+  { key: ' ', meta: true, why: 'Meta+Space (macOS Spotlight / input method)' },
+  // F-keys
+  { key: 'F1', why: 'Help' },
+  { key: 'F2', why: 'Rename / Synergy accounts date focus' },
+  { key: 'F3', why: 'Find next' },
+  { key: 'F4', why: 'Address bar / Synergy accounts banking' },
+  { key: 'F5', why: 'Reload / Synergy accounts payments' },
+  { key: 'F6', why: 'Address bar cycle / Synergy accounts receipts' },
+  { key: 'F7', why: 'Caret browsing / Synergy journals' },
+  { key: 'F8', why: 'Synergy accounts sales' },
+  { key: 'F9', why: 'Synergy accounts purchases' },
+  { key: 'F10', why: 'Menu bar focus / Synergy expenses' },
+  { key: 'F11', why: 'Fullscreen / Synergy setup' },
+  { key: 'F12', why: 'DevTools / Synergy Tally export' },
+];

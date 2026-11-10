@@ -1,0 +1,243 @@
+# ==============================================================================
+# SYNERGY ERP - DOCKER COMPOSE ORCHESTRATION
+# ==============================================================================
+
+x-intelligence-runtime: &intelligence-runtime
+  image: synergy-advisor-runtime:bounded
+  build:
+    context: .
+    dockerfile: infrastructure/docker/advisor-runtime.Dockerfile
+  profiles: ["intelligence"]
+  restart: unless-stopped
+  command: ["sh", "-c", "cp /opt/profile/config.yaml /opt/data/config.yaml && exec hermes gateway run"]
+  read_only: true
+  tmpfs:
+    - /tmp:size=128m,noexec,nosuid,nodev
+  cap_drop: ["ALL"]
+  # s6-overlay must clean and recreate its supervisor tree on every restart.
+  # DAC_OVERRIDE/FOWNER are limited to this runtime container; ERP tools remain read-only.
+  cap_add: ["CHOWN", "SETUID", "SETGID", "DAC_OVERRIDE", "FOWNER"]
+  security_opt: ["no-new-privileges:true"]
+  pids_limit: 256
+  mem_limit: 2g
+  extra_hosts:
+    - "host.docker.internal:host-gateway"
+  depends_on:
+    - model-egress
+
+x-intelligence-runtime-env: &intelligence-runtime-env
+  OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
+  OPENROUTER_BASE_URL: http://model-egress:8080/api/v1
+  API_SERVER_ENABLED: "true"
+  API_SERVER_HOST: 0.0.0.0
+  API_SERVER_PORT: "8642"
+  API_SERVER_CORS_ORIGINS: ""
+  HERMES_UID: "10000"
+  HERMES_GID: "10000"
+  HERMES_REDACT_SECRETS: "true"
+  HERMES_DUMP_REQUESTS: "false"
+  HERMES_DUMP_REQUEST_STDOUT: "false"
+  HERMES_MAX_ITERATIONS: ${INTELLIGENCE_MAX_TOOL_CALLS:-12}
+  INTELLIGENCE_MAX_OUTPUT_TOKENS: ${INTELLIGENCE_MAX_OUTPUT_TOKENS:-4096}
+  SYNERGY_API_PORT: ${API_PORT:-5000}
+
+services:
+  model-egress:
+    build:
+      context: .
+      dockerfile: infrastructure/model-egress/Dockerfile
+    profiles: ["intelligence"]
+    restart: unless-stopped
+    environment:
+      INTELLIGENCE_MAX_OUTPUT_TOKENS: ${INTELLIGENCE_MAX_OUTPUT_TOKENS:-4096}
+      INTELLIGENCE_FALLBACK_MODEL: ${INTELLIGENCE_FALLBACK_MODEL:-}
+      INTELLIGENCE_FREE_ONLY: ${INTELLIGENCE_FREE_ONLY:-false}
+      INTELLIGENCE_ALLOW_FREE_PROVIDER_DATA_USE: ${INTELLIGENCE_ALLOW_FREE_PROVIDER_DATA_USE:-false}
+    read_only: true
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: ["ALL"]
+    mem_limit: 128m
+
+  # Local PostgreSQL keeps API/database traffic on the Docker network. The
+  # named volume makes the database survive container recreation.
+  postgres:
+    image: postgres:16-alpine
+    container_name: synergy-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_DB: ${POSTGRES_DB:-synergy_erp}
+    ports:
+      - "${POSTGRES_PORT:-55432}:5432"
+    volumes:
+      - synergy_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres} -d ${POSTGRES_DB:-synergy_erp}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  # Express Backend API Monolith
+  api:
+    image: ${API_IMAGE:-synergy-erp-api:local}
+    build:
+      context: .
+      dockerfile: infrastructure/docker/api.Dockerfile
+    container_name: synergy-api
+    restart: always
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=${NODE_ENV:-development}
+      - PORT=${API_PORT:-5000}
+      - DATABASE_URL=postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@postgres:5432/${POSTGRES_DB:-synergy_erp}?schema=public&connection_limit=5&pool_timeout=10
+      - DIRECT_URL=postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@postgres:5432/${POSTGRES_DB:-synergy_erp}?schema=public
+      - JWT_SECRET=${JWT_SECRET:-local-development-secret-change-before-deploying}
+      - JWT_REFRESH_SECRET=${JWT_REFRESH_SECRET:-local-development-secret-change-before-deploying-refresh}
+      - WEB_ORIGIN=http://localhost:${WEB_HOST_PORT:-${WEB_PORT:-3000}}
+      - SUPABASE_URL=${SUPABASE_URL:-}
+      - SUPABASE_SERVICE_ROLE_KEY=${SUPABASE_SERVICE_ROLE_KEY:-}
+      - INTELLIGENCE_EXECUTIVE_RUNTIME_URL=http://agent-runtime-executive:8642
+      - INTELLIGENCE_SALES_RUNTIME_URL=http://agent-runtime-sales:8642
+      - INTELLIGENCE_INVENTORY_RUNTIME_URL=http://agent-runtime-inventory:8642
+      - INTELLIGENCE_PROCUREMENT_RUNTIME_URL=http://agent-runtime-procurement:8642
+      - INTELLIGENCE_PRODUCTION_RUNTIME_URL=http://agent-runtime-production:8642
+      - INTELLIGENCE_FULFILLMENT_RUNTIME_URL=http://agent-runtime-fulfillment:8642
+    ports:
+      - "${API_HOST_PORT:-${API_PORT:-5000}}:${API_PORT:-5000}"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  # Next.js Frontend Application
+  web:
+    image: ${WEB_IMAGE:-synergy-erp-web:local}
+    build:
+      context: .
+      dockerfile: infrastructure/docker/web.Dockerfile
+    container_name: synergy-web
+    restart: always
+    environment:
+      - NODE_ENV=${NODE_ENV:-development}
+      - PORT=${WEB_PORT:-3000}
+      - INTERNAL_API_URL=http://api:${API_PORT:-5000}/api/v1
+      - API_PORT=${API_PORT:-5000}
+      - NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL:-http://localhost:${API_PORT:-5000}/api/v1}
+      - NEXT_PUBLIC_APP_URL=${APP_URL:-${WEB_ORIGIN:-http://localhost:${WEB_HOST_PORT:-${WEB_PORT:-3000}}}}
+      - NEXT_PUBLIC_PRODUCTION_APP_URL=${PRODUCTION_WEB_ORIGIN:-https://synergy.local}
+      - NEXT_PUBLIC_STAGING_APP_URL=${STAGING_WEB_ORIGIN:-http://localhost:4000}
+    ports:
+      - "${WEB_HOST_PORT:-${WEB_PORT:-3000}}:${WEB_PORT:-3000}"
+    depends_on:
+      - api
+
+  intelligence-worker:
+    profiles: ["intelligence"]
+    build:
+      context: .
+      dockerfile: infrastructure/docker/api.Dockerfile
+    restart: unless-stopped
+    command: ["node", "dist/intelligence-worker.js"]
+    env_file: [.env]
+    environment:
+      NODE_ENV: ${NODE_ENV:-development}
+      DATABASE_URL: postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@postgres:5432/${POSTGRES_DB:-synergy_erp}?schema=public&connection_limit=10
+      DIRECT_URL: postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@postgres:5432/${POSTGRES_DB:-synergy_erp}?schema=public
+      INTELLIGENCE_EXECUTIVE_RUNTIME_URL: http://agent-runtime-executive:8642
+      INTELLIGENCE_SALES_RUNTIME_URL: http://agent-runtime-sales:8642
+      INTELLIGENCE_INVENTORY_RUNTIME_URL: http://agent-runtime-inventory:8642
+      INTELLIGENCE_PROCUREMENT_RUNTIME_URL: http://agent-runtime-procurement:8642
+      INTELLIGENCE_PRODUCTION_RUNTIME_URL: http://agent-runtime-production:8642
+      INTELLIGENCE_FULFILLMENT_RUNTIME_URL: http://agent-runtime-fulfillment:8642
+    depends_on:
+      postgres: { condition: service_healthy }
+      api: { condition: service_started }
+
+  agent-runtime-executive:
+    <<: *intelligence-runtime
+    environment:
+      <<: *intelligence-runtime-env
+      API_SERVER_KEY: ${INTELLIGENCE_EXECUTIVE_RUNTIME_KEY:-}
+      API_SERVER_MODEL_NAME: executive-advisor
+      SYNERGY_MCP_TOKEN: ${INTELLIGENCE_EXECUTIVE_MCP_TOKEN:-}
+    volumes:
+      - intelligence_runtime_executive:/opt/data
+      - intelligence_runtime_executive_run:/run
+      - ./infrastructure/intelligence/executive/config.yaml:/opt/profile/config.yaml:ro
+
+  agent-runtime-sales:
+    <<: *intelligence-runtime
+    environment:
+      <<: *intelligence-runtime-env
+      API_SERVER_KEY: ${INTELLIGENCE_SALES_RUNTIME_KEY:-}
+      API_SERVER_MODEL_NAME: sales-advisor
+      SYNERGY_MCP_TOKEN: ${INTELLIGENCE_SALES_MCP_TOKEN:-}
+    volumes:
+      - intelligence_runtime_sales:/opt/data
+      - intelligence_runtime_sales_run:/run
+      - ./infrastructure/intelligence/sales/config.yaml:/opt/profile/config.yaml:ro
+
+  agent-runtime-inventory:
+    <<: *intelligence-runtime
+    environment:
+      <<: *intelligence-runtime-env
+      API_SERVER_KEY: ${INTELLIGENCE_INVENTORY_RUNTIME_KEY:-}
+      API_SERVER_MODEL_NAME: inventory-advisor
+      SYNERGY_MCP_TOKEN: ${INTELLIGENCE_INVENTORY_MCP_TOKEN:-}
+    volumes:
+      - intelligence_runtime_inventory:/opt/data
+      - intelligence_runtime_inventory_run:/run
+      - ./infrastructure/intelligence/inventory/config.yaml:/opt/profile/config.yaml:ro
+
+  agent-runtime-procurement:
+    <<: *intelligence-runtime
+    environment:
+      <<: *intelligence-runtime-env
+      API_SERVER_KEY: ${INTELLIGENCE_PROCUREMENT_RUNTIME_KEY:-}
+      API_SERVER_MODEL_NAME: procurement-advisor
+      SYNERGY_MCP_TOKEN: ${INTELLIGENCE_PROCUREMENT_MCP_TOKEN:-}
+    volumes:
+      - intelligence_runtime_procurement:/opt/data
+      - intelligence_runtime_procurement_run:/run
+      - ./infrastructure/intelligence/procurement/config.yaml:/opt/profile/config.yaml:ro
+
+  agent-runtime-production:
+    <<: *intelligence-runtime
+    environment:
+      <<: *intelligence-runtime-env
+      API_SERVER_KEY: ${INTELLIGENCE_PRODUCTION_RUNTIME_KEY:-}
+      API_SERVER_MODEL_NAME: production-advisor
+      SYNERGY_MCP_TOKEN: ${INTELLIGENCE_PRODUCTION_MCP_TOKEN:-}
+    volumes:
+      - intelligence_runtime_production:/opt/data
+      - intelligence_runtime_production_run:/run
+      - ./infrastructure/intelligence/production/config.yaml:/opt/profile/config.yaml:ro
+
+  agent-runtime-fulfillment:
+    <<: *intelligence-runtime
+    environment:
+      <<: *intelligence-runtime-env
+      API_SERVER_KEY: ${INTELLIGENCE_FULFILLMENT_RUNTIME_KEY:-}
+      API_SERVER_MODEL_NAME: fulfillment-advisor
+      SYNERGY_MCP_TOKEN: ${INTELLIGENCE_FULFILLMENT_MCP_TOKEN:-}
+    volumes:
+      - intelligence_runtime_fulfillment:/opt/data
+      - intelligence_runtime_fulfillment_run:/run
+      - ./infrastructure/intelligence/fulfillment/config.yaml:/opt/profile/config.yaml:ro
+
+volumes:
+  synergy_pgdata:
+    driver: local
+  intelligence_runtime_executive:
+  intelligence_runtime_executive_run:
+  intelligence_runtime_sales:
+  intelligence_runtime_sales_run:
+  intelligence_runtime_inventory:
+  intelligence_runtime_inventory_run:
+  intelligence_runtime_procurement:
+  intelligence_runtime_procurement_run:
+  intelligence_runtime_production:
+  intelligence_runtime_production_run:
+  intelligence_runtime_fulfillment:
+  intelligence_runtime_fulfillment_run:

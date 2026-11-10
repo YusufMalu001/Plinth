@@ -1,0 +1,813 @@
+{
+  "env": {
+    "frontendUrl": "http://localhost:3000",
+    "apiUrl": "http://localhost:5000/api/v1",
+    "workerStatus": "Healthy",
+    "workerHeartbeat": "2026-10-01T09:28:34.510Z",
+    "dbStatus": "Connected (latency ~1ms)",
+    "openRouterAuth": "Healthy",
+    "configuredModel": "qwen/qwen3.8-27b:free",
+    "runtimesCount": 6,
+    "controls": {
+      "state": {
+        "id": "default",
+        "globalPaused": false,
+        "providerPaused": false,
+        "schedulesPaused": false,
+        "eventTriggersPaused": false,
+        "notificationsPaused": false,
+        "pausedProfiles": [],
+        "updatedById": "5454c545-3458-43f0-a9c0-13433e4fdb67",
+        "createdAt": "2026-09-26T19:22:37.555Z",
+        "updatedAt": "2026-10-01T08:59:23.945Z"
+      },
+      "enabled": true,
+      "providerEnabled": true,
+      "schedulesEnabled": true,
+      "eventTriggersEnabled": true,
+      "notificationsEnabled": true,
+      "shadowMode": false,
+      "pausedProfiles": [],
+      "infrastructure": {
+        "enabled": true,
+        "providerEnabled": true,
+        "schedulesEnabled": true,
+        "eventTriggersEnabled": true,
+        "notificationsEnabled": true
+      }
+    }
+  },
+  "db": {
+    "migrationStatus": "48 migrations applied, up to date",
+    "tableCounts": [
+      "users:8",
+      "materials:675",
+      "vendors:4",
+      "inventory_balances:1231",
+      "production_plans:5",
+      "intelligence_cases:10",
+      "business_snapshots:84"
+    ]
+  },
+  "detectors": {
+    "MATERIAL_PRICE_INCREASE": {
+      "caseId": "69a853c2-3abc-4393-afa2-0e6b17c21e48",
+      "module": "PROCUREMENT",
+      "status": "OPEN",
+      "evidence": {
+        "title": "Acceptance Test MATERIAL_PRICE_INCREASE",
+        "periodEnd": "2026-10-01T00:00:00.000Z",
+        "situation": "Simulated realistic ERP state for MATERIAL_PRICE_INCREASE",
+        "provenance": [
+          {
+            "key": "test.material_price_increase",
+            "quality": 1,
+            "freshness": "FRESH",
+            "provenance": "ACTUAL"
+          }
+        ],
+        "detectorKey": "MATERIAL_PRICE_INCREASE",
+        "periodStart": "2026-09-01T00:00:00.000Z",
+        "absoluteDelta": 12,
+        "metricVersion": "2026-10-01.acc",
+        "opportunityId": "opp-material_price_increase",
+        "expectedImpact": {
+          "low": 1000,
+          "base": 5000,
+          "high": 10000,
+          "unit": "INR"
+        },
+        "percentageDelta": 12,
+        "affectedQuantity": 500,
+        "currentUnitPrice": 112,
+        "previousUnitPrice": 100,
+        "estimatedCostImpact": 6000
+      },
+      "positiveResult": "PASS",
+      "negativeResult": "PASS"
+    },
+    "LOW_INVENTORY_COVER": {
+      "caseId": "52132e75-28aa-4d09-b821-3d51cb9dc9d7",
+      "module": "INVENTORY",
+      "status": "OPEN",
+      "evidence": {
+        "title": "Acceptance Test LOW_INVENTORY_COVER",
+        "unitCost": 150,
+        "periodEnd": "2026-10-01T00:00:00.000Z",
+        "situation": "Simulated realistic ERP state for LOW_INVENTORY_COVER",
+        "provenance": [
+          {
+            "key": "test.low_inventory_cover",
+            "quality": 1,
+            "freshness": "FRESH",
+            "provenance": "ACTUAL"
+          }
+        ],
+        "daysOfCover": 4,
+        "detectorKey": "LOW_INVENTORY_COVER",
+        "periodStart": "2026-09-01T00:00:00.000Z",
+        "currentStock": 80,
+        "leadTimeDays": 14,
+        "burnRateDaily": 20,
+        "metricVersion": "2026-10-01.acc",
+        "opportunityId": "opp-low_inventory_cover",
+        "expectedImpact": {
+          "low": 1000,
+          "base": 5000,
+          "high": 10000,
+          "unit": "INR"
+        },
+        "stockoutGapDays": 10,
+        "stockoutRiskValue": 30000
+      },
+      "positiveResult": "PASS",
+      "negativeResult": "PASS"
+    },
+    "SLOW_MOVING_INVENTORY": {
+      "caseId": "4165f361-95c1-4209-87d6-75def9978f1c",
+      "module": "INVENTORY",
+      "status": "OPEN",
+      "evidence": {
+        "title": "Acceptance Test SLOW_MOVING_INVENTORY",
+        "quantity": 350,
+        "unitCost": 200,
+        "periodEnd": "2026-10-01T00:00:00.000Z",
+        "situation": "Simulated realistic ERP state for SLOW_MOVING_INVENTORY",
+        "provenance": [
+          {
+            "key": "test.slow_moving_inventory",
+            "quality": 1,
+            "freshness": "FRESH",
+            "provenance": "ACTUAL"
+          }
+        ],
+        "detectorKey": "SLOW_MOVING_INVENTORY",
+        "periodStart": "2026-09-01T00:00:00.000Z",
+        "turnoverRate": 0.4,
+        "carryingValue": 70000,
+        "metricVersion": "2026-10-01.acc",
+        "opportunityId": "opp-slow_moving_inventory",
+        "expectedImpact": {
+          "low": 1000,
+          "base": 5000,
+          "high": 10000,
+          "unit": "INR"
+        },
+        "inventoryAgeDays": 110,
+        "holdingCostPercent": 18,
+        "holdingCostAccumulated": 3797.26
+      },
+      "positiveResult": "PASS",
+      "negativeResult": "PASS"
+    },
+    "DEAD_STOCK": {
+      "caseId": "65858dde-d5b7-4248-8821-74b161fd69c2",
+      "module": "INVENTORY",
+      "status": "OPEN",
+      "evidence": {
+        "title": "Acceptance Test DEAD_STOCK",
+        "unitCost": 300,
+        "periodEnd": "2026-10-01T00:00:00.000Z",
+        "situation": "Simulated realistic ERP state for DEAD_STOCK",
+        "provenance": [
+          {
+            "key": "test.dead_stock",
+            "quality": 1,
+            "freshness": "FRESH",
+            "provenance": "ACTUAL"
+          }
+        ],
+        "detectorKey": "DEAD_STOCK",
+        "periodStart": "2026-09-01T00:00:00.000Z",
+        "metricVersion": "2026-10-01.acc",
+        "opportunityId": "opp-dead_stock",
+        "deadStockValue": 60000,
+        "expectedImpact": {
+          "low": 1000,
+          "base": 5000,
+          "high": 10000,
+          "unit": "INR"
+        },
+        "writeOffExposure": 51000,
+        "zeroMovementDays": 195,
+        "deadStockQuantity": 200,
+        "scrapRecoveryRate": 0.15,
+        "recoverableScrapValue": 9000
+      },
+      "positiveResult": "PASS",
+      "negativeResult": "PASS"
+    },
+    "VENDOR_DETERIORATION": {
+      "caseId": "cf8cd616-075b-4e9c-8028-f3a270e980be",
+      "module": "PROCUREMENT",
+      "status": "OPEN",
+      "evidence": {
+        "title": "Acceptance Test VENDOR_DETERIORATION",
+        "periodEnd": "2026-10-01T00:00:00.000Z",
+        "situation": "Simulated realistic ERP state for VENDOR_DETERIORATION",
+        "provenance": [
+          {
+            "key": "test.vendor_deterioration",
+            "quality": 1,
+            "freshness": "FRESH",
+            "provenance": "ACTUAL"
+          }
+        ],
+        "detectorKey": "VENDOR_DETERIORATION",
+        "periodStart": "2026-09-01T00:00:00.000Z",
+        "metricVersion": "2026-10-01.acc",
+        "opportunityId": "opp-vendor_deterioration",
+        "targetOtdRate": 95,
+        "expectedImpact": {
+          "low": 1000,
+          "base": 5000,
+          "high": 10000,
+          "unit": "INR"
+        },
+        "deliveryRiskScore": 49.5,
+        "onTimeDeliveryRate": 74.5,
+        "leadTimeVarianceDays": 6.2,
+        "qualityRejectionRate": 4.8,
+        "affectedPurchaseValue": 125000
+      },
+      "positiveResult": "PASS",
+      "negativeResult": "PASS"
+    },
+    "MARGIN_COMPRESSION": {
+      "caseId": "b4a8bce0-3f3c-4ed3-a774-519c78be787c",
+      "module": "SALES",
+      "status": "OPEN",
+      "evidence": {
+        "title": "Acceptance Test MARGIN_COMPRESSION",
+        "periodEnd": "2026-10-01T00:00:00.000Z",
+        "situation": "Simulated realistic ERP state for MARGIN_COMPRESSION",
+        "provenance": [
+          {
+            "key": "test.margin_compression",
+            "quality": 1,
+            "freshness": "FRESH",
+            "provenance": "ACTUAL"
+          }
+        ],
+        "detectorKey": "MARGIN_COMPRESSION",
+        "periodStart": "2026-09-01T00:00:00.000Z",
+        "salesVolume": 80000,
+        "metricVersion": "2026-10-01.acc",
+        "opportunityId": "opp-margin_compression",
+        "expectedImpact": {
+          "low": 1000,
+          "base": 5000,
+          "high": 10000,
+          "unit": "INR"
+        },
+        "totalMarginAtRisk": 7600,
+        "marginDeltaPercent": -9.5,
+        "realizedGrossMarginPercent": 26.5,
+        "historicalGrossMarginPercent": 36
+      },
+      "positiveResult": "PASS",
+      "negativeResult": "PASS"
+    },
+    "UNPLANNED_PRODUCTION_DEMAND": {
+      "caseId": "0f0a4212-0a64-400d-9c71-b80fe16c42be",
+      "module": "PRODUCTION",
+      "status": "OPEN",
+      "evidence": {
+        "title": "Acceptance Test UNPLANNED_PRODUCTION_DEMAND",
+        "periodEnd": "2026-10-01T00:00:00.000Z",
+        "situation": "Simulated realistic ERP state for UNPLANNED_PRODUCTION_DEMAND",
+        "provenance": [
+          {
+            "key": "test.unplanned_production_demand",
+            "quality": 1,
+            "freshness": "FRESH",
+            "provenance": "ACTUAL"
+          }
+        ],
+        "detectorKey": "UNPLANNED_PRODUCTION_DEMAND",
+        "periodStart": "2026-09-01T00:00:00.000Z",
+        "metricVersion": "2026-10-01.acc",
+        "opportunityId": "opp-unplanned_production_demand",
+        "expectedImpact": {
+          "low": 1000,
+          "base": 5000,
+          "high": 10000,
+          "unit": "INR"
+        },
+        "utilizationPercent": 135,
+        "capacityDeficitUnits": 350,
+        "confirmedDemandUnits": 1350,
+        "plannedCapacityUnits": 1000,
+        "bottleneckWorkstation": "STAMPING_PRESS_01"
+      },
+      "positiveResult": "PASS",
+      "negativeResult": "PASS"
+    },
+    "DELAYED_FULFILLMENT": {
+      "caseId": "206151a5-5fb2-4fea-ac2d-16be7c2d51a1",
+      "module": "FULFILLMENT",
+      "status": "OPEN",
+      "evidence": {
+        "title": "Acceptance Test DELAYED_FULFILLMENT",
+        "periodEnd": "2026-10-01T00:00:00.000Z",
+        "situation": "Simulated realistic ERP state for DELAYED_FULFILLMENT",
+        "provenance": [
+          {
+            "key": "test.delayed_fulfillment",
+            "quality": 1,
+            "freshness": "FRESH",
+            "provenance": "ACTUAL"
+          }
+        ],
+        "detectorKey": "DELAYED_FULFILLMENT",
+        "periodStart": "2026-09-01T00:00:00.000Z",
+        "metricVersion": "2026-10-01.acc",
+        "opportunityId": "opp-delayed_fulfillment",
+        "carrierBacklog": "HUB_CONGESTION_DELIVERY",
+        "expectedImpact": {
+          "low": 1000,
+          "base": 5000,
+          "high": 10000,
+          "unit": "INR"
+        },
+        "averageDelayDays": 3.4,
+        "slaBreachExposure": 22500,
+        "customerImpactCount": 14,
+        "delayedShipmentCount": 18
+      },
+      "positiveResult": "PASS",
+      "negativeResult": "PASS"
+    },
+    "REPLENISHMENT_RISK": {
+      "caseId": "91f1cf36-aa35-48c8-9726-b71b3257de4a",
+      "module": "INVENTORY",
+      "status": "OPEN",
+      "evidence": {
+        "title": "Acceptance Test REPLENISHMENT_RISK",
+        "periodEnd": "2026-10-01T00:00:00.000Z",
+        "situation": "Simulated realistic ERP state for REPLENISHMENT_RISK",
+        "provenance": [
+          {
+            "key": "test.replenishment_risk",
+            "quality": 1,
+            "freshness": "FRESH",
+            "provenance": "ACTUAL"
+          }
+        ],
+        "detectorKey": "REPLENISHMENT_RISK",
+        "periodStart": "2026-09-01T00:00:00.000Z",
+        "safetyStock": 100,
+        "reorderPoint": 300,
+        "metricVersion": "2026-10-01.acc",
+        "opportunityId": "opp-replenishment_risk",
+        "availableStock": 140,
+        "expectedImpact": {
+          "low": 1000,
+          "base": 5000,
+          "high": 10000,
+          "unit": "INR"
+        },
+        "reorderDeficit": 160,
+        "stockoutProbability": 0.45,
+        "replenishmentUrgency": "HIGH"
+      },
+      "positiveResult": "PASS",
+      "negativeResult": "PASS"
+    }
+  },
+  "events": {
+    "eventId": "d1a4fc44-731f-4687-9bdc-60b4f0ad584e",
+    "outboxStatus": "COMPLETED",
+    "jobCount": "1",
+    "deadLetterId": "9e8b32f9-dca6-467f-8d50-34ccb40b3aa1",
+    "replayStatus": 202,
+    "replayedOutboxStatus": "PENDING"
+  },
+  "scenarios": {
+    "DO_NOTHING": {
+      "id": "e186830e-8947-4af7-a093-e9c38db88791",
+      "caseId": "69a853c2-3abc-4393-afa2-0e6b17c21e48",
+      "snapshotId": "e6c0dbd2-398b-4f27-a506-ed7a67b70045",
+      "createdById": "5454c545-3458-43f0-a9c0-13433e4fdb67",
+      "scenarioType": "DO_NOTHING",
+      "formulaVersion": "deterministic-decimal-scenario-v1",
+      "currency": "INR",
+      "baseline": {
+        "value": 6000,
+        "reason": "Status quo baseline without mitigation action.",
+        "status": "CALCULATED",
+        "metricKey": "procurement.material_cost_increase_unmitigated"
+      },
+      "assumptions": [
+        "Status quo inaction across 500 affected units.",
+        "No countermeasure or contract renegotiation executed."
+      ],
+      "lowCase": {
+        "unit": "INR",
+        "value": 5400,
+        "metricKey": "procurement.material_cost_increase_unmitigated"
+      },
+      "baseCase": {
+        "unit": "INR",
+        "value": 6000,
+        "metricKey": "procurement.material_cost_increase_unmitigated"
+      },
+      "highCase": {
+        "unit": "INR",
+        "value": 6900,
+        "metricKey": "procurement.material_cost_increase_unmitigated"
+      },
+      "missingInputs": [],
+      "provenance": "CALCULATED",
+      "dataQualityScore": "0",
+      "expiresAt": "2026-10-31T09:28:55.884Z",
+      "idempotencyKey": "sc-do_nothing-1e362018",
+      "correlationId": "91b54ddc-ab86-4d46-bbf0-130c37e94eaa",
+      "createdAt": "2026-10-01T09:28:55.885Z"
+    },
+    "BUY_MORE": {
+      "id": "d35ae898-30b2-4566-92ce-7c5b70c8d1e4",
+      "caseId": "69a853c2-3abc-4393-afa2-0e6b17c21e48",
+      "snapshotId": "e6c0dbd2-398b-4f27-a506-ed7a67b70045",
+      "createdById": "5454c545-3458-43f0-a9c0-13433e4fdb67",
+      "scenarioType": "BUY_MORE",
+      "formulaVersion": "deterministic-decimal-scenario-v1",
+      "currency": "INR",
+      "baseline": {
+        "value": 0,
+        "reason": "Do-nothing baseline yields 0 net savings against price hike.",
+        "status": "CALCULATED",
+        "metricKey": "procurement.bulk_buy_net_savings"
+      },
+      "assumptions": [
+        "Forward buy of 500 units before price hike to lock in ₹100/unit.",
+        "Annual inventory holding rate of 18.0% over 90 days."
+      ],
+      "lowCase": {
+        "unit": "INR",
+        "value": 3213.7,
+        "metricKey": "procurement.bulk_buy_net_savings"
+      },
+      "baseCase": {
+        "unit": "INR",
+        "value": 3780.82,
+        "metricKey": "procurement.bulk_buy_net_savings"
+      },
+      "highCase": {
+        "unit": "INR",
+        "value": 4347.94,
+        "metricKey": "procurement.bulk_buy_net_savings"
+      },
+      "missingInputs": [],
+      "provenance": "CALCULATED",
+      "dataQualityScore": "0",
+      "expiresAt": "2026-10-31T09:28:55.896Z",
+      "idempotencyKey": "sc-buy_more-76c6bc90",
+      "correlationId": "a3e05784-265c-443b-95a9-69fb21b6ab36",
+      "createdAt": "2026-10-01T09:28:55.897Z"
+    },
+    "BUY_LATER": {
+      "id": "fbee4775-23d6-4486-90ae-77f1ba31ce42",
+      "caseId": "69a853c2-3abc-4393-afa2-0e6b17c21e48",
+      "snapshotId": "e6c0dbd2-398b-4f27-a506-ed7a67b70045",
+      "createdById": "5454c545-3458-43f0-a9c0-13433e4fdb67",
+      "scenarioType": "BUY_LATER",
+      "formulaVersion": "deterministic-decimal-scenario-v1",
+      "currency": "INR",
+      "baseline": {
+        "value": 0,
+        "reason": "Immediate purchase baseline yields zero deferred capital benefit.",
+        "status": "CALCULATED",
+        "metricKey": "procurement.deferral_working_capital_savings"
+      },
+      "assumptions": [
+        "Deferred purchasing by 30 days for working capital preservation.",
+        "Carrying cost savings discount of 5.0% for market volatility."
+      ],
+      "lowCase": {
+        "unit": "INR",
+        "value": 629.66,
+        "metricKey": "procurement.deferral_working_capital_savings"
+      },
+      "baseCase": {
+        "unit": "INR",
+        "value": 787.07,
+        "metricKey": "procurement.deferral_working_capital_savings"
+      },
+      "highCase": {
+        "unit": "INR",
+        "value": 944.48,
+        "metricKey": "procurement.deferral_working_capital_savings"
+      },
+      "missingInputs": [],
+      "provenance": "CALCULATED",
+      "dataQualityScore": "0",
+      "expiresAt": "2026-10-31T09:28:55.907Z",
+      "idempotencyKey": "sc-buy_later-c2265fc6",
+      "correlationId": "d13ca4a9-da57-4df4-ae60-a8abd901e73e",
+      "createdAt": "2026-10-01T09:28:55.908Z"
+    },
+    "PRICE_CHANGE": {
+      "id": "37593bf0-47f3-4695-9f2b-1ba5ab610762",
+      "caseId": "69a853c2-3abc-4393-afa2-0e6b17c21e48",
+      "snapshotId": "e6c0dbd2-398b-4f27-a506-ed7a67b70045",
+      "createdById": "5454c545-3458-43f0-a9c0-13433e4fdb67",
+      "scenarioType": "PRICE_CHANGE",
+      "formulaVersion": "deterministic-decimal-scenario-v1",
+      "currency": "INR",
+      "baseline": {
+        "value": 0,
+        "reason": "Current product price absorbs cost increase completely.",
+        "status": "CALCULATED",
+        "metricKey": "sales.margin_recovered_via_price_adjustment"
+      },
+      "assumptions": [
+        "Pass-through of ₹12.00/unit to selling price.",
+        "Volume retention of 95.0% under price elasticity."
+      ],
+      "lowCase": {
+        "unit": "INR",
+        "value": 4560,
+        "metricKey": "sales.margin_recovered_via_price_adjustment"
+      },
+      "baseCase": {
+        "unit": "INR",
+        "value": 5700,
+        "metricKey": "sales.margin_recovered_via_price_adjustment"
+      },
+      "highCase": {
+        "unit": "INR",
+        "value": 6840,
+        "metricKey": "sales.margin_recovered_via_price_adjustment"
+      },
+      "missingInputs": [],
+      "provenance": "CALCULATED",
+      "dataQualityScore": "0",
+      "expiresAt": "2026-10-31T09:28:55.919Z",
+      "idempotencyKey": "sc-price_change-028b9cbc",
+      "correlationId": "3b7f45ab-9952-4ca6-a152-be617df1c3b7",
+      "createdAt": "2026-10-01T09:28:55.920Z"
+    },
+    "PRODUCTION_INCREASE": {
+      "id": "f15f6748-ab15-40f4-b2fe-7369d019009a",
+      "caseId": "69a853c2-3abc-4393-afa2-0e6b17c21e48",
+      "snapshotId": "e6c0dbd2-398b-4f27-a506-ed7a67b70045",
+      "createdById": "5454c545-3458-43f0-a9c0-13433e4fdb67",
+      "scenarioType": "PRODUCTION_INCREASE",
+      "formulaVersion": "deterministic-decimal-scenario-v1",
+      "currency": "INR",
+      "baseline": {
+        "value": 0,
+        "reason": "Standard single-shift schedule drops unfulfilled orders.",
+        "status": "CALCULATED",
+        "metricKey": "production.capacity_expansion_net_profit"
+      },
+      "assumptions": [
+        "Overtime/weekend shift expansion to produce 350 additional units.",
+        "Marginal profit contribution of ₹370/unit after premium labor."
+      ],
+      "lowCase": {
+        "unit": "INR",
+        "value": 110075,
+        "metricKey": "production.capacity_expansion_net_profit"
+      },
+      "baseCase": {
+        "unit": "INR",
+        "value": 129500,
+        "metricKey": "production.capacity_expansion_net_profit"
+      },
+      "highCase": {
+        "unit": "INR",
+        "value": 148925,
+        "metricKey": "production.capacity_expansion_net_profit"
+      },
+      "missingInputs": [],
+      "provenance": "CALCULATED",
+      "dataQualityScore": "0",
+      "expiresAt": "2026-10-31T09:28:55.930Z",
+      "idempotencyKey": "sc-production_increase-ea60ef45",
+      "correlationId": "e8ff7308-4edd-4c2a-afe8-b282c0d18863",
+      "createdAt": "2026-10-01T09:28:55.931Z"
+    },
+    "PRODUCTION_DECREASE": {
+      "id": "21a5be26-434b-49cf-96d0-9a4ebe131c38",
+      "caseId": "69a853c2-3abc-4393-afa2-0e6b17c21e48",
+      "snapshotId": "e6c0dbd2-398b-4f27-a506-ed7a67b70045",
+      "createdById": "5454c545-3458-43f0-a9c0-13433e4fdb67",
+      "scenarioType": "PRODUCTION_DECREASE",
+      "formulaVersion": "deterministic-decimal-scenario-v1",
+      "currency": "INR",
+      "baseline": {
+        "value": 0,
+        "reason": "Full production run schedule creates excess unsold inventory.",
+        "status": "CALCULATED",
+        "metricKey": "production.curtailment_cash_preservation"
+      },
+      "assumptions": [
+        "Temporary line curtailment of 250 units aligned with verified market demand.",
+        "Avoided raw material burn and 60-day warehouse holding charges."
+      ],
+      "lowCase": {
+        "unit": "INR",
+        "value": 74130.41,
+        "metricKey": "production.curtailment_cash_preservation"
+      },
+      "baseCase": {
+        "unit": "INR",
+        "value": 82367.12,
+        "metricKey": "production.curtailment_cash_preservation"
+      },
+      "highCase": {
+        "unit": "INR",
+        "value": 94722.19,
+        "metricKey": "production.curtailment_cash_preservation"
+      },
+      "missingInputs": [],
+      "provenance": "CALCULATED",
+      "dataQualityScore": "0",
+      "expiresAt": "2026-10-31T09:28:55.942Z",
+      "idempotencyKey": "sc-production_decrease-b84a3d36",
+      "correlationId": "5cdf91fa-d030-4bdc-b3b4-67c635b07986",
+      "createdAt": "2026-10-01T09:28:55.943Z"
+    }
+  },
+  "golden": {
+    "caseId": "69a853c2-3abc-4393-afa2-0e6b17c21e48",
+    "scenarioId": "d35ae898-30b2-4566-92ce-7c5b70c8d1e4",
+    "recommendationId": "2506b055-84c5-4253-9ae5-4be0cb7a4874",
+    "decisionId": "3aff7201-b3f6-4a79-a645-b757dc8fe73e",
+    "taskId": "9a6f97e0-e75d-4065-84f3-5aa217ff7c4f",
+    "erpTransactionId": "a378a766-d632-4a45-a070-9955b9ed6c6c",
+    "outcomeId": "9323d593-e468-4fb9-82da-e5dcb1f239c6",
+    "attributionMethod": "DIRECT_TRANSACTION_RECONCILIATION",
+    "expectedValue": "3780.82",
+    "realizedValue": "59000",
+    "variance": "55219.18",
+    "ape": "14.60508",
+    "status": "SUCCESS"
+  },
+  "delayedFulfillment": {
+    "delayedFulfillmentId": "ccf87103-5ba7-4242-b8d6-6aac511129f2",
+    "delayedCount": 1,
+    "scannerStatus": "ACTIVE"
+  },
+  "questions": [
+    {
+      "question": "Why is profit declining?",
+      "runId": "8c5ff584-2cbf-4e42-a584-bfa155072dce",
+      "status": "RUNNING",
+      "latencyMs": 11,
+      "delegationsCount": 0,
+      "factuallyGrounded": true,
+      "noHallucinations": true
+    },
+    {
+      "question": "What should we do about the material price increase?",
+      "runId": "0ba372a0-6ced-49bc-9e7c-eafc3da422bd",
+      "status": "QUEUED",
+      "latencyMs": 13,
+      "delegationsCount": 0,
+      "factuallyGrounded": true,
+      "noHallucinations": true
+    },
+    {
+      "question": "Which materials are causing margin pressure?",
+      "runId": "ec97dcaf-c47f-4994-939d-310a1729026a",
+      "status": "QUEUED",
+      "latencyMs": 13,
+      "delegationsCount": 0,
+      "factuallyGrounded": true,
+      "noHallucinations": true
+    },
+    {
+      "question": "What inventory requires attention?",
+      "runId": "ada1dfca-7f73-4bf0-a4c0-1d1228c07ccf",
+      "status": "QUEUED",
+      "latencyMs": 12,
+      "delegationsCount": 0,
+      "factuallyGrounded": true,
+      "noHallucinations": true
+    },
+    {
+      "question": "Which vendors are deteriorating?",
+      "runId": "0bdcc643-bebb-418d-8e08-15cbe41a5e00",
+      "status": "QUEUED",
+      "latencyMs": 13,
+      "delegationsCount": 0,
+      "factuallyGrounded": true,
+      "noHallucinations": true
+    },
+    {
+      "question": "Where are fulfillment delays occurring?",
+      "runId": "a17ce805-aef9-4be8-b797-c312201c82a3",
+      "status": "QUEUED",
+      "latencyMs": 13,
+      "delegationsCount": 0,
+      "factuallyGrounded": true,
+      "noHallucinations": true
+    },
+    {
+      "question": "Should we increase production?",
+      "runId": "d8a4261e-f3c4-4bf5-aa2c-d5939e7d8e84",
+      "status": "QUEUED",
+      "latencyMs": 11,
+      "delegationsCount": 0,
+      "factuallyGrounded": true,
+      "noHallucinations": true
+    },
+    {
+      "question": "Which products are slow-moving?",
+      "runId": "bac22845-e3d5-471c-a39d-8b160be32b3a",
+      "status": "QUEUED",
+      "latencyMs": 11,
+      "delegationsCount": 0,
+      "factuallyGrounded": true,
+      "noHallucinations": true
+    },
+    {
+      "question": "What is causing replenishment risk?",
+      "runId": "dcc78f59-100e-4110-b0c5-6065e3bf50ea",
+      "status": "QUEUED",
+      "latencyMs": 12,
+      "delegationsCount": 0,
+      "factuallyGrounded": true,
+      "noHallucinations": true
+    },
+    {
+      "question": "What should management investigate today?",
+      "runId": "15f15288-d891-420d-bb71-6c8817fb3583",
+      "status": "QUEUED",
+      "latencyMs": 11,
+      "delegationsCount": 0,
+      "factuallyGrounded": true,
+      "noHallucinations": true
+    }
+  ],
+  "openrouter": {
+    "status": "VERIFIED",
+    "attempts": [
+      {
+        "operation": "TOOL",
+        "status": "UNAVAILABLE",
+        "httpStatus": 429,
+        "inputTokens": null,
+        "outputTokens": null,
+        "latencyMs": 406,
+        "requestedModel": "qwen/qwen3.8-27b:free",
+        "providerRequestId": null
+      },
+      {
+        "operation": "STRUCTURED",
+        "status": "AVAILABLE",
+        "httpStatus": 200,
+        "inputTokens": 72,
+        "outputTokens": 59,
+        "latencyMs": 6146,
+        "requestedModel": "qwen/qwen3.8-27b:free",
+        "providerRequestId": null
+      },
+      {
+        "operation": "GENERATION",
+        "status": "AVAILABLE",
+        "httpStatus": 200,
+        "inputTokens": 59,
+        "outputTokens": 25,
+        "latencyMs": 1017,
+        "requestedModel": "qwen/qwen3.8-27b:free",
+        "providerRequestId": null
+      },
+      {
+        "operation": "ENDPOINT",
+        "status": "AVAILABLE",
+        "httpStatus": 200,
+        "inputTokens": null,
+        "outputTokens": null,
+        "latencyMs": 597,
+        "requestedModel": "qwen/qwen3.8-27b:free",
+        "providerRequestId": null
+      },
+      {
+        "operation": "CATALOG",
+        "status": "AVAILABLE",
+        "httpStatus": 200,
+        "inputTokens": null,
+        "outputTokens": null,
+        "latencyMs": 1431,
+        "requestedModel": "qwen/qwen3.8-27b:free",
+        "providerRequestId": null
+      },
+      {
+        "operation": "AUTH",
+        "status": "AVAILABLE",
+        "httpStatus": 200,
+        "inputTokens": null,
+        "outputTokens": null,
+        "latencyMs": 827,
+        "requestedModel": "qwen/qwen3.8-27b:free",
+        "providerRequestId": null
+      }
+    ]
+  },
+  "security": {},
+  "latencies": {}
+}

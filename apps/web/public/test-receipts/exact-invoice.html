@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tax Invoice - Fardeen Enterprises (INV-FE-2026-0042)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    @media print {
+      body { margin: 0; padding: 0; background: #fff; }
+      .no-print { display: none !important; }
+      .invoice-box { border: 1px solid #333 !important; box-shadow: none !important; margin: 0 !important; width: 100% !important; max-width: 100% !important; }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+      background: #f1f5f9;
+      color: #0f172a;
+      padding: 30px 15px;
+    }
+    .toolbar {
+      max-width: 800px;
+      margin: 0 auto 20px auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .btn {
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-print { background: #f59e0b; color: #000; border: none; }
+    .btn-print:hover { background: #d97706; }
+    .btn-back { background: #fff; color: #334155; border: 1px solid #cbd5e1; }
+    .btn-back:hover { background: #f8fafc; }
+    .invoice-box {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #fff;
+      border: 1px solid #cbd5e1;
+      padding: 36px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+    .header-banner {
+      background: #0f172a;
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+    .header-banner h1 { font-size: 16px; font-weight: 800; letter-spacing: 0.05em; }
+    .header-banner span { font-size: 11px; font-weight: 700; color: #94a3b8; text-transform: uppercase; }
+    .meta-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 24px; margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid #e2e8f0; }
+    .vendor-title { font-size: 18px; font-weight: 800; color: #0f172a; margin-bottom: 4px; }
+    .gstin { font-weight: 700; color: #334155; font-size: 13px; margin-bottom: 4px; }
+    .address { color: #64748b; font-size: 12px; line-height: 1.5; }
+    .meta-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    .meta-table td { padding: 4px 0; }
+    .meta-table td:first-child { color: #64748b; font-weight: 600; width: 45%; }
+    .meta-table td:last-child { color: #0f172a; font-weight: 700; }
+    .highlight-po { color: #b45309 !important; font-size: 13px; font-family: 'JetBrains Mono', monospace; }
+    .bill-to-section { margin-bottom: 24px; }
+    .section-label { font-size: 11px; font-weight: 800; text-transform: uppercase; color: #64748b; letter-spacing: 0.05em; margin-bottom: 6px; }
+    .consignee-name { font-size: 15px; font-weight: 800; color: #0f172a; }
+    .items-table { width: 100%; border-collapse: collapse; margin-bottom: 24px; font-size: 12px; }
+    .items-table th { background: #f8fafc; border: 1px solid #e2e8f0; padding: 10px 12px; text-align: left; font-size: 11px; font-weight: 800; color: #475569; text-transform: uppercase; }
+    .items-table td { border: 1px solid #e2e8f0; padding: 10px 12px; color: #1e293b; }
+    .items-table .text-right { text-align: right; }
+    .items-table .text-center { text-align: center; }
+    .item-code { font-weight: 700; color: #0f172a; font-family: 'JetBrains Mono', monospace; font-size: 12px; }
+    .item-desc { color: #64748b; font-size: 11px; margin-top: 2px; }
+    .summary-grid { display: grid; grid-template-columns: 1fr 300px; gap: 20px; margin-top: 20px; }
+    .terms-box { border: 1px solid #e2e8f0; background: #fafafa; border-radius: 8px; padding: 14px; font-size: 11px; color: #64748b; }
+    .totals-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    .totals-table td { padding: 6px 0; }
+    .totals-table td:last-child { text-align: right; font-weight: 700; }
+    .grand-total { border-top: 2px solid #0f172a; padding-top: 8px; font-size: 15px; font-weight: 800; color: #0f172a; }
+    .grand-total td:last-child { color: #b45309; }
+    .sign-section { display: flex; justify-content: space-between; align-items: flex-end; margin-top: 40px; padding-top: 24px; border-top: 1px solid #e2e8f0; font-size: 11px; color: #64748b; }
+  </style>
+</head>
+<body>
+  <div class="toolbar no-print">
+    <a href="/test-receipts/index.html" class="btn btn-back">&larr; Back to Test Suite</a>
+    <button onclick="window.print()" class="btn btn-print">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+      Print / Save as PDF
+    </button>
+  </div>
+
+  <div class="invoice-box">
+    <div class="header-banner">
+      <h1>TAX INVOICE &amp; DELIVERY CHALLAN</h1>
+      <span>Original for Consignee</span>
+    </div>
+
+    <div class="meta-grid">
+      <div>
+        <div class="section-label">Supplier / Vendor Details</div>
+        <div class="vendor-title">FARDEEN ENTERPRISES</div>
+        <div class="gstin">GSTIN: 23ADEFS1382A1ZL</div>
+        <div class="address">
+          65/8, Gram Bardari, Indore,<br>
+          Madhya Pradesh - 453555, India<br>
+          Contact: sales@fardeenenterprises.com | +91 98260 12345
+        </div>
+      </div>
+      <div>
+        <table class="meta-table">
+          <tr>
+            <td>Invoice No:</td>
+            <td>INV-FE-2026-0042</td>
+          </tr>
+          <tr>
+            <td>Invoice Date:</td>
+            <td>09-Sep-2026</td>
+          </tr>
+          <tr>
+            <td>PO Reference:</td>
+            <td class="highlight-po">PO-2026-012</td>
+          </tr>
+          <tr>
+            <td>Challan No:</td>
+            <td>DC-2026-0881</td>
+          </tr>
+          <tr>
+            <td>Place of Supply:</td>
+            <td>Madhya Pradesh (Code 23)</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="bill-to-section">
+      <div class="section-label">Billed &amp; Shipped To (Consignee)</div>
+      <div class="consignee-name">SYNERGY INTERNATIONAL</div>
+      <div class="gstin">GSTIN/UIN: 23ADYPP8947M1ZW</div>
+      <div class="address">
+        Khasra no. 378/2/3, Godown 10, Radheshyam Warehouse, Saraswati Udhyog Nagar,<br>
+        Nemawar Road, Indore HQ Plant - 452001, Madhya Pradesh, India
+      </div>
+    </div>
+
+    <table class="items-table">
+      <thead>
+        <tr>
+          <th style="width: 40px;" class="text-center">#</th>
+          <th>Description of Goods &amp; Item Code</th>
+          <th class="text-center">HSN/SAC</th>
+          <th class="text-right">Quantity</th>
+          <th class="text-center">UOM</th>
+          <th class="text-right">Rate (₹)</th>
+          <th class="text-right">Amount (₹)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-center">1</td>
+          <td>
+            <div class="item-code">A-ROD-727MM</div>
+            <div class="item-desc">A ROD - 727MM High Grade Precision Rod</div>
+          </td>
+          <td class="text-center">48191010</td>
+          <td class="text-right"><strong>100</strong></td>
+          <td class="text-center">kg</td>
+          <td class="text-right">120.00</td>
+          <td class="text-right"><strong>12,000.00</strong></td>
+        </tr>
+        <tr>
+          <td class="text-center">2</td>
+          <td>
+            <div class="item-code">5-PIPES-10-PCS-SET</div>
+            <div class="item-desc">5 PIPES - 10 PCS / SET Industrial Pipe Assembly</div>
+          </td>
+          <td class="text-center">48191010</td>
+          <td class="text-right"><strong>130</strong></td>
+          <td class="text-center">kg</td>
+          <td class="text-right">40.00</td>
+          <td class="text-right"><strong>5,200.00</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="summary-grid">
+      <div class="terms-box">
+        <strong>Terms &amp; Conditions:</strong><br>
+        1. Goods once inspected and accepted at Indore HQ Plant cannot be returned without formal Debit Note.<br>
+        2. Payment Terms: Net 30 Days as agreed in PO-2026-012.<br>
+        3. All disputes subject to Indore jurisdiction.
+      </div>
+      <div>
+        <table class="totals-table">
+          <tr>
+            <td>Total Taxable Value:</td>
+            <td>₹ 17,200.00</td>
+          </tr>
+          <tr>
+            <td>CGST (0.0%):</td>
+            <td>₹ 0.00</td>
+          </tr>
+          <tr>
+            <td>SGST (0.0%):</td>
+            <td>₹ 0.00</td>
+          </tr>
+          <tr class="grand-total">
+            <td>Grand Total:</td>
+            <td>₹ 17,200.00</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="sign-section">
+      <div>
+        <div>Received in Good Condition:</div>
+        <div style="margin-top: 30px; border-top: 1px dashed #94a3b8; width: 180px; padding-top: 4px;">Receiver's Signature &amp; Stamp</div>
+      </div>
+      <div style="text-align: right;">
+        <div>For <strong>Fardeen Enterprises</strong></div>
+        <div style="margin-top: 30px; border-top: 1px dashed #94a3b8; width: 180px; margin-left: auto; padding-top: 4px;">Authorised Signatory</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

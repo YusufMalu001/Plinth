@@ -1,0 +1,3 @@
+{
+  "extends": ["@synergy/eslint-config/next"]
+}

@@ -1,0 +1,66 @@
+# ==============================================================================
+# SYNERGY ERP - DOCKER COMPOSE DEVELOPMENT OVERRIDES
+# ==============================================================================
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: synergy-postgres-dev
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_DB: ${POSTGRES_DB:-synergy_erp}
+    ports:
+      - "${POSTGRES_PORT:-55432}:5432"
+    volumes:
+      - synergy_pgdata_dev:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres} -d ${POSTGRES_DB:-synergy_erp}"]
+      interval: 2s
+      timeout: 3s
+      retries: 15
+
+  api:
+    image: node:18-alpine
+    container_name: synergy-api-dev
+    command: npm run dev --workspace=services/api
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/apps/web/.next
+    ports:
+      - "5000:5000"
+    environment:
+      - NODE_ENV=development
+      - PORT=5000
+      - DATABASE_URL=postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@postgres:5432/${POSTGRES_DB:-synergy_erp}?schema=public&connection_limit=5&pool_timeout=10
+      - DIRECT_URL=postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@postgres:5432/${POSTGRES_DB:-synergy_erp}?schema=public
+      - JWT_SECRET=${JWT_SECRET}
+      - INTELLIGENCE_ENABLED=${INTELLIGENCE_ENABLED:-false}
+      - INTELLIGENCE_EVENT_TRIGGERS_ENABLED=${INTELLIGENCE_EVENT_TRIGGERS_ENABLED:-false}
+      - INTELLIGENCE_NOTIFICATIONS_ENABLED=${INTELLIGENCE_NOTIFICATIONS_ENABLED:-false}
+    working_dir: /app
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  web:
+    image: node:18-alpine
+    container_name: synergy-web-dev
+    command: npm run dev --workspace=apps/web
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/apps/web/.next
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - PORT=3000
+      - NEXT_PUBLIC_API_URL=http://localhost:5000/api/v1
+    depends_on:
+      - api
+    working_dir: /app
+
+volumes:
+  synergy_pgdata_dev:

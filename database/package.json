@@ -1,0 +1,51 @@
+{
+  "name": "@synergy/database",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Database layer for Synergy ERP containing Prisma ORM configuration",
+  "main": "./prisma/client/index.js",
+  "types": "./prisma/client/index.d.ts",
+  "scripts": {
+    "db:generate": "dotenv -e ../.env -- prisma generate --schema=./prisma/schema.prisma",
+    "db:migrate": "dotenv -e ../.env -- prisma migrate dev",
+    "db:deploy": "dotenv -e ../.env -- prisma migrate deploy",
+    "db:seed": "dotenv -e ../.env -- prisma db seed",
+    "db:seed-shop-floor-demo": "dotenv -e ../.env -- ts-node prisma/seed/seed-shop-floor-demo.ts",
+    "db:seed-uoms": "dotenv -e ../.env -- node seed-uoms.js",
+    "db:seed-rbac": "dotenv -e ../.env -- ts-node seed-rbac.ts",
+    "db:seed-accounts-rbac": "dotenv -e ../.env -- ts-node prisma/seed/seed-accounts-rbac.ts",
+    "db:seed-accounts-test-user": "dotenv -e ../.env -- ts-node prisma/seed/seed-accounts-test-user.ts",
+    "db:seed-hsn-sac": "dotenv -e ../.env -- ts-node prisma/seed/seed-hsn-sac-only.ts",
+    "db:verify-hsn-sac": "ts-node prisma/seed/verify-hsn-sac-source.ts",
+    "db:verify-hsn-sac-db": "dotenv -e ../.env -- ts-node prisma/seed/verify-hsn-sac-database.ts",
+    "db:purge-dummy-uoms": "dotenv -e ../.env -- ts-node prisma/seed/purge-dummy-uoms.ts",
+    "db:cleanup-placeholders": "dotenv -e ../.env -- node cleanup-placeholder-data.js",
+    "db:cleanup-demo": "dotenv -e ../.env -- node cleanup-demo-data.js",
+    "db:reset-sales": "node reset-sales-data.js --apply",
+    "db:reset-procurement": "node reset-procurement-data.js",
+    "db:disambiguate-boms": "node disambiguate-duplicate-boms.js",
+    "db:reset-client-master-data": "dotenv -e ../.env -- node reset-client-master-data.js",
+    "db:import-client": "dotenv -e ../.env -- node import-client-workbooks.js",
+    "db:seed-synergy-real": "dotenv -e ../.env -- ts-node prisma/seed/seed-official-synergy-data.ts",
+    "db:studio": "dotenv -e ../.env -- prisma studio",
+    "db:seed-logistics": "dotenv -e ../.env -- ts-node prisma/seed/seed-logistics-dispatch.ts",
+    "db:seed-all": "dotenv -e ../.env -- ts-node prisma/seed/seed-all.ts",
+    "db:seed-vendor-scoring": "dotenv -e ../.env -- ts-node prisma/seed/seed-vendor-scoring-data.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "prisma": {
+    "schema": "prisma/schema.prisma",
+    "seed": "ts-node prisma/seed/seed.ts"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.22.0",
+    "argon2": "^0.45.1",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "dotenv-cli": "^8.0.0",
+    "prisma": "^5.22.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  }
+}

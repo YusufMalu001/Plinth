@@ -1,0 +1,30 @@
+# dependencies
+node_modules/
+
+# build outputs
+.next/
+dist/
+.turbo/
+coverage/
+
+# playwright / test artifacts
+test-results/
+playwright-report/
+
+# sensitive artifacts — NEVER commit (client data)
+*.sql
+*.SQL
+output/
+Accounts.txt
+
+# env
+.env
+.env.local
+.env.*.local
+
+# os/editor
+.DS_Store
+Thumbs.db
+
+# next-generated
+next-env.d.ts

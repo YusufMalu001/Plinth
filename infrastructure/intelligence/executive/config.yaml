@@ -1,0 +1,23 @@
+model: nvidia/nemotron-3-super-120b-a12b:free
+auxiliary: { free_only: true, openrouter_model: "nvidia/nemotron-3-super-120b-a12b:free" }
+toolsets: [mcp-synergy]
+platform_toolsets: { api_server: [mcp-synergy] }
+agent:
+  max_turns: 5
+  disabled_toolsets: [terminal, file, browser, web, search, memory, skills, delegation, code_execution, cronjob, messaging, connections]
+memory: { memory_enabled: false, user_profile_enabled: false }
+browser: { backend: "off" }
+security: { allow_lazy_installs: false, redact_secrets: true }
+approvals: { mode: manual, unattended_mode: deny, single_query_mode: deny, cron_mode: deny, deny: ["*"] }
+tool_loop_guardrails: { warnings_enabled: true, hard_stop_enabled: true, non_interactive_hard_stop_enabled: true }
+mcp_servers:
+  synergy:
+    enabled: true
+    url: "http://api:${SYNERGY_API_PORT}/api/v1/internal/intelligence/mcp"
+    headers: { Authorization: "Bearer ${SYNERGY_MCP_TOKEN}" }
+    supports_parallel_tool_calls: true
+    sampling: { enabled: false }
+    tools:
+      resources: false
+      prompts: false
+      include: [get_sales_performance, get_customer_opportunities, get_inventory_risk, get_replenishment_options, get_vendor_performance, get_production_capacity, get_quality_and_loss, get_fulfillment_sla_risk, get_financial_summary, get_metric_definition, get_resource_evidence]

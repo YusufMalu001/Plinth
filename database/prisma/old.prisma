@@ -1,0 +1,587 @@
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// ==============================================================================
+// CORE & MODULE 0 BASE MODELS
+// ==============================================================================
+
+enum Role {
+  admin
+  manager
+  employee
+}
+
+model User {
+  id           String        @id @default(uuid())
+  email        String        @unique
+  name         String?
+  password     String
+  role         Role          @default(employee)
+  isActive     Boolean       @default(true)
+  lastLoginAt  DateTime?
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  auditLogs    AuditLog[]
+  authSessions AuthSession[]
+
+  @@map("users")
+}
+
+model AuthSession {
+  id               String    @id @default(uuid())
+  userId           String
+  user             User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  refreshTokenHash String
+  expiresAt        DateTime
+  revokedAt        DateTime?
+  ipAddress        String?
+  userAgent        String?
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+
+  @@index([userId])
+  @@index([expiresAt])
+  @@map("auth_sessions")
+}
+
+model AuditLog {
+  id         String   @id @default(uuid())
+  userId     String?
+  user       User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  action     String
+  resource   String
+  resourceId String?
+  before     Json?
+  after      Json?
+  requestId  String
+  ipAddress  String?
+  createdAt  DateTime @default(now())
+
+  @@map("audit_logs")
+}
+
+model HealthCheckLog {
+  id        String   @id @default(uuid())
+  status    String
+  latencyMs Int
+  timestamp DateTime @default(now())
+
+  @@map("health_check_logs")
+}
+
+// ==============================================================================
+// MODULE 1 - MASTER DATA MANAGEMENT ENUMS
+// ==============================================================================
+
+enum LifecycleStatus {
+  DRAFT
+  PENDING_VALIDATION
+  APPROVED
+  ACTIVE
+  INACTIVE
+  SUPERSEDED
+}
+
+enum MaterialType {
+  RAW_MATERIAL
+  HARDWARE
+  PACKAGING
+  COMPONENT
+}
+
+enum ImportBatchStatus {
+  PENDING_VALIDATION
+  VALIDATED
+  PARTIALLY_COMMITTED
+  COMMITTED
+  FAILED
+  CANCELLED
+}
+
+enum ImportRowStatus {
+  PENDING
+  VALID
+  INVALID
+  COMMITTED
+  SKIPPED
+  DUPLICATE_FLAGGED
+}
+
+// ==============================================================================
+// MODULE 1 - PRODUCT HIERARCHY & SPECIFICATIONS
+// ==============================================================================
+
+model Category {
+  id              String          @id @default(uuid())
+  code            String          @unique
+  name            String
+  description     String?
+  parentId        String?
+  parent          Category?       @relation("CategoryHierarchy", fields: [parentId], references: [id], onDelete: Restrict)
+  children        Category[]      @relation("CategoryHierarchy")
+  status          LifecycleStatus @default(DRAFT)
+  deactivatedAt   DateTime?
+  supersededById  String?         @unique
+  supersededBy    Category?       @relation("CategorySupersession", fields: [supersededById], references: [id])
+  supersedes      Category?       @relation("CategorySupersession")
+  productFamilies ProductFamily[]
+  products        Product[]
+  materials       Material[]
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+
+  @@map("categories")
+}
+
+model ProductFamily {
+  id             String          @id @default(uuid())
+  code           String          @unique
+  name           String
+  description    String?
+  categoryId     String
+  category       Category        @relation(fields: [categoryId], references: [id], onDelete: Restrict)
+  status         LifecycleStatus @default(DRAFT)
+  deactivatedAt  DateTime?
+  supersededById String?         @unique
+  supersededBy   ProductFamily?  @relation("ProductFamilySupersession", fields: [supersededById], references: [id])
+  supersedes     ProductFamily?  @relation("ProductFamilySupersession")
+  products       Product[]
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+
+  @@map("product_families")
+}
+
+model Product {
+  id              String           @id @default(uuid())
+  sku             String           @unique
+  name            String
+  description     String?
+  productFamilyId String
+  productFamily   ProductFamily    @relation(fields: [productFamilyId], references: [id], onDelete: Restrict)
+  categoryId      String
+  category        Category         @relation(fields: [categoryId], references: [id], onDelete: Restrict)
+  uomId           String
+  uom             UnitOfMeasure    @relation(fields: [uomId], references: [id], onDelete: Restrict)
+  status          LifecycleStatus  @default(DRAFT)
+  version         Int              @default(1)
+  effectiveDate   DateTime?
+  metadata        Json?
+  deactivatedAt   DateTime?
+  supersededById  String?          @unique
+  supersededBy    Product?         @relation("ProductSupersession", fields: [supersededById], references: [id])
+  supersedes      Product?         @relation("ProductSupersession")
+  variants        ProductVariant[]
+  routes          ProductRoute[]
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+
+  @@map("products")
+}
+
+model ProductVariant {
+  id             String          @id @default(uuid())
+  productId      String
+  product        Product         @relation(fields: [productId], references: [id], onDelete: Restrict)
+  sku            String          @unique
+  name           String
+  color          String?
+  size           String?
+  specifications Json?
+  status         LifecycleStatus @default(DRAFT)
+  version        Int             @default(1)
+  deactivatedAt  DateTime?
+  supersededById String?         @unique
+  supersededBy   ProductVariant? @relation("ProductVariantSupersession", fields: [supersededById], references: [id])
+  supersedes     ProductVariant? @relation("ProductVariantSupersession")
+  routes         ProductRoute[]
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+
+  @@map("product_variants")
+}
+
+// ==============================================================================
+// MODULE 1 - MATERIALS, COMPONENTS & PACKAGING
+// ==============================================================================
+
+model Material {
+  id             String          @id @default(uuid())
+  code           String          @unique
+  name           String
+  description    String?
+  materialType   MaterialType
+  categoryId     String?
+  category       Category?       @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+  uomId          String
+  uom            UnitOfMeasure   @relation(fields: [uomId], references: [id], onDelete: Restrict)
+  specs          Json
+  status         LifecycleStatus @default(DRAFT)
+  version        Int             @default(1)
+  effectiveDate  DateTime?
+  deactivatedAt  DateTime?
+  supersededById String?         @unique
+  supersededBy   Material?       @relation("MaterialSupersession", fields: [supersededById], references: [id])
+  supersedes     Material?       @relation("MaterialSupersession")
+  packSizes      PackSize[]
+  wastageRules   WastageRule[]
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+
+  @@map("materials")
+}
+
+// ==============================================================================
+// MODULE 1 - UNITS OF MEASURE, CONVERSIONS & PACK SIZES
+// ==============================================================================
+
+model UnitOfMeasure {
+  id              String          @id @default(uuid())
+  code            String          @unique
+  name            String
+  symbol          String
+  dimension       String?
+  status          LifecycleStatus @default(DRAFT)
+  deactivatedAt   DateTime?
+  products        Product[]
+  materials       Material[]
+  conversionsFrom UomConversion[] @relation("FromUom")
+  conversionsTo   UomConversion[] @relation("ToUom")
+  packSizes       PackSize[]
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+
+  @@map("units_of_measure")
+}
+
+model UomConversion {
+  id             String          @id @default(uuid())
+  fromUomId      String
+  fromUom        UnitOfMeasure   @relation("FromUom", fields: [fromUomId], references: [id], onDelete: Restrict)
+  toUomId        String
+  toUom          UnitOfMeasure   @relation("ToUom", fields: [toUomId], references: [id], onDelete: Restrict)
+  factor         Decimal         @db.Decimal(18, 6)
+  effectiveDate  DateTime
+  version        Int             @default(1)
+  status         LifecycleStatus @default(DRAFT)
+  deactivatedAt  DateTime?
+  supersededById String?         @unique
+  supersededBy   UomConversion?  @relation("UomConversionSupersession", fields: [supersededById], references: [id])
+  supersedes     UomConversion?  @relation("UomConversionSupersession")
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+
+  @@unique([fromUomId, toUomId, version])
+  @@map("uom_conversions")
+}
+
+model PackSize {
+  id             String          @id @default(uuid())
+  materialId     String
+  material       Material        @relation(fields: [materialId], references: [id], onDelete: Restrict)
+  packQty        Decimal         @db.Decimal(18, 4)
+  uomId          String
+  uom            UnitOfMeasure   @relation(fields: [uomId], references: [id], onDelete: Restrict)
+  effectiveDate  DateTime
+  version        Int             @default(1)
+  status         LifecycleStatus @default(DRAFT)
+  deactivatedAt  DateTime?
+  supersededById String?         @unique
+  supersededBy   PackSize?       @relation("PackSizeSupersession", fields: [supersededById], references: [id])
+  supersedes     PackSize?       @relation("PackSizeSupersession")
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+
+  @@unique([materialId, uomId, version])
+  @@map("pack_sizes")
+}
+
+// ==============================================================================
+// MODULE 1 - EXTERNAL & INTERNAL MASTER ENTITIES
+// ==============================================================================
+
+model Vendor {
+  id             String          @id @default(uuid())
+  code           String          @unique
+  name           String
+  contactEmail   String?
+  contactPhone   String?
+  taxNumber      String?
+  address        Json?
+  currency       String          @default("INR")
+  paymentTerms   String?
+  status         LifecycleStatus @default(DRAFT)
+  deactivatedAt  DateTime?
+  supersededById String?         @unique
+  supersededBy   Vendor?         @relation("VendorSupersession", fields: [supersededById], references: [id])
+  supersedes     Vendor?         @relation("VendorSupersession")
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+
+  @@map("vendors")
+}
+
+model Customer {
+  id              String          @id @default(uuid())
+  code            String          @unique
+  name            String
+  contactEmail    String?
+  contactPhone    String?
+  taxNumber       String?
+  billingAddress  Json?
+  shippingAddress Json?
+  currency        String          @default("INR")
+  creditLimit     Decimal?        @db.Decimal(18, 2)
+  status          LifecycleStatus @default(DRAFT)
+  deactivatedAt   DateTime?
+  supersededById  String?         @unique
+  supersededBy    Customer?       @relation("CustomerSupersession", fields: [supersededById], references: [id])
+  supersedes      Customer?       @relation("CustomerSupersession")
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+
+  @@map("customers")
+}
+
+model Employee {
+  id            String          @id @default(uuid())
+  employeeCode  String          @unique
+  firstName     String
+  lastName      String
+  email         String          @unique
+  phone         String?
+  role          String
+  departmentId  String?
+  department    Department?     @relation(fields: [departmentId], references: [id], onDelete: SetNull)
+  status        LifecycleStatus @default(DRAFT)
+  deactivatedAt DateTime?
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
+
+  @@map("employees")
+}
+
+model SalesChannel {
+  id            String          @id @default(uuid())
+  code          String          @unique
+  name          String
+  description   String?
+  currency      String          @default("INR")
+  status        LifecycleStatus @default(DRAFT)
+  deactivatedAt DateTime?
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
+
+  @@map("sales_channels")
+}
+
+// ==============================================================================
+// MODULE 1 - ORGANIZATIONAL STRUCTURE
+// ==============================================================================
+
+model Factory {
+  id            String              @id @default(uuid())
+  code          String              @unique
+  name          String
+  address       Json?
+  status        LifecycleStatus     @default(DRAFT)
+  deactivatedAt DateTime?
+  departments   Department[]
+  locations     WarehouseLocation[]
+  createdAt     DateTime            @default(now())
+  updatedAt     DateTime            @updatedAt
+
+  @@map("factories")
+}
+
+model Department {
+  id            String          @id @default(uuid())
+  code          String          @unique
+  name          String
+  factoryId     String
+  factory       Factory         @relation(fields: [factoryId], references: [id], onDelete: Restrict)
+  status        LifecycleStatus @default(DRAFT)
+  deactivatedAt DateTime?
+  workCenters   WorkCenter[]
+  employees     Employee[]
+  routeSteps    RouteStep[]
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
+
+  @@map("departments")
+}
+
+model WorkCenter {
+  id              String          @id @default(uuid())
+  code            String          @unique
+  name            String
+  departmentId    String
+  department      Department      @relation(fields: [departmentId], references: [id], onDelete: Restrict)
+  capacityPerHour Decimal?        @db.Decimal(10, 2)
+  status          LifecycleStatus @default(DRAFT)
+  deactivatedAt   DateTime?
+  routeSteps      RouteStep[]
+  wastageRules    WastageRule[]
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+
+  @@map("work_centers")
+}
+
+model WarehouseLocation {
+  id            String          @id @default(uuid())
+  code          String          @unique
+  name          String
+  factoryId     String?
+  factory       Factory?        @relation(fields: [factoryId], references: [id], onDelete: SetNull)
+  type          String
+  status        LifecycleStatus @default(DRAFT)
+  deactivatedAt DateTime?
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
+
+  @@map("warehouse_locations")
+}
+
+// ==============================================================================
+// MODULE 1 - QC, WASTAGE RULES & PRODUCTION ROUTING
+// ==============================================================================
+
+model QcRule {
+  id             String          @id @default(uuid())
+  code           String          @unique
+  name           String
+  description    String?
+  targetType     String
+  targetId       String?
+  parameters     Json
+  version        Int             @default(1)
+  effectiveFrom  DateTime
+  effectiveTo    DateTime?
+  status         LifecycleStatus @default(DRAFT)
+  deactivatedAt  DateTime?
+  supersededById String?         @unique
+  supersededBy   QcRule?         @relation("QcRuleSupersession", fields: [supersededById], references: [id])
+  supersedes     QcRule?         @relation("QcRuleSupersession")
+  routeSteps     RouteStep[]
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+
+  @@map("qc_rules")
+}
+
+model WastageRule {
+  id                 String          @id @default(uuid())
+  code               String          @unique
+  name               String
+  materialId         String?
+  material           Material?       @relation(fields: [materialId], references: [id], onDelete: SetNull)
+  workCenterId       String?
+  workCenter         WorkCenter?     @relation(fields: [workCenterId], references: [id], onDelete: SetNull)
+  standardWastagePct Decimal         @db.Decimal(5, 2)
+  tolerancePct       Decimal         @db.Decimal(5, 2)
+  version            Int             @default(1)
+  effectiveFrom      DateTime
+  effectiveTo        DateTime?
+  status             LifecycleStatus @default(DRAFT)
+  deactivatedAt      DateTime?
+  supersededById     String?         @unique
+  supersededBy       WastageRule?    @relation("WastageRuleSupersession", fields: [supersededById], references: [id])
+  supersedes         WastageRule?    @relation("WastageRuleSupersession")
+  createdAt          DateTime        @default(now())
+  updatedAt          DateTime        @updatedAt
+
+  @@map("wastage_rules")
+}
+
+model ProductRoute {
+  id               String          @id @default(uuid())
+  code             String          @unique
+  name             String
+  productId        String?
+  product          Product?        @relation(fields: [productId], references: [id], onDelete: SetNull)
+  productVariantId String?
+  productVariant   ProductVariant? @relation(fields: [productVariantId], references: [id], onDelete: SetNull)
+  version          Int             @default(1)
+  effectiveFrom    DateTime
+  effectiveTo      DateTime?
+  status           LifecycleStatus @default(DRAFT)
+  deactivatedAt    DateTime?
+  supersededById   String?         @unique
+  supersededBy     ProductRoute?   @relation("ProductRouteSupersession", fields: [supersededById], references: [id])
+  supersedes       ProductRoute?   @relation("ProductRouteSupersession")
+  steps            RouteStep[]
+  createdAt        DateTime        @default(now())
+  updatedAt        DateTime        @updatedAt
+
+  @@map("product_routes")
+}
+
+model RouteStep {
+  id                      String          @id @default(uuid())
+  routeId                 String
+  route                   ProductRoute    @relation(fields: [routeId], references: [id], onDelete: Cascade)
+  sequenceNumber          Int
+  stepName                String
+  workCenterId            String
+  workCenter              WorkCenter      @relation(fields: [workCenterId], references: [id], onDelete: Restrict)
+  departmentId            String
+  department              Department      @relation(fields: [departmentId], references: [id], onDelete: Restrict)
+  standardDurationMinutes Int?
+  isQcRequired            Boolean         @default(false)
+  qcRuleId                String?
+  qcRule                  QcRule?         @relation(fields: [qcRuleId], references: [id], onDelete: SetNull)
+  status                  LifecycleStatus @default(DRAFT)
+  createdAt               DateTime        @default(now())
+  updatedAt               DateTime        @updatedAt
+
+  @@unique([routeId, sequenceNumber])
+  @@map("route_steps")
+}
+
+// ==============================================================================
+// MODULE 1 - STAGED MASTER DATA IMPORT WORKFLOW
+// ==============================================================================
+
+model MasterDataImportBatch {
+  id            String                @id @default(uuid())
+  batchNumber   String                @unique
+  entityType    String
+  totalRows     Int                   @default(0)
+  validRows     Int                   @default(0)
+  invalidRows   Int                   @default(0)
+  committedRows Int                   @default(0)
+  status        ImportBatchStatus     @default(PENDING_VALIDATION)
+  importedBy    String
+  metadata      Json?
+  rows          MasterDataImportRow[]
+  createdAt     DateTime              @default(now())
+  updatedAt     DateTime              @updatedAt
+
+  @@map("master_data_import_batches")
+}
+
+model MasterDataImportRow {
+  id                 String                @id @default(uuid())
+  batchId            String
+  batch              MasterDataImportBatch @relation(fields: [batchId], references: [id], onDelete: Cascade)
+  rowNumber          Int
+  rawData            Json
+  normalizedData     Json?
+  status             ImportRowStatus       @default(PENDING)
+  errors             Json?
+  duplicateMatchId   String?
+  resolutionDecision String?
+  createdAt          DateTime              @default(now())
+  updatedAt          DateTime              @updatedAt
+
+  @@unique([batchId, rowNumber])
+  @@map("master_data_import_rows")
+}

@@ -1,0 +1,19 @@
+{
+  "_notice": "TEMPORARY TALLY BATCH EXPORT FILE — PENDING REAL CONNECTOR V-006/V-007",
+  "batchId": "b275781d-4117-4712-96c0-9d9a3c3e988c",
+  "batchNumber": "BATCH-PO-1789025818292-4057",
+  "sourceType": "PURCHASE_ORDER",
+  "exportedAt": "2026-09-10T07:36:58.341Z",
+  "itemCount": 1,
+  "items": [
+    {
+      "itemId": "aa49a99f-cdfc-4334-967c-80e27740319d",
+      "sourceType": "PURCHASE_ORDER",
+      "sourceId": "7302c47f-bf60-4a9f-874d-1aa9e71d0e74",
+      "amount": "11800",
+      "currency": "INR",
+      "payloadFingerprint": "29c43f4582e08edf82bbe86186add8e44b3d36e7c5cff9487b87f5a8aad38419",
+      "tallyVoucherPayload": {}
+    }
+  ]
+}

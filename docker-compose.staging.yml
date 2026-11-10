@@ -1,0 +1,158 @@
+# ==============================================================================
+# SYNERGY ERP - STAGING DOCKER COMPOSE ORCHESTRATION (PORT 4000)
+# ==============================================================================
+
+x-intelligence-runtime: &intelligence-runtime
+  image: nousresearch/hermes-agent:v2026.9.14@sha256:99641e57ec762c59e54cb44aa6746b7fc68c18b3c5ddb088af54234c613d9294
+  profiles: ["intelligence"]
+  restart: unless-stopped
+  command: ["gateway", "run"]
+  read_only: true
+  tmpfs: [/tmp:size=128m,noexec,nosuid,nodev, /run:size=32m,nosuid,nodev]
+  cap_drop: ["ALL"]
+  cap_add: ["CHOWN", "SETUID", "SETGID"]
+  security_opt: ["no-new-privileges:true"]
+  pids_limit: 256
+  mem_limit: 2g
+  cpus: 1.5
+  expose: ["8642"]
+  depends_on: [api]
+
+x-intelligence-runtime-env: &intelligence-runtime-env
+  OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
+  API_SERVER_ENABLED: "true"
+  API_SERVER_HOST: 0.0.0.0
+  API_SERVER_PORT: "8642"
+  API_SERVER_CORS_ORIGINS: ""
+  HERMES_UID: "10000"
+  HERMES_GID: "10000"
+  HERMES_REDACT_SECRETS: "true"
+  HERMES_DUMP_REQUESTS: "false"
+  HERMES_DUMP_REQUEST_STDOUT: "false"
+  HERMES_MAX_ITERATIONS: ${INTELLIGENCE_MAX_TOOL_CALLS:-12}
+  SYNERGY_API_PORT: ${STAGING_API_PORT:-4001}
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: synergy-staging-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_DB: ${POSTGRES_DB:-synergy_erp_staging}
+    ports:
+      - "${STAGING_POSTGRES_PORT:-54332}:5432"
+    volumes:
+      - synergy_staging_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres} -d ${POSTGRES_DB:-synergy_erp_staging}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  api:
+    image: ${API_IMAGE:-synergy-erp-api:local}
+    build:
+      context: .
+      dockerfile: infrastructure/docker/api.Dockerfile
+    container_name: synergy-staging-api
+    restart: always
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=staging
+      - PORT=${STAGING_API_PORT:-4001}
+      - DATABASE_URL=postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@postgres:5432/${POSTGRES_DB:-synergy_erp_staging}?schema=public&connection_limit=10&pool_timeout=10
+      - DIRECT_URL=postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@postgres:5432/${POSTGRES_DB:-synergy_erp_staging}?schema=public
+      - JWT_SECRET=${JWT_SECRET:-staging-secret-key-32-chars-long-jwt}
+      - JWT_REFRESH_SECRET=${JWT_REFRESH_SECRET:-staging-refresh-secret-key-32-chars}
+      - WEB_ORIGIN=${STAGING_WEB_ORIGIN:-http://localhost:4000}
+      - INTELLIGENCE_EXECUTIVE_RUNTIME_URL=http://agent-runtime-executive:8642
+      - INTELLIGENCE_SALES_RUNTIME_URL=http://agent-runtime-sales:8642
+      - INTELLIGENCE_INVENTORY_RUNTIME_URL=http://agent-runtime-inventory:8642
+      - INTELLIGENCE_PROCUREMENT_RUNTIME_URL=http://agent-runtime-procurement:8642
+      - INTELLIGENCE_PRODUCTION_RUNTIME_URL=http://agent-runtime-production:8642
+      - INTELLIGENCE_FULFILLMENT_RUNTIME_URL=http://agent-runtime-fulfillment:8642
+    ports:
+      - "${STAGING_API_PORT:-4001}:${STAGING_API_PORT:-4001}"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  web:
+    image: ${WEB_IMAGE:-synergy-erp-web:local}
+    build:
+      context: .
+      dockerfile: infrastructure/docker/web.Dockerfile
+    container_name: synergy-staging-web
+    restart: always
+    environment:
+      - NODE_ENV=staging
+      - PORT=${STAGING_WEB_PORT:-4000}
+      - INTERNAL_API_URL=http://api:${STAGING_API_PORT:-4001}/api/v1
+      - API_PORT=${STAGING_API_PORT:-4001}
+      - NEXT_PUBLIC_API_URL=${STAGING_NEXT_PUBLIC_API_URL:-http://localhost:${STAGING_API_PORT:-4001}/api/v1}
+      - NEXT_PUBLIC_APP_URL=${STAGING_WEB_ORIGIN:-http://localhost:4000}
+      - NEXT_PUBLIC_STAGING_APP_URL=${STAGING_WEB_ORIGIN:-http://localhost:4000}
+    ports:
+      - "${STAGING_WEB_PORT:-4000}:${STAGING_WEB_PORT:-4000}"
+    depends_on:
+      - api
+
+  intelligence-worker:
+    profiles: ["intelligence"]
+    build:
+      context: .
+      dockerfile: infrastructure/docker/api.Dockerfile
+    restart: unless-stopped
+    command: ["node", "dist/intelligence-worker.js"]
+    env_file: [.env]
+    environment:
+      NODE_ENV: staging
+      DATABASE_URL: postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@postgres:5432/${POSTGRES_DB:-synergy_erp_staging}?schema=public&connection_limit=10
+      DIRECT_URL: postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@postgres:5432/${POSTGRES_DB:-synergy_erp_staging}?schema=public
+      INTELLIGENCE_EXECUTIVE_RUNTIME_URL: http://agent-runtime-executive:8642
+      INTELLIGENCE_SALES_RUNTIME_URL: http://agent-runtime-sales:8642
+      INTELLIGENCE_INVENTORY_RUNTIME_URL: http://agent-runtime-inventory:8642
+      INTELLIGENCE_PROCUREMENT_RUNTIME_URL: http://agent-runtime-procurement:8642
+      INTELLIGENCE_PRODUCTION_RUNTIME_URL: http://agent-runtime-production:8642
+      INTELLIGENCE_FULFILLMENT_RUNTIME_URL: http://agent-runtime-fulfillment:8642
+    depends_on:
+      postgres: { condition: service_healthy }
+      api: { condition: service_started }
+
+  agent-runtime-executive:
+    <<: *intelligence-runtime
+    environment: { <<: *intelligence-runtime-env, API_SERVER_KEY: "${INTELLIGENCE_EXECUTIVE_RUNTIME_KEY:-}", API_SERVER_MODEL_NAME: executive-advisor, SYNERGY_MCP_TOKEN: "${INTELLIGENCE_EXECUTIVE_MCP_TOKEN:-}" }
+    volumes: [intelligence_runtime_executive:/opt/data, ./infrastructure/intelligence/executive/config.yaml:/opt/data/config.yaml:ro]
+  agent-runtime-sales:
+    <<: *intelligence-runtime
+    environment: { <<: *intelligence-runtime-env, API_SERVER_KEY: "${INTELLIGENCE_SALES_RUNTIME_KEY:-}", API_SERVER_MODEL_NAME: sales-advisor, SYNERGY_MCP_TOKEN: "${INTELLIGENCE_SALES_MCP_TOKEN:-}" }
+    volumes: [intelligence_runtime_sales:/opt/data, ./infrastructure/intelligence/sales/config.yaml:/opt/data/config.yaml:ro]
+  agent-runtime-inventory:
+    <<: *intelligence-runtime
+    environment: { <<: *intelligence-runtime-env, API_SERVER_KEY: "${INTELLIGENCE_INVENTORY_RUNTIME_KEY:-}", API_SERVER_MODEL_NAME: inventory-advisor, SYNERGY_MCP_TOKEN: "${INTELLIGENCE_INVENTORY_MCP_TOKEN:-}" }
+    volumes: [intelligence_runtime_inventory:/opt/data, ./infrastructure/intelligence/inventory/config.yaml:/opt/data/config.yaml:ro]
+  agent-runtime-procurement:
+    <<: *intelligence-runtime
+    environment: { <<: *intelligence-runtime-env, API_SERVER_KEY: "${INTELLIGENCE_PROCUREMENT_RUNTIME_KEY:-}", API_SERVER_MODEL_NAME: procurement-advisor, SYNERGY_MCP_TOKEN: "${INTELLIGENCE_PROCUREMENT_MCP_TOKEN:-}" }
+    volumes: [intelligence_runtime_procurement:/opt/data, ./infrastructure/intelligence/procurement/config.yaml:/opt/data/config.yaml:ro]
+  agent-runtime-production:
+    <<: *intelligence-runtime
+    environment: { <<: *intelligence-runtime-env, API_SERVER_KEY: "${INTELLIGENCE_PRODUCTION_RUNTIME_KEY:-}", API_SERVER_MODEL_NAME: production-advisor, SYNERGY_MCP_TOKEN: "${INTELLIGENCE_PRODUCTION_MCP_TOKEN:-}" }
+    volumes: [intelligence_runtime_production:/opt/data, ./infrastructure/intelligence/production/config.yaml:/opt/data/config.yaml:ro]
+  agent-runtime-fulfillment:
+    <<: *intelligence-runtime
+    environment: { <<: *intelligence-runtime-env, API_SERVER_KEY: "${INTELLIGENCE_FULFILLMENT_RUNTIME_KEY:-}", API_SERVER_MODEL_NAME: fulfillment-advisor, SYNERGY_MCP_TOKEN: "${INTELLIGENCE_FULFILLMENT_MCP_TOKEN:-}" }
+    volumes: [intelligence_runtime_fulfillment:/opt/data, ./infrastructure/intelligence/fulfillment/config.yaml:/opt/data/config.yaml:ro]
+
+volumes:
+  synergy_staging_pgdata:
+    driver: local
+  intelligence_runtime_executive:
+  intelligence_runtime_sales:
+  intelligence_runtime_inventory:
+  intelligence_runtime_procurement:
+  intelligence_runtime_production:
+  intelligence_runtime_fulfillment:

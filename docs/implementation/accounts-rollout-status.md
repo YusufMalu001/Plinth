@@ -1,0 +1,39 @@
+# Accounts implementation status
+
+This document records what the repository currently implements from the Synergy Accounts implementation plan. It is a release gate, not an assertion that the entire Accounts module is available.
+
+## Implemented in this change
+
+- A separate accounting book schema: legal entity, Indian financial-year period, chart account, voucher sequence, journal header and lines, and posting outbox. PostgreSQL constraints protect account types, voucher states, one-sided journal lines and posted-voucher immutability.
+- Controlled manual journal, opening-balance journal and contra journal flow: draft, submit, independent approval, posting, reversal draft, period close, journal register and posted trial balance. The API uses decimal amounts, version checks, a creation idempotency key, serializable posting and an audit entry.
+- Supplier AP intake for approved vendors: draft invoice capture with vendor identity snapshots, invoice duplicate protection, INR line amounts and date controls. Stock bills match PO lines to signed-off accepted GRN lines, prevent billing accepted quantity twice, compare PO unit price and line extension, and report exceptions. Service/logistics lines require expense accounts; capital lines require asset accounts. Review exceptions and independent approval are audited.
+- Signed-off/finalized PO-linked GRNs appear automatically in the Purchases & Payables register. The GRN detail shows accepted quantities, PO-rate estimated value, linked supplier invoices and payment history. Accounts can record partial/full payments with a date, mode and bank reference; overpayments are blocked and pending/partial/paid status is derived from the remaining balance. These are receipt-based payment tracking records and do not post a journal or reconcile a bank transaction.
+- Accounts can start a supplier bill directly from a GRN row. The capture form preselects its supplier and remaining accepted PO/GRN quantities; draft and submitted bills reserve those quantities in the workbench, avoiding duplicate bill capture. Bill detail explains the invoice check in plain language, allows a submitted bill with a blocking issue to return to draft with an audit reason, and can print/save the styled bill record as PDF. Detail includes linked GRNs and their existing payment/debit-note history. These linked records are still stored against the GRN; bill-wise payment allocation, bill posting and original invoice-file retention are not implemented.
+- AP tax-bearing bills are held while GST rules and ITC eligibility are unverified. AP approved bills do not yet post to the ledger or create payable open items; the workbench clearly shows this gate.
+- Accounts UI and API for company/chart/period setup and journal inquiry. Only working Accounts links appear in the navigation.
+- Sales order payment capture has been removed from Sales and Orders, including POS tender entry. The legacy `/finance/payments` route now redirects to `/accounts/payments`. POS checkout creates only the operational sale and Accounts invoice draft; it does not mark the order paid or record a receipt. Accounts receipt entry requires a posted invoice, records the method/date/reference, and allocates the receipt before verification and posting.
+- The old PO-to-Tally batch queue/export is disabled. Historical batch records and acknowledgements remain queryable under Legacy Tally staging. A purchase order is a commitment and does not create a payable or voucher.
+- Database-backed Accounts permissions and role definitions were added to the existing seed catalogue. Production installation can run the focused, idempotent `npm run db:seed-accounts-rbac --workspace=@synergy/database` command after migration; user-role assignment remains an administrator decision.
+
+## Not released for financial use
+
+- The new Synergy journal is a **parallel book only**. TallyPrime remains authoritative until finance signs the cutover reconciliation. Entity activation allows controlled journal work; it is not cutover approval.
+- Sales AR is implemented as an initial parallel-book workbench: operational dispatch/POS events create Accounts invoice drafts, Finance submits/approves/posts invoices, receipts can be verified, allocated and posted, returns create credit-note candidates, and marketplace settlement batches can be recorded, bank-matched and posted. Dedicated AR APIs cover invoice/receipt/credit-note queues, customer ledger, aging, posting mappings, marketplace batches, event retry, and close blockers. The Sales order screen reads persisted Accounts invoice records and does not generate an official invoice from an order number.
+- Sales AR remains **not production-authoritative** pending tax-owner configuration, cutover/opening balance reconciliation, bank and marketplace evidence validation, and two month-end parallel reconciliations. The current marketplace workflow captures batch totals with a bank reference; it does not import or automatically match order-level settlement files. Refund payout posting and multi-invoice credit-note splitting remain follow-up work. Existing operational return refund rows remain operational records and must not be treated as posted Accounts refunds.
+- OCR capture, GRNI accounting, inventory valuation, AP bill posting and payable open items, bank reconciliation, GST workpapers, TallyPrime voucher exchange, and statutory reports are **not implemented**. GRN payment tracking does not replace these accounting controls and cannot post through this module.
+- A journal can be used for approved, evidenced manual accounting entries. It is not a substitute for AP, AR, inventory, GST, or marketplace subledgers. The current trial balance includes only posted journal vouchers.
+- The period-close check covers unposted journal vouchers, supplier bills, unresolved AR drafts/receipts/credit notes, pending or failed Sales events, and draft/exception marketplace batches. It still does not constitute a complete month-end close without inventory, bank, tax, and Tally reconciliation blockers.
+- One verified GSTIN is stored on the first legal entity. Additional registrations, versioned tax rules, source event inbox and entity-scoped permissions still require implementation.
+
+## Required discovery and acceptance before connected posting
+
+1. Exact TallyPrime release, company feature settings, approved chart and ledger mappings, numbering series, voucher samples and bill-wise reference behavior.
+2. Signed legal/GST registration record, opening trial balance, vendor/customer open items and advances, uncleared bank items and opening stock value.
+3. Verified inventory costing policy and populated source valuation. Stock/COGS posting must remain blocked until this reconciles to Tally.
+4. Redacted purchase bills, Amazon daily upload, monthly B2B/B2C MTR, seller fee invoices, settlement/reimbursement/TDS reports, other channel specimens, GSTR-2B and bank statements.
+5. Finance-approved maker/checker limits and tax-owner approval of effective-dated GST/TDS/TCS rules. GST TCS and income-tax TDS require separate ledgers and reconciliation.
+6. Two consecutive parallel month-end reconciliations with no unexplained material variance, role-based UAT and formal finance/tax sign-off before Synergy becomes the system of record.
+
+## Validation run
+
+The complete migration chain, including `20261008220000_accounts_core` and `20261009100000_accounts_ap_capture`, applied to disposable local databases. The ledger migration’s posting smoke test confirmed FY numbering, idempotent draft replay, maker/checker separation, posted immutability, trial balance totals and outbox rows. The AP migration check confirmed the tables, foreign keys, indexes and constraints apply after the core. These databases were removed; they were not the development or production Synergy book. API, web and database type checks pass.

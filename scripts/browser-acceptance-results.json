@@ -1,0 +1,143 @@
+{
+  "steps": [
+    {
+      "name": "1. Navigate to Login",
+      "status": "RUNNING",
+      "details": "",
+      "timestamp": "2026-10-01T09:47:48.029Z"
+    },
+    {
+      "name": "1. Navigate to Login",
+      "status": "PASS",
+      "details": "Title: \"Synergy International\"",
+      "timestamp": "2026-10-01T09:47:55.161Z"
+    },
+    {
+      "name": "2. Submit Credentials",
+      "status": "RUNNING",
+      "details": "",
+      "timestamp": "2026-10-01T09:47:55.161Z"
+    },
+    {
+      "name": "2. Submit Credentials",
+      "status": "PASS",
+      "details": "Redirected to http://localhost:3000/",
+      "timestamp": "2026-10-01T09:47:56.999Z"
+    },
+    {
+      "name": "3. Dashboard Verification",
+      "status": "RUNNING",
+      "details": "",
+      "timestamp": "2026-10-01T09:47:56.999Z"
+    },
+    {
+      "name": "3. Dashboard Verification",
+      "status": "PASS",
+      "details": "URL: http://localhost:3000/",
+      "timestamp": "2026-10-01T09:47:57.255Z"
+    },
+    {
+      "name": "4. Decision Center Shell",
+      "status": "RUNNING",
+      "details": "",
+      "timestamp": "2026-10-01T09:47:57.255Z"
+    },
+    {
+      "name": "4. Decision Center Shell",
+      "status": "PASS",
+      "details": "Heading: \"Decision Center\"",
+      "timestamp": "2026-10-01T09:47:59.089Z"
+    },
+    {
+      "name": "5. Cases View",
+      "status": "RUNNING",
+      "details": "",
+      "timestamp": "2026-10-01T09:47:59.089Z"
+    },
+    {
+      "name": "5. Cases View",
+      "status": "PASS",
+      "details": "Cases rendered: true",
+      "timestamp": "2026-10-01T09:47:59.978Z"
+    },
+    {
+      "name": "6. Scenarios Workbench",
+      "status": "RUNNING",
+      "details": "",
+      "timestamp": "2026-10-01T09:47:59.978Z"
+    },
+    {
+      "name": "6. Scenarios Workbench",
+      "status": "PASS",
+      "details": "Scenarios Workbench rendered: true",
+      "timestamp": "2026-10-01T09:48:00.832Z"
+    },
+    {
+      "name": "7. Recommendations View",
+      "status": "RUNNING",
+      "details": "",
+      "timestamp": "2026-10-01T09:48:00.832Z"
+    },
+    {
+      "name": "7. Recommendations View",
+      "status": "PASS",
+      "details": "Recommendations rendered: true",
+      "timestamp": "2026-10-01T09:48:01.668Z"
+    },
+    {
+      "name": "8. Tasks View & Action Link",
+      "status": "RUNNING",
+      "details": "",
+      "timestamp": "2026-10-01T09:48:01.668Z"
+    },
+    {
+      "name": "8. Tasks View & Action Link",
+      "status": "PASS",
+      "details": "Tasks view rendered: true",
+      "timestamp": "2026-10-01T09:48:02.507Z"
+    },
+    {
+      "name": "9. Outcomes Reconciliation View",
+      "status": "RUNNING",
+      "details": "",
+      "timestamp": "2026-10-01T09:48:02.507Z"
+    },
+    {
+      "name": "9. Outcomes Reconciliation View",
+      "status": "PASS",
+      "details": "Outcomes view rendered: true",
+      "timestamp": "2026-10-01T09:48:03.350Z"
+    },
+    {
+      "name": "10. Conversations View",
+      "status": "RUNNING",
+      "details": "",
+      "timestamp": "2026-10-01T09:48:03.350Z"
+    },
+    {
+      "name": "10. Conversations View",
+      "status": "PASS",
+      "details": "Conversations view rendered: true",
+      "timestamp": "2026-10-01T09:48:04.152Z"
+    },
+    {
+      "name": "11. Browser Refresh & Persistence",
+      "status": "RUNNING",
+      "details": "",
+      "timestamp": "2026-10-01T09:48:04.152Z"
+    },
+    {
+      "name": "11. Browser Refresh & Persistence",
+      "status": "PASS",
+      "details": "Retained session at http://localhost:3000/decision-center/conversations",
+      "timestamp": "2026-10-01T09:48:04.968Z"
+    },
+    {
+      "name": "12. Visual Evidence Capture",
+      "status": "PASS",
+      "details": "Saved to scripts/decision-center-browser.png",
+      "timestamp": "2026-10-01T09:48:05.035Z"
+    }
+  ],
+  "screenshots": []
+}
