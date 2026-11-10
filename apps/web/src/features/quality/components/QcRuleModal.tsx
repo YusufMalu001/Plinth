@@ -389,7 +389,7 @@ export const QcRuleModal: React.FC<QcRuleModalProps> = ({
                 <FileCheck2 className="w-8 h-8 text-muted-foreground mx-auto" />
                 <p className="text-xs font-bold text-foreground">No existing rules found</p>
                 <p className="text-[11px] text-muted-foreground max-w-sm mx-auto">
-                  No approved QC rules match your search. Switch to "Create New QC Rule" to define criteria from scratch.
+                  No approved QC rules match your search. Switch to &quot;Create New QC Rule&quot; to define criteria from scratch.
                 </p>
                 <Button
                   type="button"

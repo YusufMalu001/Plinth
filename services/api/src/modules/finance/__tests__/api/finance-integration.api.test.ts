@@ -27,7 +27,11 @@ jest.mock('../../../../common/middleware/auth', () => ({
     const roleDefinition = String(user?.roleDefinitionKey || '').trim().toLowerCase().replace(/_/g, '-');
     return user?.role === 'admin' || roleDefinition === 'admin' || roleDefinition === 'super-admin';
   },
-  requireRole: () => (_req: Request, _res: Response, next: NextFunction) => next()
+  requireRole: () => (_req: Request, _res: Response, next: NextFunction) => next(),
+  optionalAuth: (req: Request, _res: Response, next: NextFunction) => {
+    req.user = { id: (req.headers['x-actor-id'] as string) || 'dev-system-user', email: 'test@example.com', role: 'admin' };
+    next();
+  }
 }));
 
 jest.setTimeout(120000);

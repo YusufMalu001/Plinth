@@ -383,7 +383,7 @@ export default function ProductionExecutionDashboard() {
               <option value="ALL">All departments</option>
               {departments.map((department) => (
                 <option key={department.id} value={department.id}>
-                  {Boolean(department.isAssembly) ? `${department.name} [Assembly]` : department.name}
+                  {department.isAssembly ? `${department.name} [Assembly]` : department.name}
                 </option>
               ))}
             </select>

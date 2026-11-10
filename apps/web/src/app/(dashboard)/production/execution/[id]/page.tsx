@@ -377,7 +377,7 @@ export default function DepartmentBatchExecutionPage() {
       }
       setShowReceiveMaterialsModal(false);
       refetch();
-    } catch { }
+    } catch { /* mutation errors are surfaced upstream */ }
   };
 
   const handleStartWork = async () => {
@@ -393,7 +393,7 @@ export default function DepartmentBatchExecutionPage() {
     try {
       await startBatchMutation.mutateAsync({ batchId, employeeId });
       refetch();
-    } catch { }
+    } catch { /* mutation errors are surfaced upstream */ }
   };
 
   const handlePauseWork = async (e: React.FormEvent) => {
@@ -408,7 +408,7 @@ export default function DepartmentBatchExecutionPage() {
       setShowPauseModal(false);
       setPauseReason('');
       refetch();
-    } catch { }
+    } catch { /* mutation errors are surfaced upstream */ }
   };
 
   const handleResumeWork = async () => {
@@ -416,7 +416,7 @@ export default function DepartmentBatchExecutionPage() {
     try {
       await resumeBatchMutation.mutateAsync({ batchId, employeeId });
       refetch();
-    } catch { }
+    } catch { /* mutation errors are surfaced upstream */ }
   };
 
   const handleUnassignWorker = async (employeeId: string, employeeName: string) => {
@@ -428,7 +428,7 @@ export default function DepartmentBatchExecutionPage() {
         message: `${employeeName} was unassigned from this batch.`,
       });
       refetch();
-    } catch { }
+    } catch { /* mutation errors are surfaced upstream */ }
   };
 
   const handleRecordProgress = async (e: React.FormEvent) => {
@@ -471,7 +471,7 @@ export default function DepartmentBatchExecutionPage() {
       setProgressWastage('');
       setProgressNotes('');
       refetch();
-    } catch { }
+    } catch { /* mutation errors are surfaced upstream */ }
   };
 
   const handleCompleteBatch = async () => {
@@ -480,7 +480,7 @@ export default function DepartmentBatchExecutionPage() {
     try {
       await completeBatchMutation.mutateAsync({ batchId, employeeId: empId, completed_qty });
       refetch();
-    } catch { }
+    } catch { /* mutation errors are surfaced upstream */ }
   };
 
   const fetchInspectionHistory = async () => {
@@ -741,7 +741,7 @@ export default function DepartmentBatchExecutionPage() {
       setHandoverQty('');
       setHandoverNotes('');
       refetch();
-    } catch { }
+    } catch { /* mutation errors are surfaced upstream */ }
   };
 
   const handleAcceptIncomingHandover = async (handoverId: string) => {
@@ -752,7 +752,7 @@ export default function DepartmentBatchExecutionPage() {
         idempotencyKey: `ACCEPT-${handoverId}-${Date.now()}`,
       });
       refetch();
-    } catch { }
+    } catch { /* mutation errors are surfaced upstream */ }
   };
 
   const handleRefuseIncomingHandover = async (e: React.FormEvent) => {
@@ -772,7 +772,7 @@ export default function DepartmentBatchExecutionPage() {
       setRefusingHandoverId(null);
       setRefusalReason('');
       refetch();
-    } catch { }
+    } catch { /* mutation errors are surfaced upstream */ }
   };
 
   if (isLoadingBatch) {
@@ -1729,7 +1729,7 @@ export default function DepartmentBatchExecutionPage() {
                             </p>
                             {latestInspection.reason && (
                               <p className="text-xs italic text-rose-900/80 dark:text-rose-200/80 bg-rose-500/10 border border-rose-500/20 rounded-lg p-2 mt-1.5">
-                                Defect Observation: "{latestInspection.reason}"
+                                Defect Observation: &quot;{latestInspection.reason}&quot;
                               </p>
                             )}
                           </div>

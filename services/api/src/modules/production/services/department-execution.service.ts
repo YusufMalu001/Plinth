@@ -1894,7 +1894,7 @@ export class DepartmentExecutionService {
     const outgoingHandovers = (batch.outgoingHandovers || []).map((h: any) => {
       let itemName = outputItemName;
       let itemCode = outputItemCode;
-      let itemType = outItemType || 'PRODUCT';
+      const itemType = outItemType || 'PRODUCT';
       let unitName = outputUnitName;
 
       if (h.assemblyIntake?.itemId) {

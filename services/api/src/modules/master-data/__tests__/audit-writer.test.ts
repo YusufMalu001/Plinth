@@ -23,7 +23,7 @@ describe('AuditWriter Event Emission Verification', () => {
       findInventoryNameConflict: jest.fn<any>().mockResolvedValue(null),
       findUomById: jest.fn<any>().mockResolvedValue({ id: 'uom-1', status: 'ACTIVE' }),
       findCategoryById: jest.fn<any>().mockResolvedValue({ id: 'cat-1', status: 'ACTIVE' }),
-      findFamilyById: jest.fn<any>().mockResolvedValue({ id: 'fam-1', status: 'ACTIVE' }),
+      findFamilyById: jest.fn<any>().mockResolvedValue({ id: 'fam-1', status: 'ACTIVE', categoryId: 'cat-1' }),
       createProduct: jest.fn<any>().mockResolvedValue({ id: 'prod-new', sku: 'SKU-001', status: 'DRAFT', version: 1 })
     } as unknown as ProductsRepository;
 
@@ -92,7 +92,7 @@ describe('AuditWriter Event Emission Verification', () => {
       findInventoryNameConflict: jest.fn<any>().mockResolvedValue(null),
       findUomById: jest.fn<any>().mockResolvedValue({ id: 'uom-1', status: 'ACTIVE' }),
       findCategoryById: jest.fn<any>().mockResolvedValue({ id: 'cat-1', status: 'ACTIVE' }),
-      findFamilyById: jest.fn<any>().mockResolvedValue({ id: 'fam-1', status: 'ACTIVE' }),
+      findFamilyById: jest.fn<any>().mockResolvedValue({ id: 'fam-1', status: 'ACTIVE', categoryId: 'cat-1' }),
       createProduct: jest.fn<any>().mockResolvedValue({ id: 'prod-active', sku: 'ACTIVE-001', status: 'ACTIVE', version: 1 })
     } as unknown as ProductsRepository;
     const materialRepo = {

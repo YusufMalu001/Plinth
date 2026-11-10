@@ -24,6 +24,13 @@ vi.mock('../../features/intelligence/hooks', () => ({
   })),
 }));
 
+vi.mock('../../features/auth/hooks', () => ({
+  useCurrentUser: vi.fn(() => ({
+    data: undefined,
+    isLoading: false,
+  })),
+}));
+
 describe('useNotifications', () => {
   beforeEach(() => {
     localStorage.clear();

@@ -6,6 +6,7 @@ node_modules/
 dist/
 .turbo/
 coverage/
+*.tsbuildinfo
 
 # playwright / test artifacts
 test-results/

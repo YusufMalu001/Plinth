@@ -106,4 +106,20 @@ Build ONE reusable `<ListView>` and migrate all lists onto it. Layout:
 - Typecheck, lint, unit tests, and build all pass.
 - Final deliverables: `REFACTOR_LOG.md` (what changed, decisions made, anything intentionally left alone), updated README with the new design system usage, and a short `DESIGN.md` documenting tokens, components, and status mapping.
 
-Begin now with Phase 1.
+Begin now with Phase 0.
+
+## ADDENDUM: Decisions (these override anything above that conflicts)
+
+1. Git: repo initialised by the owner, sensitive artifacts already moved out. Never re-add *.sql, backups, output/ PDFs, or real client data. Work on `refactor/plinth-ui`.
+2. Verification: `scripts/verify.sh` wraps the four turbo tasks (typecheck, lint, test, build) plus ratchet gates for hardcoded colours and banned terms. Gates may never increase. STRICT=1 (zero allowed) applies only in Phase 10.
+3. Dark mode: ship LIGHT-ONLY. Force light theme, hide ThemeToggle, delete the `.dark` token block. Leave existing `dark:` classes inert (do not mass-delete them); remove them in a separate cleanup commit after Phase 10.
+4. Fonts: use Inter via `next/font/google`. Remove all Amazon Ember files and the font-face rules (proprietary font, must not ship in a product). Remove Orbitron. Keep Material Symbols only where used, preferably replace with lucide-react.
+5. Stale files: delete `apps/web/output.css`, the dead `gs-*` and `synergy` colour scales in `tailwind.config.js`, and unused gradient components after confirming no imports.
+6. Scope: backend presentation code is IN scope. Create `packages/tokens` (plain TS constants + CSS variables output) consumed by web, the PDF components, the email services, and `dashboard.service.ts` chart palette. The three blue palettes collapse into the Plinth tokens.
+7. Lists: build `<ListView>` on top of the GenericList descriptor engine. Phase 4 runs in sub-phases (4a: ListView + Purchase Order only, STOP for owner review; then one module per sub-phase). Duplicate lists (clients vs customers, two vendor lists): do NOT merge or change routes; keep both, migrate both, and record the duplication in REFACTOR_LOG.md.
+8. Status: seed `statusTones.ts` from the existing `StatusBadge.tsx` map; delete the 11 local badge clones and swap ad-hoc chips. Keep the same status semantics, only tones change per Phase 5.
+9. Rename: rename `@synergy/*` to `@plinth/*` using a scripted codemod in one dedicated commit (imports, package.json names, turbo config, Dockerfiles, scripts), regenerate package-lock via npm install, then require a full green verify. Rename cookies and storage keys with a dual-read migration (read old key if new missing, write only new).
+10. Seeds, fixtures, tests, docs, emails: replace all client data with neutral placeholders (Acme Industries, admin@plinth.example, fake GSTIN format 00AAAAA0000A0Z0). Generate the neutral demo dataset described in Phase 9. Remove personal names from code, seeds, docs, and comments.
+11. Missing infrastructure: no .env.example or CI exists. Create `.env.example` with plinth-* names and document verify.sh as the CI gate. Do not invent a CI pipeline.
+12. Playwright: add baseline screenshots at 1440px and 390px in Phase 10 only.
+13. `formatDate`/`formatMoney`/terminology helpers do not exist: create them in packages/ and use them everywhere dates and money render.
