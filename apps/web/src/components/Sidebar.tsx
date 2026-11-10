@@ -326,8 +326,8 @@ function NavItem({
     : 'justify-between rounded-xl px-3 py-2.5 my-0.5'
     } ${active
       ? collapsed
-        ? 'bg-[#004a80]/15 text-[#004a80] dark:text-blue-300 font-black ring-1 ring-[#004a80]/30'
-        : 'bg-[#004a80]/10 text-[#004a80] dark:text-blue-300 font-black shadow-xs border-l-4 border-l-[#004a80]'
+        ? 'bg-surface-muted text-ink font-black'
+        : 'bg-surface-muted text-ink font-black border-l-4 border-l-border-strong'
       : 'text-slate-950 dark:text-white font-extrabold hover:bg-slate-100 dark:hover:bg-slate-800/80 hover:text-black dark:hover:text-white hover:translate-x-0.5'
     }`;
 
@@ -352,7 +352,7 @@ function NavItem({
           <div className="flex items-center gap-3 min-w-0">
             <div
               className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-lg transition-colors ${active
-                ? 'bg-[#004a80]/15 text-[#004a80] dark:text-blue-400'
+                ? 'bg-surface-muted text-ink'
                 : 'text-slate-950 dark:text-slate-100 group-hover:text-black dark:group-hover:text-white'
                 }`}
             >
@@ -360,7 +360,7 @@ function NavItem({
             </div>
 
             {!collapsed && (
-              <span className="text-[14.5px] font-extrabold tracking-tight truncate font-manrope text-inherit">
+              <span className="text-[14.5px] font-extrabold tracking-tight truncate  text-inherit">
                 {item.label}
               </span>
             )}
@@ -369,14 +369,14 @@ function NavItem({
           {!collapsed && (
             <div className="flex items-center gap-1.5 shrink-0">
               {item.badge && (
-                <span className="rounded-full bg-[#004a80]/15 border border-[#004a80]/30 px-2 py-0.5 text-[10px] font-black text-[#004a80] dark:text-blue-300 uppercase tracking-wider font-manrope">
+                <span className="rounded-full bg-surface-muted px-2 py-0.5 text-[10px] font-black text-ink uppercase tracking-wider">
                   {item.badge}
                 </span>
               )}
               <ChevronRight
                 size={16}
                 strokeWidth={2.5}
-                className={`transition-transform duration-200 ${expanded ? 'rotate-90 text-[#004a80] dark:text-blue-400' : 'text-slate-900 dark:text-slate-200'
+                className={`transition-transform duration-200 ${expanded ? 'rotate-90 text-ink' : 'text-slate-900 dark:text-slate-200'
                   }`}
               />
             </div>
@@ -392,7 +392,7 @@ function NavItem({
           <div className="flex items-center gap-3 min-w-0">
             <div
               className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-lg transition-colors ${active
-                ? 'bg-[#004a80]/15 text-[#004a80] dark:text-blue-400'
+                ? 'bg-surface-muted text-ink'
                 : 'text-slate-950 dark:text-slate-100 group-hover:text-black dark:group-hover:text-white'
                 }`}
             >
@@ -400,14 +400,14 @@ function NavItem({
             </div>
 
             {!collapsed && (
-              <span className="text-[14.5px] font-extrabold tracking-tight truncate font-manrope text-inherit">
+              <span className="text-[14.5px] font-extrabold tracking-tight truncate  text-inherit">
                 {item.label}
               </span>
             )}
           </div>
 
           {!collapsed && item.badge && (
-            <span className="rounded-full bg-slate-200 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 px-2 py-0.5 text-[10px] font-black text-slate-900 dark:text-slate-200 uppercase tracking-wider font-manrope">
+            <span className="rounded-full bg-slate-200 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 px-2 py-0.5 text-[10px] font-black text-slate-900 dark:text-slate-200 uppercase tracking-wider ">
               {item.badge}
             </span>
           )}
@@ -428,8 +428,8 @@ function NavItem({
                     type="button"
                     aria-expanded={nestedExpanded}
                     onClick={() => setExpandedSubItems((current) => ({ ...current, [child.label]: !nestedExpanded }))}
-                    className={`group flex w-full items-center justify-between rounded-lg px-3 py-2 text-left text-[13.5px] font-manrope transition-all ${childIsActive
-                      ? 'bg-[#004a80]/15 text-[#004a80] dark:text-blue-300 font-black shadow-2xs'
+                    className={`group flex w-full items-center justify-between rounded-lg px-3 py-2 text-left text-[13.5px]  transition-all ${childIsActive
+                      ? 'bg-surface-muted text-ink font-black'
                       : 'text-slate-900 dark:text-slate-100 font-bold hover:bg-slate-100 dark:hover:bg-slate-800/70 hover:text-black dark:hover:text-white'
                       }`}
                   >
@@ -445,8 +445,8 @@ function NavItem({
                             key={nested.href}
                             href={nested.href}
                             onClick={onNavigate}
-                            className={`block rounded-lg px-3 py-1.5 text-[12.5px] font-manrope transition-all ${nestedIsActive
-                              ? 'bg-[#004a80]/15 text-[#004a80] dark:text-blue-300 font-black'
+                            className={`block rounded-lg px-3 py-1.5 text-[12.5px]  transition-all ${nestedIsActive
+                              ? 'bg-surface-muted text-ink font-black'
                               : 'text-slate-700 dark:text-slate-300 font-semibold hover:bg-slate-100 dark:hover:bg-slate-800/70'
                               }`}
                           >
@@ -464,14 +464,14 @@ function NavItem({
                 key={child.href}
                 href={child.href}
                 onClick={onNavigate}
-                className={`group flex items-center justify-between rounded-lg px-3 py-2 text-[13.5px] font-manrope transition-all ${childIsActive
-                  ? 'bg-[#004a80]/15 text-[#004a80] dark:text-blue-300 font-black shadow-2xs'
+                className={`group flex items-center justify-between rounded-lg px-3 py-2 text-[13.5px]  transition-all ${childIsActive
+                  ? 'bg-surface-muted text-ink font-black'
                   : 'text-slate-900 dark:text-slate-100 font-bold hover:bg-slate-100 dark:hover:bg-slate-800/70 hover:text-black dark:hover:text-white'
                   }`}
               >
                 <span className="truncate">{child.label}</span>
                 {child.badge && (
-                  <span className="rounded-full bg-[#004a80]/15 border border-[#004a80]/30 px-1.5 py-0.2 text-[9.5px] font-black uppercase text-[#004a80] dark:text-blue-300 font-manrope">
+                  <span className="rounded-full bg-surface-muted px-1.5 py-0.2 text-[9.5px] font-black uppercase text-ink">
                     {child.badge}
                   </span>
                 )}
@@ -608,7 +608,7 @@ export function Sidebar({
 
       {/* Main Sidebar Element */}
       <aside
-        className={`fixed left-0 top-0 z-50 flex h-screen flex-col border-r border-slate-200/90 dark:border-slate-800 bg-white dark:bg-[#0c121e] text-slate-900 dark:text-slate-100 font-manrope font-bold shadow-[4px_0_24px_rgba(15,23,42,0.04)] transition-all duration-300 ease-in-out ${
+        className={`fixed left-0 top-0 z-50 flex h-screen flex-col border-r border-slate-200/90 dark:border-slate-800 bg-white text-slate-900 dark:text-slate-100 font-bold shadow-[4px_0_24px_rgba(15,23,42,0.04)] transition-all duration-300 ease-in-out ${
           /* Mobile positioning */
           isMobileOpen
             ? 'translate-x-0 w-72'
@@ -651,7 +651,7 @@ export function Sidebar({
           {/* Section 1: Main Platform */}
           <div className={!hasVisibleItems(primarySection) ? 'hidden' : undefined}>
             {!isCollapsed && hasVisibleItems(primarySection) && (
-              <p className="px-3 mb-2 text-xs font-black uppercase tracking-wider text-slate-600 dark:text-slate-400 font-manrope">
+              <p className="px-3 mb-2 text-xs font-black uppercase tracking-wider text-slate-600 dark:text-slate-400 ">
                 {primarySection.title}
               </p>
             )}
@@ -723,7 +723,7 @@ export function Sidebar({
           {/* Section 3: Plant & Operations */}
           <div className={!hasVisibleItems(operationsSection) ? 'hidden' : undefined}>
             {!isCollapsed && hasVisibleItems(operationsSection) && (
-              <p className="px-3 mb-2 text-xs font-black uppercase tracking-wider text-slate-600 dark:text-slate-400 font-manrope">
+              <p className="px-3 mb-2 text-xs font-black uppercase tracking-wider text-slate-600 dark:text-slate-400 ">
                 {operationsSection.title}
               </p>
             )}
@@ -794,7 +794,7 @@ export function Sidebar({
           {/* Section 4: Finance & Accounts */}
           <div className={!hasVisibleItems(financeSection) ? 'hidden' : undefined}>
             {!isCollapsed && hasVisibleItems(financeSection) && (
-              <p className="px-3 mb-2 text-xs font-black uppercase tracking-wider text-slate-600 dark:text-slate-400 font-manrope">
+              <p className="px-3 mb-2 text-xs font-black uppercase tracking-wider text-slate-600 dark:text-slate-400 ">
                 {financeSection.title}
               </p>
             )}
@@ -821,7 +821,7 @@ export function Sidebar({
           {/* Section 5: Human Resources */}
           <div className={!hasVisibleItems(hrSection) ? 'hidden' : undefined}>
             {!isCollapsed && hasVisibleItems(hrSection) && (
-              <p className="px-3 mb-2 text-xs font-black uppercase tracking-wider text-slate-600 dark:text-slate-400 font-manrope">
+              <p className="px-3 mb-2 text-xs font-black uppercase tracking-wider text-slate-600 dark:text-slate-400 ">
                 {hrSection.title}
               </p>
             )}
@@ -857,7 +857,7 @@ export function Sidebar({
                 ? 'h-10 w-10 mx-auto justify-center rounded-xl'
                 : 'justify-between rounded-xl px-3 py-2'
                 } ${pathname.startsWith('/notifications')
-                  ? 'bg-[#004a80]/15 text-[#004a80] dark:text-blue-300 font-black border-l-4 border-l-[#004a80] shadow-xs'
+                  ? 'bg-surface-muted text-ink font-black border-l-4 border-l-border-strong shadow-none'
                   : 'text-slate-950 dark:text-white font-extrabold hover:bg-slate-100 dark:hover:bg-slate-800/80 hover:text-black dark:hover:text-white'
                 }`}
             >
@@ -865,16 +865,16 @@ export function Sidebar({
                 <div className="relative text-slate-950 dark:text-slate-100">
                   <Bell size={18} strokeWidth={2.2} />
                   {unreadCount > 0 && (
-                    <span className="absolute -top-1.5 -right-1.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-[#004a80] font-manrope text-[9px] font-black text-white px-1">
+                    <span className="absolute -top-1.5 -right-1.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-action font-black text-white px-1">
                       {unreadCount > 9 ? '9+' : unreadCount}
                     </span>
                   )}
                 </div>
-                {!isCollapsed && <span className="text-[14px] font-extrabold font-manrope text-inherit">Notifications</span>}
+                {!isCollapsed && <span className="text-[14px] font-extrabold  text-inherit">Notifications</span>}
               </div>
 
               {!isCollapsed && unreadCount > 0 && (
-                <span className="rounded-full bg-[#004a80]/15 border border-[#004a80]/30 px-2 py-0.5 text-[10px] font-black text-[#004a80] dark:text-blue-300 font-manrope">
+                <span className="rounded-full bg-surface-muted px-2 py-0.5 text-[10px] font-black text-ink">
                   {unreadCount}
                 </span>
               )}
@@ -890,9 +890,9 @@ export function Sidebar({
                   ? 'h-10 w-10 mx-auto justify-center rounded-xl'
                   : 'gap-2.5 rounded-xl px-3 py-2'
                   } ${pathname.startsWith('/access')
-                    ? 'bg-[#004a80]/15 text-[#004a80] dark:text-blue-300 font-black border-l-4 border-l-[#004a80] shadow-xs'
+                    ? 'bg-surface-muted text-ink font-black border-l-4 border-l-border-strong shadow-none'
                     : 'text-slate-950 dark:text-white font-extrabold hover:bg-slate-100 dark:hover:bg-slate-800/80 hover:text-black dark:hover:text-white'
-                  } text-[14px] font-extrabold font-manrope`}
+                  } text-[14px] font-extrabold `}
               >
                 <div className="text-slate-950 dark:text-slate-100">
                   <ShieldCheck size={18} strokeWidth={2.2} />
@@ -910,7 +910,7 @@ export function Sidebar({
                   type="button"
                   onClick={onToggle}
                   title={isCollapsed ? 'Expand Sidebar' : 'Collapse Sidebar'}
-                  className={`hidden lg:flex items-center justify-center rounded-xl border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-slate-200 font-bold hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-black dark:hover:text-white transition-colors ${isCollapsed ? 'h-10 w-10 mx-auto mt-1' : 'h-8 px-2.5 gap-1.5 text-xs font-extrabold font-manrope'
+                  className={`hidden lg:flex items-center justify-center rounded-xl border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-slate-200 font-bold hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-black dark:hover:text-white transition-colors ${isCollapsed ? 'h-10 w-10 mx-auto mt-1' : 'h-8 px-2.5 gap-1.5 text-xs font-extrabold '
                     }`}
                 >
                   {isCollapsed ? <PanelLeftOpen size={15} strokeWidth={2.2} /> : <PanelLeftClose size={15} strokeWidth={2.2} />}

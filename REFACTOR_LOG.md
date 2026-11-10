@@ -119,3 +119,17 @@ colours 1087 → 997 (−90). Banned terms gate now counts source/config/docs on
 - Gradient components (`GradientBackground`, `RibbonFieldGradient`, `background-snippets`) not yet deleted — login shell rebuild in Phase 3 will confirm their unreferenced status first.
 
 ---
+
+## Phase 3 — App shell (in progress)
+
+### What changed so far
+- **Sidebar neutralised**: all 14 `#004a80` tints (active-item tint, badge chips, notification dot, chevron accents) now resolve to `bg-surface-muted`/`text-ink`/`border-strong`/`action`. Amber/blue `dark:` variants left inert; `dark:bg-[#0c121e]` removed so the rail is always white.
+- **Login shell rebuilt** (`AuthShell.tsx`): silk gradient canvas + image logo replaced with a neutral split panel (white, token borders, plain "Plinth" placeholder wordmark pending the Phase 8 brand component), token greys for text/footer. Hero copy kept, colourless.
+- **Deleted unreferenced gradient components** (Addendum #5, imports verified before deleting): `components/ui/RibbonFieldGradient.tsx`, `components/ui/background-snippets.tsx`, `app/login/components/GradientBackground.tsx` (GradientBackground was orphaned already).
+- **Deleted generated test artifacts** published under `apps/web/public/test-receipts/` (client PO/tax invoice PDFs + HTML with SYNERGY/GSTIN data — owned by the "never re-add output/real client data" rule; nothing in `apps/web/src` or `scripts/` referenced the paths).
+- Top bar in `AppLayout.tsx` is already `bg-card`→white via tokens; no coloured header existed.
+- Ratchet: colours 997 → 965, banned 1925 → 1901.
+
+### Left undone / next
+- Remaining login component files (AuthCard, LoginCard, ...) still carry `#004a80` accents — sweep next.
+- Synthetic "Plinth" wordmark is a temporary placeholder; `config/brand.ts` + logo component land in Phase 8 and replace it everywhere.
