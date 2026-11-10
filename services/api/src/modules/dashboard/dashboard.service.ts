@@ -1,12 +1,14 @@
 import { Prisma } from '@prisma/client';
 import { prisma } from '../../database';
 import { getActorCapabilities } from '../../common/rbac/permission-cache';
+import { CHART_PALETTE } from '@plinth/tokens';
 
 export type DashboardTimeframe = 'month' | 'quarter' | 'year';
 
 const numberValue = (value: Prisma.Decimal | number | string | null | undefined): number => Number(value ?? 0);
 const activeStatuses = ['ACTIVE', 'APPROVED'] as const;
-const chartColours = ['#f59e0b', '#d97706', '#10b981', '#3b82f6', '#8b5cf6', '#64748b'];
+// Chart colours come exclusively from @plinth/tokens (Addendum #6).
+const chartColours = CHART_PALETTE;
 
 function periodFor(timeframe: DashboardTimeframe, now = new Date()) {
   const from = new Date(now);

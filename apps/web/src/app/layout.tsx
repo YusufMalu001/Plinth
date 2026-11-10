@@ -1,6 +1,23 @@
 import './globals.css';
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
+import { Inter } from 'next/font/google';
+import { CSS_TOKENS } from '@plinth/tokens';
 
+import { Providers } from '../components/Providers';
+
+/**
+ * Inter — spec Phase 2 (font) and Addendum #4. `variable` registers the font
+ * stack as --font-inter on <html>; CSS_TOKENS maps --font-sans onto it with a
+ * system-ui fallback.
+ */
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+});
+
+// Rebrand to "Plinth" happens fully in Phase 8; metadata identifiers stay
+// stable until then (title strings live in config/brand.ts at that point).
 export const metadata: Metadata = {
   title: {
     default: 'Synergy International',
@@ -16,7 +33,9 @@ export const metadata: Metadata = {
   },
 };
 
-import { Providers } from '../components/Providers';
+export const viewport: Viewport = {
+  colorScheme: 'light',
+};
 
 export default function RootLayout({
   children,
@@ -24,8 +43,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="font-sans antialiased text-gray-900 bg-gray-50">
+    <html lang="en" className={`${inter.variable}`}>
+      <head>
+      {/*
+        Single source of truth: all design tokens come from @plinth/tokens.
+        Injected once here; globals.css and Tailwind never repeat values.
+        LIGHT-ONLY ships by default (Addendum #3).
+      */}
+        <style dangerouslySetInnerHTML={{ __html: CSS_TOKENS }} />
+      </head>
+      <body className="font-sans antialiased text-ink bg-page">
         <Providers>
           {children}
         </Providers>

@@ -18,8 +18,6 @@ import {
   PanelLeftClose,
   PanelLeftOpen,
   PackageCheck,
-  Sun,
-  Moon,
   X,
   Landmark,
   Trash2,
@@ -57,8 +55,6 @@ interface SidebarProps {
   onToggle?: () => void;
   isMobileOpen?: boolean;
   onMobileClose?: () => void;
-  isDarkMode?: boolean;
-  onToggleTheme?: () => void;
   isAssemblyUser?: boolean;
 }
 
@@ -495,8 +491,6 @@ export function Sidebar({
   onToggle,
   isMobileOpen = false,
   onMobileClose,
-  isDarkMode,
-  onToggleTheme,
   isAssemblyUser = false,
 }: SidebarProps) {
   const pathname = usePathname();
@@ -907,20 +901,8 @@ export function Sidebar({
               </Link>
             )}
 
-            {/* Theme & Collapse Controls */}
+            {/* Collapse Control — theme toggle hidden: Plinth ships light-only */}
             <div className="flex items-center gap-1 pt-1">
-              {onToggleTheme && (
-                <button
-                  type="button"
-                  onClick={onToggleTheme}
-                  title={isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-                  className={`flex items-center justify-center rounded-xl border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-slate-200 font-bold hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-black dark:hover:text-white transition-colors ${isCollapsed ? 'h-10 w-10 mx-auto' : 'h-8 px-2.5 flex-1 gap-1.5 text-xs font-extrabold font-manrope'
-                    }`}
-                >
-                  {isDarkMode ? <Sun size={15} strokeWidth={2.2} className="text-[#004a80] dark:text-blue-400" /> : <Moon size={15} strokeWidth={2.2} />}
-                  {!isCollapsed && <span>{isDarkMode ? 'Light' : 'Dark'}</span>}
-                </button>
-              )}
 
               {/* Desktop Collapse Button */}
               {onToggle && (

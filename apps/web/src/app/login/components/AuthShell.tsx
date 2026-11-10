@@ -44,7 +44,7 @@ export function AuthShell({ children }: AuthShellProps) {
 
         {/* Bottom Hero Narrative across the left panel in pure crisp white Orbitron font */}
         <div className="relative z-10 w-full pb-2">
-          <h1 className="font-orbitron text-3xl sm:text-4xl lg:text-[40px] xl:text-[46px] font-black tracking-tight text-white uppercase leading-[1.12] drop-shadow-sm">
+          <h1 className="text-3xl sm:text-4xl lg:text-[40px] xl:text-[46px] font-black tracking-tight text-white uppercase leading-[1.12] drop-shadow-sm">
             PRECISION OPERATIONS.<br />
             INTELLIGENT TELEMETRY.
           </h1>

@@ -1,167 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Design tokens are injected by the root layout from packages/tokens
+   (@plinth/tokens → CSS_TOKENS). Global CSS only maps legacy semantic
+   names onto that single source of truth. */
 
 /* Keep the production workspace flat without changing shared UI elsewhere. */
 .production-flat-ui,
 .production-flat-ui * {
   box-shadow: none !important;
-}
-/* ==============================================================================
-   AMAZON EMBER - Custom Humanist Sans-Serif Font Family (Designed by Dalton Maag)
-   Self-hosted from /fonts/amazon-ember/ with woff2, woff, and ttf formats
-   ============================================================================== */
-@font-face {
-  font-family: 'Amazon Ember';
-  font-style: normal;
-  font-weight: 100;
-  font-display: swap;
-  src: url('/fonts/amazon-ember/AmazonEmber_W_Th.woff2') format('woff2'),
-       url('/fonts/amazon-ember/AmazonEmber_W_Th.woff') format('woff'),
-       url('/fonts/amazon-ember/AmazonEmber_Th.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Amazon Ember';
-  font-style: italic;
-  font-weight: 100;
-  font-display: swap;
-  src: url('/fonts/amazon-ember/AmazonEmber_W_ThIt.woff2') format('woff2'),
-       url('/fonts/amazon-ember/AmazonEmber_W_ThIt.woff') format('woff'),
-       url('/fonts/amazon-ember/AmazonEmber_ThIt.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Amazon Ember';
-  font-style: normal;
-  font-weight: 300;
-  font-display: swap;
-  src: url('/fonts/amazon-ember/AmazonEmber_W_Lt.woff2') format('woff2'),
-       url('/fonts/amazon-ember/AmazonEmber_W_Lt.woff') format('woff'),
-       url('/fonts/amazon-ember/AmazonEmber_Lt.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Amazon Ember';
-  font-style: italic;
-  font-weight: 300;
-  font-display: swap;
-  src: url('/fonts/amazon-ember/AmazonEmber_W_LtIt.woff2') format('woff2'),
-       url('/fonts/amazon-ember/AmazonEmber_W_LtIt.woff') format('woff'),
-       url('/fonts/amazon-ember/AmazonEmber_LtIt.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Amazon Ember';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('/fonts/amazon-ember/AmazonEmber_W_Rg.woff2') format('woff2'),
-       url('/fonts/amazon-ember/AmazonEmber_W_Rg.woff') format('woff'),
-       url('/fonts/amazon-ember/AmazonEmber_Rg.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Amazon Ember';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url('/fonts/amazon-ember/AmazonEmber_W_RgIt.woff2') format('woff2'),
-       url('/fonts/amazon-ember/AmazonEmber_W_RgIt.woff') format('woff'),
-       url('/fonts/amazon-ember/AmazonEmber_RgIt.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Amazon Ember';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url('/fonts/amazon-ember/AmazonEmber_W_SBd.woff2') format('woff2'),
-       url('/fonts/amazon-ember/AmazonEmber_W_SBd.woff') format('woff'),
-       url('/fonts/amazon-ember/AmazonEmber-Md.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Amazon Ember';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url('/fonts/amazon-ember/AmazonEmber_W_SBd.woff2') format('woff2'),
-       url('/fonts/amazon-ember/AmazonEmber_W_SBd.woff') format('woff'),
-       url('/fonts/amazon-ember/AmazonEmber_SBd.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Amazon Ember';
-  font-style: italic;
-  font-weight: 600;
-  font-display: swap;
-  src: url('/fonts/amazon-ember/AmazonEmber_W_SBdIt.woff2') format('woff2'),
-       url('/fonts/amazon-ember/AmazonEmber_W_SBdIt.woff') format('woff'),
-       url('/fonts/amazon-ember/AmazonEmber_SBdIt.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Amazon Ember';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('/fonts/amazon-ember/AmazonEmber_W_Bd.woff2') format('woff2'),
-       url('/fonts/amazon-ember/AmazonEmber_W_Bd.woff') format('woff'),
-       url('/fonts/amazon-ember/AmazonEmber_Bd.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Amazon Ember';
-  font-style: italic;
-  font-weight: 700;
-  font-display: swap;
-  src: url('/fonts/amazon-ember/AmazonEmber_W_BdIt.woff2') format('woff2'),
-       url('/fonts/amazon-ember/AmazonEmber_W_BdIt.woff') format('woff'),
-       url('/fonts/amazon-ember/AmazonEmber_BdIt.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Amazon Ember';
-  font-style: normal;
-  font-weight: 800;
-  font-display: swap;
-  src: url('/fonts/amazon-ember/AmazonEmber_W_He.woff2') format('woff2'),
-       url('/fonts/amazon-ember/AmazonEmber_W_He.woff') format('woff'),
-       url('/fonts/amazon-ember/AmazonEmber_He.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Amazon Ember';
-  font-style: normal;
-  font-weight: 900;
-  font-display: swap;
-  src: url('/fonts/amazon-ember/AmazonEmber_W_He.woff2') format('woff2'),
-       url('/fonts/amazon-ember/AmazonEmber_W_He.woff') format('woff'),
-       url('/fonts/amazon-ember/AmazonEmber_He.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Amazon Ember Mono';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('/fonts/amazon-ember/AmazonEmberMono_W_Rg.woff2') format('woff2'),
-       url('/fonts/amazon-ember/AmazonEmberMono_W_Rg.woff') format('woff'),
-       url('/fonts/amazon-ember/AmazonEmberMono_Rg.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Amazon Ember Mono';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('/fonts/amazon-ember/AmazonEmberMono_W_Bd.woff2') format('woff2'),
-       url('/fonts/amazon-ember/AmazonEmberMono_W_Bd.woff') format('woff'),
-       url('/fonts/amazon-ember/AmazonEmberMono_Bd.ttf') format('truetype');
 }
 
 @layer base {
@@ -179,25 +27,25 @@
     margin: 0;
     padding: 0;
     min-height: 100%;
-    font-family: 'Amazon Ember', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+    font-family: var(--font-sans);
     font-weight: 500;
     font-size: 0.95rem;
     line-height: 1.5;
-    color: var(--foreground);
-    background-color: var(--background);
+    color: var(--text-primary);
+    background-color: var(--bg-page);
   }
 
-  /* Ensure text rendering across all inputs, buttons, tables, headings uses Amazon Ember */
   *,
   *::before,
   *::after {
-    font-family: 'Amazon Ember', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-family: var(--font-sans);
   }
 }
 
 @layer components {
   .field { @apply flex flex-col gap-2 text-sm font-bold text-slate-800 dark:text-slate-200; }
-  .input { @apply h-11 w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-3.5 text-sm font-semibold text-slate-900 dark:text-slate-100 outline-none transition focus:border-[#004a80] focus:ring-2 focus:ring-[#004a80]/15; }
+  /* Filled grey input: no border, 8px radius; focus = white fill + strong outline. */
+  .input { @apply h-11 w-full rounded-control bg-surface-muted px-3.5 text-sm font-semibold text-ink outline-none border border-transparent transition focus:border-[color:var(--border-strong)] focus:bg-page focus:ring-0; }
 }
 
 /* Keep native number controls available throughout the app. These provide
@@ -213,91 +61,51 @@ input[type='number']::-webkit-outer-spin-button {
   opacity: 1;
 }
 
+/* Legacy shadcn-style semantic variables — every value maps onto the
+   @plinth/tokens CSS variables injected in the root layout. LIGHT ONLY:
+   the dark theme was removed; `dark:` classes resolve to these light values. */
 :root {
-  --background: oklch(1.000 0 0); /* White */
-  --foreground: oklch(0.250 0 0); /* Dark Charcoal */
-  --card: oklch(1.000 0 0);
-  --card-foreground: oklch(0.250 0 0);
-  --popover: oklch(1.000 0 0);
-  --popover-foreground: oklch(0.250 0 0);
-  --primary: #004a80; /* Synergy Brand Blue (#004a80 / rgb(0, 74, 128)) */
-  --primary-foreground: #ffffff;
-  --secondary: oklch(0.975 0.005 250); /* Very light warm gray */
-  --secondary-foreground: oklch(0.350 0 0);
-  --muted: oklch(0.965 0 0); /* Soft gray */
-  --muted-foreground: oklch(0.550 0 0);
-  --accent: #f0f7fc; /* Subtle clean brand-tinted surface */
-  --accent-foreground: #004a80; /* Synergy Brand Blue */
-  --destructive: oklch(0.600 0.150 20); /* Red */
-  --destructive-foreground: oklch(1.000 0 0);
-  --border: oklch(0.920 0 0);
-  --input: oklch(0.920 0 0);
-  --ring: #004a80;
-  
-  --chart-1: #004a80;
-  --chart-2: #2685c4;
-  --chart-3: #53a3d6;
-  --chart-4: #8dc2e4;
-  --chart-5: #bddbf0;
-  
-  --sidebar: oklch(1.000 0 0); /* Clean white sidebar */
-  --sidebar-foreground: oklch(0.350 0 0);
-  --sidebar-primary: #004a80;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #f0f7fc;
-  --sidebar-accent-foreground: #004a80;
-  --sidebar-border: oklch(0.940 0 0);
-  --sidebar-ring: #004a80;
+  --background: var(--bg-page);
+  --foreground: var(--text-primary);
+  --card: var(--bg-surface);
+  --card-foreground: var(--text-primary);
+  --popover: var(--bg-surface);
+  --popover-foreground: var(--text-primary);
+  --primary: var(--action-primary-bg);
+  --primary-foreground: var(--action-primary-text);
+  --secondary: var(--action-secondary-bg);
+  --secondary-foreground: var(--action-secondary-text);
+  --muted: var(--bg-muted);
+  --muted-foreground: var(--text-muted);
+  --accent: var(--bg-muted);
+  --accent-foreground: var(--text-primary);
+  --destructive: var(--tone-red-text);
+  --destructive-foreground: #ffffff;
+  --input: var(--border-strong);
+  --ring: var(--focus-ring);
 
-  --font-sans: 'Amazon Ember', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  --font-manrope: 'Amazon Ember', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  --font-serif: var(--font-sans), sans-serif;
-  --font-mono: var(--font-sans), sans-serif;
-  
-  --radius: 0.5rem; /* Moderate rounded corners (md) */
-  
-  --shadow-2xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-xs: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-  --shadow-sm: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-  --shadow-xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
-  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
-  
+  --sidebar: var(--bg-surface);
+  --sidebar-foreground: var(--text-secondary);
+  --sidebar-primary: var(--action-primary-bg);
+  --sidebar-primary-foreground: var(--action-primary-text);
+  --sidebar-accent: var(--bg-muted);
+  --sidebar-accent-foreground: var(--text-primary);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--focus-ring);
+
+  --radius: 0.5rem;
+
+  --shadow-2xs: none;
+  --shadow-xs: none;
+  --shadow-sm: none;
+  --shadow: none;
+  --shadow-md: none;
+  --shadow-lg: none;
+  --shadow-xl: none;
+  --shadow-2xl: none;
+
   --tracking-normal: 0em;
   --spacing: 0.25rem;
-}
-
-.dark {
-  --background: oklch(0.150 0 0);
-  --foreground: oklch(0.950 0 0);
-  --card: oklch(0.200 0 0);
-  --card-foreground: oklch(0.950 0 0);
-  --popover: oklch(0.200 0 0);
-  --popover-foreground: oklch(0.950 0 0);
-  --primary: #2685c4;
-  --primary-foreground: #ffffff;
-  --secondary: oklch(0.250 0 0);
-  --secondary-foreground: oklch(0.950 0 0);
-  --muted: oklch(0.250 0 0);
-  --muted-foreground: oklch(0.700 0 0);
-  --accent: rgba(0, 74, 128, 0.25);
-  --accent-foreground: #8dc2e4;
-  --destructive: oklch(0.600 0.150 20);
-  --destructive-foreground: oklch(1.000 0 0);
-  --border: oklch(0.250 0 0);
-  --input: oklch(0.250 0 0);
-  --ring: #2685c4;
-  
-  --sidebar: oklch(0.150 0 0);
-  --sidebar-foreground: oklch(0.950 0 0);
-  --sidebar-primary: #2685c4;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: rgba(0, 74, 128, 0.25);
-  --sidebar-accent-foreground: #8dc2e4;
-  --sidebar-border: oklch(0.250 0 0);
-  --sidebar-ring: #2685c4;
 }
 
 @layer base {
@@ -305,8 +113,8 @@ input[type='number']::-webkit-outer-spin-button {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-sans transition-colors duration-200;
-    font-family: 'Amazon Ember', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    @apply bg-page text-ink font-sans transition-colors duration-200;
+    font-family: var(--font-sans);
     font-weight: 500;
     font-optical-sizing: auto;
     font-synthesis: none;
@@ -316,20 +124,20 @@ input[type='number']::-webkit-outer-spin-button {
   button, input, select, textarea { font-family: inherit; font-weight: 500; }
   select {
     min-height: 2.75rem;
-    border-radius: 0.75rem;
-    border: 1px solid color-mix(in oklab, var(--border) 85%, var(--primary));
-    background-color: var(--background);
-    color: var(--foreground);
+    border-radius: var(--radius-control);
+    border: 1px solid var(--border);
+    background-color: var(--bg-surface);
+    color: var(--text-primary);
     padding-inline: 0.875rem;
     outline: none;
-    accent-color: var(--primary);
+    accent-color: var(--action-primary-bg);
     color-scheme: light;
     transition: border-color .15s ease, box-shadow .15s ease, background-color .15s ease;
   }
-  select:hover { border-color: var(--primary); background-color: color-mix(in oklab, var(--accent) 35%, var(--background)); }
-  select:focus { border-color: var(--primary); box-shadow: 0 0 0 4px color-mix(in oklab, var(--primary) 18%, transparent); }
+  select:hover { border-color: var(--border-strong); background-color: var(--bg-muted); }
+  select:focus { border-color: var(--border-strong); box-shadow: 0 0 0 2px var(--focus-ring); }
   select option { background: var(--popover); color: var(--popover-foreground); padding: .6rem; }
-  select option:checked { background: var(--primary); color: var(--primary-foreground); }
+  select option:checked { background: var(--action-primary-bg); color: var(--action-primary-text); }
   /* Keep headings and interface copy readable across every module. */
   h1, h2, h3, h4, h5, h6 { font-family: inherit; font-weight: 600 !important; letter-spacing: -0.02em; }
 
@@ -347,35 +155,20 @@ input[type='number']::-webkit-outer-spin-button {
   input:-webkit-autofill,
   input:-webkit-autofill:hover,
   input:-webkit-autofill:focus {
-    -webkit-text-fill-color: var(--foreground);
-    -webkit-box-shadow: 0 0 0 1000px var(--background) inset;
+    -webkit-text-fill-color: var(--text-primary);
+    -webkit-box-shadow: 0 0 0 1000px var(--bg-surface) inset;
     transition: background-color 9999s ease-out 0s;
   }
 
-  /* Light grey font for all inputs and textareas placeholders */
+  /* Placeholder text */
   input::placeholder,
   textarea::placeholder,
   .input::placeholder,
   [data-placeholder]::placeholder {
-    color: #9ca3af !important;
+    color: var(--text-placeholder) !important;
     font-weight: 400 !important;
     opacity: 0.85 !important;
   }
-
-  .dark input::placeholder,
-  .dark textarea::placeholder,
-  .dark .input::placeholder,
-  .dark [data-placeholder]::placeholder {
-    color: #64748b !important;
-    font-weight: 400 !important;
-    opacity: 0.85 !important;
-  }
-}
-.material-symbols-outlined {
-  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-}
-.material-symbols-outlined.fill {
-  font-variation-settings: 'FILL' 1;
 }
 
 /* Utilities to cleanly hide scrollbars while maintaining smooth mouse/touch scrollability */
@@ -411,7 +204,7 @@ input[type='number']::-webkit-outer-spin-button {
   }
   body, html {
     background: white !important;
-    color: #0f172a !important;
+    color: var(--text-primary) !important;
     height: auto !important;
     overflow: visible !important;
     margin: 0 !important;
@@ -473,7 +266,7 @@ input[type='number']::-webkit-outer-spin-button {
     display: block !important;
     width: 100% !important;
     background: white !important;
-    color: #0f172a !important;
+    color: var(--text-primary) !important;
     padding: 0 !important;
     margin: 0 !important;
     overflow: visible !important;

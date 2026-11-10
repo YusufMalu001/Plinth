@@ -32,9 +32,12 @@ count_colors() {
     | xargs -0 -r grep -ioE '#[0-9a-fA-F]{6}\b|#[0-9a-fA-F]{3}\b|rgba?\(|hsla?\(|oklch\(' 2>/dev/null | wc -l
 }
 
-# Banned brand terms: old product and client identifiers.
+# Banned brand terms: old product and client identifiers in source,
+# configs, seeds and non-spec docs. PLINTH_REFACTOR.md and REFACTOR_LOG.md are
+# excluded: the spec/log must cite the search terms to document and prove removal.
 count_banned() {
-  count_matches 'synergy|aelyx' apps web packages services scripts database infrastructure docs *.json *.md *.yml 2>/dev/null || true
+  count_matches 'synergy|aelyx' apps web packages services scripts database infrastructure docs README.md \
+    $(git ls-files '*.json' '*.md' '*.yml' '*.yaml' | grep -vE 'PLINTH_REFACTOR|REFACTOR_LOG|AGENTS|Agents' ) 2>/dev/null || true
 }
 
 get_field() {

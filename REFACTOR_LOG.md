@@ -53,7 +53,7 @@ what changed, files touched count, decisions made, anything left undone and why.
 | `Plinth` in code | 0 | existing only in `PLINTH_REFACTOR.md` |
 | ERPNext/Frappe in code | 0 | only spec mentions |
 
-**Baseline ratchet counts** (see `scripts/verify-baseline.json`, recorded this phase)
+- **Baseline ratchet counts** (see `scripts/verify-baseline.json`, recorded this phase)
 - `colors` = colour literals in git-tracked source (hex/rgb/hsl/oklch, `apps/web/src`, `packages/*`, `services/api/src`, `config`, `design`).
 - `banned` = `synergy|aelyx` occurrences in git-tracked files.
 - Gates may only decrease; STRICT=1 = zero, Phase 10 only.
@@ -91,3 +91,31 @@ what changed, files touched count, decisions made, anything left undone and why.
 - Spec originally said "Begin now with Phase 1"; owner's Addendum redefines execution start at Phase 0 (baseline) — recorded here.
 - No CI system exists; verify.sh documented as the gate.
 - `synergy_backup.sql`, `Accounts.txt`, `output/` PDFs are outside git history but may remain on the owner's disk; the Phase 10 banned-term grep proves coverage over git-tracked files only.
+
+## Phase 2 — Design tokens (single source of truth)
+
+### What changed
+- **New `packages/tokens` (`@plinth/tokens`)** — TS constants (`COLOR`, `ACTION`, `SEMANTIC`, `CHART_PALETTE`, `TYPE_SCALES`, `SHAPE`, `SHADOWS`) + a `CSS_TOKENS` string with one `:root` variable block. The only place colour literals are allowed outside this package is (deliberately) this file — the ratchet gate now excludes `packages/tokens/**` from colour counting.
+- **Web**: root `layout.tsx` injects `CSS_TOKENS` via a single `<style>` tag and loads Inter (`next/font/google`, variable `--font-inter` mapped by `--font-sans` with system-ui fallback). `viewport.colorScheme: 'light'`.
+- **`apps/web/tailwind.config.js` rewritten**: deleted the dead `gs-*` family (~45 keys) and the blue `synergy` scale; added Plinth mappings (`page/surface/surface-muted/hover`, `ink.*`, `action`, `border-strong`, `tone-<colour>-bg/text/solid`, `chart-1..8`, `radius-control/card/pill`, `height-row/control`, `shadow-popover/none`). Legacy `synergy-50..950` classes are kept as aliases resolving to neutral tokens (127 class usages render neutral rather than blue) — final rename/removal happens with the Phase 8 sweep.
+- **`apps/web/src/app/globals.css` rewritten**: all Amazon Ember `@font-face` rules and the Orbitron/Material-Symbols Google imports removed; the `.dark` token block deleted (LIGHT-ONLY); `:root` maps the legacy shadcn variables (background/foreground/card/…, sidebar-*) onto `@plinth/tokens` variables; shadows default to `none`; `.input` is now filled-grey 8px with focus = white fill + `--border-strong` outline; select/autofill/print styles now read only tokens.
+- **Light-only enforcement**: AppLayout forcibly removes the `dark` class, the profile-menu theme toggle and `Sidebar` theme button removed (with now-unused props/icons deleted), `ThemeToggle.tsx` deleted (was already unreferenced). Existing `dark:` classes stay inert per Addendum #3.
+- **Stale files deleted** (Addendum #5, confirmed no imports): `apps/web/output.css`, `apps/web/public/fonts/amazon-ember/**`.
+- **Backend (Addendum #6)**: `services/api/modules/dashboard/dashboard.service.ts` chart palette now imports `CHART_PALETTE` from `@plinth/tokens` (replacing its amber-first 6-hex list). Email-service inline colours still contain literals — that sweep lands with the PDF/email tokenisation later in this phase stream.
+- `@plinth/tokens` added to `apps/web`/`services/api` workspaces and `next.config.js` `transpilePackages`.
+
+### Files touched
+~14 files + new package (4 files) + package-lock regeneration.
+
+### Ratchet effect
+colours 1087 → 997 (−90). Banned terms gate now counts source/config/docs only and excludes the two spec/log documents that must cite the banned terms (recorded decision).
+
+### Decisions
+- Tokens ship as a `<style>` injection (avoids a build-order dependency between web's Tailwind build and the tokens package).
+- `synergy-*` scale kept as neutral aliases instead of a mass class rename now (one dedicated sweep later, before Phase 8 codemod).
+
+### Left undone / next
+- Component-level hex literals (`#004a80` etc., ~527 usages) still remain — replaced progressively by page/feature sweeps from Phase 3 onward, and by the login-screen rebuild.
+- Gradient components (`GradientBackground`, `RibbonFieldGradient`, `background-snippets`) not yet deleted — login shell rebuild in Phase 3 will confirm their unreferenced status first.
+
+---

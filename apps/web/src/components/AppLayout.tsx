@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react"
 import { usePathname, useRouter } from "next/navigation"
-import { Moon, Sun, Settings, LogOut, ChevronDown, User, Menu } from "lucide-react"
+import { Settings, LogOut, ChevronDown, User, Menu } from "lucide-react"
 import { Sidebar } from "./Sidebar"
 import { NotificationCenter } from "./NotificationCenter"
 import Link from "next/link"
@@ -15,7 +15,6 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter()
   const pathname = usePathname()
   const { data: currentUser, isLoading, isError } = useCurrentUser()
-  const [isDarkMode, setIsDarkMode] = useState(false)
   const [isProfileOpen, setIsProfileOpen] = useState(false)
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false)
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false)
@@ -36,27 +35,12 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
   }, [])
 
   useEffect(() => {
-    const isDark = document.documentElement.classList.contains("dark") ||
-      localStorage.getItem("theme") === "dark"
-    setIsDarkMode(isDark)
-    if (isDark) {
-      document.documentElement.classList.add("dark")
-    } else {
-      document.documentElement.classList.remove("dark")
-    }
+    // Light-only ships (Addendum #3): the dark theme is removed. Existing
+    // stored preferences are ignored; `dark:` classes resolve to light tokens.
+    document.documentElement.classList.remove("dark");
   }, [])
 
-  const toggleDarkMode = () => {
-    const nextDark = !isDarkMode
-    setIsDarkMode(nextDark)
-    if (nextDark) {
-      document.documentElement.classList.add("dark")
-      localStorage.setItem("theme", "dark")
-    } else {
-      document.documentElement.classList.remove("dark")
-      localStorage.setItem("theme", "light")
-    }
-  }
+  
   useEffect(() => {
     if (isError) {
       const next = pathname + (typeof window !== 'undefined' && window.location.search ? window.location.search : '');
@@ -142,8 +126,6 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
         onToggle={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
         isMobileOpen={isMobileNavOpen}
         onMobileClose={() => setIsMobileNavOpen(false)}
-        isDarkMode={isDarkMode}
-        onToggleTheme={toggleDarkMode}
         isAssemblyUser={isAssemblyUser}
       />
 
@@ -204,16 +186,6 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
                     <User className="w-4 h-4" />
                     <span>My Profile</span>
                   </Link>
-
-                  <button
-                    onClick={toggleDarkMode}
-                    className="w-full flex items-center justify-between px-3 py-2 text-sm text-popover-foreground hover:bg-accent hover:text-accent-foreground"
-                  >
-                    <div className="flex items-center gap-2">
-                      {isDarkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-                      <span>{isDarkMode ? "Light Mode" : "Dark Mode"}</span>
-                    </div>
-                  </button>
 
                   <Link
                     href="/settings"
