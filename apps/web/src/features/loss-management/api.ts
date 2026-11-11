@@ -6,7 +6,7 @@ import type {
   LossSourceType,
   LossClassification,
   LossEventStatus
-} from '@synergy/types';
+} from '@plinth/types';
 
 export interface LossEventQueryFilters {
   sourceType?: LossSourceType;

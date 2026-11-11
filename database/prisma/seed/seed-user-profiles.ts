@@ -6,7 +6,7 @@ const prisma = new PrismaClient();
 
 const PROFILES_TO_SEED = [
   {
-    email: 'admin@synergy.com',
+    email: 'admin@plinth.example',
     aliases: ['admin@gmail.com'],
     firstName: 'System',
     lastName: 'Admin',
@@ -16,8 +16,8 @@ const PROFILES_TO_SEED = [
     deptCode: null
   },
   {
-    email: 'storemanager@synergy.com',
-    aliases: ['manager@synergy.com'],
+    email: 'storemanager@plinth.example',
+    aliases: ['manager@plinth.example'],
     firstName: 'Sufiyan',
     lastName: 'Mirza',
     role: Role.manager,
@@ -26,8 +26,8 @@ const PROFILES_TO_SEED = [
     deptCode: null
   },
   {
-    email: 'sales@synergy.com',
-    aliases: ['sales.executive@synergy.com', 'salesmanager@synergy.com'],
+    email: 'sales@plinth.example',
+    aliases: ['sales.executive@plinth.example', 'salesmanager@plinth.example'],
     firstName: 'Rajesh',
     lastName: 'Sharma',
     role: Role.employee,
@@ -46,7 +46,7 @@ export async function seedUserProfiles() {
     factory = await prisma.factory.create({
       data: {
         code: 'FAC-01',
-        name: 'Main Synergy Production Plant'
+        name: 'Main Plinth Production Plant'
       }
     });
   }

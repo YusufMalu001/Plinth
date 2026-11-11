@@ -1,5 +1,5 @@
 import React from 'react';
-import { Badge } from '@synergy/ui';
+import { Badge } from '@plinth/ui';
 import {
   LifecycleStatus,
   PrStatus,
@@ -34,7 +34,7 @@ import {
   JobWorkOrderStatus,
   JobWorkReconciliationStatus,
   BomStatus,
-} from '@synergy/types';
+} from '@plinth/types';
 import { twMerge } from 'tailwind-merge';
 
 export type SalesOrderStatus =

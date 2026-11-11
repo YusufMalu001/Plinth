@@ -32,7 +32,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@synergy/ui";
+} from "@plinth/ui";
 import {
   useProducts,
   useProductFamilies,

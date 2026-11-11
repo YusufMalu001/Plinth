@@ -345,7 +345,7 @@ export const employeesController = {
   async resetPassword(req: Request, res: Response, next: NextFunction) {
     try {
       const { employeeId } = req.params;
-      const newPassword = req.body.password || `Synergy@${Math.random().toString(36).substring(2, 8)}!`;
+      const newPassword = req.body.password || `Plinth@${Math.random().toString(36).substring(2, 8)}!`;
       const result = await employeesService.resetEmployeePassword(employeeId, newPassword);
       res.json({
         success: true,

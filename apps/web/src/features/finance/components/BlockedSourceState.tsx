@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Card, Button } from '@synergy/ui';
+import { Card, Button } from '@plinth/ui';
 import { Lock, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 

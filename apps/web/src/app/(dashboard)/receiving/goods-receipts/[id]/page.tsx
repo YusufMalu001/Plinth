@@ -32,7 +32,7 @@ import {
   TableRow,
   TableHead,
   TableCell,
-} from '@synergy/ui';
+} from '@plinth/ui';
 import { StatusBadge } from '@/components/StatusBadge';
 import { LoadingState } from '@/components/LoadingState';
 import { ErrorState } from '@/components/ErrorState';
@@ -49,7 +49,7 @@ import {
 } from '@/features/goods-receipt/hooks';
 import { PhysicalVerificationModal } from '@/features/goods-receipt/components/PhysicalVerificationModal';
 import type { GrnLine } from '@/features/goods-receipt/api';
-import { MeasurementType } from '@synergy/types';
+import { MeasurementType } from '@plinth/types';
 import { showToast } from '@/components/toast-store';
 import { formatIndianDate, formatINR, getVendorDisplayDetails } from '@/features/purchases/utils';
 import { GoodsReceiptPDF } from '@/components/GoodsReceiptPDF';

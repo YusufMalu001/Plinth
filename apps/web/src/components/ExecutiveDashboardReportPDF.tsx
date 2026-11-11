@@ -1,6 +1,6 @@
 import React from 'react';
 import { DashboardAnalytics, DashboardTimeframe } from '../features/dashboard/data/dashboardDataProvider';
-import { SYNERGY_COMPANY_INFO } from '../features/purchases/utils';
+import { COMPANY_INFO } from '../features/purchases/utils';
 
 export interface ExecutiveDashboardReportPDFProps {
   data: DashboardAnalytics;
@@ -114,15 +114,15 @@ export const ExecutiveDashboardReportPDF = React.forwardRef<
           <div className="flex items-center gap-2">
             <span className="h-6 w-1.5 bg-[#004a80] rounded-xs inline-block"></span>
             <span className="text-xl font-black tracking-tight text-slate-900 uppercase">
-              {SYNERGY_COMPANY_INFO.name}
+              {COMPANY_INFO.name}
             </span>
           </div>
           <p className="text-[10px] text-slate-500 font-semibold tracking-wider uppercase mt-0.5">
             Enterprise Operations &amp; Management Dashboard
           </p>
           <p className="text-[9px] text-slate-500 mt-1 max-w-sm leading-tight">
-            {SYNERGY_COMPANY_INFO.addressLine1} {SYNERGY_COMPANY_INFO.addressLine2}{' '}
-            {SYNERGY_COMPANY_INFO.addressLine3} · GSTIN: {SYNERGY_COMPANY_INFO.gstin}
+            {COMPANY_INFO.addressLine1} {COMPANY_INFO.addressLine2}{' '}
+            {COMPANY_INFO.addressLine3} · GSTIN: {COMPANY_INFO.gstin}
           </p>
         </div>
 
@@ -433,7 +433,7 @@ export const ExecutiveDashboardReportPDF = React.forwardRef<
       <div className="border-t border-slate-300 pt-3 mt-8 flex items-center justify-between text-[9px] text-slate-500 avoid-break">
         <div>
           <p className="font-semibold text-slate-700">
-            Synergy International · Automated Enterprise ERP Intelligence
+            Plinth · Automated Enterprise ERP Intelligence
           </p>
           <p className="text-[8px] text-slate-400 mt-0.5">
             Confidential · Generated from live transactional ledger records for internal operational review.

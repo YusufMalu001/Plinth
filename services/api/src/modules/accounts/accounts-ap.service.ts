@@ -182,9 +182,9 @@ export class AccountsPayablesService {
     });
     if (alreadyLinked) return { ...alreadyLinked, lines: resolveBillLineCatalogDetails(alreadyLinked.lines) };
 
-    const entity = await this.db.accountingEntity.findUnique({ where: { code: 'SYNERGY-IN' } });
+    const entity = await this.db.accountingEntity.findUnique({ where: { code: 'PLINTH-IN' } });
     if (!entity || !['CONFIGURING', 'ACTIVE'].includes(entity.status)) {
-      throw new ValidationError('Initialize the Synergy Accounts book before finalizing supplier bill capture.');
+      throw new ValidationError('Initialize the Plinth Accounts book before finalizing supplier bill capture.');
     }
     if (!['APPROVED', 'ACTIVE'].includes(grn.vendor.status) || grn.vendor.deactivatedAt || (!isJobWork && grn.po.vendorId !== grn.vendorId)) {
       throw new ValidationError('The GRN vendor must be active or approved before creating an Accounts draft.');
@@ -455,7 +455,7 @@ export class AccountsPayablesService {
 
   async listAcceptedGrns(entityId: string) {
     const [entity] = await this.db.$queryRaw<Array<{ id: string }>>`
-      SELECT "id" FROM "accounting_entities" WHERE "id" = ${entityId} AND "code" = 'SYNERGY-IN' LIMIT 1`;
+      SELECT "id" FROM "accounting_entities" WHERE "id" = ${entityId} AND "code" = 'PLINTH-IN' LIMIT 1`;
     // Accepted receipts are operational source records. They must remain visible to
     // Accounts while the accounting book is being configured; this endpoint does
     // not post a journal or otherwise activate the book.

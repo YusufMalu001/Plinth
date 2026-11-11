@@ -1,6 +1,6 @@
 'use client';
 
-import { Checkbox } from '@synergy/ui';
+import { Checkbox } from '@plinth/ui';
 import React, { useState, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import {
@@ -24,7 +24,7 @@ import {
   TableHead,
   TableBody,
   TableCell,
-} from '@synergy/ui';
+} from '@plinth/ui';
 import { useBomVersions, useDeleteBomDraft, useDeleteBomDrafts } from '../../../../features/bom/hooks';
 import type { BomVersionSummary } from '../../../../features/bom/types';
 import { PaginationControls } from '../../../../components/PaginationControls';

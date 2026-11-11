@@ -46,9 +46,9 @@ function assertLocalDevelopmentDatabase(): void {
   if (
     process.env.NODE_ENV === 'production' ||
     !isLocalHost ||
-    databaseName !== 'synergy_erp'
+    databaseName !== 'plinth_erp'
   ) {
-    throw new Error('Refusing to seed: this script only runs against the local synergy_erp development database.');
+    throw new Error('Refusing to seed: this script only runs against the local plinth_erp development database.');
   }
 }
 
@@ -128,8 +128,8 @@ async function main() {
   const credentials: Array<{ department: string; email: string; password: string }> = [];
 
   for (const department of departments) {
-    const email = `${emailSlug(department.name.replace(/ department$/i, ''))}@synergy.local`;
-    const legacyEmail = `demo.${legacyEmailSlug(department.code)}@synergy.local`;
+    const email = `${emailSlug(department.name.replace(/ department$/i, ''))}@plinth.local`;
+    const legacyEmail = `demo.${legacyEmailSlug(department.code)}@plinth.local`;
     const legacyUser = await prisma.user.findUnique({ where: { email: legacyEmail }, select: { id: true } });
     const existingSimpleUser = await prisma.user.findUnique({
       where: { email },

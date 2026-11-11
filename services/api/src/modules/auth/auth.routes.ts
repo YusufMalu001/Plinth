@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import rateLimit from 'express-rate-limit';
-import { loginRequestSchema } from '@synergy/validation';
+import { loginRequestSchema } from '@plinth/validation';
 import { requireAuth } from '../../common/middleware/auth';
 import { requireTrustedOrigin } from '../../common/middleware/trustedOrigin';
 import { validate } from '../../common/middleware/validation';

@@ -1,5 +1,5 @@
 # ==============================================================================
-# SYNERGY ERP - API BACKEND DOCKERFILE
+# PLINTH ERP - API BACKEND DOCKERFILE
 # ==============================================================================
 
 # --- Stage 1: Build ---
@@ -42,7 +42,7 @@ WORKDIR /app
 RUN npx prisma generate --schema=database/prisma/schema.prisma
 
 # Build packages and API service
-RUN npx turbo run build --filter=@synergy/api...
+RUN npx turbo run build --filter=@plinth/api...
 
 # --- Stage 2: Runtime ---
 FROM node:22-bookworm-slim AS runner

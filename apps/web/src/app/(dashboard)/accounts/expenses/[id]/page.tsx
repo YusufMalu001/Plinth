@@ -18,7 +18,7 @@ import {
   ShieldCheck,
   RefreshCw,
 } from 'lucide-react';
-import { Button } from '@synergy/ui';
+import { Button } from '@plinth/ui';
 import { accountsApi } from '@/features/accounts/api';
 import { showToast } from '@/components/toast-store';
 import { formatCurrency } from '@/features/accounts/utils';
@@ -118,7 +118,7 @@ export default function MiscellaneousExpenseDetailPage() {
             type="button"
             variant="outline"
             onClick={() => handlePrint()}
-            className="rounded-xl text-xs gap-1.5 h-8 px-3 hover:bg-muted hover:text-primary dark:hover:bg-synergy-950/30 transition-colors"
+            className="rounded-xl text-xs gap-1.5 h-8 px-3 hover:bg-muted hover:text-primary dark:hover:bg-n-950/30 transition-colors"
           >
             <Printer className="h-3.5 w-3.5" />
             Print Voucher
@@ -147,11 +147,7 @@ export default function MiscellaneousExpenseDetailPage() {
         {/* Printable Official Header (Shown both in screen & print) */}
         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 border-b-2 border-border pb-5">
           <div className="flex items-start gap-4">
-            <img
-              src="/synergy.png"
-              alt="Synergy International"
-              className="h-10 w-auto object-contain dark:invert print:filter-none"
-            />
+            <span className="text-xl font-black tracking-tight text-ink uppercase">Plinth</span>
             <div className="border-l border-border/80 pl-4 print:border-slate-300">
               <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-foreground print:text-foreground">
                 Finance &amp; Accounts · Petty Cash Disbursement
@@ -160,7 +156,7 @@ export default function MiscellaneousExpenseDetailPage() {
                 Expense Payment Voucher
               </h2>
               <p className="text-xs text-muted-foreground print:text-slate-600 mt-0.5">
-                Synergy International · General Ledger Posting
+                Plinth · General Ledger Posting
               </p>
             </div>
           </div>

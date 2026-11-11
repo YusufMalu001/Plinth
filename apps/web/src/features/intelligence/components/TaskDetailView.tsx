@@ -164,7 +164,7 @@ export function TaskDetailView({ id }: { id: string }) {
               </h3>
             </div>
             <p className="text-xs text-slate-500 leading-relaxed">
-              This task is an accountable operational directive. Execution of purchase orders, stock transfers, pricing updates, production schedules, or ledger changes must still be performed and approved through their respective Synergy module.
+              This task is an accountable operational directive. Execution of purchase orders, stock transfers, pricing updates, production schedules, or ledger changes must still be performed and approved through their respective Plinth module.
             </p>
           </div>
         </div>

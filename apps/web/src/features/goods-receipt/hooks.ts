@@ -5,7 +5,7 @@ import { useQuery, useMutation, useQueryClient, keepPreviousData } from '@tansta
 import { grnApi, fetchApiWithParams, Grn, GrnListResponse } from './api';
 import type { ExpectedReceiptListResponse } from '../purchases/api';
 import { notificationKeys, poKeys, receiptKeys } from '../purchases/hooks';
-import { GrnStatus, ExpectedReceiptStatus } from '@synergy/types';
+import { GrnStatus, ExpectedReceiptStatus } from '@plinth/types';
 
 // ─── Query keys ───────────────────────────────────────────────────────────────
 

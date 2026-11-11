@@ -1,6 +1,6 @@
 import React from 'react';
 import { SearchX } from 'lucide-react';
-import { cn } from '@synergy/ui';
+import { cn } from '@plinth/ui';
 
 export interface EmptyStateProps {
   title?: string;

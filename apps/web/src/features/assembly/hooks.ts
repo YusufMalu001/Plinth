@@ -166,7 +166,7 @@ export function useRecordAssemblyProgress() {
       id: string;
       payload: {
         employeeId: string;
-        eventType: import('@synergy/types').ProgressEventType;
+        eventType: import('@plinth/types').ProgressEventType;
         quantityDelta: number;
         notes?: string | null;
       };

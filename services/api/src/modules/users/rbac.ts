@@ -1,4 +1,4 @@
-import { PermissionChecker, ScopeContext, UserRole } from '@synergy/types';
+import { PermissionChecker, ScopeContext, UserRole } from '@plinth/types';
 import { prisma } from '../../database';
 import { getActorCapabilities, hasCapability, invalidateActorCapabilities } from '../../common/rbac/permission-cache';
 import { ForbiddenError, NotFoundError } from '../../common/errors/AppError';

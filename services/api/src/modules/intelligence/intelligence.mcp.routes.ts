@@ -76,7 +76,7 @@ router.post('/', async (req: Request, res: Response, _next: NextFunction) => {
   const failure = (code: number, message: string) => res.status(code === -32601 ? 404 : 400).json({ jsonrpc: '2.0', id, error: { code, message } });
   try {
     const method = String(req.body?.method ?? '');
-    if (method === 'initialize') return result({ protocolVersion: '2025-03-26', capabilities: { tools: { listChanged: false } }, serverInfo: { name: 'synergy-intelligence-read-tools', version: '1.0.0' } });
+    if (method === 'initialize') return result({ protocolVersion: '2025-03-26', capabilities: { tools: { listChanged: false } }, serverInfo: { name: 'plinth-intelligence-read-tools', version: '1.0.0' } });
     if (method === 'ping') return result({});
     if (method === 'notifications/initialized') return res.status(202).end();
     if (method === 'tools/list') {

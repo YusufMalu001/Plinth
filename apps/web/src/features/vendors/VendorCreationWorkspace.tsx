@@ -1,6 +1,6 @@
 'use client';
 
-import { Checkbox } from '@synergy/ui';
+import { Checkbox } from '@plinth/ui';
 import React, { useState, useMemo, useEffect, type FormEvent } from 'react';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import Link from 'next/link';
@@ -19,7 +19,7 @@ import {
   X,
   Package,
 } from 'lucide-react';
-import { Button, PageHeader } from '@synergy/ui';
+import { Button, PageHeader } from '@plinth/ui';
 import { SearchableSelector } from '../../components/ui/SearchableSelector';
 import { getCityOptionsForState, STATE_OPTIONS } from '../sales/data/indianStatesAndCities';
 import { vendorsApi } from './api';

@@ -134,6 +134,41 @@ colours 1087 → 997 (−90). Banned terms gate now counts source/config/docs on
 - Remaining login component files (AuthCard, LoginCard, ...) still carry `#004a80` accents — sweep next.
 - Synthetic "Plinth" wordmark is a temporary placeholder; `config/brand.ts` + logo component land in Phase 8 and replace it everywhere.
 
+---
+
+## Phase 3.5 + 8 — Plinth branding surface, credentials, and @plinth codemod
+
+### What changed
+- **Brand surface (config/brand.tsx)**: `PRODUCT_NAME`/`COMPANY_NAME`/`Wordmark` created. Browser tab is now **"Plinth"** (`layout.tsx` metadata: default + `%s | Plinth` template, applicationName) with a neutral `icon.svg` (dark rounded square, plain "P"). The image logo (`synergy.png`/`synergy-favicon.png`/`synergy.jpg`) is retired everywhere:
+  - App workspace **loading splash** (`AppLayout.tsx`): favicon img → pulsing text Wordmark.
+  - `LoadingState.tsx`: image-in-spinner → plain "P" over a token spinner.
+  - `Sidebar.tsx`, `AppLayout.tsx` header, login page: `Image` → text `Wordmark`.
+  - All PDFs (PO, GRN, Debit Note, Job Work, Production Schedule, PR) and document screens (invoices, bills, credit notes, expenses, proforma): `<img src="/synergy.png">` → plain text wordmark block.
+  - `AskBusinessWidget` avatars: favicon → text "P".
+  - Public `synergy*.png/jpg` removed from git.
+- **Neutral company constants (Addendum #9)**: `SYNERGY_COMPANY_INFO` → `COMPANY_INFO` (Acme Industries, GSTIN 00AAAAA0000A0Z0, accounts@plinth.example) — the real address/phone/GSTIN/email of the old client are out of the codebase. `SYNERGY-IN` accounting entity code → `PLINTH-IN` (fresh DBs create the new code; note: any pre-existing database with data would need a one-line update).
+- **User-visible copy sweep**: "Synergy International/SYNERGY INTERNATIONAL/Synergy ERP/Advisor prompts/email subjects and footers" → Plinth across web + api (48+ files in web, intelligence prompts, job-work email service, tally mappings copy, accounts setup copy).
+- **Credentials (owner request)**: `seed.ts` now provisions exactly two bootstrap accounts on an empty database — `admin@plinth.example` (System Admin, role admin) and `storemanager@plinth.example` (Store Manager, role manager) with freshly generated passwords (reported to the owner in chat; rotate after first sign-in). All `@synergy.com`/`@gmail.com`/personal-name accounts and the SEED_FULL fixture users were removed from the seed. No shop-floor head credentials are seeded anywhere by default (`seed-department-users.ts` was never wired into `db:seed`; its legacy accounts were swept out of the repo). Live-verified: both accounts return `success:true` from `POST /api/v1/auth/login`; `admin@gmail.com` now correctly returns UNAUTHORIZED.
+- **Cookie rename with dual-read (Addendum #9)**: `plinth_access`/`plinth_refresh` replace `synergy_access`/`synergy_refresh`. API reads the legacy cookie as fallback and clears it on the next login/logout; web `middleware.ts` accepts either for the onboarding gate. Auth route tests updated.
+- **localStorage rename with dual-read**: page-size keys (`plinth-table-page-size:*` via new `lib/storageKeys.ts`), product/employee/PO creation drafts, notification read/dismissed ids, pricing levels, replacement-challan cache, notification-center read-rec ids — all prefer the new `plinth-*` key and fall back to the legacy one.
+- **Env/container renames**: `SYNERGY_MCP_TOKEN`→`PLINTH_MCP_TOKEN`, `SYNERGY_API_PORT`→`PLINTH_API_PORT` (compose + intelligence config.yaml consistently), DB names `synergy_erp(_staging)`→`plinth_erp(_staging)`, volumes renamed, `dev-local.sh` POSTGRES_DB default updated. `scripts/dev-local.sh` now **skips the local Docker Postgres entirely when `DATABASE_URL` points at a remote host** — the dev database was moved to the owner-provided hosted Neon instance (`.env`, gitignored) and migrations were applied there; `TEST_DATABASE_URL` is intentionally unset so DB-backed api suites self-skip and never write to the hosted DB.
+- **`@synergy/*` → `@plinth/*` codemod (Phase 8 item, Addendum #9)**: `scripts/rename-packages.cjs` (kept as the record) renamed all workspace package names, import specifiers, tsconfig/turbo/jest references in one pass (394 files), followed by `npm install` regenerating the lockfile (0 `@synergy/` refs remain in source or lock). **Deviation from the addendum's "one dedicated commit":** the codemod landed together with the branding sweep in this single commit because the working tree already interleaved both; recorded here rather than rewriting history.
+- Root package name `plinth-erp`; api service identity `plinth-api`; health, logger, intelligence idempotency keys, savepoint names, doc titles (structure/Development/LOCAL_WINDOWS_SETUP/audit/GITHUB_WORKFLOW/uat plan), legacy seed JSON, schema comments all swept.
+
+### Ratchet effect
+Banned terms 1899 → **3** (the only remaining matches are `scripts/rename-packages.cjs`'s own regex literals, kept as the codemod record). Colours unchanged at 965.
+
+### Decisions
+- `synergy-*` Tailwind scale retired: classes swept to a neutral `n-*` alias family (same token values), family renamed in `tailwind.config.js` — no "synergy" class text remains.
+- Data-bearing field names on API responses (`plinthAccountCode/Name` in Tally mappings) renamed client-side only after verifying nothing server-side emits the old names.
+- `initialize-synergy` route renamed to `initialize-plinth` on both route and client (internal contract, single deployment).
+
+### Left undone / next
+- Playwright visual baselines (Phase 10) will snapshot the new branding.
+- `scripts/rename-packages.cjs` can be deleted after a release cycle if desired.
+
+---
+
 ## Phases 4a + 5 — ListView (Purchase Orders) and StatusPill
 
 ### What changed

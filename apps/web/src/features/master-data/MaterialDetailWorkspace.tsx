@@ -45,7 +45,7 @@ import {
   TableRow,
   TableCell,
   Badge,
-} from '@synergy/ui';
+} from '@plinth/ui';
 import { LoadingState } from '../../components/LoadingState';
 import { ErrorState } from '../../components/ErrorState';
 import { showToast } from '../../components/toast-store';
@@ -67,7 +67,7 @@ import JsBarcode from 'jsbarcode';
 import { getVariantLabel } from '../products/variant-names';
 import { calculateTierPrice } from '../products/utils/tierPricing';
 import { getBomLineItemDisplay } from '../bom/utils';
-import type { LifecycleStatus } from '@synergy/types';
+import type { LifecycleStatus } from '@plinth/types';
 
 export interface DetailedMaterial {
   id: string;

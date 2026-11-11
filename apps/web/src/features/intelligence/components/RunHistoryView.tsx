@@ -9,7 +9,7 @@ import {
   Play,
   Zap,
 } from 'lucide-react';
-import { EmptyState } from '@synergy/ui';
+import { EmptyState } from '@plinth/ui';
 import { ErrorState } from '../../../components/ErrorState';
 import { LoadingState } from '../../../components/LoadingState';
 import { intelligenceApi } from '../api';
@@ -35,7 +35,7 @@ function RunTrace({ id }: { id: string }) {
       <p>Tokens: {attempt.inputTokens ?? 'NOT VERIFIED'} / {attempt.outputTokens ?? 'NOT VERIFIED'} / {attempt.totalTokens ?? 'NOT VERIFIED'} · Latency: {attempt.latencyMs ?? 'NOT VERIFIED'} ms</p>
       <p>Budget charge estimate: {attempt.costUsd === null || attempt.costUsd === undefined ? 'NOT VERIFIED' : money(attempt.costUsd, 'USD')}</p>
     </div>)}
-    {!run.providerAttempts?.length && <p>Synergy Advisor → AI Provider metadata: NOT VERIFIED</p>}
+    {!run.providerAttempts?.length && <p>Plinth Advisor → AI Provider metadata: NOT VERIFIED</p>}
   </div>;
 }
 

@@ -7,7 +7,7 @@
 import { render, screen, fireEvent, waitFor, act } from '@testing-library/react';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import React, { useState } from 'react';
-import { Card } from '@synergy/ui';
+import { Card } from '@plinth/ui';
 import { ApiError } from '../../src/features/api/client';
 
 vi.mock('../../src/features/api/client', () => ({

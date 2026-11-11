@@ -10,7 +10,7 @@ import type {
   WipExceptionType,
   WipExceptionStatus,
   WipExceptionSeverity
-} from '@synergy/types';
+} from '@plinth/types';
 
 export type {
   WipBatchSummary,

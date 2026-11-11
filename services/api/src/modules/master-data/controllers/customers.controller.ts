@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import { CustomersService } from '../services/customers.service';
-import { ApiResponse, LifecycleStatus } from '@synergy/types';
+import { ApiResponse, LifecycleStatus } from '@plinth/types';
 
 export class CustomersController {
   constructor(private readonly customersService: CustomersService) {}

@@ -32,13 +32,13 @@ export async function syncSalesProforma(tx: Prisma.TransactionClient, salesOrder
   if (!order) throw new NotFoundError('Sales order not found while generating its pro forma.');
   const existing = await tx.$queryRaw<Array<{ id: string; status: string }>>`SELECT "id","status" FROM "sales_ar_proformas" WHERE "salesOrderId"=${salesOrderId} FOR UPDATE`;
   if (order.dispatchedAt) return existing[0]?.id;
-  const entities = await tx.$queryRaw<Array<{ id: string }>>`SELECT "id" FROM "accounting_entities" WHERE "code"='SYNERGY-IN' LIMIT 1`;
+  const entities = await tx.$queryRaw<Array<{ id: string }>>`SELECT "id" FROM "accounting_entities" WHERE "code"='PLINTH-IN' LIMIT 1`;
   let entityId = entities[0]?.id;
   if (!entityId) {
     const anyEntity = await tx.$queryRaw<Array<{ id: string }>>`SELECT "id" FROM "accounting_entities" LIMIT 1`;
     entityId = anyEntity[0]?.id;
   }
-  if (!entityId) throw new ValidationError('Initialize the Synergy Accounts book before creating Sales orders.');
+  if (!entityId) throw new ValidationError('Initialize the Plinth Accounts book before creating Sales orders.');
   const id = existing[0]?.id ?? randomUUID();
   const number = `PF-${String(order.orderNumber)}`;
   const status = existing[0]?.status ?? 'DRAFT';
@@ -114,8 +114,8 @@ export class AccountsReceivablesService {
   private async createDraft(tx: Prisma.TransactionClient, input: Record<string, any>) {
     const order = await tx.salesOrder.findUnique({ where: { id: input.salesOrderId }, include: { lines: true, addresses: true } });
     if (!order) throw new NotFoundError('Sales order source not found for Accounts invoice draft.');
-    const entityRows = await tx.$queryRaw<Array<{ id: string }>>`SELECT "id" FROM "accounting_entities" WHERE "code"='SYNERGY-IN' LIMIT 1`;
-    if (!entityRows[0]) throw new ValidationError('Initialize the Synergy Accounts book before processing Sales invoices.');
+    const entityRows = await tx.$queryRaw<Array<{ id: string }>>`SELECT "id" FROM "accounting_entities" WHERE "code"='PLINTH-IN' LIMIT 1`;
+    if (!entityRows[0]) throw new ValidationError('Initialize the Plinth Accounts book before processing Sales invoices.');
     if (order.currency !== 'INR') throw new ValidationError(`Sales currency ${order.currency} is not enabled for accounting.`);
     const entityId = entityRows[0].id;
     const customerRows = order.customerId ? await tx.$queryRaw<Array<{ name: string; taxNumber: string | null }>>`SELECT "name","taxNumber" FROM "customers" WHERE "id"=${order.customerId}` : [];
@@ -176,8 +176,8 @@ export class AccountsReceivablesService {
   private async createReceiptCandidate(tx: Prisma.TransactionClient, input: Record<string, any>) {
     const order = await tx.salesOrder.findUnique({ where: { id: input.salesOrderId }, include: { payments: true, addresses: true } });
     if (!order) throw new NotFoundError('Sales order source not found for Accounts receipt.');
-    const entityRows = await tx.$queryRaw<Array<{ id: string }>>`SELECT "id" FROM "accounting_entities" WHERE "code"='SYNERGY-IN' LIMIT 1`;
-    if (!entityRows[0]) throw new ValidationError('Initialize the Synergy Accounts book before processing Sales receipts.');
+    const entityRows = await tx.$queryRaw<Array<{ id: string }>>`SELECT "id" FROM "accounting_entities" WHERE "code"='PLINTH-IN' LIMIT 1`;
+    if (!entityRows[0]) throw new ValidationError('Initialize the Plinth Accounts book before processing Sales receipts.');
     const address = order.addresses.find(a => a.kind === 'BILLING') ?? order.addresses.find(a => a.kind === 'SHIPPING');
     const customerName = address?.name ?? 'Walk-in Customer';
     const receiptDate = input.receiptDate ? isoDate(input.receiptDate) : new Date();

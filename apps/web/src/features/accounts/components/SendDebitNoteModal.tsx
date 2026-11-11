@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { X, Mail, Send, AlertCircle } from 'lucide-react';
-import { Button } from '@synergy/ui';
+import { Button } from '@plinth/ui';
 import { showToast } from '@/components/toast-store';
 import { accountsApi } from '../api';
 

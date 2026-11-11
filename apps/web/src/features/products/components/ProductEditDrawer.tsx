@@ -14,7 +14,7 @@ import {
   Boxes,
   UploadCloud,
 } from 'lucide-react';
-import { Button, Input } from '@synergy/ui';
+import { Button, Input } from '@plinth/ui';
 import type { DetailedProduct, ProductBomComponent, ProductImage } from '../types';
 import { useUpdateProduct, useUploadProductImages, useCategories, useProductFamilies, useUoms } from '../../../hooks/useMasterData';
 import { showToast } from '../../../components/toast-store';
@@ -355,7 +355,7 @@ export function ProductEditDrawer({ isOpen, onClose, product }: ProductEditDrawe
                   />
                 </div>
                 {!isRawMaterial && <div className="space-y-1.5">
-                  <label className="text-xs font-bold uppercase tracking-wider text-primary">Synergy Online / B2C Price (₹)</label>
+                  <label className="text-xs font-bold uppercase tracking-wider text-primary">Plinth Online / B2C Price (₹)</label>
                   <Input
                     type="number"
                     step="1"

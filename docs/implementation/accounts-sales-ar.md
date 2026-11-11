@@ -38,7 +38,7 @@ Shipment event retries use unique source keys so replay cannot create a second i
 
 ## Verification
 
-Run `npm run typecheck --workspace=@synergy/api`, `npm run typecheck --workspace=@synergy/web`, and `npx prisma validate --schema=database/prisma/schema.prisma`. Apply the migration in a non-production environment, then run the Sales and Accounts integration suites before enabling posting in production.
+Run `npm run typecheck --workspace=@plinth/api`, `npm run typecheck --workspace=@plinth/web`, and `npx prisma validate --schema=database/prisma/schema.prisma`. Apply the migration in a non-production environment, then run the Sales and Accounts integration suites before enabling posting in production.
 # Sales pro forma lifecycle
 
 Every newly created Sales order gets one persisted pro forma (`PF-<sales order number>`) in the Accounts pro forma register and Sales order documents panel. It snapshots the order's customer, GSTIN, currency, lines, quantities, prices, discounts and tax estimates. Before dispatch, Finance can edit quoted prices, discounts and estimated tax rates in Accounts; line membership and quantities stay sourced from Sales, so inventory allocation remains tied to the order. Sales order edits refresh the snapshot. The first Sales or Fulfillment dispatch locks the pro forma as `LOCKED` (shown as dispatched in the Accounts register).

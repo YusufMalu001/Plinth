@@ -23,7 +23,7 @@ import {
   TableCell,
   Button,
   Dialog,
-} from '@synergy/ui';
+} from '@plinth/ui';
 import {
   Search,
   ArrowDownToLine,
@@ -604,7 +604,7 @@ export default function StockLedgerPage() {
           </div>
         </div>
 
-        {/* Standard @synergy/ui Table Card */}
+        {/* Standard @plinth/ui Table Card */}
         <Card className="shadow-xs overflow-hidden border border-border/80">
           {filteredItems.length === 0 ? (
             <div className="p-12 text-center">

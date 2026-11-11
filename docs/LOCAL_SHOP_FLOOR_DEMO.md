@@ -10,11 +10,11 @@ From the repository root, start the local API and web app as usual, then run:
 npm run db:seed-shop-floor-demo
 ```
 
-The script refuses to run against a non-local host or a database other than `synergy_erp`. It does not reset existing data or alter admin accounts. It upserts only its own demo users, route, plan, and batches, so rerunning it refreshes the same demo records.
+The script refuses to run against a non-local host or a database other than `plinth_erp`. It does not reset existing data or alter admin accounts. It upserts only its own demo users, route, plan, and batches, so rerunning it refreshes the same demo records.
 
 ## Demo logins
 
-The usernames use the department name (for example, `buffing@synergy.local`); the seed prints the exact list after it runs. All use this local demo password:
+The usernames use the department name (for example, `buffing@plinth.local`); the seed prints the exact list after it runs. All use this local demo password:
 
 ```text
 ShopFloor#26
@@ -28,4 +28,4 @@ The seed creates plan `DEMO-SHOPFLOOR-20261102` against the latest approved prod
 
 ## Remove demo records
 
-Do not use a database reset. To remove the demo, delete the plan `DEMO-SHOPFLOOR-20261102` and route `DEMO-SHOPFLOOR-ROUTE-20261102` through the application or a reviewed cleanup script first, then remove only the `demo.*@synergy.local` accounts created by this seed. The current seed intentionally has no automatic cleanup behavior.
+Do not use a database reset. To remove the demo, delete the plan `DEMO-SHOPFLOOR-20261102` and route `DEMO-SHOPFLOOR-ROUTE-20261102` through the application or a reviewed cleanup script first, then remove only the `demo.*@plinth.local` accounts created by this seed. The current seed intentionally has no automatic cleanup behavior.

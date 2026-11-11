@@ -11,7 +11,7 @@ import {
   ListJobsParams,
   ListJobItemsParams,
 } from './api';
-import { TransactionSourceType, LifecycleStatus, InternalReconciliationStatus } from '@synergy/types';
+import { TransactionSourceType, LifecycleStatus, InternalReconciliationStatus } from '@plinth/types';
 
 export const financeKeys = {
   all: ['finance'] as const,

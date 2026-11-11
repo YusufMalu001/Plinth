@@ -15,7 +15,7 @@ import {
 import {
   InspectionResultStatus,
   QcQueueItemDto
-} from '@synergy/types';
+} from '@plinth/types';
 import { qualityApi, EmployeeItem, RecordInspectionPayload } from '../api';
 
 interface InspectionModalProps {

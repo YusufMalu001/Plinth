@@ -13,7 +13,7 @@ import {
   Scale,
   ChevronRight,
 } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle, Button, Table, TableHeader, TableBody, TableHead, TableRow, TableCell } from '@synergy/ui';
+import { Card, CardContent, CardHeader, CardTitle, Button, Table, TableHeader, TableBody, TableHead, TableRow, TableCell } from '@plinth/ui';
 import { accountsApi } from '@/features/accounts/api';
 import { AccountsHeader } from '@/features/accounts/components/AccountsHeader';
 import { MetricCard } from '@/features/accounts/components/MetricCard';
@@ -259,7 +259,7 @@ export default function JournalsPage() {
                       <TableRow
                         key={v.id}
                         className={`hover:bg-muted/50 transition-colors cursor-pointer group ${
-                          activeVoucherId === v.id ? 'bg-synergy-50/70 dark:bg-synergy-950/20' : ''
+                          activeVoucherId === v.id ? 'bg-n-50/70 dark:bg-n-950/20' : ''
                         }`}
                         onClick={() => setActiveVoucherId(v.id)}
                       >

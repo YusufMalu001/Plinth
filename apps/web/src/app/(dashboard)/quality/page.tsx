@@ -5,13 +5,13 @@ import Link from 'next/link';
 import {
   QcQueueItemDto,
   QcCheckpointType,
-} from '@synergy/types';
+} from '@plinth/types';
 import { qualityApi, CheckpointResolutionData } from '@/features/quality/api';
 import { BlockedCheckpointBanner } from '@/features/quality/components/BlockedCheckpointBanner';
 import { InspectionModal } from '@/features/quality/components/InspectionModal';
 import { OverrideModal } from '@/features/quality/components/OverrideModal';
 import { QcRuleModal } from '@/features/quality/components/QcRuleModal';
-import { Button, Input } from '@synergy/ui';
+import { Button, Input } from '@plinth/ui';
 import {
   ShieldCheck,
   Search,

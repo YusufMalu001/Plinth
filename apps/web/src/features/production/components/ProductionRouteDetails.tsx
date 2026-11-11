@@ -4,7 +4,7 @@ import React, { useMemo } from 'react';
 import { useParams, usePathname, useRouter } from 'next/navigation';
 import { useQuery } from '@tanstack/react-query';
 import { ArrowLeft, Boxes, Pencil, Workflow } from 'lucide-react';
-import { Button, Card } from '@synergy/ui';
+import { Button, Card } from '@plinth/ui';
 import { fetchApi } from '@/features/api/client';
 import { StatusBadge } from '@/components/StatusBadge';
 

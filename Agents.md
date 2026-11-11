@@ -1,10 +1,10 @@
 # AGENTS.md
 
-# Synergy International — Engineering Agent Instructions
+# Plinth International — Engineering Agent Instructions
 
 ## 1. Purpose
 
-This repository contains the production-grade implementation of **Synergy International**, an integrated ERP/business management platform.
+This repository contains the production-grade implementation of **Plinth International**, an integrated ERP/business management platform.
 
 This file defines the mandatory rules, engineering principles, architectural expectations, development workflow, and behavioral constraints that every AI coding agent and developer-assisted coding system must follow when working inside this repository.
 
@@ -669,7 +669,7 @@ External services are dependencies, not guarantees.
 
 # 21. Financial Data
 
-Synergy handles business and potentially financial information.
+Plinth handles business and potentially financial information.
 
 Therefore:
 
@@ -966,13 +966,13 @@ This is extremely important.
 
 Do not write:
 
-> "Synergy uses X"
+> "Plinth uses X"
 
 if X is only planned.
 
 Instead write:
 
-> "PLANNED: Synergy will use X."
+> "PLANNED: Plinth will use X."
 
 Similarly:
 
@@ -1330,7 +1330,7 @@ A feature is not considered complete until:
 
 The repository should always remain understandable to a developer who has never seen it before.
 
-Build Synergy as a long-lived production system, not as a prototype.
+Build Plinth as a long-lived production system, not as a prototype.
 
 **Correctness > Speed**
 

@@ -6,7 +6,7 @@ const prisma = new PrismaClient();
 async function seedHrAndEmployees() {
   console.log('🌱 Seeding HR Manager and Employee Accounts...');
 
-  const passwordHash = await argon2.hash('Synergy@123!', { type: argon2.argon2id });
+  const passwordHash = await argon2.hash('Plinth@123!', { type: argon2.argon2id });
   const tempPasswordHash = await argon2.hash('TempPass@123!', { type: argon2.argon2id });
 
   // 1. Create or Find HR Department
@@ -17,7 +17,7 @@ async function seedHrAndEmployees() {
       factory = await prisma.factory.create({
         data: {
           code: 'PLANT-01',
-          name: 'Synergy Primary Plant',
+          name: 'Plinth Primary Plant',
           status: LifecycleStatus.ACTIVE
         }
       });
@@ -34,12 +34,12 @@ async function seedHrAndEmployees() {
 
   // 2. Create HR Manager Employee & User Account
   const hrEmployee = await prisma.employee.upsert({
-    where: { email: 'hr.manager@synergy.local' },
+    where: { email: 'hr.manager@plinth.local' },
     create: {
       employeeCode: 'EMP-HR01',
       firstName: 'Priya',
       lastName: 'Sharma',
-      email: 'hr.manager@synergy.local',
+      email: 'hr.manager@plinth.local',
       phone: '+91 9876500001',
       role: 'HR Manager',
       designation: 'Head of Human Resources',
@@ -63,9 +63,9 @@ async function seedHrAndEmployees() {
   });
 
   await prisma.user.upsert({
-    where: { email: 'hr.manager@synergy.local' },
+    where: { email: 'hr.manager@plinth.local' },
     create: {
-      email: 'hr.manager@synergy.local',
+      email: 'hr.manager@plinth.local',
       name: 'Priya Sharma (HR Manager)',
       firstName: 'Priya',
       lastName: 'Sharma',
@@ -92,12 +92,12 @@ async function seedHrAndEmployees() {
 
   // 3. Create Demo Employee 1 (Completed Onboarding with sample tasks & attendance)
   const empCompleted = await prisma.employee.upsert({
-    where: { email: 'rohit.verma@synergy.local' },
+    where: { email: 'rohit.verma@plinth.local' },
     create: {
       employeeCode: 'EMP-1001',
       firstName: 'Rohit',
       lastName: 'Verma',
-      email: 'rohit.verma@synergy.local',
+      email: 'rohit.verma@plinth.local',
       phone: '+91 9876500002',
       role: 'Senior QC Lead',
       designation: 'Senior QC Lead',
@@ -128,9 +128,9 @@ async function seedHrAndEmployees() {
   });
 
   await prisma.user.upsert({
-    where: { email: 'rohit.verma@synergy.local' },
+    where: { email: 'rohit.verma@plinth.local' },
     create: {
-      email: 'rohit.verma@synergy.local',
+      email: 'rohit.verma@plinth.local',
       name: 'Rohit Verma',
       firstName: 'Rohit',
       lastName: 'Verma',
@@ -207,12 +207,12 @@ async function seedHrAndEmployees() {
 
   // 4. Create Demo Employee 2 (Pending Onboarding with Temporary Password)
   const empPending = await prisma.employee.upsert({
-    where: { email: 'ananya.patel@synergy.local' },
+    where: { email: 'ananya.patel@plinth.local' },
     create: {
       employeeCode: 'EMP-1002',
       firstName: 'Ananya',
       lastName: 'Patel',
-      email: 'ananya.patel@synergy.local',
+      email: 'ananya.patel@plinth.local',
       phone: '+91 9876500003',
       role: 'Operations Trainee',
       designation: 'Operations Associate',
@@ -230,9 +230,9 @@ async function seedHrAndEmployees() {
   });
 
   await prisma.user.upsert({
-    where: { email: 'ananya.patel@synergy.local' },
+    where: { email: 'ananya.patel@plinth.local' },
     create: {
-      email: 'ananya.patel@synergy.local',
+      email: 'ananya.patel@plinth.local',
       name: 'Ananya Patel',
       firstName: 'Ananya',
       lastName: 'Patel',
@@ -257,15 +257,15 @@ async function seedHrAndEmployees() {
   console.log('✅ HR and Employee credentials successfully seeded:');
   console.log('----------------------------------------------------');
   console.log('👑 HR MANAGER:');
-  console.log('  Email:    hr.manager@synergy.local');
-  console.log('  Password: Synergy@123!');
+  console.log('  Email:    hr.manager@plinth.local');
+  console.log('  Password: Plinth@123!');
   console.log('----------------------------------------------------');
   console.log('👤 EMPLOYEE 1 (Onboarded & Active):');
-  console.log('  Email:    rohit.verma@synergy.local');
-  console.log('  Password: Synergy@123!');
+  console.log('  Email:    rohit.verma@plinth.local');
+  console.log('  Password: Plinth@123!');
   console.log('----------------------------------------------------');
   console.log('🆕 EMPLOYEE 2 (New Hire - Pending Onboarding & Temp Pass):');
-  console.log('  Email:     ananya.patel@synergy.local');
+  console.log('  Email:     ananya.patel@plinth.local');
   console.log('  Temp Pass: TempPass@123!');
   console.log('  Onboarding Token: token_ananya_onboarding_123');
   console.log('----------------------------------------------------');

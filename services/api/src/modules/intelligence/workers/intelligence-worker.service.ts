@@ -259,7 +259,7 @@ export class IntelligenceWorkerService {
     }
     if (clock.hour >= 8 && providerEnabled) {
       await this.orchestrator.enqueueQuestion(
-        `Prepare the daily executive briefing for business date ${clock.date} from the certified Synergy metrics and saved operational findings.`,
+        `Prepare the daily executive briefing for business date ${clock.date} from the certified Plinth metrics and saved operational findings.`,
         'EXECUTIVE',
         'system',
         `schedule:daily-insight:${clock.date}`,

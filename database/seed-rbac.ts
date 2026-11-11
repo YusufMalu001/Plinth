@@ -166,13 +166,13 @@ async function main() {
     await prisma.rolePermission.createMany({ data: keys.map(key => ({ roleId: role.id, permissionId: ids.get(key)! })), skipDuplicates: true });
   }
   const assignments: Record<string, string[]> = {
-    'fardeen@synergy.com': ['inventory-manager'],
+    'fardeen@plinth.example': ['inventory-manager'],
     'inventorymanager@gmail.com': ['inventory-manager'],
-    'manager@synergy.com': ['store-manager'],
-    'admin@synergy.com': ['admin'],
-    'sales@synergy.com': ['sales_executive'],
-    'sales.executive@synergy.com': ['sales_executive'],
-    'salesmanager@synergy.com': ['sales_manager']
+    'manager@plinth.example': ['store-manager'],
+    'admin@plinth.example': ['admin'],
+    'sales@plinth.example': ['sales_executive'],
+    'sales.executive@plinth.example': ['sales_executive'],
+    'salesmanager@plinth.example': ['sales_manager']
   };
   for (const [email, roleNames] of Object.entries(assignments)) {
     const user = await prisma.user.findUnique({ where: { email }, select: { id: true } });

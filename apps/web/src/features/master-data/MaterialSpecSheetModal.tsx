@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { X, Printer, ShieldCheck } from 'lucide-react';
-import { Button } from '@synergy/ui';
+import { Button } from '@plinth/ui';
 import type { DetailedMaterial } from './MaterialDetailWorkspace';
 import { extractMaterialVariants } from '../../hooks/useMasterData';
 import { getVariantLabel } from '../products/variant-names';
@@ -58,7 +58,7 @@ export function MaterialSpecSheetModal({ isOpen, onClose, material }: MaterialSp
         {/* Modal Controls Header */}
         <div className="flex items-center justify-between border-b border-border bg-muted/40 px-6 py-3.5 print:hidden">
           <div className="flex items-center gap-2">
-            <span className="font-mono text-xs font-bold text-primary">TECH-DOC-2026 // SYNERGY ERP</span>
+            <span className="font-mono text-xs font-bold text-primary">TECH-DOC-2026 // Plinth ERP</span>
           </div>
           <div className="flex items-center gap-2">
             <Button size="sm" variant="outline" icon={Printer} onClick={handlePrint}>
@@ -85,7 +85,7 @@ export function MaterialSpecSheetModal({ isOpen, onClose, material }: MaterialSp
                 </div>
                 <div>
                   <h1 className="text-xl font-black tracking-tight text-foreground uppercase print:text-slate-900">
-                    Synergy Master Catalog
+                    Plinth Master Catalog
                   </h1>
                   <p className="text-[10px] font-bold tracking-widest text-muted-foreground uppercase print:text-slate-500">
                     Technical Material Specification Sheet
@@ -281,7 +281,7 @@ export function MaterialSpecSheetModal({ isOpen, onClose, material }: MaterialSp
               <span>Tax: {taxRate}%</span>
             </div>
             <p className="font-mono text-[10px]">
-              Document Generated: {new Date().toLocaleDateString()} · Synergy Master Data
+              Document Generated: {new Date().toLocaleDateString()} · Plinth Master Data
             </p>
           </div>
         </div>

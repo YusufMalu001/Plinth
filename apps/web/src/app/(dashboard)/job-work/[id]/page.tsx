@@ -22,7 +22,7 @@ import {
   FileCheck
 } from 'lucide-react';
 import { useReactToPrint } from 'react-to-print';
-import { Button, Card } from '@synergy/ui';
+import { Button, Card } from '@plinth/ui';
 import { useJobWorkOrderDetail } from '@/features/job-work/hooks';
 import { jobWorkApi } from '@/features/job-work/api';
 import { StatusBadge } from '@/components/StatusBadge';

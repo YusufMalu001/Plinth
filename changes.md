@@ -129,7 +129,7 @@
     - Relocated and integrated directly into the **Section 01 Header** (`General Identity, Classification & Media`) and **Section 02 Header** (`Commercial Pricing Matrix, Customer Tiers & GST`) right beside the collapse control, where users actively configure product details.
     - Styled with distinct, theme-consistent primary accents (`border-primary/30 bg-primary/5 text-primary hover:bg-primary/10`) so it stands out clearly without being hidden or blending in with generic gray utility buttons.
   - **Removed Redundant Banner:** Removed the unnecessary `Auto-Fill with Special Preset...` banner from Section 01, keeping the form clean, uncluttered, and focused directly on product fields.
-  - **Special Preset Dialog:** Designed a clean, minimalist modal dialog matching Synergy ERP's theme palette with two streamlined tabs:
+  - **Special Preset Dialog:** Designed a clean, minimalist modal dialog matching Plinth ERP's theme palette with two streamlined tabs:
     1. **Select Preset:** Displays available presets in clean, monochrome cards. Each card neatly summarizes the 5 key parameters in an organized, readable grid:
        - **HSN / SAC Code**
        - **Taxability** (`Taxable`, `Exempt`, `Nil Rated`, `Non-GST`)
@@ -138,7 +138,7 @@
        - **Opening Stock Quantity**
        - Clicking **"Apply"** instantly populates all 5 fields into the creation form with a clean confirmation toast.
     2. **Create New Preset:** A simple, structured form allowing users to create their own reusable presets with custom names, notes, and the 5 default fields. Offers both **"Save Preset"** and **"Save & Apply"** actions.
-       - **Interactive HSN / SAC Searchable Selector:** Replaced the previous basic input with the full, rich `SearchableSelector` component matching the rest of Synergy ERP. Users can type to live-search across all catalog HSN codes and descriptions, with custom entry support (`allowCustom`).
+       - **Interactive HSN / SAC Searchable Selector:** Replaced the previous basic input with the full, rich `SearchableSelector` component matching the rest of Plinth ERP. Users can type to live-search across all catalog HSN codes and descriptions, with custom entry support (`allowCustom`).
        - **Real-Time HSN Category Display:** Displays both the code and the full statutory category description directly inside the selector and as an emerald subtitle underneath when an HSN is chosen.
   - **Removed AI-like & Flashy Embellishments:** Eliminated all multi-colored rainbow badges, orange banners, and wordy explanatory text. Cards now present clean, structured data that is easy for clients and warehouse managers to understand at a glance.
   - **Built-In Standard Presets:** Pre-configured standard presets (e.g., Finished Goods Standard 18% GST, Stainless Steel Raw Material, and Exempt 0% GST) ready to use right away.

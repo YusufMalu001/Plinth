@@ -2,7 +2,7 @@ from pathlib import Path
 
 
 ROOT = Path("/opt/hermes")
-LIMIT_HELPER = '''def _synergy_advisor_max_output_tokens() -> int:
+LIMIT_HELPER = '''def _plinth_advisor_max_output_tokens() -> int:
     try:
         configured = int(os.environ.get("INTELLIGENCE_MAX_OUTPUT_TOKENS", "4096"))
     except (TypeError, ValueError):
@@ -30,7 +30,7 @@ replace_once(
 replace_once(
     api_server,
     "        agent = AIAgent(**agent_kwargs)",
-    "        agent_kwargs[\"max_tokens\"] = _synergy_advisor_max_output_tokens()\n"
+    "        agent_kwargs[\"max_tokens\"] = _plinth_advisor_max_output_tokens()\n"
     "        agent = AIAgent(**agent_kwargs)",
 )
 
@@ -58,7 +58,7 @@ replace_once(
     max_tokens_fn = params.get("max_tokens_param_fn")
     if not max_tokens_fn:
         return
-    cap = _synergy_advisor_max_output_tokens()
+    cap = _plinth_advisor_max_output_tokens()
     candidate = next((value for value in (
         params.get("ephemeral_max_output_tokens"), params.get("max_tokens"), profile_max,
     ) if value is not None), cap)
@@ -80,5 +80,5 @@ replace_once(gemini_adapter, "import json\n", "import json\nimport os\n")
 replace_once(
     gemini_adapter,
     "GEMINI_DEFAULT_MAX_OUTPUT_TOKENS = 65535",
-    LIMIT_HELPER + "GEMINI_DEFAULT_MAX_OUTPUT_TOKENS = _synergy_advisor_max_output_tokens()",
+    LIMIT_HELPER + "GEMINI_DEFAULT_MAX_OUTPUT_TOKENS = _plinth_advisor_max_output_tokens()",
 )

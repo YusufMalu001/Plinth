@@ -1,4 +1,4 @@
-import { PermissionChecker, AuditWriter } from '@synergy/types';
+import { PermissionChecker, AuditWriter } from '@plinth/types';
 import { DiscrepancyRepository } from '../repositories/discrepancy.repository';
 import { GoodsReceiptRepository } from '../repositories/goods-receipt.repository';
 import { ForbiddenError, NotFoundError, InvalidStateTransitionError } from '../../../common/errors/AppError';

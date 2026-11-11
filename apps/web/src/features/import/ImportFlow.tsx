@@ -1,9 +1,9 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Card } from '@synergy/ui';
-import { Button } from '@synergy/ui';
-import { Table } from '@synergy/ui';
+import { Card } from '@plinth/ui';
+import { Button } from '@plinth/ui';
+import { Table } from '@plinth/ui';
 import { fetchApi } from '../api/client';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { LoadingState } from '../../components/LoadingState';

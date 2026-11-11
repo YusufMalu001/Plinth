@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { LossEventDto } from '@synergy/types';
+import { LossEventDto } from '@plinth/types';
 import { StatusBadge } from '@/components/StatusBadge';
 import {
   Clock,

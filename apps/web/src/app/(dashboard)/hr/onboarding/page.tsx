@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { useEmployees } from '@/features/hr/hooks';
-import { EmployeeDto } from '@synergy/types';
+import { EmployeeDto } from '@plinth/types';
 import {
   UserCheck,
   Clock,
@@ -14,7 +14,7 @@ import {
   Copy,
   ShieldCheck
 } from 'lucide-react';
-import { Button, Card, PageHeader, Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from '@synergy/ui';
+import { Button, Card, PageHeader, Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from '@plinth/ui';
 import { getEmployeeOnboardingLink } from '@/lib/env';
 
 export default function HrOnboardingHubPage() {

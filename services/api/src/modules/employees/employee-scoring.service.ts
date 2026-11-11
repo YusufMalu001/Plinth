@@ -83,7 +83,7 @@ export interface EnhancedEmployeeAnalyticsReport {
   executiveSummary: string;
 }
 
-const ADVISORY_SYSTEM_PROMPT = `You are Synergy ERP's AI Human Capital Advisory Analyst powered by Gemini.
+const ADVISORY_SYSTEM_PROMPT = `You are Plinth ERP's AI Human Capital Advisory Analyst powered by Gemini.
 The authoritative numerical scores (0-100), grades (A+, A, B, C, D), component scores, and velocity ratings have ALREADY BEEN RIGOROUSLY AND DETERMINISTICALLY COMPUTED by the ERP engine.
 Your purpose is to provide qualitative commentary, executive workforce synthesis, strengths, coaching points, and developmental recommendations strictly grounded in the provided factual data.
 

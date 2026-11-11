@@ -1,5 +1,5 @@
 import React from 'react';
-import type { JobWorkMaterialIssueDto } from '@synergy/types';
+import type { JobWorkMaterialIssueDto } from '@plinth/types';
 
 export interface JobWorkChallanPDFProps {
   challan: JobWorkMaterialIssueDto;
@@ -21,17 +21,17 @@ export const JobWorkChallanPDF = React.forwardRef<HTMLDivElement, JobWorkChallan
         } print:p-0 print:border-none print:shadow-none print:max-w-none print:w-full print:block print:visible`}
         style={{ colorScheme: 'light', visibility: 'visible' }}
       >
-        {/* Header with Synergy Branding */}
+        {/* Header with Plinth Branding */}
         <div className="flex justify-between items-start border-b-2 border-slate-900 pb-6 mb-6">
           <div>
-            <h1 className="text-2xl font-black tracking-tight text-[#173796]">SYNERGY INTERNATIONAL</h1>
+            <h1 className="text-2xl font-black tracking-tight text-[#173796]">PLINTH</h1>
             <p className="text-xs text-slate-600 font-semibold uppercase tracking-wider mt-0.5">
               Industrial Manufacturing & Outsourcing Division
             </p>
             <div className="text-xs text-slate-500 mt-2 space-y-0.5">
               <p>Plot 42, Heavy Industrial Estate, Phase II</p>
               <p>GSTIN: 27AABCS1429B1Z8 | PAN: AABCS1429B</p>
-              <p>Email: jobwork@synergy-erp.internal</p>
+              <p>Email: operations@plinth.example</p>
             </div>
           </div>
           <div className="text-right">
@@ -48,7 +48,7 @@ export const JobWorkChallanPDF = React.forwardRef<HTMLDivElement, JobWorkChallan
             <h3 className="font-extrabold uppercase text-[#173796] mb-1.5">Dispatched From (Sender)</h3>
             <div className="font-bold text-slate-900">{challan.dispatchLocation?.name || 'Central Manufacturing Plant'}</div>
             <div className="text-slate-600 mt-0.5">Location Code: {challan.dispatchLocation?.code}</div>
-            <div className="text-slate-600">Material Ownership: <strong>Synergy International (Held in Vendor Custody)</strong></div>
+            <div className="text-slate-600">Material Ownership: <strong>Plinth (Held in Vendor Custody)</strong></div>
           </div>
           <div>
             <h3 className="font-extrabold uppercase text-[#173796] mb-1.5">Outsource Vendor (Consignee)</h3>
@@ -116,10 +116,10 @@ export const JobWorkChallanPDF = React.forwardRef<HTMLDivElement, JobWorkChallan
             1. The goods dispatched under this delivery challan are for Job Work processing only and NOT FOR SALE.
           </p>
           <p>
-            2. Ownership of the raw material remains exclusively with Synergy International throughout transit and processing custody.
+            2. Ownership of the raw material remains exclusively with Plinth throughout transit and processing custody.
           </p>
           <p>
-            3. The processed output and any resultant scrap/wastage must be returned to Synergy International in accordance with agreed specifications.
+            3. The processed output and any resultant scrap/wastage must be returned to Plinth in accordance with agreed specifications.
           </p>
         </div>
 

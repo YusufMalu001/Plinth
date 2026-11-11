@@ -1,5 +1,5 @@
 # ==============================================================================
-# SYNERGY ERP - NEXT.JS WEB FRONTEND DOCKERFILE
+# PLINTH ERP - NEXT.JS WEB FRONTEND DOCKERFILE
 # ==============================================================================
 
 # --- Stage 1: Build ---
@@ -39,7 +39,7 @@ ENV NEXT_TELEMETRY_DISABLED=1
 ENV NODE_ENV=production
 
 # Build web frontend
-RUN npx turbo run build --filter=@synergy/web
+RUN npx turbo run build --filter=@plinth/web
 
 # --- Stage 2: Runtime ---
 FROM node:22-bookworm-slim AS runner

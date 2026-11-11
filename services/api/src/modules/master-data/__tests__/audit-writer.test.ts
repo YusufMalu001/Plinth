@@ -5,7 +5,7 @@ import { UomService } from '../services/uom.service';
 import { ProductsRepository } from '../repositories/products.repository';
 import { MaterialsRepository } from '../repositories/materials.repository';
 import { UomRepository } from '../repositories/uom.repository';
-import { AllowAllPermissionChecker, AuditWriter, AuditEvent } from '@synergy/types';
+import { AllowAllPermissionChecker, AuditWriter, AuditEvent } from '@plinth/types';
 
 describe('AuditWriter Event Emission Verification', () => {
   const permissionChecker = new AllowAllPermissionChecker();

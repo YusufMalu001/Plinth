@@ -17,7 +17,7 @@ import {
   RefreshCw,
   BookOpen,
 } from 'lucide-react';
-import { Card, Button } from '@synergy/ui';
+import { Card, Button } from '@plinth/ui';
 import { accountsApi } from '@/features/accounts/api';
 import { showToast } from '@/components/toast-store';
 import { ExpenseCategory, ExpensePaymentMode, ExpensePaymentStatus } from '@/features/accounts/types';
@@ -481,7 +481,7 @@ export default function NewMiscellaneousExpensePage() {
             </div>
 
             {/* Total Highlight Banner */}
-            <div className="rounded-xl border border-border bg-synergy-500/5 dark:bg-synergy-950/30 p-4">
+            <div className="rounded-xl border border-border bg-n-500/5 dark:bg-n-950/30 p-4">
               <span className="text-[10px] uppercase font-bold tracking-wider text-muted-foreground block">
                 Total Net Expense
               </span>

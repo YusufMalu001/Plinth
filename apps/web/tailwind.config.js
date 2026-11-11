@@ -65,9 +65,9 @@ module.exports = {
         },
         // Legacy shadcn-style semantic names (kept for existing screens; values
         // resolve to the new Plinth tokens so old classes render neutrally).
-        // Legacy "synergy" scale (KEEP for existing classes; every shade now
+        // Legacy alias scale (KEEP for existing classes; every shade now
         // resolves to neutral Plinth tokens so no blue surfaces remain).
-        synergy: {
+        n: {
           DEFAULT: "var(--action-primary-bg)",
           50: "var(--bg-page)",
           100: "var(--bg-muted)",

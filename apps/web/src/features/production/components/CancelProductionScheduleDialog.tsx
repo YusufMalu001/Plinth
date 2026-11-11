@@ -1,7 +1,7 @@
 "use client";
 
 import { Trash2 } from "lucide-react";
-import { Button, Dialog } from "@synergy/ui";
+import { Button, Dialog } from "@plinth/ui";
 import { StatusBadge } from "@/components/StatusBadge";
 import type { ProductionPlan } from "../types";
 

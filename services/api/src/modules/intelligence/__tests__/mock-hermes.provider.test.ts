@@ -34,7 +34,7 @@ describe('MockHermesProvider', () => {
       idempotencyKey: 'mock-question-test',
     });
     expect(result.runtime?.provider).toBe('DETERMINISTIC_MOCK');
-    expect(result.runtime?.model).toBe('synergy/mock-hermes-v1');
+    expect(result.runtime?.model).toBe('plinth/mock-hermes-v1');
     expect(new RecommendationValidatorService().validateQuestion(result.output!, snapshot).evidence[0].metricKey).toBe(sourceMetric.key);
   });
 

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useIntegrationReadiness } from '@/features/finance/hooks';
-import { Card, Badge, Button } from '@synergy/ui';
+import { Card, Badge, Button } from '@plinth/ui';
 import { FinanceNavigationTabs } from '@/features/finance/components/FinanceNavigationTabs';
 import {
   CheckCircle2,

@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client';
-import { PermissionChecker, ScopeContext } from '@synergy/types';
+import { PermissionChecker, ScopeContext } from '@plinth/types';
 import { prisma as defaultPrisma } from '../../database';
 import { getActorCapabilities, hasCapability } from './permission-cache';
 

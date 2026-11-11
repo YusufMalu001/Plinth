@@ -26,7 +26,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '@synergy/ui';
+} from '@plinth/ui';
 import { PaginationControls } from '../../../../components/PaginationControls';
 import { StatusBadge } from '../../../../components/StatusBadge';
 import { useSalesCustomers } from '../../../../features/sales/hooks';

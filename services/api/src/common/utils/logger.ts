@@ -17,7 +17,7 @@ interface LogPayload {
 }
 
 class Logger {
-  private serviceName: string = 'synergy-api';
+  private serviceName: string = 'plinth-api';
 
   private log(level: LogLevel, message: string, context?: { requestId?: string; userId?: string; errorCode?: string; duration?: number; details?: unknown }) {
     const payload: LogPayload = {

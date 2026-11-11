@@ -1,6 +1,6 @@
 import React from 'react';
 import { ProductionPlan } from '../features/production/types';
-import { formatIndianDate, SYNERGY_COMPANY_INFO } from '../features/purchases/utils';
+import { formatIndianDate, COMPANY_INFO } from '../features/purchases/utils';
 
 export interface ProductionSchedulePDFProps {
   data: ProductionPlan;
@@ -184,21 +184,21 @@ export const ProductionSchedulePDF = React.forwardRef<HTMLDivElement, Production
         </div>
         <div className="flex items-start justify-between border-b-2 border-black pb-3 pt-2">
           <div className="flex items-center gap-3">
-            <img src="/synergy.png" alt="Synergy Logo" className="h-10 sm:h-12 w-auto object-contain shrink-0" />
+            <span className="text-xl sm:text-2xl font-black tracking-tight text-black uppercase">Plinth</span>
             <div>
               <h2 className="text-sm sm:text-base font-black tracking-wide text-black uppercase">
-                {SYNERGY_COMPANY_INFO.name}
+                {COMPANY_INFO.name}
               </h2>
               <p className="text-[10px] leading-snug text-slate-800 font-medium">
-                {SYNERGY_COMPANY_INFO.addressLine1} {SYNERGY_COMPANY_INFO.addressLine2}
+                {COMPANY_INFO.addressLine1} {COMPANY_INFO.addressLine2}
               </p>
               <p className="text-[10px] leading-snug text-slate-800 font-medium">
-                {SYNERGY_COMPANY_INFO.addressLine3}
+                {COMPANY_INFO.addressLine3}
               </p>
               <div className="flex flex-wrap items-center gap-x-3 text-[10px] font-semibold text-slate-900 pt-0.5">
-                <span>📞 {SYNERGY_COMPANY_INFO.phone}</span>
-                <span>✉ {SYNERGY_COMPANY_INFO.email}</span>
-                <span>GSTIN: {SYNERGY_COMPANY_INFO.gstin}</span>
+                <span>📞 {COMPANY_INFO.phone}</span>
+                <span>✉ {COMPANY_INFO.email}</span>
+                <span>GSTIN: {COMPANY_INFO.gstin}</span>
               </div>
             </div>
           </div>
@@ -530,7 +530,7 @@ export const ProductionSchedulePDF = React.forwardRef<HTMLDivElement, Production
 
         {/* Footer Notes */}
         <div className="mt-2 flex flex-wrap items-center justify-between text-[9px] text-slate-600 font-medium px-1">
-          <span>Synergy ERP · Production Schedule · Document Ref: {data.planNumber}</span>
+          <span>Plinth · Production Schedule · Document Ref: {data.planNumber}</span>
           <span>BOM: {bomLabel}</span>
         </div>
       </div>

@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useMemo } from 'react';
-import { Dialog, Button } from '@synergy/ui';
+import { Dialog, Button } from '@plinth/ui';
 import {
   ShieldCheck,
   Scale,

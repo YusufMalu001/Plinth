@@ -1,5 +1,3 @@
-import fs from 'fs';
-import path from 'path';
 import PDFDocument from 'pdfkit';
 import nodemailer from 'nodemailer';
 import { Prisma } from '@prisma/client';
@@ -44,13 +42,8 @@ function formatIndianDate(dateInput: Date | string | null | undefined): string {
 }
 
 function resolveLogoPath(): string | undefined {
-  const candidates = [
-    path.resolve(process.cwd(), 'apps/web/public/synergy.png'),
-    path.resolve(process.cwd(), '../../apps/web/public/synergy.png'),
-    path.resolve(process.cwd(), '../../../apps/web/public/synergy.png'),
-    path.resolve(__dirname, '../../../../../../apps/web/public/synergy.png'),
-  ];
-  return candidates.find((p) => fs.existsSync(p));
+  // The image logo is retired; emails use the plain-text wordmark fallback.
+  return undefined;
 }
 
 function getVendorDisplay(vendor: EmailJobWorkOrder['vendor']) {
@@ -122,7 +115,7 @@ async function makePdf(order: EmailJobWorkOrder): Promise<Buffer> {
     const pageWidth = 523;
 
     // Header Title
-    doc.fontSize(16).font('Helvetica-Bold').fillColor('#064f7d').text('SYNERGY INTERNATIONAL', pageX, 40);
+    doc.fontSize(16).font('Helvetica-Bold').fillColor('#064f7d').text('PLINTH', pageX, 40);
     doc.fontSize(8).font('Helvetica').fillColor('#475569').text('Job Work & Outsourced Processing Order', pageX, 58);
 
     doc.rect(pageX, 70, pageWidth, 2).fill('#f4b42a');
@@ -212,7 +205,7 @@ export class JobWorkOrderEmailService {
     if (!order) throw new NotFoundError(`JobWorkOrder [${id}] not found.`);
 
     const recipient = typeof order.vendor.contactEmail === 'string' ? order.vendor.contactEmail.trim() : '';
-    const subject = `Job Work Order ${order.orderNumber} — Synergy International`;
+    const subject = `Job Work Order ${order.orderNumber} — Plinth`;
 
     let closeTransport: (() => void) | undefined;
     try {
@@ -237,8 +230,8 @@ export class JobWorkOrderEmailService {
       closeTransport = () => transporter.close();
 
       const logoMarkup = logo
-        ? '<img src="cid:synergy-logo" alt="Synergy International" style="display:block;width:125px;max-height:44px;object-fit:contain">'
-        : '<strong style="font-size:18px;letter-spacing:1.5px;color:#064f7d">SYNERGY INTERNATIONAL</strong>';
+        ? '<img src="cid:plinth-logo" alt="Plinth" style="display:block;width:125px;max-height:44px;object-fit:contain">'
+        : '<strong style="font-size:18px;letter-spacing:1.5px;color:#064f7d">PLINTH</strong>';
 
       const orderDateFormatted = formatIndianDate(order.createdAt);
 
@@ -269,7 +262,7 @@ export class JobWorkOrderEmailService {
         Dear <strong>${htmlEscape(order.vendor.legalName || order.vendor.name)}</strong>,
       </p>
       <p style="margin:0 0 18px;font-size:14px;line-height:1.6;color:#334155">
-        A new <strong>Job Work / Outsourced Processing Order</strong> has been created with your company by <strong>Synergy International</strong>.
+        A new <strong>Job Work / Outsourced Processing Order</strong> has been created with your company by <strong>Plinth</strong>.
         Please review the processing requirements and raw material allocation summary below and in the attached official document.
       </p>
 
@@ -303,7 +296,7 @@ export class JobWorkOrderEmailService {
       </p>
 
       <div style="border-top:1px solid #e2e8f0;padding-top:16px;margin-top:20px">
-        <p style="margin:0;font-size:12px;color:#94a3b8">Synergy International Procurement &amp; Production Control</p>
+        <p style="margin:0;font-size:12px;color:#94a3b8">Plinth Procurement &amp; Production Control</p>
       </div>
     </div>
   </div>
@@ -313,7 +306,7 @@ export class JobWorkOrderEmailService {
       const attachments: Array<{ filename: string; content?: Buffer; path?: string; contentType?: string; cid?: string }> = [
         { filename: `${order.orderNumber}.pdf`, content: pdf, contentType: 'application/pdf' },
       ];
-      if (logo) attachments.push({ filename: 'synergy-logo.png', path: logo, cid: 'synergy-logo' });
+      if (logo) attachments.push({ filename: 'plinth-logo.png', path: logo, cid: 'plinth-logo' });
 
       const result = await transporter.sendMail({
         from: { name: config.email.fromName, address: config.email.fromAddress },

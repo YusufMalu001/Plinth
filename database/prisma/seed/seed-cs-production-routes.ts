@@ -208,7 +208,7 @@ const PRODUCTION_ROUTES_MASTER: RouteDefinition[] = [
 ];
 
 export async function seedProductionRoutes() {
-  console.log('🏭 Seeding authoritative production routes for all Synergy product families...');
+  console.log('🏭 Seeding authoritative production routes for all Plinth product families...');
 
   // 1. Factory
   let factory = await prisma.factory.findFirst();
@@ -216,7 +216,7 @@ export async function seedProductionRoutes() {
     factory = await prisma.factory.create({
       data: {
         code: 'FAC-01',
-        name: 'Main Synergy Production Plant'
+        name: 'Main Plinth Production Plant'
       }
     });
   }

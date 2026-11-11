@@ -1,6 +1,6 @@
-# Synergy ERP - Workspace Foundation
+# Plinth ERP - Workspace Foundation
 
-Synergy ERP is a production-grade, highly scalable enterprise resource planning platform boilerplate designed for multi-developer team collaboration.
+Plinth ERP is a production-grade, highly scalable enterprise resource planning platform boilerplate designed for multi-developer team collaboration.
 
 ## 🚀 Quick Start Guide
 
@@ -72,16 +72,16 @@ docker compose -f docker-compose.dev.yml up --build
 - **Architecture:** Modular monolith. Services map requests as Route -> Validation -> Controller -> Business Service -> Repository -> Database.
 
 ### Shared Utility Packages
-- `@synergy/config`: TS compiler config templates.
-- `@synergy/eslint-config`: Project-wide linting standards.
-- `@synergy/types`: Shared TS models and interface shapes.
-- `@synergy/validation`: Shared input parsing schemas using Zod.
-- `@synergy/ui`: Base UI styling primitives and utilities.
+- `@plinth/config`: TS compiler config templates.
+- `@plinth/eslint-config`: Project-wide linting standards.
+- `@plinth/types`: Shared TS models and interface shapes.
+- `@plinth/validation`: Shared input parsing schemas using Zod.
+- `@plinth/ui`: Base UI styling primitives and utilities.
 
 ---
 
 ## 📦 Directory Structure Map
-For an exhaustive explanation of the workspace folder layout, directories, and folder boundary limits, refer to the master [structure.md](file:///home/fardeen/Documents/aleyx-projects/Synergy/structure.md) file at the repository root.
+For an exhaustive explanation of the workspace folder layout, directories, and folder boundary limits, refer to the master [structure.md](file:///home/fardeen/Documents/aleyx-projects/Plinth/structure.md) file at the repository root.
 
 ---
 
@@ -103,14 +103,14 @@ For an exhaustive explanation of the workspace folder layout, directories, and f
 
 ## 🧠 Decision Intelligence
 
-The optional intelligence control plane is documented in the [architecture decision](file:///home/fardeen/Documents/aleyx-projects/Synergy/docs/architecture/adr-007-intelligence-control-plane.md), [implementation guide](file:///home/fardeen/Documents/aleyx-projects/Synergy/docs/implementation/intelligence-control-plane.md), [local test guide](file:///home/fardeen/Documents/aleyx-projects/Synergy/docs/operations/intelligence-local-test.md), and [production rollout runbook](file:///home/fardeen/Documents/aleyx-projects/Synergy/docs/operations/intelligence-rollout.md). Provider-backed analysis and schedules stay disabled by default; local event handling can create review-only low-stock PO drafts without calling an AI provider. Do not enable live provider calls until the rollout gates are signed off.
+The optional intelligence control plane is documented in the [architecture decision](file:///home/fardeen/Documents/aleyx-projects/Plinth/docs/architecture/adr-007-intelligence-control-plane.md), [implementation guide](file:///home/fardeen/Documents/aleyx-projects/Plinth/docs/implementation/intelligence-control-plane.md), [local test guide](file:///home/fardeen/Documents/aleyx-projects/Plinth/docs/operations/intelligence-local-test.md), and [production rollout runbook](file:///home/fardeen/Documents/aleyx-projects/Plinth/docs/operations/intelligence-rollout.md). Provider-backed analysis and schedules stay disabled by default; local event handling can create review-only low-stock PO drafts without calling an AI provider. Do not enable live provider calls until the rollout gates are signed off.
 
 ---
 
 ## 💻 Local Development & Runtime Execution Guide
 
 ### 1. One-Command Local Launcher
-The standard `npm run dev` script runs [scripts/dev-local.sh](file:///home/fardeen/Documents/aleyx-projects/Synergy/scripts/dev-local.sh), which automates the full local environment:
+The standard `npm run dev` script runs [scripts/dev-local.sh](file:///home/fardeen/Documents/aleyx-projects/Plinth/scripts/dev-local.sh), which automates the full local environment:
 1. Provisions local PostgreSQL via `docker compose -f docker-compose.dev.yml up -d postgres` and verifies health check readiness.
 2. Generates the Prisma client (`npm run db:generate`) and applies pending schema migrations (`npm run db:deploy`).
 3. Seeds initial demo master data & user accounts (`npm run db:seed`).
@@ -129,18 +129,18 @@ npm run dev
 
 ### 3. Default Seed Credentials
 After running the database seed scripts, use the following credentials to authenticate:
-- **Admin:** `admin@synergy.local` / `Admin@123456`
-- **Manager:** `manager@synergy.local` / `Manager@123456`
-- **Employee:** `employee@synergy.local` / `Employee@123456`
+- **Admin:** `admin@plinth.local` / `Admin@123456`
+- **Manager:** `manager@plinth.local` / `Manager@123456`
+- **Employee:** `employee@plinth.local` / `Employee@123456`
 
 ### 4. Running the Background Intelligence Worker
 To consume domain outbox events and process background analytical jobs:
 ```bash
-npm run dev:worker --workspace=@synergy/api
+npm run dev:worker --workspace=@plinth/api
 ```
 
 ### 5. Running the Intelligence Container Stack
-To start the containerized environment with the six Synergy advisor profiles (Executive, Sales, Inventory, Procurement, Production, Fulfillment):
+To start the containerized environment with the six Plinth advisor profiles (Executive, Sales, Inventory, Procurement, Production, Fulfillment):
 ```bash
 # Configure the model provider key and conservative budget settings in .env.
 # Launch the full stack with the intelligence compose profile.
@@ -166,4 +166,4 @@ After success, restart/rebuild the API and workers to load the generated client.
 
 ### Native Windows development
 
-Use Node 22.x for application processes. After synchronization, run `npm run dev --workspace=@synergy/api` and `npm run dev --workspace=@synergy/web` in separate terminals. The root `npm run dev` launcher requires Bash and Docker and includes database sync. Use the ports configured in `.env`; this Windows setup uses PostgreSQL 5000, API 5001 and web 3000.
+Use Node 22.x for application processes. After synchronization, run `npm run dev --workspace=@plinth/api` and `npm run dev --workspace=@plinth/web` in separate terminals. The root `npm run dev` launcher requires Bash and Docker and includes database sync. Use the ports configured in `.env`; this Windows setup uses PostgreSQL 5000, API 5001 and web 3000.

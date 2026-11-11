@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { X, UploadCloud } from 'lucide-react';
-import { Button } from '@synergy/ui';
+import { Button } from '@plinth/ui';
 
 interface Props {
   isOpen: boolean;

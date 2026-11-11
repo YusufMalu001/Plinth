@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { BomLine, UpdateBomDraftInput } from '../types';
-import { BomLineType, BomQuantityMode, BomRoundingRule } from '@synergy/types';
+import { BomLineType, BomQuantityMode, BomRoundingRule } from '@plinth/types';
 import { useMaterials, useProducts, useUoms, useDepartments } from '../../../hooks/useMasterData';
 import { Plus, Trash2, ArrowUp, ArrowDown, Package, Layers, Loader2 } from 'lucide-react';
 import { SearchableSelector } from '../../../components/ui/SearchableSelector';

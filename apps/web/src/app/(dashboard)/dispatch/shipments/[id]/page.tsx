@@ -20,7 +20,7 @@ import {
   Phone,
   User,
 } from 'lucide-react';
-import { Button } from '@synergy/ui';
+import { Button } from '@plinth/ui';
 import { ErrorState } from '@/components/ErrorState';
 import { LoadingState } from '@/components/LoadingState';
 import { useShipment } from '@/features/fulfillment/hooks';

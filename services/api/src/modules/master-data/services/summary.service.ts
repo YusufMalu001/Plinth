@@ -1,5 +1,5 @@
 import { prisma } from '../../../database';
-import { LifecycleStatus } from '@synergy/types';
+import { LifecycleStatus } from '@plinth/types';
 
 export interface EntitySummary {
   entityType: string;

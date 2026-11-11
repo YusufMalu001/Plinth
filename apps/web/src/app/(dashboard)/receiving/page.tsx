@@ -5,7 +5,7 @@ import {
   AlertTriangle, ArrowRight, CheckCircle2, ClipboardCheck, PackageCheck,
   ScanLine, ShieldCheck, Truck, Warehouse
 } from 'lucide-react';
-import { Button, Card, PageHeader } from '@synergy/ui';
+import { Button, Card, PageHeader } from '@plinth/ui';
 import { LoadingState } from '../../../components/LoadingState';
 import { ErrorState } from '../../../components/ErrorState';
 import { ForbiddenState } from '../../../components/ForbiddenState';

@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client';
-import { PermissionChecker } from '@synergy/types';
+import { PermissionChecker } from '@plinth/types';
 import { prisma } from '../../database';
 import { ForbiddenError } from '../errors/AppError';
 

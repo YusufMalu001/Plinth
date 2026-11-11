@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from 'express';
-import { UserRole } from '@synergy/types';
+import { UserRole } from '@plinth/types';
 import { UnauthorizedError } from '../../common/errors/AppError';
 import { authService } from '../auth/auth.service';
 import { createRoleDefinition, listRolesWithPermissions, listRoleDefinitions, updateRoleDefinition, updateRolePermissions as saveRolePermissions } from './rbac';

@@ -1,5 +1,5 @@
 import { Material, MaterialType, LifecycleStatus, Prisma } from '@prisma/client';
-import { PermissionChecker, AuditWriter } from '@synergy/types';
+import { PermissionChecker, AuditWriter } from '@plinth/types';
 import { MaterialsRepository } from '../repositories/materials.repository';
 import { UomRepository } from '../repositories/uom.repository';
 import { MasterDataLifecycleService } from './master-data-lifecycle.service';

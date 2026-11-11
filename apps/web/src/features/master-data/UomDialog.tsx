@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { Pencil, Save, Plus } from 'lucide-react';
-import { Button, Checkbox, Dialog, Input } from '@synergy/ui';
+import { Button, Checkbox, Dialog, Input } from '@plinth/ui';
 import { fetchApi } from '../api/client';
 import { SearchableSelector } from '../../components/ui/SearchableSelector';
 import { getUomSpecificationId, getUomSpecificationOptions } from './uqc-specifications';

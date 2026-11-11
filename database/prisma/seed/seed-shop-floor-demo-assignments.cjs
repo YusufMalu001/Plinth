@@ -23,15 +23,15 @@ function assertLocalDemoDatabase() {
   if (
     process.env.NODE_ENV === 'production' ||
     !['localhost', '127.0.0.1', '::1'].includes(databaseUrl.hostname) ||
-    databaseName !== 'synergy_erp'
+    databaseName !== 'plinth_erp'
   ) {
-    throw new Error('Refusing to continue: this script only seeds the local synergy_erp database.');
+    throw new Error('Refusing to continue: this script only seeds the local plinth_erp database.');
   }
 }
 
 async function main() {
   assertLocalDemoDatabase();
-  const emails = workers.map(([slug]) => `worker.${slug}@synergy.local`);
+  const emails = workers.map(([slug]) => `worker.${slug}@plinth.local`);
   const users = await prisma.user.findMany({
     where: { email: { in: emails }, isActive: true },
     select: {
@@ -61,7 +61,7 @@ async function main() {
 
   const plannedAssignments = [];
   for (const [slug, batchNumber] of workers) {
-    const user = users.find((candidate) => candidate.email === `worker.${slug}@synergy.local`);
+    const user = users.find((candidate) => candidate.email === `worker.${slug}@plinth.local`);
     const batch = await prisma.departmentExecutionBatch.findFirst({
       where: {
         batchNumber,

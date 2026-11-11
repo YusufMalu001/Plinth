@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { createRoleRequestSchema, createUserRequestSchema, userListRequestSchema, userStatusRequestSchema, updateUserRoleRequestSchema, updateRoleDefinitionRequestSchema, updateRolePermissionsRequestSchema } from '@synergy/validation';
+import { createRoleRequestSchema, createUserRequestSchema, userListRequestSchema, userStatusRequestSchema, updateUserRoleRequestSchema, updateRoleDefinitionRequestSchema, updateRolePermissionsRequestSchema } from '@plinth/validation';
 import { requireAuth, requireRole } from '../../common/middleware/auth';
 import { requireTrustedOrigin } from '../../common/middleware/trustedOrigin';
 import { validate } from '../../common/middleware/validation';

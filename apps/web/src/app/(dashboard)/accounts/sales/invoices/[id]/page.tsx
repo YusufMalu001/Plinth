@@ -2,7 +2,6 @@
 
 import React, { useState, useRef } from 'react';
 import { useParams } from 'next/navigation';
-import Image from 'next/image';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { useReactToPrint } from 'react-to-print';
 import {
@@ -26,7 +25,7 @@ import {
   PlusCircle,
   Printer,
 } from 'lucide-react';
-import { Button } from '@synergy/ui';
+import { Button } from '@plinth/ui';
 import Link from 'next/link';
 import { accountsApi } from '@/features/accounts/api';
 import { salesApi } from '@/features/sales/api';
@@ -35,7 +34,7 @@ import { RecordCustomerPaymentModal } from '@/features/accounts/components/Recor
 import { DebitCreditNoteModal } from '@/features/accounts/components/DebitCreditNoteModal';
 import { EditTaxInvoiceModal } from '@/features/accounts/components/EditTaxInvoiceModal';
 import { formatCurrency, formatDate } from '@/features/accounts/utils';
-import { numberToIndianWords, SYNERGY_COMPANY_INFO } from '@/features/purchases/utils';
+import { numberToIndianWords, COMPANY_INFO } from '@/features/purchases/utils';
 import { useCurrentUser } from '@/features/auth/hooks';
 import { SalesInvoice, CustomerCreditBalance } from '@/features/accounts/types';
 import { showToast } from '@/components/toast-store';
@@ -103,7 +102,7 @@ export default function SalesInvoiceDetailPage() {
 
   const creditExposureQuery = useQuery({
     queryKey: ['accounts', 'ar', 'customer-credit', invoice?.entityId],
-    queryFn: () => accountsApi.customerCreditBalances(invoice?.entityId || 'synergy-international'),
+    queryFn: () => accountsApi.customerCreditBalances(invoice?.entityId || 'plinth-international'),
     enabled: Boolean(invoice?.entityId),
   });
 
@@ -168,7 +167,7 @@ export default function SalesInvoiceDetailPage() {
   if (invoiceQuery.isLoading) {
     return (
       <main className="flex min-h-[60vh] flex-col items-center justify-center p-8">
-        <div className="h-8 w-8 animate-spin rounded-full border-2 border-synergy-600 border-t-transparent mb-3" />
+        <div className="h-8 w-8 animate-spin rounded-full border-2 border-n-600 border-t-transparent mb-3" />
         <p className="text-sm font-semibold text-muted-foreground">Loading sales bill &amp; tax invoice…</p>
       </main>
     );
@@ -315,7 +314,7 @@ export default function SalesInvoiceDetailPage() {
               size="sm"
               variant="outline"
               onClick={() => setIsCreditNoteModalOpen(true)}
-              className="gap-1.5 text-xs font-semibold shadow-sm border-synergy-200 hover:bg-muted text-foreground dark:text-synergy-300 dark:border-synergy-900"
+              className="gap-1.5 text-xs font-semibold shadow-sm border-n-200 hover:bg-muted text-foreground dark:text-n-300 dark:border-n-900"
             >
               <PlusCircle className="h-4 w-4" /> Issue Credit Note
             </Button>
@@ -345,7 +344,7 @@ export default function SalesInvoiceDetailPage() {
       </div>
 
       {/* Hero Banner (Same as Supplier Bill) */}
-      <section className="rounded-3xl border border-border bg-gradient-to-br from-card via-card to-synergy-500/5 p-6 shadow-sm md:p-8">
+      <section className="rounded-3xl border border-border bg-gradient-to-br from-card via-card to-n-500/5 p-6 shadow-sm md:p-8">
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div>
             <div className="flex items-center gap-2">
@@ -355,7 +354,7 @@ export default function SalesInvoiceDetailPage() {
               <span className="rounded-full bg-muted px-2.5 py-0.5 text-[10px] font-bold font-mono">
                 {invoice.type || 'B2B'}
               </span>
-              <span className="rounded-full bg-synergy-50 px-2 py-0.5 text-[10px] font-bold text-foreground dark:bg-synergy-950/50 dark:text-synergy-300">
+              <span className="rounded-full bg-n-50 px-2 py-0.5 text-[10px] font-bold text-foreground dark:bg-n-950/50 dark:text-n-300">
                 Direct Order Billing
               </span>
             </div>
@@ -487,7 +486,7 @@ export default function SalesInvoiceDetailPage() {
           <div
             className={`rounded-2xl border p-4 shadow-sm ${
               outstanding > 0
-                ? 'border-border bg-synergy-500/5'
+                ? 'border-border bg-n-500/5'
                 : 'border-emerald-500/30 bg-emerald-500/5'
             }`}
           >
@@ -550,21 +549,14 @@ export default function SalesInvoiceDetailPage() {
             {/* Top Document Header */}
             <div className="flex flex-wrap items-start justify-between gap-4 border-b-2 border-border pb-5">
               <div className="flex items-center gap-4">
-                <Image
-                  src="/synergy.png"
-                  alt="Synergy International"
-                  width={175}
-                  height={53}
-                  priority
-                  className="h-auto w-32 object-contain"
-                />
+                <span className="text-2xl font-black tracking-tight text-ink uppercase">Plinth</span>
                 <div className="border-l border-slate-200 pl-4 dark:border-border">
                   <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-foreground">
                     Accounts Receivable · GST Tax Invoice
                   </p>
                   <h2 className="mt-0.5 text-xl md:text-2xl font-bold">Tax Invoice</h2>
                   <p className="mt-0.5 text-xs text-slate-500 dark:text-muted-foreground">
-                    Synergy International · Original for Recipient
+                    Plinth · Original for Recipient
                   </p>
                 </div>
               </div>
@@ -572,7 +564,7 @@ export default function SalesInvoiceDetailPage() {
                 <p className="text-slate-500 dark:text-muted-foreground">Invoice Reference</p>
                 <p className="font-mono font-bold text-base text-foreground">{invoice.invoiceNumber}</p>
                 <p className="mt-1.5 text-slate-500 dark:text-muted-foreground">Bill Status</p>
-                <p className="font-semibold text-foreground dark:text-synergy-300">
+                <p className="font-semibold text-foreground dark:text-n-300">
                   {invoice.status}
                 </p>
               </div>
@@ -586,16 +578,16 @@ export default function SalesInvoiceDetailPage() {
                   Supplier / Seller (Billed From)
                 </p>
                 <p className="text-sm font-bold text-slate-900 dark:text-foreground">
-                  {SYNERGY_COMPANY_INFO.name}
+                  {COMPANY_INFO.name}
                 </p>
                 <p className="text-slate-600 dark:text-muted-foreground">
-                  GSTIN: <span className="font-mono font-semibold">{SYNERGY_COMPANY_INFO.gstin}</span> · State Code: 23
+                  GSTIN: <span className="font-mono font-semibold">{COMPANY_INFO.gstin}</span> · State Code: 23
                 </p>
                 <p className="text-slate-600 dark:text-muted-foreground text-[11px] leading-relaxed">
-                  {SYNERGY_COMPANY_INFO.addressLine1} {SYNERGY_COMPANY_INFO.addressLine2} {SYNERGY_COMPANY_INFO.addressLine3}
+                  {COMPANY_INFO.addressLine1} {COMPANY_INFO.addressLine2} {COMPANY_INFO.addressLine3}
                 </p>
                 <p className="text-slate-500 dark:text-muted-foreground text-[11px]">
-                  Contact: {SYNERGY_COMPANY_INFO.phone} · {SYNERGY_COMPANY_INFO.email}
+                  Contact: {COMPANY_INFO.phone} · {COMPANY_INFO.email}
                 </p>
               </div>
 
@@ -644,7 +636,7 @@ export default function SalesInvoiceDetailPage() {
             </div>
 
             {/* Document References Block: Sales Order, Origin, Mode */}
-            <div className="border-b border-slate-200 py-3 px-3.5 bg-synergy-50/40 rounded-xl my-3.5 text-xs flex flex-wrap items-center justify-between gap-4 dark:bg-muted/10 dark:border-border">
+            <div className="border-b border-slate-200 py-3 px-3.5 bg-n-50/40 rounded-xl my-3.5 text-xs flex flex-wrap items-center justify-between gap-4 dark:bg-muted/10 dark:border-border">
               <div className="flex flex-wrap items-center gap-5">
                 <div>
                   <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-muted-foreground">
@@ -682,7 +674,7 @@ export default function SalesInvoiceDetailPage() {
             {/* Line Items Table with the exact signature navy header from Supplier Bill */}
             <div className="mt-4 overflow-x-auto rounded-xl border border-slate-200 dark:border-border print:overflow-visible">
               <table className="w-full min-w-[680px] text-left text-xs print:min-w-0 print:text-[9px]">
-                <thead className="bg-synergy-800 text-white print:bg-slate-100 print:text-slate-900">
+                <thead className="bg-n-800 text-white print:bg-slate-100 print:text-slate-900">
                   <tr>
                     <th className="px-2.5 py-2 font-semibold w-7">#</th>
                     <th className="px-2.5 py-2 font-semibold">Item &amp; Description</th>
@@ -791,8 +783,8 @@ export default function SalesInvoiceDetailPage() {
                     </div>
                   </div>
                   <div className="text-right">
-                    <span className="text-[10px] font-bold uppercase text-foreground dark:text-synergy-300 block">
-                      for SYNERGY INTERNATIONAL
+                    <span className="text-[10px] font-bold uppercase text-foreground dark:text-n-300 block">
+                      for PLINTH
                     </span>
                     <div className="mt-6 border-t border-slate-300 w-36 text-center text-[10px] text-slate-500 font-medium">
                       Authorised Signatory
@@ -851,7 +843,7 @@ export default function SalesInvoiceDetailPage() {
                 <ShoppingBag className="h-3.5 w-3.5 text-primary" />
                 <span className="text-[11px]">Order</span>
                 {invoice.lines?.length > 0 && (
-                  <span className="rounded-full bg-muted px-1.5 py-0.2 text-[9px] font-mono text-foreground dark:text-synergy-300">
+                  <span className="rounded-full bg-muted px-1.5 py-0.2 text-[9px] font-mono text-foreground dark:text-n-300">
                     {invoice.lines.length}
                   </span>
                 )}
@@ -914,7 +906,7 @@ export default function SalesInvoiceDetailPage() {
                       <span className="font-mono font-bold text-base text-foreground">
                         {invoice.salesOrderNumber || 'Direct Order Intake'}
                       </span>
-                      <span className="rounded-full bg-synergy-100 dark:bg-synergy-950/50 text-foreground dark:text-synergy-300 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider">
+                      <span className="rounded-full bg-n-100 dark:bg-n-950/50 text-foreground dark:text-n-300 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider">
                         {salesOrder?.status || 'CONFIRMED'}
                       </span>
                     </div>
@@ -1069,7 +1061,7 @@ export default function SalesInvoiceDetailPage() {
                         <span className="font-mono font-bold text-emerald-600 dark:text-emerald-400 text-sm">
                           {formatCurrency(payment.amount)}
                         </span>
-                        <span className="rounded-full bg-muted px-2 py-0.5 text-[10px] font-bold text-foreground dark:text-synergy-300">
+                        <span className="rounded-full bg-muted px-2 py-0.5 text-[10px] font-bold text-foreground dark:text-n-300">
                           {payment.method.replaceAll('_', ' ')}
                         </span>
                       </div>
@@ -1227,7 +1219,7 @@ export default function SalesInvoiceDetailPage() {
                     <div className="text-[11px] text-muted-foreground space-y-0.5">
                       <p>• Generated from Order: <span className="font-mono text-foreground">{invoice.salesOrderNumber || 'SO-Direct'}</span></p>
                       <p>• Creation Date: <span className="text-foreground">{formatDate(invoice.invoiceDate)}</span></p>
-                      <p>• Current Status: <strong className="text-foreground dark:text-synergy-300">{invoice.status}</strong></p>
+                      <p>• Current Status: <strong className="text-foreground dark:text-n-300">{invoice.status}</strong></p>
                     </div>
                   </div>
                 </div>
@@ -1248,7 +1240,7 @@ export default function SalesInvoiceDetailPage() {
             setIsSavingPayment(true);
             try {
               await accountsApi.recordCustomerReceipt({
-                entityId: invoice.entityId || 'synergy-international',
+                entityId: invoice.entityId || 'plinth-international',
                 customerName: invoice.customerName,
                 customerId: invoice.customerId || undefined,
                 invoiceId: invoice.id,
@@ -1291,7 +1283,7 @@ export default function SalesInvoiceDetailPage() {
         <DebitCreditNoteModal
           isOpen={isCreditNoteModalOpen}
           onClose={() => setIsCreditNoteModalOpen(false)}
-          entityId={invoice.entityId || 'synergy-international'}
+          entityId={invoice.entityId || 'plinth-international'}
           defaultType="CREDIT"
           defaultPartyType="CUSTOMER"
           initialInvoice={invoice}

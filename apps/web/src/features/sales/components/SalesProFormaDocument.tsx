@@ -4,7 +4,7 @@ import {
   formatINR,
   formatIndianDate,
   numberToIndianWords,
-  SYNERGY_COMPANY_INFO,
+  COMPANY_INFO,
 } from '../../purchases/utils';
 import type { CommercialEditorLine, CommercialEditorTerms } from './SalesOrderCommercialsEditor';
 
@@ -204,30 +204,26 @@ export const SalesProFormaDocument = React.forwardRef<HTMLDivElement, SalesProFo
               </span>
             </div>
 
-            {/* Company Header with Synergy Logo and Address (Identical to PO PDF) */}
+            {/* Company Header with Plinth Logo and Address (Identical to PO PDF) */}
             <div className="flex items-start justify-between border-b-2 border-black pb-3 pt-2">
               <div className="flex items-center gap-3">
-                <img
-                  src="/synergy.png"
-                  alt="Synergy Logo"
-                  className="h-10 sm:h-12 w-auto object-contain shrink-0"
-                />
+                <span className="text-xl font-black tracking-tight text-ink uppercase">Plinth</span>
                 <div>
                   <h2 className="text-sm sm:text-base font-black tracking-wide text-black uppercase">
-                    {SYNERGY_COMPANY_INFO.name}
+                    {COMPANY_INFO.name}
                   </h2>
                   <p className="text-[10.5px] leading-snug text-slate-800 font-medium">
-                    {SYNERGY_COMPANY_INFO.addressLine1}
+                    {COMPANY_INFO.addressLine1}
                   </p>
                   <p className="text-[10.5px] leading-snug text-slate-800 font-medium">
-                    {SYNERGY_COMPANY_INFO.addressLine2}
+                    {COMPANY_INFO.addressLine2}
                   </p>
                   <p className="text-[10.5px] leading-snug text-slate-800 font-medium">
-                    {SYNERGY_COMPANY_INFO.addressLine3}
+                    {COMPANY_INFO.addressLine3}
                   </p>
                   <div className="flex flex-wrap items-center gap-x-3 text-[10.5px] font-semibold text-slate-900 pt-0.5">
-                    <span>📞 {SYNERGY_COMPANY_INFO.phone}</span>
-                    <span>✉ {SYNERGY_COMPANY_INFO.email}</span>
+                    <span>📞 {COMPANY_INFO.phone}</span>
+                    <span>✉ {COMPANY_INFO.email}</span>
                   </div>
                 </div>
               </div>
@@ -235,9 +231,9 @@ export const SalesProFormaDocument = React.forwardRef<HTMLDivElement, SalesProFo
 
             {/* GSTIN / UIN Row */}
             <div className="text-center py-1 font-bold text-[11.5px] text-black border-b border-black bg-slate-50/60">
-              <span>GSTIN/UIN: {SYNERGY_COMPANY_INFO.gstin}</span>
+              <span>GSTIN/UIN: {COMPANY_INFO.gstin}</span>
               <span className="mx-2">·</span>
-              <span>State: {SYNERGY_COMPANY_INFO.state} ({SYNERGY_COMPANY_INFO.stateCode})</span>
+              <span>State: {COMPANY_INFO.state} ({COMPANY_INFO.stateCode})</span>
             </div>
 
             {/* 2-Column Master ERP Grid Box (Matching PO PDF / Debit Note PDF) */}
@@ -473,7 +469,7 @@ export const SalesProFormaDocument = React.forwardRef<HTMLDivElement, SalesProFo
                   <span className="text-slate-600">Bank Name:</span>
                   <span className="font-bold text-black">HDFC Bank Limited</span>
                   <span className="text-slate-600">A/c Holder:</span>
-                  <span className="font-bold text-black">{SYNERGY_COMPANY_INFO.name}</span>
+                  <span className="font-bold text-black">{COMPANY_INFO.name}</span>
                   <span className="text-slate-600">A/c No.:</span>
                   <span className="font-mono font-bold text-black">50200088921134</span>
                   <span className="text-slate-600">Branch &amp; IFS Code:</span>
@@ -498,7 +494,7 @@ export const SalesProFormaDocument = React.forwardRef<HTMLDivElement, SalesProFo
                   </div>
                   <div className="text-right">
                     <div className="text-[10px] font-bold text-black">
-                      For {SYNERGY_COMPANY_INFO.name}
+                      For {COMPANY_INFO.name}
                     </div>
                     <div className="h-8 flex items-center justify-end">
                       <span className="text-[9px] text-slate-400 italic">Authorised Signatory</span>
@@ -510,7 +506,7 @@ export const SalesProFormaDocument = React.forwardRef<HTMLDivElement, SalesProFo
 
             {/* Bottom System Footnote */}
             <div className="pt-2 text-center text-[9px] text-slate-500 print:text-[8px]">
-              This is a Computer Generated Proforma Document · Governed by Synergy International Commercial ERP
+              This is a Computer Generated Proforma Document · Governed by Plinth Commercial ERP
             </div>
           </div>
         </div>

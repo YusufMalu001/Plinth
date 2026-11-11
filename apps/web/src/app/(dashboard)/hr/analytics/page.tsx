@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { hrApi } from '@/features/hr/api';
-import type { EmployeeDto, EmployeeTaskDto } from '@synergy/types';
+import type { EmployeeDto, EmployeeTaskDto } from '@plinth/types';
 import {
   Search,
   ArrowRight,
@@ -13,7 +13,7 @@ import {
   TrendingUp,
   TrendingDown
 } from 'lucide-react';
-import { Button, Card, Dialog, Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from '@synergy/ui';
+import { Button, Card, Dialog, Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from '@plinth/ui';
 
 interface PerformanceEvaluation {
   employeeId: string;

@@ -25,7 +25,7 @@ import {
   TableBody,
   TableCell,
   Input,
-} from '@synergy/ui';
+} from '@plinth/ui';
 import { fetchApi } from '@/features/api/client';
 import { DepartmentDialog } from '@/components/DepartmentDialog';
 import { ShopFloorDepartmentList } from './ShopFloorDepartmentList';

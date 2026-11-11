@@ -1,6 +1,6 @@
 'use client';
 
-import { Checkbox } from '@synergy/ui';
+import { Checkbox } from '@plinth/ui';
 import React, { useState } from 'react';
 import {
   Building2,
@@ -17,7 +17,7 @@ import {
 import {
   Button,
   Dialog,
-} from '@synergy/ui';
+} from '@plinth/ui';
 import { useCurrentUser } from '../../auth/hooks';
 import { useCreateSalesCustomer } from '../hooks';
 import { Customer, CustomerType } from '../types';
@@ -244,7 +244,7 @@ export function CustomerRegistrationModal({
       open={isOpen}
       onClose={onClose}
       title="Register Customer / Dealer"
-      description="Add a new commercial account, dealer, distributor, or retail customer to Synergy ERP."
+      description="Add a new commercial account, dealer, distributor, or retail customer to Plinth."
       className="max-w-3xl max-h-[90vh] overflow-y-auto"
     >
       {error && (

@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import { MaterialsService } from '../services/materials.service';
-import { ApiResponse, LifecycleStatus, MaterialType } from '@synergy/types';
+import { ApiResponse, LifecycleStatus, MaterialType } from '@plinth/types';
 import { isAdminActor } from '../../../common/middleware/auth';
 
 export class MaterialsController {

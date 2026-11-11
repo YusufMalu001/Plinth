@@ -1,9 +1,9 @@
 'use client';
 
-import { Checkbox } from '@synergy/ui';
+import { Checkbox } from '@plinth/ui';
 import React, { useState } from 'react';
 import { X, Lock } from 'lucide-react';
-import { Button } from '@synergy/ui';
+import { Button } from '@plinth/ui';
 import { AccountingPeriod } from '../types';
 
 interface PeriodCloseModalProps {

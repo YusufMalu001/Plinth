@@ -13,7 +13,7 @@ import {
   Button,
   Dialog,
   Input,
-} from '@synergy/ui';
+} from '@plinth/ui';
 import { useMaterials } from '@/hooks/useMasterData';
 import { fulfillmentApi } from '../api';
 import { useFulfillmentMutation } from '../hooks';

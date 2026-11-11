@@ -13,7 +13,7 @@ import {
   ShieldCheck,
   Paperclip
 } from 'lucide-react';
-import { InspectionResultDto, CorrectiveActionDto } from '@synergy/types';
+import { InspectionResultDto, CorrectiveActionDto } from '@plinth/types';
 import { StatusBadge } from '../../../components/StatusBadge';
 
 interface QualityTimelineProps {

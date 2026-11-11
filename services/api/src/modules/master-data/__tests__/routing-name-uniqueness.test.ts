@@ -3,7 +3,7 @@ import { ConflictError } from '../../../common/errors/AppError';
 import { RoutingRepository } from '../repositories/routing.repository';
 import { OrgStructureRepository } from '../repositories/org-structure.repository';
 import { RoutingService } from '../services/routing.service';
-import { AllowAllPermissionChecker } from '@synergy/types';
+import { AllowAllPermissionChecker } from '@plinth/types';
 
 const makeService = (repository: Partial<RoutingRepository>) => new RoutingService(
   repository as RoutingRepository,

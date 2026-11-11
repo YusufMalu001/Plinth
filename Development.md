@@ -1,4 +1,4 @@
-# Synergy International ERP — Living Development Tracker
+# Plinth International ERP — Living Development Tracker
 
 Last updated: 2026-08-25  
 Current phase: Phase 0 — Discovery and Validation  
@@ -8,7 +8,7 @@ Next recommended vertical slice: Module 0 — Secure authentication and protecte
 
 ## 1. Project Identity and Product Definition
 
-Synergy International is an Indore-based manufacturer of cloth-drying stands and related household products across stainless-steel, plastic, wall-mounted, glider, CS19, and outsourced product lines.
+Plinth International is an Indore-based manufacturer of cloth-drying stands and related household products across stainless-steel, plastic, wall-mounted, glider, CS19, and outsourced product lines.
 
 The ERP must become the operational system of record for every important physical movement:
 
@@ -54,7 +54,7 @@ Required labels:
 - Worker attribution is required at assignment, execution, discrepancy, and handover points.
 - Required QC gates cannot be bypassed; failures require reason and controlled disposition.
 - Ready-to-complete intermediate stock is not finished goods.
-- Job-work material remains Synergy-owned while held by a vendor.
+- Job-work material remains Plinth-owned while held by a vendor.
 - Sales channels retain distinct behavior; they must not be forced into one workflow.
 - Authorization is least-privilege, deny-by-default, permission-based, scope-aware, server-enforced, and audited.
 - Approval permissions remain separate from create/update permissions.
@@ -159,7 +159,7 @@ All unresolved items remain **TO BE VALIDATED**. “Blocks” means the named au
 
 ### V-004 — Production and transaction approval hierarchy
 
-- Status/owner: TO BE VALIDATED / Synergy ownership and department heads.
+- Status/owner: TO BE VALIDATED / Plinth ownership and department heads.
 - Evidence: Haider usually decides quantities, sometimes Aziz; escalation exists but exact hierarchy is unknown.
 - Depends/blocks: Modules 0, 2–3, 6–7, 10–13, 15, 19.
 - Decision/date: Pending / none.
@@ -240,7 +240,7 @@ All unresolved items remain **TO BE VALIDATED**. “Blocks” means the named au
 ### V-014 — Job-work accounting treatment
 
 - Status/owner: TO BE VALIDATED / Finance owner.
-- Evidence: Synergy ownership at vendor is confirmed; accounting treatment is not.
+- Evidence: Plinth ownership at vendor is confirmed; accounting treatment is not.
 - Depends/blocks: Modules 14 and 18.
 - Decision/date: Pending / none.
 - Impact: operational vendor-held ledger may proceed after master data; financial posting waits.
@@ -489,8 +489,8 @@ Next dependent module: Module 3.
 ### Module 3 — Goods Receiving / GRN
 
 Status: **Production workflow implemented, live-database/UAT verification pending** (updated 2026-09-10 — Physical Verification & line-by-line inspection gate added, Debit Note creation segregated to Accountant/Finance role with Store Manager notification workflow; control center, scoped reads, capability-driven UI, workflow notifications, CSV export, and editable RBAC catalogue active; see `docs/modules/module-3-goods-receiving.md`).
-Objective/business purpose: record physically verified incoming material, discrepancies, Synergy labels, sign-off, and inventory handoff.  
-Confirmed requirements: WhatsApp/printed invoice capture context; weight checks for bulk raw material; individual piece checks for hardware; bundle/packet size; Synergy QR/barcode; store verification; digital sign-off; shortage/excess/damage; excess returned; strict physical verification gate on platform prior to acceptance; segregation of duties for Debit Notes (Store Manager notifies Accountant; Accountant drafts/generates Debit Note).  
+Objective/business purpose: record physically verified incoming material, discrepancies, Plinth labels, sign-off, and inventory handoff.  
+Confirmed requirements: WhatsApp/printed invoice capture context; weight checks for bulk raw material; individual piece checks for hardware; bundle/packet size; Plinth QR/barcode; store verification; digital sign-off; shortage/excess/damage; excess returned; strict physical verification gate on platform prior to acceptance; segregation of duties for Debit Notes (Store Manager notifies Accountant; Accountant drafts/generates Debit Note).  
 TO BE VALIDATED: V-008 debit-note accounting (still correctly unresolved — no amount field exists) and V-013 UOM/pack conversions (still correctly unresolved — unit label is stored verbatim, no conversion performed).  
 ASSUMPTION: invoice image/file is an attachment, not automatically trusted structured data.  
 OUT OF SCOPE: automated accounting posting before Module 18 validation — confirmed still blocked (debit-note is flag-only, no amount).  
@@ -564,7 +564,7 @@ Next dependent module: Module 5.
 ### Module 5 — BOM / Formula Engine
 
 Status: **Not Started**  
-Objective/business purpose: digitize approved Synergy product formulas into versioned, reproducible material requirements.  
+Objective/business purpose: digitize approved Plinth product formulas into versioned, reproducible material requirements.  
 Confirmed requirements: product-specific BOMs/formulas, ratios, effective versions, UOM conversion, department requirements, simulation, history, and golden test cases.  
 TO BE VALIDATED: V-002 and V-013; component ratios beyond explicit examples remain blocked.  
 ASSUMPTION: formulas may include fixed and quantity-scaled components only after source confirmation.  
@@ -881,8 +881,8 @@ Next dependent module: Module 14.
 ### Module 14 — Job Work / Outsourced Processing
 
 Status: **Not Started**  
-Objective/business purpose: replace manual projections with a live Synergy-owned vendor-held material ledger and reconciliation.  
-Confirmed workflow: inventory -> vendor -> processing -> return -> reconciliation -> inventory; track issued/returned/outstanding/short/excess/scrap and vendor history; ownership remains Synergy.  
+Objective/business purpose: replace manual projections with a live Plinth-owned vendor-held material ledger and reconciliation.  
+Confirmed workflow: inventory -> vendor -> processing -> return -> reconciliation -> inventory; track issued/returned/outstanding/short/excess/scrap and vendor history; ownership remains Plinth.  
 TO BE VALIDATED: V-014 accounting treatment and any approved tolerance/processing specifications.  
 ASSUMPTION: operational vendor-held balance can remain separate from accounting postings.  
 OUT OF SCOPE: invented accounting entries or vendor API.  
@@ -896,7 +896,7 @@ Submodules/functions:
 - [ ] Returned output, shortage/excess/scrap, reconciliation, closure.
 - [ ] Vendor performance/history and accounting handoff status.
 
-Workflow/states/validation: draft -> approved -> issued/in vendor custody -> partially/fully returned -> discrepancy/reconciliation -> closed. Validate Synergy ownership, issue availability, return not silently exceeding custody, conversion/output rules only if validated, outstanding balance, reason/evidence, and idempotency.
+Workflow/states/validation: draft -> approved -> issued/in vendor custody -> partially/fully returned -> discrepancy/reconciliation -> closed. Validate Plinth ownership, issue availability, return not silently exceeding custody, conversion/output rules only if validated, outstanding balance, reason/evidence, and idempotency.
 
 UI/screens: job-work order; issue/challan; vendor-held balance; return receiving; discrepancy/reconciliation; vendor history; overdue/outstanding. Components: custody ledger, issue-return comparison, challan, reconciliation panel, vendor balance indicator, evidence attachment.
 
@@ -918,7 +918,7 @@ Next dependent module: Module 15.
 
 Status: **Scaffolded / not implemented**  
 Objective/business purpose: capture customer/channel-specific demand with controlled status, availability, allocation readiness, cancellation, and history.  
-Confirmed requirements: Amazon individual orders/labels/invoices and Synergy returns; E-Trade bulk/container, single PO/MRP label and E-Trade exchanges; walk-in bill/direct handover; DS exists; channel behavior stays distinct.  
+Confirmed requirements: Amazon individual orders/labels/invoices and Plinth returns; E-Trade bulk/container, single PO/MRP label and E-Trade exchanges; walk-in bill/direct handover; DS exists; channel behavior stays distinct.  
 TO BE VALIDATED: V-005 DS, V-011 returns/refunds, Amazon/E-Trade data access, pricing/tax/approval rules.  
 ASSUMPTION: manual order capture is available before external integrations.  
 OUT OF SCOPE: unvalidated marketplace APIs or forced common exchange/refund logic.  
@@ -1207,7 +1207,7 @@ Next dependent module: none; continuous improvement only.
 
 - [ ] **E2E-A Inbound:** Requirement -> PR -> Approval -> PO -> Receipt -> physical weight/piece verification -> discrepancy/sign-off -> GRN -> one inventory posting.
 - [ ] **E2E-B Production:** Plan -> approved BOM/routing -> availability -> material issue -> department receipt/execution/handover -> WIP -> QC -> loss/rework where required -> assembly -> assembly QC -> FG receipt.
-- [ ] **E2E-C Job Work:** Job-work order -> Synergy material issue -> vendor-held balance -> partial/full return -> shortage/scrap/excess -> reconciliation -> inventory.
+- [ ] **E2E-C Job Work:** Job-work order -> Plinth material issue -> vendor-held balance -> partial/full return -> shortage/scrap/excess -> reconciliation -> inventory.
 - [ ] **E2E-D Sales:** Channel order -> availability/allocation -> reservation -> picking -> channel-specific packing/labels -> dispatch proof -> exactly-once FG deduction -> order completion.
 - [ ] **E2E-E Audit:** scoped snapshot -> physical count -> match/variance -> investigation/reason/evidence -> separate approval -> adjustment -> verified position.
 
@@ -1269,7 +1269,7 @@ Cross-workflow exception scenarios:
 
 Active slice: **None — awaiting explicit approval.**
 
-Completed production slices: **None.** The health endpoint and UI/authentication are repository prototypes and do not satisfy the Synergy Definition of Done.
+Completed production slices: **None.** The health endpoint and UI/authentication are repository prototypes and do not satisfy the Plinth Definition of Done.
 
 ## 14. Recommended First Vertical Slice — Do Not Implement Yet
 
@@ -1341,7 +1341,7 @@ Acceptance gate:
 
 ## 17. Change Log
 
-- **2026-08-25 — Planning baseline:** Read the 19-page Synergy Codex Master Development Plan Prompt; inspected repository architecture, code, schema, tests, docs, configuration names, Git state, and current module placeholders; recorded baseline checks; created the 23-module roadmap, validation register, dependency/phase maps, risk/debt registers, E2E strategy, readiness gates, and one recommended first slice. No ERP functionality implemented.
+- **2026-08-25 — Planning baseline:** Read the 19-page Plinth Codex Master Development Plan Prompt; inspected repository architecture, code, schema, tests, docs, configuration names, Git state, and current module placeholders; recorded baseline checks; created the 23-module roadmap, validation register, dependency/phase maps, risk/debt registers, E2E strategy, readiness gates, and one recommended first slice. No ERP functionality implemented.
 
 ## 18. Update Protocol for Every Approved Slice
 

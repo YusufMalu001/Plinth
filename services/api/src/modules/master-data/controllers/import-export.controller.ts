@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import { ImportExportService } from '../services/import-export.service';
-import { ApiResponse } from '@synergy/types';
+import { ApiResponse } from '@plinth/types';
 import { parse } from 'csv-parse/sync';
 import * as xlsx from 'xlsx';
 import { parseAsync } from 'json2csv';

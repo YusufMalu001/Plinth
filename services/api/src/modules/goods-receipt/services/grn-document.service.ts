@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { PermissionChecker, AuditWriter } from '@synergy/types';
+import { PermissionChecker, AuditWriter } from '@plinth/types';
 import { createHash } from 'crypto';
 import { GrnDocumentRepository } from '../repositories/grn-document.repository';
 import { GoodsReceiptRepository } from '../repositories/goods-receipt.repository';

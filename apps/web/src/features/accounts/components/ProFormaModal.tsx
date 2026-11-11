@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useQuery } from '@tanstack/react-query';
 import { useReactToPrint } from 'react-to-print';
 import { X, Plus, Trash2, ArrowRightCircle, Printer } from 'lucide-react';
-import { Button, Table, TableHeader, TableBody, TableHead, TableRow, TableCell } from '@synergy/ui';
+import { Button, Table, TableHeader, TableBody, TableHead, TableRow, TableCell } from '@plinth/ui';
 import { showToast } from '@/components/toast-store';
 import { salesApi } from '@/features/sales/api';
 import { SalesProFormaDocument } from '@/features/sales/components/SalesProFormaDocument';
@@ -295,14 +295,14 @@ export function ProFormaModal({
                 data-printable="true"
                 className="printable-document print-target mx-auto rounded-xl border border-slate-200 bg-white p-6 text-slate-900 shadow-sm sm:p-8 dark:border-border dark:bg-card dark:text-foreground print:border-none print:shadow-none print:p-0 print:max-w-none print:bg-white print:text-slate-900"
               >
-                <div className="h-1.5 w-full bg-gradient-to-r from-synergy-800 via-synergy-700 to-amber-500 rounded-t-sm" />
+                <div className="h-1.5 w-full bg-gradient-to-r from-n-800 via-n-700 to-amber-500 rounded-t-sm" />
 
                 <header className="flex flex-col sm:flex-row items-start justify-between gap-4 border-b border-slate-200 pb-5 pt-4 dark:border-border print:border-b-2 print:border-black">
                   <div className="flex items-start gap-3">
-                    <img src="/synergy.png" alt="Synergy Logo" className="h-10 w-auto object-contain shrink-0 mt-0.5" />
+                    <span className="text-xl font-black tracking-tight text-ink uppercase">Plinth</span>
                     <div>
                       <h1 className="text-base font-black tracking-wide uppercase text-slate-900 dark:text-foreground">
-                        SYNERGY INTERNATIONAL
+                        PLINTH
                       </h1>
                       <p className="text-[11px] leading-tight text-slate-600 dark:text-muted-foreground mt-0.5">
                         Godown 10, Radheshyam Warehouse, Nemawar Road, Indore - 452001, Madhya Pradesh, India
@@ -314,7 +314,7 @@ export function ProFormaModal({
                   </div>
 
                   <div className="text-left sm:text-right shrink-0">
-                    <span className="inline-block rounded-md bg-synergy-900 text-white px-2.5 py-1 text-xs font-black tracking-wider uppercase">
+                    <span className="inline-block rounded-md bg-n-900 text-white px-2.5 py-1 text-xs font-black tracking-wider uppercase">
                       PRO FORMA INVOICE (RATES EDITOR)
                     </span>
                     <div className="mt-2 text-xs space-y-0.5">
@@ -348,7 +348,7 @@ export function ProFormaModal({
                 {/* Itemized Table */}
                 <div className="mt-5 overflow-x-auto rounded-xl border border-slate-200 dark:border-border">
                   <Table className="w-full text-xs">
-                    <TableHeader className="bg-synergy-900 text-white font-semibold print:bg-slate-800">
+                    <TableHeader className="bg-n-900 text-white font-semibold print:bg-slate-800">
                       <TableRow>
                         <TableHead className="p-2.5 text-center text-white w-10">#</TableHead>
                         <TableHead className="p-2.5 text-left text-white">Description</TableHead>
@@ -513,7 +513,7 @@ export function ProFormaModal({
             )}
 
             {viewProForma.status !== 'CONVERTED' && onConvertToInvoice && (
-              <div className="flex items-center justify-between rounded-2xl border border-border bg-synergy-500/5 p-4 print:hidden">
+              <div className="flex items-center justify-between rounded-2xl border border-border bg-n-500/5 p-4 print:hidden">
                 <div>
                   <h4 className="text-xs font-bold text-foreground">
                     Ready to convert to Official Tax Invoice?

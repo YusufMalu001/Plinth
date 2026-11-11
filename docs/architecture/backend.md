@@ -1,6 +1,6 @@
 # Backend Architecture - Express Modular Monolith
 
-Synergy ERP backend API is designed as a modular monolith. This allows the codebase to remain simple, easy to compile, and easy to review by a small team, while preparing boundaries that allow separating domains into standalone microservices in the future.
+Plinth ERP backend API is designed as a modular monolith. This allows the codebase to remain simple, easy to compile, and easy to review by a small team, while preparing boundaries that allow separating domains into standalone microservices in the future.
 
 ## Request Lifecycle Flow
 Each incoming HTTP request follows a strict step-by-step layer chain:

@@ -17,7 +17,7 @@ import {
 import {
   Button,
   PageHeader,
-} from '@synergy/ui';
+} from '@plinth/ui';
 import {
   useGeneratePO,
   useNextPoNumber,

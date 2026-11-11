@@ -254,7 +254,7 @@ export const employeesService = {
     // If no user account is linked yet, auto-link or provision one so default credentials work
     if (!employee.userAccounts || employee.userAccounts.length === 0) {
       const normalizedEmail = employee.email.trim().toLowerCase();
-      const defaultPassword = 'Synergy@2026!';
+      const defaultPassword = 'Plinth@2026!';
       const user = await prisma.user.findUnique({ where: { email: normalizedEmail } });
 
       if (user) {
@@ -413,7 +413,7 @@ export const employeesService = {
     });
 
     // Provision associated user credentials with the default system initial password
-    const defaultPassword = 'Synergy@2026!';
+    const defaultPassword = 'Plinth@2026!';
     const hashedPassword = await argon2.hash(defaultPassword, { type: argon2.argon2id });
     const user = await prisma.user.findUnique({ where: { email: normalizedEmail } });
     if (user) {
@@ -600,7 +600,7 @@ export const employeesService = {
 
     // Generate onboarding token and temporary password
     const onboardingToken = crypto.randomBytes(32).toString('hex');
-    const password = input.tempPassword || `Synergy@${crypto.randomBytes(5).toString('hex')}!`;
+    const password = input.tempPassword || `Plinth@${crypto.randomBytes(5).toString('hex')}!`;
     const hashedPassword = await argon2.hash(password, { type: argon2.argon2id });
 
     // Department heads may provision only new worker logins. Never reuse an existing account.

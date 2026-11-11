@@ -4,13 +4,14 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { fetchApi } from '../api/client';
-import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell, Card, Button, Checkbox } from '@synergy/ui';
+import { readStorageValue } from '../../lib/storageKeys';
+import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell, Card, Button, Checkbox } from '@plinth/ui';
 import { LoadingState } from '../../components/LoadingState';
 import { ErrorState } from '../../components/ErrorState';
 import { EmptyState } from '../../components/EmptyState';
 import { TableToolbar } from '../../components/TableToolbar';
 import { useRouter } from 'next/navigation';
-import type { LifecycleStatus } from '@synergy/types';
+import type { LifecycleStatus } from '@plinth/types';
 import { Plus, Trash2, AlertTriangle, Pencil, ArrowDownUp } from 'lucide-react';
 import { PaginationControls } from '../../components/PaginationControls';
 
@@ -78,7 +79,8 @@ export function GenericList<T extends { id: string; status: LifecycleStatus }>({
   const [deleteError, setDeleteError] = useState<string | null>(null);
   const [isDeleting, setIsDeleting] = useState(false);
   const queryClient = useQueryClient();
-  const pageSizePreferenceKey = `synergy-table-page-size:${descriptor.apiPath}`;
+  const pageSizePreferenceKey = `plinth-table-page-size:${descriptor.apiPath}`;
+  const legacyPageSizeKey = `plinth-table-page-size:${descriptor.apiPath}`;
   const { data, isLoading, error, refetch } = useQuery<{ items: T[], total: number }>({
     queryKey: [descriptor.apiPath, 'list'],
     queryFn: () => fetchApi(`/${descriptor.apiPath}?limit=1000`)
@@ -115,7 +117,7 @@ export function GenericList<T extends { id: string; status: LifecycleStatus }>({
   useEffect(() => {
     if (!descriptor.sortByHeaders) return;
     try {
-      const savedPageSize = Number(window.localStorage.getItem(pageSizePreferenceKey));
+      const savedPageSize = Number(readStorageValue(pageSizePreferenceKey, legacyPageSizeKey));
       if ([10, 20, 50, 100].includes(savedPageSize)) setPageSize(savedPageSize);
     } catch {
       // Keep the default page size when browser storage is unavailable.

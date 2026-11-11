@@ -2,7 +2,7 @@ import { createHash, randomUUID } from 'crypto';
 import {
   PrismaClient,
 } from '@prisma/client';
-import { PermissionChecker, AuditWriter } from '@synergy/types';
+import { PermissionChecker, AuditWriter } from '@plinth/types';
 import { generateSequentialNumber } from '../../common/utils/sequence';
 import { NotificationService } from '../notifications/notification.service';
 import { ConflictError, ForbiddenError, NotFoundError, ValidationError } from '../../common/errors/AppError';

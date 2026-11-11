@@ -12,7 +12,7 @@ import {
   Save,
   Trash2,
 } from 'lucide-react';
-import { Button, PageHeader } from '@synergy/ui';
+import { Button, PageHeader } from '@plinth/ui';
 import { useProducts, useMaterials, useUoms } from '@/hooks/useMasterData';
 import { useCreateBomDraft, useBomVersions, useBomNameConflict } from '@/features/bom/hooks';
 import { bomApi } from '@/features/bom/api';

@@ -1,5 +1,5 @@
 import { Prisma } from '@prisma/client';
-import { PermissionChecker, AuditWriter } from '@synergy/types';
+import { PermissionChecker, AuditWriter } from '@plinth/types';
 import { LabelRepository } from '../repositories/label.repository';
 import { ForbiddenError, NotFoundError, DuplicateError } from '../../../common/errors/AppError';
 
@@ -17,7 +17,7 @@ export class LabelService {
   ) {}
 
   /**
-   * Auto-generates a unique Synergy label for a line the first time it reaches VERIFIED.
+   * Auto-generates a unique Plinth label for a line the first time it reaches VERIFIED.
    * One label per line (tracker does not specify per-unit granularity).
    */
   async generateForLine(grnLineId: string, actorId: string, requestId?: string) {

@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import { testDbConnection } from '../../database';
 import { logger } from '../../common/utils/logger';
-import { HealthCheckResponse } from '@synergy/types';
+import { HealthCheckResponse } from '@plinth/types';
 
 /**
  * Controller handling system health checking.
@@ -17,7 +17,7 @@ export async function getHealth(
     
     const healthStatus: HealthCheckResponse = {
       success: true,
-      service: 'synergy-api',
+      service: 'plinth-api',
       status: isHealthy ? 'healthy' : 'unhealthy',
       timestamp: new Date().toISOString(),
       uptime: process.uptime(),

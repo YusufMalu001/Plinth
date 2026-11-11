@@ -1,6 +1,6 @@
 import { describe, it, expect } from '@jest/globals';
 import { MasterDataLifecycleService } from '../services/master-data-lifecycle.service';
-import { AllowAllPermissionChecker, PermissionChecker, ScopeContext } from '@synergy/types';
+import { AllowAllPermissionChecker, PermissionChecker, ScopeContext } from '@plinth/types';
 import { ForbiddenError, InvalidStateTransitionError, ValidationError } from '../../../common/errors/AppError';
 
 describe('MasterDataLifecycleService', () => {

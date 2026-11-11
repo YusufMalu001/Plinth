@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { ArrowLeft, ArrowRight, ClipboardList, PackageCheck, Truck } from 'lucide-react';
-import { Badge, Card, CardContent, CardHeader, CardTitle, PageHeader, Table } from '@synergy/ui';
+import { Badge, Card, CardContent, CardHeader, CardTitle, PageHeader, Table } from '@plinth/ui';
 import { useSalesOrders } from '../hooks';
 
 const config = {

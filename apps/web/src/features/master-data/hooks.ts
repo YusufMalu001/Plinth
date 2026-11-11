@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import { fetchApi } from '../api/client';
-import { LifecycleStatus } from '@synergy/types';
+import { LifecycleStatus } from '@plinth/types';
 
 export interface EntitySummary {
   entityType: string;

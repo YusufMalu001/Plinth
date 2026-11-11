@@ -15,7 +15,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '@synergy/ui';
+} from '@plinth/ui';
 import { fetchApi } from '../../../features/api/client';
 
 interface DebitNote {

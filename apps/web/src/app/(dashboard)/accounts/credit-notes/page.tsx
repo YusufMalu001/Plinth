@@ -23,7 +23,7 @@ import {
   TableHead,
   TableRow,
   TableCell,
-} from '@synergy/ui';
+} from '@plinth/ui';
 import { accountsApi } from '@/features/accounts/api';
 import { AccountsHeader } from '@/features/accounts/components/AccountsHeader';
 import { DebitCreditNoteModal } from '@/features/accounts/components/DebitCreditNoteModal';

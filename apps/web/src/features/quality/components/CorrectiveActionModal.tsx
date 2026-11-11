@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { X, RotateCcw, RefreshCw } from 'lucide-react';
-import { CorrectiveActionDto, CorrectiveActionStatus } from '@synergy/types';
+import { CorrectiveActionDto, CorrectiveActionStatus } from '@plinth/types';
 import { qualityApi } from '../api';
 
 interface CorrectiveActionModalProps {

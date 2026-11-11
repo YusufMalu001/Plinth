@@ -2,7 +2,6 @@
 
 import React, { useState, useRef } from 'react';
 import { useParams } from 'next/navigation';
-import Image from 'next/image';
 import Link from 'next/link';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { useReactToPrint } from 'react-to-print';
@@ -21,10 +20,10 @@ import {
   BookOpen,
   Clock,
 } from 'lucide-react';
-import { Button } from '@synergy/ui';
+import { Button } from '@plinth/ui';
 import { accountsApi } from '@/features/accounts/api';
 import { formatCurrency, formatDate } from '@/features/accounts/utils';
-import { numberToIndianWords, SYNERGY_COMPANY_INFO } from '@/features/purchases/utils';
+import { numberToIndianWords, COMPANY_INFO } from '@/features/purchases/utils';
 import { useCurrentUser } from '@/features/auth/hooks';
 import { showToast } from '@/components/toast-store';
 
@@ -81,7 +80,7 @@ export default function CreditNoteDetailPage() {
   if (noteQuery.isLoading) {
     return (
       <main className="flex min-h-[60vh] flex-col items-center justify-center p-8">
-        <div className="h-8 w-8 animate-spin rounded-full border-2 border-synergy-600 border-t-transparent mb-3" />
+        <div className="h-8 w-8 animate-spin rounded-full border-2 border-n-600 border-t-transparent mb-3" />
         <p className="text-sm font-semibold text-muted-foreground">Loading credit note details…</p>
       </main>
     );
@@ -403,14 +402,7 @@ export default function CreditNoteDetailPage() {
             {/* Top Document Header */}
             <div className="flex flex-wrap items-start justify-between gap-4 border-b-2 border-border pb-5">
               <div className="flex items-center gap-4">
-                <Image
-                  src="/synergy.png"
-                  alt="Synergy International"
-                  width={150}
-                  height={45}
-                  priority
-                  className="h-auto w-28 object-contain"
-                />
+                <span className="text-2xl font-black tracking-tight text-ink uppercase">Plinth</span>
                 <div className="border-l border-slate-200 pl-4 dark:border-border">
                   <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-foreground">
                     Accounts Receivable · Statutory GST Adjustment
@@ -438,16 +430,16 @@ export default function CreditNoteDetailPage() {
                   Issued By (Seller / Supplier)
                 </p>
                 <p className="text-sm font-bold text-slate-900 dark:text-foreground">
-                  {SYNERGY_COMPANY_INFO.name}
+                  {COMPANY_INFO.name}
                 </p>
                 <p className="text-slate-600 dark:text-muted-foreground">
-                  GSTIN: <span className="font-mono font-semibold">{SYNERGY_COMPANY_INFO.gstin}</span> · State: {SYNERGY_COMPANY_INFO.state} ({SYNERGY_COMPANY_INFO.stateCode})
+                  GSTIN: <span className="font-mono font-semibold">{COMPANY_INFO.gstin}</span> · State: {COMPANY_INFO.state} ({COMPANY_INFO.stateCode})
                 </p>
                 <p className="text-slate-600 dark:text-muted-foreground">
-                  {SYNERGY_COMPANY_INFO.addressLine1} {SYNERGY_COMPANY_INFO.addressLine2} {SYNERGY_COMPANY_INFO.addressLine3}
+                  {COMPANY_INFO.addressLine1} {COMPANY_INFO.addressLine2} {COMPANY_INFO.addressLine3}
                 </p>
                 <p className="text-slate-600 dark:text-muted-foreground">
-                  Phone: {SYNERGY_COMPANY_INFO.phone} · Email: {SYNERGY_COMPANY_INFO.email}
+                  Phone: {COMPANY_INFO.phone} · Email: {COMPANY_INFO.email}
                 </p>
               </div>
 
@@ -467,7 +459,7 @@ export default function CreditNoteDetailPage() {
                 </p>
                 <p className="text-slate-600 dark:text-muted-foreground">
                   Original Invoice Ref:{' '}
-                  <span className="font-mono font-bold text-foreground dark:text-synergy-300">
+                  <span className="font-mono font-bold text-foreground dark:text-n-300">
                     {note.originalInvoiceNumber}
                   </span>{' '}
                   ({note.originalInvoiceDate ? formatDate(note.originalInvoiceDate) : 'N/A'})
@@ -589,13 +581,13 @@ export default function CreditNoteDetailPage() {
             {/* Signatory Box */}
             <div className="mt-6 pt-6 border-t border-slate-200 flex justify-between items-end text-xs dark:border-border">
               <div className="text-slate-500 dark:text-muted-foreground text-[11px]">
-                <p>Generated electronically by Synergy ERP Platform</p>
+                <p>Generated electronically by Plinth Platform</p>
                 <p>Authentic official document · Valid without physical seal</p>
               </div>
 
               <div className="text-right space-y-8">
                 <p className="font-bold text-slate-900 dark:text-foreground">
-                  For {SYNERGY_COMPANY_INFO.name}
+                  For {COMPANY_INFO.name}
                 </p>
                 <div className="border-t border-slate-400 pt-1 text-[11px] font-semibold text-slate-600 dark:text-muted-foreground">
                   Authorized Signatory

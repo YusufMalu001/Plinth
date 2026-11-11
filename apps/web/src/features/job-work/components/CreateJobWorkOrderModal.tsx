@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Dialog, Button } from '@synergy/ui';
+import { Dialog, Button } from '@plinth/ui';
 import { jobWorkApi } from '../api';
 import { fetchApi } from '@/features/api/client';
 

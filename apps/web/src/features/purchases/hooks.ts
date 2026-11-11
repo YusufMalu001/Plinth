@@ -3,7 +3,7 @@
  */
 import { useQuery, useMutation, useQueryClient, keepPreviousData } from '@tanstack/react-query';
 import { fetchApiWithParams, purchasesApi, PR, PO, ExpectedReceipt } from './api';
-import { PrStatus, PoStatus, ExpectedReceiptStatus } from '@synergy/types';
+import { PrStatus, PoStatus, ExpectedReceiptStatus } from '@plinth/types';
 import { expandMaterialsWithVariants, expandProductsWithVariants, Material, Product } from '../../hooks/useMasterData';
 
 // ─── Query keys ───────────────────────────────────────────────────────────────

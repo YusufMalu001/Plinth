@@ -34,7 +34,7 @@ export class MockHermesProvider implements IntelligenceRuntimeAdapter {
       status: 'completed',
       output: JSON.stringify(output),
       usage: { input_tokens: 0, output_tokens: 0, total_tokens: 0 },
-      runtime: { provider: 'DETERMINISTIC_MOCK', model: 'synergy/mock-hermes-v1', route_source: 'local-test-adapter' },
+      runtime: { provider: 'DETERMINISTIC_MOCK', model: 'plinth/mock-hermes-v1', route_source: 'local-test-adapter' },
     };
   }
 

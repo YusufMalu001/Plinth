@@ -93,7 +93,7 @@ import {
   createVendorEvaluationSchema,
   createVendorScorecardSchema,
   commitImportBatchSchema
-} from '@synergy/validation';
+} from '@plinth/validation';
 import multer from 'multer';
 import { ConflictError } from '../../../common/errors/AppError';
 

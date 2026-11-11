@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { X, Download, Copy, ArrowLeftRight } from 'lucide-react';
-import { Button } from '@synergy/ui';
+import { Button } from '@plinth/ui';
 
 interface TallyExportModalProps {
   isOpen: boolean;
@@ -49,7 +49,7 @@ export function TallyExportModal({ isOpen, onClose, entityId: _entityId, onExpor
       <REQUESTDESC>
         <REPORTNAME>Vouchers</REPORTNAME>
         <STATICVARIABLES>
-          <SVCURRENTCOMPANY>Synergy International Pvt Ltd</SVCURRENTCOMPANY>
+          <SVCURRENTCOMPANY>Plinth Pvt Ltd</SVCURRENTCOMPANY>
         </STATICVARIABLES>
       </REQUESTDESC>
       <REQUESTDATA>

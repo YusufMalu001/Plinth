@@ -1,6 +1,6 @@
 module.exports = {
   root: true,
-  extends: ['@synergy/eslint-config'],
+  extends: ['@plinth/eslint-config'],
   rules: {
     '@typescript-eslint/no-explicit-any': 'warn'
   },

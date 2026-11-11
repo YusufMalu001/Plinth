@@ -1,6 +1,6 @@
-# Synergy ERP GitHub Workflow
+# Plinth ERP GitHub Workflow
 
-This guide explains how the Synergy team should create branches, save work, push, pull, merge, resolve conflicts, and use pull requests.
+This guide explains how the Plinth team should create branches, save work, push, pull, merge, resolve conflicts, and use pull requests.
 
 ## 🌿 Branching Architecture
 

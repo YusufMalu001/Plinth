@@ -11,7 +11,7 @@ import {
   RotateCcw,
   Search,
 } from 'lucide-react';
-import { Badge, Button, Card, CardContent, CardHeader, CardTitle, Input, PageHeader } from '@synergy/ui';
+import { Badge, Button, Card, CardContent, CardHeader, CardTitle, Input, PageHeader } from '@plinth/ui';
 import { StatusBadge } from '../../../../components/StatusBadge';
 import { LoadingState } from '../../../../components/LoadingState';
 import { ErrorState } from '../../../../components/ErrorState';

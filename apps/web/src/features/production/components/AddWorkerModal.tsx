@@ -2,7 +2,7 @@
 
 import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
-import { Dialog, Input, Button } from '@synergy/ui';
+import { Dialog, Input, Button } from '@plinth/ui';
 import { UserPlus, User, Mail, Phone, Briefcase, Loader2, Building2 } from 'lucide-react';
 import { fetchApi } from '@/features/api/client';
 import { showToast } from '@/components/toast-store';

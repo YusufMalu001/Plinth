@@ -6,14 +6,14 @@ import {
   LifecycleStatus,
   Prisma
 } from '@prisma/client';
-import { PermissionChecker, AuditWriter } from '@synergy/types';
+import { PermissionChecker, AuditWriter } from '@plinth/types';
 import {
   createProductSchema,
   createMaterialSchema,
   createUomSchema,
   createVendorSchema,
   createCustomerSchema
-} from '@synergy/validation';
+} from '@plinth/validation';
 import { ZodSchema, ZodError } from 'zod';
 import crypto from 'crypto';
 import { ImportRepository } from '../repositories/import.repository';

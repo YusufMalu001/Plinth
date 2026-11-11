@@ -10,7 +10,7 @@ import {
   ShieldCheck,
   FileCode,
 } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle, Button, Table, TableHeader, TableBody, TableHead, TableRow, TableCell } from '@synergy/ui';
+import { Card, CardContent, CardHeader, CardTitle, Button, Table, TableHeader, TableBody, TableHead, TableRow, TableCell } from '@plinth/ui';
 import { accountsApi } from '@/features/accounts/api';
 import { AccountsHeader } from '@/features/accounts/components/AccountsHeader';
 import { MetricCard } from '@/features/accounts/components/MetricCard';
@@ -80,7 +80,7 @@ export default function TallyExchangePage() {
         <MetricCard
           title="Verified Ledger Mappings"
           value={`${verifiedMappings} / ${allMappings.length}`}
-          subtitle="Synergy <-> Tally mapped"
+          subtitle="Plinth <-> Tally mapped"
           icon={ArrowLeftRight}
           variant="success"
         />
@@ -135,9 +135,9 @@ export default function TallyExchangePage() {
       {activeTab === 'MAPPINGS' && (
         <Card className="rounded-2xl border-border/80 shadow-none">
           <CardHeader className="border-b border-border/70 p-5">
-            <CardTitle className="text-base font-bold">Synergy to TallyPrime Ledger Mappings</CardTitle>
+            <CardTitle className="text-base font-bold">Plinth to TallyPrime Ledger Mappings</CardTitle>
             <p className="text-xs text-muted-foreground mt-0.5">
-              Approved 1-to-1 account mapping between Synergy Chart of Accounts and TallyPrime master ledgers
+              Approved 1-to-1 account mapping between Plinth Chart of Accounts and TallyPrime master ledgers
             </p>
           </CardHeader>
 
@@ -146,8 +146,8 @@ export default function TallyExchangePage() {
               <Table className="w-full text-xs">
                 <TableHeader>
                   <TableRow>
-                    <TableHead className="p-3 text-left font-semibold">Synergy Account Code</TableHead>
-                    <TableHead className="p-3 text-left font-semibold">Synergy Ledger Name</TableHead>
+                    <TableHead className="p-3 text-left font-semibold">Plinth Account Code</TableHead>
+                    <TableHead className="p-3 text-left font-semibold">Plinth Ledger Name</TableHead>
                     <TableHead className="p-3 text-left font-semibold">TallyPrime Ledger Name</TableHead>
                     <TableHead className="p-3 text-left font-semibold">Tally Parent Group</TableHead>
                     <TableHead className="p-3 text-center font-semibold">Mapping Status</TableHead>
@@ -165,8 +165,8 @@ export default function TallyExchangePage() {
                   ) : allMappings.length ? (
                     allMappings.map((m) => (
                       <TableRow key={m.id} className="hover:bg-muted/30 transition-colors">
-                        <TableCell className="p-3 font-bold text-foreground">{m.synergyAccountCode}</TableCell>
-                        <TableCell className="p-3 font-sans font-medium text-foreground">{m.synergyAccountName}</TableCell>
+                        <TableCell className="p-3 font-bold text-foreground">{m.plinthAccountCode}</TableCell>
+                        <TableCell className="p-3 font-sans font-medium text-foreground">{m.plinthAccountName}</TableCell>
                         <TableCell className="p-3 font-sans font-semibold text-primary">
                           {m.tallyLedgerName}
                         </TableCell>

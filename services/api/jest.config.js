@@ -8,8 +8,8 @@ module.exports = {
     '^.+\\.tsx?$': 'ts-jest'
   },
   moduleNameMapper: {
-    '^@synergy/types$': '<rootDir>/../../packages/types/src/index.ts',
-    '^@synergy/validation$': '<rootDir>/../../packages/validation/src/index.ts'
+    '^@plinth/types$': '<rootDir>/../../packages/types/src/index.ts',
+    '^@plinth/validation$': '<rootDir>/../../packages/validation/src/index.ts'
   },
   clearMocks: true,
   collectCoverage: true,

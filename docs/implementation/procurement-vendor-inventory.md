@@ -1,6 +1,6 @@
 # Procurement, Vendor, Receiving and Inventory implementation
 
-This release adds the production workflow foundations described in the Synergy implementation plan. Stable PR/PO/GRN identifiers are retained; editable PR drafts are preserved with `purchase_requisition_revisions` snapshots.
+This release adds the production workflow foundations described in the Plinth implementation plan. Stable PR/PO/GRN identifiers are retained; editable PR drafts are preserved with `purchase_requisition_revisions` snapshots.
 
 ## Delivered vertical slices
 

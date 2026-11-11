@@ -34,7 +34,7 @@ import {
   TableHead,
   TableCell,
   Button,
-} from '@synergy/ui';
+} from '@plinth/ui';
 import {
   Search,
   ArrowUpRightSquare,
@@ -335,7 +335,7 @@ export default function StockIssuesPage() {
           </div>
         </div>
 
-        {/* Standard @synergy/ui Table Card */}
+        {/* Standard @plinth/ui Table Card */}
         <Card className="shadow-xs overflow-hidden border border-border/80">
           <div className="p-4 border-b border-border/80 flex items-center justify-between bg-card">
             <div className="flex items-center gap-2">

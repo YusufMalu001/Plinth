@@ -3,7 +3,7 @@
 import React, { useState, useRef } from 'react';
 import { useReactToPrint } from 'react-to-print';
 import { X, Plus, Trash2, Printer } from 'lucide-react';
-import { Button, Table, TableHeader, TableBody, TableHead, TableRow, TableCell } from '@synergy/ui';
+import { Button, Table, TableHeader, TableBody, TableHead, TableRow, TableCell } from '@plinth/ui';
 import { SalesInvoice, InvoiceType, SalesInvoiceLine } from '../types';
 import { formatCurrency, localToday } from '../utils';
 

@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useCurrentUser } from '@/features/auth/hooks';
 import { hrApi } from '@/features/hr/api';
-import { EmployeeTaskDto } from '@synergy/types';
+import { EmployeeTaskDto } from '@plinth/types';
 import { useProductionSchedules } from '@/features/production/execution-hooks';
 import {
   Briefcase,
@@ -13,7 +13,7 @@ import {
   CalendarDays,
   Check
 } from 'lucide-react';
-import { Button } from '@synergy/ui';
+import { Button } from '@plinth/ui';
 export function EmployeePortalDashboard({ includeProductionWork = false }: { includeProductionWork?: boolean }) {
   const { data: currentUser } = useCurrentUser();
   const employeeId = currentUser?.employeeRefId;

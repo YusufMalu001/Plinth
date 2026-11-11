@@ -5,7 +5,7 @@ import { execSync } from 'child_process';
 const BASE_URL = 'http://localhost:5000/api/v1';
 
 function psql(sql) {
-  return execSync('docker exec -i synergy-postgres psql -U postgres -d synergy_erp -t -A', {
+  return execSync('docker exec -i plinth-postgres psql -U postgres -d plinth_erp -t -A', {
     input: sql,
     encoding: 'utf-8',
   }).trim();
@@ -23,7 +23,7 @@ async function login() {
   const res = await fetch(`${BASE_URL}/auth/login`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email: 'admin@synergy.com', password: 'Admin123!' }),
+    body: JSON.stringify({ email: 'admin@plinth.com', password: 'Admin123!' }),
   });
   const data = await res.json();
   token = data?.data?.accessToken;

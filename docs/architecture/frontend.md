@@ -1,6 +1,6 @@
 # Frontend Architecture - Next.js App
 
-The Synergy ERP frontend is built using Next.js, leveraging modern client-side interaction frameworks and strict TypeScript constraints.
+The Plinth ERP frontend is built using Next.js, leveraging modern client-side interaction frameworks and strict TypeScript constraints.
 
 ## Tech Stack
 - **Framework:** Next.js (React Server Components and App Router).
@@ -19,7 +19,7 @@ Under `apps/web/src/`:
 - `lib/`: Standard utility wrappers (e.g. `fetch` client configuration).
 - `services/`: API gateway query fetch functions.
 - `stores/`: Zustand global store configurations.
-- `types/`: Custom UI-only types (shared API types are imported from `@synergy/types`).
+- `types/`: Custom UI-only types (shared API types are imported from `@plinth/types`).
 
 ## Data Fetching Guidelines
 - All requests should route to the Express API backend (`/api/v1/...`).

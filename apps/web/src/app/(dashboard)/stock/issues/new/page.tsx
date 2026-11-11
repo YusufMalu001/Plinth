@@ -12,7 +12,7 @@ import {
   PageHeader,
   Card,
   Button,
-} from '@synergy/ui';
+} from '@plinth/ui';
 import { SearchableSelector } from '../../../../../components/ui/SearchableSelector';
 import {
   ArrowLeft,

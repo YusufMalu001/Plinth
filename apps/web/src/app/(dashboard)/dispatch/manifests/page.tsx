@@ -1,6 +1,6 @@
 'use client';
 
-import { Checkbox } from '@synergy/ui';
+import { Checkbox } from '@plinth/ui';
 import React, { useMemo, useState } from 'react';
 import Link from 'next/link';
 import { useQuery } from '@tanstack/react-query';
@@ -24,7 +24,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '@synergy/ui';
+} from '@plinth/ui';
 import { EmptyState } from '@/components/EmptyState';
 import { LoadingState } from '@/components/LoadingState';
 import { PaginationControls } from '@/components/PaginationControls';

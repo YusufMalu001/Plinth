@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach, jest } from '@jest/globals';
 import { StockReservationService } from '../services/stock-reservation.service';
 import { StockReservationRepository } from '../repositories/stock-reservation.repository';
-import { PermissionChecker, AuditWriter } from '@synergy/types';
+import { PermissionChecker, AuditWriter } from '@plinth/types';
 import { ForbiddenError, InvalidStateTransitionError, InsufficientStockError, ValidationError } from '../../../common/errors/AppError';
 import { prisma } from '../../../database';
 

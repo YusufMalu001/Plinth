@@ -2,11 +2,11 @@
 
 import React, { useEffect, useState, useCallback, useMemo } from 'react';
 import Link from 'next/link';
-import { LifecycleStatus } from '@synergy/types';
+import { LifecycleStatus } from '@plinth/types';
 import { qualityApi, QcRuleItem } from '@/features/quality/api';
 import { QcRuleModal } from '@/features/quality/components/QcRuleModal';
 import { StatusBadge } from '@/components/StatusBadge';
-import { Button, Input } from '@synergy/ui';
+import { Button, Input } from '@plinth/ui';
 import {
   Scale,
   Plus,

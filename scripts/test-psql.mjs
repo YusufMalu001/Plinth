@@ -1,7 +1,7 @@
 import { execSync } from 'child_process';
 
 function query(sql) {
-  const cmd = `docker exec synergy-postgres psql -U postgres -d synergy_erp -t -A -c "${sql.replace(/"/g, '\\"')}"`;
+  const cmd = `docker exec plinth-postgres psql -U postgres -d plinth_erp -t -A -c "${sql.replace(/"/g, '\\"')}"`;
   return execSync(cmd, { encoding: 'utf-8' }).trim();
 }
 

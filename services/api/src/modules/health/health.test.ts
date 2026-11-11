@@ -23,7 +23,7 @@ describe('GET /api/v1/health', () => {
     expect(response.body).toEqual(
       expect.objectContaining({
         success: true,
-        service: 'synergy-api',
+        service: 'plinth-api',
         status: 'healthy',
         database: expect.objectContaining({
           connected: true,
@@ -46,7 +46,7 @@ describe('GET /api/v1/health', () => {
     expect(response.body).toEqual(
       expect.objectContaining({
         success: true,
-        service: 'synergy-api',
+        service: 'plinth-api',
         status: 'unhealthy',
         database: expect.objectContaining({
           connected: false

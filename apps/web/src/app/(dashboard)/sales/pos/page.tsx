@@ -1,6 +1,6 @@
 'use client';
 
-import { Checkbox } from '@synergy/ui';
+import { Checkbox } from '@plinth/ui';
 import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
 import {
@@ -17,7 +17,7 @@ import {
   Phone,
   RotateCcw,
 } from 'lucide-react';
-import { Button, Card, CardContent, CardHeader, CardTitle, Dialog, Input, PageHeader } from '@synergy/ui';
+import { Button, Card, CardContent, CardHeader, CardTitle, Dialog, Input, PageHeader } from '@plinth/ui';
 import { usePosCheckout, useSalesInventoryAvailability } from '../../../../features/sales/hooks';
 import { useProducts, useCategories } from '../../../../hooks/useMasterData';
 import { SalesOrder } from '../../../../features/sales/types';
@@ -609,7 +609,7 @@ export default function StorePosPage() {
           <div className="space-y-4 text-xs font-mono p-3 bg-card border border-border rounded-xl">
             {/* Store Header */}
             <div className="text-center border-b border-border pb-3 space-y-1">
-              <h2 className="text-base font-black tracking-wider text-foreground">SYNERGY ENTERPRISES</h2>
+              <h2 className="text-base font-black tracking-wider text-foreground">PLINTH ENTERPRISES</h2>
               <p className="text-muted-foreground text-[11px]">Retail Store & Direct Sales Terminal</p>
               <div className="flex justify-between items-center text-[10px] text-muted-foreground pt-1">
                 <span>Order: #{completedOrder.orderNumber}</span>

@@ -1,5 +1,5 @@
 import { ProductRoute, RouteStep, LifecycleStatus } from '@prisma/client';
-import { PermissionChecker, AuditWriter } from '@synergy/types';
+import { PermissionChecker, AuditWriter } from '@plinth/types';
 import { RoutingRepository } from '../repositories/routing.repository';
 import { OrgStructureRepository } from '../repositories/org-structure.repository';
 import { MasterDataLifecycleService } from './master-data-lifecycle.service';

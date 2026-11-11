@@ -173,7 +173,7 @@ export function getResolvedSpecifications(product: DetailedProduct): ProductTech
       grossWeight: metaSpecs.grossWeight || '3.90 kg',
       packagingType: metaSpecs.packagingType || 'Reinforced Long Corridor Carton',
       unitsPerCarton: metaSpecs.unitsPerCarton || '1 Unit / Master Pack',
-      warranty: metaSpecs.warranty || '1 Year Synergy Guarantee',
+      warranty: metaSpecs.warranty || '1 Year Plinth Guarantee',
       corrosionResistance: metaSpecs.corrosionResistance || 'Indoor / Balcony Weather Protected',
     };
   }

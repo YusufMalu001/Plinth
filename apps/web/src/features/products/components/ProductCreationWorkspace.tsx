@@ -39,7 +39,7 @@ import {
   ArrowLeftRight,
 } from 'lucide-react';
 import clsx from 'clsx';
-import { Button, Checkbox } from '@synergy/ui';
+import { Button, Checkbox } from '@plinth/ui';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import {
   useCategories,
@@ -347,7 +347,8 @@ export interface MeasurementVariantForm {
   customFields: { name: string; value: string }[];
 }
 
-const PRODUCT_CREATION_DRAFT_KEY = 'synergy_product_creation_draft_v1';
+const PRODUCT_CREATION_DRAFT_KEY = 'plinth_product_creation_draft_v1';
+const LEGACY_DRAFT_KEY = 'plinth_product_creation_draft_v1';
 const isPersistedVariantId = (id?: string) => Boolean(id && /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id));
 const normalizeVariantIdentity = (value?: string | null) => String(value || '')
   .normalize('NFKC')
@@ -1180,7 +1181,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
       return;
     }
     try {
-      const saved = typeof window !== 'undefined' ? localStorage.getItem(PRODUCT_CREATION_DRAFT_KEY) : null;
+      const saved = typeof window !== 'undefined' ? (localStorage.getItem(PRODUCT_CREATION_DRAFT_KEY) ?? localStorage.getItem(LEGACY_DRAFT_KEY)) : null;
       if (saved) {
         const parsed: ProductCreationDraft = JSON.parse(saved);
         if (parsed && typeof parsed === 'object') {
@@ -1252,6 +1253,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
     if (!isDirty) {
       try {
         localStorage.removeItem(PRODUCT_CREATION_DRAFT_KEY);
+        localStorage.removeItem(LEGACY_DRAFT_KEY);
         setDraftSavedAt(null);
       } catch {
         // ignore
@@ -3608,6 +3610,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
         }
         try {
           localStorage.removeItem(PRODUCT_CREATION_DRAFT_KEY);
+        localStorage.removeItem(LEGACY_DRAFT_KEY);
         } catch {
           // ignore
         }
@@ -3721,6 +3724,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
 
       try {
         localStorage.removeItem(PRODUCT_CREATION_DRAFT_KEY);
+        localStorage.removeItem(LEGACY_DRAFT_KEY);
       } catch {
         // ignore
       }
@@ -3758,6 +3762,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
       if (createdMaterialId) {
         try {
           localStorage.removeItem(PRODUCT_CREATION_DRAFT_KEY);
+        localStorage.removeItem(LEGACY_DRAFT_KEY);
         } catch {
           // ignore
         }
@@ -3927,6 +3932,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                   onClick={() => {
                     try {
                       localStorage.removeItem(PRODUCT_CREATION_DRAFT_KEY);
+        localStorage.removeItem(LEGACY_DRAFT_KEY);
                     } catch {
                       // ignore
                     }
@@ -3972,6 +3978,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                   onClick={() => {
                     try {
                       localStorage.removeItem(PRODUCT_CREATION_DRAFT_KEY);
+        localStorage.removeItem(LEGACY_DRAFT_KEY);
                     } catch {
                       // ignore
                     }

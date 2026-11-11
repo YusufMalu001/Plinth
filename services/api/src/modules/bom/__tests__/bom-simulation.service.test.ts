@@ -2,7 +2,7 @@ import { BomSimulationService } from '../services/bom-simulation.service';
 import { BomCalculatorService } from '../services/bom-calculator.service';
 import { BomVersionRepository, BomSimulationRepository, BomVersionWithLines } from '../repositories';
 import { UomService } from '../../master-data/services/uom.service';
-import { PermissionChecker, AuditWriter } from '@synergy/types';
+import { PermissionChecker, AuditWriter } from '@plinth/types';
 import { NotFoundError, ForbiddenError } from '../../../common/errors/AppError';
 import { Decimal } from '@prisma/client/runtime/library';
 

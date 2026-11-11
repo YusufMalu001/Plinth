@@ -11,12 +11,12 @@ import {
   releaseFgReceiptSchema,
   fgReadyOutputQuerySchema,
   fgReceiptQuerySchema
-} from '@synergy/validation';
+} from '@plinth/validation';
 import { prisma } from '../../database';
 import { FgReceiptRepository } from './repositories/fg-receipt.repository';
 import { FgReceiptService } from './services/fg-receipt.service';
 import { FgReceiptController } from './controllers/fg-receipt.controller';
-import { AuditWriter } from '@synergy/types';
+import { AuditWriter } from '@plinth/types';
 
 const router = Router();
 const permissionChecker = new DbPermissionChecker();

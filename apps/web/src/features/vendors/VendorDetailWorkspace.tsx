@@ -25,7 +25,7 @@ import {
   Truck,
   X,
 } from 'lucide-react';
-import { Button, Card, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@synergy/ui';
+import { Button, Card, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@plinth/ui';
 import { useReactToPrint } from 'react-to-print';
 import { StatusBadge, type AnyStatus } from '../../components/StatusBadge';
 import { LoadingState } from '../../components/LoadingState';
@@ -37,7 +37,7 @@ import { friendlyErrorMessage } from '../auth/access-control';
 import { useCurrentUser } from '../auth/hooks';
 import { vendorsApi, type VendorProfile, type VendorSummary } from './api';
 import { getVariantLabel } from '../products/variant-names';
-import type { LifecycleStatus } from '@synergy/types';
+import type { LifecycleStatus } from '@plinth/types';
 
 interface VendorDetailWorkspaceProps {
   id: string;
@@ -1120,7 +1120,7 @@ function VendorProfileSheetModal({
           <article ref={printRef} className="printable-document print-target mx-auto block w-full max-w-4xl space-y-6 bg-white p-6 text-slate-900 shadow-sm print:visible print:max-w-none print:space-y-5 print:p-0 print:shadow-none">
             <header className="flex flex-wrap items-start justify-between gap-5 border-b-2 border-[#004a80] pb-5">
               <div>
-                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#004a80]">Synergy · Vendor Directory</p>
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#004a80]">Plinth · Vendor Directory</p>
                 <h1 className="mt-2 text-3xl font-bold tracking-tight">{vendor.name}</h1>
                 <p className="mt-2 text-xs text-slate-600">Vendor profile generated {new Date().toLocaleDateString('en-IN')}</p>
               </div>

@@ -1,7 +1,7 @@
 import { describe, it, expect, jest } from '@jest/globals';
 import { StockBalanceService } from '../services/stock-balance.service';
 import { StockBalanceRepository } from '../repositories/stock-balance.repository';
-import { PermissionChecker, AuditWriter } from '@synergy/types';
+import { PermissionChecker, AuditWriter } from '@plinth/types';
 import { ForbiddenError } from '../../../common/errors/AppError';
 
 class MockAuditWriter implements AuditWriter {

@@ -17,7 +17,7 @@ jest.mock('./auth.service', () => ({
 
 const user = {
   id: 'ed0f30ea-a332-4db7-9314-b4cd78bc80fe',
-  email: 'admin@synergy.com',
+  email: 'admin@plinth.example',
   name: 'System Admin',
   role: 'admin' as const,
   isActive: true,
@@ -41,8 +41,8 @@ describe('authentication routes', () => {
 
     expect(response.body.data.user).toEqual(user);
     expect(response.headers['set-cookie']).toEqual(expect.arrayContaining([
-      expect.stringContaining('synergy_access=access-token'),
-      expect.stringContaining('synergy_refresh=refresh-token')
+      expect.stringContaining('plinth_access=access-token'),
+      expect.stringContaining('plinth_refresh=refresh-token')
     ]));
     const cookies = response.headers['set-cookie'] as unknown as string[];
     expect(cookies.every((cookie: string) => cookie.includes('HttpOnly'))).toBe(true);
@@ -66,7 +66,7 @@ describe('authentication routes', () => {
     const token = signAccessToken(user);
     const response = await request(app)
       .get('/api/v1/auth/me')
-      .set('Cookie', [`synergy_access=${token}`])
+      .set('Cookie', [`plinth_access=${token}`])
       .expect(200);
     expect(response.body.data.user.email).toBe(user.email);
   });

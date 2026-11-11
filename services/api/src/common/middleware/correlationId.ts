@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-namespace */
 import { Request, Response, NextFunction } from 'express';
 import crypto from 'crypto';
-import { UserRole } from '@synergy/types';
+import { UserRole } from '@plinth/types';
 
 declare global {
   namespace Express {

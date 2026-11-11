@@ -11,7 +11,7 @@ import {
   Building2,
   ChevronRight,
 } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle, Button, Table, TableHeader, TableBody, TableHead, TableRow, TableCell } from '@synergy/ui';
+import { Card, CardContent, CardHeader, CardTitle, Button, Table, TableHeader, TableBody, TableHead, TableRow, TableCell } from '@plinth/ui';
 import { accountsApi } from '@/features/accounts/api';
 import { AccountsHeader } from '@/features/accounts/components/AccountsHeader';
 import { MetricCard } from '@/features/accounts/components/MetricCard';

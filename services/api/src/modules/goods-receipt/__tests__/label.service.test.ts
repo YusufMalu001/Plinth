@@ -2,7 +2,7 @@ import { describe, it, expect, beforeEach, jest } from '@jest/globals';
 import { Prisma } from '@prisma/client';
 import { LabelService } from '../services/label.service';
 import { LabelRepository } from '../repositories/label.repository';
-import { PermissionChecker, AuditWriter } from '@synergy/types';
+import { PermissionChecker, AuditWriter } from '@plinth/types';
 import { DuplicateError, NotFoundError } from '../../../common/errors/AppError';
 
 class MockAuditWriter implements AuditWriter {

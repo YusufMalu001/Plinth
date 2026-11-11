@@ -37,7 +37,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '@synergy/ui';
+} from '@plinth/ui';
 import { AdminCreditOverrideModal } from '@/features/sales/components/AdminCreditOverrideModal';
 import { EditSalesOrderModal } from '@/features/sales/components/EditSalesOrderModal';
 import { ConfirmDeleteDialog } from '@/components/ConfirmDeleteDialog';

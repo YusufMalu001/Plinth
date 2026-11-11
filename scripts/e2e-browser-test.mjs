@@ -3,7 +3,7 @@ import { writeFileSync } from 'fs';
 
 async function runBrowserAcceptance() {
   console.log('====================================================');
-  console.log('SYNERGY PLATFORM — REAL BROWSER ACCEPTANCE TEST');
+  console.log('PLINTH PLATFORM — REAL BROWSER ACCEPTANCE TEST');
   console.log('====================================================');
 
   const browser = await chromium.launch({
@@ -36,7 +36,7 @@ async function runBrowserAcceptance() {
 
     // 2. Perform Login
     logStep('2. Submit Credentials', 'RUNNING');
-    await page.fill('#email', 'admin@synergy.com');
+    await page.fill('#email', 'admin@plinth.com');
     await page.fill('#password', 'Admin123!');
     await page.click('button[type="submit"]');
 
@@ -46,7 +46,7 @@ async function runBrowserAcceptance() {
 
     // 3. Dashboard Verification
     logStep('3. Dashboard Verification', 'RUNNING');
-    await page.waitForSelector('text=Synergy', { timeout: 10000 });
+    await page.waitForSelector('text=Plinth', { timeout: 10000 });
     const dashUrl = page.url();
     logStep('3. Dashboard Verification', 'PASS', `URL: ${dashUrl}`);
 

@@ -1,6 +1,6 @@
-# Synergy daily AI insights
+# Plinth daily AI insights
 
-The Intelligence → AI Insights page uses the existing Executive advisor and certified Synergy metrics. It saves each brief as an Intelligence run; it does not create or update ERP transactions.
+The Intelligence → AI Insights page uses the existing Executive advisor and certified Plinth metrics. It saves each brief as an Intelligence run; it does not create or update ERP transactions.
 
 ## Generate and review
 
@@ -28,4 +28,4 @@ A successfully generated scheduled brief sends an internal notification to Execu
 
 Every update, risk, and focus item must cite at least one exact certified metric key. Unsupported citations or a missing structured brief fail validation. Saved recommendations provide context only; an accepted recommendation is not treated as an executed ERP action.
 
-This workflow uses Synergy's current Sales, Inventory, Procurement, Production, and Fulfillment evidence. Public-source collection and unrelated ERP modules are outside this feature.
+This workflow uses Plinth's current Sales, Inventory, Procurement, Production, and Fulfillment evidence. Public-source collection and unrelated ERP modules are outside this feature.

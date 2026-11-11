@@ -1,5 +1,5 @@
 import { FgPackagingStatus, FgReceiptStatus, PrismaClient, Prisma } from '@prisma/client';
-import { PermissionChecker, AuditWriter } from '@synergy/types';
+import { PermissionChecker, AuditWriter } from '@plinth/types';
 import { prisma as defaultPrisma } from '../../../database';
 import { FgReceiptRepository } from '../repositories/fg-receipt.repository';
 import { generateSequentialNumber } from '../../../common/utils/sequence';

@@ -5,7 +5,7 @@ import { OrgStructureService } from '../services/org-structure.service';
 import { ProductsRepository } from '../repositories/products.repository';
 import { UomRepository } from '../repositories/uom.repository';
 import { OrgStructureRepository } from '../repositories/org-structure.repository';
-import { AllowAllPermissionChecker, ConsoleAuditWriter } from '@synergy/types';
+import { AllowAllPermissionChecker, ConsoleAuditWriter } from '@plinth/types';
 import { ReferentialIntegrityError } from '../../../common/errors/AppError';
 
 describe('Orphan-Reference Prevention Before Deactivation', () => {

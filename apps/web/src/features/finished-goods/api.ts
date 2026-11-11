@@ -6,7 +6,7 @@ import type {
   FgReceiptDto,
   FgGenealogyTraceDto,
   FgReceiptStatus
-} from '@synergy/types';
+} from '@plinth/types';
 
 export interface ListFgReadyOutputsParams {
   productId?: string;

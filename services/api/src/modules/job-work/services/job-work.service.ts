@@ -9,7 +9,7 @@ import {
 } from '@prisma/client';
 import { prisma as defaultPrisma } from '../../../database';
 import { JobWorkRepository } from '../repositories/job-work.repository';
-import { PermissionChecker, AuditWriter, VendorCustodyBalanceDto, JobWorkAnalyticsDto } from '@synergy/types';
+import { PermissionChecker, AuditWriter, VendorCustodyBalanceDto, JobWorkAnalyticsDto } from '@plinth/types';
 import {
   ForbiddenError,
   NotFoundError,
@@ -23,7 +23,7 @@ import type {
   IssueJobWorkMaterialInput,
   ReceiveJobWorkReturnInput,
   CreateJobWorkReconciliationInput
-} from '@synergy/validation';
+} from '@plinth/validation';
 import { jobWorkOrderEmailService } from './job-work-order-email.service';
 
 type PrismaOrTx = PrismaClient | Prisma.TransactionClient;

@@ -4,7 +4,7 @@ import { GoodsReceiptRepository } from '../repositories/goods-receipt.repository
 import { DiscrepancyRepository } from '../repositories/discrepancy.repository';
 import { LabelService } from '../services/label.service';
 import { ExpectedReceiptService } from '../../purchases/services/expected-receipt.service';
-import { PermissionChecker, AuditWriter } from '@synergy/types';
+import { PermissionChecker, AuditWriter } from '@plinth/types';
 import { InvalidStateTransitionError, NotFoundError, ConflictError } from '../../../common/errors/AppError';
 import { prisma } from '../../../database';
 

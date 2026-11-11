@@ -7,7 +7,7 @@ import {
   ChevronLeft,
   ChevronRight
 } from "lucide-react";
-import { Card, Button } from "@synergy/ui";
+import { Card, Button } from "@plinth/ui";
 import { LoadingState } from "@/components/LoadingState";
 import { ErrorState } from "@/components/ErrorState";
 import { EmptyState } from "@/components/EmptyState";

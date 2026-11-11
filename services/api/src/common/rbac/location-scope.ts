@@ -1,4 +1,4 @@
-import { PermissionChecker } from '@synergy/types';
+import { PermissionChecker } from '@plinth/types';
 import { prisma } from '../../database';
 import { DbPermissionChecker } from './db-permission-checker';
 import { ForbiddenError, ValidationError } from '../errors/AppError';
@@ -50,7 +50,7 @@ export async function resolveActorDefaultLocation(actorId: string): Promise<stri
 
 /** Resolves an explicit locationId or falls back to the actor's assigned location, throwing if neither exists. */
 export async function resolveRequiredLocation(actorId: string, explicitLocationId?: string): Promise<string> {
-  // Synergy operates one stock pool. Keep the location column for historical
+  // Plinth operates one stock pool. Keep the location column for historical
   // audit compatibility, but never allow a new transaction to split stock
   // into a user-selected warehouse/location.
   const locationId = await resolveActorDefaultLocation(actorId) || (

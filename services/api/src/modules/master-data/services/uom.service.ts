@@ -1,5 +1,5 @@
 import { UnitOfMeasure, UomConversion, PackSize, LifecycleStatus, Prisma } from '@prisma/client';
-import { PermissionChecker, AuditWriter } from '@synergy/types';
+import { PermissionChecker, AuditWriter } from '@plinth/types';
 import { UomRepository } from '../repositories/uom.repository';
 import { MasterDataLifecycleService } from './master-data-lifecycle.service';
 import { ConflictError, NotFoundError, ReferentialIntegrityError, CircularDependencyError, ValidationError } from '../../../common/errors/AppError';

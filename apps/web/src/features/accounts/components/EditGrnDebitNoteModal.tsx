@@ -2,7 +2,7 @@
 
 import React, { useEffect, useMemo, useState } from 'react';
 import { Loader2, Save, X } from 'lucide-react';
-import { Button } from '@synergy/ui';
+import { Button } from '@plinth/ui';
 import { accountsApi } from '@/features/accounts/api';
 import { fetchApi } from '@/features/api/client';
 import { showToast } from '@/components/toast-store';

@@ -1,4 +1,4 @@
-# Synergy International Platform — Implementation Audit
+# Plinth International Platform — Implementation Audit
 
 **Audit date:** 2026-09-13  
 **Repository:** `assign/fardeen` at `f11829b`  
@@ -6,7 +6,7 @@
 
 ## Executive conclusion
 
-Synergy is not yet a completed production platform. It is a broad, partially integrated ERP implementation with meaningful backend and UI work concentrated in Master Data, Procurement, Goods Receiving, Stock, BOM, Production Planning/Execution, Quality, WIP, Finance/Tally mechanics, Notifications, and Calendar.
+Plinth is not yet a completed production platform. It is a broad, partially integrated ERP implementation with meaningful backend and UI work concentrated in Master Data, Procurement, Goods Receiving, Stock, BOM, Production Planning/Execution, Quality, WIP, Finance/Tally mechanics, Notifications, and Calendar.
 
 The strongest completed-looking verticals are Goods Receiving and Stock. They have substantial domain services, persistence, workflow gates, UI, and unit/component tests. They are still not release-complete because live database/UAT evidence is missing.
 
@@ -87,4 +87,4 @@ After starting the API, web app, and a seeded database, validate in this order:
 
 ## Final verdict
 
-The platform has substantial real implementation and is beyond a visual mockup, but it is not safe to call the entire Synergy International Platform complete. The current release should be labelled **“development/staging implementation with selected verticals ready for controlled UAT.”** The immediate acceptance gate is not more UI work; it is schema/client alignment, green build/test gates, live database verification, and an executed end-to-end UAT pack.
+The platform has substantial real implementation and is beyond a visual mockup, but it is not safe to call the entire Plinth International Platform complete. The current release should be labelled **“development/staging implementation with selected verticals ready for controlled UAT.”** The immediate acceptance gate is not more UI work; it is schema/client alignment, green build/test gates, live database verification, and an executed end-to-end UAT pack.

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { X, Printer, Barcode, Copy, Check } from 'lucide-react';
-import { Button } from '@synergy/ui';
+import { Button } from '@plinth/ui';
 import type { DetailedProduct } from '../types';
 import { showToast } from '../../../components/toast-store';
 import { useReactToPrint } from 'react-to-print';

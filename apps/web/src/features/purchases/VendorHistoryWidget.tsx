@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card } from '@synergy/ui';
+import { Card } from '@plinth/ui';
 import { StatusBadge } from '../../components/StatusBadge';
 import { LoadingState } from '../../components/LoadingState';
 import { ErrorState } from '../../components/ErrorState';

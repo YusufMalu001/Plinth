@@ -4,7 +4,7 @@ import {
   formatINR,
   formatIndianDate,
   numberToIndianWords,
-  SYNERGY_COMPANY_INFO,
+  COMPANY_INFO,
   getVendorDisplayDetails,
 } from '../features/purchases/utils';
 
@@ -87,31 +87,27 @@ export const GoodsReceiptPDF = React.forwardRef<HTMLDivElement, GoodsReceiptPDFP
           </p>
         </div>
 
-        {/* Company Header with Synergy Logo and Address */}
+        {/* Company Header with Plinth Logo and Address */}
         <div className="flex items-start justify-between border-b-2 border-black pb-3 pt-1">
           <div className="flex items-center gap-3">
-            <img
-              src="/synergy.png"
-              alt="Synergy Logo"
-              className="h-10 sm:h-12 w-auto object-contain shrink-0"
-            />
+            <span className="text-xl sm:text-2xl font-black tracking-tight text-black uppercase">Plinth</span>
             <div>
               <h2 className="text-sm sm:text-base font-black tracking-wide text-black uppercase">
-                {SYNERGY_COMPANY_INFO.name}
+                {COMPANY_INFO.name}
               </h2>
               <p className="text-[10px] leading-snug text-slate-800 font-medium">
-                {SYNERGY_COMPANY_INFO.addressLine1}
+                {COMPANY_INFO.addressLine1}
               </p>
               <p className="text-[10px] leading-snug text-slate-800 font-medium">
-                {SYNERGY_COMPANY_INFO.addressLine2}
+                {COMPANY_INFO.addressLine2}
               </p>
               <p className="text-[10px] leading-snug text-slate-800 font-medium">
-                {SYNERGY_COMPANY_INFO.addressLine3}
+                {COMPANY_INFO.addressLine3}
               </p>
               <div className="flex flex-wrap items-center gap-x-3 text-[10px] font-semibold text-slate-900 pt-0.5">
-                <span>GSTIN: {SYNERGY_COMPANY_INFO.gstin}</span>
-                <span>📞 {SYNERGY_COMPANY_INFO.phone}</span>
-                <span>✉ {SYNERGY_COMPANY_INFO.email}</span>
+                <span>GSTIN: {COMPANY_INFO.gstin}</span>
+                <span>📞 {COMPANY_INFO.phone}</span>
+                <span>✉ {COMPANY_INFO.email}</span>
               </div>
             </div>
           </div>
@@ -348,7 +344,7 @@ export const GoodsReceiptPDF = React.forwardRef<HTMLDivElement, GoodsReceiptPDFP
           </div>
           <div className="p-3 text-right flex flex-col justify-between h-24">
             <div className="font-bold text-black text-[10.5px]">
-              for SYNERGY INTERNATIONAL {SYNERGY_COMPANY_INFO.financialYear}
+              for PLINTH {COMPANY_INFO.financialYear}
             </div>
             <div className="pt-6 text-black font-semibold text-[10px] border-t border-slate-300 w-44 ml-auto text-center">
               Authorised Receiving Manager
@@ -358,7 +354,7 @@ export const GoodsReceiptPDF = React.forwardRef<HTMLDivElement, GoodsReceiptPDFP
 
         {/* Bottom Jurisdiction */}
         <div className="text-center pt-2 font-bold text-[9.5px] uppercase tracking-wider text-black">
-          {SYNERGY_COMPANY_INFO.jurisdiction}
+          {COMPANY_INFO.jurisdiction}
         </div>
       </div>
     );

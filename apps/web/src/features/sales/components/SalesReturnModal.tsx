@@ -11,7 +11,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '@synergy/ui';
+} from '@plinth/ui';
 import { RotateCcw } from 'lucide-react';
 import { SalesOrder } from '../types';
 import { useCreateSalesReturn, useProcessReturnDisposition } from '../hooks';

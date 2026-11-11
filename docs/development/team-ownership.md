@@ -1,6 +1,6 @@
 # Team Ownership & Code Review
 
-Synergy ERP enforces structural ownership to coordinate tasks, protect boundaries, and maintain quality across the development team.
+Plinth ERP enforces structural ownership to coordinate tasks, protect boundaries, and maintain quality across the development team.
 
 ## Team Roles & Ownership Areas
 

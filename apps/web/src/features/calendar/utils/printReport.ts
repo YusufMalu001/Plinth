@@ -34,7 +34,7 @@ export function printDayOperationsReport(summary: DayOperationalSummary, dateStr
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Synergy Operations Manifest - ${summary.dateStr}</title>
+  <title>Plinth Operations Manifest - ${summary.dateStr}</title>
   <style>
     @page {
       size: A4 portrait;
@@ -208,7 +208,7 @@ export function printDayOperationsReport(summary: DayOperationalSummary, dateStr
 <body>
   <div class="header">
     <div>
-      <div class="brand-title">SYNERGY INTERNATIONAL</div>
+      <div class="brand-title">PLINTH</div>
       <div class="brand-subtitle">Enterprise Operations & Production Manifest</div>
     </div>
     <div class="report-meta">

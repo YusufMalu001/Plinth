@@ -3,7 +3,7 @@ import { randomUUID } from 'crypto';
 import { Prisma } from '@prisma/client';
 import { prisma } from '../../database';
 import { ForbiddenError, NotFoundError, ValidationError } from '../../common/errors/AppError';
-import { PermissionChecker, AuditWriter } from '@synergy/types';
+import { PermissionChecker, AuditWriter } from '@plinth/types';
 import { notificationService } from '../notifications/notification.service';
 import { vendorScoringService } from '../master-data/services/vendor-scoring.service';
 import { calculateDebitNotePenalty } from '../master-data/services/vendor-scoring-math';

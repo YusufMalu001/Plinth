@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, Factory, Layers, RefreshCw } from "lucide-react";
-import { Button, Card } from "@synergy/ui";
+import { Button, Card } from "@plinth/ui";
 import { useProductionSchedules } from "@/features/production/execution-hooks";
 import { StatusBadge } from "@/components/StatusBadge";
 import { LoadingState } from "@/components/LoadingState";

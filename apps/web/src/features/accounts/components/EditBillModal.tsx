@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { X, Plus, Trash2, AlertTriangle, ShieldCheck } from 'lucide-react';
-import { Button } from '@synergy/ui';
+import { Button } from '@plinth/ui';
 import { PurchaseBill, PurchaseBillKind } from '../types';
 import { formatCurrency } from '../utils';
 

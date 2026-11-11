@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { QcQueueItemDto } from '@synergy/types';
+import { QcQueueItemDto } from '@plinth/types';
 import { BlockedCheckpointBanner } from '../../src/features/quality/components/BlockedCheckpointBanner';
 import { InspectionModal } from '../../src/features/quality/components/InspectionModal';
 import { OverrideModal } from '../../src/features/quality/components/OverrideModal';

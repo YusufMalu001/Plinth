@@ -1,4 +1,4 @@
-import { PermissionChecker, AuditWriter } from '@synergy/types';
+import { PermissionChecker, AuditWriter } from '@plinth/types';
 import { prisma } from '../../../database';
 import { MaterialIssueRepository, MaterialIssueWithLines, MaterialIssueLineInput } from '../repositories';
 import { BomVersionRepository } from '../../bom/repositories';

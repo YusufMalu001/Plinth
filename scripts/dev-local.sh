@@ -20,6 +20,11 @@ set -a
 source .env
 set +a
 
+# Remote database configured (e.g. hosted Postgres/Neon): skip the local Docker
+# PostgreSQL service entirely so dev never collides with past local databases.
+if ! echo "${DATABASE_URL:-}" | grep -qE 'localhost|127\.0\.0\.1|@postgres'; then
+  echo "DATABASE_URL points at a remote database; skipping local Docker PostgreSQL."
+else
 if ! command -v docker >/dev/null 2>&1; then
   echo "Docker is required to start local PostgreSQL."
   exit 1
@@ -32,7 +37,7 @@ echo "Starting local PostgreSQL..."
 echo "Waiting for PostgreSQL health..."
 ready=false
 for _ in {1..30}; do
-  if "${compose[@]}" exec -T postgres pg_isready -U "${POSTGRES_USER:-postgres}" -d "${POSTGRES_DB:-synergy_erp}" >/dev/null 2>&1; then
+  if "${compose[@]}" exec -T postgres pg_isready -U "${POSTGRES_USER:-postgres}" -d "${POSTGRES_DB:-plinth_erp}" >/dev/null 2>&1; then
     ready=true
     break
   fi
@@ -42,6 +47,7 @@ done
 if [[ "$ready" != true ]]; then
   echo "PostgreSQL did not become ready. Run: ${compose[*]} logs postgres"
   exit 1
+fi
 fi
 
 echo "Applying migrations, generating Prisma client, and verifying migration status..."
@@ -55,7 +61,7 @@ else
 fi
 
 # Stop any lingering docker containers or orphaned host processes using our ports.
-for web_container in synergy-web synergy-web-dev; do
+for web_container in plinth-web plinth-web-dev; do
   if docker ps --format '{{.Names}}' | grep -Fxq "$web_container"; then
     echo "Stopping existing $web_container container so the host web app can use port ${WEB_PORT:-3000}..."
     docker stop "$web_container"
@@ -76,19 +82,19 @@ cleanup() {
 trap cleanup INT TERM EXIT
 
 echo "Starting API on http://localhost:5000..."
-PORT="${API_PORT:-5000}" npm run dev --workspace=@synergy/api &
+PORT="${API_PORT:-5000}" npm run dev --workspace=@plinth/api &
 pids+=("$!")
 
 if [[ "${INTELLIGENCE_ENABLED:-false}" == "true" && "${INTELLIGENCE_EVENT_TRIGGERS_ENABLED:-false}" == "true" ]]; then
   echo "Starting Hermes event worker against the same local database..."
-  npm run dev:worker --workspace=@synergy/api &
+  npm run dev:worker --workspace=@plinth/api &
   pids+=("$!")
 fi
 
 echo "Starting web on http://localhost:3000..."
-PORT="${WEB_PORT:-3000}" API_PORT="${API_PORT:-5000}" NEXT_PUBLIC_API_URL="http://localhost:${API_PORT:-5000}/api/v1" npm run dev --workspace=@synergy/web &
+PORT="${WEB_PORT:-3000}" API_PORT="${API_PORT:-5000}" NEXT_PUBLIC_API_URL="http://localhost:${API_PORT:-5000}/api/v1" npm run dev --workspace=@plinth/web &
 pids+=("$!")
 
-echo "Synergy local environment is running. Press Ctrl+C to stop API and web."
+echo "Plinth local environment is running. Press Ctrl+C to stop API and web."
 wait -n "${pids[@]}"
 exit $?

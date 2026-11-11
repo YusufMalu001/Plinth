@@ -103,9 +103,9 @@ function resolveMaterialType(name: string): { type: MaterialType; categoryCode: 
 }
 
 async function main() {
-  console.log('🚀 Starting official Synergy International master data seeding...');
+  console.log('🚀 Starting official Plinth International master data seeding...');
 
-  const dataPath = path.join(__dirname, 'synergy-official-data.json');
+  const dataPath = path.join(__dirname, 'plinth-official-data.json');
   if (!fs.existsSync(dataPath)) {
     throw new Error(`Data file not found at: ${dataPath}`);
   }
@@ -140,33 +140,33 @@ async function main() {
   // 2. Factory / Organization
   console.log('🏭 2. Seeding Factory Organization...');
   const factory = await prisma.factory.upsert({
-    where: { code: 'SYNERGY-HQ-INDORE' },
+    where: { code: 'PLINTH-HQ-INDORE' },
     update: {
-      name: 'Synergy International - Indore Plant',
+      name: 'Plinth International - Indore Plant',
       address: {
-        legalName: 'Synergy International',
+        legalName: 'Plinth International',
         street: 'Nemawar Road, Palda',
         city: 'Indore',
         state: 'Madhya Pradesh',
         postalCode: '452001',
         country: 'India',
         phone: '+91-9285151928',
-        email: 'sales@thesynergystore.in',
+        email: 'sales@theplinthstore.in',
       },
       status: LifecycleStatus.ACTIVE,
     },
     create: {
-      code: 'SYNERGY-HQ-INDORE',
-      name: 'Synergy International - Indore Plant',
+      code: 'PLINTH-HQ-INDORE',
+      name: 'Plinth International - Indore Plant',
       address: {
-        legalName: 'Synergy International',
+        legalName: 'Plinth International',
         street: 'Nemawar Road, Palda',
         city: 'Indore',
         state: 'Madhya Pradesh',
         postalCode: '452001',
         country: 'India',
         phone: '+91-9285151928',
-        email: 'sales@thesynergystore.in',
+        email: 'sales@theplinthstore.in',
       },
       status: LifecycleStatus.ACTIVE,
     },
@@ -558,7 +558,7 @@ async function main() {
     }
   }
 
-  console.log('🎉 Official Synergy International Master Data seeding completed successfully!');
+  console.log('🎉 Official Plinth International Master Data seeding completed successfully!');
 }
 
 main()

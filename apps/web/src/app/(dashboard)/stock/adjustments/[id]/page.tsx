@@ -19,7 +19,7 @@ import {
   PageHeader,
   Card,
   Button,
-} from '@synergy/ui';
+} from '@plinth/ui';
 import {
   ArrowLeft,
   CheckCircle2,

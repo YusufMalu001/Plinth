@@ -17,7 +17,7 @@ import {
   TableBody,
   TableCell,
   Input,
-} from '@synergy/ui';
+} from '@plinth/ui';
 import {
   Plus,
   Users,

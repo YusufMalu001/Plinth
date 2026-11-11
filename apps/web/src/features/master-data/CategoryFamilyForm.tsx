@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useRouter, useSearchParams } from 'next/navigation';
 import { useQuery } from '@tanstack/react-query';
 import { ArrowLeft, Save } from 'lucide-react';
-import { Button, Card, Input, PageHeader } from '@synergy/ui';
+import { Button, Card, Input, PageHeader } from '@plinth/ui';
 import { fetchApi } from '../api/client';
 import { useCategories } from '../../hooks/useMasterData';
 import { LoadingState } from '../../components/LoadingState';

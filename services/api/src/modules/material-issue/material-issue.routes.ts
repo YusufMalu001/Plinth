@@ -4,7 +4,7 @@ import {
   emptyMaterialIssueActionSchema,
   cancelMaterialIssueSchema,
   requestMaterialIssueReturnSchema
-} from '@synergy/validation';
+} from '@plinth/validation';
 import { authenticate } from '../../common/middleware/auth';
 import { authorize } from '../../common/middleware/authorize';
 import { validate } from '../../common/middleware/validation';

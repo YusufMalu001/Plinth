@@ -1,4 +1,4 @@
-# Synergy Intelligence Control Plane Implementation
+# Plinth Intelligence Control Plane Implementation
 
 ## Delivered scope
 
@@ -26,7 +26,7 @@ This code is deployable infrastructure, not permission to enable production reco
 4. The module profile receives the certified snapshot, deterministic opportunities, current objective policy, and output contract.
 5. The runtime may call only the read tools granted to that profile.
 6. Daily and weekly executive jobs wait for the corresponding module jobs, receive their validated structured summaries as context, and link the child runs through `parentRunId`.
-7. Synergy parses and validates the final JSON. Unsupported values, inaccessible evidence, unsafe actions, stale data, or weak cost coverage are rejected.
+7. Plinth parses and validates the final JSON. Unsupported values, inaccessible evidence, unsafe actions, stale data, or weak cost coverage are rejected.
 8. Accepted output becomes an append-only recommendation and, when enabled, an urgent alert or grouped review digest.
 9. An authorized reviewer accepts, dismisses, or defers it. Acceptance atomically creates one assigned task.
 10. The owner records progress/completion. A realized outcome may be recorded against the original expected metric.

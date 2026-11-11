@@ -23,7 +23,7 @@ import {
   TableHead,
   TableRow,
   TableCell,
-} from '@synergy/ui';
+} from '@plinth/ui';
 import { accountsApi } from '@/features/accounts/api';
 import { AccountsHeader } from '@/features/accounts/components/AccountsHeader';
 import { AcceptedGrn, GrnPaymentStatus, PurchaseBill, PaymentMode } from '@/features/accounts/types';
@@ -198,9 +198,9 @@ export default function PurchasesPage() {
       )}
       {!entities.isLoading && !entities.isError && (entities.data?.length ?? 0) === 0 && (
         <div className="rounded-xl border border-border bg-muted/40 p-4 text-sm text-muted-foreground" role="status">
-          <p className="font-semibold">Synergy Accounts setup is not initialized.</p>
-          <p className="mt-1">This installation uses one company: Synergy International. Complete its one-time accounting setup to load accepted GRNs.</p>
-          <Link href="/accounts/setup" className="mt-2 inline-flex font-semibold text-primary underline">Open Synergy Setup</Link>
+          <p className="font-semibold">Plinth Accounts setup is not initialized.</p>
+          <p className="mt-1">This installation uses one company: Plinth. Complete its one-time accounting setup to load accepted GRNs.</p>
+          <Link href="/accounts/setup" className="mt-2 inline-flex font-semibold text-primary underline">Open Plinth Setup</Link>
         </div>
       )}
 
@@ -212,7 +212,7 @@ export default function PurchasesPage() {
             <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
               Total Invoiced Payables
             </span>
-            <span className="rounded-lg p-1.5 border bg-synergy-500/10 text-synergy-700 dark:text-synergy-400 border-synergy-500/20">
+            <span className="rounded-lg p-1.5 border bg-n-500/10 text-n-700 dark:text-n-400 border-n-500/20">
               <Receipt className="h-3.5 w-3.5" />
             </span>
           </div>
@@ -306,7 +306,7 @@ export default function PurchasesPage() {
             }}
             className={`flex items-center gap-2 rounded-xl px-3.5 py-2 text-xs font-semibold transition-all ${
               activeTab === 'bills'
-                ? 'bg-synergy-600 text-white shadow-sm'
+                ? 'bg-n-600 text-white shadow-sm'
                 : 'text-muted-foreground hover:bg-muted hover:text-foreground'
             }`}
           >
@@ -328,7 +328,7 @@ export default function PurchasesPage() {
             }}
             className={`flex items-center gap-2 rounded-xl px-3.5 py-2 text-xs font-semibold transition-all ${
               activeTab === 'grns'
-                ? 'bg-synergy-600 text-white shadow-sm'
+                ? 'bg-n-600 text-white shadow-sm'
                 : 'text-muted-foreground hover:bg-muted hover:text-foreground'
             }`}
           >
@@ -351,7 +351,7 @@ export default function PurchasesPage() {
               <Search className="absolute left-3 top-2.5 h-3.5 w-3.5 text-muted-foreground" />
               <input
                 placeholder="Search invoice or vendor..."
-                className="rounded-xl border border-border bg-background pl-8 pr-3 py-1.5 text-xs focus:ring-2 focus:ring-synergy-600 focus:outline-none w-48 sm:w-60 transition"
+                className="rounded-xl border border-border bg-background pl-8 pr-3 py-1.5 text-xs focus:ring-2 focus:ring-n-600 focus:outline-none w-48 sm:w-60 transition"
                 value={billSearch}
                 onChange={(e) => {
                   setBillSearch(e.target.value);
@@ -362,7 +362,7 @@ export default function PurchasesPage() {
 
             <select
               aria-label="Filter by Status"
-              className="rounded-xl border border-border bg-background px-3 py-1.5 text-xs focus:ring-2 focus:ring-synergy-600 focus:outline-none transition"
+              className="rounded-xl border border-border bg-background px-3 py-1.5 text-xs focus:ring-2 focus:ring-n-600 focus:outline-none transition"
               value={statusFilter}
               onChange={(e) => {
                 setStatusFilter(e.target.value);
@@ -378,7 +378,7 @@ export default function PurchasesPage() {
 
             <select
               aria-label="Filter by Payment Status"
-              className="rounded-xl border border-border bg-background px-3 py-1.5 text-xs focus:ring-2 focus:ring-synergy-600 focus:outline-none transition"
+              className="rounded-xl border border-border bg-background px-3 py-1.5 text-xs focus:ring-2 focus:ring-n-600 focus:outline-none transition"
               value={billPaymentStatus}
               onChange={(e) => {
                 setBillPaymentStatus(e.target.value);
@@ -393,7 +393,7 @@ export default function PurchasesPage() {
 
             <select
               aria-label="Filter by Approval Status"
-              className="rounded-xl border border-border bg-background px-3 py-1.5 text-xs focus:ring-2 focus:ring-synergy-600 focus:outline-none transition"
+              className="rounded-xl border border-border bg-background px-3 py-1.5 text-xs focus:ring-2 focus:ring-n-600 focus:outline-none transition"
               value={statusFilter}
               onChange={(e) => {
                 setStatusFilter(e.target.value);
@@ -413,7 +413,7 @@ export default function PurchasesPage() {
               <Search className="absolute left-3 top-2.5 h-3.5 w-3.5 text-muted-foreground" />
               <input
                 placeholder="Search GRN, PO, supplier..."
-                className="rounded-xl border border-border bg-background pl-8 pr-3 py-1.5 text-xs focus:ring-2 focus:ring-synergy-600 focus:outline-none w-48 sm:w-60 transition"
+                className="rounded-xl border border-border bg-background pl-8 pr-3 py-1.5 text-xs focus:ring-2 focus:ring-n-600 focus:outline-none w-48 sm:w-60 transition"
                 value={grnSearch}
                 onChange={(e) => {
                   setGrnSearch(e.target.value);
@@ -424,7 +424,7 @@ export default function PurchasesPage() {
 
             <select
               aria-label="Filter by Payment Status"
-              className="rounded-xl border border-border bg-background px-3 py-1.5 text-xs focus:ring-2 focus:ring-synergy-600 focus:outline-none transition"
+              className="rounded-xl border border-border bg-background px-3 py-1.5 text-xs focus:ring-2 focus:ring-n-600 focus:outline-none transition"
               value={grnPaymentStatus}
               onChange={(e) => {
                 setGrnPaymentStatus(e.target.value);
@@ -464,7 +464,7 @@ export default function PurchasesPage() {
                 {bills.isLoading ? (
                   <TableRow>
                     <TableCell colSpan={10} className="p-8 text-center text-muted-foreground">
-                      <RefreshCw className="h-4 w-4 animate-spin inline-block mr-2 text-synergy-600" />
+                      <RefreshCw className="h-4 w-4 animate-spin inline-block mr-2 text-n-600" />
                       Loading supplier invoices…
                     </TableCell>
                   </TableRow>
@@ -484,10 +484,10 @@ export default function PurchasesPage() {
                         className="hover:bg-muted/50 transition-colors cursor-pointer group"
                       >
                         <TableCell className="p-4 font-mono font-bold text-foreground">
-                          <div className="flex items-center gap-1.5 group-hover:text-synergy-600 dark:group-hover:text-synergy-400 transition-colors">
-                            <FileText className="h-3.5 w-3.5 text-synergy-600 shrink-0" />
+                          <div className="flex items-center gap-1.5 group-hover:text-n-600 dark:group-hover:text-n-400 transition-colors">
+                            <FileText className="h-3.5 w-3.5 text-n-600 shrink-0" />
                             <span>{bill.supplierInvoiceNumber}</span>
-                            <ChevronRight className="h-3.5 w-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all shrink-0 text-synergy-600 dark:text-synergy-400" />
+                            <ChevronRight className="h-3.5 w-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all shrink-0 text-n-600 dark:text-n-400" />
                           </div>
                         </TableCell>
                         <TableCell className="p-4 font-medium text-foreground">
@@ -499,7 +499,7 @@ export default function PurchasesPage() {
                               <Link
                                 href={`/accounts/purchases/grns/${linkedGrn.id}`}
                                 onClick={(e) => e.stopPropagation()}
-                                className="text-synergy-700 hover:underline inline-flex items-center gap-1 font-semibold"
+                                className="text-n-700 hover:underline inline-flex items-center gap-1 font-semibold"
                               >
                                 <PackageCheck className="h-3 w-3" />
                                 {linkedGrn.grnNumber}
@@ -599,7 +599,7 @@ export default function PurchasesPage() {
                 {acceptedGrns.isLoading ? (
                   <TableRow>
                     <TableCell colSpan={9} className="p-8 text-center text-muted-foreground">
-                      <RefreshCw className="h-4 w-4 animate-spin inline-block mr-2 text-synergy-600" />
+                      <RefreshCw className="h-4 w-4 animate-spin inline-block mr-2 text-n-600" />
                       Loading accepted receipts…
                     </TableCell>
                   </TableRow>
@@ -620,10 +620,10 @@ export default function PurchasesPage() {
                         className="hover:bg-muted/50 transition-colors cursor-pointer group"
                       >
                         <TableCell className="p-4">
-                          <div className="font-mono font-bold text-foreground flex items-center gap-1.5 group-hover:text-synergy-600 dark:group-hover:text-synergy-400 transition-colors">
-                            <PackageCheck className="h-3.5 w-3.5 text-synergy-600 shrink-0" />
+                          <div className="font-mono font-bold text-foreground flex items-center gap-1.5 group-hover:text-n-600 dark:group-hover:text-n-400 transition-colors">
+                            <PackageCheck className="h-3.5 w-3.5 text-n-600 shrink-0" />
                             <span>{grn.grnNumber}</span>
-                            <ChevronRight className="h-3.5 w-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all shrink-0 text-synergy-600 dark:text-synergy-400" />
+                            <ChevronRight className="h-3.5 w-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all shrink-0 text-n-600 dark:text-n-400" />
                           </div>
                         </TableCell>
                         <TableCell className="p-4 font-mono text-muted-foreground">
@@ -643,7 +643,7 @@ export default function PurchasesPage() {
                             <Link
                               href={`/accounts/purchases/bills/${linkedBill.id}`}
                               onClick={(e) => e.stopPropagation()}
-                              className="font-mono text-xs font-semibold text-synergy-700 dark:text-synergy-400 hover:underline inline-flex items-center gap-1"
+                              className="font-mono text-xs font-semibold text-n-700 dark:text-n-400 hover:underline inline-flex items-center gap-1"
                             >
                               <FileText className="h-3.5 w-3.5" />
                               {linkedBill.supplierInvoiceNumber}
@@ -658,7 +658,7 @@ export default function PurchasesPage() {
                               key={note.id}
                               href={`/debit-notes/${note.id}`}
                               onClick={(e) => e.stopPropagation()}
-                              className="mb-1 block text-xs font-semibold text-synergy-700 hover:underline"
+                              className="mb-1 block text-xs font-semibold text-n-700 hover:underline"
                             >
                               {note.debitNoteNumber} · {note.status.replaceAll('_', ' ')}
                             </Link>

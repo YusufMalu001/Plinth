@@ -1,5 +1,5 @@
 // ==============================================================================
-// SYNERGY ERP - SHARED TYPES & CORE INTERFACE CONTRACTS
+// PLINTH ERP - SHARED TYPES & CORE INTERFACE CONTRACTS
 // ==============================================================================
 
 export type UserRole = 'admin' | 'manager' | 'employee' | (string & {});

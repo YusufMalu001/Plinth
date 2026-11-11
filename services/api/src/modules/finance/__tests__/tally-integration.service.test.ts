@@ -4,7 +4,7 @@ import { MappingConfigRepository } from '../repositories/mapping-config.reposito
 import { IntegrationJobRepository } from '../repositories/integration-job.repository';
 import { ReconciliationRepository } from '../repositories/reconciliation.repository';
 import { TallyExportAdapter } from '../adapters/tally-export.adapter';
-import { PermissionChecker, AuditWriter } from '@synergy/types';
+import { PermissionChecker, AuditWriter } from '@plinth/types';
 import {
   TransactionSourceType,
   LifecycleStatus,

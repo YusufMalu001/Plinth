@@ -3,13 +3,13 @@ import path from 'path';
 
 async function seedAll() {
   console.log('🚀 ========================================================');
-  console.log('🌟 Starting Comprehensive Full Synergy Database Seeding...');
+  console.log('🌟 Starting Comprehensive Full Plinth Database Seeding...');
   console.log('🚀 ========================================================\n');
 
   const seedScripts = [
     { name: '1. Core Users, RBAC & GST Masters', cmd: 'ts-node prisma/seed/seed.ts', env: { SEED_FULL: 'true' } },
     { name: '2. Canonical Units of Measure (UOM)', cmd: 'node seed-uoms.js' },
-    { name: '3. Official Synergy Master Data (Products, Materials, BOMs, Vendors)', cmd: 'ts-node prisma/seed/seed-official-synergy-data.ts' },
+    { name: '3. Official Plinth Master Data (Products, Materials, BOMs, Vendors)', cmd: 'ts-node prisma/seed/seed-official-plinth-data.ts' },
     { name: '4. Stock Item Hierarchy Dataset', cmd: 'ts-node prisma/seed/seed-stock-hierarchy.ts' },
     { name: '5. Realistic Opening Inventory & Stock Balances', cmd: 'ts-node prisma/seed/seed-opening-inventory.ts' },
     { name: '6. Loss Management & Quality Rejection Rules', cmd: 'ts-node prisma/seed/seed-loss-management.ts' },

@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import { SummaryService } from '../services/summary.service';
-import { ApiResponse } from '@synergy/types';
+import { ApiResponse } from '@plinth/types';
 
 export class SummaryController {
   constructor(private summaryService: SummaryService) {}

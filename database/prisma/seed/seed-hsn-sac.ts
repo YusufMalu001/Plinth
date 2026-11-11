@@ -58,7 +58,7 @@ export function loadHsnSacDefinitions(workbookPath = process.env.HSN_SAC_WORKBOO
   return definitions;
 }
 
-/** Seeds the two 6+ digit reference sheets supplied by Synergy International. */
+/** Seeds the two 6+ digit reference sheets supplied by Plinth International. */
 export async function seedHsnSacCodes(prisma: SeedClient, workbookPath?: string) {
   const definitions = loadHsnSacDefinitions(workbookPath);
 

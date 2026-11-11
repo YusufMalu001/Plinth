@@ -1,6 +1,6 @@
-# Synergy ERP - Entity Relationship Diagram (ERD)
+# Plinth ERP - Entity Relationship Diagram (ERD)
 
-This document contains the visual schema design for the Synergy ERP database using Mermaid notation, covering Core / Module 0 and Module 1 (Master Data Management).
+This document contains the visual schema design for the Plinth ERP database using Mermaid notation, covering Core / Module 0 and Module 1 (Master Data Management).
 
 ```mermaid
 erDiagram

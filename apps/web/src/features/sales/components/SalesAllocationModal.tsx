@@ -2,7 +2,7 @@
 
 import React, { useEffect, useMemo, useState } from 'react';
 import { AlertTriangle, Boxes, CheckCircle2, Info, PackageCheck, ShieldCheck } from 'lucide-react';
-import { Badge, Button, Dialog, Input } from '@synergy/ui';
+import { Badge, Button, Dialog, Input } from '@plinth/ui';
 import { SalesOrder } from '../types';
 import { useAllocateSalesOrder } from '../hooks';
 import { formatErrorMessage } from '../utils/error';

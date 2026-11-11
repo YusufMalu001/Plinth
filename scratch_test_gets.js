@@ -36,5 +36,5 @@ const loginReq = http.request({
   });
 });
 
-loginReq.write(JSON.stringify({ email: 'admin@synergy.com', password: 'Admin123!' }));
+loginReq.write(JSON.stringify({ email: 'admin@plinth.com', password: 'Admin123!' }));
 loginReq.end();

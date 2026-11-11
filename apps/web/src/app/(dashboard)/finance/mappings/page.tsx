@@ -7,7 +7,7 @@ import {
   useApproveMappingConfiguration,
   useIntegrationReadiness,
 } from '@/features/finance/hooks';
-import { Card, Button, Badge } from '@synergy/ui';
+import { Card, Button, Badge } from '@plinth/ui';
 import { FinanceNavigationTabs } from '@/features/finance/components/FinanceNavigationTabs';
 import { BlockedSourceState } from '@/features/finance/components/BlockedSourceState';
 import { StatusBadge } from '@/components/StatusBadge';
@@ -21,7 +21,7 @@ import {
   User,
   ShieldAlert,
 } from 'lucide-react';
-import { TransactionSourceType } from '@synergy/types';
+import { TransactionSourceType } from '@plinth/types';
 import { useSearchParams } from 'next/navigation';
 
 const SOURCE_TYPES: Array<{ key: TransactionSourceType; label: string }> = [

@@ -1,6 +1,6 @@
 import React from "react"
 import { Loader2 } from "lucide-react"
-import { cn } from "@synergy/ui"
+import { cn } from "@plinth/ui"
 
 export interface PrimaryButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   loading?: boolean

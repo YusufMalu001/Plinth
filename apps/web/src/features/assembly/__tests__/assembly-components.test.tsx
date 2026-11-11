@@ -4,7 +4,7 @@ import { describe, it, expect } from 'vitest';
 import { ComponentReadinessList } from '../components/ComponentReadinessList';
 import { LiveConservationCheck } from '../components/LiveConservationCheck';
 import { GateBlockedState } from '../components/GateBlockedState';
-import type { AssemblyBatchComponentDto } from '@synergy/types';
+import type { AssemblyBatchComponentDto } from '@plinth/types';
 
 describe('Module 12: Assembly Convergence UI Components', () => {
   describe('ComponentReadinessList (Two Component Types Distinction)', () => {

@@ -28,7 +28,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@synergy/ui";
+} from "@plinth/ui";
 import {
   useProductionPlans,
   useDeleteProductionPlan,
@@ -42,7 +42,7 @@ import { ModuleRecommendationsPanel } from "@/features/intelligence/components/M
 import { useCurrentUser } from "@/features/auth/hooks";
 import { PaginationControls } from "@/components/PaginationControls";
 import { CancelProductionScheduleDialog } from "@/features/production/components/CancelProductionScheduleDialog";
-const PRODUCTION_PLANS_PAGE_SIZE_KEY = "synergy-table-page-size:production-plans";
+const PRODUCTION_PLANS_PAGE_SIZE_KEY = "plinth-table-page-size:production-plans";
 const SCHEDULE_TYPES = [
   { value: "DAY", label: "Day Shift (Standard)" },
   { value: "NIGHT", label: "Night Shift" },

@@ -12,7 +12,7 @@ import {
   TableRow,
   TableCell,
   TableHead,
-} from '@synergy/ui';
+} from '@plinth/ui';
 import { StatusBadge } from '@/components/StatusBadge';
 import { LoadingState } from '@/components/LoadingState';
 import { ErrorState } from '@/components/ErrorState';
@@ -22,7 +22,7 @@ import {
   useExpectedReceipts,
   useUpdateExpectedReceipt,
 } from '@/features/purchases/hooks';
-import { ExpectedReceiptStatus } from '@synergy/types';
+import { ExpectedReceiptStatus } from '@plinth/types';
 import {
   ScanLine,
   Check,

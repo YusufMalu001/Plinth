@@ -27,7 +27,7 @@ import {
   Warehouse,
   X
 } from 'lucide-react';
-import { Button, Card, Dialog, Input } from '@synergy/ui';
+import { Button, Card, Dialog, Input } from '@plinth/ui';
 import {
   useProductionScheduleDetail,
   useReceiveAssignment,
@@ -69,7 +69,7 @@ import type {
   AssemblyWorkerAssignmentDto,
   AssemblyProgressEventDto,
   LossEventDto
-} from '@synergy/types';
+} from '@plinth/types';
 
 interface TabItem {
   id: 'intake' | 'execution' | 'completion' | 'qc' | 'inventory' | 'rework' | 'history';

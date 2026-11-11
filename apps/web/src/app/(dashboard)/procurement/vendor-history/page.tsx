@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Card, PageHeader, Table, TableHeader, TableBody, TableRow, TableCell, TableHead } from '@synergy/ui';
+import { Card, PageHeader, Table, TableHeader, TableBody, TableRow, TableCell, TableHead } from '@plinth/ui';
 import { StatusBadge } from '../../../../components/StatusBadge';
 import { LoadingState } from '../../../../components/LoadingState';
 import { ErrorState } from '../../../../components/ErrorState';

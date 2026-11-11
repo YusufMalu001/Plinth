@@ -1,13 +1,13 @@
-# Synergy Platform Implementation Plan
+# Plinth Platform Implementation Plan
 
-**Platform:** Synergy International ERP  
+**Platform:** Plinth International ERP  
 **Plan status:** Active implementation plan  
 **Plan date:** 2026-09-21  
-**Repository basis:** Current workspace, `synergy_platform_implementation_audit.md`, `Development.md`, source tree, Prisma schema/migrations, CI workflows and architecture documentation
+**Repository basis:** Current workspace, `plinth_platform_implementation_audit.md`, `Development.md`, source tree, Prisma schema/migrations, CI workflows and architecture documentation
 
 ## 1. Purpose
 
-This document defines the implementation sequence for completing the Synergy Platform as a reliable manufacturing ERP. It is intentionally grounded in the current repository rather than treating every visible page or planned module as complete.
+This document defines the implementation sequence for completing the Plinth Platform as a reliable manufacturing ERP. It is intentionally grounded in the current repository rather than treating every visible page or planned module as complete.
 
 The plan has four goals:
 
@@ -26,7 +26,7 @@ The plan uses the following status language:
 
 ## 2. Product alignment
 
-Synergy must become the operational system of record for important physical movements:
+Plinth must become the operational system of record for important physical movements:
 
 ```text
 Supplier / Procurement
@@ -69,7 +69,7 @@ These rules apply to every new module and every change to an existing module:
 8. Worker attribution is captured at assignment, execution, discrepancy and handover points.
 9. Required QC gates cannot be bypassed. Failures require a reason and controlled disposition.
 10. Intermediate WIP is not finished goods.
-11. Job-work material remains Synergy-owned while held by a vendor.
+11. Job-work material remains Plinth-owned while held by a vendor.
 12. Sales channels retain their distinct business behavior.
 13. Authorization is least-privilege, deny-by-default, permission-based, scope-aware, server-enforced and audited.
 14. Approval permissions remain separate from create/update permissions.
@@ -452,13 +452,13 @@ P3 begins only after P0, P1 and P2 have green gates and UAT evidence. The goal i
 
 ### 10.2 Job Work / Outsourced Processing
 
-- Issue Synergy-owned material to a vendor.
+- Issue Plinth-owned material to a vendor.
 - Track custody, expected return, processing status and vendor documents.
 - Receive processed material and reconcile quantity, loss and condition.
 - Support rejection, shortage, excess, return and adjustment.
 - Confirm accounting treatment before Tally automation.
 
-**Exit criteria:** job-work material remains owned by Synergy throughout the vendor cycle and every movement reconciles.
+**Exit criteria:** job-work material remains owned by Plinth throughout the vendor cycle and every movement reconciles.
 
 ### 10.3 Sales Order Management
 
@@ -521,7 +521,7 @@ Until these are confirmed, build only deterministic internal queues, mappings, e
 - Queue export jobs and items.
 - Store source references and exported identifiers.
 - Handle retry, failure and manual correction.
-- Reconcile Synergy totals with Tally totals.
+- Reconcile Plinth totals with Tally totals.
 
 **Exit criteria:** every supported source type has a mapping, export, retry and reconciliation test.
 
@@ -577,7 +577,7 @@ The following decisions must be owned and resolved before dependent automation i
 | V-001 | Complete/reconciled product master | Business owner + operations lead | Product-dependent modules |
 | V-002 | Exact BOM/formula values | Production owner + source-spreadsheet custodian | BOM, planning, production and costing |
 | V-003 | Product-wise department routing | Production management | Planning, execution, WIP and QC |
-| V-004 | Approval hierarchy | Synergy ownership + department heads | Permissions and workflow release |
+| V-004 | Approval hierarchy | Plinth ownership + department heads | Permissions and workflow release |
 | V-005 | DS sales workflow | Sales owner | Sales, fulfillment, dispatch and reporting |
 | V-006 | Tally version | Finance owner | Connector and supported exchange format |
 | V-007 | Tally integration method | Finance + technical lead | Sync topology and retry model |
@@ -636,7 +636,7 @@ Every PR should include:
 
 ## 15. Definition of done for a module
 
-A Synergy module is complete only when all of the following are true:
+A Plinth module is complete only when all of the following are true:
 
 1. Business rules and unresolved decisions are documented.
 2. Prisma models and migrations are reviewed.

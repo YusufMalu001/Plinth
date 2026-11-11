@@ -337,7 +337,7 @@ describe('Hermes AI ERP — Golden Lifecycle End-to-End', () => {
     const adminUser = {
       id: 'usr-procurement-mgr',
       name: 'Priya Sharma',
-      email: 'priya.sharma@synergy.internal',
+      email: 'priya.sharma@plinth.internal',
       role: 'admin',
       isActive: true,
       department: 'PROCUREMENT',
@@ -523,7 +523,7 @@ describe('Hermes AI ERP — Golden Lifecycle End-to-End', () => {
       module: 'PROCUREMENT',
       trigger: 'EVENT',
       modelProvider: 'DETERMINISTIC_MOCK',
-      modelId: 'synergy/mock-hermes-v1',
+      modelId: 'plinth/mock-hermes-v1',
       createdAt: new Date(),
       startedAt: new Date(),
     };

@@ -5,7 +5,7 @@
 - Node.js 22.x, npm 9+, Docker Engine with Compose v2, and PostgreSQL 16.
 - A reviewed OpenRouter Enterprise agreement covering zero training, retention, regional processing, approved downstream providers/models, incident response, and data deletion.
 - Six independent runtime API keys and six independent MCP tokens stored in the deployment secret manager. Each MCP token must use `<profile-key>.<at-least-32-random-characters>`.
-- Network policy allowing each runtime to reach only the approved model gateway and the private Synergy API MCP address. Docker Compose does not itself provide a domain egress firewall.
+- Network policy allowing each runtime to reach only the approved model gateway and the private Plinth API MCP address. Docker Compose does not itself provide a domain egress firewall.
 - Finance and operations owners for metric reconciliation and recommendation evaluation.
 
 The upstream runtime repository does not need to be cloned. Compose pulls the digest-pinned image recorded in ADR-007. Mirror that exact digest into the company registry for supply-chain control before production.
@@ -63,7 +63,7 @@ Enable one control at a time; every change requires a recorded change request.
 - At least 99% schema-valid completed staging runs on the approved evaluation set.
 - Urgent event recommendation within two minutes and daily review within ten minutes when dependencies are healthy.
 - Every recommendation shows evidence timestamp, confidence, assumptions, expiry, quality, and cost coverage.
-- Provider account and Synergy hard budgets are active and tested.
+- Provider account and Plinth hard budgets are active and tested.
 - Backup restoration includes all control-plane tables and audit relationships.
 
 ## Schedules and notifications

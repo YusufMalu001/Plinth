@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { getLossScenarioMeta } from '@/features/loss-management/utils';
-import type { LossEventDto, LossAnalyticsSummaryDto } from '@synergy/types';
+import type { LossEventDto, LossAnalyticsSummaryDto } from '@plinth/types';
 
 describe('Scrap & Wastage Dashboard and Merged Ledger', () => {
   const sampleEvents: LossEventDto[] = [

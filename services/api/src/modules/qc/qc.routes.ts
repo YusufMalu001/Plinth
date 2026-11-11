@@ -16,7 +16,7 @@ import {
   approveQcRuleSchema,
   qcOverrideSchema,
   releaseGateCheckQuerySchema
-} from '@synergy/validation';
+} from '@plinth/validation';
 
 import { QcService } from './services/qc.service';
 import { QcReleaseGateService } from './services/qc-release-gate.service';

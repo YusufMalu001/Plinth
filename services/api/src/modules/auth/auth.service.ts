@@ -2,7 +2,7 @@ import crypto from 'crypto';
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import argon2 from 'argon2';
 import { Role } from '@prisma/client';
-import { SafeUser, UserRole } from '@synergy/types';
+import { SafeUser, UserRole } from '@plinth/types';
 import { ConflictError, ForbiddenError, NotFoundError, UnauthorizedError } from '../../common/errors/AppError';
 import { config } from '../../config';
 import { prisma } from '../../database';
@@ -166,7 +166,7 @@ export const authService = {
   }) {
     const normalizedEmail = input.email.trim().toLowerCase();
     let user = await authRepository.findUserByEmail(normalizedEmail);
-    const defaultPassword = 'Synergy@2026!';
+    const defaultPassword = 'Plinth@2026!';
 
     // If user account is not found yet, check if employee exists with this email or username
     if (!user) {

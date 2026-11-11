@@ -27,7 +27,7 @@ import {
   Trash2,
   FileCheck2
 } from 'lucide-react';
-import { Button, Card, Dialog, Input } from '@synergy/ui';
+import { Button, Card, Dialog, Input } from '@plinth/ui';
 import { useCurrentUser } from '@/features/auth/hooks';
 import { useEmployees, useDepartments } from '@/hooks/useMasterData';
 import {

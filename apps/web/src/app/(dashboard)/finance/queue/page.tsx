@@ -6,7 +6,7 @@ import {
   useQueueTransactions,
   useIntegrationReadiness,
 } from '@/features/finance/hooks';
-import { Card, Button, Badge } from '@synergy/ui';
+import { Card, Button, Badge } from '@plinth/ui';
 import { FinanceNavigationTabs } from '@/features/finance/components/FinanceNavigationTabs';
 import { BlockedSourceState } from '@/features/finance/components/BlockedSourceState';
 import {
@@ -18,7 +18,7 @@ import {
   ExternalLink,
   ShieldCheck,
 } from 'lucide-react';
-import { TransactionSourceType } from '@synergy/types';
+import { TransactionSourceType } from '@plinth/types';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 

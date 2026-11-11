@@ -28,7 +28,7 @@ import {
   Truck,
   User,
 } from 'lucide-react';
-import { EmptyState } from '@synergy/ui';
+import { EmptyState } from '@plinth/ui';
 import { intelligenceApi } from '../api';
 import type { IntelligenceModule } from '../types';
 import { money } from './format';

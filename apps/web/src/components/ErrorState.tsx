@@ -99,7 +99,7 @@ export function ErrorState({
     return (
       <NetworkErrorView
         title={title}
-        description={description || "Connection to Synergy Cloud Services could not be established."}
+        description={description || "Connection to Plinth Cloud Services could not be established."}
         retrying={retrying}
         onRetry={handleRetry}
       />
@@ -223,7 +223,7 @@ export function PermissionDeniedView({
  * Creative Network Connection Error State
  */
 export function NetworkErrorView({
-  title = "Connection Lost to Synergy Cloud",
+  title = "Connection Lost to Plinth Cloud",
   description = "Unable to communicate with the live operations server. Please check your internet connection or network status.",
   retrying,
   onRetry,

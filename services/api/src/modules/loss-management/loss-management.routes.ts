@@ -16,12 +16,12 @@ import {
   lossEventQuerySchema,
   lossAnalyticsQuerySchema,
   lossEventParamSchema
-} from '@synergy/validation';
+} from '@plinth/validation';
 import { prisma } from '../../database';
 import { LossEventRepository, ReplacementChallanRepository } from './repositories';
 import { ToleranceEvaluatorService, LossEventService } from './services';
 import { LossEventController } from './controllers';
-import { AuditWriter } from '@synergy/types';
+import { AuditWriter } from '@plinth/types';
 
 const router = Router();
 const permissionChecker = new DbPermissionChecker();

@@ -16,7 +16,7 @@ import {
   TableRow,
   TableHead,
   TableCell,
-} from '@synergy/ui';
+} from '@plinth/ui';
 import {
   Package,
   Search,

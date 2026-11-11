@@ -1,4 +1,4 @@
-import type { LifecycleStatus } from '@synergy/types';
+import type { LifecycleStatus } from '@plinth/types';
 
 export interface ProductImage {
   url: string;

@@ -24,7 +24,7 @@ async function main() {
   }
 
   // Ensure Admin user has password123 and completed onboarding
-  const adminEmails = ['admin@gmail.com', 'admin@synergy.com'];
+  const adminEmails = ['admin@gmail.com', 'admin@plinth.example'];
   for (const email of adminEmails) {
     await prisma.user.upsert({
       where: { email },
@@ -66,8 +66,8 @@ async function main() {
 
   for (const dept of departments) {
     const slug = dept.code.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-    const inchargeEmail = `${slug}.head@synergy.com`;
-    const operatorEmail = `${slug}.op@synergy.com`;
+    const inchargeEmail = `${slug}.head@plinth.example`;
+    const operatorEmail = `${slug}.op@plinth.example`;
 
     // A. Seed / Link Employee Record for Operator
     const empCode = `EMP-${slug.slice(0, 10).toUpperCase()}-01`;
@@ -175,10 +175,10 @@ async function main() {
     // Also support friendly aliases for common test route departments
     if (dept.code === 'ACCESSORIES-IRONING-MAT') {
       await prisma.user.upsert({
-        where: { email: 'dept1.head@synergy.com' },
+        where: { email: 'dept1.head@plinth.example' },
         update: { password: passwordHash, assignedDepartmentId: dept.id, isActive: true, mustChangePassword: false, onboardingCompleted: true },
         create: {
-          email: 'dept1.head@synergy.com', name: 'Dept 1 (Accessories) Head', role: Role.employee,
+          email: 'dept1.head@plinth.example', name: 'Dept 1 (Accessories) Head', role: Role.employee,
           password: passwordHash, assignedDepartmentId: dept.id, isActive: true, mustChangePassword: false, onboardingCompleted: true
         }
       }).then(async (u) => {
@@ -189,10 +189,10 @@ async function main() {
 
     if (dept.code === 'DEPT-FARDEEN---TEST-SZ6S') {
       await prisma.user.upsert({
-        where: { email: 'dept1.1.head@synergy.com' },
+        where: { email: 'dept1.1.head@plinth.example' },
         update: { password: passwordHash, assignedDepartmentId: dept.id, isActive: true, mustChangePassword: false, onboardingCompleted: true },
         create: {
-          email: 'dept1.1.head@synergy.com', name: 'Dept 1.1 (Fardeen Test) Head', role: Role.employee,
+          email: 'dept1.1.head@plinth.example', name: 'Dept 1.1 (Fardeen Test) Head', role: Role.employee,
           password: passwordHash, assignedDepartmentId: dept.id, isActive: true, mustChangePassword: false, onboardingCompleted: true
         }
       }).then(async (u) => {
@@ -203,10 +203,10 @@ async function main() {
 
     if (dept.code === 'JHUMER') {
       await prisma.user.upsert({
-        where: { email: 'dept1.2.head@synergy.com' },
+        where: { email: 'dept1.2.head@plinth.example' },
         update: { password: passwordHash, assignedDepartmentId: dept.id, isActive: true, mustChangePassword: false, onboardingCompleted: true },
         create: {
-          email: 'dept1.2.head@synergy.com', name: 'Dept 1.2 (Jhumer) Head', role: Role.employee,
+          email: 'dept1.2.head@plinth.example', name: 'Dept 1.2 (Jhumer) Head', role: Role.employee,
           password: passwordHash, assignedDepartmentId: dept.id, isActive: true, mustChangePassword: false, onboardingCompleted: true
         }
       }).then(async (u) => {
@@ -217,10 +217,10 @@ async function main() {
 
     if (dept.code === 'DEPT-ASSEMBLY-DEPART-W225') {
       await prisma.user.upsert({
-        where: { email: 'assembly.head@synergy.com' },
+        where: { email: 'assembly.head@plinth.example' },
         update: { password: passwordHash, assignedDepartmentId: dept.id, isActive: true, mustChangePassword: false, onboardingCompleted: true },
         create: {
-          email: 'assembly.head@synergy.com', name: 'Assembly Department Head', role: Role.employee,
+          email: 'assembly.head@plinth.example', name: 'Assembly Department Head', role: Role.employee,
           password: passwordHash, assignedDepartmentId: dept.id, isActive: true, mustChangePassword: false, onboardingCompleted: true
         }
       }).then(async (u) => {

@@ -1,6 +1,6 @@
-# Synergy ERP - API Documentation
+# Plinth ERP - API Documentation
 
-The Synergy API is built using Express and TypeScript. It implements a RESTful JSON API structure under versioned prefixes.
+The Plinth API is built using Express and TypeScript. It implements a RESTful JSON API structure under versioned prefixes.
 
 ## API Endpoint Prefix
 All endpoints must be mounted under:
@@ -67,7 +67,7 @@ Verify API gateway availability and database connectivity.
 ```json
 {
   "success": true,
-  "service": "synergy-api",
+  "service": "plinth-api",
   "status": "healthy",
   "timestamp": "2026-08-22T09:12:00Z",
   "uptime": 234.5,

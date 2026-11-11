@@ -13,7 +13,7 @@ import {
   TableRow,
   TableHead,
   TableCell,
-} from '@synergy/ui';
+} from '@plinth/ui';
 import { StatusBadge } from '@/components/StatusBadge';
 import { LoadingState } from '@/components/LoadingState';
 import { ErrorState } from '@/components/ErrorState';
@@ -23,7 +23,7 @@ import { useGrnCapabilities, useGrnList } from '@/features/goods-receipt/hooks';
 import { ReceivingListToolbar, ReceivingTabs } from '@/features/goods-receipt/components/ReceivingListToolbar';
 import { useExpectedReceipts } from '@/features/purchases/hooks';
 import type { Grn } from '@/features/goods-receipt/api';
-import { GrnStatus } from '@synergy/types';
+import { GrnStatus } from '@plinth/types';
 import {
   Plus,
   ArrowUp,

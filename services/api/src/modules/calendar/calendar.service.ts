@@ -508,7 +508,7 @@ export class CalendarService {
         vehicleNumber: `WH-INTERNAL-${10 + (idx % 20)}`,
         driverName: 'Internal Logistics Transport',
         driverPhone: '+91 98201 00000',
-        carrierName: 'Synergy Intralogistics Fleet',
+        carrierName: 'Plinth Intralogistics Fleet',
         destination: `Production Run (${issue.productionPlan?.planNumber || 'Batch'})`,
         dockNumber: `Station ${idx + 1}`,
         departureTime: issue.issuedAt ? new Date(issue.issuedAt).toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' }) : '09:00 AM',

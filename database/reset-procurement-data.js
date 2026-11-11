@@ -44,7 +44,7 @@ const procurementTables = [
 
 async function main() {
   console.log('========================================================');
-  console.log('       SYNERGY ERP - PROCUREMENT & VENDOR RESET         ');
+  console.log('       PLINTH ERP - PROCUREMENT & VENDOR RESET         ');
   console.log('========================================================');
   console.log(`Target Database: ${maskedUrl}\n`);
 

@@ -30,33 +30,33 @@ export class AccountsCoreService {
   constructor(private readonly db: PrismaClient = prisma) {}
 
   async listEntities() {
-    // Keep the company context fixed to the Synergy legal entity.
+    // Keep the company context fixed to the Plinth legal entity.
     return this.db.$queryRaw<Array<Record<string, unknown>>>`
       SELECT "id", "code", "legalName", "baseCurrency", "gstin", "stateCode", "status", "createdById", "createdAt", "updatedAt"
-      FROM "accounting_entities" WHERE "code" = 'SYNERGY-IN' ORDER BY "code" ASC`;
+      FROM "accounting_entities" WHERE "code" = 'PLINTH-IN' ORDER BY "code" ASC`;
   }
 
-  async initializeSynergyBook(actorId: string, requestId: string) {
+  async initializePlinthBook(actorId: string, requestId: string) {
     return this.db.$transaction(async tx => {
       const [existing] = await tx.$queryRaw<Array<Record<string, unknown>>>`
         SELECT "id", "code", "legalName", "baseCurrency", "gstin", "stateCode", "status", "createdById", "createdAt", "updatedAt"
-        FROM "accounting_entities" WHERE "code" = 'SYNERGY-IN' LIMIT 1`;
+        FROM "accounting_entities" WHERE "code" = 'PLINTH-IN' LIMIT 1`;
       if (existing) return existing;
       const [count] = await tx.$queryRaw<Array<{ count: bigint }>>`SELECT COUNT(*) AS "count" FROM "accounting_entities"`;
       if (Number(count.count) > 0) {
-        throw new ConflictError('An accounting book already exists. This installation supports Synergy International only.');
+        throw new ConflictError('An accounting book already exists. This installation supports Plinth only.');
       }
       const id = randomUUID();
       await tx.$executeRaw`
         INSERT INTO "accounting_entities" ("id", "code", "legalName", "status", "createdById", "updatedAt")
-        VALUES (${id}, 'SYNERGY-IN', 'Synergy International', 'CONFIGURING', ${actorId}, CURRENT_TIMESTAMP)`;
+        VALUES (${id}, 'PLINTH-IN', 'Plinth', 'CONFIGURING', ${actorId}, CURRENT_TIMESTAMP)`;
       const [entity] = await tx.$queryRaw<Array<Record<string, unknown>>>`
         SELECT "id", "code", "legalName", "baseCurrency", "gstin", "stateCode", "status", "createdById", "createdAt", "updatedAt"
         FROM "accounting_entities" WHERE "id" = ${id} LIMIT 1`;
       await tx.auditLog.create({
         data: {
           userId: actorId,
-          action: 'accounts.synergy_book.initialize',
+          action: 'accounts.plinth_book.initialize',
           resource: 'AccountingEntity',
           resourceId: String(entity.id),
           after: entity as Prisma.InputJsonObject,

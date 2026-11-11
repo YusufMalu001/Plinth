@@ -39,13 +39,9 @@ export const PurchaseRequisitionPDF = React.forwardRef<HTMLDivElement, { pr: PR 
         {/* Corporate Header */}
         <header className="flex items-start justify-between border-b border-slate-200 pb-5">
           <div>
-            <img
-              src="/synergy.png"
-              alt="Synergy International"
-              className="h-12 w-auto object-contain"
-            />
+            <span className="text-xl sm:text-2xl font-black tracking-tight text-black uppercase">Plinth</span>
             <div className="mt-1.5 text-[9px] font-semibold tracking-wider text-slate-400 uppercase">
-              Synergy International · Procurement &amp; Operations
+              Plinth · Procurement &amp; Operations
             </div>
           </div>
 

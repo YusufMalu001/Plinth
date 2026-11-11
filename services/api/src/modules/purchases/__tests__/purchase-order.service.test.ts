@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach, jest } from '@jest/globals';
 import { PurchaseOrderService } from '../services/purchase-order.service';
-import { PermissionChecker, AuditWriter } from '@synergy/types';
+import { PermissionChecker, AuditWriter } from '@plinth/types';
 import { InvalidStateTransitionError, ValidationError } from '../../../common/errors/AppError';
 import { prisma } from '../../../database';
 

@@ -9,7 +9,7 @@ import {
   ArrowRight,
   SlidersHorizontal,
 } from 'lucide-react';
-import { Dialog, Button } from '@synergy/ui';
+import { Dialog, Button } from '@plinth/ui';
 import { showToast } from '../../../components/toast-store';
 import { SearchableSelector } from '../../../components/ui/SearchableSelector';
 import { useHsnSacCodes, useHsnSacLookup } from '../../../hooks/useMasterData';
@@ -29,7 +29,8 @@ export interface ProductSpecialPreset {
   isSystemDefault?: boolean;
 }
 
-const STORAGE_KEY = 'synergy_product_specials_v1';
+const STORAGE_KEY = 'plinth_product_specials_v1';
+const LEGACY_STORAGE_KEY = 'plinth_product_specials_v1';
 
 export function getDefaultSpecials(uoms: { id: string; code: string; name: string }[]): ProductSpecialPreset[] {
   const defaultUomId = uoms[0]?.id || '';
@@ -144,7 +145,7 @@ export function ProductSpecialDialog({
       let localPresets: ProductSpecialPreset[] = [];
       let hasLocalSnapshot = false;
       try {
-        const stored = localStorage.getItem(STORAGE_KEY);
+        const stored = localStorage.getItem(STORAGE_KEY) ?? localStorage.getItem(LEGACY_STORAGE_KEY);
         if (stored) {
           hasLocalSnapshot = true;
           const parsed = JSON.parse(stored);

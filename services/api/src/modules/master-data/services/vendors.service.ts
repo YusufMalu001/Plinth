@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Vendor, LifecycleStatus, Prisma } from '@prisma/client';
-import { PermissionChecker, AuditWriter } from '@synergy/types';
+import { PermissionChecker, AuditWriter } from '@plinth/types';
 import { VendorsRepository } from '../repositories/vendors.repository';
 import { MasterDataLifecycleService } from './master-data-lifecycle.service';
 import { ConflictError, ForbiddenError, NotFoundError, ReferentialIntegrityError } from '../../../common/errors/AppError';

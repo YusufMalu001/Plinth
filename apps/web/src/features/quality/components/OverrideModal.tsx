@@ -8,7 +8,7 @@ import {
   CheckSquare,
   Square
 } from 'lucide-react';
-import { QcQueueItemDto } from '@synergy/types';
+import { QcQueueItemDto } from '@plinth/types';
 import { qualityApi } from '../api';
 
 interface OverrideModalProps {

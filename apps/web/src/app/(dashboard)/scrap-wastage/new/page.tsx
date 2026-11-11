@@ -5,11 +5,11 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { useReportLossEvent } from '@/features/loss-management/hooks';
 import { useApprovedProducts, useApprovedMaterials, useActiveUOMs, useProcurementSelectors } from '@/features/purchases/hooks';
-import { LossSourceType } from '@synergy/types';
+import { LossSourceType } from '@plinth/types';
 import {
   Card,
   Button,
-} from '@synergy/ui';
+} from '@plinth/ui';
 import { SearchableSelector } from '@/components/ui/SearchableSelector';
 import { EvidenceAttachmentField } from '@/features/loss-management/components/EvidenceAttachmentField';
 import {

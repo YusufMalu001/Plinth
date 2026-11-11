@@ -1,5 +1,5 @@
 import React from "react"
-import { cn } from "@synergy/ui"
+import { cn } from "@plinth/ui"
 
 export interface LoginCardProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode

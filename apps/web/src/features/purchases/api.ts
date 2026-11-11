@@ -5,8 +5,8 @@
  * Endpoint base: /purchases/requisitions | /purchases/orders
  */
 import { fetchApi } from '../api/client';
-import { PrStatus, PoStatus, ExpectedReceiptStatus } from '@synergy/types';
-import { UpdatePrInput } from '@synergy/validation';
+import { PrStatus, PoStatus, ExpectedReceiptStatus } from '@plinth/types';
+import { UpdatePrInput } from '@plinth/validation';
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 

@@ -6,7 +6,7 @@ import type {
   VendorCustodyBalanceDto,
   JobWorkAnalyticsDto,
   JobWorkMaterialIssueDto
-} from '@synergy/types';
+} from '@plinth/types';
 
 export function useJobWorkOrders(filters?: JobWorkOrderQueryFilters) {
   const [orders, setOrders] = useState<JobWorkOrderDto[]>([]);

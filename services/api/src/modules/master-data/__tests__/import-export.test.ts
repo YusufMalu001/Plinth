@@ -1,5 +1,5 @@
 import { ImportExportService } from '../services/import-export.service';
-import { AllowAllPermissionChecker } from '@synergy/types';
+import { AllowAllPermissionChecker } from '@plinth/types';
 import { prisma } from '../../../database';
 import { DbAuditWriter } from '../../../common/audit/db-audit-writer';
 

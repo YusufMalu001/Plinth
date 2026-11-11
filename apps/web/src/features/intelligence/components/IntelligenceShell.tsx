@@ -37,7 +37,7 @@ export function IntelligenceShell({
               <div className="flex flex-wrap items-center gap-2.5">
                 <span className="inline-flex items-center gap-1.5 rounded-full bg-[#004a80]/10 border border-[#004a80]/20 px-3 py-0.5 text-[11px] font-black tracking-wider uppercase text-[#004a80] dark:bg-blue-950/70 dark:border-blue-800 dark:text-blue-300">
                   <Sparkles className="h-3 w-3 animate-pulse" />
-                  Synergy Intelligence
+                  Plinth Intelligence
                 </span>
                 <span className="text-slate-300 dark:text-slate-700">·</span>
                 <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-200/90 bg-emerald-50/80 px-2.5 py-0.5 text-[10.5px] font-bold text-emerald-800 dark:border-emerald-900/80 dark:bg-emerald-950/50 dark:text-emerald-300">

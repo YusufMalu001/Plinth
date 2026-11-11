@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { X, Plus, Trash2, CheckCircle2, AlertCircle } from 'lucide-react';
-import { Button, Table, TableHeader, TableBody, TableHead, TableRow, TableCell } from '@synergy/ui';
+import { Button, Table, TableHeader, TableBody, TableHead, TableRow, TableCell } from '@plinth/ui';
 import { LedgerAccount, AccountingPeriod, VoucherKind } from '../types';
 import { cents, fromCents, localToday } from '../utils';
 

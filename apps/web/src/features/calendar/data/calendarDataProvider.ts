@@ -7,7 +7,7 @@ const liveDayCache: Record<string, DayOperationalSummary> = {};
 const liveMonthCache: Record<string, MonthOverviewData> = {};
 
 /**
- * Fetches live real-time operational calendar data from the Synergy backend for a specific date (YYYY-MM-DD).
+ * Fetches live real-time operational calendar data from the Plinth backend for a specific date (YYYY-MM-DD).
  * Never fabricates dummy or fake data.
  */
 export async function fetchLiveCalendarData(dateKey: string, bypassCache = false): Promise<DayOperationalSummary> {

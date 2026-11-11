@@ -1,4 +1,4 @@
-import { ApiErrorResponse, ApiResponse, SafeUser } from '@synergy/types';
+import { ApiErrorResponse, ApiResponse, SafeUser } from '@plinth/types';
 import { fetchApi } from '../api/client';
 
 interface AuthData {

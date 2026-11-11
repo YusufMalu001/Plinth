@@ -9,7 +9,7 @@ import {
   LossEventStatus,
   LossClassification,
   LossSourceType,
-} from '@synergy/types';
+} from '@plinth/types';
 import {
   Button,
   Input,
@@ -21,7 +21,7 @@ import {
   TableHead,
   TableRow,
   TableCell,
-} from '@synergy/ui';
+} from '@plinth/ui';
 import { StatusBadge } from '@/components/StatusBadge';
 import { ToleranceBasisBadge } from '@/features/loss-management/components/ToleranceBasisBadge';
 import { getLossScenarioMeta } from '@/features/loss-management/utils';

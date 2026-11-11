@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { ArrowLeft, BadgePercent, Check, Edit2, Plus, Trash2, X } from 'lucide-react';
 import { useParams, useRouter, useSearchParams } from 'next/navigation';
-import { Button, Card, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@synergy/ui';
+import { Button, Card, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@plinth/ui';
 import { usePricingMaster, useUpdatePricingMaster, type PricingTier } from '../../../../../hooks/useMasterData';
 import { usePricingLevels } from '../../../../../hooks/usePricingLevels';
 import { PricingLevelModal } from '../../../../../features/products/components/PricingLevelModal';

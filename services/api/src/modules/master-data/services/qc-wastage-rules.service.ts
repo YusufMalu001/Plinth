@@ -1,5 +1,5 @@
 import { QcRule, WastageRule, LifecycleStatus, Prisma } from '@prisma/client';
-import { PermissionChecker, AuditWriter } from '@synergy/types';
+import { PermissionChecker, AuditWriter } from '@plinth/types';
 import { QcWastageRulesRepository } from '../repositories/qc-wastage-rules.repository';
 import { MasterDataLifecycleService } from './master-data-lifecycle.service';
 import { ConflictError, NotFoundError, ReferentialIntegrityError } from '../../../common/errors/AppError';

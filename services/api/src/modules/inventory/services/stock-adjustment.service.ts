@@ -1,5 +1,5 @@
 import { StockAdjustment, StockOwnership, StockAdjustmentDirection } from '@prisma/client';
-import { PermissionChecker, AuditWriter } from '@synergy/types';
+import { PermissionChecker, AuditWriter } from '@plinth/types';
 import { prisma } from '../../../database';
 import { StockAdjustmentRepository } from '../repositories/stock-adjustment.repository';
 import { StockLedgerRepository, computeItemKey } from '../repositories/stock-ledger.repository';

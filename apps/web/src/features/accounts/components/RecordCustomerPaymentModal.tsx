@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { X, Calendar, CreditCard, Hash, FileText, CheckCircle2, AlertCircle } from 'lucide-react';
-import { Button } from '@synergy/ui';
+import { Button } from '@plinth/ui';
 import { SalesInvoice, PaymentMode } from '../types';
 import { formatCurrency, localToday } from '../utils';
 
@@ -160,7 +160,7 @@ export function RecordCustomerPaymentModal({
               <span className="text-[10px] uppercase font-bold tracking-wider text-muted-foreground">Already Collected</span>
               <p className="mt-1 text-sm font-bold font-mono text-emerald-600">{formatCurrency(paidNumber)}</p>
             </div>
-            <div className="rounded-xl bg-card p-3 border border-border bg-synergy-500/5">
+            <div className="rounded-xl bg-card p-3 border border-border bg-n-500/5">
               <div className="flex items-center justify-between">
                 <span className="text-[10px] uppercase font-bold tracking-wider text-foreground">Balance Receivable</span>
                 {balanceNumber > 0 && (
@@ -173,7 +173,7 @@ export function RecordCustomerPaymentModal({
                   </button>
                 )}
               </div>
-              <p className="mt-1 text-sm font-bold font-mono text-foreground dark:text-synergy-300">
+              <p className="mt-1 text-sm font-bold font-mono text-foreground dark:text-n-300">
                 {formatCurrency(balanceNumber)}
               </p>
             </div>

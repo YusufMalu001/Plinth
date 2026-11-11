@@ -32,7 +32,7 @@ import {
   NOTIFICATION_MODULE_REGISTRY,
   NotificationModuleId,
 } from '../../../features/notifications/notification-modules';
-import { PageHeader, Button, Card } from '@synergy/ui';
+import { PageHeader, Button, Card } from '@plinth/ui';
 
 const MODULE_ICON_MAP: Record<string, React.ElementType> = {
   ShoppingCart: ShoppingBag,

@@ -18,7 +18,7 @@ import {
   TableHead,
   TableRow,
   TableCell,
-} from '@synergy/ui';
+} from '@plinth/ui';
 import { StatusBadge } from '@/components/StatusBadge';
 import { IssueReplacementChallanModal } from '@/features/loss-management/components/IssueReplacementChallanModal';
 import {
@@ -49,7 +49,8 @@ import {
 } from 'lucide-react';
 
 const number = new Intl.NumberFormat('en-IN', { maximumFractionDigits: 2 });
-const LOCAL_STORAGE_RECEIVED_CHALLANS_KEY = 'synergy_received_replacement_challans';
+const LOCAL_STORAGE_RECEIVED_CHALLANS_KEY = 'plinth_received_replacement_challans';
+const LEGACY_RECEIVED_CHALLANS_KEY = 'plinth_received_replacement_challans';
 
 export default function ReplacementChallansPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -73,7 +74,7 @@ export default function ReplacementChallansPage() {
 
   useEffect(() => {
     try {
-      const saved = localStorage.getItem(LOCAL_STORAGE_RECEIVED_CHALLANS_KEY);
+      const saved = localStorage.getItem(LOCAL_STORAGE_RECEIVED_CHALLANS_KEY) ?? localStorage.getItem(LEGACY_RECEIVED_CHALLANS_KEY);
       if (saved) {
         setReceivedChallans(JSON.parse(saved));
       }

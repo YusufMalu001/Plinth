@@ -1,11 +1,11 @@
 'use client';
 
 import React, { useState } from 'react';
-import { LossEventDto, SafeUser } from '@synergy/types';
+import { LossEventDto, SafeUser } from '@plinth/types';
 import {
   Card,
   Button
-} from '@synergy/ui';
+} from '@plinth/ui';
 import {
   CheckCircle2,
   XCircle,

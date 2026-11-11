@@ -109,7 +109,7 @@ describeWithTestDatabase('Job Work Module API Integration Tests', () => {
         uomId,
         quantity: 8,
         vehicleNumber: 'KA-01-EXP-9999',
-        transporterName: 'Synergy Logistics'
+        transporterName: 'Plinth Logistics'
       });
 
     expect(res.status).toBe(201);

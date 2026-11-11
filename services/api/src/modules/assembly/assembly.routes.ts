@@ -13,14 +13,14 @@ import {
   qcDispositionAssemblyBatchSchema,
   assemblyBatchQuerySchema,
   assemblyBatchParamSchema
-} from '@synergy/validation';
+} from '@plinth/validation';
 import { prisma } from '../../database';
 import { AssemblyBatchRepository } from './repositories/assembly-batch.repository';
 import { AssemblyService } from './services/assembly.service';
 import { AssemblyController } from './controllers/assembly.controller';
 import { LossEventRepository, ReplacementChallanRepository } from '../loss-management/repositories';
 import { ToleranceEvaluatorService, LossEventService } from '../loss-management/services';
-import { AuditWriter } from '@synergy/types';
+import { AuditWriter } from '@plinth/types';
 import { productionActorScope } from '../production/services/parallel-execution.service';
 import { ForbiddenError, NotFoundError } from '../../common/errors/AppError';
 

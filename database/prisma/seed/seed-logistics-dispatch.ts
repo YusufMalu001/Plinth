@@ -27,7 +27,7 @@ export async function seedLogisticsDispatch() {
 
   const admin = await prisma.user.findFirst({
     where: {
-      OR: [{ role: 'admin' }, { email: 'admin@synergyerp.com' }],
+      OR: [{ role: 'admin' }, { email: 'admin@plintherp.com' }],
     },
   });
 
@@ -42,7 +42,7 @@ export async function seedLogisticsDispatch() {
     warehouse = await prisma.warehouseLocation.create({
       data: {
         code: 'WH-MAIN-01',
-        name: 'Synergy Central Distribution Hub (Pune)',
+        name: 'Plinth Central Distribution Hub (Pune)',
         type: 'WAREHOUSE',
         status: LifecycleStatus.ACTIVE,
       },
@@ -91,7 +91,7 @@ export async function seedLogisticsDispatch() {
     products = await prisma.product.findMany({ take: 6 });
   }
   if (products.length === 0) {
-    throw new Error('No products found. Please run seed-official-synergy-data.ts first.');
+    throw new Error('No products found. Please run seed-official-plinth-data.ts first.');
   }
   const carriersData = [
     {
@@ -137,11 +137,11 @@ export async function seedLogisticsDispatch() {
       ],
     },
     {
-      code: 'SYNERGY_FLEET',
-      name: 'Synergy Dedicated Factory Fleet',
+      code: 'PLINTH_FLEET',
+      name: 'Plinth Dedicated Factory Fleet',
       mode: SalesShipmentMode.OWN_FLEET,
-      trackingUrlTemplate: 'https://synergyerp.internal/fleet/track/{awb}',
-      adapterKey: 'synergy-internal-gps',
+      trackingUrlTemplate: 'https://plintherp.internal/fleet/track/{awb}',
+      adapterKey: 'plinth-internal-gps',
       services: [
         { code: 'DIRECT_VAN', name: 'Local City Express Van (Same Day)', estimatedTransitDays: 0, supportsCod: false },
         { code: 'DIRECT_TRUCK', name: 'Heavy 16-Ton Intra-State Truck', estimatedTransitDays: 1, supportsCod: false },
@@ -291,8 +291,8 @@ export async function seedLogisticsDispatch() {
       packageStatus: SalesPackageStatus.SEALED,
       shipmentStatus: SalesShipmentStatus.OUT_FOR_DELIVERY,
       hasException: true,
-      awb: 'SYNERGY-FL-009182',
-      carrierCode: 'SYNERGY_FLEET',
+      awb: 'PLINTH-FL-009182',
+      carrierCode: 'PLINTH_FLEET',
       hasPod: false,
     },
     {
@@ -471,7 +471,7 @@ export async function seedLogisticsDispatch() {
           grossWeightKg: tpl.qty * 1.5 + 0.8,
           netWeightKg: tpl.qty * 1.5,
           tareWeightKg: 0.8,
-          sealNumber: `SEAL-SYNERGY-${tpl.orderNumber.slice(-3)}`,
+          sealNumber: `SEAL-PLINTH-${tpl.orderNumber.slice(-3)}`,
           handlingInstructions: 'FRAGILE - HANDLE WITH CARE. KEEP DRY.',
           sealedAt: new Date(),
           sealedByActorId: actorId,
@@ -552,7 +552,7 @@ export async function seedLogisticsDispatch() {
             shipmentId: shipment.id,
             type: SalesDispatchDocumentType.INVOICE,
             documentNumber: `INV-${tpl.orderNumber}`,
-            fileUrl: `https://synergyerp.internal/docs/invoices/INV-${tpl.orderNumber}.pdf`,
+            fileUrl: `https://plintherp.internal/docs/invoices/INV-${tpl.orderNumber}.pdf`,
             issuedAt: new Date(),
           },
           {
@@ -560,7 +560,7 @@ export async function seedLogisticsDispatch() {
             shipmentId: shipment.id,
             type: SalesDispatchDocumentType.PACKING_SLIP,
             documentNumber: `PS-${tpl.orderNumber}`,
-            fileUrl: `https://synergyerp.internal/docs/packing-slips/PS-${tpl.orderNumber}.pdf`,
+            fileUrl: `https://plintherp.internal/docs/packing-slips/PS-${tpl.orderNumber}.pdf`,
             issuedAt: new Date(),
           },
           {
@@ -568,7 +568,7 @@ export async function seedLogisticsDispatch() {
             shipmentId: shipment.id,
             type: SalesDispatchDocumentType.SHIPPING_LABEL,
             documentNumber: `LBL-${tpl.awb}`,
-            fileUrl: `https://synergyerp.internal/docs/labels/LBL-${tpl.awb}.pdf`,
+            fileUrl: `https://plintherp.internal/docs/labels/LBL-${tpl.awb}.pdf`,
             issuedAt: new Date(),
           },
         ],
@@ -582,7 +582,7 @@ export async function seedLogisticsDispatch() {
             shipmentId: shipment.id,
             status: SalesShipmentStatus.STAGED,
             source: SalesTrackingSource.SYSTEM,
-            location: 'Synergy Central Warehouse Dock 2, Pune',
+            location: 'Plinth Central Warehouse Dock 2, Pune',
             message: 'Shipment packaged, labeled, and staged at outbound loading dock',
             eventAt: new Date(Date.now() - 6 * 60 * 60 * 1000),
           },
@@ -639,8 +639,8 @@ export async function seedLogisticsDispatch() {
             method: 'OTP_AND_SIGNATURE',
             recipientName: 'Kishore Patil (Stores In-charge)',
             otpReference: 'OTP-982114',
-            signatureUrl: 'https://synergyerp.internal/pod/sig-99281.png',
-            photoUrls: ['https://synergyerp.internal/pod/photo-unloading-dock-01.jpg'],
+            signatureUrl: 'https://plintherp.internal/pod/sig-99281.png',
+            photoUrls: ['https://plintherp.internal/pod/photo-unloading-dock-01.jpg'],
             latitude: 18.5204,
             longitude: 73.8567,
             deliveredAt: new Date(Date.now() - 30 * 60 * 1000),

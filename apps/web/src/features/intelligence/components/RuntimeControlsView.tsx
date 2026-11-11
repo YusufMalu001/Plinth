@@ -1,6 +1,6 @@
 'use client';
 
-import { Checkbox } from '@synergy/ui';import React, { useEffect, useState } from 'react';
+import { Checkbox } from '@plinth/ui';import React, { useEffect, useState } from 'react';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import {
   AlertTriangle,

@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { X, Calendar, CreditCard, Hash, FileText, CheckCircle2, AlertCircle } from 'lucide-react';
-import { Button } from '@synergy/ui';
+import { Button } from '@plinth/ui';
 import { PurchaseBill, PaymentMode } from '../types';
 import { formatCurrency, localToday } from '../utils';
 
@@ -174,7 +174,7 @@ export function RecordBillPaymentModal({
                   </button>
                 )}
               </div>
-              <p className="mt-1 text-sm font-bold font-mono text-foreground dark:text-synergy-300">
+              <p className="mt-1 text-sm font-bold font-mono text-foreground dark:text-n-300">
                 {formatCurrency(balanceNumber)}
               </p>
             </div>

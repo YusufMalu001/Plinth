@@ -1,5 +1,5 @@
 import { Prisma, BomStatus, BomLineType, BomQuantityMode, BomRoundingRule } from '@prisma/client';
-import { PermissionChecker, AuditWriter } from '@synergy/types';
+import { PermissionChecker, AuditWriter } from '@plinth/types';
 import { prisma } from '../../../database';
 import { UomService } from '../../master-data/services/uom.service';
 import { MasterDataLifecycleService } from '../../master-data/services/master-data-lifecycle.service';

@@ -1,9 +1,9 @@
 'use client';
 
 import React, { useState, useEffect, useMemo, useRef } from 'react';
-import { Dialog, Button } from '@synergy/ui';
+import { Dialog, Button } from '@plinth/ui';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
-import type { StockOwnership } from '@synergy/types';
+import type { StockOwnership } from '@plinth/types';
 import { inventoryKeys } from '@/features/inventory/hooks';
 import { inventoryApi } from '@/features/inventory/api';
 import { bomApi } from '@/features/bom/api';

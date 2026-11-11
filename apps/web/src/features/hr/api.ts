@@ -8,7 +8,7 @@ import {
   EmployeeDocumentDto,
   WorkExperienceDto,
   OnboardingDetailsDto
-} from '@synergy/types';
+} from '@plinth/types';
 
 export interface EmployeeFilterParams {
   search?: string;

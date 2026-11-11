@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { Plus, Tag, Check, AlertCircle } from 'lucide-react';
-import { Dialog, Button } from '@synergy/ui';
+import { Dialog, Button } from '@plinth/ui';
 import { usePricingLevels, useCreatePricingLevel } from '../../../hooks/usePricingLevels';
 
 export interface PricingLevelModalProps {

@@ -12,7 +12,7 @@ import {
   RefreshCw,
   Search
 } from 'lucide-react';
-import { Button, Card, Input, PageHeader } from '@synergy/ui';
+import { Button, Card, Input, PageHeader } from '@plinth/ui';
 import { useProductionSchedules } from '@/features/production/execution-hooks';
 import type { ProductionScheduleSummary } from '@/features/production/types';
 import { StatusBadge } from '@/components/StatusBadge';

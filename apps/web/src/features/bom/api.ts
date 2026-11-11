@@ -2,7 +2,7 @@
  * Module 5 — BOM / Formula Engine API Client
  */
 import { fetchApi } from '../api/client';
-import { BomStatus } from '@synergy/types';
+import { BomStatus } from '@plinth/types';
 import type {
   BomVersionDetail,
   BomVersionListResponse,

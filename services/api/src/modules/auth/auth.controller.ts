@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from 'express';
 import { config } from '../../config';
 import { UnauthorizedError } from '../../common/errors/AppError';
-import { ACCESS_COOKIE, REFRESH_COOKIE, accessCookiePath, refreshCookiePath } from './auth.constants';
+import { ACCESS_COOKIE, REFRESH_COOKIE, LEGACY_ACCESS_COOKIE, LEGACY_REFRESH_COOKIE, accessCookiePath, refreshCookiePath } from './auth.constants';
 import { authService } from './auth.service';
 
 function isSecureCookie(req: Request): boolean {
@@ -32,12 +32,17 @@ function setAuthCookies(res: Response, req: Request, accessToken: string, refres
     path: refreshCookiePath,
     maxAge: config.refreshTokenTtlDays * 24 * 60 * 60 * 1000
   });
+  // Retire the pre-rebrand cookies so they do not linger after the next login.
+  res.clearCookie(LEGACY_ACCESS_COOKIE, { ...common, path: accessCookiePath });
+  res.clearCookie(LEGACY_REFRESH_COOKIE, { ...common, path: refreshCookiePath });
 }
 
 function clearAuthCookies(res: Response, req: Request) {
   const common = getCookieOptions(req);
   res.clearCookie(ACCESS_COOKIE, { ...common, path: accessCookiePath });
   res.clearCookie(REFRESH_COOKIE, { ...common, path: refreshCookiePath });
+  res.clearCookie(LEGACY_ACCESS_COOKIE, { ...common, path: accessCookiePath });
+  res.clearCookie(LEGACY_REFRESH_COOKIE, { ...common, path: refreshCookiePath });
 }
 
 export async function login(req: Request, res: Response, next: NextFunction): Promise<void> {
@@ -62,7 +67,7 @@ export async function login(req: Request, res: Response, next: NextFunction): Pr
 
 export async function refresh(req: Request, res: Response, next: NextFunction): Promise<void> {
   try {
-    const token = req.cookies?.[REFRESH_COOKIE];
+    const token = req.cookies?.[REFRESH_COOKIE] ?? req.cookies?.[LEGACY_REFRESH_COOKIE];
     if (!token) throw new UnauthorizedError('Session has expired');
     const result = await authService.refresh(token);
     setAuthCookies(res, req, result.accessToken, result.refreshToken);
@@ -78,7 +83,7 @@ export async function refresh(req: Request, res: Response, next: NextFunction): 
 
 export async function logout(req: Request, res: Response, next: NextFunction): Promise<void> {
   try {
-    await authService.logout(req.cookies?.[REFRESH_COOKIE], req.id, req.ip);
+    await authService.logout(req.cookies?.[REFRESH_COOKIE] ?? req.cookies?.[LEGACY_REFRESH_COOKIE], req.id, req.ip);
     clearAuthCookies(res, req);
     res.status(200).json({ success: true, message: 'Logout successful', requestId: req.id });
   } catch (error) {

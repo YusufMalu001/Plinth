@@ -35,6 +35,6 @@ const loginReq = http.request({
   });
 });
 
-// Assuming a default user exists, e.g. admin@synergy.com
-loginReq.write(JSON.stringify({ email: 'admin@synergy.com', password: 'Admin123!' }));
+// Assuming a default user exists, e.g. admin@plinth.com
+loginReq.write(JSON.stringify({ email: 'admin@plinth.com', password: 'Admin123!' }));
 loginReq.end();

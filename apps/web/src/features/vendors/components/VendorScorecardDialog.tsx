@@ -5,7 +5,7 @@ import { useQuery } from '@tanstack/react-query';
 import {
   Dialog,
   Button,
-} from '@synergy/ui';
+} from '@plinth/ui';
 import { createPortal } from 'react-dom';
 import {
   Sparkles,

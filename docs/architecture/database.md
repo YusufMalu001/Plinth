@@ -1,6 +1,6 @@
 # Database Architecture - Supabase & Prisma
 
-Synergy ERP uses Supabase PostgreSQL as its cloud database and Prisma ORM for type-safe database queries.
+Plinth ERP uses Supabase PostgreSQL as its cloud database and Prisma ORM for type-safe database queries.
 
 ## Architecture Diagram
 ```

@@ -14,7 +14,7 @@ import {
   DiscrepancyResolutionType,
   DebitNoteStatus,
   ExpectedReceiptStatus,
-} from '@synergy/types';
+} from '@plinth/types';
 import type { ExpectedReceipt, ExpectedReceiptListResponse } from '../purchases/api';
 
 // ─── Types ───────────────────────────────────────────────────────────────────

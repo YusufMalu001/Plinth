@@ -1,7 +1,7 @@
 import React from 'react';
-import { Card } from '@synergy/ui';
+import { Card } from '@plinth/ui';
 import { Layers, Package, AlertTriangle, CheckCircle2 } from 'lucide-react';
-import type { AssemblyBatchComponentDto } from '@synergy/types';
+import type { AssemblyBatchComponentDto } from '@plinth/types';
 
 export interface ComponentReadinessProps {
   components: AssemblyBatchComponentDto[];

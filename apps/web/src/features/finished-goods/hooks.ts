@@ -1,6 +1,6 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { fgApi, ListFgReadyOutputsParams, ListFgReceiptsParams } from './api';
-import type { FgPackagingUpdateInput, FgReceiptCreateInput } from '@synergy/types';
+import type { FgPackagingUpdateInput, FgReceiptCreateInput } from '@plinth/types';
 
 export function useFgReadyOutputs(params?: ListFgReadyOutputsParams) {
   return useQuery({

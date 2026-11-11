@@ -2,7 +2,7 @@ import { describe, it, expect, beforeEach, jest } from '@jest/globals';
 import { DiscrepancyService } from '../services/discrepancy.service';
 import { DiscrepancyRepository } from '../repositories/discrepancy.repository';
 import { GoodsReceiptRepository } from '../repositories/goods-receipt.repository';
-import { PermissionChecker, AuditWriter } from '@synergy/types';
+import { PermissionChecker, AuditWriter } from '@plinth/types';
 import { ForbiddenError, InvalidStateTransitionError } from '../../../common/errors/AppError';
 
 class MockAuditWriter implements AuditWriter {

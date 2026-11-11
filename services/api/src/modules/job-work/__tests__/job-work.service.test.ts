@@ -2,7 +2,7 @@ import { describe, it, expect, beforeEach, jest } from '@jest/globals';
 import { JobWorkService } from '../services/job-work.service';
 import { JobWorkRepository } from '../repositories/job-work.repository';
 import { StockLedgerRepository } from '../../inventory/repositories/stock-ledger.repository';
-import { AllowAllPermissionChecker, ConsoleAuditWriter } from '@synergy/types';
+import { AllowAllPermissionChecker, ConsoleAuditWriter } from '@plinth/types';
 import { JobWorkOrderStatus, JobWorkCustodyEntryType } from '@prisma/client';
 import { NotFoundError } from '../../../common/errors/AppError';
 import { prisma as defaultPrisma } from '../../../database';

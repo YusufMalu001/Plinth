@@ -1,14 +1,14 @@
 'use client';
 
 import React, { useState, useRef } from 'react';
-import { Button } from '@synergy/ui';
+import { Button } from '@plinth/ui';
 import { useReactToPrint } from 'react-to-print';
 import { ArrowLeft, Printer } from 'lucide-react';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { jobWorkApi } from '@/features/job-work/api';
 import { JobWorkChallanPDF } from '@/components/JobWorkChallanPDF';
-import type { JobWorkMaterialIssueDto } from '@synergy/types';
+import type { JobWorkMaterialIssueDto } from '@plinth/types';
 
 export default function JobWorkChallanViewPage() {
   const params = useParams();

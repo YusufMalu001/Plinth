@@ -2,8 +2,8 @@
 
 import React, { FormEvent, useCallback, useEffect, useMemo, useState, type ReactNode } from "react"
 import { createPortal } from "react-dom"
-import { SafeUser } from "@synergy/types"
-import { Badge, Button, Input } from "@synergy/ui"
+import { SafeUser } from "@plinth/types"
+import { Badge, Button, Input } from "@plinth/ui"
 import { authenticatedApiRequest } from "./api"
 import { showToast } from "../../components/toast-store"
 import {
@@ -1386,7 +1386,7 @@ export function UserAccess() {
               </label>
               <Input
                 type="email"
-                placeholder="fardeen@synergy-international.com"
+                placeholder="fardeen@plinth-international.com"
                 value={userForm.email}
                 onChange={(e) => setUserForm({ ...userForm, email: e.target.value })}
                 required

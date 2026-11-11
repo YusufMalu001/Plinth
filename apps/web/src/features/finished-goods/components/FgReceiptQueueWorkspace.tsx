@@ -30,7 +30,7 @@ import {
    TableCell,
    Dialog,
    Input
- } from '@synergy/ui';
+ } from '@plinth/ui';
  import { StatusBadge } from '@/components/StatusBadge';
  import { LoadingState } from '@/components/LoadingState';
  import { EmptyState } from '@/components/EmptyState';
@@ -48,7 +48,7 @@ import type {
   FgReadyOutputDto,
   FgReceiptDto,
   FgPackagingStatus
-} from '@synergy/types';
+} from '@plinth/types';
 import Link from 'next/link';
 
 type TabMode = 'queue' | 'receipts' | 'inventory_link';
@@ -571,7 +571,7 @@ export function FgReceiptQueueWorkspace() {
         open={packagingModalOpen}
         onClose={() => setPackagingModalOpen(false)}
         title="Update Packaging Readiness"
-        description="* ASSUMPTION: Status set pending final confirmation from Synergy operations."
+        description="* ASSUMPTION: Status set pending final confirmation from Plinth operations."
       >
         <div className="space-y-4 py-2 text-xs">
           <div>

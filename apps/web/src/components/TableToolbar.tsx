@@ -1,7 +1,7 @@
 'use client';
 
 import { Filter, Search, ArrowUpDown } from 'lucide-react';
-import { Input } from '@synergy/ui';
+import { Input } from '@plinth/ui';
 import { FilterPills } from './FilterPills';
 
 export interface ToolbarOption { label: string; value: string }

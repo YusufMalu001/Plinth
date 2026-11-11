@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { randomUUID } from 'crypto';
 import { PurchaseRequisition, ApprovalDecision, PrStatus, Prisma } from '@prisma/client';
-import { PermissionChecker, AuditWriter } from '@synergy/types';
-import { UpdatePrInput } from '@synergy/validation';
+import { PermissionChecker, AuditWriter } from '@plinth/types';
+import { UpdatePrInput } from '@plinth/validation';
 import { prisma } from '../../../database';
 import { config } from '../../../config';
 import { 

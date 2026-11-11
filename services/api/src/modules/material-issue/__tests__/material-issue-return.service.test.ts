@@ -2,7 +2,7 @@ import { describe, it, expect, beforeEach, jest } from '@jest/globals';
 import { MaterialIssueReturnService } from '../services/material-issue-return.service';
 import { MaterialIssueReturnRepository } from '../repositories/material-issue-return.repository';
 import { MaterialIssueRepository } from '../repositories/material-issue.repository';
-import { PermissionChecker, AuditWriter } from '@synergy/types';
+import { PermissionChecker, AuditWriter } from '@plinth/types';
 import { ForbiddenError, InvalidStateTransitionError, ValidationError } from '../../../common/errors/AppError';
 import { prisma } from '../../../database';
 

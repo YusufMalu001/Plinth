@@ -8,7 +8,7 @@ import { MaterialsRepository } from '../repositories/materials.repository';
 import { UomRepository } from '../repositories/uom.repository';
 import { VendorsRepository } from '../repositories/vendors.repository';
 import { CustomersRepository } from '../repositories/customers.repository';
-import { AllowAllPermissionChecker, ConsoleAuditWriter } from '@synergy/types';
+import { AllowAllPermissionChecker, ConsoleAuditWriter } from '@plinth/types';
 import { ConflictError } from '../../../common/errors/AppError';
 
 describe('Duplicate Detection Across Master Data Services', () => {

@@ -3,7 +3,7 @@ import {
   Prisma,
   PrismaClient,
 } from '@prisma/client';
-import type { AuditWriter, PermissionChecker } from '@synergy/types';
+import type { AuditWriter, PermissionChecker } from '@plinth/types';
 import { ConflictError, ForbiddenError, NotFoundError, ValidationError } from '../../common/errors/AppError';
 import { generateSequentialNumber } from '../../common/utils/sequence';
 import { NotificationService } from '../notifications/notification.service';

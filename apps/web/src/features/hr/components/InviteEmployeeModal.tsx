@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { hrApi } from '../api';
 import { Copy, CheckCircle2, AlertCircle } from 'lucide-react';
-import { Dialog, Button } from '@synergy/ui';
+import { Dialog, Button } from '@plinth/ui';
 import { getEmployeeOnboardingLink } from '@/lib/env';
 
 interface InviteEmployeeModalProps {
@@ -181,7 +181,7 @@ export function InviteEmployeeModal({ isOpen, onClose, onSuccess }: InviteEmploy
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  placeholder="rahul.sharma@synergy.local"
+                  placeholder="rahul.sharma@plinth.local"
                   className="w-full px-3 py-2 text-sm rounded-xl border border-border bg-background focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none"
                 />
               </div>

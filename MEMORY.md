@@ -1,4 +1,4 @@
-# Synergy Project Memory
+# Plinth Project Memory
 
 ## IMPLEMENTED
 

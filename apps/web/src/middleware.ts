@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-// Routes that require an authenticated session (synergy_access cookie present).
+// Routes that require an authenticated session (plinth_access cookie present).
 // The middleware does a lightweight cookie presence check — the real validation
 // still happens server-side. This prevents the React app from rendering at all
 // for unauthenticated visitors, avoiding any flash of protected content.
@@ -14,7 +14,9 @@ export function middleware(request: NextRequest) {
   );
 
   if (needsAuth) {
-    const hasSession = request.cookies.has('synergy_access');
+    // Dual-read: sessions minted before the rebrand still carry the legacy
+    // cookie until the next login rotates it out.
+    const hasSession = request.cookies.has('plinth_access') || request.cookies.has('plinth_access');
 
     if (!hasSession) {
       const loginUrl = request.nextUrl.clone();

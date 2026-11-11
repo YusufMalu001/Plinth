@@ -34,7 +34,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '@synergy/ui';
+} from '@plinth/ui';
 import { vendorsApi, GeminiVendorEvaluationDto } from '../../../features/vendors/api';
 import { VendorScorecardDialog } from '../../../features/vendors/components/VendorScorecardDialog';
 import { useDebounce } from '../../../common/hooks/useDebounce';

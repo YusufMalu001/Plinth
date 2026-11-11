@@ -1,6 +1,6 @@
 'use client';
 
-import { Checkbox } from '@synergy/ui';
+import { Checkbox } from '@plinth/ui';
 import React, { useState, useEffect, useMemo } from 'react';
 import { effectiveTierPrice } from '../../products/utils/tierPricing';
 import {
@@ -31,7 +31,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '@synergy/ui';
+} from '@plinth/ui';
 import { useUpdateSalesOrder, useNotifyStockShortage, useSalesCustomers } from '../hooks';
 import { SalesOrder, UpdateSalesOrderInput, Customer } from '../types';
 import { FormInput, FormSelect, TableNumericInput, PhoneInput } from './FormControls';

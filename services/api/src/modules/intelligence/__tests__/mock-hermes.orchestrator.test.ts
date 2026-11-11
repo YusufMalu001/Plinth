@@ -46,7 +46,7 @@ describe('deterministic mock question path', () => {
     expect(persisted.status).toBe('COMPLETED');
     expect(persisted.structuredOutput.evidence[0].metricKey).toBe(metric.key);
     expect(persisted.modelProvider).toBe('DETERMINISTIC_MOCK');
-    expect(persisted.modelId).toBe('synergy/mock-hermes-v1');
+    expect(persisted.modelId).toBe('plinth/mock-hermes-v1');
     expect(persisted.toolAudit.map((entry: { stage: string }) => entry.stage)).toEqual([
       'API_QUEUED', 'WORKER_STARTED', 'SNAPSHOT_CAPTURED', 'ADVISOR_RETURNED', 'VALIDATED', 'PERSISTED',
     ]);

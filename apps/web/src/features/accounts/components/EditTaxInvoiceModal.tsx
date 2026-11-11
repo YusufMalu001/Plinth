@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { X, ShieldAlert, Save, AlertCircle } from 'lucide-react';
-import { Button, Input } from '@synergy/ui';
+import { Button, Input } from '@plinth/ui';
 import { accountsApi } from '../api';
 import { showToast } from '@/components/toast-store';
 

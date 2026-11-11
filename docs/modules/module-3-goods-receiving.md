@@ -89,10 +89,10 @@ Notification failure is isolated from an already-committed physical workflow act
 Run:
 
 ```bash
-npm run typecheck --workspace=@synergy/api
-npm run typecheck --workspace=@synergy/web
-npm test --workspace=@synergy/api -- --runInBand src/modules/goods-receipt
-npm test --workspace=@synergy/web
+npm run typecheck --workspace=@plinth/api
+npm run typecheck --workspace=@plinth/web
+npm test --workspace=@plinth/api -- --runInBand src/modules/goods-receipt
+npm test --workspace=@plinth/web
 ```
 
 Live-database release validation must additionally cover cross-location reads, concurrent finalization, high-line-count receiving, notification recipient scope, PO/Expected Receipt synchronization, and exactly-once ledger posting.

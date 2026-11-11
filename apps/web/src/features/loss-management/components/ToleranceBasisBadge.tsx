@@ -1,8 +1,8 @@
 'use client';
 
 import React from 'react';
-import { LossClassification } from '@synergy/types';
-import { Badge } from '@synergy/ui';
+import { LossClassification } from '@plinth/types';
+import { Badge } from '@plinth/ui';
 import { ShieldCheck, AlertTriangle, Scale, HelpCircle } from 'lucide-react';
 import { twMerge } from 'tailwind-merge';
 

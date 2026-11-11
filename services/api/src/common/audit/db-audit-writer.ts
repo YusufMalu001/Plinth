@@ -1,4 +1,4 @@
-import { AuditWriter, AuditEvent } from '@synergy/types';
+import { AuditWriter, AuditEvent } from '@plinth/types';
 import { prisma } from '../../database';
 import { Prisma } from '@prisma/client';
 

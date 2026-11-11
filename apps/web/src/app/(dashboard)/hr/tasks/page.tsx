@@ -6,7 +6,7 @@ import { useTasks, useEmployees } from '@/features/hr/hooks';
 import { useDepartments } from '@/hooks/useMasterData';
 import { useCurrentUser } from '@/features/auth/hooks';
 import { hrApi } from '@/features/hr/api';
-import { EmployeeTaskDto, EmployeeDto, TaskPriorityType } from '@synergy/types';
+import { EmployeeTaskDto, EmployeeDto, TaskPriorityType } from '@plinth/types';
 import {
   Briefcase,
   Search,
@@ -21,7 +21,7 @@ import {
   ExternalLink,
   Sparkles
 } from 'lucide-react';
-import { Button, Card, Dialog, Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from '@synergy/ui';
+import { Button, Card, Dialog, Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from '@plinth/ui';
 import { DepartmentDialog } from '@/components/DepartmentDialog';
 
 export default function TaskQueuePage() {

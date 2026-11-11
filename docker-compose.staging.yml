@@ -1,5 +1,5 @@
 # ==============================================================================
-# SYNERGY ERP - STAGING DOCKER COMPOSE ORCHESTRATION (PORT 4000)
+# PLINTH ERP - STAGING DOCKER COMPOSE ORCHESTRATION (PORT 4000)
 # ==============================================================================
 
 x-intelligence-runtime: &intelligence-runtime
@@ -30,41 +30,41 @@ x-intelligence-runtime-env: &intelligence-runtime-env
   HERMES_DUMP_REQUESTS: "false"
   HERMES_DUMP_REQUEST_STDOUT: "false"
   HERMES_MAX_ITERATIONS: ${INTELLIGENCE_MAX_TOOL_CALLS:-12}
-  SYNERGY_API_PORT: ${STAGING_API_PORT:-4001}
+  PLINTH_API_PORT: ${STAGING_API_PORT:-4001}
 
 services:
   postgres:
     image: postgres:16-alpine
-    container_name: synergy-staging-postgres
+    container_name: plinth-staging-postgres
     restart: unless-stopped
     environment:
       POSTGRES_USER: ${POSTGRES_USER:-postgres}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
-      POSTGRES_DB: ${POSTGRES_DB:-synergy_erp_staging}
+      POSTGRES_DB: ${POSTGRES_DB:-plinth_erp_staging}
     ports:
       - "${STAGING_POSTGRES_PORT:-54332}:5432"
     volumes:
-      - synergy_staging_pgdata:/var/lib/postgresql/data
+      - plinth_staging_pgdata:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres} -d ${POSTGRES_DB:-synergy_erp_staging}"]
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres} -d ${POSTGRES_DB:-plinth_erp_staging}"]
       interval: 5s
       timeout: 5s
       retries: 10
 
   api:
-    image: ${API_IMAGE:-synergy-erp-api:local}
+    image: ${API_IMAGE:-plinth-erp-api:local}
     build:
       context: .
       dockerfile: infrastructure/docker/api.Dockerfile
-    container_name: synergy-staging-api
+    container_name: plinth-staging-api
     restart: always
     env_file:
       - .env
     environment:
       - NODE_ENV=staging
       - PORT=${STAGING_API_PORT:-4001}
-      - DATABASE_URL=postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@postgres:5432/${POSTGRES_DB:-synergy_erp_staging}?schema=public&connection_limit=10&pool_timeout=10
-      - DIRECT_URL=postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@postgres:5432/${POSTGRES_DB:-synergy_erp_staging}?schema=public
+      - DATABASE_URL=postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@postgres:5432/${POSTGRES_DB:-plinth_erp_staging}?schema=public&connection_limit=10&pool_timeout=10
+      - DIRECT_URL=postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@postgres:5432/${POSTGRES_DB:-plinth_erp_staging}?schema=public
       - JWT_SECRET=${JWT_SECRET:-staging-secret-key-32-chars-long-jwt}
       - JWT_REFRESH_SECRET=${JWT_REFRESH_SECRET:-staging-refresh-secret-key-32-chars}
       - WEB_ORIGIN=${STAGING_WEB_ORIGIN:-http://localhost:4000}
@@ -81,11 +81,11 @@ services:
         condition: service_healthy
 
   web:
-    image: ${WEB_IMAGE:-synergy-erp-web:local}
+    image: ${WEB_IMAGE:-plinth-erp-web:local}
     build:
       context: .
       dockerfile: infrastructure/docker/web.Dockerfile
-    container_name: synergy-staging-web
+    container_name: plinth-staging-web
     restart: always
     environment:
       - NODE_ENV=staging
@@ -110,8 +110,8 @@ services:
     env_file: [.env]
     environment:
       NODE_ENV: staging
-      DATABASE_URL: postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@postgres:5432/${POSTGRES_DB:-synergy_erp_staging}?schema=public&connection_limit=10
-      DIRECT_URL: postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@postgres:5432/${POSTGRES_DB:-synergy_erp_staging}?schema=public
+      DATABASE_URL: postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@postgres:5432/${POSTGRES_DB:-plinth_erp_staging}?schema=public&connection_limit=10
+      DIRECT_URL: postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@postgres:5432/${POSTGRES_DB:-plinth_erp_staging}?schema=public
       INTELLIGENCE_EXECUTIVE_RUNTIME_URL: http://agent-runtime-executive:8642
       INTELLIGENCE_SALES_RUNTIME_URL: http://agent-runtime-sales:8642
       INTELLIGENCE_INVENTORY_RUNTIME_URL: http://agent-runtime-inventory:8642
@@ -124,31 +124,31 @@ services:
 
   agent-runtime-executive:
     <<: *intelligence-runtime
-    environment: { <<: *intelligence-runtime-env, API_SERVER_KEY: "${INTELLIGENCE_EXECUTIVE_RUNTIME_KEY:-}", API_SERVER_MODEL_NAME: executive-advisor, SYNERGY_MCP_TOKEN: "${INTELLIGENCE_EXECUTIVE_MCP_TOKEN:-}" }
+    environment: { <<: *intelligence-runtime-env, API_SERVER_KEY: "${INTELLIGENCE_EXECUTIVE_RUNTIME_KEY:-}", API_SERVER_MODEL_NAME: executive-advisor, PLINTH_MCP_TOKEN: "${INTELLIGENCE_EXECUTIVE_MCP_TOKEN:-}" }
     volumes: [intelligence_runtime_executive:/opt/data, ./infrastructure/intelligence/executive/config.yaml:/opt/data/config.yaml:ro]
   agent-runtime-sales:
     <<: *intelligence-runtime
-    environment: { <<: *intelligence-runtime-env, API_SERVER_KEY: "${INTELLIGENCE_SALES_RUNTIME_KEY:-}", API_SERVER_MODEL_NAME: sales-advisor, SYNERGY_MCP_TOKEN: "${INTELLIGENCE_SALES_MCP_TOKEN:-}" }
+    environment: { <<: *intelligence-runtime-env, API_SERVER_KEY: "${INTELLIGENCE_SALES_RUNTIME_KEY:-}", API_SERVER_MODEL_NAME: sales-advisor, PLINTH_MCP_TOKEN: "${INTELLIGENCE_SALES_MCP_TOKEN:-}" }
     volumes: [intelligence_runtime_sales:/opt/data, ./infrastructure/intelligence/sales/config.yaml:/opt/data/config.yaml:ro]
   agent-runtime-inventory:
     <<: *intelligence-runtime
-    environment: { <<: *intelligence-runtime-env, API_SERVER_KEY: "${INTELLIGENCE_INVENTORY_RUNTIME_KEY:-}", API_SERVER_MODEL_NAME: inventory-advisor, SYNERGY_MCP_TOKEN: "${INTELLIGENCE_INVENTORY_MCP_TOKEN:-}" }
+    environment: { <<: *intelligence-runtime-env, API_SERVER_KEY: "${INTELLIGENCE_INVENTORY_RUNTIME_KEY:-}", API_SERVER_MODEL_NAME: inventory-advisor, PLINTH_MCP_TOKEN: "${INTELLIGENCE_INVENTORY_MCP_TOKEN:-}" }
     volumes: [intelligence_runtime_inventory:/opt/data, ./infrastructure/intelligence/inventory/config.yaml:/opt/data/config.yaml:ro]
   agent-runtime-procurement:
     <<: *intelligence-runtime
-    environment: { <<: *intelligence-runtime-env, API_SERVER_KEY: "${INTELLIGENCE_PROCUREMENT_RUNTIME_KEY:-}", API_SERVER_MODEL_NAME: procurement-advisor, SYNERGY_MCP_TOKEN: "${INTELLIGENCE_PROCUREMENT_MCP_TOKEN:-}" }
+    environment: { <<: *intelligence-runtime-env, API_SERVER_KEY: "${INTELLIGENCE_PROCUREMENT_RUNTIME_KEY:-}", API_SERVER_MODEL_NAME: procurement-advisor, PLINTH_MCP_TOKEN: "${INTELLIGENCE_PROCUREMENT_MCP_TOKEN:-}" }
     volumes: [intelligence_runtime_procurement:/opt/data, ./infrastructure/intelligence/procurement/config.yaml:/opt/data/config.yaml:ro]
   agent-runtime-production:
     <<: *intelligence-runtime
-    environment: { <<: *intelligence-runtime-env, API_SERVER_KEY: "${INTELLIGENCE_PRODUCTION_RUNTIME_KEY:-}", API_SERVER_MODEL_NAME: production-advisor, SYNERGY_MCP_TOKEN: "${INTELLIGENCE_PRODUCTION_MCP_TOKEN:-}" }
+    environment: { <<: *intelligence-runtime-env, API_SERVER_KEY: "${INTELLIGENCE_PRODUCTION_RUNTIME_KEY:-}", API_SERVER_MODEL_NAME: production-advisor, PLINTH_MCP_TOKEN: "${INTELLIGENCE_PRODUCTION_MCP_TOKEN:-}" }
     volumes: [intelligence_runtime_production:/opt/data, ./infrastructure/intelligence/production/config.yaml:/opt/data/config.yaml:ro]
   agent-runtime-fulfillment:
     <<: *intelligence-runtime
-    environment: { <<: *intelligence-runtime-env, API_SERVER_KEY: "${INTELLIGENCE_FULFILLMENT_RUNTIME_KEY:-}", API_SERVER_MODEL_NAME: fulfillment-advisor, SYNERGY_MCP_TOKEN: "${INTELLIGENCE_FULFILLMENT_MCP_TOKEN:-}" }
+    environment: { <<: *intelligence-runtime-env, API_SERVER_KEY: "${INTELLIGENCE_FULFILLMENT_RUNTIME_KEY:-}", API_SERVER_MODEL_NAME: fulfillment-advisor, PLINTH_MCP_TOKEN: "${INTELLIGENCE_FULFILLMENT_MCP_TOKEN:-}" }
     volumes: [intelligence_runtime_fulfillment:/opt/data, ./infrastructure/intelligence/fulfillment/config.yaml:/opt/data/config.yaml:ro]
 
 volumes:
-  synergy_staging_pgdata:
+  plinth_staging_pgdata:
     driver: local
   intelligence_runtime_executive:
   intelligence_runtime_sales:

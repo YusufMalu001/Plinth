@@ -22,7 +22,7 @@ import {
   XCircle,
   PackageCheck,
 } from 'lucide-react';
-import { Button, PageHeader } from '@synergy/ui';
+import { Button, PageHeader } from '@plinth/ui';
 import {
   useCreateProductionPlan,
   useUpdateProductionPlan,

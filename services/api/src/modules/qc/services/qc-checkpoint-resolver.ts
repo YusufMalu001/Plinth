@@ -1,5 +1,5 @@
 import { LifecycleStatus, QcCheckpointType } from '@prisma/client';
-import { InspectionResultStatus } from '@synergy/types';
+import { InspectionResultStatus } from '@plinth/types';
 import { CheckpointResolutionItem, QcCriteriaUnresolvedError } from '../qc.types';
 
 interface ResolvedInspectionShape {

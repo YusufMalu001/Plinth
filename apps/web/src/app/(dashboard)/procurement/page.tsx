@@ -13,7 +13,7 @@ import {
   Building2,
   ArrowUpRight,
 } from 'lucide-react';
-import { Button, Card, PageHeader } from '@synergy/ui';
+import { Button, Card, PageHeader } from '@plinth/ui';
 import { LoadingState } from '../../../components/LoadingState';
 import { ErrorState } from '../../../components/ErrorState';
 import { StatusBadge } from '../../../components/StatusBadge';

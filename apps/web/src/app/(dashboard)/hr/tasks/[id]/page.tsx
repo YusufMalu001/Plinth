@@ -5,7 +5,7 @@ import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { useCurrentUser } from '@/features/auth/hooks';
 import { hrApi } from '@/features/hr/api';
-import { EmployeeTaskDto } from '@synergy/types';
+import { EmployeeTaskDto } from '@plinth/types';
 import {
   ArrowLeft,
   Calendar,
@@ -22,7 +22,7 @@ import {
   Sparkles,
   Trash2
 } from 'lucide-react';
-import { Button, Dialog } from '@synergy/ui';
+import { Button, Dialog } from '@plinth/ui';
 
 export default function HRTaskDetailPage() {
   const params = useParams();

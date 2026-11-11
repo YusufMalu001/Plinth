@@ -1,5 +1,5 @@
 import { LifecycleStatus } from '@prisma/client';
-import { PermissionChecker, ScopeContext } from '@synergy/types';
+import { PermissionChecker, ScopeContext } from '@plinth/types';
 import { ForbiddenError, InvalidStateTransitionError, ValidationError } from '../../../common/errors/AppError';
 
 export class MasterDataLifecycleService {

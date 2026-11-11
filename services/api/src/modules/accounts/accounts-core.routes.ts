@@ -34,7 +34,7 @@ const key = (req: Request) => {
 
 router.use(authenticate);
 router.get('/entities', authorize('read', 'Accounts', permissions), run(async (req, res) => respond(res, req, await service.listEntities())));
-router.post('/entities/initialize-synergy', authorize('manage', 'AccountConfiguration', permissions), run(async (req, res) => respond(res, req, await service.initializeSynergyBook(actor(req), req.id), 201)));
+router.post('/entities/initialize-plinth', authorize('manage', 'AccountConfiguration', permissions), run(async (req, res) => respond(res, req, await service.initializePlinthBook(actor(req), req.id), 201)));
 router.post('/entities/:id/activate', authorize('approve', 'AccountConfiguration', permissions), run(async (req, res) => {
   const body = parse(z.object({ verificationReference: z.string().trim().min(5).max(200) }).strict(), req.body);
   respond(res, req, await service.activateEntity(parse(id, req.params.id), body.verificationReference, actor(req), req.id));

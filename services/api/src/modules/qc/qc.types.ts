@@ -4,7 +4,7 @@ import {
   InspectionResultStatus,
   CorrectiveActionStatus,
   LifecycleStatus
-} from '@synergy/types';
+} from '@plinth/types';
 export { NotFoundError, ValidationError };
 
 export class QcValidationError extends ValidationError {

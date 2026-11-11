@@ -28,7 +28,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '@synergy/ui';
+} from '@plinth/ui';
 import { formatINR, formatIndianDate } from '../../purchases/utils';
 import { useProducts } from '../../../hooks/useMasterData';
 import { showToast } from '@/components/toast-store';
@@ -585,7 +585,7 @@ export function SalesOrderCommercialsEditor({
         )}
       </div>
 
-      {/* 3. Main Line Items Table Card (Exact Synergy ERP Table UI from PO details) */}
+      {/* 3. Main Line Items Table Card (Exact Plinth Table UI from PO details) */}
       <div className="rounded-2xl border border-border bg-card shadow-2xs overflow-hidden">
         <div className="p-5 flex flex-wrap items-center justify-between gap-4 border-b border-border">
           <div>

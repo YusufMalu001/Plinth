@@ -2,7 +2,7 @@
 import React from 'react';
 import { EntityDescriptor } from './GenericList';
 import { DetailDescriptor } from './GenericDetail';
-import { createUomSchema, createCategorySchema } from '@synergy/validation';
+import { createUomSchema, createCategorySchema } from '@plinth/validation';
 import { StatusBadge } from '../../components/StatusBadge';
 
 export const categoriesListDescriptor: EntityDescriptor<any> = {
@@ -94,7 +94,7 @@ export const uomDetailDescriptor: DetailDescriptor<any> = {
 // ------------------------------------------------------------------
 // PRODUCTS (for Generic Master Data routes)
 // ------------------------------------------------------------------
-import { createProductSchema, createVendorSchema, createCustomerSchema, createMaterialSchema } from '@synergy/validation';
+import { createProductSchema, createVendorSchema, createCustomerSchema, createMaterialSchema } from '@plinth/validation';
 
 export const productsListDescriptor: EntityDescriptor<any> = {
   name: 'Product',
@@ -314,7 +314,7 @@ export const materialsDetailDescriptor: DetailDescriptor<any> = {
 // ------------------------------------------------------------------
 // ORG STRUCTURE (Factories)
 // ------------------------------------------------------------------
-import { createFactorySchema, createQcRuleSchema, createRouteStepSchema } from '@synergy/validation';
+import { createFactorySchema, createQcRuleSchema, createRouteStepSchema } from '@plinth/validation';
 
 export const factoriesListDescriptor: EntityDescriptor<any> = {
   name: 'Factory',

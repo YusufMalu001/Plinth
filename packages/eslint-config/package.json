@@ -1,8 +1,8 @@
 {
-  "name": "@synergy/eslint-config",
+  "name": "@plinth/eslint-config",
   "version": "1.0.0",
   "private": true,
-  "description": "Shared ESLint configuration for Synergy ERP",
+  "description": "Shared ESLint configuration for Plinth ERP",
   "main": "index.js",
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^7.18.0",

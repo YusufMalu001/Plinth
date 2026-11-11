@@ -39,7 +39,7 @@ import {
   TableHead,
   TableRow,
   TableCell,
-} from '@synergy/ui';
+} from '@plinth/ui';
 import { accountsApi } from '@/features/accounts/api';
 import { AcceptedGrnDetail, GrnPaymentStatus } from '@/features/accounts/types';
 import { formatCurrency, formatDate } from '@/features/accounts/utils';
@@ -320,10 +320,10 @@ function AcceptedGrnDetailView({
       )}
 
       {!primaryBill && grn.status !== 'FINALIZED' && (
-        <Card className="rounded-2xl border-synergy-200 bg-synergy-50/60 shadow-none dark:border-synergy-900/50 dark:bg-synergy-950/20">
+        <Card className="rounded-2xl border-n-200 bg-n-50/60 shadow-none dark:border-n-900/50 dark:bg-n-950/20">
           <CardContent className="flex flex-col gap-3 p-4 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-start gap-3">
-              <Info className="mt-0.5 h-4 w-4 shrink-0 text-foreground dark:text-synergy-300" />
+              <Info className="mt-0.5 h-4 w-4 shrink-0 text-foreground dark:text-n-300" />
               <div>
                 <p className="text-sm font-semibold text-foreground">Supplier bill draft is waiting for GRN finalization</p>
                 <p className="mt-1 text-xs text-muted-foreground">
@@ -720,7 +720,7 @@ function AcceptedGrnDetailView({
                 <div>
                   <p className="text-xs font-bold text-foreground">No payments recorded yet</p>
                   <p className="text-[11px] text-muted-foreground mt-0.5 max-w-sm mx-auto">
-                    In Synergy ERP, vendor disbursements are recorded against the Supplier Bill. Once payment is logged against the bill, settlement reflects here immediately.
+                    In Plinth, vendor disbursements are recorded against the Supplier Bill. Once payment is logged against the bill, settlement reflects here immediately.
                   </p>
                 </div>
                 {primaryBill && (
@@ -854,7 +854,7 @@ function AcceptedGrnDetailView({
         <Info className="h-4 w-4 text-muted-foreground shrink-0 mt-0.5" />
         <div>
           <span className="font-semibold text-foreground">Accounts AP Settlement Note:</span>{' '}
-          In Synergy ERP, vendor payments are recorded and tracked on the <strong>Supplier Bill</strong>. Payments disbursed against the bill automatically reflect here on the Goods Receipt Note for full vendor reconciliation and audit readiness.
+          In Plinth, vendor payments are recorded and tracked on the <strong>Supplier Bill</strong>. Payments disbursed against the bill automatically reflect here on the Goods Receipt Note for full vendor reconciliation and audit readiness.
         </div>
       </div>
 

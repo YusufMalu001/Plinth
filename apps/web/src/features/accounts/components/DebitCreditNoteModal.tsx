@@ -1,6 +1,6 @@
 'use client';
 
-import { Checkbox } from '@synergy/ui';
+import { Checkbox } from '@plinth/ui';
 import React, { useEffect, useState, useMemo } from 'react';
 import { createPortal } from 'react-dom';
 import {
@@ -10,7 +10,7 @@ import {
   Sparkles,
   Layers,
 } from 'lucide-react';
-import { Button } from '@synergy/ui';
+import { Button } from '@plinth/ui';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { DebitCreditNote, NoteType, NoteParty } from '../types';
 import { formatCurrency, localToday, formatDate } from '../utils';
@@ -634,7 +634,7 @@ export function DebitCreditNoteModal({
 
           {/* Existing Bill / Invoice Dropdown Selector */}
           {!initialInvoice && (
-            <div className="rounded-2xl border border-border bg-synergy-50/50 p-4 dark:bg-synergy-950/20">
+            <div className="rounded-2xl border border-border bg-n-50/50 p-4 dark:bg-n-950/20">
               <div className="flex items-center justify-between gap-2 mb-2">
                 <label className="text-xs font-bold text-foreground flex items-center gap-1.5">
                   <Sparkles className="h-4 w-4 text-primary" />
@@ -872,7 +872,7 @@ export function DebitCreditNoteModal({
                         <tr
                           key={line.id}
                           className={`transition-colors ${
-                            isActive ? 'bg-synergy-500/5 dark:bg-synergy-950/20' : 'hover:bg-muted/20'
+                            isActive ? 'bg-n-500/5 dark:bg-n-950/20' : 'hover:bg-muted/20'
                           }`}
                         >
                           <td className="p-3 text-center text-muted-foreground">{idx + 1}</td>
@@ -900,7 +900,7 @@ export function DebitCreditNoteModal({
                               }
                               className={`w-24 rounded-lg border px-2 py-1 text-right text-xs font-mono font-bold focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary ${
                                 isActive
-                                  ? 'border-synergy-500 bg-background text-foreground dark:text-synergy-300'
+                                  ? 'border-n-500 bg-background text-foreground dark:text-n-300'
                                   : 'border-border bg-background/50 text-foreground'
                               }`}
                             />

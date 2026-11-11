@@ -1,9 +1,9 @@
 "use client"
 
 import React, { useState } from "react"
+import { Wordmark } from "../../config/brand"
 import { useRouter, useSearchParams } from "next/navigation"
 import { useQueryClient } from "@tanstack/react-query"
-import Image from "next/image"
 import { Mail } from "lucide-react"
 
 import { authApi } from "../../features/auth/api"
@@ -78,14 +78,7 @@ function LoginForm() {
       <LoginCard className="animate-fade-up">
         {/* Brand Logo & Header */}
         <div className="mb-8 select-none">
-          <Image
-            src="/synergy.png"
-            alt="Synergy International"
-            width={170}
-            height={50}
-            className="h-9 w-auto object-contain mb-6 lg:hidden"
-            priority
-          />
+          <Wordmark className="text-2xl mb-6 lg:hidden" />
           <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
             Welcome back
           </h2>
@@ -103,7 +96,7 @@ function LoginForm() {
             label="Work Email"
             id="email"
             type="email"
-            placeholder="name@synergy.com"
+            placeholder="name@plinth.example"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             disabled={isLoading}

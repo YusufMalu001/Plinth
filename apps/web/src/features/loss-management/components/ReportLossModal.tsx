@@ -5,7 +5,7 @@ import {
   Dialog,
   Button,
   Input,
-} from '@synergy/ui';
+} from '@plinth/ui';
 import {
   Trash2,
   Truck,
@@ -17,7 +17,7 @@ import {
 import { useReportLossEvent } from '@/features/loss-management/hooks';
 import { EvidenceAttachmentField } from '@/features/loss-management/components/EvidenceAttachmentField';
 import { showToast } from '@/components/toast-store';
-import type { LossSourceType } from '@synergy/types';
+import type { LossSourceType } from '@plinth/types';
 
 export type LossScenarioId =
   | 'RAW_MATERIAL_QC_FAILURE'

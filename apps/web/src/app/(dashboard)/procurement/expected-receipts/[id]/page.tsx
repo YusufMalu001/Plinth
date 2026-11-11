@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { ArrowLeft, FileImage, Package, CalendarDays } from 'lucide-react';
-import { Card } from '@synergy/ui';
+import { Card } from '@plinth/ui';
 import { useExpectedReceiptDetail } from '../../../../../features/purchases/hooks';
 import { LoadingState } from '../../../../../components/LoadingState';
 import { ErrorState } from '../../../../../components/ErrorState';

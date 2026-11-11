@@ -1,5 +1,5 @@
 import { FgReceiptService, MissingFinalFgQcCriteriaError } from '../services/fg-receipt.service';
-import { PermissionChecker, AuditWriter, AuditEvent } from '@synergy/types';
+import { PermissionChecker, AuditWriter, AuditEvent } from '@plinth/types';
 import { ConflictError } from '../../../common/errors/AppError';
 
 class MockAuditWriter implements AuditWriter {

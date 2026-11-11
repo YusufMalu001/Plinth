@@ -111,7 +111,7 @@ async function seed() {
           employeeCode: emp.code,
           firstName: emp.firstName,
           lastName: emp.lastName,
-          email: `${emp.firstName.toLowerCase()}.${emp.lastName.toLowerCase()}@synergy.local`,
+          email: `${emp.firstName.toLowerCase()}.${emp.lastName.toLowerCase()}@plinth.local`,
           role: emp.role,
           departmentId: dept ? dept.id : null,
           status: LifecycleStatus.ACTIVE

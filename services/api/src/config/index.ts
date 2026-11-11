@@ -45,7 +45,7 @@ const envSchema = z.object({
   SMTP_USER: z.string().default(''),
   SMTP_PASSWORD: z.string().default(''),
   EMAIL_FROM_ADDRESS: z.string().email().or(z.literal('')).default(''),
-  EMAIL_FROM_NAME: z.string().default('Synergy Procurement'),
+  EMAIL_FROM_NAME: z.string().default('Plinth Procurement'),
   OPENROUTER_MONTHLY_BUDGET_USD: z.coerce.number().nonnegative().default(100),
   INTELLIGENCE_ENABLED: z.enum(['true', 'false']).default('false'),
   INTELLIGENCE_SHADOW_MODE: z.enum(['true', 'false']).default('true'),

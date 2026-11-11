@@ -1,18 +1,18 @@
-# Synergy ERP - Workspace Structure & Architecture Map
+# Plinth ERP - Workspace Structure & Architecture Map
 
-This document is the master technical guide to the Synergy ERP repository layout, architectural guidelines, development workflows, and coding conventions. Every developer joining the team must read and follow this guide.
+This document is the master technical guide to the Plinth ERP repository layout, architectural guidelines, development workflows, and coding conventions. Every developer joining the team must read and follow this guide.
 
 ---
 
 ## 1. Project Overview & Objective
-Synergy ERP is an integrated enterprise resource planning platform built as a strongly typed, team-friendly monorepo. The goal is to provide a solid, production-grade base that developers can build on safely without conflicting workflows.
+Plinth ERP is an integrated enterprise resource planning platform built as a strongly typed, team-friendly monorepo. The goal is to provide a solid, production-grade base that developers can build on safely without conflicting workflows.
 
 ## 2. Monorepo Architecture Overview
 The repository is laid out as a multi-package monorepo containing a frontend Next.js application, backend Express API monolith, and shared package utilities, orchestrated via npm workspaces and Turborepo.
 
 ## 3. Directory Folder Tree
 ```
-synergy-erp/
+plinth-erp/
 │
 ├── apps/
 │   └── web/                   # Next.js Frontend Application
@@ -169,5 +169,5 @@ synergy-erp/
 
 ### E. Coding Standards
 - **Zero TypeScript Compiler Errors:** A strict compiler is enabled project-wide. Any compiler check failure breaks the CI pipeline and blocks PR merges.
-- **JSON Standard API responses:** All endpoints must output standard payloads conforming to `@synergy/types` (`ApiResponse<T>` / `ApiErrorResponse`).
+- **JSON Standard API responses:** All endpoints must output standard payloads conforming to `@plinth/types` (`ApiResponse<T>` / `ApiErrorResponse`).
 - **Input Validation:** All controller entry points must enforce Zod validation middlewares.

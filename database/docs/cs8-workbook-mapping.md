@@ -11,7 +11,7 @@ This workbook is a production-schedule and material-issue workbook. It is not a 
 - `Material - *`, `Mat - Tube Bend`, and `Assembly`: raw-material and hardware descriptions used by the process.
 - `PS_Log`: production schedule codes and historical sequence format. These codes are operational schedule identifiers, not product SKUs.
 
-## Synergy master-data mapping
+## Plinth master-data mapping
 
 - CS8 finished/semi-finished components are seeded as approved `Product` records (`PROD-001` through `PROD-013`) in family `FAM-CS8` and category `CAT-CS8`.
 - Pipes, bolts, nuts, screws, and other consumables remain `Material` records, because the workbook identifies them as material issues.

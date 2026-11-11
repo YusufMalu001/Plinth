@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useLossAnalytics, useLossEvents } from '@/features/loss-management/hooks';
 import { useDepartments } from '@/hooks/useMasterData';
 import { useProcurementSelectors } from '@/features/purchases/hooks';
-import { Button } from '@synergy/ui';
+import { Button } from '@plinth/ui';
 import { StatusBadge } from '@/components/StatusBadge';
 import {
   Trash2,

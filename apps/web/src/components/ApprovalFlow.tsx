@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Button, Card } from '@synergy/ui';
-import { LifecycleStatus } from '@synergy/types';
+import { Button, Card } from '@plinth/ui';
+import { LifecycleStatus } from '@plinth/types';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { fetchApi } from '../features/api/client';
 import { ShieldCheck, AlertCircle, CheckCircle2, XCircle, Clock } from 'lucide-react';

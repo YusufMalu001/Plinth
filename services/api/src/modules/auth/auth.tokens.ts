@@ -1,6 +1,6 @@
 import crypto from 'crypto';
 import jwt, { JwtPayload, SignOptions } from 'jsonwebtoken';
-import { UserRole } from '@synergy/types';
+import { UserRole } from '@plinth/types';
 import { config } from '../../config';
 import { UnauthorizedError } from '../../common/errors/AppError';
 

@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Button, Dialog, Input } from '@synergy/ui';
+import { Button, Dialog, Input } from '@plinth/ui';
 import { CheckCircle2, Truck } from 'lucide-react';
 import { SalesOrder } from '../types';
 import { useDispatchSalesOrder } from '../hooks';

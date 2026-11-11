@@ -33,12 +33,12 @@ const STOCK_DATA: StockItemRow[] = [
   { mainCategory: 'RAW MATERIAL', subcategory: 'BUMPERES', itemName: 'SILICON BUMPER', sku: '-' },
 
   // MAIN CATEGORY: FINISHED GOODS
-  { mainCategory: 'FINISHED GOODS', subcategory: 'CHOPING BOADRD', itemName: 'SYNERGY SS304 CHOPPING BOARD 10x13.5" SY-CB12', sku: 'CB12' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'CHOPING BOADRD', itemName: 'SYNERGY SS304 CHOPPING BOARD 12x20" SY-CB13', sku: 'CB13' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'CHOPING BOADRD', itemName: 'SYNERGY SS304 CHOPPING BOARD 8x12" SY-CB11', sku: 'CB11' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'CHOPING BOARD', itemName: 'SYNERGY 10 x 14" ACACIA CHOPPING BOARD  SY-CB21', sku: 'SY-CB21' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'CHOPING BOARD', itemName: 'SYNERGY 10" x 14" TEAK CHOPPING BOARD SY-CB1', sku: 'SY-CB1' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'CHOPING BOARD', itemName: 'SYNERGY 16" x 11" ACACIA CHOPPING BOARD SY-CB22L', sku: 'SY-CB22L' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'CHOPING BOADRD', itemName: 'PLINTH SS304 CHOPPING BOARD 10x13.5" SY-CB12', sku: 'CB12' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'CHOPING BOADRD', itemName: 'PLINTH SS304 CHOPPING BOARD 12x20" SY-CB13', sku: 'CB13' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'CHOPING BOADRD', itemName: 'PLINTH SS304 CHOPPING BOARD 8x12" SY-CB11', sku: 'CB11' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'CHOPING BOARD', itemName: 'PLINTH 10 x 14" ACACIA CHOPPING BOARD  SY-CB21', sku: 'SY-CB21' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'CHOPING BOARD', itemName: 'PLINTH 10" x 14" TEAK CHOPPING BOARD SY-CB1', sku: 'SY-CB1' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'CHOPING BOARD', itemName: 'PLINTH 16" x 11" ACACIA CHOPPING BOARD SY-CB22L', sku: 'SY-CB22L' },
 
   // MAIN CATEGORY: RAW MATERIAL
   { mainCategory: 'RAW MATERIAL', subcategory: 'CHOPPING BOARD', itemName: 'CHOPPING BOARD CB-22L - RAW', sku: '-' },
@@ -52,26 +52,26 @@ const STOCK_DATA: StockItemRow[] = [
 
   // MAIN CATEGORY: FINISHED GOODS
   { mainCategory: 'FINISHED GOODS', subcategory: 'CLOTH CLIPS', itemName: 'PAIR OF EZEE CLOTH CLIPPER SY-CS7', sku: 'SY-CS7' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'CLOTH CLIPS', itemName: 'SYNERGY 18 PCS SS CLOTH CLIP WITH GRIP SY-CC1', sku: 'SY-CC1' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'CLOTH CLIPS', itemName: 'SYNERGY PLASTIC CLIPS SY-CC2', sku: 'SY-CC2' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'CLOTH STAND', itemName: 'SYNERGY - 1 TIER - FLOOR CLOTH DRYER SY-CS19-L1', sku: 'SY-CS19-L1' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'CLOTH STAND', itemName: 'SYNERGY - 1-TIER-FLOOR CLOTH DRYER SY-CS20-L1', sku: 'SY-CS20-L1' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'CLOTH STAND', itemName: 'SYNERGY 2 TIER CLOTH STAND SY-CS21-L2', sku: 'SY-CS21-L2' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'CLOTH STAND', itemName: 'SYNERGY 2-TIER CLOTH STAND GREY SY-CS20-L2', sku: 'SY-CS20-L2' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'CLOTH STAND', itemName: 'SYNERGY 2-TIER CLOTH STAND SY-CS19-L2', sku: 'SY-CS19-L2' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'CLOTH STAND', itemName: 'SYNERGY 3 RODS WALL MOUNTING CLOTH DRYER', sku: '-' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'CLOTH STAND', itemName: 'SYNERGY 3 TIER CLOTH STAND BLUE SY-CS19', sku: 'SY-CS19' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'CLOTH STAND', itemName: 'SYNERGY 3 TIER CLOTH STAND WHITE SY-CS21', sku: 'SY-CS21' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'CLOTH STAND', itemName: 'SYNERGY 4-TIER CLOTH STAND GREY SY-CS20-L4', sku: 'SY-CS20-L4' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'CLOTH STAND', itemName: 'SYNERGY 4-TIER CLOTH STAND SY-CS19-L4', sku: 'SY-CS19-L4' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'CLOTH STAND', itemName: 'SYNERGY 4-TIER CLOTH STAND SY-CS21-L4', sku: 'SY-CS21-L4' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'CLOTH STAND', itemName: 'SYNERGY CLOTH STAND SY-CS19 - 304', sku: 'SY-CS19-304' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'CLOTH STAND', itemName: 'SYNERGY CLOTH STAND SY-CS20 GREY', sku: 'SY-CS20' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'CLOTH STAND', itemName: 'SYNERGY CLOTH STAND SY-CS20- COMBO', sku: 'CS20- COMBO' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'CLOTH STAND', itemName: 'SYNERGY CLOTH STAND SY-CS21 - 304', sku: 'SY-CS21-304' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'CLOTH STAND', itemName: 'SYNERGY CLOTH STAND SY-CS21-COMBO', sku: 'SY-CS21-COMBO' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'CLOTH STAND', itemName: 'SYNERGY CLOTH STHAND SY- CS20-L2 BLACK', sku: '-' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'CLOTH STAND', itemName: 'SYNERGY SS DOUBLE POLE CLOTH STAND COMBO SY-CS5.3', sku: 'CS5.3' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'CLOTH CLIPS', itemName: 'PLINTH 18 PCS SS CLOTH CLIP WITH GRIP SY-CC1', sku: 'SY-CC1' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'CLOTH CLIPS', itemName: 'PLINTH PLASTIC CLIPS SY-CC2', sku: 'SY-CC2' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'CLOTH STAND', itemName: 'PLINTH - 1 TIER - FLOOR CLOTH DRYER SY-CS19-L1', sku: 'SY-CS19-L1' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'CLOTH STAND', itemName: 'PLINTH - 1-TIER-FLOOR CLOTH DRYER SY-CS20-L1', sku: 'SY-CS20-L1' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'CLOTH STAND', itemName: 'PLINTH 2 TIER CLOTH STAND SY-CS21-L2', sku: 'SY-CS21-L2' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'CLOTH STAND', itemName: 'PLINTH 2-TIER CLOTH STAND GREY SY-CS20-L2', sku: 'SY-CS20-L2' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'CLOTH STAND', itemName: 'PLINTH 2-TIER CLOTH STAND SY-CS19-L2', sku: 'SY-CS19-L2' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'CLOTH STAND', itemName: 'PLINTH 3 RODS WALL MOUNTING CLOTH DRYER', sku: '-' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'CLOTH STAND', itemName: 'PLINTH 3 TIER CLOTH STAND BLUE SY-CS19', sku: 'SY-CS19' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'CLOTH STAND', itemName: 'PLINTH 3 TIER CLOTH STAND WHITE SY-CS21', sku: 'SY-CS21' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'CLOTH STAND', itemName: 'PLINTH 4-TIER CLOTH STAND GREY SY-CS20-L4', sku: 'SY-CS20-L4' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'CLOTH STAND', itemName: 'PLINTH 4-TIER CLOTH STAND SY-CS19-L4', sku: 'SY-CS19-L4' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'CLOTH STAND', itemName: 'PLINTH 4-TIER CLOTH STAND SY-CS21-L4', sku: 'SY-CS21-L4' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'CLOTH STAND', itemName: 'PLINTH CLOTH STAND SY-CS19 - 304', sku: 'SY-CS19-304' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'CLOTH STAND', itemName: 'PLINTH CLOTH STAND SY-CS20 GREY', sku: 'SY-CS20' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'CLOTH STAND', itemName: 'PLINTH CLOTH STAND SY-CS20- COMBO', sku: 'CS20- COMBO' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'CLOTH STAND', itemName: 'PLINTH CLOTH STAND SY-CS21 - 304', sku: 'SY-CS21-304' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'CLOTH STAND', itemName: 'PLINTH CLOTH STAND SY-CS21-COMBO', sku: 'SY-CS21-COMBO' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'CLOTH STAND', itemName: 'PLINTH CLOTH STHAND SY- CS20-L2 BLACK', sku: '-' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'CLOTH STAND', itemName: 'PLINTH SS DOUBLE POLE CLOTH STAND COMBO SY-CS5.3', sku: 'CS5.3' },
 
   // MAIN CATEGORY: RAW MATERIAL
   { mainCategory: 'RAW MATERIAL', subcategory: 'CS10 - BOTTOM', itemName: 'CS10 - BOTTOM LEGS FRAME - 2200', sku: '-' },
@@ -140,10 +140,10 @@ const STOCK_DATA: StockItemRow[] = [
   { mainCategory: 'RAW MATERIAL', subcategory: 'CS9 - SS', itemName: 'CS9 - SS 1/2" x 0.6mm - 783mm', sku: 'CS9 - 783mm' },
 
   // MAIN CATEGORY: FINISHED GOODS
-  { mainCategory: 'FINISHED GOODS', subcategory: 'ECONOMY PACKED', itemName: 'SYNERGY ECONOMY 6 PIPE x 6 FEET SY-CE3-304', sku: 'SY-CE3-304' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'ECONOMY PACKED', itemName: 'SYNERGY ECONOMY PULLEY 6 PIPE x 4 FEET SY-CE1', sku: 'SY-CE1' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'ECONOMY PACKED', itemName: 'SYNERGY ECONOMY PULLEY 6 PIPE x 6 FEET SY-CE3', sku: 'SY-CE3' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'ECONOMY PACKED', itemName: 'SYNERGY ECONOMY PULLEY 6 PIPES x 5 FEET SY-CE2', sku: 'SY-CE2' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'ECONOMY PACKED', itemName: 'PLINTH ECONOMY 6 PIPE x 6 FEET SY-CE3-304', sku: 'SY-CE3-304' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'ECONOMY PACKED', itemName: 'PLINTH ECONOMY PULLEY 6 PIPE x 4 FEET SY-CE1', sku: 'SY-CE1' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'ECONOMY PACKED', itemName: 'PLINTH ECONOMY PULLEY 6 PIPE x 6 FEET SY-CE3', sku: 'SY-CE3' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'ECONOMY PACKED', itemName: 'PLINTH ECONOMY PULLEY 6 PIPES x 5 FEET SY-CE2', sku: 'SY-CE2' },
 
   // MAIN CATEGORY: RAW MATERIAL
   { mainCategory: 'RAW MATERIAL', subcategory: 'ECONOMY ROPE', itemName: 'ECONOMY ROPE BRAIDED 5mm - CUT', sku: '-' },
@@ -171,26 +171,26 @@ const STOCK_DATA: StockItemRow[] = [
   { mainCategory: 'RAW MATERIAL', subcategory: 'FRAMES', itemName: 'GLIDER - 6 PIPES - RAW RHS', sku: '-' },
 
   // MAIN CATEGORY: FINISHED GOODS
-  { mainCategory: 'FINISHED GOODS', subcategory: 'GLIDER PACKED', itemName: 'SYNERGY GLIDER 3 PIPE x 2 FEET SY-GL1-3P', sku: 'SY-GL1-3P' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'GLIDER PACKED', itemName: 'SYNERGY GLIDER 3 PIPE x 3 FEET SY-GL2-3P', sku: 'SY-GL2-3P' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'GLIDER PACKED', itemName: 'SYNERGY GLIDER 3 PIPE x 4 FEET SY-GL3-3P', sku: 'SY-GL3-3P' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'GLIDER PACKED', itemName: 'SYNERGY GLIDER 3 PIPE x 5 FEET SY-GL4-3P', sku: 'SY-GL4-3P' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'GLIDER PACKED', itemName: 'SYNERGY GLIDER 3 PIPE x 6 FEET SY-GL5-3P', sku: 'SY-GL5-3P' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'GLIDER PACKED', itemName: 'SYNERGY GLIDER 4 PIPE x 2 FEET SY-GL1-4P', sku: 'SY-GL1-4P' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'GLIDER PACKED', itemName: 'SYNERGY GLIDER 4 PIPE x 3 FEET SY-GL2-4P', sku: 'SY-GL2-4P' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'GLIDER PACKED', itemName: 'SYNERGY GLIDER 4 PIPE x 4 FEET SY-GL3-4P', sku: 'SY-GL3-4P' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'GLIDER PACKED', itemName: 'SYNERGY GLIDER 4 PIPE x 5 FEET SY-GL4-4P', sku: 'SY-GL4-4P' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'GLIDER PACKED', itemName: 'SYNERGY GLIDER 4 PIPE x 6 FEET SY-GL5-4P', sku: 'SY-GL5-4P' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'GLIDER PACKED', itemName: 'SYNERGY GLIDER 5 PIPE x 2 FEET SY-GL1', sku: 'SY-GL1' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'GLIDER PACKED', itemName: 'SYNERGY GLIDER 5 PIPE x 3 FEET SY-GL2', sku: 'SY-GL2' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'GLIDER PACKED', itemName: 'SYNERGY GLIDER 5 PIPE x 4 FEET SY-GL3', sku: 'SY-GL3' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'GLIDER PACKED', itemName: 'SYNERGY GLIDER 5 PIPE x 5 FEET SY-GL4', sku: 'SY-GL4' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'GLIDER PACKED', itemName: 'SYNERGY GLIDER 5 PIPE x 6 FEET SY-GL5', sku: 'SY-GL5' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'GLIDER PACKED', itemName: 'SYNERGY GLIDER 6 PIPE x 2 FEET SY-GL11', sku: 'SY-GL11' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'GLIDER PACKED', itemName: 'SYNERGY GLIDER 6 PIPE x 3 FEET SY-GL12', sku: 'SY-GL12' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'GLIDER PACKED', itemName: 'SYNERGY GLIDER 6 PIPE x 4 FEET SY-GL13', sku: 'SY-GL13' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'GLIDER PACKED', itemName: 'SYNERGY GLIDER 6 PIPE x 5 FEET SY-GL14', sku: 'SY-GL14' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'GLIDER PACKED', itemName: 'SYNERGY GLIDER 6 PIPE x 6 FEET SY-GL15', sku: 'SY-GL15' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'GLIDER PACKED', itemName: 'PLINTH GLIDER 3 PIPE x 2 FEET SY-GL1-3P', sku: 'SY-GL1-3P' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'GLIDER PACKED', itemName: 'PLINTH GLIDER 3 PIPE x 3 FEET SY-GL2-3P', sku: 'SY-GL2-3P' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'GLIDER PACKED', itemName: 'PLINTH GLIDER 3 PIPE x 4 FEET SY-GL3-3P', sku: 'SY-GL3-3P' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'GLIDER PACKED', itemName: 'PLINTH GLIDER 3 PIPE x 5 FEET SY-GL4-3P', sku: 'SY-GL4-3P' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'GLIDER PACKED', itemName: 'PLINTH GLIDER 3 PIPE x 6 FEET SY-GL5-3P', sku: 'SY-GL5-3P' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'GLIDER PACKED', itemName: 'PLINTH GLIDER 4 PIPE x 2 FEET SY-GL1-4P', sku: 'SY-GL1-4P' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'GLIDER PACKED', itemName: 'PLINTH GLIDER 4 PIPE x 3 FEET SY-GL2-4P', sku: 'SY-GL2-4P' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'GLIDER PACKED', itemName: 'PLINTH GLIDER 4 PIPE x 4 FEET SY-GL3-4P', sku: 'SY-GL3-4P' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'GLIDER PACKED', itemName: 'PLINTH GLIDER 4 PIPE x 5 FEET SY-GL4-4P', sku: 'SY-GL4-4P' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'GLIDER PACKED', itemName: 'PLINTH GLIDER 4 PIPE x 6 FEET SY-GL5-4P', sku: 'SY-GL5-4P' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'GLIDER PACKED', itemName: 'PLINTH GLIDER 5 PIPE x 2 FEET SY-GL1', sku: 'SY-GL1' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'GLIDER PACKED', itemName: 'PLINTH GLIDER 5 PIPE x 3 FEET SY-GL2', sku: 'SY-GL2' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'GLIDER PACKED', itemName: 'PLINTH GLIDER 5 PIPE x 4 FEET SY-GL3', sku: 'SY-GL3' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'GLIDER PACKED', itemName: 'PLINTH GLIDER 5 PIPE x 5 FEET SY-GL4', sku: 'SY-GL4' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'GLIDER PACKED', itemName: 'PLINTH GLIDER 5 PIPE x 6 FEET SY-GL5', sku: 'SY-GL5' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'GLIDER PACKED', itemName: 'PLINTH GLIDER 6 PIPE x 2 FEET SY-GL11', sku: 'SY-GL11' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'GLIDER PACKED', itemName: 'PLINTH GLIDER 6 PIPE x 3 FEET SY-GL12', sku: 'SY-GL12' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'GLIDER PACKED', itemName: 'PLINTH GLIDER 6 PIPE x 4 FEET SY-GL13', sku: 'SY-GL13' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'GLIDER PACKED', itemName: 'PLINTH GLIDER 6 PIPE x 5 FEET SY-GL14', sku: 'SY-GL14' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'GLIDER PACKED', itemName: 'PLINTH GLIDER 6 PIPE x 6 FEET SY-GL15', sku: 'SY-GL15' },
 
   // MAIN CATEGORY: RAW MATERIAL
   { mainCategory: 'RAW MATERIAL', subcategory: 'GLIDER SCREW', itemName: 'GLIDER SCREW 10*50 CSK PHILIPS', sku: '-' },
@@ -210,8 +210,8 @@ const STOCK_DATA: StockItemRow[] = [
   { mainCategory: 'RAW MATERIAL', subcategory: 'IRONING MAT', itemName: 'IRONING MAT IM2 - RAW', sku: '-' },
 
   // MAIN CATEGORY: FINISHED GOODS
-  { mainCategory: 'FINISHED GOODS', subcategory: 'IRONING MAT', itemName: 'SYNERGY ALUMINISED IRONING MAT SY-IM2', sku: 'SY-IM2' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'IRONING MAT', itemName: 'SYNERGY IRONING MAT SY-IM1', sku: 'SY-IM1' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'IRONING MAT', itemName: 'PLINTH ALUMINISED IRONING MAT SY-IM2', sku: 'SY-IM2' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'IRONING MAT', itemName: 'PLINTH IRONING MAT SY-IM1', sku: 'SY-IM1' },
 
   // MAIN CATEGORY: RAW MATERIAL
   { mainCategory: 'RAW MATERIAL', subcategory: 'JACKET BOXES', itemName: 'CS8 - JACKET BOX', sku: '-' },
@@ -221,19 +221,19 @@ const STOCK_DATA: StockItemRow[] = [
   { mainCategory: 'RAW MATERIAL', subcategory: 'JHUMER', itemName: 'JHUMER SY-CS15 - RAW', sku: '-' },
   { mainCategory: 'RAW MATERIAL', subcategory: 'JHUMER', itemName: 'JHUMER SY-CS16 - RAW', sku: '-' },
   { mainCategory: 'RAW MATERIAL', subcategory: 'JHUMER', itemName: 'JHUMER SY-CS17 - RAW', sku: '-' },
-  { mainCategory: 'RAW MATERIAL', subcategory: 'JHUMER', itemName: 'SYNERGY SY-CS13 HEAVY CLIP CLOTH HANGER (25 CLIPS)', sku: 'CS13' },
-  { mainCategory: 'RAW MATERIAL', subcategory: 'JHUMER', itemName: 'SYNERGY SY-CS15 REGULAR CLIP CLOTH HANGER (25 CLIPS)', sku: 'CS15' },
-  { mainCategory: 'RAW MATERIAL', subcategory: 'JHUMER', itemName: 'SYNERGY SY-CS16 REGULAR CLIP HEXAGON CLOTH HANGER (27 CLIPS)', sku: 'CS16' },
-  { mainCategory: 'RAW MATERIAL', subcategory: 'JHUMER', itemName: 'SYNERGY SY-CS17 REGULAR CLIP ROUND CLOTH HANGER (24 CLIPS)', sku: 'CS17.' },
-  { mainCategory: 'RAW MATERIAL', subcategory: 'KITCHEN TROLLEY', itemName: 'SYNERGY 3 LAYER SQUARE TROLLEY SY-ST-3L', sku: 'SY-ST-3L' },
-  { mainCategory: 'RAW MATERIAL', subcategory: 'KITCHEN TROLLEY', itemName: 'SYNERGY 5 LAYER SQUARE TROLLEY SY-ST-5L', sku: 'SY-ST-5L' },
+  { mainCategory: 'RAW MATERIAL', subcategory: 'JHUMER', itemName: 'PLINTH SY-CS13 HEAVY CLIP CLOTH HANGER (25 CLIPS)', sku: 'CS13' },
+  { mainCategory: 'RAW MATERIAL', subcategory: 'JHUMER', itemName: 'PLINTH SY-CS15 REGULAR CLIP CLOTH HANGER (25 CLIPS)', sku: 'CS15' },
+  { mainCategory: 'RAW MATERIAL', subcategory: 'JHUMER', itemName: 'PLINTH SY-CS16 REGULAR CLIP HEXAGON CLOTH HANGER (27 CLIPS)', sku: 'CS16' },
+  { mainCategory: 'RAW MATERIAL', subcategory: 'JHUMER', itemName: 'PLINTH SY-CS17 REGULAR CLIP ROUND CLOTH HANGER (24 CLIPS)', sku: 'CS17.' },
+  { mainCategory: 'RAW MATERIAL', subcategory: 'KITCHEN TROLLEY', itemName: 'PLINTH 3 LAYER SQUARE TROLLEY SY-ST-3L', sku: 'SY-ST-3L' },
+  { mainCategory: 'RAW MATERIAL', subcategory: 'KITCHEN TROLLEY', itemName: 'PLINTH 5 LAYER SQUARE TROLLEY SY-ST-5L', sku: 'SY-ST-5L' },
   { mainCategory: 'RAW MATERIAL', subcategory: 'KITCHEN TROLLEYS', itemName: 'ROUND TROLLEY 4 LAYERS  ST4L - RAW', sku: '-' },
 
   // MAIN CATEGORY: FINISHED GOODS
-  { mainCategory: 'FINISHED GOODS', subcategory: 'KITCHEN TROLLEYS', itemName: 'SYNERGY 2-LAYER SQUARE TROLLEY SY-ST1', sku: 'SY-ST1' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'KITCHEN TROLLEYS', itemName: 'PLINTH 2-LAYER SQUARE TROLLEY SY-ST1', sku: 'SY-ST1' },
 
   // MAIN CATEGORY: RAW MATERIAL
-  { mainCategory: 'RAW MATERIAL', subcategory: 'KITCHEN TROLLEYS', itemName: 'SYNERGY 4 LAYER SQUARE TROLLEY SY-ST-4L', sku: 'SY-ST-4L' },
+  { mainCategory: 'RAW MATERIAL', subcategory: 'KITCHEN TROLLEYS', itemName: 'PLINTH 4 LAYER SQUARE TROLLEY SY-ST-4L', sku: 'SY-ST-4L' },
   { mainCategory: 'RAW MATERIAL', subcategory: 'KITCHEN TROLLEYS BOXES', itemName: 'ST - 5 TROLLEY BOX', sku: '-' },
   { mainCategory: 'RAW MATERIAL', subcategory: 'KITCHEN TROLLEYS BOXES', itemName: 'ST- 3 TROLLEY BOX', sku: '-' },
   { mainCategory: 'RAW MATERIAL', subcategory: 'KITCHEN TROLLEYS BOXES', itemName: 'ST- 4 TROLLEY BOX', sku: '-' },
@@ -255,21 +255,21 @@ const STOCK_DATA: StockItemRow[] = [
 
   // MAIN CATEGORY: FINISHED GOODS
   { mainCategory: 'FINISHED GOODS', subcategory: 'LUXURY PACKED', itemName: 'LUXURY ACCESSORIES SET SY-CL-ACC', sku: 'SY-CL-ACC' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'LUXURY PACKED', itemName: 'SYNERGY 4 PIPES x 4 FEET LUXURY SY-CL1-4P', sku: 'SY-CL1-4P' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'LUXURY PACKED', itemName: 'SYNERGY 4 PIPES x 5 FEET LUXURY SY-CL2-4P', sku: 'SY-CL2-4P' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'LUXURY PACKED', itemName: 'SYNERGY 4 PIPES x 6 FEET LUXURY SY-CL3-4P', sku: 'SY-CL3-4P' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'LUXURY PACKED', itemName: 'SYNERGY 4 PIPES x 7 FEET LUXURY SY-CL4-4P', sku: 'SY-CL4-4P' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'LUXURY PACKED', itemName: 'SYNERGY 4 PIPES x 8 FEET LUXURY SY-CL5-4P', sku: 'SY-CL5-4P' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'LUXURY PACKED', itemName: 'SYNERGY 8 PIPES x 4 FEET LUXURY SY-CL1-8P', sku: 'SY-CL1-8P' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'LUXURY PACKED', itemName: 'SYNERGY 8 PIPES x 5 FEET LUXURY SY-CL2-8P', sku: 'SY-CL2-8P' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'LUXURY PACKED', itemName: 'SYNERGY 8 PIPES x 6 FEET LUXURY SY-CL3-8P', sku: 'SY-CL3-8P' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'LUXURY PACKED', itemName: 'SYNERGY 8 PIPES x 7 FEET LUXURY SY-CL4-8P', sku: 'SY-CL4-8P' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'LUXURY PACKED', itemName: 'SYNERGY 8 PIPES x 8 FEET LUXURY SY-CL5-8P', sku: 'SY-CL5-8P' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'LUXURY PACKED', itemName: 'SYNERGY LUXURY CEILING PULLEY 4 FEET SY-CL1', sku: 'SY-CL1' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'LUXURY PACKED', itemName: 'SYNERGY LUXURY CEILING PULLEY 5 FEET SY-CL2', sku: 'SY-CL2' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'LUXURY PACKED', itemName: 'SYNERGY LUXURY CEILING PULLEY 6 FEET SY-CL3', sku: 'SY-CL3' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'LUXURY PACKED', itemName: 'SYNERGY LUXURY CEILING PULLEY 7 FEET SY-CL4', sku: 'SY-CL4' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'LUXURY PACKED', itemName: 'SYNERGY LUXURY CEILING PULLEY 8 FEET SY-CL5', sku: 'SY-CL5' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'LUXURY PACKED', itemName: 'PLINTH 4 PIPES x 4 FEET LUXURY SY-CL1-4P', sku: 'SY-CL1-4P' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'LUXURY PACKED', itemName: 'PLINTH 4 PIPES x 5 FEET LUXURY SY-CL2-4P', sku: 'SY-CL2-4P' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'LUXURY PACKED', itemName: 'PLINTH 4 PIPES x 6 FEET LUXURY SY-CL3-4P', sku: 'SY-CL3-4P' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'LUXURY PACKED', itemName: 'PLINTH 4 PIPES x 7 FEET LUXURY SY-CL4-4P', sku: 'SY-CL4-4P' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'LUXURY PACKED', itemName: 'PLINTH 4 PIPES x 8 FEET LUXURY SY-CL5-4P', sku: 'SY-CL5-4P' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'LUXURY PACKED', itemName: 'PLINTH 8 PIPES x 4 FEET LUXURY SY-CL1-8P', sku: 'SY-CL1-8P' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'LUXURY PACKED', itemName: 'PLINTH 8 PIPES x 5 FEET LUXURY SY-CL2-8P', sku: 'SY-CL2-8P' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'LUXURY PACKED', itemName: 'PLINTH 8 PIPES x 6 FEET LUXURY SY-CL3-8P', sku: 'SY-CL3-8P' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'LUXURY PACKED', itemName: 'PLINTH 8 PIPES x 7 FEET LUXURY SY-CL4-8P', sku: 'SY-CL4-8P' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'LUXURY PACKED', itemName: 'PLINTH 8 PIPES x 8 FEET LUXURY SY-CL5-8P', sku: 'SY-CL5-8P' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'LUXURY PACKED', itemName: 'PLINTH LUXURY CEILING PULLEY 4 FEET SY-CL1', sku: 'SY-CL1' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'LUXURY PACKED', itemName: 'PLINTH LUXURY CEILING PULLEY 5 FEET SY-CL2', sku: 'SY-CL2' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'LUXURY PACKED', itemName: 'PLINTH LUXURY CEILING PULLEY 6 FEET SY-CL3', sku: 'SY-CL3' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'LUXURY PACKED', itemName: 'PLINTH LUXURY CEILING PULLEY 7 FEET SY-CL4', sku: 'SY-CL4' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'LUXURY PACKED', itemName: 'PLINTH LUXURY CEILING PULLEY 8 FEET SY-CL5', sku: 'SY-CL5' },
 
   // MAIN CATEGORY: RAW MATERIAL
   { mainCategory: 'RAW MATERIAL', subcategory: 'LUXURY ROPE', itemName: 'LUXURY ROPE BRAIDED 3mm - CUT', sku: '-' },
@@ -286,7 +286,7 @@ const STOCK_DATA: StockItemRow[] = [
   { mainCategory: 'RAW MATERIAL', subcategory: 'PIPE PACKET', itemName: 'LUXURY 6 PIPE PACKET', sku: '-' },
   { mainCategory: 'RAW MATERIAL', subcategory: 'PIPE PACKET', itemName: 'LUXURY 8 PIPE PACKET', sku: '-' },
   { mainCategory: 'RAW MATERIAL', subcategory: 'PIPE RAW', itemName: 'SS 2mm SHEET (202)', sku: '-' },
-  { mainCategory: 'RAW MATERIAL', subcategory: 'PIPES', itemName: 'SYNERGY TOWEL ROD 1.5 FEET', sku: '-' },
+  { mainCategory: 'RAW MATERIAL', subcategory: 'PIPES', itemName: 'PLINTH TOWEL ROD 1.5 FEET', sku: '-' },
   { mainCategory: 'RAW MATERIAL', subcategory: 'PLASTIC CAPS', itemName: '10*20 SEMI ROUND CAP', sku: '-' },
   { mainCategory: 'RAW MATERIAL', subcategory: 'PLASTIC CAPS', itemName: '16*16 SQUARE TOP CAP', sku: '-' },
   { mainCategory: 'RAW MATERIAL', subcategory: 'PLASTIC CAPS', itemName: '18*18 SQUARE BOTTOM CAP', sku: '-' },
@@ -309,7 +309,7 @@ const STOCK_DATA: StockItemRow[] = [
   { mainCategory: 'RAW MATERIAL', subcategory: 'PULLEY', itemName: 'ECONOMY PULLEY - SINGLE', sku: '-' },
 
   // MAIN CATEGORY: FINISHED GOODS
-  { mainCategory: 'FINISHED GOODS', subcategory: 'RACK', itemName: 'SYNERGY ANTIQUE TOWEL RACK 24 INCHES', sku: '-' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'RACK', itemName: 'PLINTH ANTIQUE TOWEL RACK 24 INCHES', sku: '-' },
 
   // MAIN CATEGORY: RAW MATERIAL
   { mainCategory: 'RAW MATERIAL', subcategory: 'RAW MATERIAL', itemName: 'CS18 - RAW', sku: '-' },
@@ -416,60 +416,60 @@ const STOCK_DATA: StockItemRow[] = [
   { mainCategory: 'RAW MATERIAL', subcategory: 'SS STAND', itemName: 'SS STAND CS1 - OUTER BOX', sku: '-' },
 
   // MAIN CATEGORY: FINISHED GOODS
-  { mainCategory: 'FINISHED GOODS', subcategory: 'SS STAND', itemName: 'SYNERGY BED STYLE CLOTH DRYER CS10 - ONLINE', sku: 'CS10 - ONLINE' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'SS STAND', itemName: 'PLINTH BED STYLE CLOTH DRYER CS10 - ONLINE', sku: 'CS10 - ONLINE' },
 
   // MAIN CATEGORY: RAW MATERIAL
-  { mainCategory: 'RAW MATERIAL', subcategory: 'SS STAND RAW', itemName: 'SYNERGY BED STYLE CLOTH DRYER SY-CS10 - RAW', sku: 'CS10 - RAW' },
-  { mainCategory: 'RAW MATERIAL', subcategory: 'SS STAND RAW', itemName: 'SYNERGY SS 3 TIER CLOTH DRYER SY-CS8', sku: 'CS8' },
-  { mainCategory: 'RAW MATERIAL', subcategory: 'SS STAND RAW', itemName: 'SYNERGY SS CLOTH DRYER 11 RODS - SY-CS9', sku: 'CS9' },
-  { mainCategory: 'RAW MATERIAL', subcategory: 'SS STAND RAW', itemName: 'SYNERGY SS CLOTH DRYER 17 RODS SY-CS11', sku: 'CS11' },
-  { mainCategory: 'RAW MATERIAL', subcategory: 'SS STAND RAW', itemName: 'SYNERGY SS CLOTH STAND 13 RODS SY-CS12', sku: 'CS12' },
-  { mainCategory: 'RAW MATERIAL', subcategory: 'SS STAND RAW', itemName: 'SYNERGY SS DIAMOND 17 RODS W/H OUTER BOX', sku: '-' },
-  { mainCategory: 'RAW MATERIAL', subcategory: 'SS STAND RAW', itemName: 'SYNERGY SS STAND 13 RODS W/H OUTER BOX SY-CS12', sku: 'CS12-RAW' },
-  { mainCategory: 'RAW MATERIAL', subcategory: 'SS STAND RAW', itemName: 'SYNERGY SS WING DRYER SY-CS1', sku: 'CS1' },
-  { mainCategory: 'RAW MATERIAL', subcategory: 'SS STAND RAW', itemName: 'SYNERGY SS WING DRYER SY-CS18', sku: 'CS18' },
-  { mainCategory: 'RAW MATERIAL', subcategory: 'SS STANDS', itemName: 'SYNERGY SY-CS8 - ONLINE', sku: '-' },
+  { mainCategory: 'RAW MATERIAL', subcategory: 'SS STAND RAW', itemName: 'PLINTH BED STYLE CLOTH DRYER SY-CS10 - RAW', sku: 'CS10 - RAW' },
+  { mainCategory: 'RAW MATERIAL', subcategory: 'SS STAND RAW', itemName: 'PLINTH SS 3 TIER CLOTH DRYER SY-CS8', sku: 'CS8' },
+  { mainCategory: 'RAW MATERIAL', subcategory: 'SS STAND RAW', itemName: 'PLINTH SS CLOTH DRYER 11 RODS - SY-CS9', sku: 'CS9' },
+  { mainCategory: 'RAW MATERIAL', subcategory: 'SS STAND RAW', itemName: 'PLINTH SS CLOTH DRYER 17 RODS SY-CS11', sku: 'CS11' },
+  { mainCategory: 'RAW MATERIAL', subcategory: 'SS STAND RAW', itemName: 'PLINTH SS CLOTH STAND 13 RODS SY-CS12', sku: 'CS12' },
+  { mainCategory: 'RAW MATERIAL', subcategory: 'SS STAND RAW', itemName: 'PLINTH SS DIAMOND 17 RODS W/H OUTER BOX', sku: '-' },
+  { mainCategory: 'RAW MATERIAL', subcategory: 'SS STAND RAW', itemName: 'PLINTH SS STAND 13 RODS W/H OUTER BOX SY-CS12', sku: 'CS12-RAW' },
+  { mainCategory: 'RAW MATERIAL', subcategory: 'SS STAND RAW', itemName: 'PLINTH SS WING DRYER SY-CS1', sku: 'CS1' },
+  { mainCategory: 'RAW MATERIAL', subcategory: 'SS STAND RAW', itemName: 'PLINTH SS WING DRYER SY-CS18', sku: 'CS18' },
+  { mainCategory: 'RAW MATERIAL', subcategory: 'SS STANDS', itemName: 'PLINTH SY-CS8 - ONLINE', sku: '-' },
 
   // MAIN CATEGORY: FINISHED GOODS
-  { mainCategory: 'FINISHED GOODS', subcategory: 'SY-CS2', itemName: 'SYNERGY WALL MOUNTING CLOTH DRYER SY-CS2', sku: '-' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'SY-CS2', itemName: 'PLINTH WALL MOUNTING CLOTH DRYER SY-CS2', sku: '-' },
 
   // MAIN CATEGORY: RAW MATERIAL
-  { mainCategory: 'RAW MATERIAL', subcategory: 'SYNERGY 4 PIPES', itemName: 'SYNERGY 4 PIPES LUXURY ACCESSORIES SY-CL-ACC-4P', sku: 'SY-CL-ACC-4P' },
-  { mainCategory: 'RAW MATERIAL', subcategory: 'SYNERGY 6 PIPES', itemName: 'SYNERGY 6 PIPES LUXURY ACCESSORIES SY-CL-ACC-6P', sku: 'SY-CL-ACC-6P' },
+  { mainCategory: 'RAW MATERIAL', subcategory: 'PLINTH 4 PIPES', itemName: 'PLINTH 4 PIPES LUXURY ACCESSORIES SY-CL-ACC-4P', sku: 'SY-CL-ACC-4P' },
+  { mainCategory: 'RAW MATERIAL', subcategory: 'PLINTH 6 PIPES', itemName: 'PLINTH 6 PIPES LUXURY ACCESSORIES SY-CL-ACC-6P', sku: 'SY-CL-ACC-6P' },
 
   // MAIN CATEGORY: FINISHED GOODS
-  { mainCategory: 'FINISHED GOODS', subcategory: 'SYNERGY 8 PIPES', itemName: 'SYNERGY 8 PIPES LUXURY ACCESSORIES SY-CL-ACC-8P', sku: 'SY-CL-ACC-8P' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'PLINTH 8 PIPES', itemName: 'PLINTH 8 PIPES LUXURY ACCESSORIES SY-CL-ACC-8P', sku: 'SY-CL-ACC-8P' },
 
   // MAIN CATEGORY: RAW MATERIAL
   { mainCategory: 'RAW MATERIAL', subcategory: 'TABLEES', itemName: 'IRONING BOARD TABLE', sku: '-' },
   { mainCategory: 'RAW MATERIAL', subcategory: 'TOP', itemName: 'CS12 - TOP ROD', sku: '-' },
   { mainCategory: 'RAW MATERIAL', subcategory: 'TOP ROD', itemName: 'CS8 - TOP ROD', sku: '-' },
-  { mainCategory: 'RAW MATERIAL', subcategory: 'TOWEL', itemName: 'SYNERGY OVAL TOWEL RING', sku: '-' },
+  { mainCategory: 'RAW MATERIAL', subcategory: 'TOWEL', itemName: 'PLINTH OVAL TOWEL RING', sku: '-' },
 
   // MAIN CATEGORY: FINISHED GOODS
-  { mainCategory: 'FINISHED GOODS', subcategory: 'TOWEL RODS', itemName: 'SYNERGY 2-TIER SHELF SY-TH15', sku: 'SY-TH15' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'TOWEL RODS', itemName: 'SYNERGY 3IN1 DOUBLE SHELF SY-TH13', sku: 'SY-TH13' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'TOWEL RODS', itemName: 'SYNERGY 4 ARM TOWEL HOLDER SY-TH10', sku: 'SY-TH10' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'TOWEL RODS', itemName: 'SYNERGY DOUBLE TOWEL ROD CHROME SY-TH1', sku: 'SY-TH1' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'TOWEL RODS', itemName: 'SYNERGY DOUBLE TOWEL ROD STRAIGHT SY-TH5', sku: 'SY-TH5' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'TOWEL RODS', itemName: 'SYNERGY DOUBLE TOWEL ROD SY-TH2', sku: 'SY-TH2' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'TOWEL RODS', itemName: 'SYNERGY PREMIUM DOUBLE TOWEL ROD SY-TH11', sku: 'TH11' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'TOWEL RODS', itemName: 'SYNERGY PREMIUM STRAIGHT TOWEL ROD SY-TH12', sku: 'TH12' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'TOWEL RODS', itemName: 'SYNERGY RECTANGLE SINGLE TOWEL ROD SY-TH3', sku: 'TH3' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'TOWEL RODS', itemName: 'SYNERGY ROUND CHOPPING BOARD SY-CB2', sku: 'CB2' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'TOWEL RODS', itemName: 'SYNERGY SINGLE SHELF SY-TH14', sku: 'TH14' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'TOWEL RODS', itemName: 'SYNERGY SINGLE TOWEL ROD SY-TH6', sku: 'TH6' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'TOWEL RODS', itemName: 'SYNERGY SQUARE TOWEL RING', sku: 'TOWEL RING' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'TOWEL RODS', itemName: 'SYNERGY SS304 24 INCH TOWEL RACK SY-TH8', sku: 'TH8' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'TOWEL RODS', itemName: 'PLINTH 2-TIER SHELF SY-TH15', sku: 'SY-TH15' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'TOWEL RODS', itemName: 'PLINTH 3IN1 DOUBLE SHELF SY-TH13', sku: 'SY-TH13' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'TOWEL RODS', itemName: 'PLINTH 4 ARM TOWEL HOLDER SY-TH10', sku: 'SY-TH10' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'TOWEL RODS', itemName: 'PLINTH DOUBLE TOWEL ROD CHROME SY-TH1', sku: 'SY-TH1' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'TOWEL RODS', itemName: 'PLINTH DOUBLE TOWEL ROD STRAIGHT SY-TH5', sku: 'SY-TH5' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'TOWEL RODS', itemName: 'PLINTH DOUBLE TOWEL ROD SY-TH2', sku: 'SY-TH2' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'TOWEL RODS', itemName: 'PLINTH PREMIUM DOUBLE TOWEL ROD SY-TH11', sku: 'TH11' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'TOWEL RODS', itemName: 'PLINTH PREMIUM STRAIGHT TOWEL ROD SY-TH12', sku: 'TH12' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'TOWEL RODS', itemName: 'PLINTH RECTANGLE SINGLE TOWEL ROD SY-TH3', sku: 'TH3' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'TOWEL RODS', itemName: 'PLINTH ROUND CHOPPING BOARD SY-CB2', sku: 'CB2' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'TOWEL RODS', itemName: 'PLINTH SINGLE SHELF SY-TH14', sku: 'TH14' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'TOWEL RODS', itemName: 'PLINTH SINGLE TOWEL ROD SY-TH6', sku: 'TH6' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'TOWEL RODS', itemName: 'PLINTH SQUARE TOWEL RING', sku: 'TOWEL RING' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'TOWEL RODS', itemName: 'PLINTH SS304 24 INCH TOWEL RACK SY-TH8', sku: 'TH8' },
 
   // MAIN CATEGORY: RAW MATERIAL
-  { mainCategory: 'RAW MATERIAL', subcategory: 'TOWEL RODS', itemName: 'SYNERGY TOWEL RACK 1.5 FEET SY-TH7', sku: '-' },
-  { mainCategory: 'RAW MATERIAL', subcategory: 'TOWEL RODS', itemName: 'SYNERGY TOWEL RACK NEW', sku: '-' },
-  { mainCategory: 'RAW MATERIAL', subcategory: 'TOWEL RODS', itemName: 'SYNERGY TOWEL RACK SY-TH4', sku: '-' },
-  { mainCategory: 'RAW MATERIAL', subcategory: 'TOWEL RODS', itemName: 'SYNERGY TOWEL RACK SY-TH9', sku: '-' },
+  { mainCategory: 'RAW MATERIAL', subcategory: 'TOWEL RODS', itemName: 'PLINTH TOWEL RACK 1.5 FEET SY-TH7', sku: '-' },
+  { mainCategory: 'RAW MATERIAL', subcategory: 'TOWEL RODS', itemName: 'PLINTH TOWEL RACK NEW', sku: '-' },
+  { mainCategory: 'RAW MATERIAL', subcategory: 'TOWEL RODS', itemName: 'PLINTH TOWEL RACK SY-TH4', sku: '-' },
+  { mainCategory: 'RAW MATERIAL', subcategory: 'TOWEL RODS', itemName: 'PLINTH TOWEL RACK SY-TH9', sku: '-' },
 
   // MAIN CATEGORY: TOWEL RODS
-  { mainCategory: 'TOWEL RODS', subcategory: 'TOWEL RODS', itemName: 'SYNERGY TRINGLE TOWEL RING', sku: '-' },
+  { mainCategory: 'TOWEL RODS', subcategory: 'TOWEL RODS', itemName: 'PLINTH TRINGLE TOWEL RING', sku: '-' },
 
   // MAIN CATEGORY: RAW MATERIAL
   { mainCategory: 'RAW MATERIAL', subcategory: 'TROLLY WHEEL', itemName: 'TROLLY WHEEL WITHOUT LOCK 1.5"', sku: '-' },
@@ -478,20 +478,20 @@ const STOCK_DATA: StockItemRow[] = [
   // MAIN CATEGORY: -
   { mainCategory: 'UNASSIGNED', subcategory: 'UNASSIGNED', itemName: 'CUNCIL SS HAVY [8481]', sku: '-' },
   { mainCategory: 'UNASSIGNED', subcategory: 'UNASSIGNED', itemName: 'CUSTOMISED RODS', sku: '-' },
-  { mainCategory: 'UNASSIGNED', subcategory: 'UNASSIGNED', itemName: 'SYNERGY OVEN STAND BROWN SY-KA1', sku: 'SY-KA1' },
-  { mainCategory: 'UNASSIGNED', subcategory: 'UNASSIGNED', itemName: 'SYNERGY OVEN STAND WHITE SY-KA2', sku: 'SY-KA2' },
+  { mainCategory: 'UNASSIGNED', subcategory: 'UNASSIGNED', itemName: 'PLINTH OVEN STAND BROWN SY-KA1', sku: 'SY-KA1' },
+  { mainCategory: 'UNASSIGNED', subcategory: 'UNASSIGNED', itemName: 'PLINTH OVEN STAND WHITE SY-KA2', sku: 'SY-KA2' },
 
   // MAIN CATEGORY: WALL MOUNT
   { mainCategory: 'WALL MOUNT', subcategory: 'WALL MOUNT', itemName: 'WALL MOUNT SY-CS3 - RAW', sku: '-' },
   { mainCategory: 'WALL MOUNT', subcategory: 'WALL MOUNT', itemName: 'WALL MOUNT SY-CS6 - RAW', sku: '-' },
 
   // MAIN CATEGORY: FINISHED GOODS
-  { mainCategory: 'FINISHED GOODS', subcategory: 'WALL MOUNT PACKED', itemName: 'SYNERGY 7 ROD WALL MOUNT CLOTH DRYER SY-CS3', sku: 'SY-CS3' },
-  { mainCategory: 'FINISHED GOODS', subcategory: 'WALL MOUNT PACKED', itemName: 'SYNERGY 9 ROD WALL MOUNT CLOTH DRYER SY-CS6', sku: 'SY-CS6' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'WALL MOUNT PACKED', itemName: 'PLINTH 7 ROD WALL MOUNT CLOTH DRYER SY-CS3', sku: 'SY-CS3' },
+  { mainCategory: 'FINISHED GOODS', subcategory: 'WALL MOUNT PACKED', itemName: 'PLINTH 9 ROD WALL MOUNT CLOTH DRYER SY-CS6', sku: 'SY-CS6' },
 
   // MAIN CATEGORY: COMBOES
-  { mainCategory: 'COMBOES', subcategory: 'WALL MOUNT PACKED', itemName: 'SYNERGY SY-CS3-COMBO', sku: '-' },
-  { mainCategory: 'COMBOES', subcategory: 'WALL MOUNT PACKED', itemName: 'SYNERGY SY-CS6-COMBO', sku: '-' },
+  { mainCategory: 'COMBOES', subcategory: 'WALL MOUNT PACKED', itemName: 'PLINTH SY-CS3-COMBO', sku: '-' },
+  { mainCategory: 'COMBOES', subcategory: 'WALL MOUNT PACKED', itemName: 'PLINTH SY-CS6-COMBO', sku: '-' },
 
   // MAIN CATEGORY: RAW MATERIAL
   { mainCategory: 'RAW MATERIAL', subcategory: 'WALL MOUNT PARTS', itemName: 'CS3 - LONG PATTI', sku: '-' },

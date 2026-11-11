@@ -6,14 +6,14 @@ import { fetchApi } from '../api/client';
 import { useForm, DefaultValues } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { Card, Button, Input, PageHeader } from '@synergy/ui';
+import { Card, Button, Input, PageHeader } from '@plinth/ui';
 import { StatusBadge } from '../../components/StatusBadge';
 import { LoadingState } from '../../components/LoadingState';
 import { ErrorState } from '../../components/ErrorState';
 import { VersionHistory, VersionInfo } from '../../components/VersionHistory';
 import { ApprovalFlow } from '../../components/ApprovalFlow';
 import { useRouter } from 'next/navigation';
-import { LifecycleStatus } from '@synergy/types';
+import { LifecycleStatus } from '@plinth/types';
 import { Save, X, Edit, Send } from 'lucide-react';
 
 export type FieldType = 'text' | 'number' | 'boolean' | 'select' | 'custom';

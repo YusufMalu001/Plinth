@@ -1,6 +1,6 @@
 'use client';
 
-import { Checkbox } from '@synergy/ui';
+import { Checkbox } from '@plinth/ui';
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
@@ -28,7 +28,7 @@ import {
   ExternalLink,
   Plus,
 } from 'lucide-react';
-import { Button, Dialog } from '@synergy/ui';
+import { Button, Dialog } from '@plinth/ui';
 import { getEmployeeOnboardingLink } from '@/lib/env';
 
 interface RoleItem {
@@ -52,7 +52,7 @@ const DEFAULT_MODULE_PERMISSIONS: Record<string, { label: string; description: s
   HR: { label: 'HR, Staff & Attendance', description: 'Employee directory, onboarding management, and attendance logs', permissions: [{ action: 'read', resource: 'EmployeeMaster', key: 'read:employeemaster' }] },
 };
 
-const EMPLOYEE_CREATION_DRAFT_KEY = 'synergy_employee_creation_draft_v1';
+const EMPLOYEE_CREATION_DRAFT_KEY = 'plinth_employee_creation_draft_v1';
 
 interface EmployeeCreationDraft {
   formData: {
@@ -752,7 +752,7 @@ export default function NewEmployeeInvitePage() {
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  placeholder="rahul.sharma@synergy.local"
+                  placeholder="rahul.sharma@plinth.local"
                   className="w-full px-3 py-2 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-1 focus:ring-primary"
                 />
               </div>

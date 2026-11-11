@@ -3,12 +3,13 @@ import { apiClient } from '../lib/api-client';
 
 export const DEFAULT_PRICING_LEVELS = ['Dealer', 'E-Trade', 'Customer'];
 
-const STORAGE_KEY = 'synergy_pricing_levels';
+const STORAGE_KEY = 'plinth_pricing_levels';
+const LEGACY_STORAGE_KEY = 'plinth_pricing_levels';
 
 function getStoredLevels(): string[] {
   if (typeof window === 'undefined') return DEFAULT_PRICING_LEVELS;
   try {
-    const raw = localStorage.getItem(STORAGE_KEY);
+    const raw = localStorage.getItem(STORAGE_KEY) ?? localStorage.getItem(LEGACY_STORAGE_KEY);
     if (raw) {
       const parsed = JSON.parse(raw);
       if (Array.isArray(parsed) && parsed.length > 0) {

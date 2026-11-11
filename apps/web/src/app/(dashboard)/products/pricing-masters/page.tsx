@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { Layers, Pencil, Plus, Search, Trash2 } from 'lucide-react';
-import { Button, Card, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@synergy/ui';
+import { Button, Card, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@plinth/ui';
 import { usePricingMasters, useDeletePricingMaster, type PricingMaster, type PricingTier } from '../../../../hooks/useMasterData';
 import { LoadingState } from '../../../../components/LoadingState';
 import { ErrorState } from '../../../../components/ErrorState';

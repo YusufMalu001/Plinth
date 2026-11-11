@@ -24,7 +24,7 @@ import {
   TableHead,
   TableRow,
   TableCell,
-} from '@synergy/ui';
+} from '@plinth/ui';
 import { accountsApi } from '@/features/accounts/api';
 import { fetchApi } from '@/features/api/client';
 import { AccountsHeader } from '@/features/accounts/components/AccountsHeader';

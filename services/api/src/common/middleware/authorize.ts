@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import { PermissionChecker, ScopeContext } from '@synergy/types';
+import { PermissionChecker, ScopeContext } from '@plinth/types';
 import { ForbiddenError, UnauthorizedError } from '../errors/AppError';
 import { DatabasePermissionChecker } from '../../modules/users/rbac';
 import { isAdminActor } from './auth';

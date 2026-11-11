@@ -11,7 +11,7 @@ import {
   Save,
   Trash2,
 } from 'lucide-react';
-import { Button, PageHeader } from '@synergy/ui';
+import { Button, PageHeader } from '@plinth/ui';
 import {
   useCategories,
   useCreateMaterial,

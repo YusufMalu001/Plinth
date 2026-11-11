@@ -42,18 +42,18 @@ async function seedExecutionFlow() {
   // 2. Seed Employees for Departments
   console.log('👥 2. Seeding Employees for Departments...');
   const employeeData = [
-    { code: 'EMP-001', firstName: 'Sufiyan', lastName: 'Mirza', email: 'sufiyan.mirza@synergy.local', role: 'Store Incharge', deptCode: 'ACCESSORIES-IRONING-MAT' },
-    { code: 'EMP-002', firstName: 'Jitendra', lastName: 'Alawa', email: 'jitendra.alawa@synergy.local', role: 'Wall Mount Incharge', deptCode: 'WALL-MOUNT-CS3-CS6' },
-    { code: 'EMP-003', firstName: 'Haider', lastName: 'Bhanpurawala', email: 'haider.b@synergy.local', role: 'Production Incharge', deptCode: 'SS-STANDS' },
-    { code: 'EMP-004', firstName: 'Ashraf', lastName: 'Ansari', email: 'ashraf.ansari@synergy.local', role: 'Laser Incharge', deptCode: 'LUXURY-ECONOMY-GLIDER-FRAME' },
-    { code: 'EMP-005', firstName: 'Shyam', lastName: 'Yadav', email: 'shyam.yadav@synergy.local', role: 'Cutting Incharge', deptCode: 'SPOT-WELDING' },
-    { code: 'EMP-006', firstName: 'Siddhant', lastName: 'Sharma', email: 'siddhant.s@synergy.local', role: 'Floor Supervisor', deptCode: 'CS19-21-SS-STANDS' },
-    { code: 'EMP-007', firstName: 'Manish', lastName: 'Yadav', email: 'manish.yadav@synergy.local', role: 'Store Operator', deptCode: 'ACCESSORIES-IRONING-MAT' },
-    { code: 'EMP-008', firstName: 'Ritesh', lastName: 'Patel', email: 'ritesh.p@synergy.local', role: 'Moulding Operator', deptCode: 'MOULDING' },
-    { code: 'EMP-009', firstName: 'Shubham', lastName: 'Verma', email: 'shubham.v@synergy.local', role: 'Packaging Specialist', deptCode: 'LUXURY-ECONOMY-FULL-PACK' },
-    { code: 'EMP-010', firstName: 'Rajesh', lastName: 'Kumar', email: 'rajesh.k@synergy.local', role: 'Assembly Operator', deptCode: 'ACCESSORIES-IRONING-MAT' },
-    { code: 'EMP-011', firstName: 'Vikas', lastName: 'Gupta', email: 'vikas.g@synergy.local', role: 'Floor Technician', deptCode: 'GLIDER-FULL-PACK' },
-    { code: 'EMP-012', firstName: 'Amit', lastName: 'Sharma', email: 'amit.s@synergy.local', role: 'Clips Assembler', deptCode: 'CC1-CLIPS' },
+    { code: 'EMP-001', firstName: 'Sufiyan', lastName: 'Mirza', email: 'sufiyan.mirza@plinth.local', role: 'Store Incharge', deptCode: 'ACCESSORIES-IRONING-MAT' },
+    { code: 'EMP-002', firstName: 'Jitendra', lastName: 'Alawa', email: 'jitendra.alawa@plinth.local', role: 'Wall Mount Incharge', deptCode: 'WALL-MOUNT-CS3-CS6' },
+    { code: 'EMP-003', firstName: 'Haider', lastName: 'Bhanpurawala', email: 'haider.b@plinth.local', role: 'Production Incharge', deptCode: 'SS-STANDS' },
+    { code: 'EMP-004', firstName: 'Ashraf', lastName: 'Ansari', email: 'ashraf.ansari@plinth.local', role: 'Laser Incharge', deptCode: 'LUXURY-ECONOMY-GLIDER-FRAME' },
+    { code: 'EMP-005', firstName: 'Shyam', lastName: 'Yadav', email: 'shyam.yadav@plinth.local', role: 'Cutting Incharge', deptCode: 'SPOT-WELDING' },
+    { code: 'EMP-006', firstName: 'Siddhant', lastName: 'Sharma', email: 'siddhant.s@plinth.local', role: 'Floor Supervisor', deptCode: 'CS19-21-SS-STANDS' },
+    { code: 'EMP-007', firstName: 'Manish', lastName: 'Yadav', email: 'manish.yadav@plinth.local', role: 'Store Operator', deptCode: 'ACCESSORIES-IRONING-MAT' },
+    { code: 'EMP-008', firstName: 'Ritesh', lastName: 'Patel', email: 'ritesh.p@plinth.local', role: 'Moulding Operator', deptCode: 'MOULDING' },
+    { code: 'EMP-009', firstName: 'Shubham', lastName: 'Verma', email: 'shubham.v@plinth.local', role: 'Packaging Specialist', deptCode: 'LUXURY-ECONOMY-FULL-PACK' },
+    { code: 'EMP-010', firstName: 'Rajesh', lastName: 'Kumar', email: 'rajesh.k@plinth.local', role: 'Assembly Operator', deptCode: 'ACCESSORIES-IRONING-MAT' },
+    { code: 'EMP-011', firstName: 'Vikas', lastName: 'Gupta', email: 'vikas.g@plinth.local', role: 'Floor Technician', deptCode: 'GLIDER-FULL-PACK' },
+    { code: 'EMP-012', firstName: 'Amit', lastName: 'Sharma', email: 'amit.s@plinth.local', role: 'Clips Assembler', deptCode: 'CC1-CLIPS' },
   ];
 
   const empMap = new Map<string, string>(); // code -> id

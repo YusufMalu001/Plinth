@@ -16,7 +16,7 @@ import {
   TrendingUp,
   Truck,
 } from 'lucide-react';
-import { Badge, Button, Card, CardContent, CardHeader, CardTitle } from '@synergy/ui';
+import { Badge, Button, Card, CardContent, CardHeader, CardTitle } from '@plinth/ui';
 import { intelligenceApi } from '../api';
 import { describeEvidence, type Evidence, type IntelligenceModule } from '../types';
 import { showToast } from '../../../components/toast-store';

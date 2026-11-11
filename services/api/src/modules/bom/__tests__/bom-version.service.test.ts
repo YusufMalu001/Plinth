@@ -2,7 +2,7 @@ import { BomVersionService } from '../services/bom-version.service';
 import { BomCalculatorService } from '../services/bom-calculator.service';
 import { BomVersionRepository, BomGoldenExampleRepository, BomVersionWithLines } from '../repositories';
 import { UomService } from '../../master-data/services/uom.service';
-import { PermissionChecker, AuditWriter } from '@synergy/types';
+import { PermissionChecker, AuditWriter } from '@plinth/types';
 import { NotFoundError, ForbiddenError, InvalidStateTransitionError, ValidationError } from '../../../common/errors/AppError';
 import { prisma } from '../../../database';
 import { Decimal } from '@prisma/client/runtime/library';

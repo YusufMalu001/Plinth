@@ -1,4 +1,4 @@
-# Synergy Modules 6–10 — End-to-End UAT Plan
+# Plinth Modules 6–10 — End-to-End UAT Plan
 
 This plan tests the dependency chain:
 

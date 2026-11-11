@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { X, UploadCloud, CheckCircle2, Sparkles } from 'lucide-react';
-import { Button } from '@synergy/ui';
+import { Button } from '@plinth/ui';
 import { BankAccount } from '../types';
 
 interface BankReconModalProps {
@@ -110,7 +110,7 @@ export function BankReconModal({ isOpen, onClose, bankAccounts, onImportStatemen
               )}
             </div>
 
-            <div className="rounded-xl bg-primary/10 p-3 text-xs text-foreground dark:text-synergy-300 border border-border">
+            <div className="rounded-xl bg-primary/10 p-3 text-xs text-foreground dark:text-n-300 border border-border">
               <p className="flex items-center gap-1.5 font-semibold">
                 <Sparkles className="h-4 w-4" />
                 Auto-Matching Engine

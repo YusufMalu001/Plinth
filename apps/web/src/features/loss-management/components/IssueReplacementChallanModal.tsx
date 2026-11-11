@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import { LossEventDto } from '@synergy/types';
-import { Button } from '@synergy/ui';
+import { LossEventDto } from '@plinth/types';
+import { Button } from '@plinth/ui';
 import { X, RefreshCw, Warehouse, Building2, AlertCircle, FileText } from 'lucide-react';
 import { EvidenceAttachmentField } from './EvidenceAttachmentField';
 

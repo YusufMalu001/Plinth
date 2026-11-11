@@ -4,7 +4,7 @@ import React, { useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { ArrowLeft, PackageCheck } from 'lucide-react';
-import { Button, Card } from '@synergy/ui';
+import { Button, Card } from '@plinth/ui';
 import Link from 'next/link';
 import { AccountsHeader } from '@/features/accounts/components/AccountsHeader';
 import { PurchaseBillModal } from '@/features/accounts/components/PurchaseBillModal';
@@ -73,7 +73,7 @@ export default function NewSupplierBillPage({ searchParams }: { searchParams: { 
           <Card className="rounded-2xl border-destructive/30 bg-destructive/10 p-5 text-sm text-destructive">Could not load the selected accepted GRN. {sourceGrn.error instanceof Error ? sourceGrn.error.message : ''}</Card>
       ) : !entityId ? (
         <Card className="rounded-2xl border-border bg-muted/40 p-5 text-sm text-foreground">
-          Set up the Synergy accounting book before capturing bills. <Link className="font-semibold underline" href="/accounts/setup">Open Accounts setup</Link>.
+          Set up the Plinth accounting book before capturing bills. <Link className="font-semibold underline" href="/accounts/setup">Open Accounts setup</Link>.
         </Card>
       ) : sourceGrnId && sourceGrn.data && !sourceGrn.data.lines.some((line) => Number(line.remainingBillableQuantity ?? line.acceptedQuantity) > 0) ? (
         <Card className="rounded-2xl border-border bg-muted/40 p-5 text-sm text-foreground">

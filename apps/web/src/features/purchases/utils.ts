@@ -107,18 +107,18 @@ export function numberToIndianWords(num: number | string | null | undefined): st
 }
 
 /**
- * Synergy Enterprise Header & Legal Constants
+ * Neutral document header constants (Addendum #9 — no real client data in code).
  */
-export const SYNERGY_COMPANY_INFO = {
-  name: 'SYNERGY INTERNATIONAL',
-  legalName: 'Synergy International Pvt. Ltd.',
-  addressLine1: 'Khasra no. 378/2/3, Godown 10, Radheshyam Warehouse,',
-  addressLine2: 'Saraswati Udhyog Nagar, Behind Panchmukhi Hanuman Mandir,',
-  addressLine3: 'Nemawar Road, Indore - 452001, Madhya Pradesh, India',
-  phone: '+91 - 928 5151 928',
-  email: 'sales@thesynergystore.in',
-  website: 'www.thesynergystore.in',
-  gstin: '23AOYPP8347M1ZW',
+export const COMPANY_INFO = {
+  name: 'ACME INDUSTRIES',
+  legalName: 'Acme Industries Pvt. Ltd.',
+  addressLine1: 'Plot 12, Industrial Estate Phase II,',
+  addressLine2: 'MG Road,',
+  addressLine3: 'Indore - 452001, Madhya Pradesh, India',
+  phone: '+91 - 000 0000 000',
+  email: 'accounts@plinth.example',
+  website: 'www.plinth.example',
+  gstin: '00AAAAA0000A0Z0',
   state: 'Madhya Pradesh',
   stateCode: '23',
   financialYear: '2026-27',
@@ -155,7 +155,7 @@ export function getPoPaymentTerms(po: { paymentTerms?: string | null }): string 
 /**
  * Purchase Order In-Progress Creation Draft Key
  */
-export const PURCHASE_ORDER_CREATION_DRAFT_KEY = 'synergy_po_creation_draft_v1';
+export const PURCHASE_ORDER_CREATION_DRAFT_KEY = 'plinth_po_creation_draft_v1';
 
 export interface SavedPoWorkspaceLine {
   tempId: string;

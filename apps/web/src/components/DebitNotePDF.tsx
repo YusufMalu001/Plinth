@@ -130,13 +130,9 @@ export const DebitNotePDF = React.forwardRef<HTMLDivElement, { note: DebitNoteDo
         {/* Corporate Clean Header */}
         <header className="flex items-start justify-between gap-5 border-b border-slate-200 pb-5 pt-4">
           <div>
-            <img
-              src="/synergy.png"
-              alt="Synergy International"
-              className="h-12 w-auto object-contain"
-            />
+            <span className="text-xl sm:text-2xl font-black tracking-tight text-black uppercase">Plinth</span>
             <div className="mt-1.5 text-[9px] font-semibold tracking-wider text-[#004a80] uppercase">
-              Synergy International · Commercial Recovery Division
+              Plinth · Commercial Recovery Division
             </div>
           </div>
 
@@ -342,7 +338,7 @@ export const DebitNotePDF = React.forwardRef<HTMLDivElement, { note: DebitNoteDo
 
         {/* Commercial Settlement Notice */}
         <div className="mt-4 rounded-lg border border-slate-200 bg-slate-50/60 p-3 text-[10px] text-slate-500 leading-relaxed">
-          <strong className="text-slate-700">Settlement Notice:</strong> This debit note is an official commercial claim recorded by Synergy International.
+          <strong className="text-slate-700">Settlement Notice:</strong> This debit note is an official commercial claim recorded by Plinth.
           The total claim amount of <strong className="text-slate-800">{money(totalAmount, currency)}</strong> will be adjusted against upcoming
           payable invoices or remitted directly by the supplier. Supported by physical receiving inspection records and evidence.
         </div>

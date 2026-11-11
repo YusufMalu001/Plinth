@@ -1,6 +1,6 @@
 # Master Data Management (Module 1) — Schema & Interface Architecture
 
-This document specifies the database design, data invariants, and interface contracts for **Module 1: Master Data Management** in Synergy ERP.
+This document specifies the database design, data invariants, and interface contracts for **Module 1: Master Data Management** in Plinth ERP.
 
 ---
 
@@ -88,7 +88,7 @@ Versioned entities (e.g., `Product`, `Material`, `UomConversion`, `PackSize`, `Q
 
 ---
 
-## 5. Interface Contracts (`@synergy/types`)
+## 5. Interface Contracts (`@plinth/types`)
 
 ### Authorization: `PermissionChecker`
 ```ts

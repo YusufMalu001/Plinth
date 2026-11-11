@@ -1,6 +1,6 @@
 import { PrismaClient } from '@prisma/client';
 import { randomUUID } from 'crypto';
-import { PermissionChecker, AuditWriter, ConsoleAuditWriter } from '@synergy/types';
+import { PermissionChecker, AuditWriter, ConsoleAuditWriter } from '@plinth/types';
 import { prisma as defaultPrisma } from '../../../database';
 import { DepartmentExecutionRepository } from '../repositories/department-execution.repository';
 import { assertDepartmentScope } from '../../../common/rbac/department-scope';

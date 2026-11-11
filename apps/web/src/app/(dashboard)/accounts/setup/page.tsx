@@ -1,6 +1,6 @@
 'use client';
 
-import { Checkbox } from '@synergy/ui';
+import { Checkbox } from '@plinth/ui';
 import React, { FormEvent, useEffect, useState } from 'react';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import {
@@ -10,7 +10,7 @@ import {
   ShieldCheck,
   CheckCircle2,
 } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle, Button, Table, TableHeader, TableBody, TableHead, TableRow, TableCell } from '@synergy/ui';
+import { Card, CardContent, CardHeader, CardTitle, Button, Table, TableHeader, TableBody, TableHead, TableRow, TableCell } from '@plinth/ui';
 import { accountsApi } from '@/features/accounts/api';
 import { AccountsHeader } from '@/features/accounts/components/AccountsHeader';
 import { MetricCard } from '@/features/accounts/components/MetricCard';
@@ -161,7 +161,7 @@ export default function AccountsSetupPage() {
               : 'text-muted-foreground hover:text-foreground'
           }`}
         >
-          Synergy Setup
+          Plinth Setup
         </button>
         <button
           onClick={() => setActiveTab('PERIODS')}
@@ -191,24 +191,24 @@ export default function AccountsSetupPage() {
         </button>
       </div>
 
-      {/* Synergy is the single company context for this installation. */}
+      {/* Plinth is the single company context for this installation. */}
       {activeTab === 'BOOK' && (
         <div className="grid gap-6 lg:grid-cols-2">
           {!selectedEntity && (
             <Card className="rounded-2xl border-border/80 shadow-none p-5">
               <CardHeader className="p-0 pb-4 border-b border-border/70">
-                <CardTitle className="text-base font-bold">Synergy International Accounts Setup</CardTitle>
-                <p className="text-xs text-muted-foreground mt-0.5">This platform is configured for Synergy International only.</p>
+                <CardTitle className="text-base font-bold">Plinth Accounts Setup</CardTitle>
+                <p className="text-xs text-muted-foreground mt-0.5">This platform is configured for Plinth only.</p>
               </CardHeader>
               <CardContent className="p-0 pt-4 text-sm text-muted-foreground">
-                This one-time setup prepares the existing Synergy International company for accounting. It does not create or register another company.
+                This one-time setup prepares the existing Plinth company for accounting. It does not create or register another company.
                 <div className="pt-4">
                   <Button
-                    onClick={() => void execute(() => accountsApi.initializeSynergyBook(), 'Synergy International Accounts setup initialized.')}
+                    onClick={() => void execute(() => accountsApi.initializePlinthBook(), 'Plinth Accounts setup initialized.')}
                     disabled={pending}
                     className="bg-primary hover:bg-primary/90 text-white font-semibold rounded-xl text-xs"
                   >
-                    {pending ? 'Initializing…' : 'Set Up Synergy Accounts'}
+                    {pending ? 'Initializing…' : 'Set Up Plinth Accounts'}
                   </Button>
                 </div>
               </CardContent>
@@ -295,17 +295,17 @@ export default function AccountsSetupPage() {
       {activeTab !== 'BOOK' && !entityId && (
         <Card className="rounded-2xl border-border/80 shadow-none p-5">
           <CardHeader className="p-0">
-            <CardTitle className="text-base font-bold">Synergy Accounts setup is not complete</CardTitle>
+            <CardTitle className="text-base font-bold">Plinth Accounts setup is not complete</CardTitle>
           </CardHeader>
           <CardContent className="p-0 pt-3 text-sm text-muted-foreground">
-            Accounting periods and ledger accounts can be configured after an authorized system administrator provisions the Synergy International book.
+            Accounting periods and ledger accounts can be configured after an authorized system administrator provisions the Plinth book.
             <div className="pt-4">
               <Button
-                onClick={() => void execute(() => accountsApi.initializeSynergyBook(), 'Synergy International Accounts setup initialized.')}
+                onClick={() => void execute(() => accountsApi.initializePlinthBook(), 'Plinth Accounts setup initialized.')}
                 disabled={pending}
                 className="bg-primary hover:bg-primary/90 text-white font-semibold rounded-xl text-xs"
               >
-                {pending ? 'Initializing…' : 'Set Up Synergy Accounts'}
+                {pending ? 'Initializing…' : 'Set Up Plinth Accounts'}
               </Button>
             </div>
           </CardContent>

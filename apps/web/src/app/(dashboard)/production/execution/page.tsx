@@ -13,7 +13,7 @@ import {
   PackageCheck
 } from "lucide-react";
 import { format, parseISO } from "date-fns";
-import { Button, Card } from "@synergy/ui";
+import { Button, Card } from "@plinth/ui";
 import { useCurrentUser } from "@/features/auth/hooks";
 import { useDepartments } from "@/hooks/useMasterData";
 import { useProductionSchedules } from "@/features/production/execution-hooks";

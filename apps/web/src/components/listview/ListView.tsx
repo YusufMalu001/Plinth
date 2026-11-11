@@ -6,8 +6,8 @@ import {
   MessageSquare, X, ArrowUp, ArrowDown, Trash2, Download,
   UserPlus, Tag, Menu, Search, Filter,
 } from 'lucide-react';
-import { Checkbox } from '@synergy/ui';
-import { cn } from '@synergy/ui';
+import { Checkbox } from '@plinth/ui';
+import { cn } from '@plinth/ui';
 import { EmptyState } from '../EmptyState';
 import { LoadingState } from '../LoadingState';
 import { ErrorState } from '../ErrorState';

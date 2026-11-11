@@ -31,7 +31,7 @@ import {
   XCircle,
   ExternalLink,
 } from "lucide-react";
-import { Button, Card, CardContent, CardHeader, CardTitle, Dialog, Input } from "@synergy/ui";
+import { Button, Card, CardContent, CardHeader, CardTitle, Dialog, Input } from "@plinth/ui";
 import {
   useProductionAction,
   useDeleteProductionPlan,

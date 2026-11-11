@@ -16,7 +16,7 @@ import {
   lossEventQuerySchema,
   lossAnalyticsQuerySchema,
   lossEventParamSchema
-} from '@synergy/validation';
+} from '@plinth/validation';
 import { errorHandler } from '../../../../common/middleware/error';
 import { ConflictError, ForbiddenError, InvalidStateTransitionError } from '../../../../common/errors/AppError';
 
@@ -89,7 +89,7 @@ describe('Module 11 — Loss Management API & RBAC Integration Tests', () => {
     app.use((req, _res, next) => {
       req.user = {
         id: 'test-user-id',
-        email: 'tester@synergy.com',
+        email: 'tester@plinth.example',
         role: 'manager'
       };
       next();

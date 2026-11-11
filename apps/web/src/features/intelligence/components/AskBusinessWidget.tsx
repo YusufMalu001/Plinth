@@ -1,7 +1,6 @@
 'use client';
 
 import React, { FormEvent, useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import {
   Check,
@@ -231,7 +230,7 @@ export function AskBusinessWidget() {
       id: 'welcome',
       sender: 'agent',
       module: 'EXECUTIVE',
-      text: "Welcome to Synergy Operational Intelligence.\n\nI continuously monitor certified ERP snapshots across Sales, Inventory, Procurement, Production, and Logistics to provide deterministic operational insights and strategy recommendations.\n\nHow can I assist your operations today?",
+      text: "Welcome to Plinth Operational Intelligence.\n\nI continuously monitor certified ERP snapshots across Sales, Inventory, Procurement, Production, and Logistics to provide deterministic operational insights and strategy recommendations.\n\nHow can I assist your operations today?",
       timestamp: new Date(),
     },
   ]);
@@ -395,13 +394,7 @@ export function AskBusinessWidget() {
       <div className="flex items-center justify-between border-b border-border/80 bg-slate-50/90 px-4 py-3 dark:bg-slate-900/90 shrink-0">
         <div className="flex items-center gap-3">
           <div className="relative flex h-9 w-9 items-center justify-center rounded-xl bg-white shadow-xs border border-slate-200/90 p-1.5 dark:bg-slate-800 dark:border-slate-700">
-            <Image
-              src="/synergy-favicon.png"
-              alt="Synergy Logo"
-              width={24}
-              height={24}
-              className="object-contain"
-            />
+            <span className="text-sm font-bold text-ink" aria-label="Plinth">P</span>
             <span className="absolute -bottom-0.5 -right-0.5 flex h-2.5 w-2.5">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
               <span className="relative inline-flex h-2.5 w-2.5 rounded-full border-2 border-white bg-emerald-500 dark:border-slate-800" />
@@ -410,7 +403,7 @@ export function AskBusinessWidget() {
 
           <div>
             <div className="flex items-center gap-2">
-              <h3 className="text-sm font-bold text-foreground tracking-tight">Synergy Advisor</h3>
+              <h3 className="text-sm font-bold text-foreground tracking-tight">Plinth Advisor</h3>
               <span className="inline-flex items-center gap-1 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-2 py-0.5 text-[9px] font-semibold text-emerald-700 dark:text-emerald-400">
                 <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
                 Live Snapshots
@@ -526,13 +519,7 @@ export function AskBusinessWidget() {
             >
               {!isUser && (
                 <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white p-1.5 shadow-2xs dark:border-slate-700 dark:bg-slate-800 mt-0.5">
-                  <Image
-                    src="/synergy-favicon.png"
-                    alt="Synergy"
-                    width={20}
-                    height={20}
-                    className="object-contain"
-                  />
+                  <span className="text-xs font-bold text-ink" aria-label="Plinth">P</span>
                 </div>
               )}
 
@@ -618,13 +605,7 @@ export function AskBusinessWidget() {
         {currentStatus && (
           <div className="flex gap-3 items-start animate-in fade-in duration-200">
             <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white p-1.5 shadow-2xs dark:border-slate-700 dark:bg-slate-800 animate-pulse">
-              <Image
-                src="/synergy-favicon.png"
-                alt="Synergy"
-                width={20}
-                height={20}
-                className="object-contain"
-              />
+              <span className="text-xs font-bold text-ink" aria-label="Plinth">P</span>
             </div>
             <div className="flex flex-col gap-1.5 max-w-[85%]">
               <span className="text-[11px] font-bold text-muted-foreground">{activeConfig.short} Advisor</span>
@@ -733,8 +714,8 @@ export function AskBusinessWidget() {
               setIsOpen((prev) => !prev);
             }
           }}
-          aria-label={isOpen ? 'Close Synergy Advisor' : 'Open Synergy Advisor'}
-          title="Synergy AI Advisor"
+          aria-label={isOpen ? 'Close Plinth Advisor' : 'Open Plinth Advisor'}
+          title="Plinth AI Advisor"
           className="group relative flex h-14 w-14 items-center justify-center rounded-full bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-700/80 shadow-xl shadow-slate-900/10 hover:shadow-2xl hover:shadow-[#004a80]/20 hover:scale-105 active:scale-95 transition-all duration-200"
         >
           {isOpen && !isExpanded ? (
@@ -742,13 +723,7 @@ export function AskBusinessWidget() {
           ) : (
             <>
               <div className="relative flex h-8 w-8 items-center justify-center">
-                <Image
-                  src="/synergy-favicon.png"
-                  alt="Synergy Logo"
-                  width={28}
-                  height={28}
-                  className="object-contain transition-transform duration-200 group-hover:scale-110"
-                />
+                <span className="text-base font-bold text-ink" aria-label="Plinth">P</span>
               </div>
               {/* Live Indicator Pulse Dot */}
               <span className="absolute bottom-1.5 right-1.5 flex h-3 w-3">

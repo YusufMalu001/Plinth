@@ -30,7 +30,7 @@ function safeError(error: unknown) {
       RATE_LIMIT: 'The AI provider is rate limited. Retry after capacity is available.',
       MODEL_UNAVAILABLE: 'The selected AI model is unavailable.',
       RUNTIME_UNAVAILABLE: 'The AI advisor runtime is unavailable.',
-      MCP_PERMISSION_DENIED: 'The advisor could not read its approved Synergy evidence.',
+      MCP_PERMISSION_DENIED: 'The advisor could not read its approved Plinth evidence.',
       OUTPUT_TRUNCATED: 'The AI response exceeded the configured output limit.',
       TIMEOUT: 'The AI advisor timed out.',
     };
@@ -284,7 +284,7 @@ export class IntelligenceOrchestratorService {
         retryNumber: job.attempts,
         instructions: recommendationInstructions(job.module),
         content: recommendationInput(runtimeSnapshot),
-        idempotencyKey: `synergy-run:${run.id}`,
+        idempotencyKey: `plinth-run:${run.id}`,
       });
       const costUsd = this.runtime.estimateCost(result.usage);
       if (result.status !== 'completed' || typeof result.output !== 'string') {
@@ -742,8 +742,8 @@ export class IntelligenceOrchestratorService {
           specialistSummaries: specialistSummaries.length ? specialistSummaries : undefined,
           unavailableMetrics: reconciledData.metrics.filter((metric) => metric.value === null).map((metric) => ({ key: metric.key, reason: metric.dimensions?.reason ?? metric.sourceRefs[0]?.filter ?? 'Required source coverage is unavailable.' })),
         }),
-        idempotencyKey: `synergy-question:${run.id}:attempt:${attempt}`,
-        sessionId: `synergy-question-${run.id}-${attempt}`,
+        idempotencyKey: `plinth-question:${run.id}:attempt:${attempt}`,
+        sessionId: `plinth-question-${run.id}-${attempt}`,
       });
       const result = runtimeResult;
       if (result.status !== 'completed' || typeof result.output !== 'string') {

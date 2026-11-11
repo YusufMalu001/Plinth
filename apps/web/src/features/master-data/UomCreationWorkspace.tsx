@@ -4,7 +4,7 @@ import React, { useState, type FormEvent } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { ArrowLeft, ChevronRight, RotateCcw, Save } from 'lucide-react';
-import { Button, PageHeader } from '@synergy/ui';
+import { Button, PageHeader } from '@plinth/ui';
 import { SearchableSelector } from '../../components/ui/SearchableSelector';
 import { useCreateUom } from '../../hooks/useMasterData';
 import { showToast } from '../../components/toast-store';

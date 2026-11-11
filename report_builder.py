@@ -15,7 +15,7 @@ from docx.shared import Inches, Pt, RGBColor  # type: ignore
 
 
 BASE = Path('/home/fardeen/Downloads')
-OUT = Path('/home/fardeen/Documents/aleyx-projects/Synergy/output/client-workbook-data-report.docx')
+OUT = Path('/home/fardeen/Documents/aleyx-projects/Plinth/output/client-workbook-data-report.docx')
 FILES = [
     'PS - CS12.xlsm', 'PS - Laser ECONOMY.xlsm', 'PS - Laser GLIDER (1).xlsm',
     'ABS MATERIAL REPORT.xlsx', 'PS - RODS CUTTING.xlsm', 'PS - Laser GLIDER.xlsm',
@@ -224,7 +224,7 @@ def build():
     styles['Title'].font.size = Pt(24)
 
     title = doc.add_paragraph(style='Title')
-    title.add_run('Synergy International Client Workbook Data Report')
+    title.add_run('Plinth International Client Workbook Data Report')
     subtitle = doc.add_paragraph()
     subtitle.paragraph_format.space_after = Pt(16)
     run = subtitle.add_run('Source inventory and pre-seeding data classification')
@@ -330,11 +330,11 @@ def build():
 
     footer = section.footer.paragraphs[0]
     footer.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    fr = footer.add_run('Synergy International client workbook data report')
+    fr = footer.add_run('Plinth International client workbook data report')
     fr.font.size = Pt(8)
     fr.font.color.rgb = RGBColor(100, 100, 100)
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    doc.core_properties.title = 'Synergy International Client Workbook Data Report'
+    doc.core_properties.title = 'Plinth International Client Workbook Data Report'
     doc.core_properties.subject = 'Pre-seeding source data classification'
     doc.save(OUT)
     print(OUT)

@@ -1,6 +1,6 @@
 # Local Intelligence Control-Plane Test Guide
 
-This guide uses Synergy's six existing advisor profiles. Models do not write ERP records. Recommendations remain review items; business tasks require human acceptance.
+This guide uses Plinth's six existing advisor profiles. Models do not write ERP records. Recommendations remain review items; business tasks require human acceptance.
 
 ## 1. Prerequisites
 
@@ -17,7 +17,7 @@ cp .env.example .env
 
 The local free-only route uses `nvidia/nemotron-3-super-120b-a12b:free` with `nvidia/nemotron-3.5-lightning:free` as fallback. The gateway rejects paid model IDs and caps every completion at 4,096 output tokens. Free availability and rate limits are controlled by the provider. OpenRouter's free plan currently allows 50 requests per day; one advisor run can use several requests, including tool continuations and title generation.
 
-Free provider routing can permit provider training on submitted prompts and evidence. Set `INTELLIGENCE_ALLOW_FREE_PROVIDER_DATA_USE=true` only after your organization approves sending its ERP data. Without that setting, Synergy refuses business-data advisor runs.
+Free provider routing can permit provider training on submitted prompts and evidence. Set `INTELLIGENCE_ALLOW_FREE_PROVIDER_DATA_USE=true` only after your organization approves sending its ERP data. Without that setting, Plinth refuses business-data advisor runs.
 
 ## 2. Start the private stack
 
@@ -36,7 +36,7 @@ Do not run `npm run dev` at the same time as this stack because both modes use t
 ```bash
 npm run typecheck
 npm run build
-npm run test --workspace @synergy/api -- --runInBand src/modules/intelligence/__tests__
+npm run test --workspace @plinth/api -- --runInBand src/modules/intelligence/__tests__
 node --test infrastructure/model-egress/server.test.js
 ```
 
@@ -48,7 +48,7 @@ Use a synthetic tool-call model check first. It tests account access, catalog av
 
 A `429` usually means the free pool or daily quota is exhausted. A `404` can mean that no free endpoint supports the requested parameters or privacy policy. Do not switch to a paid route automatically. Leave background triggers paused unless the free allowance, answer quality, and source-backed recommendations have been verified under realistic use.
 
-## 5. Test every Synergy advisor module
+## 5. Test every Plinth advisor module
 
 The Business Questions UI has six dedicated Hermes profiles. Run questions **one at a time**: the worker enforces a concurrency limit, and launching all six simultaneously can cause expected “concurrency limit reached” failures. For each question, wait for its terminal state before submitting the next. Use real or seeded local ERP records; no direct intelligence-table inserts are needed.
 
@@ -67,7 +67,7 @@ The implementation has six standalone advisor profiles: Executive, Sales, Invent
 
 Use disposable test records and verify both the ERP workflow and the recommendation path. Never treat an Ask Business answer as proof that operational analysis ran.
 
-| Scenario | Setup in Synergy | Expected result to inspect |
+| Scenario | Setup in Plinth | Expected result to inspect |
 | --- | --- | --- |
 | Replenishment threshold | Create an active item/location policy; set available stock at or below its reorder point; record a stock movement. | Inventory replenishment event/notification and the permitted PR or draft PO outcome. Then run Inventory analysis and inspect its certified snapshot and replenishment review recommendation. A draft PO is never auto-sent. |
 | Slow/fast movers | Give one stocked product no ISSUE entries over 90 days. Give another product enough recent ISSUE volume that its available cover is at most 14 days. | Inventory snapshot reports slow/fast product counts and the slow-stock review opportunity where there is costed stock. This is a movement heuristic, not a demand forecast. |
@@ -406,7 +406,7 @@ docker ps --format 'table {{.Names}}\t{{.Ports}}'
 ss -ltnp | rg ':(3000|3001|5000|5001|5432|55432)\\b'
 ```
 
-If available, `lsof -nP -iTCP:<port> -sTCP:LISTEN` identifies the owning process. Do not kill a process just because it owns a port; confirm it belongs to an old Synergy run first. Stop a host-run `npm run dev` with `Ctrl+C`. Stop only a specific stale Compose service with `docker compose stop <service>`.
+If available, `lsof -nP -iTCP:<port> -sTCP:LISTEN` identifies the owning process. Do not kill a process just because it owns a port; confirm it belongs to an old Plinth run first. Stop a host-run `npm run dev` with `Ctrl+C`. Stop only a specific stale Compose service with `docker compose stop <service>`.
 
 If another application legitimately owns the port, edit `.env` and change the host mapping, for example `WEB_HOST_PORT=3011`, `API_HOST_PORT=5011`, or `POSTGRES_PORT=55433`, then recreate the affected Compose service:
 

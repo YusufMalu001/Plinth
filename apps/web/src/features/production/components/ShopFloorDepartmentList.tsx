@@ -10,7 +10,7 @@ import {
   TableHead,
   TableCell,
   Button,
-} from '@synergy/ui';
+} from '@plinth/ui';
 import { User, Pencil, Search, Building2, Trash2, ArrowDownUp, Users, Plus } from 'lucide-react';
 import { useDepartments, type Department } from '@/hooks/useMasterData';
 import { DepartmentDialog } from '@/components/DepartmentDialog';
@@ -23,7 +23,7 @@ import { showToast } from '@/components/toast-store';
 import { useCurrentUser } from '@/features/auth/hooks';
 import { AddWorkerModal } from './AddWorkerModal';
 
-const DEPARTMENT_PAGE_SIZE_KEY = 'synergy-table-page-size:shop-floor-departments';
+const DEPARTMENT_PAGE_SIZE_KEY = 'plinth-table-page-size:shop-floor-departments';
 
 export function ShopFloorDepartmentList() {
   const { data: deptData, isLoading } = useDepartments('ACTIVE');

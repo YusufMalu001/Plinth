@@ -93,10 +93,10 @@ describe('useNotifications', () => {
 
     act(() => {
       // Simulate another browser tab marking an alert as read
-      localStorage.setItem('synergy:notifications:read_ids', JSON.stringify(['inv-thresh-1']));
+      localStorage.setItem('plinth:notifications:read_ids', JSON.stringify(['inv-thresh-1']));
       window.dispatchEvent(
         new StorageEvent('storage', {
-          key: 'synergy:notifications:read_ids',
+          key: 'plinth:notifications:read_ids',
           newValue: JSON.stringify(['inv-thresh-1']),
         })
       );
@@ -106,10 +106,10 @@ describe('useNotifications', () => {
 
     act(() => {
       // Simulate another tab marking all read
-      localStorage.setItem('synergy:notifications:read_ids', JSON.stringify(['inv-thresh-1', 'inv-thresh-2']));
+      localStorage.setItem('plinth:notifications:read_ids', JSON.stringify(['inv-thresh-1', 'inv-thresh-2']));
       window.dispatchEvent(
         new StorageEvent('storage', {
-          key: 'synergy:notifications:read_ids',
+          key: 'plinth:notifications:read_ids',
           newValue: JSON.stringify(['inv-thresh-1', 'inv-thresh-2']),
         })
       );

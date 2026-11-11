@@ -8,7 +8,7 @@ import {
   AlertCircle,
   Check,
 } from 'lucide-react';
-import { Dialog, Button } from '@synergy/ui';
+import { Dialog, Button } from '@plinth/ui';
 import { SearchableSelector } from '../../../components/ui/SearchableSelector';
 import type { ItemUomRelation } from '../types';
 

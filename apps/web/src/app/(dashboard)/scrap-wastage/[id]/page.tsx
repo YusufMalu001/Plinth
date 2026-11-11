@@ -15,7 +15,7 @@ import {
 } from '@/features/loss-management/hooks';
 import { useCurrentUser } from '@/features/auth/hooks';
 import { useProcurementSelectors } from '@/features/purchases/hooks';
-import { Card, Button } from '@synergy/ui';
+import { Card, Button } from '@plinth/ui';
 import { StatusBadge } from '@/components/StatusBadge';
 import { ToleranceBasisBadge } from '@/features/loss-management/components/ToleranceBasisBadge';
 import { EvidenceAttachmentField } from '@/features/loss-management/components/EvidenceAttachmentField';

@@ -15,7 +15,7 @@ import {
   IntegrationJobDto,
   IntegrationJobItemDto,
   ReconciliationRecordDto,
-} from '@synergy/types';
+} from '@plinth/types';
 
 export interface ReadinessStatusItem {
   sourceType: TransactionSourceType;

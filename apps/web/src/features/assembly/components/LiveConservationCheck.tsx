@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
-import { Card } from '@synergy/ui';
+import { Card } from '@plinth/ui';
 import { CheckCircle2, AlertTriangle, Scale } from 'lucide-react';
-import type { AssemblyBatchComponentDto } from '@synergy/types';
+import type { AssemblyBatchComponentDto } from '@plinth/types';
 
 export interface ConservationCheckProps {
   actualOutputQuantity: number;

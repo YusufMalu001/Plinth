@@ -13,7 +13,7 @@ import {
   Button,
   Dialog,
   Input,
-} from '@synergy/ui';
+} from '@plinth/ui';
 import { fulfillmentApi } from '../api';
 import { useCarriers, useFulfillmentMutation } from '../hooks';
 import type { Fulfillment, ShipmentMode } from '../types';

@@ -18,7 +18,7 @@ import {
   investigateAndRetrySchema,
   queryJobsSchema,
   queryJobItemsSchema
-} from '@synergy/validation';
+} from '@plinth/validation';
 
 const router = Router();
 const permissions = new DbPermissionChecker();

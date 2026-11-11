@@ -1,6 +1,6 @@
-# Synergy ERP — Complete Local Setup Guide (Windows Native)
+# Plinth ERP — Complete Local Setup Guide (Windows Native)
 
-This guide documents the exact, step-by-step procedure to set up, migrate, seed, and run **Synergy ERP** from a fresh `git clone` on Windows using a local PostgreSQL service (without requiring Docker or WSL).
+This guide documents the exact, step-by-step procedure to set up, migrate, seed, and run **Plinth ERP** from a fresh `git clone` on Windows using a local PostgreSQL service (without requiring Docker or WSL).
 
 ---
 
@@ -21,8 +21,8 @@ Before starting, ensure the following are installed on your Windows machine:
 Open PowerShell and run:
 
 ```powershell
-git clone https://github.com/Aelyx-Work/synergy-erp.git
-cd synergy-erp
+git clone https://github.com/plinth-erp/plinth-erp.git
+cd plinth-erp
 git switch assign/akash
 ```
 
@@ -45,10 +45,10 @@ npm install
 
 ## 4. Create the PostgreSQL Database
 
-Using `psql.exe`, connect to your local PostgreSQL instance on port `5000` and create the `synergy_erp` database:
+Using `psql.exe`, connect to your local PostgreSQL instance on port `5000` and create the `plinth_erp` database:
 
 ```powershell
-& "C:\Program Files\PostgreSQL\18\bin\psql.exe" -U postgres -p 5000 -c "CREATE DATABASE synergy_erp;"
+& "C:\Program Files\PostgreSQL\18\bin\psql.exe" -U postgres -p 5000 -c "CREATE DATABASE plinth_erp;"
 ```
 *(Enter your PostgreSQL password when prompted, e.g. `Akash.2003`)*.
 
@@ -57,11 +57,11 @@ Using `psql.exe`, connect to your local PostgreSQL instance on port `5000` and c
 ## 5. Configure Environment Variables
 
 ### Root `.env`
-Create `.env` in the root directory (`c:\synergy-erp\.env`):
+Create `.env` in the root directory (`c:\plinth-erp\.env`):
 
 ```ini
 # ==============================================================================
-# SYNERGY ERP - LOCAL ENVIRONMENT CONFIGURATION (.env)
+# PLINTH ERP - LOCAL ENVIRONMENT CONFIGURATION (.env)
 # ==============================================================================
 
 NODE_ENV=development
@@ -84,10 +84,10 @@ WEB_ORIGIN=http://localhost:3000
 # Database Configuration (Local Windows PostgreSQL 18 on port 5000)
 POSTGRES_USER=postgres
 POSTGRES_PASSWORD=Akash.2003
-POSTGRES_DB=synergy_erp
+POSTGRES_DB=plinth_erp
 POSTGRES_PORT=5000
-DATABASE_URL="postgresql://postgres:Akash.2003@localhost:5000/synergy_erp?schema=public&connection_limit=20"
-DIRECT_URL="postgresql://postgres:Akash.2003@localhost:5000/synergy_erp?schema=public"
+DATABASE_URL="postgresql://postgres:Akash.2003@localhost:5000/plinth_erp?schema=public&connection_limit=20"
+DIRECT_URL="postgresql://postgres:Akash.2003@localhost:5000/plinth_erp?schema=public"
 
 # Frontend configurations
 NEXT_PUBLIC_API_URL=http://localhost:5001/api/v1
@@ -97,7 +97,7 @@ NEXT_PUBLIC_APP_URL=http://localhost:3000
 SUPABASE_URL=https://jvvnozejrkgjkreijdfe.supabase.co
 SUPABASE_SECRET_KEY=your_supabase_secret_key_here
 SUPABASE_SERVICE_ROLE_KEY=your_supabase_secret_key_here
-SUPABASE_PRODUCT_BUCKET=synergy-product-images
+SUPABASE_PRODUCT_BUCKET=plinth-product-images
 SUPABASE_STORAGE_BUCKET=goods-receipts
 
 # OpenRouter / Gemini LLM & OCR
@@ -119,7 +119,7 @@ SMTP_SECURE=true
 SMTP_USER=resend
 SMTP_PASSWORD=your_resend_api_key_here
 EMAIL_FROM_ADDRESS=onboarding@resend.dev
-EMAIL_FROM_NAME="Synergy International"
+EMAIL_FROM_NAME="Plinth International"
 
 # Decision Intelligence
 INTELLIGENCE_ENABLED=true
@@ -177,9 +177,9 @@ NEXT_PUBLIC_APP_URL=http://localhost:3000
 Build the shared monorepo packages first, then generate the Prisma client:
 
 ```powershell
-npm run build --workspace=@synergy/types
-npm run build --workspace=@synergy/ui
-npm run build --workspace=@synergy/validation
+npm run build --workspace=@plinth/types
+npm run build --workspace=@plinth/ui
+npm run build --workspace=@plinth/validation
 npm run db:generate
 ```
 
@@ -211,11 +211,11 @@ Run the comprehensive seeder to populate all 11 ERP modules (21,000+ HSN codes, 
 
 ```powershell
 # 1. Seed complete ERP master data (users, products, inventory, production, sales, logistics)
-npm run db:seed-all --workspace=@synergy/database
+npm run db:seed-all --workspace=@plinth/database
 
 # 2. Seed Finance / Accounts RBAC & Test User
-npm run db:seed-accounts-rbac --workspace=@synergy/database
-npm run db:seed-accounts-test-user --workspace=@synergy/database
+npm run db:seed-accounts-rbac --workspace=@plinth/database
+npm run db:seed-accounts-test-user --workspace=@plinth/database
 ```
 
 ---
@@ -246,11 +246,11 @@ Enter the seeded credentials:
 
 | Role | Email | Password |
 | :--- | :--- | :--- |
-| **Super Admin** | `admin@gmail.com` *(or `admin@synergy.com`)* | `password123` |
-| **Store Manager** | `manager@synergy.com` | `password123` |
-| **Sales Executive** | `sales@synergy.com` | `password123` |
-| **Production Head** | `production.head@synergy.com` | `password123` |
-| **Accounts / Finance** | `accounts.test@synergy.local` | `SynwTzRNbS_oXi0gPmNf1O03FoU!` |
+| **Super Admin** | `admin@gmail.com` *(or `admin@plinth.com`)* | `password123` |
+| **Store Manager** | `manager@plinth.com` | `password123` |
+| **Sales Executive** | `sales@plinth.com` | `password123` |
+| **Production Head** | `production.head@plinth.com` | `password123` |
+| **Accounts / Finance** | `accounts.test@plinth.local` | `SynwTzRNbS_oXi0gPmNf1O03FoU!` |
 
 ---
 

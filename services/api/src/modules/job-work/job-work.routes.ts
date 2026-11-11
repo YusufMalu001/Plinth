@@ -14,7 +14,7 @@ import {
   receiveJobWorkReturnSchema,
   createJobWorkReconciliationSchema,
   jobWorkQuerySchema
-} from '@synergy/validation';
+} from '@plinth/validation';
 
 const router = Router();
 

@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { ArrowLeft, Pencil, Save, Send, X } from 'lucide-react';
-import { Button, Card, Checkbox } from '@synergy/ui';
+import { Button, Card, Checkbox } from '@plinth/ui';
 import { fetchApi } from '../api/client';
 import { LoadingState } from '../../components/LoadingState';
 import { ErrorState } from '../../components/ErrorState';
@@ -13,7 +13,7 @@ import { showToast } from '../../components/toast-store';
 import { friendlyErrorMessage } from '../auth/access-control';
 import { SearchableSelector } from '../../components/ui/SearchableSelector';
 import { getUomSpecificationId, getUomSpecificationOptions } from './uqc-specifications';
-import type { LifecycleStatus } from '@synergy/types';
+import type { LifecycleStatus } from '@plinth/types';
 
 export interface DetailedUom {
   id: string;

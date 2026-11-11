@@ -39,8 +39,8 @@ export const accountsApi = {
     const data = await fetchApi<AccountingEntity[]>('/accounts/entities');
     return Array.isArray(data) ? data : [];
   },
-  initializeSynergyBook: () =>
-    fetchApi<AccountingEntity>('/accounts/entities/initialize-synergy', json({})),
+  initializePlinthBook: () =>
+    fetchApi<AccountingEntity>('/accounts/entities/initialize-plinth', json({})),
   activateEntity: (id: string, verificationReference: string) =>
     fetchApi<AccountingEntity>(`/accounts/entities/${id}/activate`, json({ verificationReference })),
 

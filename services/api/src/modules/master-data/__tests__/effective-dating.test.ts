@@ -1,7 +1,7 @@
 import { describe, it, expect, jest } from '@jest/globals';
 import { QcWastageRulesService } from '../services/qc-wastage-rules.service';
 import { QcWastageRulesRepository } from '../repositories/qc-wastage-rules.repository';
-import { AllowAllPermissionChecker, ConsoleAuditWriter } from '@synergy/types';
+import { AllowAllPermissionChecker, ConsoleAuditWriter } from '@plinth/types';
 
 describe('QcWastageRulesService - Effective-Dated Version Resolution', () => {
   const permissionChecker = new AllowAllPermissionChecker();

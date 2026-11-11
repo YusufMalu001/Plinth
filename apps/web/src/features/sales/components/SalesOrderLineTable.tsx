@@ -10,7 +10,7 @@ import {
   TableHeader,
   TableRow,
   Badge,
-} from '@synergy/ui';
+} from '@plinth/ui';
 import { SalesOrder, SalesOrderLine } from '../types';
 
 interface SalesOrderLineTableProps {

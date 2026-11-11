@@ -1,12 +1,12 @@
 import { NextFunction, Request, Response } from 'express';
-import { UserRole } from '@synergy/types';
+import { UserRole } from '@plinth/types';
 import { ForbiddenError, UnauthorizedError } from '../errors/AppError';
-import { ACCESS_COOKIE } from '../../modules/auth/auth.constants';
+import { ACCESS_COOKIE, LEGACY_ACCESS_COOKIE } from '../../modules/auth/auth.constants';
 import { verifyAccessToken } from '../../modules/auth/auth.tokens';
 
 export function requireAuth(req: Request, _res: Response, next: NextFunction) {
   try {
-    const cookieToken = req.cookies?.[ACCESS_COOKIE];
+    const cookieToken = req.cookies?.[ACCESS_COOKIE] ?? req.cookies?.[LEGACY_ACCESS_COOKIE];
     const header = req.get('authorization');
     const bearerToken = header?.startsWith('Bearer ') ? header.slice(7).trim() : undefined;
     // A refreshed in-memory bearer must take precedence over an expired
@@ -28,7 +28,7 @@ export function requireAuth(req: Request, _res: Response, next: NextFunction) {
  * either a signed-in employee or an onboarding token.
  */
 export function optionalAuth(req: Request, _res: Response, next: NextFunction) {
-  const cookieToken = req.cookies?.[ACCESS_COOKIE];
+  const cookieToken = req.cookies?.[ACCESS_COOKIE] ?? req.cookies?.[LEGACY_ACCESS_COOKIE];
   const header = req.get('authorization');
   const bearerToken = header?.startsWith('Bearer ') ? header.slice(7).trim() : undefined;
   const token = bearerToken || cookieToken;

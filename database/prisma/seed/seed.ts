@@ -7,31 +7,24 @@ const prisma = new PrismaClient();
 async function main() {
   console.log('🌱 Starting database seeding...');
 
-  const [adminPassword, managerPassword, employeePassword, siddhiPassword, yusufPassword] = await Promise.all([
-    argon2.hash('Admin123!', { type: argon2.argon2id }),
-    argon2.hash('Manager123!', { type: argon2.argon2id }),
-    argon2.hash('Employee123', { type: argon2.argon2id }),
-    argon2.hash('Siddhi123!', { type: argon2.argon2id }),
-    argon2.hash('admin@123', { type: argon2.argon2id })
+  // Owner-provisioned bootstrap credentials (reported in the refactor log).
+  // Rotate after first sign-in.
+  const [adminPassword, managerPassword] = await Promise.all([
+    argon2.hash('V93SSi6JKuGFyf2', { type: argon2.argon2id }),
+    argon2.hash('aweNSKaIeFcX7xQz', { type: argon2.argon2id })
   ]);
 
   // 1. Seed Users
   console.log('👤 Seeding users...');
   const fullSeed = process.env.SEED_FULL === 'true';
-    const salesPassword = await argon2.hash('password123', { type: argon2.argon2id });
   const usersData: { email: string; name: string; password: string; role: Role }[] = fullSeed
     ? [
-      { email: 'admin@synergy.com', name: 'System Admin', password: adminPassword, role: Role.admin },
-      { email: 'manager@synergy.com', name: 'Operations Manager', password: managerPassword, role: Role.manager },
-      { email: 'fardeen@synergy.com', name: 'Fardeen Developer', password: employeePassword, role: Role.employee },
-      { email: 'sales@synergy.com', name: 'Rajesh Sharma (Sales)', password: salesPassword, role: Role.employee },
-      { email: 'siddhi@synergy.com', name: 'Siddhi Tech Lead', password: siddhiPassword, role: Role.admin },
-      { email: 'yusuf.malu@gmail.com', name: 'Yusuf Malu', password: yusufPassword, role: Role.admin }
+      { email: 'admin@plinth.example', name: 'System Admin', password: adminPassword, role: Role.admin },
+      { email: 'storemanager@plinth.example', name: 'Store Manager', password: managerPassword, role: Role.manager }
     ]
     : [
-      { email: 'admin@gmail.com', name: 'Admin', password: await argon2.hash('admin@123', { type: argon2.argon2id }), role: Role.admin },
-      { email: 'storemanager@gmail.com', name: 'Store Manager', password: await argon2.hash('StoreManager@2026!', { type: argon2.argon2id }), role: Role.manager },
-      { email: 'sales@synergy.com', name: 'Rajesh Sharma (Sales)', password: salesPassword, role: Role.employee }
+      { email: 'admin@plinth.example', name: 'System Admin', password: adminPassword, role: Role.admin },
+      { email: 'storemanager@plinth.example', name: 'Store Manager', password: managerPassword, role: Role.manager }
     ];
 
   // Fixture users can be referenced by receiving/approval history, so the
@@ -618,18 +611,18 @@ async function main() {
   // the seeded users so re-running the seed cannot leave elevated permissions behind.
   await prisma.userRole.deleteMany({
     where: {
-      user: { email: { in: ['manager@synergy.com', 'fardeen@synergy.com'] } },
+      user: { email: { in: ['manager@plinth.example', 'fardeen@plinth.example'] } },
       role: { name: { in: ['grn_clerk', 'grn_verifier', 'grn_supervisor'] } }
     }
   });
 
   // Assign existing seeded users to roles + the main location/organization.
   const userRoleAssignments: { email: string; roles: string[] }[] = [
-    { email: 'admin@synergy.com', roles: ['admin'] },
-    { email: 'siddhi@synergy.com', roles: ['admin'] },
+    { email: 'admin@plinth.example', roles: ['admin'] },
+    { email: 'siddhi@plinth.example', roles: ['admin'] },
     { email: 'yusuf.malu@gmail.com', roles: ['admin'] },
-    { email: 'manager@synergy.com', roles: ['store-manager', 'procurement_manager'] },
-    { email: 'fardeen@synergy.com', roles: ['inventory-manager', 'procurement_officer'] }
+    { email: 'manager@plinth.example', roles: ['store-manager', 'procurement_manager'] },
+    { email: 'fardeen@plinth.example', roles: ['inventory-manager', 'procurement_officer'] }
   ];
 
   for (const assignment of userRoleAssignments) {

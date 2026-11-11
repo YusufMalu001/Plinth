@@ -1,6 +1,7 @@
 import type { ItemUomRelation } from '../types';
 
-export const PRODUCT_CREATION_DRAFT_KEY = 'synergy_product_creation_draft_v1';
+export const PRODUCT_CREATION_DRAFT_KEY = 'plinth_product_creation_draft_v1';
+export const LEGACY_PRODUCT_CREATION_DRAFT_KEY = 'plinth_product_creation_draft_v1';
 
 export interface ProductFormState {
   name: string;

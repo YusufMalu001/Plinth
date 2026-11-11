@@ -9,7 +9,7 @@ import {
   NotFoundError
 } from '../qc.types';
 import { LifecycleStatus } from '@prisma/client';
-import { AuditWriter, AuditEvent } from '@synergy/types';
+import { AuditWriter, AuditEvent } from '@plinth/types';
 
 class MockAuditWriter implements AuditWriter {
   public recordedEvents: AuditEvent[] = [];
@@ -30,7 +30,7 @@ describe('Module 10 — QcService Domain & Service Tests', () => {
     employeeCode: 'EMP-001',
     firstName: 'Yusuf',
     lastName: 'Khan',
-    email: 'yusuf@synergy.com',
+    email: 'yusuf@plinth.example',
     role: 'quality_inspector',
     departmentId: 'dept-1'
   };

@@ -1,8 +1,8 @@
 {
-  "name": "@synergy/web",
+  "name": "@plinth/web",
   "version": "1.0.0",
   "private": true,
-  "description": "Next.js Frontend Application for Synergy ERP",
+  "description": "Next.js Frontend Application for Plinth ERP",
   "scripts": {
     "dev": "next dev -p 3000",
     "build": "next build",
@@ -13,9 +13,9 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^5.9.1",
-    "@synergy/types": "*",
-    "@synergy/ui": "*",
-    "@synergy/validation": "*",
+    "@plinth/types": "*",
+    "@plinth/ui": "*",
+    "@plinth/validation": "*",
     "@tanstack/react-query": "^5.51.23",
     "@types/jsbarcode": "^3.11.4",
     "clsx": "^2.1.1",

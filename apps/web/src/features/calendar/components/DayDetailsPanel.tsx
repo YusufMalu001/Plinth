@@ -110,7 +110,7 @@ export function DayDetailsPanel({
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `Synergy_Daily_Operations_${summary.dateStr}.json`;
+    a.download = `Plinth_Daily_Operations_${summary.dateStr}.json`;
     a.click();
     URL.revokeObjectURL(url);
   };
@@ -264,7 +264,7 @@ export function DayDetailsPanel({
               <ShieldCheck className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
               <span>Plant & supply chain operations nominal for this date with zero critical blocks.</span>
             </div>
-            <span className="text-slate-400 text-[11px]">Synergy Workflow Guard Active</span>
+            <span className="text-slate-400 text-[11px]">Plinth Workflow Guard Active</span>
           </div>
         )}
       </div>

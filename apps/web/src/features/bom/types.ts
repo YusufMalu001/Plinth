@@ -3,7 +3,7 @@ import {
   BomLineType,
   BomQuantityMode,
   BomRoundingRule,
-} from '@synergy/types';
+} from '@plinth/types';
 
 export interface BomLine {
   id: string;

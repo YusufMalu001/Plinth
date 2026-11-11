@@ -3,11 +3,11 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import { InspectionResultDto, CorrectiveActionDto } from '@synergy/types';
+import { InspectionResultDto, CorrectiveActionDto } from '@plinth/types';
 import { qualityApi } from '@/features/quality/api';
 import { QualityTimeline } from '@/features/quality/components/QualityTimeline';
 import { CorrectiveActionModal } from '@/features/quality/components/CorrectiveActionModal';
-import { Button, Input } from '@synergy/ui';
+import { Button, Input } from '@plinth/ui';
 import {
   History,
   Search,

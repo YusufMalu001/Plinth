@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const PDFDocument = require('pdfkit');
 
-const outputPath = 'C:\\Users\\MICRO\\Desktop\\Synergy_ERP_Local_Setup_Guide.pdf';
+const outputPath = 'C:\\Users\\MICRO\\Desktop\\Plinth_ERP_Local_Setup_Guide.pdf';
 
 const doc = new PDFDocument({
   size: 'A4',
@@ -149,7 +149,7 @@ function addTable(headers, rows) {
 // -------------------------------------------------------------
 
 addTitle(
-  'Synergy ERP — Local Setup Guide (Windows Native)',
+  'Plinth ERP — Local Setup Guide (Windows Native)',
   'Complete step-by-step procedure from fresh git clone to running application on local PostgreSQL'
 );
 
@@ -162,8 +162,8 @@ addBullet('PostgreSQL 18', 'Running as a Windows Service (postgresql-x64-18) on 
 
 addSectionHeader('2', 'Clone Repository & Setup Branch');
 addParagraph('Open PowerShell, clone the project, and switch to your designated development branch:');
-addCodeBlock(`git clone https://github.com/Aelyx-Work/synergy-erp.git
-cd synergy-erp
+addCodeBlock(`git clone https://github.com/Aelyx-Work/plinth-erp.git
+cd plinth-erp
 git switch assign/akash`);
 addParagraph('Prevent Git from pausing or waiting for an editor tab during future git pull operations:');
 addCodeBlock('git config core.mergeoptions "--no-edit"');
@@ -173,12 +173,12 @@ addParagraph('Install monorepo dependencies across all workspaces (apps/web, ser
 addCodeBlock('npm install');
 
 addSectionHeader('4', 'Create Local Database in PostgreSQL');
-addParagraph('Using psql.exe on port 5000, create the synergy_erp database:');
-addCodeBlock('& "C:\\Program Files\\PostgreSQL\\18\\bin\\psql.exe" -U postgres -p 5000 -c "CREATE DATABASE synergy_erp;"');
+addParagraph('Using psql.exe on port 5000, create the plinth_erp database:');
+addCodeBlock('& "C:\\Program Files\\PostgreSQL\\18\\bin\\psql.exe" -U postgres -p 5000 -c "CREATE DATABASE plinth_erp;"');
 addCallout('NOTE', 'Enter your PostgreSQL master password when prompted (e.g. Akash.2003).');
 
 addSectionHeader('5', 'Environment Configuration (.env)');
-addParagraph('Create .env in the root project folder (c:\\synergy-erp\\.env). Key local values:');
+addParagraph('Create .env in the root project folder (c:\\plinth-erp\\.env). Key local values:');
 addCodeBlock(`NODE_ENV=development
 PORT=5001
 API_PORT=5001
@@ -186,11 +186,11 @@ WEB_PORT=3000
 
 POSTGRES_USER=postgres
 POSTGRES_PASSWORD=Akash.2003
-POSTGRES_DB=synergy_erp
+POSTGRES_DB=plinth_erp
 POSTGRES_PORT=5000
 
-DATABASE_URL="postgresql://postgres:Akash.2003@localhost:5000/synergy_erp?schema=public&connection_limit=20"
-DIRECT_URL="postgresql://postgres:Akash.2003@localhost:5000/synergy_erp?schema=public"
+DATABASE_URL="postgresql://postgres:Akash.2003@localhost:5000/plinth_erp?schema=public&connection_limit=20"
+DIRECT_URL="postgresql://postgres:Akash.2003@localhost:5000/plinth_erp?schema=public"
 
 NEXT_PUBLIC_API_URL=http://localhost:5001/api/v1
 NEXT_PUBLIC_APP_URL=http://localhost:3000`);
@@ -203,9 +203,9 @@ NEXT_PUBLIC_APP_URL=http://localhost:3000`);
 
 addSectionHeader('6', 'Build Packages & Generate Prisma Client');
 addParagraph('Compile shared TypeScript packages and generate the Prisma ORM client:');
-addCodeBlock(`npm run build --workspace=@synergy/types
-npm run build --workspace=@synergy/ui
-npm run build --workspace=@synergy/validation
+addCodeBlock(`npm run build --workspace=@plinth/types
+npm run build --workspace=@plinth/ui
+npm run build --workspace=@plinth/validation
 npm run db:generate`);
 
 addSectionHeader('7', 'Apply Migrations & Synchronize Tables');
@@ -218,9 +218,9 @@ addCallout('SUCCESS', 'The output should confirm: "Database schema is up to date
 
 addSectionHeader('8', 'Seed Master Data & Accounts');
 addParagraph('Populate the database with all 11 modules (21,135 HSN codes, materials, products, opening inventory, routes, BOMs):');
-addCodeBlock(`npm run db:seed-all --workspace=@synergy/database
-npm run db:seed-accounts-rbac --workspace=@synergy/database
-npm run db:seed-accounts-test-user --workspace=@synergy/database`);
+addCodeBlock(`npm run db:seed-all --workspace=@plinth/database
+npm run db:seed-accounts-rbac --workspace=@plinth/database
+npm run db:seed-accounts-test-user --workspace=@plinth/database`);
 
 addSectionHeader('9', 'Launch Development Servers');
 addCallout('WINDOWS CAUTION', 'Do NOT run "npm run dev" directly because it calls bash scripts/dev-local.sh (requires Docker/WSL). Always run "npm run dev:turbo".');
@@ -235,12 +235,12 @@ addTable(
   ['Role', 'Email', 'Password'],
   [
     ['Super Admin', 'admin@gmail.com', 'password123'],
-    ['Super Admin (Alt)', 'admin@synergy.com', 'password123'],
-    ['Store Manager', 'manager@synergy.com', 'password123'],
-    ['Sales Executive', 'sales@synergy.com', 'password123'],
-    ['Laser Cutting Head', 'laser.head@synergy.com', 'password123'],
-    ['Production Head', 'production.head@synergy.com', 'password123'],
-    ['Accounts / Finance', 'accounts.test@synergy.local', 'SynwTzRNbS_oXi0gPmNf1O03FoU!']
+    ['Super Admin (Alt)', 'admin@plinth.com', 'password123'],
+    ['Store Manager', 'manager@plinth.com', 'password123'],
+    ['Sales Executive', 'sales@plinth.com', 'password123'],
+    ['Laser Cutting Head', 'laser.head@plinth.com', 'password123'],
+    ['Production Head', 'production.head@plinth.com', 'password123'],
+    ['Accounts / Finance', 'accounts.test@plinth.local', 'SynwTzRNbS_oXi0gPmNf1O03FoU!']
   ]
 );
 
@@ -258,7 +258,7 @@ for (let i = range.start; i < range.start + range.count; i++) {
   doc.switchToPage(i);
   doc.fillColor(mutedColor).font('Helvetica').fontSize(8);
   doc.text(
-    `Synergy ERP Windows Local Setup Guide • Page ${i + 1} of ${range.count}`,
+    `Plinth ERP Windows Local Setup Guide • Page ${i + 1} of ${range.count}`,
     45,
     doc.page.height - 30,
     { align: 'center', width: doc.page.width - 90 }
@@ -268,9 +268,9 @@ for (let i = range.start; i < range.start + range.count; i++) {
 doc.end();
 
 writeStream.on('finish', () => {
-  const rootPath = path.resolve(__dirname, '../Synergy_ERP_Local_Setup_Guide.pdf');
-  const docsPath = path.resolve(__dirname, '../docs/Synergy_ERP_Local_Setup_Guide.pdf');
-  const scriptsPath = path.resolve(__dirname, './Synergy_ERP_Local_Setup_Guide.pdf');
+  const rootPath = path.resolve(__dirname, '../Plinth_ERP_Local_Setup_Guide.pdf');
+  const docsPath = path.resolve(__dirname, '../docs/Plinth_ERP_Local_Setup_Guide.pdf');
+  const scriptsPath = path.resolve(__dirname, './Plinth_ERP_Local_Setup_Guide.pdf');
   
   try { fs.copyFileSync(outputPath, rootPath); } catch (e) {}
   try { fs.copyFileSync(outputPath, docsPath); } catch (e) {}

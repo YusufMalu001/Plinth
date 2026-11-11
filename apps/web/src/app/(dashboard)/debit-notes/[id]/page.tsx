@@ -154,7 +154,7 @@ export default function DebitNoteDetailPage({ params }: PageProps) {
               <button
                 type="button"
                 onClick={() => setIsSendModalOpen(true)}
-                className="inline-flex items-center gap-1.5 rounded-xl bg-synergy-600 hover:bg-synergy-700 text-white px-3.5 py-2 text-xs font-bold shadow-xs transition-colors cursor-pointer"
+                className="inline-flex items-center gap-1.5 rounded-xl bg-n-600 hover:bg-n-700 text-white px-3.5 py-2 text-xs font-bold shadow-xs transition-colors cursor-pointer"
               >
                 <Send size={13} />
                 <span>Send to Vendor</span>

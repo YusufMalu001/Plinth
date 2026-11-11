@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { useCurrentUser } from '@/features/auth/hooks';
 import { hrApi } from '@/features/hr/api';
-import { AttendanceDto, EmployeeTaskDto } from '@synergy/types';
+import { AttendanceDto, EmployeeTaskDto } from '@plinth/types';
 import {
   Calendar,
   Clock,
@@ -14,7 +14,7 @@ import {
   Activity,
   FileText
 } from 'lucide-react';
-import { Button, Dialog, Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from '@synergy/ui';
+import { Button, Dialog, Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from '@plinth/ui';
 import { EmployeeActivityHeatmap } from '@/features/hr/components/EmployeeActivityHeatmap';
 
 export default function EmployeeAttendancePortal() {

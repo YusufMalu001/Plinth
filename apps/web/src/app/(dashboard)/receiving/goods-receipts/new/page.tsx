@@ -9,7 +9,7 @@ import { showToast } from '@/components/toast-store';
 import { generateUUID } from '@/lib/uuid';
 import { usePOList, usePODetail } from '@/features/purchases/hooks';
 import type { PO } from '@/features/purchases/api';
-import type { PoStatus } from '@synergy/types';
+import type { PoStatus } from '@plinth/types';
 import { useJobWorkOrders, useJobWorkOrderDetail } from '@/features/job-work/hooks';
 import { jobWorkApi } from '@/features/job-work/api';
 import { useCreateGrnFromPo, useGrnCapabilities, useUploadGrnDocument, useVerifyGrnLines } from '@/features/goods-receipt/hooks';

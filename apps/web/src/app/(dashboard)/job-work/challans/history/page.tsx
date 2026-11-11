@@ -13,9 +13,9 @@ import {
   Truck,
   RotateCcw
 } from 'lucide-react';
-import { PageHeader, Button, Card } from '@synergy/ui';
+import { PageHeader, Button, Card } from '@plinth/ui';
 import { jobWorkApi } from '@/features/job-work/api';
-import type { JobWorkMaterialIssueDto } from '@synergy/types';
+import type { JobWorkMaterialIssueDto } from '@plinth/types';
 import { LoadingState } from '@/components/LoadingState';
 import { EmptyState } from '@/components/EmptyState';
 

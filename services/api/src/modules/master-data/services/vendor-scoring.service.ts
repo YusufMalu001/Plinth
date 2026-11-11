@@ -467,7 +467,7 @@ export const vendorScoringService = {
         }
       }
 
-      if (strengths.length === 0) strengths.push('Active operational supplier profile in Synergy ERP');
+      if (strengths.length === 0) strengths.push('Active operational supplier profile in Plinth ERP');
       if (areasForImprovement.length === 0) areasForImprovement.push('Maintain current performance benchmarks and expand volume');
 
       return {
@@ -608,7 +608,7 @@ export const vendorScoringService = {
         }
       }
 
-      if (strengths.length === 0) strengths.push('Active operational supplier profile in Synergy ERP');
+      if (strengths.length === 0) strengths.push('Active operational supplier profile in Plinth ERP');
       if (areasForImprovement.length === 0) areasForImprovement.push('Maintain current performance benchmarks and expand volume');
 
       const reliabilityRating: 'EXCELLENT' | 'RELIABLE' | 'MODERATE' | 'AT_RISK' | 'UNRATED' =

@@ -34,7 +34,7 @@ import {
   UserCheck,
   Upload
 } from 'lucide-react';
-import { Button, Dialog, Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from '@synergy/ui';
+import { Button, Dialog, Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from '@plinth/ui';
 import { EmployeeActivityHeatmap } from '@/features/hr/components/EmployeeActivityHeatmap';
 import { getAppBaseUrl, getEmployeeOnboardingLink } from '@/lib/env';
 export default function EmployeeProfilePage() {
@@ -908,7 +908,7 @@ export default function EmployeeProfilePage() {
               const userAccount = employee.userAccounts && employee.userAccounts.length > 0 ? employee.userAccounts[0] : null;
               const displayEmail = userAccount?.email || employee.email;
               const displayUsername = employee.employeeCode || userAccount?.email?.split('@')[0] || '—';
-              const displayPassword = userAccount?.initialPassword || 'Synergy@2026!';
+              const displayPassword = userAccount?.initialPassword || 'Plinth@2026!';
 
               return (
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -968,7 +968,7 @@ export default function EmployeeProfilePage() {
                       {displayEmail}
                     </p>
                     <span className="text-[10px] text-muted-foreground block">
-                      Used on standard Synergy login portal
+                      Used on standard Plinth login portal
                     </span>
                   </div>
 
@@ -1042,9 +1042,9 @@ export default function EmployeeProfilePage() {
                     const userAccount = employee.userAccounts && employee.userAccounts.length > 0 ? employee.userAccounts[0] : null;
                     const displayEmail = userAccount?.email || employee.email;
                     const displayUsername = employee.employeeCode || userAccount?.email?.split('@')[0] || '—';
-                    const displayPassword = userAccount?.initialPassword || 'Synergy@2026!';
+                    const displayPassword = userAccount?.initialPassword || 'Plinth@2026!';
                     const loginUrl = `${getAppBaseUrl()}/login`;
-                    const text = `Hello ${employee.firstName},\n\nHere are your Synergy ERP login credentials:\n- Login URL: ${loginUrl}\n- Username: ${displayUsername}\n- Work Email: ${displayEmail}\n- Temporary Password: ${displayPassword}\n\nPlease sign in and complete your onboarding verification.`;
+                    const text = `Hello ${employee.firstName},\n\nHere are your Plinth login credentials:\n- Login URL: ${loginUrl}\n- Username: ${displayUsername}\n- Work Email: ${displayEmail}\n- Temporary Password: ${displayPassword}\n\nPlease sign in and complete your onboarding verification.`;
                     copyToClipboard(text, 'message');
                   }}
                   className="h-7 text-xs font-medium gap-1 px-2.5"
@@ -1065,11 +1065,11 @@ export default function EmployeeProfilePage() {
 
               <div className="bg-background rounded-lg border border-border p-3 text-xs text-foreground font-mono space-y-1 select-all">
                 <p>Hello {employee.firstName},</p>
-                <p className="pt-0.5">Here are your Synergy ERP login credentials:</p>
+                <p className="pt-0.5">Here are your Plinth login credentials:</p>
                 <p>• Login URL: <span className="text-primary underline">{getAppBaseUrl()}/login</span></p>
                 <p>• Username: <span className="font-bold">{employee.employeeCode || employee.email}</span></p>
                 <p>• Work Email: <span className="font-bold">{employee.email}</span></p>
-                <p>• Password: <span className="font-bold">{employee.userAccounts?.[0]?.initialPassword || 'Synergy@2026!'}</span></p>
+                <p>• Password: <span className="font-bold">{employee.userAccounts?.[0]?.initialPassword || 'Plinth@2026!'}</span></p>
               </div>
             </div>
           </div>

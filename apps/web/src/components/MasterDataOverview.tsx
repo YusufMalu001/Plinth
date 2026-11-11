@@ -1,12 +1,12 @@
 'use client';
 
 import React from 'react';
-import { Card } from '@synergy/ui';
+import { Card } from '@plinth/ui';
 import { useMasterDataSummary } from '../features/master-data/hooks';
 import { LoadingState } from './LoadingState';
 import { ErrorState } from './ErrorState';
 import { StatusBadge } from './StatusBadge';
-import { LifecycleStatus } from '@synergy/types';
+import { LifecycleStatus } from '@plinth/types';
 
 export function MasterDataOverview() {
   const { data: summary, isLoading, error, refetch } = useMasterDataSummary();

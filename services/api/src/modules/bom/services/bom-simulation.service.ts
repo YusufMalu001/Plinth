@@ -1,4 +1,4 @@
-import { PermissionChecker, AuditWriter } from '@synergy/types';
+import { PermissionChecker, AuditWriter } from '@plinth/types';
 import { UomService } from '../../master-data/services/uom.service';
 import { BomVersionRepository, BomSimulationRepository } from '../repositories';
 import { BomCalculatorService, ResolveFactorFn } from './bom-calculator.service';

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { Plus, Save } from 'lucide-react';
-import { Button, Checkbox, Dialog, Input } from '@synergy/ui';
+import { Button, Checkbox, Dialog, Input } from '@plinth/ui';
 import { SearchableSelector } from './ui/SearchableSelector';
 import {
   useCategories,

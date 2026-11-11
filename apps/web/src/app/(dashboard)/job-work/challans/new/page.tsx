@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useMemo } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { PageHeader, Button, Card } from '@synergy/ui';
+import { PageHeader, Button, Card } from '@plinth/ui';
 import {
   ArrowLeft,
   Truck,
@@ -25,7 +25,7 @@ import { SearchableSelector } from '@/components/ui/SearchableSelector';
 import { showToast } from '@/components/toast-store';
 import { useQueryClient } from '@tanstack/react-query';
 import { inventoryKeys } from '@/features/inventory/hooks';
-import type { StockOwnership } from '@synergy/types';
+import type { StockOwnership } from '@plinth/types';
 
 interface VendorOption {
   id: string;
@@ -799,7 +799,7 @@ export default function IssueMaterialChallanPage() {
               Rule 55 Statutory Delivery Challan Note
             </span>
             <p className="mt-0.5">
-              Goods dispatched under this challan are for outsourced processing only and not for sale. The material continues to be Synergy-owned property throughout vendor custody.
+              Goods dispatched under this challan are for outsourced processing only and not for sale. The material continues to be Plinth-owned property throughout vendor custody.
             </p>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import { isAdminActor } from '../../../common/middleware/auth';
 import { ProductsService } from '../services/products.service';
-import { ApiResponse, LifecycleStatus } from '@synergy/types';
+import { ApiResponse, LifecycleStatus } from '@plinth/types';
 import { uploadProductImages } from '../../../common/storage/supabase-storage';
 
 export class ProductsController {

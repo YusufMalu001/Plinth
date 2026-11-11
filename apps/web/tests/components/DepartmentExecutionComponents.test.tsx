@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
-import { Button } from '@synergy/ui';
+import { Button } from '@plinth/ui';
 
 // 1. Component under test: Quantity Reconciliation Panel
 function QuantityReconciliationTester({

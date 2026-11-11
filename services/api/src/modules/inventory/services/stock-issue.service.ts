@@ -1,5 +1,5 @@
 import { StockIssue, StockOwnership } from '@prisma/client';
-import { PermissionChecker, AuditWriter } from '@synergy/types';
+import { PermissionChecker, AuditWriter } from '@plinth/types';
 import { prisma } from '../../../database';
 import { StockIssueRepository } from '../repositories/stock-issue.repository';
 import { StockLedgerRepository } from '../repositories/stock-ledger.repository';

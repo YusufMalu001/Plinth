@@ -70,7 +70,7 @@ export async function publishIntelligenceEvent(
   // a persisted transitionId (for example updatedAt or a status-history ID).
   const identity = input.transitionId ?? createHash('sha256').update(JSON.stringify({ type: input.type, entityType: input.entityType, entityId: input.entityId, metadata })).digest('hex');
   const transaction = tx as unknown as Prisma.TransactionClient;
-  await transaction.$executeRaw`SAVEPOINT synergy_intelligence_outbox`;
+  await transaction.$executeRaw`SAVEPOINT plinth_intelligence_outbox`;
   try {
     const event = await domainEventOutboxService.publish({
       aggregateType: input.entityType,
@@ -80,12 +80,12 @@ export async function publishIntelligenceEvent(
       correlationId: input.correlationId,
       payload,
     }, tx as unknown as Parameters<typeof domainEventOutboxService.publish>[1]);
-    await transaction.$executeRaw`RELEASE SAVEPOINT synergy_intelligence_outbox`;
+    await transaction.$executeRaw`RELEASE SAVEPOINT plinth_intelligence_outbox`;
     return event;
   } catch (error) {
     try {
-      await transaction.$executeRaw`ROLLBACK TO SAVEPOINT synergy_intelligence_outbox`;
-      await transaction.$executeRaw`RELEASE SAVEPOINT synergy_intelligence_outbox`;
+      await transaction.$executeRaw`ROLLBACK TO SAVEPOINT plinth_intelligence_outbox`;
+      await transaction.$executeRaw`RELEASE SAVEPOINT plinth_intelligence_outbox`;
     } catch (recoveryError) {
       logger.error('Intelligence outbox savepoint recovery failed; aborting the source ERP transaction.', { requestId: input.correlationId, errorCode: 'INTELLIGENCE_OUTBOX_RECOVERY_FAILED' });
       throw recoveryError;

@@ -1,8 +1,8 @@
 'use client';
 
-import { Checkbox } from '@synergy/ui';
+import { Checkbox } from '@plinth/ui';
 import React, { useState, useEffect } from 'react';
-import { Dialog, Button } from '@synergy/ui';
+import { Dialog, Button } from '@plinth/ui';
 import { jobWorkApi } from '../api';
 import { fetchApi } from '@/features/api/client';
 import { AlertTriangle, CheckCircle2 } from 'lucide-react';

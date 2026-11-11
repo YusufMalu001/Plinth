@@ -1,8 +1,8 @@
 {
-  "name": "@synergy/database",
+  "name": "@plinth/database",
   "version": "1.0.0",
   "private": true,
-  "description": "Database layer for Synergy ERP containing Prisma ORM configuration",
+  "description": "Database layer for Plinth ERP containing Prisma ORM configuration",
   "main": "./prisma/client/index.js",
   "types": "./prisma/client/index.d.ts",
   "scripts": {
@@ -26,7 +26,7 @@
     "db:disambiguate-boms": "node disambiguate-duplicate-boms.js",
     "db:reset-client-master-data": "dotenv -e ../.env -- node reset-client-master-data.js",
     "db:import-client": "dotenv -e ../.env -- node import-client-workbooks.js",
-    "db:seed-synergy-real": "dotenv -e ../.env -- ts-node prisma/seed/seed-official-synergy-data.ts",
+    "db:seed-plinth-real": "dotenv -e ../.env -- ts-node prisma/seed/seed-official-plinth-data.ts",
     "db:studio": "dotenv -e ../.env -- prisma studio",
     "db:seed-logistics": "dotenv -e ../.env -- ts-node prisma/seed/seed-logistics-dispatch.ts",
     "db:seed-all": "dotenv -e ../.env -- ts-node prisma/seed/seed-all.ts",

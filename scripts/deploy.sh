@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ==============================================================================
-# SYNERGY ERP - VPS DEPLOYMENT & UPDATE SCRIPT
+# PLINTH ERP - VPS DEPLOYMENT & UPDATE SCRIPT
 # ==============================================================================
 # Usage: ./scripts/deploy.sh [branch_name]
 # Default branch: main
@@ -9,7 +9,7 @@ set -e
 
 BRANCH="${1:-main}"
 
-echo "🚀 [Synergy ERP] Starting deployment sequence for branch: ${BRANCH}..."
+echo "🚀 [Plinth ERP] Starting deployment sequence for branch: ${BRANCH}..."
 
 # 1. Pull latest code if in a git repository
 if [ -d ".git" ]; then
@@ -63,4 +63,4 @@ ${COMPOSE_CMD} exec -T api npx prisma migrate deploy --schema=/app/database/pris
 echo "📊 Checking container health status:"
 ${COMPOSE_CMD} ps
 
-echo "🎉 [Synergy ERP] Deployment successfully completed for ${BRANCH}!"
+echo "🎉 [Plinth ERP] Deployment successfully completed for ${BRANCH}!"

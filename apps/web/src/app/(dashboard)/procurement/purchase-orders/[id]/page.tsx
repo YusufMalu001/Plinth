@@ -4,7 +4,7 @@ import React, { useState, useRef } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { useForm, useFieldArray } from 'react-hook-form';
-import { Button, Dialog, Input, Table, TableHeader, TableBody, TableFooter, TableRow, TableHead, TableCell } from '@synergy/ui';
+import { Button, Dialog, Input, Table, TableHeader, TableBody, TableFooter, TableRow, TableHead, TableCell } from '@plinth/ui';
 import { StatusBadge } from '../../../../../components/StatusBadge';
 import { LoadingState } from '../../../../../components/LoadingState';
 import { ErrorState } from '../../../../../components/ErrorState';

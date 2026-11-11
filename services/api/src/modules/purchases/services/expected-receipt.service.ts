@@ -1,5 +1,5 @@
 import { ExpectedReceipt, ExpectedReceiptStatus, Prisma } from '@prisma/client';
-import { PermissionChecker, AuditWriter } from '@synergy/types';
+import { PermissionChecker, AuditWriter } from '@plinth/types';
 import { prisma } from '../../../database';
 import { uploadGrnDocument, UploadableFile } from '../../../common/storage/supabase-storage.client';
 import {

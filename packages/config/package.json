@@ -1,8 +1,8 @@
 {
-  "name": "@synergy/config",
+  "name": "@plinth/config",
   "version": "1.0.0",
   "private": true,
-  "description": "Shared configurations for Synergy ERP",
+  "description": "Shared configurations for Plinth ERP",
   "main": "",
   "types": ""
 }

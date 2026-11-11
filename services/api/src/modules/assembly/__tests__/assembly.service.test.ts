@@ -1,5 +1,5 @@
 import { AssemblyService, MissingApprovedBomRatiosError, MissingAssemblyQcCriteriaError, QuantityConservationError, ComponentAllocationError } from '../services/assembly.service';
-import { PermissionChecker, AuditWriter, AuditEvent } from '@synergy/types';
+import { PermissionChecker, AuditWriter, AuditEvent } from '@plinth/types';
 import { AssemblyBatchStatus } from '@prisma/client';
 
 class MockAuditWriter implements AuditWriter {

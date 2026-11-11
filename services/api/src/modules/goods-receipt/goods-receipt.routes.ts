@@ -10,7 +10,7 @@ import {
   reprintLabelSchema,
   verifyGrnLinesSchema,
   notifyAccountantForDebitNoteSchema
-} from '@synergy/validation';
+} from '@plinth/validation';
 import multer from 'multer';
 import { authenticate, isAdminActor } from '../../common/middleware/auth';
 import { ForbiddenError } from '../../common/errors/AppError';

@@ -12,7 +12,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '@synergy/ui';
+} from '@plinth/ui';
 import { StatusBadge } from '../../../components/StatusBadge';
 import { SalesOrder } from '../types';
 

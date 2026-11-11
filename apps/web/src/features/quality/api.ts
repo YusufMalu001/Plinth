@@ -9,7 +9,7 @@ import {
   QcQueueItemDto,
   ReleaseGateCheckResult,
   LifecycleStatus
-} from '@synergy/types';
+} from '@plinth/types';
 
 export interface QcQueueQueryFilters {
   checkpointType?: QcCheckpointType;

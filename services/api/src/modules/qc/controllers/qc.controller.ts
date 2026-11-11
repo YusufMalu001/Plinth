@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import { ApiResponse, LifecycleStatus } from '@synergy/types';
+import { ApiResponse, LifecycleStatus } from '@plinth/types';
 import { ValidationError } from '../../../common/errors/AppError';
 import { QcService } from '../services/qc.service';
 import { QcReleaseGateService } from '../services/qc-release-gate.service';

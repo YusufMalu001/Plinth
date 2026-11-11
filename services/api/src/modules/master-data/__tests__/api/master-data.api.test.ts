@@ -2,7 +2,7 @@ import { describe, it, expect, beforeEach } from '@jest/globals';
 import request from 'supertest';
 import app from '../../../../app';
 import { setDefaultPermissionChecker } from '../../../../common/middleware/authorize';
-import { AllowAllPermissionChecker, PermissionChecker, ScopeContext } from '@synergy/types';
+import { AllowAllPermissionChecker, PermissionChecker, ScopeContext } from '@plinth/types';
 import { Request, Response, NextFunction } from 'express';
 
 jest.mock('../../../../common/middleware/auth', () => ({

@@ -5,7 +5,7 @@ import { useQuery, useMutation, useQueryClient, keepPreviousData } from '@tansta
 import { useEffect, useState } from 'react';
 import { bomApi } from './api';
 import { showToast } from '../../components/toast-store';
-import { BomStatus } from '@synergy/types';
+import { BomStatus } from '@plinth/types';
 import type {
   CreateBomDraftInput,
   UpdateBomDraftInput,

@@ -5,13 +5,13 @@ import { writeFileSync } from 'fs';
 const BASE_URL = 'http://localhost:5000/api/v1';
 
 function psql(sql) {
-  const cmd = `docker exec -i synergy-postgres psql -U postgres -d synergy_erp -t -A`;
+  const cmd = `docker exec -i plinth-postgres psql -U postgres -d plinth_erp -t -A`;
   return execSync(cmd, { input: sql, encoding: 'utf-8' }).trim();
 }
 
 function psqlJson(sql) {
   const cleanSql = sql.trim().replace(/;+$/, '');
-  const cmd = `docker exec -i synergy-postgres psql -U postgres -d synergy_erp -t -A`;
+  const cmd = `docker exec -i plinth-postgres psql -U postgres -d plinth_erp -t -A`;
   const wrapSql = `SELECT json_agg(t) FROM (${cleanSql}) t;`;
   const raw = execSync(cmd, { input: wrapSql, encoding: 'utf-8' }).trim();
   if (!raw || raw === '') return [];
@@ -55,7 +55,7 @@ const results = {
 };
 
 console.log('====================================================');
-console.log('STARTING SYNERGY ERP + HERMES REAL PLATFORM TEST');
+console.log('STARTING PLINTH ERP + HERMES REAL PLATFORM TEST');
 console.log('====================================================\n');
 
 // ----------------------------------------------------
@@ -65,7 +65,7 @@ console.log('[SECTION 1] Environment & Infrastructure Verification');
 
 const loginRes = await api('/auth/login', {
   method: 'POST',
-  body: JSON.stringify({ email: 'admin@synergy.com', password: 'Admin123!' }),
+  body: JSON.stringify({ email: 'admin@plinth.com', password: 'Admin123!' }),
 });
 if (!loginRes.ok || !loginRes.data.data?.accessToken) {
   throw new Error(`Admin login failed: ${JSON.stringify(loginRes.data)}`);
@@ -98,7 +98,7 @@ results.env = {
 // ----------------------------------------------------
 console.log('\n[SECTION 2] Database Schema & Migration Verification');
 const migrationStatus = execSync('npx dotenv -e ../.env -- npx prisma migrate status --schema=prisma/schema.prisma', {
-  cwd: '/home/fardeen/Documents/aleyx-projects/Synergy/database',
+  cwd: '/home/fardeen/Documents/aleyx-projects/Plinth/database',
   encoding: 'utf-8',
 });
 console.log('  ' + migrationStatus.split('\n').filter(l => l.includes('migrations found') || l.includes('up to date')).join('\n  '));
@@ -681,7 +681,7 @@ console.log(`  ✓ Unauthenticated access rejected: HTTP ${unauthRes.status}`);
 const employeeLogin = await fetch(`${BASE_URL}/auth/login`, {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({ email: 'sales@synergy.com', password: 'Admin123!' }),
+  body: JSON.stringify({ email: 'sales@plinth.com', password: 'Admin123!' }),
 });
 const employeeData = await employeeLogin.json();
 const employeeToken = employeeData.data?.accessToken;

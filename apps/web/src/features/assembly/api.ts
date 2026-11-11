@@ -5,7 +5,7 @@ import type {
   AssemblyProgressEventDto,
   AssemblyBatchStatus,
   ProgressEventType
-} from '@synergy/types';
+} from '@plinth/types';
 
 export interface ListAssemblyBatchesParams {
   productId?: string;

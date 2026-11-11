@@ -23,7 +23,7 @@ import {
 import {
   Input,
   Checkbox
-} from '@synergy/ui';
+} from '@plinth/ui';
 import { fetchApi } from '../api/client';
 import {
   expandProductsWithVariants,

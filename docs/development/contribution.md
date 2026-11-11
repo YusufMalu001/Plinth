@@ -1,6 +1,6 @@
 # Contribution Guidelines
 
-This document details the quality standards that all developers must satisfy before merging code into Synergy ERP.
+This document details the quality standards that all developers must satisfy before merging code into Plinth ERP.
 
 ## Coding Conventions
 
@@ -11,7 +11,7 @@ This document details the quality standards that all developers must satisfy bef
 - **No `@ts-ignore`:** Only use if absolutely unavoidable, and document the rationale in comments.
 
 ### 2. Linting & Formatting
-- **Linting:** Enforced via ESLint rules configured in `@synergy/eslint-config`.
+- **Linting:** Enforced via ESLint rules configured in `@plinth/eslint-config`.
 - **Prettier:** Code should be formatted using Prettier.
 - **Verification:** Run `npm run lint` to verify that there are no warnings or errors.
 

@@ -13,14 +13,14 @@ import {
   TableCell,
   TableHead,
   EmptyState,
-} from '@synergy/ui';
+} from '@plinth/ui';
 import { StatusBadge } from '@/components/StatusBadge';
 import { LoadingState } from '@/components/LoadingState';
 import { ErrorState } from '@/components/ErrorState';
 import { ForbiddenState } from '@/components/ForbiddenState';
 import { useGrnCapabilities, useGrnExpectedQueue } from '@/features/goods-receipt/hooks';
 import type { ExpectedReceipt } from '@/features/purchases/api';
-import { ExpectedReceiptStatus } from '@synergy/types';
+import { ExpectedReceiptStatus } from '@plinth/types';
 import {
   Filter,
   Clock,

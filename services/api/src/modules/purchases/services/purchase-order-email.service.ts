@@ -111,11 +111,11 @@ function amountInIndianWords(value: unknown): string {
 
 function resolveLogoPath(): string | undefined {
   const candidates = [
-    path.resolve(process.cwd(), 'apps/web/public/synergy.png'),
-    path.resolve(process.cwd(), '../../apps/web/public/synergy.png'),
-    path.resolve(__dirname, '../../../../../../apps/web/public/synergy.png'),
-    path.resolve(__dirname, '../../../../apps/web/public/synergy.png'),
-    '/home/fardeen/Documents/aleyx-projects/Synergy/apps/web/public/synergy.png',
+    path.resolve(process.cwd(), 'apps/web/public/icon.svg'),
+    path.resolve(process.cwd(), '../../apps/web/public/icon.svg'),
+    path.resolve(__dirname, '../../../../../../apps/web/public/icon.svg'),
+    path.resolve(__dirname, '../../../../apps/web/public/icon.svg'),
+    '/home/fardeen/Documents/aleyx-projects/Plinth/apps/web/public/icon.svg',
   ];
   return candidates.find(candidate => fs.existsSync(candidate));
 }
@@ -231,7 +231,7 @@ async function makePdf(po: EmailPO): Promise<Buffer> {
       align: 'center',
     });
 
-    // 2. Company Header with Synergy Logo and Address
+    // 2. Company Header with Plinth Logo and Address
     const logo = resolveLogoPath();
     const logoWidth = 95;
     const logoHeight = 40;
@@ -247,13 +247,13 @@ async function makePdf(po: EmailPO): Promise<Buffer> {
     }
 
     const headerTextWidth = pageRight - headerTextX;
-    doc.fontSize(11).font('Helvetica-Bold').fillColor('#000000').text('SYNERGY INTERNATIONAL', headerTextX, 54);
+    doc.fontSize(11).font('Helvetica-Bold').fillColor('#000000').text('PLINTH', headerTextX, 54);
     doc.fontSize(7.5).font('Helvetica').fillColor('#1e293b')
       .text('Khasra no. 378/2/3, Godown 10, Radheshyam Warehouse,', headerTextX, 67, { width: headerTextWidth })
       .text('Saraswati Udhyog Nagar, Behind Panchmukhi Hanuman Mandir,', headerTextX, 77, { width: headerTextWidth })
       .text('Nemawar Road, Indore - 452001, Madhya Pradesh, India', headerTextX, 87, { width: headerTextWidth })
       .font('Helvetica-Bold').fillColor('#0f172a')
-      .text('Phone: +91 - 928 5151 928   |   Email: sales@thesynergystore.in   |   GSTIN: 23AOYPP8347M1ZW', headerTextX, 97, { width: headerTextWidth });
+      .text('Phone: +91 - 928 5151 928   |   Email: sales@plinth.example   |   GSTIN: 23AOYPP8347M1ZW', headerTextX, 97, { width: headerTextWidth });
 
     // Dividing line below company header
     doc.moveTo(pageX, 110).lineTo(pageRight, 110).strokeColor('#000000').lineWidth(1.5).stroke();
@@ -315,7 +315,7 @@ async function makePdf(po: EmailPO): Promise<Buffer> {
     doc.fontSize(7.5).font('Helvetica').fillColor('#000000').text(destination, rightSubSplitX + 6, boxY + rightRowH * 3 + 12, { width: 118, ellipsis: true });
 
     // 4. Ordered Goods Table
-    // Columns match the Synergy International PO: Sl, description, HSN/SAC, due date,
+    // Columns match the Plinth PO: Sl, description, HSN/SAC, due date,
     // quantity, UOM, rate, per, discount and amount.
     const cols = [40, 62, 212, 257, 302, 342, 372, 412, 450, 480, 555];
 
@@ -487,7 +487,7 @@ async function makePdf(po: EmailPO): Promise<Buffer> {
 
     // Keep the left half blank, matching the dashboard PO document.
     // Right signatory area: Authorised Signatory
-    doc.fontSize(8).font('Helvetica-Bold').fillColor('#000000').text('for SYNERGY INTERNATIONAL 2026-27', colSplitX + 6, currentY + 6, {
+    doc.fontSize(8).font('Helvetica-Bold').fillColor('#000000').text('for PLINTH 2026-27', colSplitX + 6, currentY + 6, {
       width: 245,
       align: 'right',
     });
@@ -570,7 +570,7 @@ export class PurchaseOrderEmailService {
     if (mode === 'resend' && !po.sentAt) throw new ValidationError('Only a sent purchase order can be emailed again.');
 
     const recipient = typeof po.vendor.contactEmail === 'string' ? po.vendor.contactEmail.trim() : '';
-    const subject = `Purchase Order ${po.poNumber} (Revision ${po.revisionNumber}) — Synergy International`;
+    const subject = `Purchase Order ${po.poNumber} (Revision ${po.revisionNumber}) — Plinth`;
     const previous = await getLatestDelivery(id, po.revisionNumber);
     if (mode === 'initial' || mode === 'approval') {
       const priorSuccessful = await hasSuccessfulDelivery(id, po.revisionNumber);
@@ -594,8 +594,8 @@ export class PurchaseOrderEmailService {
       closeTransport = () => transporter.close();
 
       const logoMarkup = logo
-        ? '<img src="cid:synergy-logo" alt="Synergy International" style="display:block;width:125px;max-height:44px;object-fit:contain">'
-        : '<strong style="font-size:18px;letter-spacing:1.5px;color:#064f7d">SYNERGY INTERNATIONAL</strong>';
+        ? '<img src="cid:plinth-logo" alt="Plinth" style="display:block;width:125px;max-height:44px;object-fit:contain">'
+        : '<strong style="font-size:18px;letter-spacing:1.5px;color:#064f7d">PLINTH</strong>';
 
       const orderDateFormatted = formatIndianDate(po.createdAt);
       const totalAmountFormatted = Number(po.totalAmount).toLocaleString('en-IN', {
@@ -632,7 +632,7 @@ export class PurchaseOrderEmailService {
         Dear <strong>${htmlEscape(po.vendor.legalName || po.vendor.name)}</strong>,
       </p>
       <p style="margin:0 0 18px;font-size:14px;line-height:1.6;color:#334155">
-        Please find attached the official Purchase Order document issued by <strong>Synergy International</strong>.
+        Please find attached the official Purchase Order document issued by <strong>Plinth</strong>.
         Please review the order specification below and in the attached PDF, and confirm receipt and delivery schedule.
       </p>
 
@@ -672,15 +672,15 @@ export class PurchaseOrderEmailService {
 
       <div style="border-top:1px solid #e2e8f0;padding-top:16px;margin-top:20px">
         <p style="margin:0 0 2px;font-size:13px;color:#64748b">Warm regards,</p>
-        <p style="margin:0;font-size:14px;font-weight:700;color:#0f172a">Synergy Procurement Team</p>
-        <p style="margin:2px 0 0;font-size:12px;color:#64748b">SYNERGY INTERNATIONAL</p>
+        <p style="margin:0;font-size:14px;font-weight:700;color:#0f172a">Plinth Procurement Team</p>
+        <p style="margin:2px 0 0;font-size:12px;color:#64748b">PLINTH</p>
       </div>
     </div>
 
     <!-- Footer -->
     <div style="padding:14px 28px;background:#f8fafc;border-top:1px solid #e2e8f0;color:#94a3b8;font-size:11px;text-align:center;line-height:1.5">
       Khasra no. 378/2/3, Godown 10, Radheshyam Warehouse, Saraswati Udhyog Nagar, Nemawar Road, Indore - 452001, MP, India<br>
-      GSTIN: 23AOYPP8347M1ZW | Phone: +91 - 928 5151 928 | sales@thesynergystore.in
+      GSTIN: 23AOYPP8347M1ZW | Phone: +91 - 928 5151 928 | sales@plinth.example
     </div>
   </div>
 </body>
@@ -689,7 +689,7 @@ export class PurchaseOrderEmailService {
       const attachments: Array<{ filename: string; content?: Buffer; path?: string; contentType?: string; cid?: string }> = [
         { filename: `${po.poNumber}-R${po.revisionNumber}.pdf`, content: pdf, contentType: 'application/pdf' },
       ];
-      if (logo) attachments.push({ filename: 'synergy-logo.png', path: logo, cid: 'synergy-logo' });
+      if (logo) attachments.push({ filename: 'plinth-logo.png', path: logo, cid: 'plinth-logo' });
 
       const result = await transporter.sendMail({
         from: { name: config.email.fromName, address: config.email.fromAddress },

@@ -9,7 +9,7 @@ import {
   ChevronLeft,
   ChevronRight
 } from "lucide-react";
-import { Card, Button } from "@synergy/ui";
+import { Card, Button } from "@plinth/ui";
 import { StatusBadge, type AnyStatus } from "@/components/StatusBadge";
 import { LoadingState } from "@/components/LoadingState";
 import { ErrorState } from "@/components/ErrorState";

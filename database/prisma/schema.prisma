@@ -1452,7 +1452,7 @@ model PurchaseRequisitionRevision {
 
 model PurchaseOrder {
   id                 String                @id @default(uuid())
-  // TO BE VALIDATED: Default sequential numbering scheme. Confirm with Synergy if structured code like PO-YYYY-MM-SEQ is needed.
+  // TO BE VALIDATED: Default sequential numbering scheme. Confirm with Plinth if structured code like PO-YYYY-MM-SEQ is needed.
   poNumber           String
   vendorId           String
   vendor             Vendor                @relation(fields: [vendorId], references: [id], onDelete: Restrict)
@@ -2004,7 +2004,7 @@ model VendorRecommendationCandidate {
 model GoodsReceiptNote {
   id                        String                @id @default(uuid())
   // TO BE VALIDATED: Default sequential numbering scheme, mirrors the same open question
-  // already recorded for PurchaseOrder.poNumber above. Confirm with Synergy if a structured
+  // already recorded for PurchaseOrder.poNumber above. Confirm with Plinth if a structured
   // code like GRN-YYYY-MM-SEQ is the required format.
   grnNumber                 String                @unique
   poId                      String?
@@ -3888,7 +3888,7 @@ model AssemblyProgressEvent {
 // ==============================================================================
 
 // Configurable packaging readiness status set.
-// ASSUMPTION: Default status set pending final operational confirmation from Synergy.
+// ASSUMPTION: Default status set pending final operational confirmation from Plinth.
 enum FgPackagingStatus {
   NOT_PACKED
   PACKED
@@ -5034,7 +5034,7 @@ model JobWorkReconciliation {
 }
 
 // ==============================================================================
-// SYNERGY INTELLIGENCE CONTROL PLANE
+// PLINTH INTELLIGENCE CONTROL PLANE
 // ==============================================================================
 
 enum ServicePrincipalStatus {

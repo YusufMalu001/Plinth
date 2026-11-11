@@ -15,7 +15,7 @@ import {
   investigateExceptionSchema,
   resolveExceptionSchema,
   dismissExceptionSchema
-} from '@synergy/validation';
+} from '@plinth/validation';
 
 describe('Module 9 WIP & Batch Tracking API Tests', () => {
   let app: express.Application;
@@ -111,7 +111,7 @@ describe('Module 9 WIP & Batch Tracking API Tests', () => {
     app.use((req: any, _res: any, next: any) => {
       req.user = {
         id: 'user-admin',
-        email: 'admin@synergy.com',
+        email: 'admin@plinth.example',
         role: 'admin'
       };
       next();

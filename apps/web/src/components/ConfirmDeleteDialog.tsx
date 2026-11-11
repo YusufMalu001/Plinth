@@ -2,7 +2,7 @@
 
 import { createPortal } from 'react-dom';
 import { AlertTriangle } from 'lucide-react';
-import { Button } from '@synergy/ui';
+import { Button } from '@plinth/ui';
 
 interface ConfirmDeleteDialogProps {
   open: boolean;

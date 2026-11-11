@@ -377,7 +377,7 @@ async function main() {
     vendorName: 'Fardeen Enterprises',
     vendorGstin: '23ADEFS1382A1ZL',
     vendorAddress: '65/8, Gram Bardari, Indore, Madhya Pradesh - 453555, India',
-    consigneeName: 'SYNERGY INTERNATIONAL',
+    consigneeName: 'PLINTH',
     consigneeGstin: '23ADYPP8947M1ZW',
     consigneeAddress: 'Khasra no. 378/2/3, Godown 10, Radheshyam Warehouse, Indore HQ Plant - 452001',
     items: [
@@ -413,7 +413,7 @@ async function main() {
     vendorName: 'Fardeen Enterprises',
     vendorGstin: '23ADEFS1382A1ZL',
     vendorAddress: '65/8, Gram Bardari, Indore, Madhya Pradesh - 453555, India',
-    consigneeName: 'SYNERGY INTERNATIONAL',
+    consigneeName: 'PLINTH',
     consigneeGstin: '23ADYPP8947M1ZW',
     consigneeAddress: 'Khasra no. 378/2/3, Godown 10, Radheshyam Warehouse, Indore HQ Plant - 452001',
     isDiscrepancy: true,

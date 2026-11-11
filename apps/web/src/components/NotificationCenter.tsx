@@ -79,8 +79,10 @@ const PROACTIVE_INVENTORY_ALERTS: AppNotification[] = [
   },
 ];
 
-const LOCAL_STORAGE_READ_NOTIFICATIONS_KEY = 'synergy:notifications:read_ids';
-const LOCAL_STORAGE_DISMISSED_NOTIFICATIONS_KEY = 'synergy:notifications:dismissed_ids';
+const LOCAL_STORAGE_READ_NOTIFICATIONS_KEY = 'plinth:notifications:read_ids';
+const LEGACY_READ_NOTIFICATIONS_KEY = 'plinth:notifications:read_ids';
+const LOCAL_STORAGE_DISMISSED_NOTIFICATIONS_KEY = 'plinth:notifications:dismissed_ids';
+const LEGACY_DISMISSED_NOTIFICATIONS_KEY = 'plinth:notifications:dismissed_ids';
 
 type LocalNotificationState = {
   readIds: string[];
@@ -100,8 +102,8 @@ function loadSavedLocalState(): LocalNotificationState {
     return memoryState;
   }
   try {
-    const savedRead = localStorage.getItem(LOCAL_STORAGE_READ_NOTIFICATIONS_KEY);
-    const savedDismissed = localStorage.getItem(LOCAL_STORAGE_DISMISSED_NOTIFICATIONS_KEY);
+    const savedRead = localStorage.getItem(LOCAL_STORAGE_READ_NOTIFICATIONS_KEY) ?? localStorage.getItem(LEGACY_READ_NOTIFICATIONS_KEY);
+    const savedDismissed = localStorage.getItem(LOCAL_STORAGE_DISMISSED_NOTIFICATIONS_KEY) ?? localStorage.getItem(LEGACY_DISMISSED_NOTIFICATIONS_KEY);
     return {
       readIds: savedRead ? (JSON.parse(savedRead) as string[]) : [],
       dismissedIds: savedDismissed ? (JSON.parse(savedDismissed) as string[]) : [],
@@ -189,7 +191,7 @@ export function useNotifications() {
   const [readRecIds, setReadRecIds] = useState<Set<string>>(() => {
     if (typeof window === 'undefined') return new Set();
     try {
-      const stored = localStorage.getItem('synergy-read-rec-ids');
+      const stored = localStorage.getItem('plinth-read-rec-ids') ?? localStorage.getItem('plinth-read-rec-ids');
       return stored ? new Set(JSON.parse(stored)) : new Set();
     } catch {
       return new Set();
@@ -200,7 +202,7 @@ export function useNotifications() {
     setReadRecIds((prev) => {
       const next = new Set(prev).add(recId);
       try {
-        localStorage.setItem('synergy-read-rec-ids', JSON.stringify(Array.from(next)));
+        localStorage.setItem('plinth-read-rec-ids', JSON.stringify(Array.from(next)));
       } catch {
         /* ignore localStorage quota/disabled errors */
       }
@@ -213,7 +215,7 @@ export function useNotifications() {
       const next = new Set(prev);
       recIds.forEach((id) => next.add(id));
       try {
-        localStorage.setItem('synergy-read-rec-ids', JSON.stringify(Array.from(next)));
+        localStorage.setItem('plinth-read-rec-ids', JSON.stringify(Array.from(next)));
       } catch {
         /* ignore localStorage quota/disabled errors */
       }

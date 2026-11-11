@@ -2,8 +2,8 @@
 
 import React, { useEffect, useState } from "react"
 import { authApi } from "../../../features/auth/api"
-import { SafeUser } from "@synergy/types"
-import { Button, Card, Input, PageHeader } from "@synergy/ui"
+import { SafeUser } from "@plinth/types"
+import { Button, Card, Input, PageHeader } from "@plinth/ui"
 import { Phone, Mail, ChevronDown, Edit2, X, UserX, Printer, Plus, Check } from "lucide-react"
 
 export default function ProfilePage() {

@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { Button, Card } from '@synergy/ui';
+import { Button, Card } from '@plinth/ui';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { fetchApi } from '../features/api/client';
 import { ShieldCheck, XCircle, AlertTriangle, X, MessageSquare } from 'lucide-react';

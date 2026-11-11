@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import { VendorsService } from '../services/vendors.service';
-import { ApiResponse, LifecycleStatus } from '@synergy/types';
+import { ApiResponse, LifecycleStatus } from '@plinth/types';
 import { isAdminActor } from '../../../common/middleware/auth';
 import { ForbiddenError } from '../../../common/errors/AppError';
 

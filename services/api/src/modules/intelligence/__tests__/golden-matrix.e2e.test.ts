@@ -327,7 +327,7 @@ describe('Golden Test Matrix (A through G)', () => {
 
   const adminUser = {
     id: 'user-admin-matrix',
-    email: 'admin@synergy.test',
+    email: 'admin@plinth.test',
     name: 'Executive Admin',
     role: 'admin',
     isActive: true,
@@ -452,7 +452,7 @@ describe('Golden Test Matrix (A through G)', () => {
         module: item.module,
         trigger: 'EVENT',
         modelProvider: 'DETERMINISTIC_MOCK',
-        modelId: 'synergy/mock-hermes-v1',
+        modelId: 'plinth/mock-hermes-v1',
         createdAt: new Date(),
         startedAt: new Date(),
       };

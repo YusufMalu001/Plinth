@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useQuery } from '@tanstack/react-query';
 import { Plus } from 'lucide-react';
-import { Card, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@synergy/ui';
+import { Card, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@plinth/ui';
 import { fetchApi } from '../api/client';
 
 export interface Subcategory {

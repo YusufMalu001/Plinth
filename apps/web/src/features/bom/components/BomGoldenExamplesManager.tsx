@@ -107,7 +107,7 @@ export function BomGoldenExamplesManager({ version, isReadOnly }: Props) {
           <div>
             <p className="text-sm font-medium text-foreground">No Golden Examples Linked</p>
             <p className="text-xs text-muted-foreground mt-1 max-w-md mx-auto">
-              Golden examples are required by Synergy compliance to prevent calculation drift and formula regressions.
+              Golden examples are required by Plinth compliance to prevent calculation drift and formula regressions.
             </p>
           </div>
           {!isReadOnly && version.lines.length > 0 && (

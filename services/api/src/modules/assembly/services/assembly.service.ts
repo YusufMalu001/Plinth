@@ -5,7 +5,7 @@ import {
   LossSourceType,
   Prisma
 } from '@prisma/client';
-import { PermissionChecker, AuditWriter } from '@synergy/types';
+import { PermissionChecker, AuditWriter } from '@plinth/types';
 import { prisma as defaultPrisma } from '../../../database';
 import { AssemblyBatchRepository, AssemblyBatchFilterOptions } from '../repositories/assembly-batch.repository';
 import { LossEventService } from '../../loss-management/services/loss-event.service';

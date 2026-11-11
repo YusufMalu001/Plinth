@@ -1,7 +1,7 @@
 import React from 'react';
-import { Card } from '@synergy/ui';
+import { Card } from '@plinth/ui';
 import { ShieldAlert, AlertTriangle, ArrowLeft, RefreshCw } from 'lucide-react';
-import { Button } from '@synergy/ui';
+import { Button } from '@plinth/ui';
 import Link from 'next/link';
 
 export interface GateBlockedStateProps {

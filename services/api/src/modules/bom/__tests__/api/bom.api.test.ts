@@ -128,7 +128,7 @@ describeWithTestDatabase('BOM API Integration Tests', () => {
     const product = await prisma.product.create({
       data: {
         sku: `PROD-${crypto.randomUUID().substring(0, 6)}`,
-        name: 'Synergy Energy Drink 250ml',
+        name: 'Plinth Energy Drink 250ml',
         productFamilyId: family.id,
         categoryId: category.id,
         uomId: testUomPcsId,

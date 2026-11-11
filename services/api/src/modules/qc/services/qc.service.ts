@@ -1,4 +1,4 @@
-import { AuditWriter, InspectionResultDto, CorrectiveActionDto, QcQueueItemDto, InspectionResultStatus, CorrectiveActionStatus } from '@synergy/types';
+import { AuditWriter, InspectionResultDto, CorrectiveActionDto, QcQueueItemDto, InspectionResultStatus, CorrectiveActionStatus } from '@plinth/types';
 import { QcCheckpointType, Prisma, LifecycleStatus } from '@prisma/client';
 import { DbAuditWriter } from '../../../common/audit/db-audit-writer';
 import { QcRepository } from '../repositories/qc.repository';

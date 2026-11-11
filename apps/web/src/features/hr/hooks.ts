@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { hrApi, EmployeeFilterParams } from './api';
-import { EmployeeDto, EmployeeTaskDto } from '@synergy/types';
+import { EmployeeDto, EmployeeTaskDto } from '@plinth/types';
 
 export function useEmployees(filters?: EmployeeFilterParams) {
   const query = useQuery<EmployeeDto[]>({

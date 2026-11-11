@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import { RoutingService } from '../services/routing.service';
-import { ApiResponse, LifecycleStatus } from '@synergy/types';
+import { ApiResponse, LifecycleStatus } from '@plinth/types';
 
 export class RoutingController {
   constructor(private readonly routingService: RoutingService) {}

@@ -11,7 +11,7 @@ import {
   ShoppingBag,
   UploadCloud,
 } from 'lucide-react';
-import { Button, Card, CardContent, CardHeader, CardTitle, Input, PageHeader } from '@synergy/ui';
+import { Button, Card, CardContent, CardHeader, CardTitle, Input, PageHeader } from '@plinth/ui';
 import { StatusBadge } from '../../../../components/StatusBadge';
 import { LoadingState } from '../../../../components/LoadingState';
 import { ErrorState } from '../../../../components/ErrorState';

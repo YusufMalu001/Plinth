@@ -1,6 +1,6 @@
 'use client';
 
-import { Checkbox } from '@synergy/ui';
+import { Checkbox } from '@plinth/ui';
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { hrApi } from '@/features/hr/api';
@@ -21,7 +21,7 @@ import {
   KeyRound,
   Upload
 } from 'lucide-react';
-import { Button } from '@synergy/ui';
+import { Button } from '@plinth/ui';
 
 export default function OnboardingPage() {
   const searchParams = useSearchParams();
@@ -569,7 +569,7 @@ export default function OnboardingPage() {
                 Employee Onboarding Portal
               </h1>
               <p className="text-xs text-muted-foreground mt-0.5">
-                Welcome to Synergy ERP! Please complete the 4 verification phases. This onboarding portal will lock upon submission.
+                Welcome to Plinth! Please complete the 4 verification phases. This onboarding portal will lock upon submission.
               </p>
             </div>
           </div>
@@ -1157,7 +1157,7 @@ export default function OnboardingPage() {
               />
               <div>
                 <span className="font-semibold text-foreground text-sm">Terms of Employment & Working Standards</span>
-                <p className="text-muted-foreground text-xs mt-0.5">I agree to abide by the workplace standards, assigned duties, and plant rules of Synergy International.</p>
+                <p className="text-muted-foreground text-xs mt-0.5">I agree to abide by the workplace standards, assigned duties, and plant rules of Plinth.</p>
               </div>
             </label>
 

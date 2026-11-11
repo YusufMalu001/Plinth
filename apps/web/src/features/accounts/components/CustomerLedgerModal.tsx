@@ -4,7 +4,7 @@ import React, { useRef } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { useReactToPrint } from 'react-to-print';
 import { X, BookOpen, Printer, RefreshCw, ShieldAlert } from 'lucide-react';
-import { Button, Table, TableHeader, TableBody, TableHead, TableRow, TableCell } from '@synergy/ui';
+import { Button, Table, TableHeader, TableBody, TableHead, TableRow, TableCell } from '@plinth/ui';
 import { accountsApi } from '../api';
 import { CustomerCreditBalance } from '../types';
 import { formatCurrency } from '../utils';
@@ -217,7 +217,7 @@ export function CustomerLedgerModal({
         {/* Footer */}
         <div className="flex items-center justify-between border-t border-border/70 p-4 bg-muted/30">
           <p className="text-xs text-muted-foreground">
-            Synergy Accounts Receivables & Customer Credit Control. Outstanding amounts represent total dues to collect from customer.
+            Plinth Accounts Receivables & Customer Credit Control. Outstanding amounts represent total dues to collect from customer.
           </p>
           <Button
             type="button"

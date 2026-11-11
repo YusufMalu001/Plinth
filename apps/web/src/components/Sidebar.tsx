@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import Image from 'next/image';
+import { Wordmark } from '../config/brand';
 import Link from 'next/link';
 import { usePathname, useSearchParams } from 'next/navigation';
 import {
@@ -625,14 +625,7 @@ export function Sidebar({
             onClick={onMobileClose}
             className="flex items-center justify-center transition-opacity hover:opacity-90 w-full"
           >
-            <Image
-              src={isCollapsed ? '/synergy-favicon.png' : '/synergy.png'}
-              alt="Synergy International"
-              width={isCollapsed ? 36 : 144}
-              height={50}
-              className={`${isCollapsed ? 'h-8 w-8' : 'h-auto w-32'} object-contain dark:invert`}
-              priority
-            />
+            <Wordmark className='text-xl' />
           </Link>
 
           {/* Close button on mobile */}

@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { useEmployees } from '@/features/hr/hooks';
-import { EmployeeDto } from '@synergy/types';
+import { EmployeeDto } from '@plinth/types';
 import {
   Users,
   Search,
@@ -14,7 +14,7 @@ import {
   Clock,
   RotateCcw
 } from 'lucide-react';
-import { Button, Card, Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from '@synergy/ui';
+import { Button, Card, Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from '@plinth/ui';
 
 export default function EmployeeDirectoryPage() {
   const [searchTerm, setSearchTerm] = useState('');

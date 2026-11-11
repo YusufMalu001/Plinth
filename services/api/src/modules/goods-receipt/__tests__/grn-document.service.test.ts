@@ -2,7 +2,7 @@ import { describe, it, expect, beforeEach, jest } from '@jest/globals';
 import { GrnDocumentService } from '../services/grn-document.service';
 import { GrnDocumentRepository } from '../repositories/grn-document.repository';
 import { GoodsReceiptRepository } from '../repositories/goods-receipt.repository';
-import { PermissionChecker, AuditWriter } from '@synergy/types';
+import { PermissionChecker, AuditWriter } from '@plinth/types';
 import { ForbiddenError, InvalidStateTransitionError, ValidationError } from '../../../common/errors/AppError';
 import { uploadGrnDocument } from '../../../common/storage/supabase-storage.client';
 

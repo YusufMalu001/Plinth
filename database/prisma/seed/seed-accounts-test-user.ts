@@ -7,7 +7,7 @@ import { randomBytes } from 'crypto';
 const prisma = new PrismaClient();
 
 async function main() {
-  const email = (process.env.ACCOUNTS_TEST_EMAIL || 'accounts.test@synergy.local').trim().toLowerCase();
+  const email = (process.env.ACCOUNTS_TEST_EMAIL || 'accounts.test@plinth.local').trim().toLowerCase();
   const existing = await prisma.user.findUnique({ where: { email } });
   if (existing && !process.env.ACCOUNTS_TEST_PASSWORD) {
     throw new Error(`Accounts test user ${email} already exists; set ACCOUNTS_TEST_PASSWORD to rotate its password deliberately.`);

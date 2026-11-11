@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import { useRouter } from 'next/navigation';
-import { PageHeader, Button, Card } from '@synergy/ui';
+import { PageHeader, Button, Card } from '@plinth/ui';
 import {
   ArrowLeft,
   Package,
@@ -25,7 +25,7 @@ import { VendorScorecardDialog } from '@/features/vendors/components/VendorScore
 import { SearchableSelector } from '@/components/ui/SearchableSelector';
 import { IssueChallanModal } from '@/features/job-work/components/IssueChallanModal';
 import { showToast } from '@/components/toast-store';
-import type { VendorCustodyBalanceDto } from '@synergy/types';
+import type { VendorCustodyBalanceDto } from '@plinth/types';
 
 /* ─── Selector item types (derived from ProcurementSelectorData) ────────── */
 type VendorItem     = { id: string; code: string; name: string; status?: string };

@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useMemo } from 'react';
-import { Dialog, Input, Button } from '@synergy/ui';
+import { Dialog, Input, Button } from '@plinth/ui';
 import { Users, UserPlus, Loader2, Building2, Check, CheckSquare, Square } from 'lucide-react';
 import { fetchApi } from '@/features/api/client';
 import { showToast } from '@/components/toast-store';

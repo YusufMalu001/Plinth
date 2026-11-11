@@ -15,7 +15,7 @@ import {
   Building2,
   ChevronRight
 } from 'lucide-react';
-import { PageHeader, Button, Card, Dialog } from '@synergy/ui';
+import { PageHeader, Button, Card, Dialog } from '@plinth/ui';
 import {
   useJobWorkOrders,
   useVendorCustodyBalances,

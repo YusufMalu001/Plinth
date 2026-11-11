@@ -1,8 +1,8 @@
 import React from 'react';
-import type { JobWorkOrderDto } from '@synergy/types';
+import type { JobWorkOrderDto } from '@plinth/types';
 import {
   formatIndianDate,
-  SYNERGY_COMPANY_INFO,
+  COMPANY_INFO,
   getVendorDisplayDetails,
 } from '../features/purchases/utils';
 
@@ -56,33 +56,29 @@ export const JobWorkOrderPDF = React.forwardRef<HTMLDivElement, JobWorkOrderPDFP
           </h1>
         </div>
 
-        {/* Company Header with Synergy Logo and Address (Identical to PO PDF) */}
+        {/* Company Header with Plinth Logo and Address (Identical to PO PDF) */}
         <div className="flex items-start justify-between border-b-2 border-black pb-3 pt-1">
           <div className="flex items-center gap-3">
-            <img
-              src="/synergy.png"
-              alt="Synergy Logo"
-              className="h-10 sm:h-12 w-auto object-contain shrink-0"
-            />
+            <span className="text-xl sm:text-2xl font-black tracking-tight text-black uppercase">Plinth</span>
             <div>
               <h2 className="text-sm sm:text-base font-black tracking-wide text-black uppercase">
-                {SYNERGY_COMPANY_INFO.name}
+                {COMPANY_INFO.name}
               </h2>
               <p className="text-[10.5px] leading-snug text-slate-800 font-medium">
-                {SYNERGY_COMPANY_INFO.addressLine1}
+                {COMPANY_INFO.addressLine1}
               </p>
               <p className="text-[10.5px] leading-snug text-slate-800 font-medium">
-                {SYNERGY_COMPANY_INFO.addressLine2}
+                {COMPANY_INFO.addressLine2}
               </p>
               <p className="text-[10.5px] leading-snug text-slate-800 font-medium">
-                {SYNERGY_COMPANY_INFO.addressLine3}
+                {COMPANY_INFO.addressLine3}
               </p>
               <div className="flex flex-wrap items-center gap-x-3 text-[10.5px] font-semibold text-slate-900 pt-0.5">
-                <span>📞 {SYNERGY_COMPANY_INFO.phone}</span>
-                <span>✉ {SYNERGY_COMPANY_INFO.email}</span>
+                <span>📞 {COMPANY_INFO.phone}</span>
+                <span>✉ {COMPANY_INFO.email}</span>
               </div>
               <p className="pt-0.5 text-[10px] font-semibold text-slate-900">
-                GSTIN/UIN: {SYNERGY_COMPANY_INFO.gstin}
+                GSTIN/UIN: {COMPANY_INFO.gstin}
               </p>
             </div>
           </div>
@@ -290,7 +286,7 @@ export const JobWorkOrderPDF = React.forwardRef<HTMLDivElement, JobWorkOrderPDFP
             {order.notes || 'Raw material allocated from vendor deposit. Standard delivery in 14 days. Defective goods must be replaced by vendor without additional custody deduction.'}
           </p>
           <p className="text-[10px] text-slate-600 italic">
-            * Material dispatched under Rule 55 Delivery Challan remains the property of Synergy International held in vendor custody.
+            * Material dispatched under Rule 55 Delivery Challan remains the property of Plinth held in vendor custody.
           </p>
         </div>
 
@@ -304,7 +300,7 @@ export const JobWorkOrderPDF = React.forwardRef<HTMLDivElement, JobWorkOrderPDFP
           </div>
           <div className="p-3 text-right flex flex-col justify-between h-28">
             <div className="font-bold text-black text-xs">
-              for SYNERGY INTERNATIONAL {SYNERGY_COMPANY_INFO.financialYear}
+              for PLINTH {COMPANY_INFO.financialYear}
             </div>
             <div className="pt-8 text-black font-semibold text-[11px] border-t border-slate-300 w-48 ml-auto text-center">
               Authorised Signatory
@@ -314,7 +310,7 @@ export const JobWorkOrderPDF = React.forwardRef<HTMLDivElement, JobWorkOrderPDFP
 
         {/* Bottom Jurisdiction */}
         <div className="text-center pt-2 font-bold text-[10px] uppercase tracking-wider text-black">
-          {SYNERGY_COMPANY_INFO.jurisdiction}
+          {COMPANY_INFO.jurisdiction}
         </div>
       </div>
     );

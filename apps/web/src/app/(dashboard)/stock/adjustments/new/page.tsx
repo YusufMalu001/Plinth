@@ -10,7 +10,7 @@ import {
   PageHeader,
   Card,
   Button,
-} from '@synergy/ui';
+} from '@plinth/ui';
 import { SearchableSelector } from '../../../../../components/ui/SearchableSelector';
 import { formatVariantName } from '@/features/products/variant-names';
 import { StockMovementSummary } from '../../../../../features/inventory/components/StockMovementSummary';

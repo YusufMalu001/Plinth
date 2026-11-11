@@ -615,8 +615,8 @@ export interface GstWorkpaperSummary {
 
 export interface TallyMapping {
   id: string;
-  synergyAccountCode: string;
-  synergyAccountName: string;
+  plinthAccountCode: string;
+  plinthAccountName: string;
   tallyLedgerName: string;
   tallyParentGroup: string;
   mappingStatus: 'VERIFIED' | 'PENDING' | 'DISCREPANCY';

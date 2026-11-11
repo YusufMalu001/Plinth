@@ -1,6 +1,6 @@
 # Accounts implementation status
 
-This document records what the repository currently implements from the Synergy Accounts implementation plan. It is a release gate, not an assertion that the entire Accounts module is available.
+This document records what the repository currently implements from the Plinth Accounts implementation plan. It is a release gate, not an assertion that the entire Accounts module is available.
 
 ## Implemented in this change
 
@@ -13,11 +13,11 @@ This document records what the repository currently implements from the Synergy 
 - Accounts UI and API for company/chart/period setup and journal inquiry. Only working Accounts links appear in the navigation.
 - Sales order payment capture has been removed from Sales and Orders, including POS tender entry. The legacy `/finance/payments` route now redirects to `/accounts/payments`. POS checkout creates only the operational sale and Accounts invoice draft; it does not mark the order paid or record a receipt. Accounts receipt entry requires a posted invoice, records the method/date/reference, and allocates the receipt before verification and posting.
 - The old PO-to-Tally batch queue/export is disabled. Historical batch records and acknowledgements remain queryable under Legacy Tally staging. A purchase order is a commitment and does not create a payable or voucher.
-- Database-backed Accounts permissions and role definitions were added to the existing seed catalogue. Production installation can run the focused, idempotent `npm run db:seed-accounts-rbac --workspace=@synergy/database` command after migration; user-role assignment remains an administrator decision.
+- Database-backed Accounts permissions and role definitions were added to the existing seed catalogue. Production installation can run the focused, idempotent `npm run db:seed-accounts-rbac --workspace=@plinth/database` command after migration; user-role assignment remains an administrator decision.
 
 ## Not released for financial use
 
-- The new Synergy journal is a **parallel book only**. TallyPrime remains authoritative until finance signs the cutover reconciliation. Entity activation allows controlled journal work; it is not cutover approval.
+- The new Plinth journal is a **parallel book only**. TallyPrime remains authoritative until finance signs the cutover reconciliation. Entity activation allows controlled journal work; it is not cutover approval.
 - Sales AR is implemented as an initial parallel-book workbench: operational dispatch/POS events create Accounts invoice drafts, Finance submits/approves/posts invoices, receipts can be verified, allocated and posted, returns create credit-note candidates, and marketplace settlement batches can be recorded, bank-matched and posted. Dedicated AR APIs cover invoice/receipt/credit-note queues, customer ledger, aging, posting mappings, marketplace batches, event retry, and close blockers. The Sales order screen reads persisted Accounts invoice records and does not generate an official invoice from an order number.
 - Sales AR remains **not production-authoritative** pending tax-owner configuration, cutover/opening balance reconciliation, bank and marketplace evidence validation, and two month-end parallel reconciliations. The current marketplace workflow captures batch totals with a bank reference; it does not import or automatically match order-level settlement files. Refund payout posting and multi-invoice credit-note splitting remain follow-up work. Existing operational return refund rows remain operational records and must not be treated as posted Accounts refunds.
 - OCR capture, GRNI accounting, inventory valuation, AP bill posting and payable open items, bank reconciliation, GST workpapers, TallyPrime voucher exchange, and statutory reports are **not implemented**. GRN payment tracking does not replace these accounting controls and cannot post through this module.
@@ -32,8 +32,8 @@ This document records what the repository currently implements from the Synergy 
 3. Verified inventory costing policy and populated source valuation. Stock/COGS posting must remain blocked until this reconciles to Tally.
 4. Redacted purchase bills, Amazon daily upload, monthly B2B/B2C MTR, seller fee invoices, settlement/reimbursement/TDS reports, other channel specimens, GSTR-2B and bank statements.
 5. Finance-approved maker/checker limits and tax-owner approval of effective-dated GST/TDS/TCS rules. GST TCS and income-tax TDS require separate ledgers and reconciliation.
-6. Two consecutive parallel month-end reconciliations with no unexplained material variance, role-based UAT and formal finance/tax sign-off before Synergy becomes the system of record.
+6. Two consecutive parallel month-end reconciliations with no unexplained material variance, role-based UAT and formal finance/tax sign-off before Plinth becomes the system of record.
 
 ## Validation run
 
-The complete migration chain, including `20261008220000_accounts_core` and `20261009100000_accounts_ap_capture`, applied to disposable local databases. The ledger migration’s posting smoke test confirmed FY numbering, idempotent draft replay, maker/checker separation, posted immutability, trial balance totals and outbox rows. The AP migration check confirmed the tables, foreign keys, indexes and constraints apply after the core. These databases were removed; they were not the development or production Synergy book. API, web and database type checks pass.
+The complete migration chain, including `20261008220000_accounts_core` and `20261009100000_accounts_ap_capture`, applied to disposable local databases. The ledger migration’s posting smoke test confirmed FY numbering, idempotent draft replay, maker/checker separation, posted immutability, trial balance totals and outbox rows. The AP migration check confirmed the tables, foreign keys, indexes and constraints apply after the core. These databases were removed; they were not the development or production Plinth book. API, web and database type checks pass.

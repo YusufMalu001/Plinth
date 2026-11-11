@@ -1,5 +1,5 @@
 import { MaterialIssueReturn, MaterialIssueReturnType } from '@prisma/client';
-import { PermissionChecker, AuditWriter } from '@synergy/types';
+import { PermissionChecker, AuditWriter } from '@plinth/types';
 import { prisma } from '../../../database';
 import { MaterialIssueRepository, MaterialIssueReturnRepository } from '../repositories';
 import { StockLedgerRepository } from '../../inventory/repositories/stock-ledger.repository';

@@ -8,7 +8,7 @@ import {
   verifyRefreshToken
 } from './auth.tokens';
 
-const user = { id: 'user-1', email: 'admin@synergy.com', role: 'admin' as const };
+const user = { id: 'user-1', email: 'admin@plinth.example', role: 'admin' as const };
 
 describe('authentication tokens', () => {
   it('signs and verifies access tokens with the expected claims', () => {

@@ -6,7 +6,7 @@ import { Settings, LogOut, ChevronDown, User, Menu } from "lucide-react"
 import { Sidebar } from "./Sidebar"
 import { NotificationCenter } from "./NotificationCenter"
 import Link from "next/link"
-import Image from "next/image"
+import { Wordmark } from "../config/brand"
 import { authApi } from "../features/auth/api"
 import { useCurrentUser } from "../features/auth/hooks"
 import { canViewPath, getFirstAccessibleRoute, normalizeRole } from "../features/auth/access-control"
@@ -91,7 +91,7 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
   if (isLoading || !currentUser) return (
     <div className="flex min-h-screen items-center justify-center bg-background">
       <div className="flex flex-col items-center gap-3">
-        <img src="/synergy-favicon.png" alt="Synergy International" className="h-12 w-12 animate-pulse object-contain" />
+        <Wordmark className="text-2xl animate-pulse" />
         <p className="text-xs font-medium text-muted-foreground">Loading your workspace…</p>
       </div>
     </div>
@@ -146,7 +146,7 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
 
             {/* Mobile Brand Emblem */}
             <div className="lg:hidden flex items-center">
-              <Image src="/synergy.png" alt="Synergy International" width={112} height={32} className="h-6 w-auto object-contain dark:invert" />
+              <Wordmark className="text-lg" />
             </div>
           </div>
 

@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useMemo } from 'react';
-import { AttendanceDto, EmployeeTaskDto } from '@synergy/types';
+import { AttendanceDto, EmployeeTaskDto } from '@plinth/types';
 
 
 // Maps a day's combined activity to a rating 0–5

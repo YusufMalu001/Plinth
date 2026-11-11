@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Card } from '@synergy/ui';
+import { Card } from '@plinth/ui';
 import { Check } from 'lucide-react';
 import { StatusBadge, AnyStatus } from './StatusBadge';
 import { format } from 'date-fns';

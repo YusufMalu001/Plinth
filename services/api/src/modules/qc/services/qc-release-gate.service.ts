@@ -1,4 +1,4 @@
-import { ReleaseGateCheckResult, QcCheckpointType, InspectionResultStatus } from '@synergy/types';
+import { ReleaseGateCheckResult, QcCheckpointType, InspectionResultStatus } from '@plinth/types';
 import { QcRepository } from '../repositories/qc.repository';
 import { QcCheckpointResolver } from './qc-checkpoint-resolver';
 import { QcGateBlockedError, NotFoundError } from '../qc.types';

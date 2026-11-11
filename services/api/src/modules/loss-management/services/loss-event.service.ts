@@ -2,7 +2,7 @@ import {
   LossSourceType,
   LossEventStatus
 } from '@prisma/client';
-import { PermissionChecker, AuditWriter } from '@synergy/types';
+import { PermissionChecker, AuditWriter } from '@plinth/types';
 import { prisma } from '../../../database';
 import { getActorCapabilities } from '../../../common/rbac/permission-cache';
 import {

@@ -26,7 +26,7 @@ import {
   decideHandoverSchema,
   managerialOverrideSchema,
   postToInventorySchema
-} from '@synergy/validation';
+} from '@plinth/validation';
 
 import { DepartmentExecutionService } from './services/department-execution.service';
 import { DepartmentExecutionController } from './controllers/department-execution.controller';

@@ -2,7 +2,6 @@
 
 import React, { useState, useRef } from 'react';
 import { useParams } from 'next/navigation';
-import Image from 'next/image';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { useReactToPrint } from 'react-to-print';
 import {
@@ -26,7 +25,7 @@ import {
   PackageCheck,
   Layers,
 } from 'lucide-react';
-import { Button } from '@synergy/ui';
+import { Button } from '@plinth/ui';
 import Link from 'next/link';
 import { accountsApi } from '@/features/accounts/api';
 import { AccountsHeader } from '@/features/accounts/components/AccountsHeader';
@@ -162,7 +161,7 @@ export default function SupplierBillDetailPage() {
   if (billQuery.isLoading) {
     return (
       <main className="flex min-h-[60vh] flex-col items-center justify-center p-8">
-        <div className="h-8 w-8 animate-spin rounded-full border-2 border-synergy-600 border-t-transparent mb-3" />
+        <div className="h-8 w-8 animate-spin rounded-full border-2 border-n-600 border-t-transparent mb-3" />
         <p className="text-sm font-semibold text-muted-foreground">Loading supplier bill…</p>
       </main>
     );
@@ -387,7 +386,7 @@ export default function SupplierBillDetailPage() {
               size="sm"
               variant="outline"
               onClick={() => setIsDebitCreditNoteModalOpen(true)}
-              className="gap-1.5 text-xs font-semibold shadow-sm border-synergy-200 hover:bg-muted text-foreground dark:text-synergy-300 dark:border-synergy-900"
+              className="gap-1.5 text-xs font-semibold shadow-sm border-n-200 hover:bg-muted text-foreground dark:text-n-300 dark:border-n-900"
             >
               <FileText className="h-4 w-4" /> Credit / Debit Note
             </Button>
@@ -464,7 +463,7 @@ export default function SupplierBillDetailPage() {
       )}
 
       {/* Bill Header Hero Banner */}
-      <section className="rounded-3xl border border-border bg-gradient-to-br from-card via-card to-synergy-500/5 p-6 shadow-sm md:p-8">
+      <section className="rounded-3xl border border-border bg-gradient-to-br from-card via-card to-n-500/5 p-6 shadow-sm md:p-8">
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div>
             <div className="flex items-center gap-2">
@@ -474,7 +473,7 @@ export default function SupplierBillDetailPage() {
               <span className="rounded-full bg-muted px-2.5 py-0.5 text-[10px] font-bold font-mono">
                 {bill.kind}
               </span>
-              <span className="rounded-full bg-synergy-50 px-2 py-0.5 text-[10px] font-bold text-foreground dark:bg-synergy-950/50 dark:text-synergy-300">
+              <span className="rounded-full bg-n-50 px-2 py-0.5 text-[10px] font-bold text-foreground dark:bg-n-950/50 dark:text-n-300">
                 Direct GRN Conversion
               </span>
             </div>
@@ -583,7 +582,7 @@ export default function SupplierBillDetailPage() {
           <div
             className={`rounded-2xl border p-4 shadow-sm ${
               balance > 0
-                ? 'border-border bg-synergy-500/5'
+                ? 'border-border bg-n-500/5'
                 : 'border-emerald-500/30 bg-emerald-500/5'
             }`}
           >
@@ -592,7 +591,7 @@ export default function SupplierBillDetailPage() {
               {balance > 0 && isApprovedOrPosted && (
                 <button
                   onClick={() => setIsPaymentModalOpen(true)}
-                  className="text-[10px] font-bold text-foreground dark:text-synergy-300 underline hover:opacity-80"
+                  className="text-[10px] font-bold text-foreground dark:text-n-300 underline hover:opacity-80"
                 >
                   Pay Now
                 </button>
@@ -600,7 +599,7 @@ export default function SupplierBillDetailPage() {
             </div>
             <p
               className={`mt-1 text-xl font-bold font-mono ${
-                balance > 0 ? 'text-foreground dark:text-synergy-300' : 'text-emerald-600 dark:text-emerald-400'
+                balance > 0 ? 'text-foreground dark:text-n-300' : 'text-emerald-600 dark:text-emerald-400'
               }`}
             >
               {formatCurrency(balance)}
@@ -640,7 +639,7 @@ export default function SupplierBillDetailPage() {
                 size="sm"
                 variant="outline"
                 onClick={() => setViewMode(viewMode === 'split' ? 'full' : 'split')}
-                className="gap-1.5 text-xs font-semibold shadow-sm text-foreground dark:text-synergy-300 border-synergy-200 dark:border-synergy-900/50 hover:bg-muted dark:hover:bg-synergy-950/30"
+                className="gap-1.5 text-xs font-semibold shadow-sm text-foreground dark:text-n-300 border-n-200 dark:border-n-900/50 hover:bg-muted dark:hover:bg-n-950/30"
               >
                 {viewMode === 'split' ? (
                   <>
@@ -667,19 +666,12 @@ export default function SupplierBillDetailPage() {
             {/* Document Header */}
             <div className="flex flex-wrap items-start justify-between gap-4 border-b-2 border-border pb-5">
               <div className="flex items-center gap-4">
-                <Image
-                  src="/synergy.png"
-                  alt="Synergy International"
-                  width={175}
-                  height={53}
-                  priority
-                  className="h-auto w-32 object-contain"
-                />
+                <span className="text-2xl font-black tracking-tight text-ink uppercase">Plinth</span>
                 <div className="border-l border-slate-200 pl-4 dark:border-border">
                   <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-foreground">Accounts Payable</p>
                   <h2 className="mt-0.5 text-xl md:text-2xl font-bold">Supplier Bill</h2>
                   <p className="mt-0.5 text-xs text-slate-500 dark:text-muted-foreground">
-                    Synergy International · INR (₹)
+                    Plinth · INR (₹)
                   </p>
                 </div>
               </div>
@@ -687,7 +679,7 @@ export default function SupplierBillDetailPage() {
                 <p className="text-slate-500 dark:text-muted-foreground">Supplier Invoice Reference</p>
                 <p className="font-mono font-bold text-base">{bill.supplierInvoiceNumber}</p>
                 <p className="mt-1.5 text-slate-500 dark:text-muted-foreground">Bill Status</p>
-                <p className="font-semibold text-foreground dark:text-synergy-300">
+                <p className="font-semibold text-foreground dark:text-n-300">
                   {billStatusLabel(bill.status)}
                 </p>
               </div>
@@ -727,7 +719,7 @@ export default function SupplierBillDetailPage() {
               <div className="space-y-1.5 rounded-xl bg-slate-50/80 p-3.5 text-xs dark:bg-muted/20">
                 <p className="font-bold uppercase tracking-wider text-slate-400 text-[10px]">Billed Entity (Buyer)</p>
                 <p className="text-sm font-bold text-slate-900 dark:text-foreground">
-                  {bill.entity?.legalName || entities.data?.find((e) => e.id === bill.entityId)?.legalName || 'Synergy International'}
+                  {bill.entity?.legalName || entities.data?.find((e) => e.id === bill.entityId)?.legalName || 'Plinth'}
                 </p>
                 <p className="text-slate-600 dark:text-muted-foreground">
                   GSTIN: <span className="font-mono font-semibold">{bill.entity?.gstin || entities.data?.find((e) => e.id === bill.entityId)?.gstin || 'Main'}</span>
@@ -754,7 +746,7 @@ export default function SupplierBillDetailPage() {
             </div>
 
             {/* Document References Block: PO, GRN, Debit Notes */}
-            <div className="border-b border-slate-200 py-3 px-3.5 bg-synergy-50/40 rounded-xl my-3.5 text-xs flex flex-wrap items-center justify-between gap-4 dark:bg-muted/10 dark:border-border">
+            <div className="border-b border-slate-200 py-3 px-3.5 bg-n-50/40 rounded-xl my-3.5 text-xs flex flex-wrap items-center justify-between gap-4 dark:bg-muted/10 dark:border-border">
               <div className="flex flex-wrap items-center gap-5">
                 <div>
                   <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-muted-foreground">
@@ -794,7 +786,7 @@ export default function SupplierBillDetailPage() {
             {/* Line Items Table */}
             <div className="mt-4 overflow-x-auto rounded-xl border border-slate-200 dark:border-border print:overflow-visible">
               <table className="w-full min-w-[680px] text-left text-xs print:min-w-0 print:text-[9px]">
-                <thead className="bg-synergy-800 text-white print:bg-slate-100 print:text-slate-900">
+                <thead className="bg-n-800 text-white print:bg-slate-100 print:text-slate-900">
                   <tr>
                     <th className="px-2.5 py-2 font-semibold w-7">#</th>
                     <th className="px-2.5 py-2 font-semibold">Item &amp; Description</th>
@@ -937,7 +929,7 @@ export default function SupplierBillDetailPage() {
                 <ShoppingBag className="h-3.5 w-3.5 text-primary" />
                 <span className="text-[11px]">PO</span>
                 {linkedPos.length > 0 && (
-                  <span className="rounded-full bg-muted px-1.5 py-0.2 text-[9px] font-mono text-foreground dark:text-synergy-300">
+                  <span className="rounded-full bg-muted px-1.5 py-0.2 text-[9px] font-mono text-foreground dark:text-n-300">
                     {linkedPos.length}
                   </span>
                 )}
@@ -991,7 +983,7 @@ export default function SupplierBillDetailPage() {
                 <CreditCard className="h-3.5 w-3.5 text-foreground" />
                 <span className="text-[11px]">Payments</span>
                 {bill.payments && bill.payments.length > 0 && (
-                  <span className="rounded-full bg-muted px-1.5 py-0.2 text-[9px] font-mono text-foreground dark:text-synergy-300">
+                  <span className="rounded-full bg-muted px-1.5 py-0.2 text-[9px] font-mono text-foreground dark:text-n-300">
                     {bill.payments.length}
                   </span>
                 )}
@@ -1011,7 +1003,7 @@ export default function SupplierBillDetailPage() {
                           <ShoppingBag className="h-4 w-4 text-primary" />
                           <span className="font-mono font-bold text-base text-foreground">{po.poNumber}</span>
                           {po.status && (
-                            <span className="rounded-full bg-synergy-100 dark:bg-synergy-950/50 text-foreground dark:text-synergy-300 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider">
+                            <span className="rounded-full bg-n-100 dark:bg-n-950/50 text-foreground dark:text-n-300 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider">
                               {po.status}
                             </span>
                           )}
@@ -1236,7 +1228,7 @@ export default function SupplierBillDetailPage() {
                       )}
                       <Button
                         size="sm"
-                        className="bg-synergy-700 hover:bg-synergy-800 text-white font-semibold gap-1.5 text-xs shadow-sm"
+                        className="bg-n-700 hover:bg-n-800 text-white font-semibold gap-1.5 text-xs shadow-sm"
                         onClick={() => setSelectedDebitNoteForSend(note)}
                       >
                         <Send className="h-3.5 w-3.5" /> Send to Vendor
@@ -1296,10 +1288,10 @@ export default function SupplierBillDetailPage() {
                     <span className="font-mono font-medium">{formatCurrency(paid)}</span>
                   </div>
                   <div className="flex justify-between font-bold text-sm pt-1 border-t border-border">
-                    <span className={balance > 0 ? 'text-foreground dark:text-synergy-300' : 'text-emerald-600'}>
+                    <span className={balance > 0 ? 'text-foreground dark:text-n-300' : 'text-emerald-600'}>
                       Balance Outstanding
                     </span>
-                    <span className={`font-mono ${balance > 0 ? 'text-foreground dark:text-synergy-300' : 'text-emerald-600'}`}>
+                    <span className={`font-mono ${balance > 0 ? 'text-foreground dark:text-n-300' : 'text-emerald-600'}`}>
                       {formatCurrency(balance)}
                     </span>
                   </div>
@@ -1329,7 +1321,7 @@ export default function SupplierBillDetailPage() {
                         <span className="font-mono font-bold text-emerald-600 dark:text-emerald-400 text-sm">
                           {formatCurrency(payment.amount)}
                         </span>
-                        <span className="rounded-full bg-muted px-2 py-0.5 text-[10px] font-bold text-foreground dark:text-synergy-300">
+                        <span className="rounded-full bg-muted px-2 py-0.5 text-[10px] font-bold text-foreground dark:text-n-300">
                           {payment.paymentMode.replaceAll('_', ' ')}
                         </span>
                       </div>
@@ -1479,7 +1471,7 @@ function PaymentStatusPill({ status }: { status?: string }) {
     );
   }
   return (
-    <span className="rounded-full bg-synergy-100 text-foreground dark:bg-synergy-950/40 dark:text-synergy-300 px-3 py-1 text-[10px] font-bold uppercase tracking-wide">
+    <span className="rounded-full bg-n-100 text-foreground dark:bg-n-950/40 dark:text-n-300 px-3 py-1 text-[10px] font-bold uppercase tracking-wide">
       Payment Pending
     </span>
   );

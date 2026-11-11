@@ -15,7 +15,7 @@ import {
   investigateExceptionSchema,
   resolveExceptionSchema,
   dismissExceptionSchema
-} from '@synergy/validation';
+} from '@plinth/validation';
 
 import { WipService } from './services/wip.service';
 import { WipController } from './controllers/wip.controller';

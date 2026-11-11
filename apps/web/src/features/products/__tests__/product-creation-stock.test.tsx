@@ -88,7 +88,7 @@ describe('Product stock reflection & draft saving', () => {
   });
 
   describe('Product Creation Draft Persistence', () => {
-    const DRAFT_KEY = 'synergy_product_creation_draft_v1';
+    const DRAFT_KEY = 'plinth_product_creation_draft_v1';
 
     beforeEach(() => {
       localStorage.clear();

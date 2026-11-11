@@ -3,7 +3,7 @@
 import React from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
-import { Card } from '@synergy/ui';
+import { Card } from '@plinth/ui';
 import Link from 'next/link';
 import { AccountsHeader } from '@/features/accounts/components/AccountsHeader';
 import { PurchaseBillModal } from '@/features/accounts/components/PurchaseBillModal';

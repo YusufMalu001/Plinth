@@ -4,7 +4,7 @@ import { IntelligenceToolsService } from '../services/intelligence-tools.service
 const start = new Date('2026-01-01T00:00:00.000Z');
 const end = new Date('2026-01-31T00:00:00.000Z');
 
-describe('operational intelligence uses Synergy records', () => {
+describe('operational intelligence uses Plinth records', () => {
   test('inventory movement history creates slow and fast mover metrics and a slow stock review opportunity', async () => {
     const db = {
       inventoryBalance: { findMany: jest.fn().mockResolvedValue([

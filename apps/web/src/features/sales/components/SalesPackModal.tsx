@@ -11,7 +11,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '@synergy/ui';
+} from '@plinth/ui';
 import { SalesOrder } from '../types';
 import { useCreatePackage } from '../hooks';
 

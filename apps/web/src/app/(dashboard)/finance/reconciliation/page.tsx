@@ -6,7 +6,7 @@ import {
   useReconciliationRecords,
   useReconcileItem,
 } from '@/features/finance/hooks';
-import { Card, Button, Badge } from '@synergy/ui';
+import { Card, Button, Badge } from '@plinth/ui';
 import { FinanceNavigationTabs } from '@/features/finance/components/FinanceNavigationTabs';
 import { StatusBadge } from '@/components/StatusBadge';
 import {

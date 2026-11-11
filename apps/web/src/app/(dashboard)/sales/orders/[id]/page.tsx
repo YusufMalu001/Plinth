@@ -32,7 +32,7 @@ import {
   X,
   XCircle,
 } from 'lucide-react';
-import { Badge, Button } from '@synergy/ui';
+import { Badge, Button } from '@plinth/ui';
 import { useReactToPrint } from 'react-to-print';
 import { StatusBadge } from '../../../../../components/StatusBadge';
 import { LoadingState } from '../../../../../components/LoadingState';
@@ -620,9 +620,9 @@ export default function SalesOrderDetailPage({ params }: { params: { id: string 
                 {order.status !== 'DRAFT' && order.status !== 'CANCELLED' && (
                   <Link
                     href="/accounts/sales"
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-synergy-50 text-synergy-700 hover:bg-synergy-100 dark:bg-synergy-950/40 dark:text-synergy-300 border border-synergy-200 dark:border-synergy-900/50 transition-colors"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-n-50 text-n-700 hover:bg-n-100 dark:bg-n-950/40 dark:text-n-300 border border-n-200 dark:border-n-900/50 transition-colors"
                   >
-                    <Receipt className="h-3.5 w-3.5 text-synergy-600" />
+                    <Receipt className="h-3.5 w-3.5 text-n-600" />
                     <span>Accounts Tax Invoice</span>
                   </Link>
                 )}

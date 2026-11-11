@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { X, Printer, ShieldCheck } from 'lucide-react';
-import { Button } from '@synergy/ui';
+import { Button } from '@plinth/ui';
 import type { DetailedProduct } from '../types';
 import { useBomVersion, useBomVersions } from '../../bom/hooks';
 import { useReactToPrint } from 'react-to-print';
@@ -60,7 +60,7 @@ export function ProductSpecSheetModal({ isOpen, onClose, product }: ProductSpecS
         {/* Modal Controls Header */}
         <div className="flex items-center justify-between border-b border-border bg-muted/40 px-6 py-3.5 print:hidden">
           <div className="flex items-center gap-2">
-            <span className="font-mono text-xs font-bold text-primary">TECH-DOC-2026 // SYNERGY ERP</span>
+            <span className="font-mono text-xs font-bold text-primary">TECH-DOC-2026 // Plinth ERP</span>
           </div>
           <div className="flex items-center gap-2">
             <Button size="sm" variant="outline" icon={Printer} onClick={() => handlePrint()}>
@@ -87,7 +87,7 @@ export function ProductSpecSheetModal({ isOpen, onClose, product }: ProductSpecS
                 </div>
                 <div>
                   <h1 className="text-xl font-black tracking-tight text-foreground uppercase print:text-slate-900">
-                    Synergy International
+                    Plinth
                   </h1>
                   <p className="text-[10px] font-bold tracking-widest text-muted-foreground uppercase print:text-slate-500">
                     Industrial Manufacturing & Precision Engineering Standards
@@ -237,7 +237,7 @@ export function ProductSpecSheetModal({ isOpen, onClose, product }: ProductSpecS
               <span>GST: {product.metadata?.gstRate != null ? `${String(product.metadata.gstRate)}%` : '—'}</span>
             </div>
             <p className="font-mono text-[10px]">
-              Document Generated: {new Date().toLocaleDateString()} · Synergy ERP
+              Document Generated: {new Date().toLocaleDateString()} · Plinth
             </p>
           </div>
         </div>

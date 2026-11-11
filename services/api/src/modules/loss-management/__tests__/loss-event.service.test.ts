@@ -9,7 +9,7 @@ import {
   ValidationError
 } from '../../../common/errors/AppError';
 import { LifecycleStatus, LossEventStatus, LossClassification, LossSourceType } from '@prisma/client';
-import { PermissionChecker, AuditWriter, AuditEvent } from '@synergy/types';
+import { PermissionChecker, AuditWriter, AuditEvent } from '@plinth/types';
 import { Decimal } from '@prisma/client/runtime/library';
 
 class MockAuditWriter implements AuditWriter {

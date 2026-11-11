@@ -34,7 +34,7 @@ function getNextIncrementedBomName(rawName, existingNamesSet) {
 
 async function main() {
   console.log('========================================================');
-  console.log('       SYNERGY ERP - DISAMBIGUATE DUPLICATE BOMS        ');
+  console.log('       PLINTH ERP - DISAMBIGUATE DUPLICATE BOMS        ');
   console.log('========================================================');
   console.log(`Database: ${maskedUrl}`);
   console.log(`Execution Mode: ${apply ? 'APPLY (Changes will be written)' : 'DRY-RUN (Preview only)'}\n`);

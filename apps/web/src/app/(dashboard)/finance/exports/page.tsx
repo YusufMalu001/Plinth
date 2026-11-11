@@ -7,7 +7,7 @@ import {
   useExportBatch,
   useManualAcknowledgeItem,
 } from '@/features/finance/hooks';
-import { Card, Button, Badge, Input } from '@synergy/ui';
+import { Card, Button, Badge, Input } from '@plinth/ui';
 import { FinanceNavigationTabs } from '@/features/finance/components/FinanceNavigationTabs';
 import { StatusBadge } from '@/components/StatusBadge';
 import {

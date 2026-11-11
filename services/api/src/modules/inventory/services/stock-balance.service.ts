@@ -1,5 +1,5 @@
 import { StockBalance, StockOwnership } from '@prisma/client';
-import { PermissionChecker, AuditWriter } from '@synergy/types';
+import { PermissionChecker, AuditWriter } from '@plinth/types';
 import { StockBalanceRepository } from '../repositories/stock-balance.repository';
 import { computeItemKey } from '../repositories/stock-ledger.repository';
 import { ForbiddenError, NotFoundError } from '../../../common/errors/AppError';

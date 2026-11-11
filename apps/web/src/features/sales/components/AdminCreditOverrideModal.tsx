@@ -13,7 +13,7 @@ import {
 } from 'lucide-react';
 import { SalesOrder, Customer } from '../types';
 import { useCreditOverrideOrder } from '../hooks';
-import { Button } from '@synergy/ui';
+import { Button } from '@plinth/ui';
 
 const formatCurrency = (val: number | string, currency = 'INR') =>
   new Intl.NumberFormat('en-IN', {

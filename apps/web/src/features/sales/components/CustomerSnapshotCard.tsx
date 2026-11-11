@@ -11,7 +11,7 @@ import {
   X,
   Building,
 } from 'lucide-react';
-import { Button, Badge } from '@synergy/ui';
+import { Button, Badge } from '@plinth/ui';
 import { Customer } from '../types';
 
 interface CustomerSnapshotCardProps {

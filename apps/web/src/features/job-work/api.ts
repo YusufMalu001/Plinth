@@ -9,7 +9,7 @@ import type {
   JobWorkAnalyticsDto,
   JobWorkOrderStatus,
   JobWorkReturnDisposition
-} from '@synergy/types';
+} from '@plinth/types';
 
 export interface JobWorkOrderQueryFilters {
   vendorId?: string;

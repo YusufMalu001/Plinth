@@ -1,6 +1,6 @@
 ---
-name: Synergy International Inventory
-description: Design system for the Synergy ERP item creation and product detail screens.
+name: Plinth International Inventory
+description: Design system for the Plinth ERP item creation and product detail screens.
 colors:
   primary: "#004A80"
   on-primary: "#FFFFFF"
@@ -83,20 +83,20 @@ components:
 
 ## Overview
 
-Synergy International is an operational ERP for inventory, purchasing, production, and sales. The item screens serve staff entering technical catalog data and checking stock, BOM, pricing, and vendor information. The visual language should feel reliable, calm, and precise. Density is acceptable when it helps compare data, but every field and table needs a clear place in the hierarchy.
+Plinth International is an operational ERP for inventory, purchasing, production, and sales. The item screens serve staff entering technical catalog data and checking stock, BOM, pricing, and vendor information. The visual language should feel reliable, calm, and precise. Density is acceptable when it helps compare data, but every field and table needs a clear place in the hierarchy.
 
 This file defines the visual system. `STITCH_PROMPT.md` in the same folder defines the two screens and their exact content. The four supplied screenshots show the current application shell and creation page; use them as brand and content references, not as a layout to copy.
 
 ## Color fidelity and distribution
 
 - **White is the dominant background.** The actual light-theme `--background`, `--card`, and sidebar tokens in `globals.css` are white. Make the page canvas, header, and main reading surfaces white. Do not turn the page into a gray dashboard or fill every section with a gray tint.
-- **Synergy blue `#004A80`:** use for the active Inventory navigation, primary action, links, active tab/section indicator, focus, and occasional small structural emphasis such as a slim rule. Use hover blue `#003C68` for the primary button hover. Brand blue must be visible enough to make this recognizably Synergy, but never as giant filled panels or a blue background behind the whole form.
+- **Plinth blue `#004A80`:** use for the active Inventory navigation, primary action, links, active tab/section indicator, focus, and occasional small structural emphasis such as a slim rule. Use hover blue `#003C68` for the primary button hover. Brand blue must be visible enough to make this recognizably Plinth, but never as giant filled panels or a blue background behind the whole form.
 - **Pale blue `#F0F7FC`:** use sparingly for the active navigation item, focused/selected row, or an informative state. It is a tint, not an alternate page background.
 - **Text:** use the platform's neutral dark charcoal (`--foreground: oklch(0.250 0 0)`, approximately `#363636`) for headings and values. Secondary text is neutral medium gray. Avoid blue-gray typography across every label or low-contrast light-gray data.
 - **Borders:** the platform's `--border: oklch(0.920 0 0)` is a quiet neutral rule. Use it for input outlines, table row separators, and occasional section dividers. No nested card outlines, repeated gray header fills, or decorative dashed boxes around normal content.
 - **Semantic colors:** green only for healthy stock, saved state, or success; amber only for warnings, reservations, or low stock; red only for errors and destructive actions.
 - **Dark mode:** retain the current dark slate surfaces and `#2685C4` primary. Use the same structure and contrast hierarchy as light mode.
-- **Color audit:** from a full-page view, the composition should read as crisp white + dark charcoal + deliberate Synergy blue. Gray should be limited to dividers, control borders, and secondary text. If it reads mainly gray, redesign it.
+- **Color audit:** from a full-page view, the composition should read as crisp white + dark charcoal + deliberate Plinth blue. Gray should be limited to dividers, control borders, and secondary text. If it reads mainly gray, redesign it.
 
 ## Typography
 
@@ -104,7 +104,7 @@ This file defines the visual system. `STITCH_PROMPT.md` in the same folder defin
 
 ## Layout and art direction
 
-Preserve the recognizable Synergy application shell: fixed left navigation for the wider platform, a compact white top bar with notifications and admin profile, and the item content in the main area. The Inventory section is selected in the sidebar. Do not add another full-height sidebar within the item page.
+Preserve the recognizable Plinth application shell: fixed left navigation for the wider platform, a compact white top bar with notifications and admin profile, and the item content in the main area. The Inventory section is selected in the sidebar. Do not add another full-height sidebar within the item page.
 
 Design with the judgment of a strong enterprise product designer. Seek an original, purposeful composition within the existing brand, not a template-style SaaS dashboard. The creative work is in hierarchy, pacing, alignment, and smart use of white space; it is not in new colors, illustrations, floating tiles, or decorative microcopy. At 1440–1920 px, let the main content breathe but cap form reading width where appropriate. Use a rigorous grid, then vary its rhythm: broad identity fields; a media area that has a real role; a compact pricing/tax arrangement; full-width BOM and variant tables. Avoid making every section the same-sized box.
 
@@ -118,7 +118,7 @@ The creation page may use a compact in-page section navigation, but the fields m
 
 ## Originality check for Stitch
 
-Before finalizing, explore at least two distinct compositions on the **same tokens and content**. Choose the one with the clearest reading path and strongest visual rhythm. Reject any option that could be described as “a stack of rounded cards,” “gray dashboard panels,” or “AI-generated admin template.” Show visual craft through proportion, whitespace, precise alignment, table density, and a memorable but restrained use of Synergy blue. Do not solve the problem by deleting fields or moving them behind unexplained controls.
+Before finalizing, explore at least two distinct compositions on the **same tokens and content**. Choose the one with the clearest reading path and strongest visual rhythm. Reject any option that could be described as “a stack of rounded cards,” “gray dashboard panels,” or “AI-generated admin template.” Show visual craft through proportion, whitespace, precise alignment, table density, and a memorable but restrained use of Plinth blue. Do not solve the problem by deleting fields or moving them behind unexplained controls.
 
 ## Elevation & Depth
 
@@ -132,7 +132,7 @@ Use mostly 4–8 px corner radii for fields, buttons, and table containers, with
 
 - **Page header:** breadcrumb, clear title, existing draft status where applicable, and right-aligned Back/Reset or Back/Barcode/Edit actions.
 - **Section heading:** short meaningful name, one optional action, and optional collapse control. One divider separates major sections.
-- **Input:** visible persistent label, 40–44 px control height, clear optional/required status, placeholder only as an example, focus ring in Synergy blue, and inline validation immediately below the field.
+- **Input:** visible persistent label, 40–44 px control height, clear optional/required status, placeholder only as an example, focus ring in Plinth blue, and inline validation immediately below the field.
 - **Search/select:** show the chosen value, search affordance, loading and empty states, and any `+ New` action next to the related label. Do not draw a fake static dropdown.
 - **Repeatable row:** name/value or table row with one unambiguous remove action; add action at the group header or end.
 - **Data table:** aligned columns, stable headers, right-aligned numbers and currency, row dividers, a compact empty state, and horizontal overflow at narrow widths.

@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client';
-import { PermissionChecker, AuditWriter, ConsoleAuditWriter } from '@synergy/types';
+import { PermissionChecker, AuditWriter, ConsoleAuditWriter } from '@plinth/types';
 import { prisma as defaultPrisma } from '../../../database';
 import { WipRepository } from '../repositories/wip.repository';
 import { assertDepartmentScope, resolveActorDefaultDepartment, isGlobalDepartmentActor } from '../../../common/rbac/department-scope';

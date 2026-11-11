@@ -4,15 +4,15 @@ const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
 const workerEmails = [
-  'worker.buffing@synergy.local',
-  'worker.frame@synergy.local',
-  'worker.laser.cutting@synergy.local',
-  'worker.moulding@synergy.local',
-  'worker.printing@synergy.local',
-  'worker.rod.cutting@synergy.local',
-  'worker.rope.cutting@synergy.local',
-  'worker.top.rod.punching@synergy.local',
-  'worker.tube.bending@synergy.local',
+  'worker.buffing@plinth.local',
+  'worker.frame@plinth.local',
+  'worker.laser.cutting@plinth.local',
+  'worker.moulding@plinth.local',
+  'worker.printing@plinth.local',
+  'worker.rod.cutting@plinth.local',
+  'worker.rope.cutting@plinth.local',
+  'worker.top.rod.punching@plinth.local',
+  'worker.tube.bending@plinth.local',
 ];
 
 function assertLocalDemoDatabase() {
@@ -24,9 +24,9 @@ function assertLocalDemoDatabase() {
   if (
     process.env.NODE_ENV === 'production' ||
     !['localhost', '127.0.0.1', '::1'].includes(databaseUrl.hostname) ||
-    databaseName !== 'synergy_erp'
+    databaseName !== 'plinth_erp'
   ) {
-    throw new Error('Refusing to continue: this script only updates the local synergy_erp database.');
+    throw new Error('Refusing to continue: this script only updates the local plinth_erp database.');
   }
 }
 

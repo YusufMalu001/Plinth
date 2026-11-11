@@ -11,7 +11,7 @@ import {
   ShieldCheck,
   Truck,
 } from 'lucide-react';
-import { EmptyState } from '@synergy/ui';
+import { EmptyState } from '@plinth/ui';
 import { ErrorState } from '../../../components/ErrorState';
 import { LoadingState } from '../../../components/LoadingState';
 import { useIntelligenceOverview } from '../hooks';

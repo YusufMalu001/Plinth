@@ -17,7 +17,7 @@ import {
   approveQcRuleSchema,
   qcOverrideSchema,
   releaseGateCheckQuerySchema
-} from '@synergy/validation';
+} from '@plinth/validation';
 import { errorHandler } from '../../../../common/middleware/error';
 
 describe('Module 10 — Quality Management API & RBAC Tests', () => {

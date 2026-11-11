@@ -1,6 +1,6 @@
 import React from 'react';
 import { ShieldAlert } from 'lucide-react';
-import { Button } from '@synergy/ui';
+import { Button } from '@plinth/ui';
 
 export function ForbiddenState({ message = "You don't have permission to view this content." }: { message?: string }) {
   return (

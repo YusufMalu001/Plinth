@@ -3,7 +3,7 @@
 import { useState, type FormEvent } from 'react';
 import Link from 'next/link';
 import { ArrowLeft, BadgePercent, Plus, Save, Trash2 } from 'lucide-react';
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@synergy/ui';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@plinth/ui';
 import { useRouter } from 'next/navigation';
 import { useCreatePricingMaster, type PricingTier } from '../../../../../hooks/useMasterData';
 import { usePricingLevels } from '../../../../../hooks/usePricingLevels';

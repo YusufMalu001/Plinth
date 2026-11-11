@@ -36,7 +36,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '@synergy/ui';
+} from '@plinth/ui';
 import { StatusBadge } from '../../../../../components/StatusBadge';
 import { useSalesCustomer } from '../../../../../features/sales/hooks';
 import { salesApi } from '../../../../../features/sales/api';
@@ -74,7 +74,7 @@ export default function CustomerDetailPage() {
     queryKey: ['accounts', 'entities'],
     queryFn: accountsApi.entities,
   });
-  const entityId = entitiesQuery.data?.[0]?.id || 'synergy-international';
+  const entityId = entitiesQuery.data?.[0]?.id || 'plinth-international';
 
   // Fetch Accounts Live Credit Exposure & Balances
   const creditBalancesQuery = useQuery({
@@ -295,7 +295,7 @@ export default function CustomerDetailPage() {
             <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
               Approved Credit Limit
             </span>
-            <CreditCard className="h-4 w-4 text-synergy-600" />
+            <CreditCard className="h-4 w-4 text-n-600" />
           </CardHeader>
           <CardContent className="space-y-2">
             <div className="text-2xl font-black text-foreground font-mono">
@@ -615,7 +615,7 @@ export default function CustomerDetailPage() {
                           className={`inline-flex px-2 py-0.5 rounded-full text-[10px] font-bold uppercase font-mono ${
                             inv.status === 'POSTED' || inv.status === 'APPROVED'
                               ? 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-400'
-                              : 'bg-synergy-500/10 text-synergy-700 dark:text-synergy-400'
+                              : 'bg-n-500/10 text-n-700 dark:text-n-400'
                           }`}
                         >
                           {inv.status}

@@ -1,4 +1,4 @@
-# Synergy Form Keyboard Layer
+# Plinth Form Keyboard Layer
 
 ## Handled combinations (exhaustive list)
 

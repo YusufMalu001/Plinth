@@ -7,7 +7,7 @@ import {
   proposeHandoverSchema,
   decideHandoverSchema,
   managerialOverrideSchema
-} from '@synergy/validation';
+} from '@plinth/validation';
 import { validate } from '../../../common/middleware/validation';
 
 // Mock auth middleware

@@ -1,7 +1,7 @@
 import { randomUUID } from 'crypto';
 import { prisma } from '../../../database';
 import { ConflictError, NotFoundError, ValidationError } from '../../../common/errors/AppError';
-import type { SaveProductionRouteGraphInput } from '@synergy/validation';
+import type { SaveProductionRouteGraphInput } from '@plinth/validation';
 
 const ASSEMBLY_DEPARTMENT_CODE = 'DEPT-ASSEMBLY-DEPART-W225';
 

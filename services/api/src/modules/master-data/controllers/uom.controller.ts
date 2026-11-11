@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import { UomService } from '../services/uom.service';
-import { ApiResponse, LifecycleStatus } from '@synergy/types';
+import { ApiResponse, LifecycleStatus } from '@plinth/types';
 import { isAdminActor } from '../../../common/middleware/auth';
 
 export class UomController {

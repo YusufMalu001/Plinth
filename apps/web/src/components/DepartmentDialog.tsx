@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { Dialog, Input, Button } from '@synergy/ui';
+import { Dialog, Input, Button } from '@plinth/ui';
 import { Building2, User, Plus, Save, Mail, KeyRound, Phone } from 'lucide-react';
 import { useCreateDepartment, useUpdateDepartment, type Department } from '../hooks/useMasterData';
 import { showToast } from './toast-store';

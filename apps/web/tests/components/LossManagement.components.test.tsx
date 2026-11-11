@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
 import { ToleranceBasisBadge } from '../../src/features/loss-management/components/ToleranceBasisBadge';
 import { LossDispositionPanel } from '../../src/features/loss-management/components/LossDispositionPanel';
-import { LossEventDto, SafeUser } from '@synergy/types';
+import { LossEventDto, SafeUser } from '@plinth/types';
 
 describe('Module 11 UI Components: Tolerance Basis & Separation of Duties', () => {
   describe('ToleranceBasisBadge — Sourced Basis Verification', () => {
@@ -53,7 +53,7 @@ describe('Module 11 UI Components: Tolerance Basis & Separation of Duties', () =
   describe('LossDispositionPanel — Separation of Duties & Reporter Guard', () => {
     const mockReporterUser: SafeUser = {
       id: 'user-reporter-123',
-      email: 'reporter@synergy.com',
+      email: 'reporter@plinth.example',
       firstName: 'Alice',
       lastName: 'Reporter',
       role: 'store_manager',
@@ -64,7 +64,7 @@ describe('Module 11 UI Components: Tolerance Basis & Separation of Duties', () =
 
     const mockOtherUser: SafeUser = {
       id: 'user-manager-456',
-      email: 'manager@synergy.com',
+      email: 'manager@plinth.example',
       firstName: 'Bob',
       lastName: 'Manager',
       role: 'store_manager',

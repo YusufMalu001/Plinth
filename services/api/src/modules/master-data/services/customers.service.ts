@@ -1,5 +1,5 @@
 import { Customer, LifecycleStatus, Prisma } from '@prisma/client';
-import { PermissionChecker, AuditWriter } from '@synergy/types';
+import { PermissionChecker, AuditWriter } from '@plinth/types';
 import { CustomersRepository } from '../repositories/customers.repository';
 import { MasterDataLifecycleService } from './master-data-lifecycle.service';
 import { ConflictError, ForbiddenError, NotFoundError, ReferentialIntegrityError } from '../../../common/errors/AppError';

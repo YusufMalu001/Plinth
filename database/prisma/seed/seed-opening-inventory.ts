@@ -4,7 +4,7 @@ import { randomUUID } from 'crypto';
 const prisma = new PrismaClient();
 
 async function main() {
-  console.log('📦 Seeding realistic opening inventory balances for Synergy single plant...');
+  console.log('📦 Seeding realistic opening inventory balances for Plinth single plant...');
 
   // Ensure default warehouse locations exist
   const locationDefs = [

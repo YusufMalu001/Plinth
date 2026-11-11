@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import { WipService } from '../services/wip.service';
-import { PermissionChecker } from '@synergy/types';
+import { PermissionChecker } from '@plinth/types';
 
 export class WipController {
   constructor(

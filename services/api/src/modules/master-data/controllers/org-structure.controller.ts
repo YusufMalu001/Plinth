@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import { OrgStructureService } from '../services/org-structure.service';
-import { ApiResponse, LifecycleStatus } from '@synergy/types';
+import { ApiResponse, LifecycleStatus } from '@plinth/types';
 
 export class OrgStructureController {
   constructor(private readonly orgService: OrgStructureService) {}

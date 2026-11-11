@@ -1,5 +1,5 @@
 import { Category, ProductFamily, Product, ProductVariant, LifecycleStatus, Prisma } from '@prisma/client';
-import { PermissionChecker, AuditWriter } from '@synergy/types';
+import { PermissionChecker, AuditWriter } from '@plinth/types';
 import { ProductsRepository } from '../repositories/products.repository';
 import { MasterDataLifecycleService } from './master-data-lifecycle.service';
 import { ConflictError, NotFoundError, ReferentialIntegrityError, ValidationError } from '../../../common/errors/AppError';

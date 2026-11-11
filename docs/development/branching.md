@@ -1,6 +1,6 @@
 # Branching Strategy & Naming Conventions
 
-Synergy ERP enforces a strict branch architecture to ensure code security and team coordination.
+Plinth ERP enforces a strict branch architecture to ensure code security and team coordination.
 
 ## Official Branches
 

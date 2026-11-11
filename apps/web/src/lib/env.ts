@@ -1,5 +1,5 @@
 /**
- * Environment-aware URL resolution for Synergy ERP.
+ * Environment-aware URL resolution for Plinth.
  * 
  * Supports configurable public web origins across environments:
  * - Development: default http://localhost:3000
@@ -32,10 +32,10 @@ export function getAppBaseUrl(): string {
 
   // Environment-based fallback defaults
   if (nodeEnv === 'staging' || nodeEnv === 'stage') {
-    return explicitStagingUrl?.replace(/\/+$/, '') || 'https://stage.synergy.local';
+    return explicitStagingUrl?.replace(/\/+$/, '') || 'https://stage.plinth.local';
   }
   if (nodeEnv === 'production') {
-    return explicitProdUrl?.replace(/\/+$/, '') || 'https://synergy.local';
+    return explicitProdUrl?.replace(/\/+$/, '') || 'https://plinth.local';
   }
 
   return 'http://localhost:3000';

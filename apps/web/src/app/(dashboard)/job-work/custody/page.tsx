@@ -14,9 +14,9 @@ import {
   RotateCcw,
   Scale
 } from 'lucide-react';
-import { PageHeader, Button, Card } from '@synergy/ui';
+import { PageHeader, Button, Card } from '@plinth/ui';
 import { jobWorkApi } from '@/features/job-work/api';
-import type { JobWorkCustodyLedgerDto, VendorCustodyBalanceDto } from '@synergy/types';
+import type { JobWorkCustodyLedgerDto, VendorCustodyBalanceDto } from '@plinth/types';
 import { LoadingState } from '@/components/LoadingState';
 import { EmptyState } from '@/components/EmptyState';
 

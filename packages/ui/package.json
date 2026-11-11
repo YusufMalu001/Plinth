@@ -1,8 +1,8 @@
 {
-  "name": "@synergy/ui",
+  "name": "@plinth/ui",
   "version": "1.0.0",
   "private": true,
-  "description": "Shared UI configuration and utilities for Synergy ERP",
+  "description": "Shared UI configuration and utilities for Plinth ERP",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {

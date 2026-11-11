@@ -20,7 +20,7 @@ import {
   TableHead,
   TableCell,
   Button,
-} from '@synergy/ui';
+} from '@plinth/ui';
 import {
   Search,
   AlertTriangle,
@@ -190,7 +190,7 @@ export default function StockReorderPage() {
           </div>
         </div>
 
-        {/* Standard @synergy/ui Table Card */}
+        {/* Standard @plinth/ui Table Card */}
         <Card className="shadow-xs overflow-hidden border border-border/80 rounded-2xl">
           <div className="p-5 sm:p-6 border-b border-border/80 flex items-center justify-between bg-card">
             <h2 className="text-sm font-semibold text-foreground">

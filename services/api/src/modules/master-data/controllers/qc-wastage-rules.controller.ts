@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import { QcWastageRulesService } from '../services/qc-wastage-rules.service';
-import { ApiResponse, LifecycleStatus } from '@synergy/types';
+import { ApiResponse, LifecycleStatus } from '@plinth/types';
 
 export class QcWastageRulesController {
   constructor(private readonly qcWastageService: QcWastageRulesService) {}

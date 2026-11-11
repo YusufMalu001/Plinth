@@ -119,7 +119,7 @@ export default function DashboardOverview() {
 
   const handleExportPdf = useReactToPrint({
     contentRef: printRef,
-    documentTitle: `Synergy_Executive_Report_${timeframe}_${new Date().toISOString().slice(0, 10)}`,
+    documentTitle: `Plinth_Executive_Report_${timeframe}_${new Date().toISOString().slice(0, 10)}`,
   });
   const filteredEvents = useMemo(() => {
     if (!data?.recentEvents) return [];
@@ -825,7 +825,7 @@ export default function DashboardOverview() {
 
             <div className="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs text-slate-400">
               <span>Resolutions update in real-time</span>
-              <span className="text-slate-600 dark:text-slate-300 font-medium">Synergy Workflow Guard</span>
+              <span className="text-slate-600 dark:text-slate-300 font-medium">Plinth Workflow Guard</span>
             </div>
           </section>
         </div>

@@ -10,7 +10,7 @@ import {
   RefreshCw,
   ShoppingCart,
 } from 'lucide-react';
-import { Button, Card, CardContent, CardHeader, CardTitle, PageHeader } from '@synergy/ui';
+import { Button, Card, CardContent, CardHeader, CardTitle, PageHeader } from '@plinth/ui';
 import { useSalesMetrics, useSalesOrders } from '../../../features/sales/hooks';
 import { SalesOrderTable } from '../../../features/sales/components/SalesOrderTable';
 import { TableToolbar } from '../../../components/TableToolbar';

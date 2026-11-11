@@ -10,7 +10,7 @@ import {
   Button,
   Dialog,
   Input,
-} from '@synergy/ui';
+} from '@plinth/ui';
 import { fulfillmentApi } from '../api';
 import { useFulfillmentMutation } from '../hooks';
 import type { Shipment } from '../types';

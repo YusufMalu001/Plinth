@@ -1,4 +1,4 @@
-import { Checkbox } from '@synergy/ui';
+import { Checkbox } from '@plinth/ui';
 import React from "react"
 
 export interface RememberMeControlProps {

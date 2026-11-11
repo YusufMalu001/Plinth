@@ -56,6 +56,6 @@ Floor audit and daily stock audit require immutable snapshots: counted by, count
 
 - Confirm the authoritative SKU list when the same product appears in multiple workbook masters.
 - Confirm whether MRP is current selling price or historical price.
-- Confirm warehouse IDs and the mapping to Synergy locations.
+- Confirm warehouse IDs and the mapping to Plinth locations.
 - Confirm whether historical PS logs and audits should be imported as history or only used to seed opening balances.
 - Confirm the canonical material code for dimension-only descriptions such as `18x18`, `16x16`, and `1/2 x 0.6mm`.

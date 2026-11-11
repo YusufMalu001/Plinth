@@ -6,7 +6,7 @@ async function run() {
   });
 
   const loginRes = await apiContext.post('/api/v1/auth/login', {
-    data: { email: 'admin@synergy.com', password: 'admin' }
+    data: { email: 'admin@plinth.example', password: 'admin' }
   });
   
   if (!loginRes.ok()) {

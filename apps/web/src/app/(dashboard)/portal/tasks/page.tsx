@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useCurrentUser } from '@/features/auth/hooks';
 import { useTasks } from '@/features/hr/hooks';
 import { hrApi } from '@/features/hr/api';
-import { EmployeeTaskDto, TaskPriorityType } from '@synergy/types';
+import { EmployeeTaskDto, TaskPriorityType } from '@plinth/types';
 import {
   CheckSquare,
   Clock,
@@ -20,7 +20,7 @@ import {
   Sparkles,
   Flame
 } from 'lucide-react';
-import { Button, Dialog } from '@synergy/ui';
+import { Button, Dialog } from '@plinth/ui';
 
 export default function EmployeeTasksPortalPage() {
   const { data: currentUser, isLoading: userLoading } = useCurrentUser();

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Button, Dialog } from '@synergy/ui';
+import { Button, Dialog } from '@plinth/ui';
 import { SalesOrder } from '../types';
 
 interface SalesInvoiceModalProps {

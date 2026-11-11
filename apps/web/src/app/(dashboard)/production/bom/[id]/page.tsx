@@ -29,7 +29,7 @@ import {
   TableHead,
   TableBody,
   TableCell,
-} from '@synergy/ui';
+} from '@plinth/ui';
 import {
   useBomVersion,
   useBomNameConflict,

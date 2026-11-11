@@ -16,20 +16,19 @@ const inter = Inter({
   display: 'swap',
 });
 
-// Rebrand to "Plinth" happens fully in Phase 8; metadata identifiers stay
-// stable until then (title strings live in config/brand.ts at that point).
+import { PRODUCT_NAME } from '../config/brand';
+
 export const metadata: Metadata = {
   title: {
-    default: 'Synergy International',
-    template: '%s | Synergy International',
+    default: PRODUCT_NAME,
+    template: `%s | ${PRODUCT_NAME}`,
   },
-  applicationName: 'Synergy International',
-  description: 'Synergy International enterprise resource planning platform',
+  applicationName: PRODUCT_NAME,
+  description: 'Plinth enterprise resource planning platform',
   icons: {
-    // Use the standalone S mark from the sidebar logo for clear small-size rendering.
-    icon: '/synergy-favicon.png',
-    shortcut: '/synergy-favicon.png',
-    apple: '/synergy-favicon.png',
+    icon: '/icon.svg',
+    shortcut: '/icon.svg',
+    apple: '/icon.svg',
   },
 };
 
