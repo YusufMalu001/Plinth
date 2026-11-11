@@ -80,7 +80,7 @@ function LoginForm() {
       <LoginCard className="animate-fade-up">
         {/* Brand Logo & Header */}
         <div className="mb-8 select-none">
-          <Logo className="text-2xl mb-6 lg:hidden" />
+          <Logo tone="paper" className="text-2xl mb-6 lg:hidden" />
           <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
             Welcome back
           </h2>
@@ -157,12 +157,12 @@ const BOOT_FADE_MS = 700;
 function LoginBootSplash({ fading }: { fading: boolean }) {
   return (
     <div
-      className={`fixed inset-0 z-[80] flex items-center justify-center bg-page transition-opacity duration-700 ${
+      className={`fixed inset-0 z-[80] flex items-center justify-center bg-zinc-950 transition-opacity duration-700 ${
         fading ? 'opacity-0 pointer-events-none' : 'opacity-100'
       }`}
       aria-hidden="true"
     >
-      <div className="w-full max-w-3xl h-64 text-ink">
+      <div className="w-full max-w-3xl h-64 text-zinc-100">
         <TechText
           text={PRODUCT_NAME}
           fontWeight={600}

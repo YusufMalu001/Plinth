@@ -200,6 +200,21 @@ Colours 969 → 975 (kokonutui zinc/white literals, still below the 1087 baselin
 ### Left undone / next
 - Phase 5 completion (~121 StatusBadge call-sites → StatusPill, delete local clones), migrations 4b+, Phases 6/7/9/10.
 
+---
+
+## Phase 8d — full-screen dark Background Paths login
+
+### What changed
+- **AuthShell rebuilt**: BackgroundPaths now fills the entire viewport on a near-black (`zinc-950`) base; the authentication form floats over it in a glass panel (`zinc-900/60`, `backdrop-blur`, `white/10` border). Brand lockup top-left uses `Logo tone="paper"` (Reversed / Dark Edition); hero copy and footer sit at the bottom in white/zinc. The shell root carries a `dark` class (tailwind `darkMode: 'class'`), so the existing `dark:` variants on the form controls render correctly over black — no control components touched.
+- **Boot splash matched to dark**: the TechText splash now plays on `zinc-950` with `zinc-100` text, so boot → login is a seamless dark sequence.
+- Mobile-only logo in the card switched to `tone="paper"`.
+
+### Ratchet effect
+Colours 975 → 979. Banned unchanged at 6. One flaky build failure from a stale `.next` cache (`ENOENT ... page data`); a clean rebuild resolved it.
+
+### Left undone / next
+- Phase 5 completion (~121 StatusBadge call-sites → StatusPill), migrations 4b+, Phases 6/7/9/10.
+
 ## Phases 4a + 5 — ListView (Purchase Orders) and StatusPill
 
 ### What changed
