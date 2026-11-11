@@ -10,8 +10,8 @@ async function main() {
   // Owner-provisioned bootstrap credentials (reported in the refactor log).
   // Rotate after first sign-in.
   const [adminPassword, managerPassword] = await Promise.all([
-    argon2.hash('Px7vK2mQr9sWt4zB', { type: argon2.argon2id }),
-    argon2.hash('Ld5nH8cJ3fX6yTgA', { type: argon2.argon2id })
+    argon2.hash('admin123', { type: argon2.argon2id }),
+    argon2.hash('storemanager123', { type: argon2.argon2id })
   ]);
 
   // 1. Seed Users
@@ -19,12 +19,12 @@ async function main() {
   const fullSeed = process.env.SEED_FULL === 'true';
   const usersData: { email: string; name: string; password: string; role: Role }[] = fullSeed
     ? [
-      { email: 'admin@plinth.example', name: 'System Admin', password: adminPassword, role: Role.admin },
-      { email: 'storemanager@plinth.example', name: 'Store Manager', password: managerPassword, role: Role.manager }
+      { email: 'admin@gmail.com', name: 'System Admin', password: adminPassword, role: Role.admin },
+      { email: 'storemanager@gmail.com', name: 'Store Manager', password: managerPassword, role: Role.manager }
     ]
     : [
-      { email: 'admin@plinth.example', name: 'System Admin', password: adminPassword, role: Role.admin },
-      { email: 'storemanager@plinth.example', name: 'Store Manager', password: managerPassword, role: Role.manager }
+      { email: 'admin@gmail.com', name: 'System Admin', password: adminPassword, role: Role.admin },
+      { email: 'storemanager@gmail.com', name: 'Store Manager', password: managerPassword, role: Role.manager }
     ];
 
   // Fixture users can be referenced by receiving/approval history, so the
@@ -611,17 +611,17 @@ async function main() {
   // the seeded users so re-running the seed cannot leave elevated permissions behind.
   await prisma.userRole.deleteMany({
     where: {
-      user: { email: { in: ['manager@plinth.example', 'fardeen@plinth.example'] } },
+      user: { email: { in: ['storemanager@gmail.com', 'fardeen@plinth.example'] } },
       role: { name: { in: ['grn_clerk', 'grn_verifier', 'grn_supervisor'] } }
     }
   });
 
   // Assign existing seeded users to roles + the main location/organization.
   const userRoleAssignments: { email: string; roles: string[] }[] = [
-    { email: 'admin@plinth.example', roles: ['admin'] },
+    { email: 'admin@gmail.com', roles: ['admin'] },
     { email: 'siddhi@plinth.example', roles: ['admin'] },
     { email: 'yusuf.malu@gmail.com', roles: ['admin'] },
-    { email: 'manager@plinth.example', roles: ['store-manager', 'procurement_manager'] },
+    { email: 'storemanager@gmail.com', roles: ['store-manager', 'procurement_manager'] },
     { email: 'fardeen@plinth.example', roles: ['inventory-manager', 'procurement_officer'] }
   ];
 

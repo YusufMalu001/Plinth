@@ -229,6 +229,13 @@ Colours 979, banned 6 — unchanged. One verify run failed on the stale `.next` 
 ### Left undone / next
 - Phase 5 completion (~121 StatusBadge call-sites → StatusPill), migrations 4b+, Phases 6/7/9/10. Push to GitHub still pending auth.
 
+---
+
+## Phase 8f — owner-specified bootstrap credentials
+
+### What changed
+- `database/prisma/seed/seed.ts` bootstrap accounts rotated to the owner's requested pair: `admin@gmail.com` / `admin123` (admin) and `storemanager@gmail.com` / `storemanager123` (manager). RBAC assignment block and GRN-grant cleanup updated to the new emails. Reseeded the Neon dev DB with `SEED_RESET_PASSWORDS=true`; both verified via `POST /api/v1/auth/login` (success:true; a wrong-password attempt is rejected). Passwords are short (owner's choice) — flagged for rotation before any production use.
+
 ## Phases 4a + 5 — ListView (Purchase Orders) and StatusPill
 
 ### What changed
