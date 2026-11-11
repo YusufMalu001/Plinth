@@ -1,7 +1,7 @@
 "use client"
 
-import React, { useState } from "react"
-import { Wordmark } from "../../config/brand"
+import React, { useState, useEffect } from "react"
+import { Logo } from "../../config/brand"
 import { useRouter, useSearchParams } from "next/navigation"
 import { useQueryClient } from "@tanstack/react-query"
 import { Mail } from "lucide-react"
@@ -9,6 +9,8 @@ import { Mail } from "lucide-react"
 import { authApi } from "../../features/auth/api"
 import { authKeys } from "../../features/auth/hooks"
 import { showToast } from "../../components/toast-store"
+import TechText from "../../components/brand/TechText"
+import { PRODUCT_NAME } from "../../config/brand"
 
 import { AuthShell } from "./components/AuthShell"
 import { LoginCard } from "./components/LoginCard"
@@ -78,7 +80,7 @@ function LoginForm() {
       <LoginCard className="animate-fade-up">
         {/* Brand Logo & Header */}
         <div className="mb-8 select-none">
-          <Wordmark className="text-2xl mb-6 lg:hidden" />
+          <Logo className="text-2xl mb-6 lg:hidden" />
           <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
             Welcome back
           </h2>
@@ -144,10 +146,73 @@ function LoginForm() {
   )
 }
 
-export default function LoginPage() {
+/**
+ * Boot splash: the TechText "Plinth" letter reveal plays before the login
+ * form is shown, then the splash fades out. Non-interactive (no selection,
+ * labels or dragging) so it reads as a brand intro, not a toy.
+ */
+function LoginBootSplash({ onDone }: { onDone: () => void }) {
+  const [fading, setFading] = useState(false);
+
+  useEffect(() => {
+    const fadeTimer = window.setTimeout(() => setFading(true), 2600);
+    const doneTimer = window.setTimeout(onDone, 3200);
+    return () => {
+      window.clearTimeout(fadeTimer);
+      window.clearTimeout(doneTimer);
+    };
+  }, [onDone]);
+
   return (
-    <React.Suspense fallback={<div className="min-h-screen flex items-center justify-center text-xs text-muted-foreground">Loading login...</div>}>
-      <LoginForm />
-    </React.Suspense>
+    <div
+      className={`fixed inset-0 z-[80] flex items-center justify-center bg-page transition-opacity duration-500 ${
+        fading ? 'opacity-0 pointer-events-none' : 'opacity-100'
+      }`}
+      aria-hidden="true"
+    >
+      <div className="w-full max-w-3xl h-64 text-ink">
+        <TechText
+          text={PRODUCT_NAME}
+          fontWeight={600}
+          fontSize={150}
+          reveal="letter"
+          dashLength={4}
+          dashGap={2}
+          specks={15}
+          intro="none"
+          introDuration={2}
+          clickKick
+          guides={false}
+          fontFamily=""
+          letterSpacing={-0.05}
+          accentColor="currentColor"
+          reach={200}
+          softness={0.7}
+          lineStyle="dashed"
+          strokeWidth={1.5}
+          speed={1}
+          bounce={0.4}
+          selection={false}
+          labels={false}
+          color="currentColor"
+          align="center"
+          draggable={false}
+          sweep
+        />
+      </div>
+    </div>
+  );
+}
+
+export default function LoginPage() {
+  const [booted, setBooted] = useState(false);
+  const handleBooted = React.useCallback(() => setBooted(true), []);
+  return (
+    <>
+      {!booted && <LoginBootSplash onDone={handleBooted} />}
+      <React.Suspense fallback={<div className="min-h-screen flex items-center justify-center text-xs text-muted-foreground">Loading login...</div>}>
+        <LoginForm />
+      </React.Suspense>
+    </>
   )
 }

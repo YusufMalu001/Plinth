@@ -169,6 +169,23 @@ Banned terms 1899 → **3** (the only remaining matches are `scripts/rename-pack
 
 ---
 
+---
+
+## Phase 8b — Brand lockup, satin login, TechText boot splash
+
+### What changed
+- **Brand lockup (`config/brand.tsx`)**: new `PlinthMark` (rounded near-black square, `#141414`, with the notched-P counterform cut) + `Logo` lockup component with `tone="ink"` (Primary: black-on-white) and `tone="paper"` (Reversed: white-on-dark). `Wordmark` kept for dense meta rows.
+- **App icon**: `public/icon.svg` redrawn as the mark (24px-safe, single path). Used by layout metadata icons.
+- **Shell adoption**: `Sidebar` (collapsed → mark only, expanded → full lockup), `AppLayout` header + loading splash (pulsing mark), login page mobile header, `AuthShell` brand slot — all now render the real lockup.
+- **Login background — Satin Ridges**: flowing-satin background added behind the login's left panel (`components/brand/SatinRidges.tsx`, canvas, light monochrome folds with soft highlight falloff, reduced-motion aware). `components.json` created with the `@reactbits-starter` / `@reactbits-pro` registries and Bearer auth wired to `REACTBITS_LICENSE_KEY`; `apps/web/.env.local` scaffolded (key currently **empty** — the official `npx shadcn@latest add @reactbits-starter/satin-ridges-tw` errors until the key is provided, so the local equivalent ships in its place and is drop-in swappable).
+- **Boot splash — TechText**: `components/brand/TechText.tsx` + CSS (typed port of the React Bits TechText canvas component). `LoginPage` shows a non-interactive "Plinth" letter-reveal splash for ~2.6s with a 500ms fade before the form appears.
+
+### Ratchet effect
+Colours 965 → 969 (brand ink `#141414` + satin greys; still below the 1087 baseline). Banned 4 (only `scripts/rename-packages.cjs` self-references).
+
+### Left undone / next
+- Provide `REACTBITS_LICENSE_KEY` in `apps/web/.env.local` and run `npx shadcn@latest add @reactbits-starter/satin-ridges-tw` to swap the official component in; keep the same mount point in `AuthShell`.
+
 ## Phases 4a + 5 — ListView (Purchase Orders) and StatusPill
 
 ### What changed

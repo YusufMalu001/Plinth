@@ -1,25 +1,29 @@
 'use client';
 
 import React from "react"
+import { Logo } from "../../../config/brand"
+import { SatinRidges } from "../../../components/brand/SatinRidges"
 
 export interface AuthShellProps {
   children: React.ReactNode
 }
 
 /**
- * Login shell — Plinth design language: white page chrome, no gradients,
- * no coloured panels. Neutral typography and token-driven greys only.
+ * Login shell — Plinth design language. The left panel carries the
+ * "Satin Ridges" flowing-satin background (soft grey folds, light-only);
+ * the right column stays clean white for the authentication form.
  */
 export function AuthShell({ children }: AuthShellProps) {
   return (
     <div className="h-screen w-full flex bg-page select-none overflow-hidden">
-      {/* Left column: calm neutral panel with plain typography */}
-      <div className="hidden lg:flex relative lg:w-1/2 xl:w-[48%] h-screen overflow-hidden flex-col justify-between p-8 sm:p-10 lg:p-12 xl:p-14 border-r border-border">
+      {/* Left column: satin ridges background with the brand lockup */}
+      <div className="hidden lg:flex relative lg:w-1/2 xl:w-[48%] h-screen overflow-hidden flex-col justify-between p-8 sm:p-10 lg:p-12 xl:p-14">
+        <div className="absolute inset-0" aria-hidden="true">
+          <SatinRidges />
+        </div>
+
         <div className="relative z-10 flex items-center justify-between">
-          <span className="text-2xl font-semibold tracking-tight text-ink select-none">
-            {/* Product wordmark placeholder — final brand component lands in Phase 8 */}
-            Plinth
-          </span>
+          <Logo className="text-2xl" />
         </div>
 
         <div className="flex-1" />
@@ -40,6 +44,7 @@ export function AuthShell({ children }: AuthShellProps) {
         <div className="flex items-center justify-end text-xs text-ink-muted">
           <span>Need help? <a href="#support" className="text-ink font-semibold hover:underline">Contact Support</a></span>
         </div>
+
         {/* Centered Direct Input Form Area */}
         <div className="w-full max-w-[400px] mx-auto my-auto py-2">
           {children}
@@ -56,5 +61,5 @@ export function AuthShell({ children }: AuthShellProps) {
         </div>
       </div>
     </div>
-  )
+  );
 }

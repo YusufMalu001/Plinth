@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { Wordmark } from '../config/brand';
+import { Logo, PlinthMark } from '../config/brand';
 import Link from 'next/link';
 import { usePathname, useSearchParams } from 'next/navigation';
 import {
@@ -625,7 +625,7 @@ export function Sidebar({
             onClick={onMobileClose}
             className="flex items-center justify-center transition-opacity hover:opacity-90 w-full"
           >
-            <Wordmark className='text-xl' />
+            {isCollapsed ? <PlinthMark className="h-7 w-7" /> : <Logo className="text-xl" />}
           </Link>
 
           {/* Close button on mobile */}

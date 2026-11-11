@@ -162,7 +162,7 @@ addBullet('PostgreSQL 18', 'Running as a Windows Service (postgresql-x64-18) on 
 
 addSectionHeader('2', 'Clone Repository & Setup Branch');
 addParagraph('Open PowerShell, clone the project, and switch to your designated development branch:');
-addCodeBlock(`git clone https://github.com/Aelyx-Work/plinth-erp.git
+addCodeBlock(`git clone https://github.com/plinth-erp/plinth-erp.git
 cd plinth-erp
 git switch assign/akash`);
 addParagraph('Prevent Git from pausing or waiting for an editor tab during future git pull operations:');
