@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import { Logo } from "../../config/brand"
 import { useRouter, useSearchParams } from "next/navigation"
 import { useQueryClient } from "@tanstack/react-query"
@@ -145,27 +145,24 @@ function LoginForm() {
   )
 }
 
-const { BOOT_HOLD_MS, BOOT_FADE_MS } = BOOT_TIMINGS;
+const BOOT_FADE_MS = BOOT_TIMINGS.BOOT_FADE_MS;
 
 /**
- * Phase-based boot: phase "boot" renders ONLY the splash so the TechText
- * animation is guaranteed to play first; the login screen mounts underneath
- * when the fade begins, and the splash unmounts once faded out.
+ * Phase-based boot: phase "boot" renders ONLY the splash — the TechText
+ * "PLINTH" reveal plus the acronym sequence (1. Production … 6. Hub). The
+ * login screen mounts underneath only when the acronym sequence completes,
+ * and the splash unmounts once faded out.
  */
 export default function LoginPage() {
   const [phase, setPhase] = useState<'boot' | 'fade' | 'ready'>('boot');
 
-  useEffect(() => {
-    const fadeTimer = window.setTimeout(() => setPhase('fade'), BOOT_HOLD_MS);
-    const readyTimer = window.setTimeout(() => setPhase('ready'), BOOT_HOLD_MS + BOOT_FADE_MS);
-    return () => {
-      window.clearTimeout(fadeTimer);
-      window.clearTimeout(readyTimer);
-    };
+  const handleSequenceComplete = React.useCallback(() => {
+    setPhase('fade');
+    window.setTimeout(() => setPhase('ready'), BOOT_FADE_MS);
   }, []);
 
   if (phase === 'boot') {
-    return <BootSplash />;
+    return <BootSplash onSequenceComplete={handleSequenceComplete} />;
   }
 
   return (

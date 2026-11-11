@@ -236,6 +236,24 @@ Colours 979, banned 6 — unchanged. One verify run failed on the stale `.next` 
 ### What changed
 - `database/prisma/seed/seed.ts` bootstrap accounts rotated to the owner's requested pair: `admin@gmail.com` / `admin123` (admin) and `storemanager@gmail.com` / `storemanager123` (manager). RBAC assignment block and GRN-grant cleanup updated to the new emails. Reseeded the Neon dev DB with `SEED_RESET_PASSWORDS=true`; both verified via `POST /api/v1/auth/login` (success:true; a wrong-password attempt is rejected). Passwords are short (owner's choice) — flagged for rotation before any production use.
 
+---
+
+## Phase 8g — PLINTH acronym boot sequence
+
+### What changed
+- **`DynamicText` port** (`components/brand/DynamicText.tsx`): typed port of the kokonutui MIT morphing-text component (spring physics: shared letters travel on arcs, leaving letters fall, entering letters drop; `decode` and `cycle` modes). Adapted: `cn` from `@/lib/utils`, Tailwind v3 `data-[attr]:` variants, `MutableRefObject` typing.
+- **Boot splash reworked into a two-stage brand intro** (`components/brand/BootSplash.tsx`):
+  1. TechText reveals **PLINTH** (all caps — the acronym) on black, ~2.4s;
+  2. crossfade to a DOM letter row where each letter of **PLINTH** highlights in strict sequence (P→L→I→N→T→H) — active letter white with a dashed accent underline, prior letters white, future letters dim zinc-600 — while the corresponding full form (Production, Logistics, Inventory, Network, Tracking, Hub) morphs in beneath via `DynamicText`.
+  3. Only after "6. Hub" lands (+700ms beat) does the splash fade and the login screen mount. `LoginPage` gates on `onSequenceComplete` instead of fixed timers, so the login cannot appear early.
+- `AppLayout`'s loading splash unchanged (TechText reveal only; no sequence) — loading happens behind the intro.
+
+### Ratchet effect
+Colours 979, banned 6 — unchanged. A transient build failure (ENOENT /_document) was diagnosed as two concurrent verify runs clobbering the shared `apps/web/.next`; a single clean run passes.
+
+### Left undone / next
+- Phase 5 completion, migrations 4b+, Phases 6/7/9/10; push to GitHub pending auth.
+
 ## Phases 4a + 5 — ListView (Purchase Orders) and StatusPill
 
 ### What changed
