@@ -151,21 +151,13 @@ function LoginForm() {
  * form is shown, then the splash fades out. Non-interactive (no selection,
  * labels or dragging) so it reads as a brand intro, not a toy.
  */
-function LoginBootSplash({ onDone }: { onDone: () => void }) {
-  const [fading, setFading] = useState(false);
+const BOOT_HOLD_MS = 2600;
+const BOOT_FADE_MS = 700;
 
-  useEffect(() => {
-    const fadeTimer = window.setTimeout(() => setFading(true), 2600);
-    const doneTimer = window.setTimeout(onDone, 3200);
-    return () => {
-      window.clearTimeout(fadeTimer);
-      window.clearTimeout(doneTimer);
-    };
-  }, [onDone]);
-
+function LoginBootSplash({ fading }: { fading: boolean }) {
   return (
     <div
-      className={`fixed inset-0 z-[80] flex items-center justify-center bg-page transition-opacity duration-500 ${
+      className={`fixed inset-0 z-[80] flex items-center justify-center bg-page transition-opacity duration-700 ${
         fading ? 'opacity-0 pointer-events-none' : 'opacity-100'
       }`}
       aria-hidden="true"
@@ -204,12 +196,30 @@ function LoginBootSplash({ onDone }: { onDone: () => void }) {
   );
 }
 
+/**
+ * Phase-based boot: phase "boot" renders ONLY the splash so the TechText
+ * animation is guaranteed to play first; the login screen mounts underneath
+ * when the fade begins, and the splash unmounts once faded out.
+ */
 export default function LoginPage() {
-  const [booted, setBooted] = useState(false);
-  const handleBooted = React.useCallback(() => setBooted(true), []);
+  const [phase, setPhase] = useState<'boot' | 'fade' | 'ready'>('boot');
+
+  useEffect(() => {
+    const fadeTimer = window.setTimeout(() => setPhase('fade'), BOOT_HOLD_MS);
+    const readyTimer = window.setTimeout(() => setPhase('ready'), BOOT_HOLD_MS + BOOT_FADE_MS);
+    return () => {
+      window.clearTimeout(fadeTimer);
+      window.clearTimeout(readyTimer);
+    };
+  }, []);
+
+  if (phase === 'boot') {
+    return <LoginBootSplash fading={false} />;
+  }
+
   return (
     <>
-      {!booted && <LoginBootSplash onDone={handleBooted} />}
+      {phase === 'fade' && <LoginBootSplash fading />}
       <React.Suspense fallback={<div className="min-h-screen flex items-center justify-center text-xs text-muted-foreground">Loading login...</div>}>
         <LoginForm />
       </React.Suspense>

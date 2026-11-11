@@ -2,7 +2,7 @@
 
 import React from "react"
 import { Logo } from "../../../config/brand"
-import { SatinRidges } from "../../../components/brand/SatinRidges"
+import BackgroundPaths from "../../../components/brand/BackgroundPaths"
 
 export interface AuthShellProps {
   children: React.ReactNode
@@ -10,16 +10,18 @@ export interface AuthShellProps {
 
 /**
  * Login shell — Plinth design language. The left panel carries the
- * "Satin Ridges" flowing-satin background (soft grey folds, light-only);
+ * kokonutui "Background Paths" flowing-line background (light-only);
  * the right column stays clean white for the authentication form.
  */
 export function AuthShell({ children }: AuthShellProps) {
   return (
     <div className="h-screen w-full flex bg-page select-none overflow-hidden">
-      {/* Left column: satin ridges background with the brand lockup */}
+      {/* Left column: background-paths lines with the brand lockup */}
       <div className="hidden lg:flex relative lg:w-1/2 xl:w-[48%] h-screen overflow-hidden flex-col justify-between p-8 sm:p-10 lg:p-12 xl:p-14">
         <div className="absolute inset-0" aria-hidden="true">
-          <SatinRidges />
+          <BackgroundPaths className="h-full min-h-0 w-full" count={34} angle={-8}>
+            {null}
+          </BackgroundPaths>
         </div>
 
         <div className="relative z-10 flex items-center justify-between">

@@ -186,6 +186,20 @@ Colours 965 → 969 (brand ink `#141414` + satin greys; still below the 1087 bas
 ### Left undone / next
 - Provide `REACTBITS_LICENSE_KEY` in `apps/web/.env.local` and run `npx shadcn@latest add @reactbits-starter/satin-ridges-tw` to swap the official component in; keep the same mount point in `AuthShell`.
 
+---
+
+## Phase 8c — kokonutui "Background Paths" login + boot-splash phase fix
+
+### What changed
+- **Login background swap**: SatinRidges removed (`components/brand/SatinRidges.tsx` deleted); `AuthShell` now mounts the MIT-licensed kokonutui **BackgroundPaths** component (`components/brand/BackgroundPaths.tsx`, adapted: light-only tokens, `cn` from `apps/web/src/lib/utils` (clsx + tailwind-merge, both already deps)). Mounted as the left panel's absolute-inset background with `children={null}` and `h-full min-h-0` (overrides the component's `min-h-[560px]`).
+- **Boot-splash fix**: the login screen previously mounted the TechText splash as an overlay *while* the form rendered underneath, and hydration timing could paint the form first — the user saw login open directly with no animation. `LoginPage` is now **phase-based**: phase `boot` renders ONLY the splash (2.6s TechText hold) → phase `fade` mounts the login content underneath as the splash fades (700ms) → phase `ready` unmounts the splash. The animation is now guaranteed to play before any login content exists in the tree.
+
+### Ratchet effect
+Colours 969 → 975 (kokonutui zinc/white literals, still below the 1087 baseline). Banned 4 → 6 (`background-paths` attribution comments; codemod-script self-references remain).
+
+### Left undone / next
+- Phase 5 completion (~121 StatusBadge call-sites → StatusPill, delete local clones), migrations 4b+, Phases 6/7/9/10.
+
 ## Phases 4a + 5 — ListView (Purchase Orders) and StatusPill
 
 ### What changed
