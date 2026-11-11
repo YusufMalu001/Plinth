@@ -10,8 +10,8 @@ async function main() {
   // Owner-provisioned bootstrap credentials (reported in the refactor log).
   // Rotate after first sign-in.
   const [adminPassword, managerPassword] = await Promise.all([
-    argon2.hash('V93SSi6JKuGFyf2', { type: argon2.argon2id }),
-    argon2.hash('aweNSKaIeFcX7xQz', { type: argon2.argon2id })
+    argon2.hash('Px7vK2mQr9sWt4zB', { type: argon2.argon2id }),
+    argon2.hash('Ld5nH8cJ3fX6yTgA', { type: argon2.argon2id })
   ]);
 
   // 1. Seed Users

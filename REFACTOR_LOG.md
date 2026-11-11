@@ -215,6 +215,20 @@ Colours 975 → 979. Banned unchanged at 6. One flaky build failure from a stale
 ### Left undone / next
 - Phase 5 completion (~121 StatusBadge call-sites → StatusPill), migrations 4b+, Phases 6/7/9/10.
 
+---
+
+## Phase 8e — unified boot splash + credential rotation
+
+### What changed
+- **"Loading your workspace" removed**: `AppLayout`'s auth-loading branch no longer shows the pulsing PlinthMark + text. Loading now happens *behind* the boot animation: a shared `components/brand/BootSplash.tsx` (full-screen black TechText "Plinth" reveal) is shown while the auth query resolves, then the app flows straight to login. `LoginPage` reuses the same component (phase-based: splash-only → fade → login), so the animation plays once across boot → login.
+- **Credentials rotated** (owner request; prior pair had failed sign-in attempts with the old gmail address). `database/prisma/seed/seed.ts` updated and reseeded against the Neon dev DB with `SEED_RESET_PASSWORDS=true`; both accounts verified end-to-end via `POST /api/v1/auth/login` (success:true, active, no forced password change).
+
+### Ratchet effect
+Colours 979, banned 6 — unchanged. One verify run failed on the stale `.next` cache (`ENOENT /_document` page-data flake); clean rebuild passed.
+
+### Left undone / next
+- Phase 5 completion (~121 StatusBadge call-sites → StatusPill), migrations 4b+, Phases 6/7/9/10. Push to GitHub still pending auth.
+
 ## Phases 4a + 5 — ListView (Purchase Orders) and StatusPill
 
 ### What changed

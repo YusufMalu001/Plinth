@@ -6,7 +6,8 @@ import { Settings, LogOut, ChevronDown, User, Menu } from "lucide-react"
 import { Sidebar } from "./Sidebar"
 import { NotificationCenter } from "./NotificationCenter"
 import Link from "next/link"
-import { Logo, PlinthMark } from "../config/brand"
+import { Logo } from "../config/brand"
+import { BootSplash } from "./brand/BootSplash"
 import { authApi } from "../features/auth/api"
 import { useCurrentUser } from "../features/auth/hooks"
 import { canViewPath, getFirstAccessibleRoute, normalizeRole } from "../features/auth/access-control"
@@ -88,14 +89,7 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
     );
   }
 
-  if (isLoading || !currentUser) return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="flex flex-col items-center gap-3">
-        <PlinthMark className="h-12 w-12 animate-pulse" />
-        <p className="text-xs font-medium text-muted-foreground">Loading your workspace…</p>
-      </div>
-    </div>
-  )
+  if (isLoading || !currentUser) return <BootSplash />
 
   // RBAC is authoritative for workspace capabilities. The legacy enum remains
   // only as a fallback for older accounts that have not been assigned a role.

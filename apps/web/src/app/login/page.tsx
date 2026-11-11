@@ -9,8 +9,7 @@ import { Mail } from "lucide-react"
 import { authApi } from "../../features/auth/api"
 import { authKeys } from "../../features/auth/hooks"
 import { showToast } from "../../components/toast-store"
-import TechText from "../../components/brand/TechText"
-import { PRODUCT_NAME } from "../../config/brand"
+import { BootSplash, BOOT_TIMINGS } from "../../components/brand/BootSplash"
 
 import { AuthShell } from "./components/AuthShell"
 import { LoginCard } from "./components/LoginCard"
@@ -146,55 +145,7 @@ function LoginForm() {
   )
 }
 
-/**
- * Boot splash: the TechText "Plinth" letter reveal plays before the login
- * form is shown, then the splash fades out. Non-interactive (no selection,
- * labels or dragging) so it reads as a brand intro, not a toy.
- */
-const BOOT_HOLD_MS = 2600;
-const BOOT_FADE_MS = 700;
-
-function LoginBootSplash({ fading }: { fading: boolean }) {
-  return (
-    <div
-      className={`fixed inset-0 z-[80] flex items-center justify-center bg-zinc-950 transition-opacity duration-700 ${
-        fading ? 'opacity-0 pointer-events-none' : 'opacity-100'
-      }`}
-      aria-hidden="true"
-    >
-      <div className="w-full max-w-3xl h-64 text-zinc-100">
-        <TechText
-          text={PRODUCT_NAME}
-          fontWeight={600}
-          fontSize={150}
-          reveal="letter"
-          dashLength={4}
-          dashGap={2}
-          specks={15}
-          intro="none"
-          introDuration={2}
-          clickKick
-          guides={false}
-          fontFamily=""
-          letterSpacing={-0.05}
-          accentColor="currentColor"
-          reach={200}
-          softness={0.7}
-          lineStyle="dashed"
-          strokeWidth={1.5}
-          speed={1}
-          bounce={0.4}
-          selection={false}
-          labels={false}
-          color="currentColor"
-          align="center"
-          draggable={false}
-          sweep
-        />
-      </div>
-    </div>
-  );
-}
+const { BOOT_HOLD_MS, BOOT_FADE_MS } = BOOT_TIMINGS;
 
 /**
  * Phase-based boot: phase "boot" renders ONLY the splash so the TechText
@@ -214,12 +165,12 @@ export default function LoginPage() {
   }, []);
 
   if (phase === 'boot') {
-    return <LoginBootSplash fading={false} />;
+    return <BootSplash />;
   }
 
   return (
     <>
-      {phase === 'fade' && <LoginBootSplash fading />}
+      {phase === 'fade' && <BootSplash fading />}
       <React.Suspense fallback={<div className="min-h-screen flex items-center justify-center text-xs text-muted-foreground">Loading login...</div>}>
         <LoginForm />
       </React.Suspense>
