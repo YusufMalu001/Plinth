@@ -133,3 +133,26 @@ colours 1087 → 997 (−90). Banned terms gate now counts source/config/docs on
 ### Left undone / next
 - Remaining login component files (AuthCard, LoginCard, ...) still carry `#004a80` accents — sweep next.
 - Synthetic "Plinth" wordmark is a temporary placeholder; `config/brand.ts` + logo component land in Phase 8 and replace it everywhere.
+
+## Phases 4a + 5 — ListView (Purchase Orders) and StatusPill
+
+### What changed
+- **`components/status/statusTones.ts`** — central status→tone map seeded from the legacy `StatusBadge.tsx` switch (variant equivalence: default=green, secondary=amber, outline=blue, destructive=red, muted=grey), with human labels (`statusLabel`) and grey fallback for unknown statuses. Semantics preserved; only tones resolve through this map now.
+- **`components/status/StatusPill.tsx`** — the single status presentation component: soft tint bg + coloured text, 12px medium, 2px/8px padding, fully rounded, no borders/icons; all colours via `@plinth/tokens` CSS vars.
+- **`components/listview/ListView.tsx`** — one reusable list view implementing the Phase 4 pattern: page header (title + hamburger left; view switcher / refresh / overflow / black "+ Add" right), 240px filter sidebar (Assigned-to-style configs, Edit Filters link, Save Filter with name input + removable chips + Hide Saved, localStorage-backed per list), main bordered card (12px radius) with grey filled filter inputs (first column + key fields + Status select), Filter button with active-count + clear (x), sort control (direction toggle + field select, default Last Updated On), rounded grey header bar with select-all + "N of M" counter + heart, 44px rows with bold first column, right-aligned money (tabular numerals), 6px green progress bars for `percent` columns, far-right meta cluster (relative update time, comment count, like toggle), footer with Previous/Load-more and 20/100/500 page size, bulk action bar when rows are selected, and loading/error/empty states. Keyboard: j/k moves row focus, space selects.
+- **`procurement/purchase-orders/page.tsx` migrated** onto `<ListView>` — all existing behaviour preserved (server-side search/status/sort/paging, role-gated edit/delete, delete confirm dialog, PR source line, currency label). The old blue header/table chrome, metric cards and status tabs were replaced by the pattern's filter sidebar + card layout. `usePOList({limit:100})` prefetch retained for future metric strip; page size default now 20 per spec.
+
+### Files touched
+`components/status/*` (2 new), `components/listview/ListView.tsx` (new), `procurement/purchase-orders/page.tsx` (rewritten).
+
+### Ratchet effect
+colours 965 → 965 (net unchanged: removed the PO page's blues while adding zero hexes). banned 1901 → 1899.
+
+### Decisions
+- ListView is a layout/data-agnostic component driven by column descriptors + filter configs rather than the GenericList descriptor engine — GenericList remains for master-data screens; later list migrations can go through either, converging on this visual pattern (recorded so 4b+ stays consistent).
+- Bulk Delete intentionally no-ops with a toast (server contract for bulk delete is out of scope; single-row delete path untouched).
+- Progress/percent columns and comment/like meta render only when the page supplies `meta`/`percent` data; PO list supplies counts from `lines` as a placeholder until the API exposes real comment/like counts (no API contract changes).
+
+### Left undone / next (owner review stop per Addendum #7)
+- Remaining ~40 list pages stay on their current tables until sub-phases 4b+.
+- `StatusBadge.tsx` (legacy central switch) still used by 121 usages — Phase 5 sweep replaces call-sites in the next commit.
