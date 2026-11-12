@@ -2,7 +2,7 @@
 
 import React from "react"
 import { Logo } from "../../../config/brand"
-import BackgroundPaths from "../../../components/brand/BackgroundPaths"
+import BackgroundPaths from "../../../components/kokonutui/background-paths"
 
 export interface AuthShellProps {
   children: React.ReactNode
