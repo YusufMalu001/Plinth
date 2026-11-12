@@ -1,3 +1,19 @@
+## Button Visibility & Global Color Consistency Alignment Pass
+
+### What changed
+- **Fixed `text-inverse` mapping in Tailwind CSS** ([apps/web/tailwind.config.js](file:///home/yusuf/Desktop/Plinth-ERP/apps/web/tailwind.config.js)):
+  - Root Cause: `inverse: "var(--bg-inverse)"` was placed under `colors: {}`, causing Tailwind to generate `.text-inverse { color: var(--bg-inverse); }` (`#171717`, black). Any button or pill with `bg-action text-inverse` or `bg-inverse text-inverse` resulted in black text on black background (making button labels like "This Month" completely invisible).
+  - Fixed by explicitly defining `textColor: { inverse: "var(--text-inverse)" }` (`#FFFFFF`) and `backgroundColor: { inverse: "var(--bg-inverse)" }` (`#171717`) in `theme.extend`. This immediately resolved invisible text on 240+ components across the web application.
+- **Enforced Theme Consistency on Dashboard and Action Buttons**:
+  - [apps/web/src/app/(dashboard)/page.tsx](file:///home/yusuf/Desktop/Plinth-ERP/apps/web/src/app/(dashboard)/page.tsx): Changed the "Export PDF" button from blue `bg-[var(--chart-1)]` to standard primary black `bg-action text-inverse hover:bg-[color:var(--action-primary-bg-hover)]` per Rule #6 of PLINTH_THEME.txt ("Primary buttons are BLACK. The brand accent blue is NOT a button colour").
+  - [apps/web/src/components/FilterPills.tsx](file:///home/yusuf/Desktop/Plinth-ERP/apps/web/src/components/FilterPills.tsx): Converted active filter pills from blue `bg-[var(--accent-blue)] text-white` to `bg-action text-inverse border border-border-strong`.
+  - [apps/web/src/features/auth/UserAccess.tsx](file:///home/yusuf/Desktop/Plinth-ERP/apps/web/src/features/auth/UserAccess.tsx): Replaced blue active tab buttons with `bg-action text-inverse`.
+  - [apps/web/src/features/bom/components/BomGoldenExamplesManager.tsx](file:///home/yusuf/Desktop/Plinth-ERP/apps/web/src/features/bom/components/BomGoldenExamplesManager.tsx): Replaced blue action buttons with `bg-action text-inverse hover:bg-[color:var(--action-primary-bg-hover)]`.
+- **Verification**:
+  - Full `bash scripts/verify.sh` suite executed and passed: typecheck (11/11 packages), lint, vitest/jest test suites, Next.js production build (170/170 static pages), and ratchet color/banned term enforcement (443 colours vs 1087 baseline).
+
+---
+
 ## Plinth Theme Alignment & Comprehensive UI Refactor Pass (v1.0)
 
 ### What changed

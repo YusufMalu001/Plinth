@@ -61,14 +61,14 @@ export function FilterPills<T extends string = string>({
                   : 'px-3 py-1.5 text-xs'
               } ${
                 isActive
-                  ? 'bg-[var(--accent-blue)] text-white border border-[var(--accent-blue)] shadow-2xs font-bold'
+                  ? 'bg-action text-inverse border border-border-strong shadow-2xs font-bold'
                   : 'bg-white  border border-border/80 text-foreground/80  hover:bg-muted/70 hover:text-foreground hover:border-border'
               }`}
             >
               {OptionIcon && (
                 <OptionIcon
                   className={`h-3.5 w-3.5 ${
-                    isActive ? 'text-white' : 'text-muted-foreground'
+                    isActive ? 'text-inverse' : 'text-muted-foreground'
                   }`}
                 />
               )}
@@ -77,7 +77,7 @@ export function FilterPills<T extends string = string>({
                 <span
                   className={`ml-0.5 rounded-full px-1.5 py-0.2 text-[10px] font-mono ${
                     isActive
-                      ? 'bg-white/20 text-white'
+                      ? 'bg-white/20 text-inverse'
                       : 'bg-muted text-muted-foreground'
                   }`}
                 >

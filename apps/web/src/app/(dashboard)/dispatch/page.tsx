@@ -111,7 +111,7 @@ export default function DispatchOverviewPage() {
   };
 
   return (
-    <div className="flex-1 overflow-y-auto bg-muted p-4 sm:p-6 lg:p-8">
+    <div className="flex-1 overflow-y-auto bg-page p-4 sm:p-6 lg:p-8">
       <div className="mx-auto max-w-[1600px] space-y-6">
         {/* Top Header */}
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">

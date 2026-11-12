@@ -73,7 +73,7 @@ export default function CarrierAdministrationPage() {
   };
 
   return (
-    <div className="flex-1 overflow-y-auto bg-muted p-4 sm:p-6 lg:p-8">
+    <div className="flex-1 overflow-y-auto bg-page p-4 sm:p-6 lg:p-8">
       <div className="mx-auto max-w-[1500px] space-y-6">
         {/* Navigation Breadcrumbs */}
         <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground">

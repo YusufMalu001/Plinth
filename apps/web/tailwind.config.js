@@ -13,6 +13,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      textColor: {
+        inverse: "var(--text-inverse)",
+      },
+      backgroundColor: {
+        inverse: "var(--bg-inverse)",
+      },
       colors: {
         // New Plinth token names
         page: "var(--bg-page)",

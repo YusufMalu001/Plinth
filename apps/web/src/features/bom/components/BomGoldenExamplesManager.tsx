@@ -93,7 +93,7 @@ export function BomGoldenExamplesManager({ version, isReadOnly }: Props) {
             type="button"
             onClick={handleOpenModal}
             disabled={version.lines.length === 0}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-[var(--accent-blue)] text-white hover:bg-[var(--accent-hover)] disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-sm"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-action text-inverse hover:bg-[color:var(--action-primary-bg-hover)] disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-sm"
           >
             <Plus className="h-3.5 w-3.5" />
             Add Golden Fixture
@@ -114,7 +114,7 @@ export function BomGoldenExamplesManager({ version, isReadOnly }: Props) {
             <button
               type="button"
               onClick={handleOpenModal}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-[var(--accent-blue)] text-white hover:bg-[var(--accent-hover)]"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-action text-inverse hover:bg-[color:var(--action-primary-bg-hover)]"
             >
               <Plus className="h-3.5 w-3.5" />
               Create Golden Example Test Case
@@ -297,7 +297,7 @@ export function BomGoldenExamplesManager({ version, isReadOnly }: Props) {
                 <button
                   type="submit"
                   disabled={addMutation.isPending}
-                  className="px-4 py-1.5 text-xs rounded-lg bg-[var(--accent-blue)] text-white hover:bg-[var(--accent-hover)] font-semibold shadow-sm disabled:opacity-50"
+                  className="px-4 py-1.5 text-xs rounded-lg bg-action text-inverse hover:bg-[color:var(--action-primary-bg-hover)] font-semibold shadow-sm disabled:opacity-50"
                 >
                   {addMutation.isPending ? 'Saving Fixture...' : 'Save Golden Fixture'}
                 </button>

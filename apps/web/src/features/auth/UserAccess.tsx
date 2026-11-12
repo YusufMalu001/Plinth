@@ -764,7 +764,7 @@ export function UserAccess() {
  onClick={() => setTab("users")}
  className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-extrabold transition-all cursor-pointer ${
  tab === "users"
- ? "bg-[var(--accent-blue)] text-white shadow-xs"
+ ? "bg-action text-inverse shadow-xs"
  : "text-ink-secondary hover:bg-active/60 "
  }`}
  >
@@ -784,7 +784,7 @@ export function UserAccess() {
  onClick={() => setTab("roles")}
  className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-extrabold transition-all cursor-pointer ${
  tab === "roles"
- ? "bg-[var(--accent-blue)] text-white shadow-xs"
+ ? "bg-action text-inverse shadow-xs"
  : "text-ink-secondary hover:bg-active/60 "
  }`}
  >

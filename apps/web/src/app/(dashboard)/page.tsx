@@ -268,7 +268,7 @@ export default function DashboardOverview() {
               onClick={() => handleExportPdf()}
               disabled={!data || query.isLoading}
               title="Export Executive Report as PDF"
-              className="inline-flex items-center gap-1.5 rounded-xl bg-[var(--chart-1)] hover:bg-[color:var(--action-primary-bg-hover)] text-inverse px-3.5 py-2 text-xs font-semibold shadow-2xs transition cursor-pointer disabled:opacity-50"
+              className="inline-flex items-center gap-1.5 rounded-xl bg-action hover:bg-[color:var(--action-primary-bg-hover)] text-inverse px-3.5 py-2 text-xs font-semibold shadow-2xs transition cursor-pointer disabled:opacity-50"
             >
               <Download className="h-3.5 w-3.5" />
               <span>Export PDF</span>

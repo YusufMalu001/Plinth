@@ -760,7 +760,7 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
   ];
 
   return (
-    <div className="flex-1 bg-muted min-h-screen">
+    <div className="flex-1 bg-page min-h-screen">
       {/* Full-width container covering entire screen without squished max-w */}
       <div className={`w-full px-4 sm:px-6 lg:px-8 py-6 space-y-6 ${isBarcodeOpen ? 'print:hidden' : ''}`}>
 

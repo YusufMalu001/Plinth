@@ -3870,7 +3870,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
 
   return (
     <>
-      <div className="flex-1 p-4 sm:p-6 lg:p-8 overflow-y-auto bg-muted min-h-screen">
+      <div className="flex-1 p-4 sm:p-6 lg:p-8 overflow-y-auto bg-page min-h-screen">
         <div className="w-full max-w-[1780px] mx-auto space-y-6">
 
           {/* 1. COMPACT TOP HEADER & NAVIGATION */}
