@@ -104,9 +104,9 @@ const supplyChainSection: SidebarSection = {
  title: 'Supply Chain & Receiving',
  items: [
  {
- id: 'good-receiving',
- label: 'Vendor Directory',
- href: '/vendors',
+ id: 'procurement',
+ label: 'Procurement',
+ href: '/procurement/purchase-orders',
  icon: PackageCheck,
  subItems: [
  { label: 'Purchase Orders', href: '/procurement/purchase-orders' },
