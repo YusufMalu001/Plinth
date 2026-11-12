@@ -80,10 +80,10 @@ function LoginForm() {
         {/* Brand Logo & Header */}
         <div className="mb-8 select-none">
           <Logo tone="paper" className="text-3xl mb-6 lg:hidden" />
-          <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-ink">
+          <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
             Welcome back
           </h2>
-          <p className="text-sm text-ink-muted mt-1.5">
+          <p className="text-sm text-[#a1a1aa] mt-1.5">
             Enter your credentials to access your operations dashboard.
           </p>
         </div>
@@ -129,7 +129,7 @@ function LoginForm() {
             />
             <a
               href="#forgot"
-              className="font-semibold text-link hover:text-link-hover transition-colors hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-brand rounded"
+              className="font-medium text-[#60a5fa] hover:text-[#93c5fd] transition-colors hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-brand rounded"
             >
               Forgot password?
             </a>
@@ -168,7 +168,7 @@ export default function LoginPage() {
   return (
     <>
       {phase === 'fade' && <BootSplash fading />}
-      <React.Suspense fallback={<div className="min-h-screen flex items-center justify-center text-xs text-muted-foreground">Loading login...</div>}>
+      <React.Suspense fallback={<div className="min-h-screen flex items-center justify-center text-xs text-[#a1a1aa] bg-[#09090b]">Loading login...</div>}>
         <LoginForm />
       </React.Suspense>
     </>

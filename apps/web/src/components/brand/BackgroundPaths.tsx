@@ -9,8 +9,7 @@
  * @website: https://kokonutui.com
  * @github: https://github.com/kokonut-labs/kokonutui
  *
- * Adapted for Plinth: light-only theme (dark: variants resolve to light
- * tokens), `@/lib/utils` for cn.
+ * Adapted for Plinth: `@/lib/utils` for cn.
  */
 
 import { type ReactNode, useEffect, useRef } from "react";
@@ -158,32 +157,27 @@ function drawLines(
         xs[k] = x;
         ys[k] = shape.interactive ? part(x, y, frame, layer.part) : y;
       }
-      // The ribbon's edges fade, its middle carries the weight.
-      ctx.globalAlpha = layer.opacity * (0.45 + 0.55 * (1 - Math.abs(s) * 2));
+
       ctx.beginPath();
       ctx.moveTo(xs[0], ys[0]);
-      // Curves through the midpoints keep the line smooth at any sampling.
-      for (let k = 1; k < last; k++) {
-        const mx = (xs[k] + xs[k + 1]) / 2;
-        const my = (ys[k] + ys[k + 1]) / 2;
-        ctx.quadraticCurveTo(xs[k], ys[k], mx, my);
+      for (let k = 1; k <= last; k++) {
+        ctx.lineTo(xs[k], ys[k]);
       }
-      ctx.lineTo(xs[last], ys[last]);
+      ctx.globalAlpha = layer.opacity;
       ctx.stroke();
     }
   });
-  ctx.globalAlpha = 1;
 }
 
-const EASE_OUT = (t: number) => 1 - (1 - t) ** 3;
+const EASE_OUT = (t: number) => 1 - Math.pow(1 - t, 3);
 
 export default function BackgroundPaths({
   className,
   children,
-  count = 42,
-  spread = 1,
-  angle = -8,
-  speed = 1,
+  count = 36,
+  spread = 0.35,
+  angle = -12,
+  speed = 0.4,
   interactive = true,
 }: BackgroundPathsProps) {
   const rootRef = useRef<HTMLDivElement>(null);
@@ -196,32 +190,37 @@ export default function BackgroundPaths({
     if (!(root && canvas && ctx)) {
       return;
     }
+
     const reduceMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
+
     const shape: Shape = {
       count,
       spread,
       slope: Math.tan((angle * Math.PI) / 180),
-      interactive: interactive && !reduceMotion,
+      interactive,
     };
-    const perLayer = Math.max(1, Math.round(count / LAYERS.length));
-    const total = perLayer * LAYERS.length;
+
+    const perLayer = Math.max(1, Math.round(shape.count / LAYERS.length));
+    const drawn = new Array(perLayer).fill(reduceMotion ? 1 : 0);
     const frame: Frame = {
       width: 0,
       height: 0,
-      // Start mid-flow, so the first frame isn't the same every visit.
-      time: 40,
-      drawn: new Array(total).fill(reduceMotion ? 1 : 0),
+      time: 0,
+      drawn,
       pointer: { x: 0, y: 0, amount: 0, on: false },
     };
-    let color = getComputedStyle(canvas).color;
+
+    let color = getComputedStyle(canvas).color || "currentColor";
+    let raf = 0;
     let start = 0;
     let last = 0;
-    let raf = 0;
     let visible = true;
 
-    const paint = () => drawLines(ctx, frame, shape, color);
+    const paint = () => {
+      drawLines(ctx, frame, shape, color);
+    };
 
     const resize = () => {
       const rect = canvas.getBoundingClientRect();
@@ -334,7 +333,7 @@ export default function BackgroundPaths({
   return (
     <div
       className={cn(
-        "relative flex min-h-[560px] w-full items-center justify-center overflow-hidden bg-page text-ink",
+        "relative flex min-h-[560px] w-full items-center justify-center overflow-hidden bg-[#09090b] text-[#ffffff]",
         className
       )}
       ref={rootRef}
@@ -355,21 +354,7 @@ export default function BackgroundPaths({
           ref={canvasRef}
         />
       </div>
-      {children === undefined ? <DefaultContent /> : children}
-    </div>
-  );
-}
-
-function DefaultContent() {
-  return (
-    <div className="relative flex max-w-xl flex-col items-center gap-4 px-6 text-center">
-      <h1 className="font-semibold text-4xl tracking-tight sm:text-5xl">
-        Calm by default
-      </h1>
-      <p className="max-w-sm text-base text-ink-secondary">
-        A ribbon of lines that keeps flowing in one color, at any size. Move the
-        cursor through it and the lines part around you.
-      </p>
+      {children === undefined ? null : children}
     </div>
   );
 }

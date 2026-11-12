@@ -10,7 +10,7 @@ READ THIS FIRST (RULES FOR THE AI CODE EDITOR)
 2. Never write a raw colour (hex, rgb, hsl, oklch, or a Tailwind palette class such as
    bg-blue-500, text-slate-700, bg-emerald-100) inside a component, page, email
    template, PDF template or chart. Use ONLY the tokens defined below.
-3. The app is LIGHT ONLY. No dark mode, no dark: classes, no theme toggle.
+3. The app is LIGHT ONLY across all dashboard and operational views. The Login shell and brand intro sequence are dark edition (pure dark background-paths canvas and high-contrast glass auth card). No theme toggle.
 4. Page chrome is white and neutral. Colour is allowed ONLY for: status pills, charts,
    alerts, tags, progress bars, links, focus rings, and the accent mark of the logo.
 5. No gradients anywhere (buttons, backgrounds, headers, login, charts). No glassmorphism,
@@ -190,10 +190,11 @@ Icons:    lucide-react, 16px in tables and buttons, 20px in navigation, stroke 1
 
 9. LOGIN AND MARKETING SCREENS
 ------------------------------
-Same tokens, no exceptions. White background, black primary button, filled grey inputs,
-blueprint-style grid pattern at 4% black opacity on the left panel only (use
-rgba(23,23,23,0.04), defined as --grid-line). Product preview cards use the standard card,
-pill and chart tokens. No blue gradient button, no coloured hero background.
+Login screen is Dark Edition: dark background-paths canvas (#09090b / zinc-950), glowing lines,
+high-contrast floating glass card (#18181b / rgba(24,24,27,0.75)) with white headings,
+crisp dark inputs (border rgba(255,255,255,0.12), bg rgba(255,255,255,0.06), text white),
+brand accent ring (#3E63DD), white primary button on dark (hover #E4E4E7, active #D4D4D8, text #171717),
+and secondary text in soft light grey (#A1A1AA).
 
 
 10. EMAILS, PDFS AND PRINT
