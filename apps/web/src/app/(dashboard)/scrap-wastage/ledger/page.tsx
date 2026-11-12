@@ -226,13 +226,13 @@ export default function ScrapWastageLedgerPage() {
   };
 
   return (
-    <main className="flex-1 overflow-y-auto bg-slate-50/50 p-4 sm:p-6 lg:p-8 dark:bg-[#070b14]/70 font-manrope">
+    <main className="flex-1 overflow-y-auto bg-muted/50 p-4 sm:p-6 lg:p-8 font-manrope">
       <div className="mx-auto max-w-[1680px] space-y-5">
         
         {/* ======================================================== */}
         {/* 1. STREAMLINED HEADER BAR WITH CLEAN 1-ROW ACTIONS       */}
         {/* ======================================================== */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200/80 dark:border-slate-800 pb-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-border-strong border-border pb-4">
           <div>
             <div className="flex items-center gap-2 text-xs text-muted-foreground mb-1">
               <Link href="/scrap-wastage" className="hover:text-primary transition-colors font-medium">
@@ -389,7 +389,7 @@ export default function ScrapWastageLedgerPage() {
         <div className="rounded-2xl border border-border bg-card p-3 shadow-xs space-y-3">
           
           {/* Row 1: 4 Operational Scenario Pills & View Toggle */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 border-b border-border pb-2.5">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 border-border-strong border-border pb-2.5">
             <div className="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0 scrollbar-none">
               <button
                 type="button"
@@ -667,7 +667,7 @@ export default function ScrapWastageLedgerPage() {
                     setSortField(e.target.value as 'reportedAt' | 'quantity' | 'lossNumber' | 'department');
                     setPage(1);
                   }}
-                  className="bg-transparent text-xs font-semibold text-slate-800 dark:text-slate-200 focus:outline-hidden cursor-pointer pr-1"
+                  className="bg-transparent text-xs font-semibold text-ink focus:outline-hidden cursor-pointer pr-1"
                 >
                   <option value="reportedAt">When Scrapped (Date)</option>
                   <option value="quantity">Scrapped Quantity</option>
@@ -677,7 +677,7 @@ export default function ScrapWastageLedgerPage() {
                 <button
                   type="button"
                   onClick={() => setSortAsc(!sortAsc)}
-                  className="text-slate-400 hover:text-slate-900 dark:hover:text-white p-0.5"
+                  className="text-ink-placeholder hover:text-ink p-0.5"
                   title={sortAsc ? 'Ascending' : 'Descending'}
                 >
                   <span className="text-[10px] font-mono font-bold">{sortAsc ? '▲' : '▼'}</span>
@@ -721,7 +721,7 @@ export default function ScrapWastageLedgerPage() {
               <div className="overflow-x-auto">
                 <Table className="w-full text-xs">
                   <TableHeader>
-                    <TableRow className="bg-muted/40 hover:bg-muted/40 border-b border-border/80">
+                    <TableRow className="bg-muted/40 hover:bg-muted/40 border-border-strong border-border/80">
                       <TableHead className="p-3.5 font-bold text-foreground">Entry &amp; Item</TableHead>
                       <TableHead className="p-3.5 font-bold text-foreground">When Put Into Scrap</TableHead>
                       <TableHead className="p-3.5 font-bold text-foreground">Why Put Into Scrap (Reason)</TableHead>
@@ -759,7 +759,7 @@ export default function ScrapWastageLedgerPage() {
                                 {itemName}
                               </div>
                               {entry.itemCode && (
-                                <div className="font-mono text-[11px] text-slate-400">
+                                <div className="font-mono text-[11px] text-ink-placeholder">
                                   Code: {entry.itemCode}
                                 </div>
                               )}
@@ -769,14 +769,14 @@ export default function ScrapWastageLedgerPage() {
                           {/* 2. When Put Into Scrap */}
                           <TableCell className="p-3.5 whitespace-nowrap">
                             <div className="space-y-0.5">
-                              <div className="flex items-center gap-1 font-semibold text-slate-800 dark:text-slate-200">
-                                <Calendar className="w-3.5 h-3.5 text-slate-400" />
+                              <div className="flex items-center gap-1 font-semibold text-ink">
+                                <Calendar className="w-3.5 h-3.5 text-ink-placeholder" />
                                 <span>{format(new Date(entry.reportedAt), 'MMM d, yyyy')}</span>
                               </div>
-                              <div className="text-[11px] text-slate-400 font-mono">
+                              <div className="text-[11px] text-ink-placeholder font-mono">
                                 {format(new Date(entry.reportedAt), 'HH:mm')} hrs
                               </div>
-                              <div className="text-[11px] text-slate-400 truncate max-w-[130px]">
+                              <div className="text-[11px] text-ink-placeholder truncate max-w-[130px]">
                                 by {entry.reportedByActorName || 'Actor'}
                               </div>
                             </div>
@@ -785,11 +785,11 @@ export default function ScrapWastageLedgerPage() {
                           {/* 3. Reason */}
                           <TableCell className="p-3.5 max-w-xs">
                             <div className="space-y-1">
-                              <p className="text-xs text-slate-700 dark:text-slate-300 font-medium line-clamp-2 leading-relaxed">
+                              <p className="text-xs text-ink-secondary font-medium line-clamp-2 leading-relaxed">
                                 {entry.reason}
                               </p>
                               {entry.appliedWastageRuleCode && (
-                                <div className="text-[10px] font-mono text-slate-400">
+                                <div className="text-[10px] font-mono text-ink-placeholder">
                                   Rule: {entry.appliedWastageRuleCode} v{entry.appliedWastageRuleVersion}
                                 </div>
                               )}
@@ -799,14 +799,14 @@ export default function ScrapWastageLedgerPage() {
                           {/* 4. Scrap Quantity */}
                           <TableCell className="p-3.5 text-right whitespace-nowrap">
                             <div className="space-y-0.5">
-                              <span className="font-mono text-sm font-black text-rose-600 dark:text-rose-400">
+                              <span className="font-mono text-sm font-black text-tone-red-text">
                                 {Number(entry.quantity).toLocaleString(undefined, { maximumFractionDigits: 3 })}
                               </span>
-                              <span className="text-[11px] font-mono text-slate-400 ml-1">
+                              <span className="text-[11px] font-mono text-ink-placeholder ml-1">
                                 {entry.uomCode || 'units'}
                               </span>
                               {entry.varianceFromExpected !== null && entry.varianceFromExpected !== undefined && (
-                                <div className="text-[10px] font-mono text-slate-400">
+                                <div className="text-[10px] font-mono text-ink-placeholder">
                                   Var: {Number(entry.varianceFromExpected) > 0 ? '+' : ''}{Number(entry.varianceFromExpected).toFixed(1)}%
                                 </div>
                               )}
@@ -820,8 +820,8 @@ export default function ScrapWastageLedgerPage() {
                                 <ScenarioIcon className="w-3 h-3" />
                                 <span>Way {scenario.number}: {scenario.shortLabel}</span>
                               </span>
-                              <div className="text-[11px] text-slate-500 flex items-center gap-1">
-                                <Building2 className="w-3 h-3 text-slate-400" />
+                              <div className="text-[11px] text-ink-muted flex items-center gap-1">
+                                <Building2 className="w-3 h-3 text-ink-placeholder" />
                                 <span className="truncate max-w-[140px]">{entry.departmentName || 'Plant-wide'}</span>
                               </div>
                             </div>
@@ -832,7 +832,7 @@ export default function ScrapWastageLedgerPage() {
                             <div className="space-y-1">
                               <StatusBadge status={entry.status} />
                               {entry.stockEffectRef && (
-                                <div className="text-[10px] text-emerald-600 dark:text-emerald-400 font-mono flex items-center gap-1">
+                                <div className="text-[10px] text-tone-green-text font-mono flex items-center gap-1">
                                   <FileCheck2 className="w-3 h-3" />
                                   <span>Ledger Posted</span>
                                 </div>
@@ -1009,17 +1009,17 @@ export default function ScrapWastageLedgerPage() {
         {/* 5. COMPACT PAGINATION BAR                                */}
         {/* ======================================================== */}
         {totalPages > 1 && (
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-2xl border border-slate-200/80 dark:border-slate-800/80 bg-white dark:bg-[#0c121e] p-3.5 shadow-xs">
-            <div className="flex items-center gap-3 text-xs text-slate-500 dark:text-slate-400">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-2xl border border-border bg-surface p-3.5 shadow-xs">
+            <div className="flex items-center gap-3 text-xs text-ink-muted">
               <span>
-                Showing <strong className="font-mono text-slate-900 dark:text-white">{(safePage - 1) * pageSize + 1}</strong> to{' '}
-                <strong className="font-mono text-slate-900 dark:text-white">
+                Showing <strong className="font-mono text-ink">{(safePage - 1) * pageSize + 1}</strong> to{' '}
+                <strong className="font-mono text-ink">
                   {Math.min(safePage * pageSize, totalItems)}
                 </strong>{' '}
-                of <strong className="font-mono text-slate-900 dark:text-white">{totalItems}</strong> entries
+                of <strong className="font-mono text-ink">{totalItems}</strong> entries
               </span>
 
-              <div className="flex items-center gap-1.5 pl-3 border-l border-slate-200 dark:border-slate-800">
+              <div className="flex items-center gap-1.5 pl-3 border-l border-border">
                 <span className="text-[11px]">Per page:</span>
                 <select
                   aria-label="Items per page"
@@ -1028,7 +1028,7 @@ export default function ScrapWastageLedgerPage() {
                     setPageSize(Number(e.target.value));
                     setPage(1);
                   }}
-                  className="h-7 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 px-2 text-xs font-semibold text-slate-800 dark:text-slate-200 focus:outline-hidden cursor-pointer"
+                  className="h-7 rounded-lg border border-border bg-muted px-2 text-xs font-semibold text-ink focus:outline-hidden cursor-pointer"
                 >
                   <option value={10}>10</option>
                   <option value={25}>25</option>
@@ -1132,12 +1132,12 @@ export default function ScrapWastageLedgerPage() {
           >
             <div className="space-y-4 pt-1 text-xs">
               {/* Top Banner with Scenario and Status */}
-              <div className="p-3 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-between">
+              <div className="p-3 rounded-2xl bg-muted border border-border flex items-center justify-between">
                 <div>
-                  <span className="text-[10px] uppercase font-bold text-slate-400 block">
+                  <span className="text-[10px] uppercase font-bold text-ink-placeholder block">
                     Operational Origin
                   </span>
-                  <span className="text-sm font-bold text-slate-900 dark:text-white">
+                  <span className="text-sm font-bold text-ink">
                     {getLossScenarioMeta(selectedEntry).label}
                   </span>
                 </div>
@@ -1146,29 +1146,29 @@ export default function ScrapWastageLedgerPage() {
 
               {/* Grid of Key Info */}
               <div className="grid grid-cols-2 gap-3">
-                <div className="p-3 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0c121e]">
-                  <span className="text-[10px] uppercase text-slate-400 font-bold block">
+                <div className="p-3 rounded-2xl border border-border bg-surface">
+                  <span className="text-[10px] uppercase text-ink-placeholder font-bold block">
                     Material / Product Item
                   </span>
-                  <span className="font-bold text-slate-900 dark:text-white text-xs block mt-0.5">
+                  <span className="font-bold text-ink text-xs block mt-0.5">
                     {selectedEntry.materialName || selectedEntry.productName || 'Unspecified'}
                   </span>
                   {selectedEntry.itemCode && (
-                    <span className="text-[11px] font-mono text-slate-400 block">
+                    <span className="text-[11px] font-mono text-ink-placeholder block">
                       Code: {selectedEntry.itemCode}
                     </span>
                   )}
                 </div>
 
-                <div className="p-3 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0c121e]">
-                  <span className="text-[10px] uppercase text-slate-400 font-bold block">
+                <div className="p-3 rounded-2xl border border-border bg-surface">
+                  <span className="text-[10px] uppercase text-ink-placeholder font-bold block">
                     Scrapped Quantity
                   </span>
-                  <span className="font-mono text-base font-black text-rose-600 dark:text-rose-400 block mt-0.5">
+                  <span className="font-mono text-base font-black text-tone-red-text block mt-0.5">
                     {Number(selectedEntry.quantity).toLocaleString()} {selectedEntry.uomCode || 'units'}
                   </span>
                   {selectedEntry.varianceFromExpected !== null && selectedEntry.varianceFromExpected !== undefined && (
-                    <span className="text-[10px] font-mono text-slate-400">
+                    <span className="text-[10px] font-mono text-ink-placeholder">
                       Variance: {Number(selectedEntry.varianceFromExpected) > 0 ? '+' : ''}{Number(selectedEntry.varianceFromExpected).toFixed(1)}%
                     </span>
                   )}
@@ -1176,17 +1176,17 @@ export default function ScrapWastageLedgerPage() {
               </div>
 
               {/* Detailed Reason & Governance */}
-              <div className="p-3.5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0c121e] space-y-2">
-                <span className="text-[10px] uppercase text-slate-400 font-bold block">
+              <div className="p-3.5 rounded-2xl border border-border bg-surface space-y-2">
+                <span className="text-[10px] uppercase text-ink-placeholder font-bold block">
                   Reason for Scrap &amp; Root Cause
                 </span>
-                <p className="text-xs text-slate-800 dark:text-slate-200 leading-relaxed font-medium">
+                <p className="text-xs text-ink leading-relaxed font-medium">
                   {selectedEntry.reason}
                 </p>
                 {selectedEntry.appliedWastageRuleCode && (
-                  <div className="pt-2 border-t border-slate-100 dark:border-slate-800 text-[11px] flex justify-between items-center text-slate-500">
+                  <div className="pt-2 border-t border-border text-[11px] flex justify-between items-center text-ink-muted">
                     <span>Governed Wastage Rule:</span>
-                    <strong className="font-mono text-slate-900 dark:text-white">
+                    <strong className="font-mono text-ink">
                       {selectedEntry.appliedWastageRuleCode} v{selectedEntry.appliedWastageRuleVersion}
                     </strong>
                   </div>
@@ -1196,20 +1196,20 @@ export default function ScrapWastageLedgerPage() {
               {/* Department & Audit Info */}
               <div className="grid grid-cols-2 gap-3 text-[11px]">
                 <div className="space-y-1">
-                  <span className="text-slate-400 block">Department Origin:</span>
-                  <strong className="text-slate-800 dark:text-slate-200 block">{selectedEntry.departmentName || 'Plant-wide'}</strong>
+                  <span className="text-ink-placeholder block">Department Origin:</span>
+                  <strong className="text-ink block">{selectedEntry.departmentName || 'Plant-wide'}</strong>
                 </div>
                 <div className="space-y-1">
-                  <span className="text-slate-400 block">Storage Location:</span>
-                  <strong className="text-slate-800 dark:text-slate-200 block">{selectedEntry.locationName || 'General'}</strong>
+                  <span className="text-ink-placeholder block">Storage Location:</span>
+                  <strong className="text-ink block">{selectedEntry.locationName || 'General'}</strong>
                 </div>
                 <div className="space-y-1">
-                  <span className="text-slate-400 block">Reported At:</span>
-                  <strong className="text-slate-800 dark:text-slate-200 block">{format(new Date(selectedEntry.reportedAt), 'PPpp')}</strong>
+                  <span className="text-ink-placeholder block">Reported At:</span>
+                  <strong className="text-ink block">{format(new Date(selectedEntry.reportedAt), 'PPpp')}</strong>
                 </div>
                 <div className="space-y-1">
-                  <span className="text-slate-400 block">Reported By:</span>
-                  <strong className="text-slate-800 dark:text-slate-200 block">{selectedEntry.reportedByActorName || selectedEntry.reportedByActorId || 'System'}</strong>
+                  <span className="text-ink-placeholder block">Reported By:</span>
+                  <strong className="text-ink block">{selectedEntry.reportedByActorName || selectedEntry.reportedByActorId || 'System'}</strong>
                 </div>
               </div>
 

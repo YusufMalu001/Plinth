@@ -92,13 +92,13 @@ export default function QcRulesPage() {
   }, [rules]);
 
   return (
-    <main className="flex-1 overflow-y-auto bg-slate-50/50 p-4 sm:p-6 lg:p-8 dark:bg-[#070b14]/70 font-manrope">
+    <main className="flex-1 overflow-y-auto bg-muted/50 p-4 sm:p-6 lg:p-8 font-manrope">
       <div className="mx-auto max-w-[1680px] space-y-5">
         
         {/* ======================================================== */}
         {/* 1. STREAMLINED PAGE HEADER & ACTIONS                     */}
         {/* ======================================================== */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-border pb-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-border-strong border-border pb-4">
           <div>
             <div className="flex items-center gap-2 text-xs text-muted-foreground mb-1">
               <Link href="/quality" className="hover:text-primary transition-colors font-medium">
@@ -147,7 +147,7 @@ export default function QcRulesPage() {
             <Button
               size="sm"
               onClick={handleOpenCreate}
-              className="h-9.5 px-4 text-xs font-bold rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground shadow-xs hover:shadow transition-all flex items-center gap-2 cursor-pointer active:scale-[0.99]"
+              className="h-9.5 px-4 text-xs font-bold rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground shadow-xs hover:shadow-none transition-all flex items-center gap-2 cursor-pointer active:scale-[0.99]"
             >
               <Plus className="w-4 h-4" />
               <span>Create QC Rule</span>
@@ -326,7 +326,7 @@ export default function QcRulesPage() {
             <div className="overflow-x-auto">
               <table className="w-full text-left text-xs border-collapse">
                 <thead>
-                  <tr className="border-b border-border bg-muted/40 text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+                  <tr className="border-border-strong border-border bg-muted/40 text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
                     <th className="px-4 py-3 font-bold">Rule Code</th>
                     <th className="px-4 py-3 font-bold">Target Scope</th>
                     <th className="px-4 py-3 font-bold">Description</th>
@@ -387,7 +387,7 @@ export default function QcRulesPage() {
                               <Button
                                 size="sm"
                                 onClick={() => handleOpenApprove(rule)}
-                                className="h-7 px-2.5 text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white shadow-2xs"
+                                className="h-7 px-2.5 text-xs font-bold bg-action hover:bg-[color:var(--action-primary-bg-hover)] text-inverse shadow-2xs"
                               >
                                 <CheckCircle2 className="w-3 h-3 mr-1" />
                                 Approve

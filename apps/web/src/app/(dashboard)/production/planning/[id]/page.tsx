@@ -64,35 +64,35 @@ function StatusBadge({ status }: { status: ProductionPlanStatus }) {
       );
     case "APPROVED":
       return (
-        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">
+        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-tone-green-bg text-tone-green-text border border-tone-green-solid/25">
           <CheckCircle2 className="h-3.5 w-3.5" />
           Approved
         </span>
       );
     case "RELEASED":
       return (
-        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-blue-500/15 text-blue-600 dark:text-blue-400 border border-blue-500/30">
+        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-tone-blue-bg text-tone-blue-text border border-tone-blue-solid/25">
           <Send className="h-3.5 w-3.5" />
           Released to Floor
         </span>
       );
     case "PENDING_APPROVAL":
       return (
-        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-500/15 text-amber-600 dark:text-amber-400 border border-amber-500/30">
+        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-tone-amber-bg text-tone-amber-text border border-tone-amber-solid/25">
           <Clock className="h-3.5 w-3.5" />
           Pending Approval
         </span>
       );
     case "PARTIALLY_COMPLETED":
       return (
-        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-blue-500/15 text-blue-600 dark:text-blue-400 border border-blue-500/30">
+        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-tone-blue-bg text-tone-blue-text border border-tone-blue-solid/25">
           <Sparkles className="h-3.5 w-3.5" />
           Partially Completed
         </span>
       );
     case "COMPLETED":
       return (
-        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-600/15 text-emerald-600 border border-emerald-600/30">
+        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-tone-green-bg text-tone-green-text border border-tone-green-solid/25">
           <CheckCheck className="h-3.5 w-3.5" />
           Completed
         </span>
@@ -386,7 +386,7 @@ export default function ProductionPlanDetailPage() {
           <div className="relative flex w-7 shrink-0 flex-col items-center">
             <span className={`z-10 flex h-7 w-7 items-center justify-center rounded-full text-xs font-bold ${
               isComplete
-                ? "bg-emerald-600 text-white"
+                ? "bg-tone-green-solid text-inverse"
                 : isActive
                   ? "bg-primary text-primary-foreground ring-4 ring-primary/10"
                   : "border border-border bg-background text-muted-foreground"
@@ -406,7 +406,7 @@ export default function ProductionPlanDetailPage() {
                   {step.isQcRequired ? " · QC required" : ""}
                 </p>
               </div>
-              <span className={`shrink-0 text-xs font-semibold ${isComplete ? "text-emerald-700 dark:text-emerald-400" : isActive ? "text-primary" : "text-muted-foreground"}`}>
+              <span className={`shrink-0 text-xs font-semibold ${isComplete ? "text-tone-green-text" : isActive ? "text-primary" : "text-muted-foreground"}`}>
                 {statusLabel}
               </span>
             </div>
@@ -415,7 +415,7 @@ export default function ProductionPlanDetailPage() {
               <span className="font-mono tabular-nums">{percentage}%</span>
             </div>
             <div className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-muted" role="progressbar" aria-label={`${step.stepName || step.name || `Step ${sequenceNumber}`} progress`} aria-valuemin={0} aria-valuemax={100} aria-valuenow={percentage}>
-              <div className={`h-full rounded-full transition-[width] duration-500 ${isComplete ? "bg-emerald-600" : "bg-primary"}`} style={{ width: `${percentage}%` }} />
+              <div className={`h-full rounded-full transition-[width] duration-500 ${isComplete ? "bg-tone-green-solid" : "bg-primary"}`} style={{ width: `${percentage}%` }} />
             </div>
           </div>
         </div>
@@ -452,7 +452,7 @@ export default function ProductionPlanDetailPage() {
                     className="p-1 text-muted-foreground hover:text-foreground rounded transition-colors cursor-pointer"
                     title="Copy Schedule Number"
                   >
-                    {copied ? <Check className="h-3.5 w-3.5 text-emerald-600" /> : <Copy className="h-3.5 w-3.5" />}
+                    {copied ? <Check className="h-3.5 w-3.5 text-tone-green-text" /> : <Copy className="h-3.5 w-3.5" />}
                   </button>
                 </span>
               </nav>
@@ -552,7 +552,7 @@ export default function ProductionPlanDetailPage() {
                         icon={Check}
                         loading={approveAction.isPending}
                         onClick={handleApprove}
-                        className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold cursor-pointer"
+                        className="bg-action hover:bg-[color:var(--action-primary-bg-hover)] text-inverse font-semibold cursor-pointer"
                       >
                         Approve Schedule
                       </Button>
@@ -598,7 +598,7 @@ export default function ProductionPlanDetailPage() {
                       size="sm"
                       icon={Edit3}
                       onClick={openShortageDialog}
-                      className="border-amber-500/40 text-amber-600 dark:text-amber-400 hover:bg-amber-500/10 font-semibold"
+                      className="border-tone-amber-solid/25 text-tone-amber-text hover:bg-tone-amber-bg font-semibold"
                     >
                       Resolve Shortage
                     </Button>
@@ -807,7 +807,7 @@ export default function ProductionPlanDetailPage() {
                 {/* 4. In-Progress Material Issue & Finished Output (Active States) */}
                 {(data.status === "IN_PROGRESS" || data.status === "PARTIALLY_COMPLETED") && (
                   <Card className="border-border bg-card shadow-none hover:shadow-none">
-                    <CardHeader className="border-b border-border bg-muted/20 pb-3">
+                    <CardHeader className="border-border-strong border-border bg-muted/20 pb-3">
                       <CardTitle className="text-sm font-bold text-foreground">
                         Material Issue &amp; Finished Output Execution
                       </CardTitle>
@@ -873,7 +873,7 @@ export default function ProductionPlanDetailPage() {
                           loading={outputAction.isPending}
                           disabled={!outputQty}
                           onClick={() => outputAction.mutate({ id, quantity: Number(outputQty) })}
-                          className="h-10 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold"
+                          className="h-10 rounded-xl bg-tone-green-solid hover:bg-[color:var(--tone-green-text)] text-inverse font-bold"
                         >
                           Record Finished Output
                         </Button>
@@ -969,7 +969,7 @@ export default function ProductionPlanDetailPage() {
                     size="sm"
                     icon={Printer}
                     onClick={() => handlePrint()}
-                    className="bg-primary hover:bg-[#003c68] text-white font-bold rounded-xl cursor-pointer"
+                    className="bg-primary hover:bg-[color:var(--action-primary-bg-hover)] text-inverse font-bold rounded-xl cursor-pointer"
                   >
                     Print Hardcopy
                   </Button>
@@ -977,7 +977,7 @@ export default function ProductionPlanDetailPage() {
               </div>
 
               <div className="bg-muted/20 p-6 sm:p-10 rounded-2xl border border-border flex justify-center overflow-x-auto">
-                <div className="w-full max-w-[850px] bg-white rounded-sm border border-border/40">
+                <div className="w-full max-w-[850px] bg-surface rounded-sm border border-border/40">
                   <ProductionSchedulePDF data={data} ref={printRef} />
                 </div>
               </div>
@@ -992,7 +992,7 @@ export default function ProductionPlanDetailPage() {
               </div>
               {/* Material Issue Movements */}
               <Card className="border-border bg-card shadow-none hover:shadow-none">
-                <CardHeader className="border-b border-border bg-muted/20 pb-3">
+                <CardHeader className="border-border-strong border-border bg-muted/20 pb-3">
                   <div className="flex items-center gap-2">
                     <Boxes className="h-4 w-4 text-primary" />
                     <CardTitle className="text-base font-bold text-foreground">
@@ -1036,12 +1036,12 @@ export default function ProductionPlanDetailPage() {
                         </div>
                       ))}
                       {(data.outputs ?? []).map((output) => (
-                        <div key={output.id} className="px-6 py-3.5 text-xs bg-emerald-500/5 flex items-center justify-between">
+                        <div key={output.id} className="px-6 py-3.5 text-xs bg-tone-green-bg flex items-center justify-between">
                           <div>
                             <span className="font-mono font-bold text-foreground">{output.outputNumber}</span> ·{" "}
-                            <strong className="text-emerald-600">{String(output.quantity)} accepted</strong> ·{" "}
+                            <strong className="text-tone-green-text">{String(output.quantity)} accepted</strong> ·{" "}
                             <span className="text-destructive">{String(output.rejectedQuantity)} rejected</span> ·{" "}
-                            <span className="text-amber-600">{String(output.damagedQuantity)} damaged</span>
+                            <span className="text-tone-amber-text">{String(output.damagedQuantity)} damaged</span>
                           </div>
                           <span className="font-mono text-muted-foreground text-[11px]">
                             {new Date(output.recordedAt).toLocaleString()}
@@ -1055,7 +1055,7 @@ export default function ProductionPlanDetailPage() {
 
               {/* Lifecycle Audit Log */}
               <Card className="border-border bg-card shadow-none hover:shadow-none">
-                <CardHeader className="border-b border-border bg-muted/20 pb-3">
+                <CardHeader className="border-border-strong border-border bg-muted/20 pb-3">
                   <div className="flex items-center gap-2">
                     <History className="h-4 w-4 text-primary" />
                     <CardTitle className="text-base font-bold text-foreground">Lifecycle Audit Log</CardTitle>
@@ -1138,7 +1138,7 @@ export default function ProductionPlanDetailPage() {
               </p>
               <p
                 className={`mt-1 text-[10px] font-semibold ${safeQuantityAnalysis.safeQuantity !== null && Number(resolvedQuantity) <= safeQuantityAnalysis.safeQuantity
-                    ? "text-emerald-600"
+                    ? "text-tone-green-text"
                     : "text-destructive"
                   }`}
               >
@@ -1217,11 +1217,11 @@ export default function ProductionPlanDetailPage() {
                             </div>
                           </td>
                           <td className="px-3 py-3 text-right font-mono tabular-nums">{required.toLocaleString()}</td>
-                          <td className="px-3 py-3 text-right font-mono tabular-nums text-emerald-600">
+                          <td className="px-3 py-3 text-right font-mono tabular-nums text-tone-green-text">
                             {available.toLocaleString()}
                           </td>
                           <td
-                            className={`px-4 py-3 text-right font-mono font-bold tabular-nums ${shortage > 0 ? "text-destructive" : "text-emerald-600"
+                            className={`px-4 py-3 text-right font-mono font-bold tabular-nums ${shortage > 0 ? "text-destructive" : "text-tone-green-text"
                               }`}
                           >
                             {shortage > 0 ? `-${shortage.toLocaleString()}` : "Ready"}
@@ -1247,7 +1247,7 @@ export default function ProductionPlanDetailPage() {
               loading={updatePlanMutation.isPending}
               disabled={resolvedQuantity <= 0}
               onClick={saveShortageResolution}
-              className="bg-primary hover:bg-[#003c68] text-white font-bold"
+              className="bg-primary hover:bg-action text-inverse font-bold"
             >
               Save &amp; Recheck Schedule
             </Button>

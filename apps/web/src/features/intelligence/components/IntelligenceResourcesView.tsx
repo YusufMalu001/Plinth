@@ -39,10 +39,10 @@ import { showToast } from '../../../components/toast-store';
    ========================================================================= */
 
 const severityStyles: Record<string, { bg: string; text: string; border: string; icon: React.ElementType }> = {
-  CRITICAL: { bg: 'bg-rose-50 dark:bg-rose-950/60', text: 'text-rose-700 dark:text-rose-300', border: 'border-rose-200 dark:border-rose-800', icon: ShieldAlert },
-  HIGH: { bg: 'bg-amber-50 dark:bg-amber-950/60', text: 'text-amber-700 dark:text-amber-300', border: 'border-amber-200 dark:border-amber-800', icon: AlertTriangle },
-  MEDIUM: { bg: 'bg-blue-50 dark:bg-blue-950/60', text: 'text-blue-700 dark:text-blue-300', border: 'border-blue-200 dark:border-blue-800', icon: Sparkles },
-  LOW: { bg: 'bg-slate-100 dark:bg-slate-800', text: 'text-slate-700 dark:text-slate-300', border: 'border-slate-200 dark:border-slate-700', icon: Bot },
+  CRITICAL: { bg: 'bg-tone-red-bg', text: 'text-tone-red-text', border: 'border-tone-red-solid/25', icon: ShieldAlert },
+  HIGH: { bg: 'bg-tone-amber-bg', text: 'text-tone-amber-text', border: 'border-tone-amber-solid/25', icon: AlertTriangle },
+  MEDIUM: { bg: 'bg-tone-blue-bg', text: 'text-link', border: 'border-tone-blue-solid/25', icon: Sparkles },
+  LOW: { bg: 'bg-muted', text: 'text-ink-secondary', border: 'border-border', icon: Bot },
 };
 
 export function IntelligenceCasesView() {
@@ -65,9 +65,9 @@ export function IntelligenceCasesView() {
 
   if (query.isLoading) {
     return (
-      <div className="flex h-64 items-center justify-center rounded-3xl border border-slate-200/80 bg-white dark:border-slate-800 dark:bg-slate-900">
-        <div className="flex items-center gap-3 text-xs font-semibold text-slate-500">
-          <Loader2 className="h-5 w-5 animate-spin text-[#004a80] dark:text-blue-400" />
+      <div className="flex h-64 items-center justify-center rounded-3xl border border-border/80 bg-surface">
+        <div className="flex items-center gap-3 text-xs font-semibold text-ink-muted">
+          <Loader2 className="h-5 w-5 animate-spin text-link" />
           Scanning ERP anomaly cases…
         </div>
       </div>
@@ -88,7 +88,7 @@ export function IntelligenceCasesView() {
   if (!items.length) {
     return (
       <EmptyState
-        className="min-h-[260px] rounded-3xl border border-slate-200/90 bg-white p-12 dark:border-slate-800 dark:bg-slate-900"
+        className="min-h-[260px] rounded-3xl border border-border/90 bg-surface p-12"
         title="Zero Active Anomaly Cases"
         description="No case records were returned by the Intelligence case service."
       />
@@ -100,21 +100,21 @@ export function IntelligenceCasesView() {
 
   return (
     <div className="space-y-4 font-manrope">
-      <div className="flex items-center justify-between px-1 text-xs text-slate-500">
+      <div className="flex items-center justify-between px-1 text-xs text-ink-muted">
         <div>
-          Active Case Files: <strong className="text-slate-900 dark:text-slate-100">{items.length}</strong>
+          Active Case Files: <strong className="text-ink">{items.length}</strong>
         </div>
 
         {/* View Mode Toggle */}
-        <div className="flex items-center rounded-xl border border-slate-200 bg-slate-100 p-0.5 dark:border-slate-700 dark:bg-slate-800">
+        <div className="flex items-center rounded-xl border border-border bg-muted p-0.5">
           <button
             type="button"
             onClick={() => setViewMode('table')}
             title="Table View"
             className={`flex h-7 items-center gap-1.5 rounded-lg px-2.5 text-xs font-bold transition-all ${
               viewMode === 'table'
-                ? 'bg-white text-[#004a80] shadow-xs dark:bg-slate-900 dark:text-blue-300'
-                : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-200'
+                ? 'bg-surface text-link shadow-xs'
+                : 'text-ink-secondary hover:text-ink'
             }`}
           >
             <Table2 className="h-3.5 w-3.5" />
@@ -126,8 +126,8 @@ export function IntelligenceCasesView() {
             title="Cards View"
             className={`flex h-7 items-center gap-1.5 rounded-lg px-2.5 text-xs font-bold transition-all ${
               viewMode === 'cards'
-                ? 'bg-white text-[#004a80] shadow-xs dark:bg-slate-900 dark:text-blue-300'
-                : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-200'
+                ? 'bg-surface text-link shadow-xs'
+                : 'text-ink-secondary hover:text-ink'
             }`}
           >
             <LayoutGrid className="h-3.5 w-3.5" />
@@ -138,11 +138,11 @@ export function IntelligenceCasesView() {
 
       {/* VIEW: Table */}
       {viewMode === 'table' && (
-        <div className="overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-xs dark:border-slate-800 dark:bg-slate-900">
+        <div className="overflow-hidden rounded-2xl border border-border/90 bg-surface shadow-xs">
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs">
               <thead>
-                <tr className="border-b border-slate-200 bg-slate-50/80 text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:border-slate-800 dark:bg-slate-800/60 dark:text-slate-400">
+                <tr className="border-b border-border bg-muted/80 text-[10px] font-bold uppercase tracking-wider text-ink-muted">
                   <th className="py-3 px-4">Severity</th>
                   <th className="py-3 px-4">Domain</th>
                   <th className="py-3 px-4">Anomaly / Situation</th>
@@ -151,35 +151,35 @@ export function IntelligenceCasesView() {
                   <th className="py-3 px-4 text-right">Action</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
+              <tbody className="divide-y divide-border">
                 {paginatedItems.map((item: any) => {
                   const sev = severityStyles[item.severity] || severityStyles.MEDIUM;
                   const SevIcon = sev.icon;
 
                   return (
-                    <tr key={item.id} className="transition-colors hover:bg-slate-50/80 dark:hover:bg-slate-800/50">
+                    <tr key={item.id} className="transition-colors hover:bg-muted/80">
                       <td className="py-3.5 px-4 whitespace-nowrap">
                         <span className={`inline-flex items-center gap-1 rounded-md border px-2 py-0.5 text-[10px] font-bold ${sev.bg} ${sev.text} ${sev.border}`}>
                           <SevIcon className="h-3 w-3" />
                           <span>{item.severity}</span>
                         </span>
                       </td>
-                      <td className="py-3.5 px-4 whitespace-nowrap font-bold text-slate-700 dark:text-slate-300">
+                      <td className="py-3.5 px-4 whitespace-nowrap font-bold text-ink-secondary">
                         {item.module}
                       </td>
                       <td className="py-3.5 px-4 min-w-[280px]">
-                        <p className="font-bold text-slate-900 dark:text-white">
-                          <Link href={`/intelligence/cases/${item.id}`} className="hover:text-[#004a80] hover:underline">{item.detectorKey.replaceAll('_', ' ')}</Link>
+                        <p className="font-bold text-ink">
+                          <Link href={`/intelligence/cases/${item.id}`} className="hover:text-link-hover hover:underline">{item.detectorKey.replaceAll('_', ' ')}</Link>
                         </p>
-                        <p className="text-[11px] text-slate-500 line-clamp-1 mt-0.5">
+                        <p className="text-[11px] text-ink-muted line-clamp-1 mt-0.5">
                           {item.evidence?.situation ?? 'No situation summary was recorded.'}
                         </p>
                       </td>
-                      <td className="py-3.5 px-4 whitespace-nowrap text-slate-500">
+                      <td className="py-3.5 px-4 whitespace-nowrap text-ink-muted">
                         {new Date(item.lastDetectedAt).toLocaleDateString()}
                       </td>
                       <td className="py-3.5 px-4 whitespace-nowrap">
-                        <span className="inline-flex rounded-md border border-slate-200 bg-slate-50 px-2 py-0.5 text-[10px] font-bold text-slate-600 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-400">
+                        <span className="inline-flex rounded-md border border-border bg-muted px-2 py-0.5 text-[10px] font-bold text-ink-secondary">
                           {item.status}
                         </span>
                       </td>
@@ -188,7 +188,7 @@ export function IntelligenceCasesView() {
                           type="button"
                           onClick={() => scenario.mutate(item.id)}
                           disabled={scenario.isPending}
-                          className="inline-flex items-center gap-1.5 rounded-lg bg-[#004a80] px-3 py-1 text-xs font-bold text-white hover:bg-[#003860] active:scale-98 disabled:opacity-50 dark:bg-blue-600 dark:hover:bg-blue-500"
+                          className="inline-flex items-center gap-1.5 rounded-lg bg-action px-3 py-1 text-xs font-bold text-inverse hover:bg-[color:var(--action-primary-bg-hover)] active:scale-98 disabled:opacity-50"
                         >
                           {scenario.isPending ? <Loader2 className="h-3 w-3 animate-spin" /> : <GitCompareArrows className="h-3 w-3" />}
                           <span>Simulate</span>
@@ -213,7 +213,7 @@ export function IntelligenceCasesView() {
             return (
               <div
                 key={item.id}
-                className="group relative overflow-hidden rounded-2xl border border-slate-200/90 bg-white p-5 shadow-xs transition-all hover:border-[#004a80]/40 hover:shadow-md dark:border-slate-800 dark:bg-slate-900"
+                className="group relative overflow-hidden rounded-2xl border border-border/90 bg-surface p-5 shadow-xs transition-all hover:border-accent-brand"
               >
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                   <div className="space-y-2 min-w-0 flex-1">
@@ -223,24 +223,24 @@ export function IntelligenceCasesView() {
                         <span>{item.severity} SEVERITY</span>
                       </span>
 
-                      <span className="rounded-lg border border-slate-200 bg-slate-50 px-2 py-0.5 font-mono text-[10px] font-bold text-slate-700 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300">
+                      <span className="rounded-lg border border-border bg-muted px-2 py-0.5 font-mono text-[10px] font-bold text-ink-secondary">
                         {item.module}
                       </span>
 
-                      <span className="rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-bold text-slate-600 dark:bg-slate-800 dark:text-slate-400">
+                      <span className="rounded-full bg-muted px-2 py-0.5 text-[10px] font-bold text-ink-secondary">
                         Status: {item.status}
                       </span>
                     </div>
 
-                    <h3 className="text-base font-bold text-slate-900 dark:text-slate-100">
-                      <Link href={`/intelligence/cases/${item.id}`} className="hover:text-[#004a80] hover:underline">{item.detectorKey.replaceAll('_', ' ')}</Link>
+                    <h3 className="text-base font-bold text-ink">
+                      <Link href={`/intelligence/cases/${item.id}`} className="hover:text-link-hover hover:underline">{item.detectorKey.replaceAll('_', ' ')}</Link>
                     </h3>
 
-                    <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed">
                       {item.evidence?.situation ?? 'No situation summary was recorded.'}
                     </p>
 
-                    <div className="flex flex-wrap items-center gap-x-4 gap-y-1 pt-2 text-[11px] text-slate-400">
+                    <div className="flex flex-wrap items-center gap-x-4 gap-y-1 pt-2 text-[11px] text-ink-placeholder">
                       <span>Observed: <strong>{new Date(item.lastDetectedAt).toLocaleString()}</strong></span>
                       <span>Snapshot ID: <strong className="font-mono">{item.snapshotId ? String(item.snapshotId).slice(0, 8) : 'N/A'}</strong></span>
                       <span>Rule Ver: <strong className="font-mono">v{item.detectorVersion}</strong></span>
@@ -251,13 +251,13 @@ export function IntelligenceCasesView() {
                     <button
                       onClick={() => scenario.mutate(item.id)}
                       disabled={scenario.isPending}
-                      className="inline-flex items-center gap-2 rounded-xl bg-[#004a80] px-4 py-2 text-xs font-bold text-white shadow-xs transition-all hover:bg-[#003860] active:scale-95 disabled:opacity-50 dark:bg-blue-600 dark:hover:bg-blue-500"
+                      className="inline-flex items-center gap-2 rounded-xl bg-action px-4 py-2 text-xs font-bold text-inverse shadow-xs transition-all hover:bg-[color:var(--action-primary-bg-hover)] active:scale-95 disabled:opacity-50"
                     >
                       {scenario.isPending ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <GitCompareArrows className="h-3.5 w-3.5" />}
                       <span>Simulate Next Steps</span>
                     </button>
 
-                    <span className="text-[10px] text-slate-400 text-right">
+                    <span className="text-[10px] text-ink-placeholder text-right">
                       Zero Autonomous Mutation
                     </span>
                   </div>
@@ -270,17 +270,17 @@ export function IntelligenceCasesView() {
 
       {/* Pagination Controls */}
       {totalPages > 1 && (
-        <div className="flex items-center justify-between rounded-xl border border-slate-200/90 bg-white p-3.5 shadow-2xs dark:border-slate-800 dark:bg-slate-900 text-xs">
-          <span className="text-slate-500">
-            Page <strong className="text-slate-900 dark:text-white">{currentPage}</strong> of{' '}
-            <strong className="text-slate-900 dark:text-white">{totalPages}</strong>
+        <div className="flex items-center justify-between rounded-xl border border-border/90 bg-surface p-3.5 shadow-2xs text-xs">
+          <span className="text-ink-muted">
+            Page <strong className="text-ink">{currentPage}</strong> of{' '}
+            <strong className="text-ink">{totalPages}</strong>
           </span>
           <div className="flex items-center gap-1.5">
             <button
               type="button"
               disabled={currentPage <= 1}
               onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
-              className="flex h-8 items-center gap-1 rounded-lg border border-slate-200 px-3 font-bold text-slate-600 disabled:opacity-40 hover:bg-slate-50 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800"
+              className="flex h-8 items-center gap-1 rounded-lg border border-border px-3 font-bold text-ink-secondary disabled:opacity-40 hover:bg-muted"
             >
               <ChevronLeft className="h-4 w-4" />
               <span>Previous</span>
@@ -289,7 +289,7 @@ export function IntelligenceCasesView() {
               type="button"
               disabled={currentPage >= totalPages}
               onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
-              className="flex h-8 items-center gap-1 rounded-lg border border-slate-200 px-3 font-bold text-slate-600 disabled:opacity-40 hover:bg-slate-50 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800"
+              className="flex h-8 items-center gap-1 rounded-lg border border-border px-3 font-bold text-ink-secondary disabled:opacity-40 hover:bg-muted"
             >
               <span>Next</span>
               <ChevronRight className="h-4 w-4" />
@@ -321,9 +321,9 @@ export function IntelligenceScenariosView() {
 
   if (query.isLoading) {
     return (
-      <div className="flex h-64 items-center justify-center rounded-3xl border border-slate-200/80 bg-white dark:border-slate-800 dark:bg-slate-900">
-        <div className="flex items-center gap-3 text-xs font-semibold text-slate-500">
-          <Loader2 className="h-5 w-5 animate-spin text-[#004a80] dark:text-blue-400" />
+      <div className="flex h-64 items-center justify-center rounded-3xl border border-border/80 bg-surface">
+        <div className="flex items-center gap-3 text-xs font-semibold text-ink-muted">
+          <Loader2 className="h-5 w-5 animate-spin text-link" />
           Loading simulation ranges…
         </div>
       </div>
@@ -345,14 +345,14 @@ export function IntelligenceScenariosView() {
     return (
       <div className="space-y-6">
         <EmptyState
-          className="min-h-[260px] rounded-3xl border border-slate-200/90 bg-white p-12 dark:border-slate-800 dark:bg-slate-900"
+          className="min-h-[260px] rounded-3xl border border-border/90 bg-surface p-12"
           title="No Scenarios Recorded"
           description="Generate simulation ranges from active case investigations or consult the AI Advisor to project what-if outcomes."
         />
         <div className="text-center">
           <Link
             href="/intelligence/cases"
-            className="inline-flex items-center gap-2 rounded-xl bg-[#004a80] px-4 py-2 text-xs font-bold text-white shadow-xs hover:bg-[#003860]"
+            className="inline-flex items-center gap-2 rounded-xl bg-action px-4 py-2 text-xs font-bold text-inverse shadow-xs hover:bg-[color:var(--action-primary-bg-hover)]"
           >
             <FileWarning className="h-4 w-4" />
             <span>Go to Case Investigations</span>
@@ -364,9 +364,9 @@ export function IntelligenceScenariosView() {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between px-1 text-xs text-slate-500">
+      <div className="flex items-center justify-between px-1 text-xs text-ink-muted">
         <span>
-          Recorded Scenario Projections: <strong className="text-slate-900 dark:text-slate-100">{items.length}</strong>
+          Recorded Scenario Projections: <strong className="text-ink">{items.length}</strong>
         </span>
         <span className="text-[11px]">Ranges represent opportunity boundaries, not guaranteed profit</span>
       </div>
@@ -375,25 +375,25 @@ export function IntelligenceScenariosView() {
         {items.map((item: any) => (
           <div
             key={item.id}
-            className="rounded-3xl border border-slate-200/90 bg-white p-6 shadow-xs dark:border-slate-800 dark:bg-slate-900 space-y-5"
+            className="rounded-3xl border border-border/90 bg-surface p-6 shadow-xs space-y-5"
           >
-            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-4 dark:border-slate-800">
+            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border pb-4">
               <div className="flex items-center gap-2.5">
-                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-100 text-[#004a80] dark:bg-blue-950/80 dark:text-blue-300">
+                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-tone-blue-bg text-link">
                   <GitCompareArrows className="h-5 w-5" />
                 </div>
                 <div>
-                  <h3 className="text-base font-black text-slate-900 dark:text-slate-100">
+                  <h3 className="text-base font-black text-ink">
                     {item.scenarioType ? item.scenarioType.replaceAll('_', ' ') : 'STRATEGIC STRESS TEST'}
                   </h3>
-                  <p className="text-[11px] text-slate-400">
-                    Provenance: <strong className="text-slate-600 dark:text-slate-300">{item.provenance}</strong>
+                  <p className="text-[11px] text-ink-placeholder">
+                    Provenance: <strong className="text-ink-secondary">{item.provenance}</strong>
                   </p>
                 </div>
               </div>
 
               {item.missingInputs?.length > 0 && (
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-200 bg-amber-50 px-3 py-1 text-xs font-bold text-amber-800 dark:border-amber-900 dark:bg-amber-950/50 dark:text-amber-300">
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-tone-amber-solid/25 bg-tone-amber-bg px-3 py-1 text-xs font-bold text-tone-amber-text">
                   <AlertTriangle className="h-3 w-3" />
                   Missing Variables: {item.missingInputs.join(', ')}
                 </span>
@@ -403,31 +403,31 @@ export function IntelligenceScenariosView() {
             {/* 3 Pillar Range Grid */}
             <div className="grid gap-4 sm:grid-cols-3">
               {/* Low / Conservative Case */}
-              <div className="rounded-2xl border border-slate-200/70 bg-slate-50/50 p-4 dark:border-slate-800 dark:bg-slate-800/40 space-y-2">
-                <span className="text-[10px] font-black uppercase tracking-wider text-slate-400">
+              <div className="rounded-2xl border border-border/70 bg-muted/50 p-4 space-y-2">
+                <span className="text-[10px] font-black uppercase tracking-wider text-ink-placeholder">
                   Conservative (Low Case)
                 </span>
-                <p className="text-sm font-bold text-slate-800 dark:text-slate-200 leading-snug">
+                <p className="text-sm font-bold text-ink leading-snug">
                   {formatCaseVal(item.lowCase)}
                 </p>
               </div>
 
               {/* Base / Expected Case */}
-              <div className="rounded-2xl border border-blue-200/90 bg-blue-50/40 p-4 dark:border-blue-950 dark:bg-blue-950/30 space-y-2">
-                <span className="text-[10px] font-black uppercase tracking-wider text-[#004a80] dark:text-blue-400">
+              <div className="rounded-2xl border border-tone-blue-solid/25 bg-tone-blue-bg p-4 space-y-2">
+                <span className="text-[10px] font-black uppercase tracking-wider text-link">
                   Expected (Base Case)
                 </span>
-                <p className="text-sm font-black text-[#004a80] dark:text-blue-300 leading-snug">
+                <p className="text-sm font-black text-link leading-snug">
                   {formatCaseVal(item.baseCase)}
                 </p>
               </div>
 
               {/* High / Optimistic Case */}
-              <div className="rounded-2xl border border-emerald-200/90 bg-emerald-50/40 p-4 dark:border-emerald-950 dark:bg-emerald-950/30 space-y-2">
-                <span className="text-[10px] font-black uppercase tracking-wider text-emerald-700 dark:text-emerald-400">
+              <div className="rounded-2xl border border-tone-green-solid/25 bg-tone-green-bg p-4 space-y-2">
+                <span className="text-[10px] font-black uppercase tracking-wider text-tone-green-text">
                   Optimistic (High Case)
                 </span>
-                <p className="text-sm font-bold text-emerald-800 dark:text-emerald-300 leading-snug">
+                <p className="text-sm font-bold text-tone-green-text leading-snug">
                   {formatCaseVal(item.highCase)}
                 </p>
               </div>
@@ -444,9 +444,9 @@ export function IntelligenceScenariosView() {
    ========================================================================= */
 
 const outcomeStatusStyles: Record<string, { label: string; bg: string; text: string }> = {
-  VERIFIED: { label: 'Verified Realized', bg: 'bg-emerald-50 border-emerald-200 dark:bg-emerald-950/60 dark:border-emerald-800', text: 'text-emerald-800 dark:text-emerald-300' },
-  UNKNOWN: { label: 'Pending Attribution', bg: 'bg-amber-50 border-amber-200 dark:bg-amber-950/60 dark:border-amber-800', text: 'text-amber-800 dark:text-amber-300' },
-  FAILED: { label: 'Unrealized', bg: 'bg-rose-50 border-rose-200 dark:bg-rose-950/60 dark:border-rose-800', text: 'text-rose-800 dark:text-rose-300' },
+  VERIFIED: { label: 'Verified Realized', bg: 'bg-tone-green-bg border-tone-green-solid/25', text: 'text-tone-green-text' },
+  UNKNOWN: { label: 'Pending Attribution', bg: 'bg-tone-amber-bg border-tone-amber-solid/25', text: 'text-tone-amber-text' },
+  FAILED: { label: 'Unrealized', bg: 'bg-tone-red-bg border-tone-red-solid/25', text: 'text-tone-red-text' },
 };
 
 export function IntelligenceOutcomesView() {
@@ -454,9 +454,9 @@ export function IntelligenceOutcomesView() {
 
   if (query.isLoading) {
     return (
-      <div className="flex h-64 items-center justify-center rounded-3xl border border-slate-200/80 bg-white dark:border-slate-800 dark:bg-slate-900">
-        <div className="flex items-center gap-3 text-xs font-semibold text-slate-500">
-          <Loader2 className="h-5 w-5 animate-spin text-[#004a80] dark:text-blue-400" />
+      <div className="flex h-64 items-center justify-center rounded-3xl border border-border/80 bg-surface">
+        <div className="flex items-center gap-3 text-xs font-semibold text-ink-muted">
+          <Loader2 className="h-5 w-5 animate-spin text-link" />
           Loading economic impact ledger…
         </div>
       </div>
@@ -477,7 +477,7 @@ export function IntelligenceOutcomesView() {
   if (!items.length) {
     return (
       <EmptyState
-        className="min-h-[260px] rounded-3xl border border-slate-200/90 bg-white p-12 dark:border-slate-800 dark:bg-slate-900"
+        className="min-h-[260px] rounded-3xl border border-border/90 bg-surface p-12"
         title="No Outcomes Recorded Yet"
         description="Completed tasks undergo transactional reconciliation against ERP ledgers before economic value is certified."
       />
@@ -486,9 +486,9 @@ export function IntelligenceOutcomesView() {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between px-1 text-xs text-slate-500">
+      <div className="flex items-center justify-between px-1 text-xs text-ink-muted">
         <span>
-          Attributed Outcomes: <strong className="text-slate-900 dark:text-slate-100">{items.length}</strong>
+          Attributed Outcomes: <strong className="text-ink">{items.length}</strong>
         </span>
         <span className="text-[11px]">Attribution requires verified post-execution invoice & inventory receipts</span>
       </div>
@@ -502,7 +502,7 @@ export function IntelligenceOutcomesView() {
           return (
             <div
               key={item.id}
-              className="rounded-2xl border border-slate-200/90 bg-white p-5 shadow-xs transition-all hover:shadow-md dark:border-slate-800 dark:bg-slate-900"
+              className="rounded-2xl border border-border/90 bg-surface p-5 shadow-xs transition-all"
             >
               <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
                 <div className="space-y-1.5 min-w-0 flex-1">
@@ -510,43 +510,43 @@ export function IntelligenceOutcomesView() {
                     <span className={`inline-flex items-center rounded-lg border px-2.5 py-0.5 text-xs font-bold ${stat.bg} ${stat.text}`}>
                       {stat.label}
                     </span>
-                    <span className="rounded-lg border border-slate-200 bg-slate-50 px-2 py-0.5 text-[10px] font-bold text-slate-700 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300">
+                    <span className="rounded-lg border border-border bg-muted px-2 py-0.5 text-[10px] font-bold text-ink-secondary">
                       Attribution: {item.attributionMethod}
                     </span>
-                    <span className="text-[10px] text-slate-400">
+                    <span className="text-[10px] text-ink-placeholder">
                       Quality: {item.quality}
                     </span>
                   </div>
 
-                  <h3 className="text-base font-black text-slate-900 dark:text-slate-100">
+                  <h3 className="text-base font-black text-ink">
                     {item.recommendation?.title ?? item.metricKey}
                   </h3>
 
-                  <p className="text-xs text-slate-400">
+                  <p className="text-xs text-ink-placeholder">
                     Observed on {new Date(item.observedAt).toLocaleString()} · Provenance: {item.provenance}
                   </p>
                 </div>
 
-                <div className="flex items-center gap-6 shrink-0 pt-3 lg:pt-0 border-t lg:border-t-0 border-slate-100 dark:border-slate-800">
+                <div className="flex items-center gap-6 shrink-0 pt-3 lg:pt-0 border-t lg:border-t-0 border-border">
                   <div className="text-right">
-                    <p className="text-[10px] font-bold uppercase text-slate-400">Projected</p>
-                    <p className="text-sm font-bold text-slate-700 dark:text-slate-300">
+                    <p className="text-[10px] font-bold uppercase text-ink-placeholder">Projected</p>
+                    <p className="text-sm font-bold text-ink-secondary">
                       {item.expectedValue !== undefined ? money(item.expectedValue, item.currency) : 'UNKNOWN'}
                     </p>
                   </div>
 
                   <div className="text-right">
-                    <p className="text-[10px] font-bold uppercase text-slate-400">Realized</p>
-                    <p className="text-sm font-bold text-emerald-600 dark:text-emerald-400">
+                    <p className="text-[10px] font-bold uppercase text-ink-placeholder">Realized</p>
+                    <p className="text-sm font-bold text-tone-green-text">
                       {item.realizedValue !== undefined ? money(item.realizedValue, item.currency) : 'UNKNOWN'}
                     </p>
                   </div>
 
-                  <div className="text-right pl-4 border-l border-slate-200 dark:border-slate-800">
-                    <p className="text-[10px] font-bold uppercase text-slate-400">Variance</p>
+                  <div className="text-right pl-4 border-l border-border">
+                    <p className="text-[10px] font-bold uppercase text-ink-placeholder">Variance</p>
                     <div className="flex items-center gap-1">
-                      {isFavorable ? <TrendingUp className="h-3.5 w-3.5 text-emerald-500" /> : <TrendingDown className="h-3.5 w-3.5 text-rose-500" />}
-                      <span className={`text-base font-black ${isFavorable ? 'text-emerald-600 dark:text-emerald-400' : 'text-rose-600 dark:text-rose-400'}`}>
+                      {isFavorable ? <TrendingUp className="h-3.5 w-3.5 text-tone-green-text" /> : <TrendingDown className="h-3.5 w-3.5 text-tone-red-text" />}
+                      <span className={`text-base font-black ${isFavorable ? 'text-tone-green-text' : 'text-tone-red-text'}`}>
                         {item.variance !== undefined ? money(item.variance, item.currency) : 'N/A'}
                       </span>
                     </div>
@@ -566,12 +566,12 @@ export function IntelligenceOutcomesView() {
    ========================================================================= */
 
 const copilotAdvisors = [
-  { key: 'EXECUTIVE' as const, name: 'Executive Super Agent', role: 'Strategic Health & Enterprise Tradeoffs', icon: Layers, color: 'text-indigo-600 dark:text-indigo-400', bg: 'bg-indigo-50 dark:bg-indigo-950/60' },
-  { key: 'SALES' as const, name: 'Sales & Growth Advisor', role: 'Demand Forecasting & Margin Leakage', icon: TrendingUp, color: 'text-[#004a80] dark:text-blue-400', bg: 'bg-blue-50 dark:bg-blue-950/60' },
-  { key: 'INVENTORY' as const, name: 'Inventory & Stock Advisor', role: 'Depletion Risks & Reorder Signals', icon: Package, color: 'text-amber-600 dark:text-amber-400', bg: 'bg-amber-50 dark:bg-amber-950/60' },
-  { key: 'PROCUREMENT' as const, name: 'Procurement Advisor', role: 'Supplier Scorecards & Price Variance', icon: ShoppingCart, color: 'text-sky-600 dark:text-sky-400', bg: 'bg-sky-50 dark:bg-sky-950/60' },
-  { key: 'PRODUCTION' as const, name: 'Production Plant Advisor', role: 'Workstation Capacity & Assembly Lines', icon: Factory, color: 'text-purple-600 dark:text-purple-400', bg: 'bg-purple-50 dark:bg-purple-950/60' },
-  { key: 'FULFILLMENT' as const, name: 'Fulfillment & Logistics', role: 'Dispatch Vehicle Consolidation & SLAs', icon: Truck, color: 'text-teal-600 dark:text-teal-400', bg: 'bg-teal-50 dark:bg-teal-950/60' },
+  { key: 'EXECUTIVE' as const, name: 'Executive Super Agent', role: 'Strategic Health & Enterprise Tradeoffs', icon: Layers, color: 'text-tone-purple-text', bg: 'bg-tone-purple-bg' },
+  { key: 'SALES' as const, name: 'Sales & Growth Advisor', role: 'Demand Forecasting & Margin Leakage', icon: TrendingUp, color: 'text-link', bg: 'bg-tone-blue-bg' },
+  { key: 'INVENTORY' as const, name: 'Inventory & Stock Advisor', role: 'Depletion Risks & Reorder Signals', icon: Package, color: 'text-tone-amber-text', bg: 'bg-tone-amber-bg' },
+  { key: 'PROCUREMENT' as const, name: 'Procurement Advisor', role: 'Supplier Scorecards & Price Variance', icon: ShoppingCart, color: 'text-tone-blue-text', bg: 'bg-tone-blue-bg' },
+  { key: 'PRODUCTION' as const, name: 'Production Plant Advisor', role: 'Workstation Capacity & Assembly Lines', icon: Factory, color: 'text-tone-purple-text', bg: 'bg-tone-purple-bg' },
+  { key: 'FULFILLMENT' as const, name: 'Fulfillment & Logistics', role: 'Dispatch Vehicle Consolidation & SLAs', icon: Truck, color: 'text-tone-teal-text', bg: 'bg-tone-teal-bg' },
 ];
 
 const samplePrompts: Partial<Record<IntelligenceModule, string[]>> = {
@@ -647,12 +647,12 @@ export function IntelligenceConversationsView() {
       {/* Left Column: Domain Advisors & Session History (4 cols) */}
       <div className="lg:col-span-4 space-y-4">
         {/* Domain Advisor Selector Card */}
-        <div className="rounded-3xl border border-slate-200/90 bg-white p-5 shadow-xs dark:border-slate-800 dark:bg-slate-900 space-y-3">
-          <div className="flex items-center justify-between pb-2 border-b border-slate-100 dark:border-slate-800">
-            <span className="text-[11px] font-black uppercase tracking-wider text-slate-400">
+        <div className="rounded-3xl border border-border/90 bg-surface p-5 shadow-xs space-y-3">
+          <div className="flex items-center justify-between pb-2 border-b border-border">
+            <span className="text-[11px] font-black uppercase tracking-wider text-ink-placeholder">
               Select Domain Advisor
             </span>
-            <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+            <span className="flex h-2 w-2 rounded-full bg-tone-green-solid animate-pulse" />
           </div>
 
           <div className="grid grid-cols-2 gap-2">
@@ -666,8 +666,8 @@ export function IntelligenceConversationsView() {
                   onClick={() => setSelectedModule(adv.key)}
                   className={`flex flex-col items-start p-3 rounded-2xl border text-left transition-all ${
                     isSelected
-                      ? 'border-[#004a80] bg-[#004a80]/10 text-[#004a80] shadow-xs dark:border-blue-500 dark:bg-blue-950/60 dark:text-blue-300 font-bold'
-                      : 'border-slate-200/80 bg-slate-50/60 text-slate-700 hover:border-slate-300 dark:border-slate-800 dark:bg-slate-800/40 dark:text-slate-300'
+                      ? 'border-accent-brand bg-accent-brand-soft text-link shadow-xs font-bold'
+                      : 'border-border/80 bg-muted/60 text-ink-secondary hover:border-border-strong'
                   }`}
                 >
                   <Icon className="h-4 w-4 mb-1.5" />
@@ -680,7 +680,7 @@ export function IntelligenceConversationsView() {
           <button
             onClick={() => create.mutate()}
             disabled={create.isPending}
-            className="w-full mt-2 inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-[#004a80] to-blue-700 px-4 py-2.5 text-xs font-bold text-white shadow-xs transition-all hover:brightness-110 active:scale-98 disabled:opacity-50"
+            className="w-full mt-2 inline-flex items-center justify-center gap-2 rounded-2xl bg-action px-4 py-2.5 text-xs font-bold text-inverse shadow-xs transition-all hover:brightness-110 active:scale-98 disabled:opacity-50"
           >
             {create.isPending ? <Loader2 className="h-4 w-4 animate-spin" /> : <Plus className="h-4 w-4" />}
             <span>Start New Consultation</span>
@@ -688,9 +688,9 @@ export function IntelligenceConversationsView() {
         </div>
 
         {/* Saved Session History List */}
-        <div className="rounded-3xl border border-slate-200/90 bg-white p-5 shadow-xs dark:border-slate-800 dark:bg-slate-900 space-y-3">
-          <div className="flex items-center justify-between pb-2 border-b border-slate-100 dark:border-slate-800">
-            <span className="text-[11px] font-black uppercase tracking-wider text-slate-400">
+        <div className="rounded-3xl border border-border/90 bg-surface p-5 shadow-xs space-y-3">
+          <div className="flex items-center justify-between pb-2 border-b border-border">
+            <span className="text-[11px] font-black uppercase tracking-wider text-ink-placeholder">
               Consultation Sessions ({conversationItems.length})
             </span>
           </div>
@@ -704,24 +704,24 @@ export function IntelligenceConversationsView() {
                   onClick={() => setSelectedId(item.id)}
                   className={`w-full p-3 rounded-2xl text-left transition-all flex items-center justify-between gap-2 ${
                     isSelected
-                      ? 'bg-[#004a80] text-white shadow-xs dark:bg-blue-600 font-bold'
-                      : 'hover:bg-slate-100 dark:hover:bg-slate-800/80 text-slate-800 dark:text-slate-200'
+                      ? 'bg-action text-inverse shadow-xs font-bold'
+                      : 'hover:bg-muted text-ink'
                   }`}
                 >
                   <div className="min-w-0 flex-1">
                     <p className="text-xs font-bold truncate">
                       {item.title || `${item.module} Consultation`}
                     </p>
-                    <p className={`text-[10px] mt-0.5 truncate ${isSelected ? 'text-blue-100' : 'text-slate-400'}`}>
+                    <p className={`text-[10px] mt-0.5 truncate ${isSelected ? 'text-tone-blue-text' : 'text-ink-placeholder'}`}>
                       {item.module} · {new Date(item.updatedAt).toLocaleDateString()}
                     </p>
                   </div>
-                  <ChevronRight className={`h-4 w-4 shrink-0 ${isSelected ? 'text-white' : 'text-slate-400'}`} />
+                  <ChevronRight className={`h-4 w-4 shrink-0 ${isSelected ? 'text-inverse' : 'text-ink-placeholder'}`} />
                 </button>
               );
             })}
             {!conversationItems.length && (
-              <p className="py-6 text-center text-xs text-slate-400">
+              <p className="py-6 text-center text-xs text-ink-placeholder">
                 No past consultations yet. Click above to begin.
               </p>
             )}
@@ -730,25 +730,25 @@ export function IntelligenceConversationsView() {
       </div>
 
       {/* Right Column: Interactive Copilot Chat Canvas (8 cols) */}
-      <div className="lg:col-span-8 flex flex-col rounded-3xl border border-slate-200/90 bg-white shadow-xs dark:border-slate-800 dark:bg-slate-900 overflow-hidden">
+      <div className="lg:col-span-8 flex flex-col rounded-3xl border border-border/90 bg-surface shadow-xs overflow-hidden">
         {/* Header Bar of Active Session */}
-        <div className="flex items-center justify-between p-4 px-6 border-b border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-850/50">
+        <div className="flex items-center justify-between p-4 px-6 border-b border-border bg-muted/50">
           <div className="flex items-center gap-3">
             <div className={`flex h-10 w-10 items-center justify-center rounded-2xl ${activeAdvisor.bg} ${activeAdvisor.color}`}>
               <ActiveIcon className="h-5 w-5" />
             </div>
             <div>
-              <h3 className="text-sm font-black text-slate-900 dark:text-white">
+              <h3 className="text-sm font-black text-ink">
                 {activeAdvisor.name}
               </h3>
-              <p className="text-[11px] text-slate-500 dark:text-slate-400">
+              <p className="text-[11px] text-ink-muted">
                 {activeAdvisor.role}
               </p>
             </div>
           </div>
 
           <div className="flex items-center gap-2">
-            <span className="inline-flex items-center gap-1 rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-0.5 text-[10px] font-bold text-emerald-800 dark:border-emerald-900 dark:bg-emerald-950/60 dark:text-emerald-300">
+            <span className="inline-flex items-center gap-1 rounded-full border border-tone-green-solid/25 bg-tone-green-bg px-2.5 py-0.5 text-[10px] font-bold text-tone-green-text">
               <ShieldCheck className="h-3 w-3" />
               Certified Read-Only Context
             </span>
@@ -759,21 +759,21 @@ export function IntelligenceConversationsView() {
         <div className="flex-1 p-6 space-y-4 overflow-y-auto max-h-[500px]">
           {!selectedId ? (
             <div className="py-12 text-center space-y-5">
-              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-3xl bg-blue-50 text-[#004a80] dark:bg-blue-950/60 dark:text-blue-300">
+              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-3xl bg-tone-blue-bg text-link">
                 <Sparkles className="h-8 w-8" />
               </div>
               <div className="space-y-1">
-                <h4 className="text-base font-black text-slate-900 dark:text-white">
+                <h4 className="text-base font-black text-ink">
                   Begin Consulting {activeAdvisor.name}
                 </h4>
-                <p className="text-xs text-slate-500 max-w-md mx-auto">
+                <p className="text-xs text-ink-muted max-w-md mx-auto">
                   Ask targeted business queries, demand forecasts, margin analysis, and inventory optimization recommendations.
                 </p>
               </div>
 
               {/* Sample Prompts */}
               <div className="max-w-lg mx-auto space-y-2 pt-2">
-                <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400 text-left">
+                <p className="text-[10px] font-bold uppercase tracking-wider text-ink-placeholder text-left">
                   Suggested Prompts for {selectedModule}:
                 </p>
                 {samplePrompts[selectedModule]?.map((prompt) => (
@@ -784,10 +784,10 @@ export function IntelligenceConversationsView() {
                       setContent(prompt);
                       if (!selectedId) create.mutate();
                     }}
-                    className="w-full p-3 rounded-2xl border border-slate-200/80 bg-slate-50/70 hover:bg-slate-100 text-left text-xs font-semibold text-slate-700 dark:border-slate-800 dark:bg-slate-800/40 dark:text-slate-300 dark:hover:bg-slate-800 transition-all flex items-center justify-between"
+                    className="w-full p-3 rounded-2xl border border-border/80 bg-muted/70 hover:bg-muted text-left text-xs font-semibold text-ink-secondary transition-all flex items-center justify-between"
                   >
                     <span>{prompt}</span>
-                    <ArrowRight className="h-3.5 w-3.5 text-slate-400" />
+                    <ArrowRight className="h-3.5 w-3.5 text-ink-placeholder" />
                   </button>
                 ))}
               </div>
@@ -804,8 +804,8 @@ export function IntelligenceConversationsView() {
                     <div
                       className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-2xl ${
                         isUser
-                          ? 'bg-[#004a80] text-white'
-                          : 'bg-blue-100 text-[#004a80] dark:bg-blue-950 dark:text-blue-300'
+                          ? 'bg-action text-inverse'
+                          : 'bg-tone-blue-bg text-link'
                       }`}
                     >
                       {isUser ? <User className="h-4 w-4" /> : <Bot className="h-4 w-4" />}
@@ -814,16 +814,16 @@ export function IntelligenceConversationsView() {
                     <div
                       className={`max-w-[80%] rounded-2xl p-4 text-xs sm:text-sm leading-relaxed ${
                         isUser
-                          ? 'bg-[#004a80] text-white rounded-tr-none'
-                          : 'bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-100 rounded-tl-none border border-slate-200/60 dark:border-slate-700/60'
+                          ? 'bg-action text-inverse rounded-tr-none'
+                          : 'bg-muted text-ink rounded-tl-none border border-border/60'
                       }`}
                     >
                       <div className="flex items-center justify-between gap-4 mb-1">
-                        <span className={`text-[10px] font-bold ${isUser ? 'text-blue-200' : 'text-slate-400'}`}>
+                        <span className={`text-[10px] font-bold ${isUser ? 'text-tone-blue-text' : 'text-ink-placeholder'}`}>
                           {isUser ? 'You' : `${activeAdvisor.name}`}
                         </span>
                         {message.runId && (
-                          <span className="font-mono text-[9px] text-slate-400">
+                          <span className="font-mono text-[9px] text-ink-placeholder">
                             Run: {String(message.runId).slice(0, 8)}
                           </span>
                         )}
@@ -835,11 +835,11 @@ export function IntelligenceConversationsView() {
               })}
 
               {send.isPending && (
-                <div className="flex items-center gap-3 text-xs text-slate-500">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-2xl bg-blue-100 text-[#004a80] dark:bg-blue-950 dark:text-blue-300">
+                <div className="flex items-center gap-3 text-xs text-ink-muted">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-2xl bg-tone-blue-bg text-link">
                     <Loader2 className="h-4 w-4 animate-spin" />
                   </div>
-                  <div className="rounded-2xl bg-slate-100 dark:bg-slate-800 p-3 text-xs">
+                  <div className="rounded-2xl bg-muted p-3 text-xs">
                     The AI Advisor is evaluating current ERP evidence…
                   </div>
                 </div>
@@ -849,7 +849,7 @@ export function IntelligenceConversationsView() {
         </div>
 
         {/* Input Bar */}
-        <div className="p-4 border-t border-slate-100 dark:border-slate-800 bg-slate-50/30 dark:bg-slate-850/30">
+        <div className="p-4 border-t border-border bg-muted/30">
           <form
             onSubmit={(event) => {
               event.preventDefault();
@@ -869,12 +869,12 @@ export function IntelligenceConversationsView() {
               onChange={(e) => setContent(e.target.value)}
               placeholder={`Ask ${activeAdvisor.name} anything about ${selectedModule.toLowerCase()}…`}
               maxLength={4000}
-              className="h-11 flex-1 rounded-2xl border border-slate-200 bg-white px-4 text-xs font-medium text-slate-900 placeholder:text-slate-400 focus:border-[#004a80] focus:outline-none focus:ring-2 focus:ring-[#004a80]/15 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100"
+              className="h-11 flex-1 rounded-2xl border border-border bg-surface px-4 text-xs font-medium text-ink placeholder:text-ink-placeholder focus:border-accent-brand focus:outline-none focus:ring-2 focus:ring-accent-brand"
             />
             <button
               type="submit"
               disabled={send.isPending || create.isPending || !content.trim()}
-              className="h-11 inline-flex items-center gap-2 rounded-2xl bg-[#004a80] px-5 text-xs font-bold text-white shadow-xs transition-all hover:bg-[#003860] active:scale-95 disabled:opacity-50"
+              className="h-11 inline-flex items-center gap-2 rounded-2xl bg-action px-5 text-xs font-bold text-inverse shadow-xs transition-all hover:bg-[color:var(--action-primary-bg-hover)] active:scale-95 disabled:opacity-50"
             >
               <span>Send</span>
               <Send className="h-3.5 w-3.5" />

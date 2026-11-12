@@ -192,7 +192,7 @@ export default function StockReorderPage() {
 
         {/* Standard @plinth/ui Table Card */}
         <Card className="shadow-xs overflow-hidden border border-border/80 rounded-2xl">
-          <div className="p-5 sm:p-6 border-b border-border/80 flex items-center justify-between bg-card">
+          <div className="p-5 sm:p-6 border-border-strong border-border/80 flex items-center justify-between bg-card">
             <h2 className="text-sm font-semibold text-foreground">
               Shortage Run-Out &amp; Consumption Velocity
             </h2>
@@ -203,7 +203,7 @@ export default function StockReorderPage() {
 
           {sorted.length === 0 ? (
             <div className="p-16 text-center">
-              <CheckCircle2 className="h-10 w-10 text-emerald-600 dark:text-emerald-400 mx-auto mb-3" />
+              <CheckCircle2 className="h-10 w-10 text-tone-green-text mx-auto mb-3" />
               <h3 className="text-sm font-semibold text-foreground">All Stock Levels are Healthy</h3>
               <p className="text-xs text-muted-foreground mt-1 max-w-sm mx-auto">
                 No active shortages detected based on 30-day consumption velocity.

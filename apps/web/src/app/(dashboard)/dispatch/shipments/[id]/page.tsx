@@ -65,24 +65,24 @@ export default function ShipmentDetailPage({ params }: { params: { id: string } 
     string,
     { label: string; bg: string; text: string; border: string; stepIndex: number }
   > = {
-    ALLOCATED: { label: 'Allocated', bg: 'bg-slate-100 dark:bg-slate-800', text: 'text-slate-700 dark:text-slate-300', border: 'border-slate-300 dark:border-slate-700', stepIndex: 0 },
-    PICKED: { label: 'Picked', bg: 'bg-blue-50 dark:bg-blue-950/40', text: 'text-blue-700 dark:text-blue-300', border: 'border-blue-200 dark:border-blue-800', stepIndex: 1 },
-    PACKED: { label: 'Packed & Sealed', bg: 'bg-indigo-50 dark:bg-indigo-950/40', text: 'text-indigo-700 dark:text-indigo-300', border: 'border-indigo-200 dark:border-indigo-800', stepIndex: 1 },
-    STAGED: { label: 'Dock Staged', bg: 'bg-purple-50 dark:bg-purple-950/40', text: 'text-purple-700 dark:text-purple-300', border: 'border-purple-200 dark:border-purple-800', stepIndex: 2 },
-    HANDED_OVER: { label: 'Handed Over to Carrier', bg: 'bg-blue-50 dark:bg-blue-950/40', text: 'text-blue-700 dark:text-blue-300', border: 'border-blue-200 dark:border-blue-800', stepIndex: 3 },
-    IN_TRANSIT: { label: 'In Transit', bg: 'bg-cyan-50 dark:bg-cyan-950/40', text: 'text-cyan-700 dark:text-cyan-300', border: 'border-cyan-200 dark:border-cyan-800', stepIndex: 3 },
-    OUT_FOR_DELIVERY: { label: 'Out for Delivery', bg: 'bg-amber-50 dark:bg-amber-950/40', text: 'text-amber-700 dark:text-amber-300', border: 'border-amber-200 dark:border-amber-800', stepIndex: 4 },
-    DELIVERED: { label: 'Delivered (POD Closed)', bg: 'bg-emerald-50 dark:bg-emerald-950/40', text: 'text-emerald-700 dark:text-emerald-300', border: 'border-emerald-200 dark:border-emerald-800', stepIndex: 5 },
-    DELIVERY_FAILED: { label: 'Delivery Exception', bg: 'bg-rose-50 dark:bg-rose-950/40', text: 'text-rose-700 dark:text-rose-300', border: 'border-rose-200 dark:border-rose-800', stepIndex: 4 },
-    RTO_INITIATED: { label: 'RTO Return Initiated', bg: 'bg-amber-50 dark:bg-amber-950/40', text: 'text-amber-700 dark:text-amber-300', border: 'border-amber-200 dark:border-amber-800', stepIndex: 4 },
-    CANCELLED: { label: 'Cancelled', bg: 'bg-slate-100 dark:bg-slate-800', text: 'text-slate-600 dark:text-slate-400', border: 'border-slate-300 dark:border-slate-700', stepIndex: 0 },
+    ALLOCATED: { label: 'Allocated', bg: 'bg-muted', text: 'text-ink-secondary', border: 'border-border-strong', stepIndex: 0 },
+    PICKED: { label: 'Picked', bg: 'bg-tone-blue-solid', text: 'text-tone-blue-text', border: 'border-tone-blue-solid/25', stepIndex: 1 },
+    PACKED: { label: 'Packed & Sealed', bg: 'bg-tone-purple-solid', text: 'text-tone-purple-text', border: 'border-tone-purple-solid/25', stepIndex: 1 },
+    STAGED: { label: 'Dock Staged', bg: 'bg-tone-purple-solid', text: 'text-tone-purple-text', border: 'border-tone-purple-solid/25', stepIndex: 2 },
+    HANDED_OVER: { label: 'Handed Over to Carrier', bg: 'bg-tone-blue-solid', text: 'text-tone-blue-text', border: 'border-tone-blue-solid/25', stepIndex: 3 },
+    IN_TRANSIT: { label: 'In Transit', bg: 'bg-tone-teal-solid', text: 'text-tone-teal-text', border: 'border-tone-teal-solid/25', stepIndex: 3 },
+    OUT_FOR_DELIVERY: { label: 'Out for Delivery', bg: 'bg-tone-amber-solid', text: 'text-tone-amber-text', border: 'border-tone-amber-solid/25', stepIndex: 4 },
+    DELIVERED: { label: 'Delivered (POD Closed)', bg: 'bg-tone-green-solid', text: 'text-tone-green-text', border: 'border-tone-green-solid/25', stepIndex: 5 },
+    DELIVERY_FAILED: { label: 'Delivery Exception', bg: 'bg-tone-red-solid', text: 'text-tone-red-text', border: 'border-tone-red-solid/25', stepIndex: 4 },
+    RTO_INITIATED: { label: 'RTO Return Initiated', bg: 'bg-tone-amber-solid', text: 'text-tone-amber-text', border: 'border-tone-amber-solid/25', stepIndex: 4 },
+    CANCELLED: { label: 'Cancelled', bg: 'bg-muted', text: 'text-ink-secondary', border: 'border-border-strong', stepIndex: 0 },
   };
 
   const currentStatusInfo = statusConfig[data.status] || {
     label: data.status.replaceAll('_', ' '),
-    bg: 'bg-blue-50 dark:bg-blue-950/40',
-    text: 'text-blue-700 dark:text-blue-300',
-    border: 'border-blue-200 dark:border-blue-800',
+    bg: 'bg-tone-blue-solid',
+    text: 'text-tone-blue-text',
+    border: 'border-tone-blue-solid/25',
     stepIndex: 3,
   };
 
@@ -242,35 +242,35 @@ export default function ShipmentDetailPage({ params }: { params: { id: string } 
   ];
 
   return (
-    <div className="flex-1 overflow-y-auto bg-slate-50/50 dark:bg-[#070b14]/70 p-4 sm:p-6 lg:p-7">
+    <div className="flex-1 overflow-y-auto bg-muted/50 p-4 sm:p-6 lg:p-7">
       <div className="mx-auto max-w-[1600px] space-y-6">
         
         {/* 1. Top Breadcrumb & Status Ribbon */}
         <div className="flex flex-wrap items-center justify-between gap-3">
-          <div className="flex items-center gap-2 text-xs font-medium text-slate-500 dark:text-slate-400">
-            <Link href="/dispatch" className="hover:text-[#004a80] dark:hover:text-blue-400 transition">
+          <div className="flex items-center gap-2 text-xs font-medium text-ink-muted">
+            <Link href="/dispatch" className="hover:text-link transition">
               Logistics & Dispatch
             </Link>
             <span>/</span>
-            <Link href="/dispatch/dispatched" className="hover:text-[#004a80] dark:hover:text-blue-400 transition">
+            <Link href="/dispatch/dispatched" className="hover:text-[var(--chart-1)] transition">
               Dispatched Shipments
             </Link>
             <span>/</span>
-            <span className="font-mono font-semibold text-slate-900 dark:text-white">
+            <span className="font-mono font-semibold text-ink">
               {data.shipmentNumber}
             </span>
           </div>
 
           <div className="flex items-center gap-2">
-            <span className="text-xs text-slate-400">Created:</span>
-            <span className="text-xs font-semibold text-slate-700 dark:text-slate-200">
+            <span className="text-xs text-ink-placeholder">Created:</span>
+            <span className="text-xs font-semibold text-ink-secondary">
               {data.createdAt ? new Date(data.createdAt).toLocaleString('en-IN', { dateStyle: 'medium', timeStyle: 'short' }) : 'Live Sync'}
             </span>
           </div>
         </div>
 
         {/* 2. Hero Header Banner */}
-        <div className="rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-[#0c121e] p-5 sm:p-6 shadow-2xs">
+        <div className="rounded-2xl border border-border bg-surface p-5 sm:p-6 shadow-2xs">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
             
             {/* Left Title & Key Identifiers */}
@@ -278,7 +278,7 @@ export default function ShipmentDetailPage({ params }: { params: { id: string } 
               <Link href="/dispatch/dispatched">
                 <button
                   type="button"
-                  className="h-10 w-10 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition cursor-pointer shadow-2xs"
+                  className="h-10 w-10 rounded-xl border border-border bg-muted flex items-center justify-center text-ink-secondary hover:bg-hover transition cursor-pointer shadow-2xs"
                   title="Back to Dispatched Shipments"
                 >
                   <ArrowLeft className="h-4 w-4" />
@@ -287,7 +287,7 @@ export default function ShipmentDetailPage({ params }: { params: { id: string } 
 
               <div>
                 <div className="flex flex-wrap items-center gap-2.5">
-                  <h1 className="font-mono text-2xl sm:text-3xl font-black tracking-tight text-slate-900 dark:text-white">
+                  <h1 className="font-mono text-2xl sm:text-3xl font-black tracking-tight text-ink">
                     {data.shipmentNumber}
                   </h1>
 
@@ -300,28 +300,28 @@ export default function ShipmentDetailPage({ params }: { params: { id: string } 
                   <button
                     type="button"
                     onClick={() => copyToClipboard(data.shipmentNumber, 'shipment')}
-                    className="p-1.5 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition cursor-pointer"
+                    className="p-1.5 text-ink-placeholder hover:text-ink-secondary rounded-lg hover:bg-hover transition cursor-pointer"
                     title="Copy Shipment Number"
                   >
-                    {copiedField === 'shipment' ? <Check className="h-4 w-4 text-emerald-600" /> : <Copy className="h-4 w-4" />}
+                    {copiedField === 'shipment' ? <Check className="h-4 w-4 text-tone-green-text" /> : <Copy className="h-4 w-4" />}
                   </button>
                 </div>
 
-                <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-slate-500 dark:text-slate-400 mt-2">
-                  <span className="inline-flex items-center gap-1.5 font-medium text-slate-700 dark:text-slate-200">
-                    <Package className="h-3.5 w-3.5 text-slate-400" />
-                    Sales Order: <strong className="font-semibold text-[#004a80] dark:text-blue-400">{data.salesOrder?.orderNumber || 'SO-DIRECT'}</strong>
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-ink-muted mt-2">
+                  <span className="inline-flex items-center gap-1.5 font-medium text-ink-secondary">
+                    <Package className="h-3.5 w-3.5 text-ink-placeholder" />
+                    Sales Order: <strong className="font-semibold text-link">{data.salesOrder?.orderNumber || 'SO-DIRECT'}</strong>
                   </span>
-                  <span className="text-slate-300 dark:text-slate-700">•</span>
+                  <span className="text-ink-secondary">•</span>
                   <span className="inline-flex items-center gap-1.5">
-                    <Truck className="h-3.5 w-3.5 text-slate-400" />
-                    Mode: <strong className="text-slate-700 dark:text-slate-200 font-semibold">{data.mode.replaceAll('_', ' ')}</strong>
+                    <Truck className="h-3.5 w-3.5 text-ink-placeholder" />
+                    Mode: <strong className="text-ink-secondary font-semibold">{data.mode.replaceAll('_', ' ')}</strong>
                   </span>
                   {data.fulfillment && (
                     <>
-                      <span className="text-slate-300 dark:text-slate-700">•</span>
+                      <span className="text-ink-secondary">•</span>
                       <span className="inline-flex items-center gap-1.5 font-mono">
-                        Job: <strong className="text-slate-700 dark:text-slate-200">{data.fulfillment.fulfillmentNumber}</strong>
+                        Job: <strong className="text-ink-secondary">{data.fulfillment.fulfillmentNumber}</strong>
                       </span>
                     </>
                   )}
@@ -343,7 +343,7 @@ export default function ShipmentDetailPage({ params }: { params: { id: string } 
 
               {data.status === 'STAGED' && (
                 <Link href="/dispatch/staging">
-                  <Button size="sm" icon={Truck} className="rounded-xl text-xs font-semibold bg-[#004a80] hover:bg-[#003c68] text-white cursor-pointer shadow-2xs">
+                  <Button size="sm" icon={Truck} className="rounded-xl text-xs font-semibold bg-action hover:bg-[color:var(--action-primary-bg-hover)] text-inverse cursor-pointer shadow-2xs">
                     Dispatch Gate Pass
                   </Button>
                 </Link>
@@ -352,7 +352,7 @@ export default function ShipmentDetailPage({ params }: { params: { id: string } 
           </div>
 
           {/* 3. Visual 5-Stage Live Dispatch Stepper */}
-          <div className="mt-7 pt-6 border-t border-slate-100 dark:border-slate-800/80">
+          <div className="mt-7 pt-6 border-t border-border">
             <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
               {stepperSteps.map((step, idx) => {
                 const isCurrentActive =
@@ -364,26 +364,26 @@ export default function ShipmentDetailPage({ params }: { params: { id: string } 
                     key={step.label}
                     className={`relative p-3 rounded-xl border transition-all ${
                       isCurrentActive
-                        ? 'border-[#004a80] bg-[#004a80]/5 dark:bg-blue-950/20 shadow-2xs'
+                        ? 'border-accent bg-action/5 shadow-2xs'
                         : step.completed
-                        ? 'border-emerald-200 dark:border-emerald-900/50 bg-emerald-50/40 dark:bg-emerald-950/10'
-                        : 'border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/40 opacity-70'
+                        ? 'border-tone-green-solid/25 bg-tone-green-bg'
+                        : 'border-border bg-muted/50 opacity-70'
                     }`}
                   >
                     <div className="flex items-center justify-between">
-                      <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+                      <span className="text-[10px] font-bold text-ink-placeholder uppercase tracking-wider">
                         0{idx + 1}
                       </span>
                       {step.completed ? (
-                        <CheckCircle2 className={`h-4 w-4 ${isCurrentActive ? 'text-[#004a80] dark:text-blue-400' : 'text-emerald-600 dark:text-emerald-400'}`} />
+                        <CheckCircle2 className={`h-4 w-4 ${isCurrentActive ? 'text-link' : 'text-tone-green-text'}`} />
                       ) : (
-                        <span className="h-2 w-2 rounded-full bg-slate-300 dark:bg-slate-700" />
+                        <span className="h-2 w-2 rounded-full bg-active" />
                       )}
                     </div>
-                    <div className="mt-1.5 font-bold text-xs text-slate-900 dark:text-white">
+                    <div className="mt-1.5 font-bold text-xs text-ink">
                       {step.label}
                     </div>
-                    <div className="text-[11px] text-slate-500 dark:text-slate-400 truncate mt-0.5">
+                    <div className="text-[11px] text-ink-muted truncate mt-0.5">
                       {step.desc}
                     </div>
                   </div>
@@ -396,104 +396,104 @@ export default function ShipmentDetailPage({ params }: { params: { id: string } 
         {/* 4. Six High-Density Operational Spec KPI Cards */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3.5">
           {/* Card 1: Carrier & Service */}
-          <div className="rounded-xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-[#0c121e] p-4 shadow-2xs flex flex-col justify-between">
-            <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500">
+          <div className="rounded-xl border border-border bg-surface p-4 shadow-2xs flex flex-col justify-between">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-ink-muted">
               Carrier Partner
             </span>
             <div className="mt-2">
-              <div className="font-bold text-sm text-slate-900 dark:text-white truncate">
+              <div className="font-bold text-sm text-ink truncate">
                 {data.carrier?.name || data.mode.replaceAll('_', ' ')}
               </div>
-              <div className="text-[11px] text-slate-500 mt-0.5">
-                Terms: <strong className="text-slate-700 dark:text-slate-300 font-semibold">{data.freightTerms || 'PREPAID'}</strong>
+              <div className="text-[11px] text-ink-muted mt-0.5">
+                Terms: <strong className="text-ink-secondary font-semibold">{data.freightTerms || 'PREPAID'}</strong>
               </div>
             </div>
           </div>
 
           {/* Card 2: Waybill / AWB */}
-          <div className="rounded-xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-[#0c121e] p-4 shadow-2xs flex flex-col justify-between">
+          <div className="rounded-xl border border-border bg-surface p-4 shadow-2xs flex flex-col justify-between">
             <div className="flex items-center justify-between">
-              <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-ink-muted">
                 AWB / Waybill #
               </span>
               {data.awbNumber && (
                 <button
                   type="button"
                   onClick={() => copyToClipboard(data.awbNumber || '', 'awb')}
-                  className="text-slate-400 hover:text-slate-600 cursor-pointer"
+                  className="text-ink-placeholder hover:text-ink-secondary cursor-pointer"
                   title="Copy Waybill Number"
                 >
-                  {copiedField === 'awb' ? <Check className="h-3.5 w-3.5 text-emerald-600" /> : <Copy className="h-3.5 w-3.5" />}
+                  {copiedField === 'awb' ? <Check className="h-3.5 w-3.5 text-tone-green-text" /> : <Copy className="h-3.5 w-3.5" />}
                 </button>
               )}
             </div>
             <div className="mt-2">
-              <div className="font-mono text-xs font-bold text-[#004a80] dark:text-blue-400 truncate">
+              <div className="font-mono text-xs font-bold text-link truncate">
                 {data.awbNumber || 'Direct Handover'}
               </div>
-              <div className="text-[11px] text-slate-500 mt-0.5">
-                Dock: <strong className="text-slate-700 dark:text-slate-300 font-semibold">{data.dispatchDock || 'DOCK-01'}</strong>
+              <div className="text-[11px] text-ink-muted mt-0.5">
+                Dock: <strong className="text-ink-secondary font-semibold">{data.dispatchDock || 'DOCK-01'}</strong>
               </div>
             </div>
           </div>
 
           {/* Card 3: Consignment Weight */}
-          <div className="rounded-xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-[#0c121e] p-4 shadow-2xs flex flex-col justify-between">
-            <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500">
+          <div className="rounded-xl border border-border bg-surface p-4 shadow-2xs flex flex-col justify-between">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-ink-muted">
               Consignment Weight
             </span>
             <div className="mt-2">
-              <div className="font-mono text-base font-black text-slate-900 dark:text-white">
-                {totalGrossWeight} <span className="text-xs font-normal text-slate-400">kg</span>
+              <div className="font-mono text-base font-black text-ink">
+                {totalGrossWeight} <span className="text-xs font-normal text-ink-placeholder">kg</span>
               </div>
-              <div className="text-[11px] text-slate-500 mt-0.5 truncate">
+              <div className="text-[11px] text-ink-muted mt-0.5 truncate">
                 {data.packages?.length || 0} sealed container(s)
               </div>
             </div>
           </div>
 
           {/* Card 4: Dispatch Warehouse */}
-          <div className="rounded-xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-[#0c121e] p-4 shadow-2xs flex flex-col justify-between">
-            <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500">
+          <div className="rounded-xl border border-border bg-surface p-4 shadow-2xs flex flex-col justify-between">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-ink-muted">
               Origin Facility
             </span>
             <div className="mt-2">
-              <div className="font-bold text-xs text-slate-900 dark:text-white truncate" title={data.fulfillment?.warehouseLocation?.name}>
+              <div className="font-bold text-xs text-ink truncate" title={data.fulfillment?.warehouseLocation?.name}>
                 {data.fulfillment?.warehouseLocation?.name || 'Central Finished Store'}
               </div>
-              <div className="text-[11px] text-slate-500 font-mono mt-0.5">
+              <div className="text-[11px] text-ink-muted font-mono mt-0.5">
                 {data.fulfillment?.warehouseLocation?.code || 'WH-01'}
               </div>
             </div>
           </div>
 
           {/* Card 5: Order Commercial Valuation */}
-          <div className="rounded-xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-[#0c121e] p-4 shadow-2xs flex flex-col justify-between">
-            <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500">
+          <div className="rounded-xl border border-border bg-surface p-4 shadow-2xs flex flex-col justify-between">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-ink-muted">
               Commercial Value
             </span>
             <div className="mt-2">
-              <div className="font-bold text-sm text-slate-900 dark:text-white">
+              <div className="font-bold text-sm text-ink">
                 {money(data.salesOrder?.grandTotal, data.salesOrder?.currency)}
               </div>
-              <div className="text-[11px] text-emerald-600 dark:text-emerald-400 font-semibold mt-0.5">
+              <div className="text-[11px] text-tone-green-text font-semibold mt-0.5">
                 {data.salesOrder?.paymentStatus || 'PAID'}
               </div>
             </div>
           </div>
 
           {/* Card 6: Estimated SLA / Transit Target */}
-          <div className="rounded-xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-[#0c121e] p-4 shadow-2xs flex flex-col justify-between">
-            <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500">
+          <div className="rounded-xl border border-border bg-surface p-4 shadow-2xs flex flex-col justify-between">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-ink-muted">
               Target SLA Delivery
             </span>
             <div className="mt-2">
-              <div className="font-bold text-xs text-slate-900 dark:text-white">
+              <div className="font-bold text-xs text-ink">
                 {data.expectedDeliveryAt
                   ? new Date(data.expectedDeliveryAt).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' })
                   : 'Same Day Dispatch'}
               </div>
-              <div className="text-[11px] text-slate-500 mt-0.5">
+              <div className="text-[11px] text-ink-muted mt-0.5">
                 {data.status === 'DELIVERED' ? 'Fulfilled on SLA' : 'In Transit Schedule'}
               </div>
             </div>
@@ -507,17 +507,17 @@ export default function ShipmentDetailPage({ params }: { params: { id: string } 
           <div className="lg:col-span-7 space-y-6">
             
             {/* Section A: Shipped Line Items Table */}
-            <div className="rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-[#0c121e] overflow-hidden shadow-2xs">
-              <div className="p-4 sm:p-5 border-b border-slate-100 dark:border-slate-800/80 flex items-center justify-between">
+            <div className="rounded-2xl border border-border bg-surface overflow-hidden shadow-2xs">
+              <div className="p-4 sm:p-5 border-border-strong border-border flex items-center justify-between">
                 <div className="flex items-center gap-2.5">
-                  <div className="p-2 rounded-xl bg-[#004a80]/10 text-[#004a80] dark:text-blue-400">
+                  <div className="p-2 rounded-xl bg-accent-soft text-link">
                     <Package className="h-4 w-4" />
                   </div>
                   <div>
-                    <h2 className="text-sm font-bold text-slate-900 dark:text-white">
+                    <h2 className="text-sm font-bold text-ink">
                       Consignment SKU Contents ({data.lines?.length || 0} Lines)
                     </h2>
-                    <p className="text-xs text-slate-500">
+                    <p className="text-xs text-ink-muted">
                       Physical items verified and packed into this shipment consignment
                     </p>
                   </div>
@@ -526,7 +526,7 @@ export default function ShipmentDetailPage({ params }: { params: { id: string } 
 
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-xs">
-                  <thead className="bg-slate-50/80 dark:bg-slate-900/60 text-slate-500 dark:text-slate-400 font-semibold border-b border-slate-100 dark:border-slate-800 uppercase text-[10px] tracking-wider">
+                  <thead className="bg-muted/80 text-ink-muted font-semibold border-border-strong border-border uppercase text-[10px] tracking-wider">
                     <tr>
                       <th className="px-5 py-3">SKU Code</th>
                       <th className="px-4 py-3">Item Description</th>
@@ -534,28 +534,28 @@ export default function ShipmentDetailPage({ params }: { params: { id: string } 
                       <th className="px-5 py-3 text-right">Unit Price</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-slate-100 dark:divide-slate-800/60">
+                  <tbody className="divide-y divide-border">
                     {data.lines?.map((line) => {
                       const soLine = line.salesOrderLine;
                       return (
-                        <tr key={line.id} className="hover:bg-slate-50/50 dark:hover:bg-slate-900/30 transition">
+                        <tr key={line.id} className="hover:bg-hover transition">
                           <td className="px-5 py-3.5">
-                            <span className="font-mono font-bold text-slate-900 dark:text-white bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded-md text-[11px]">
+                            <span className="font-mono font-bold text-ink bg-muted px-2 py-1 rounded-md text-[11px]">
                               {soLine?.sku || 'SKU-ITEM'}
                             </span>
                           </td>
                           <td className="px-4 py-3.5">
-                            <div className="font-semibold text-slate-900 dark:text-white">
+                            <div className="font-semibold text-ink">
                               {soLine?.description || 'Finished Product'}
                             </div>
-                            <div className="text-[11px] text-slate-400 font-mono mt-0.5">
+                            <div className="text-[11px] text-ink-placeholder font-mono mt-0.5">
                               Line Ref: {soLine?.id?.slice(0, 8) || line.id.slice(0, 8)}
                             </div>
                           </td>
-                          <td className="px-4 py-3.5 text-right font-mono font-bold text-slate-900 dark:text-white">
-                            {number.format(Number(line.quantity))} <span className="text-xs font-normal text-slate-500">units</span>
+                          <td className="px-4 py-3.5 text-right font-mono font-bold text-ink">
+                            {number.format(Number(line.quantity))} <span className="text-xs font-normal text-ink-muted">units</span>
                           </td>
-                          <td className="px-5 py-3.5 text-right font-mono font-semibold text-slate-700 dark:text-slate-300">
+                          <td className="px-5 py-3.5 text-right font-mono font-semibold text-ink-secondary">
                             {(soLine as { unitPrice?: number | string })?.unitPrice ? money((soLine as { unitPrice?: number | string }).unitPrice, data.salesOrder?.currency) : '—'}
                           </td>
                         </tr>
@@ -563,7 +563,7 @@ export default function ShipmentDetailPage({ params }: { params: { id: string } 
                     })}
                     {(!data.lines || data.lines.length === 0) && (
                       <tr>
-                        <td colSpan={4} className="px-5 py-8 text-center text-slate-400">
+                        <td colSpan={4} className="px-5 py-8 text-center text-ink-placeholder">
                           No line items registered on this consignment.
                         </td>
                       </tr>
@@ -574,17 +574,17 @@ export default function ShipmentDetailPage({ params }: { params: { id: string } 
             </div>
 
             {/* Section B: Sealed Box Containers & Packaging */}
-            <div className="rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-[#0c121e] p-5 shadow-2xs space-y-4">
-              <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800/80 pb-3">
+            <div className="rounded-2xl border border-border bg-surface p-5 shadow-2xs space-y-4">
+              <div className="flex items-center justify-between border-border-strong border-border pb-3">
                 <div className="flex items-center gap-2.5">
-                  <div className="p-2 rounded-xl bg-purple-50 dark:bg-purple-950/40 text-purple-600 dark:text-purple-400">
+                  <div className="p-2 rounded-xl bg-tone-purple-solid text-tone-purple-text">
                     <Layers className="h-4 w-4" />
                   </div>
                   <div>
-                    <h2 className="text-sm font-bold text-slate-900 dark:text-white">
+                    <h2 className="text-sm font-bold text-ink">
                       Sealed Containers & Packaging Cartons ({data.packages?.length || 0})
                     </h2>
-                    <p className="text-xs text-slate-500">
+                    <p className="text-xs text-ink-muted">
                       Container dimensions, tare weights, and tamper-proof security seals
                     </p>
                   </div>
@@ -598,33 +598,33 @@ export default function ShipmentDetailPage({ params }: { params: { id: string } 
                   return (
                     <div
                       key={link.id}
-                      className="rounded-xl border border-slate-200/80 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/30 p-4 transition hover:border-slate-300 dark:hover:border-slate-700"
+                      className="rounded-xl border border-border bg-muted/50 p-4 transition hover:border-border-strong"
                     >
                       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                         <div className="space-y-1">
                           <div className="flex items-center gap-2.5">
-                            <span className="font-mono text-sm font-bold text-slate-900 dark:text-white">
+                            <span className="font-mono text-sm font-bold text-ink">
                               {pkg.packageNumber}
                             </span>
-                            <span className="rounded-full bg-slate-200/80 dark:bg-slate-800 px-2 py-0.5 text-[10px] font-bold text-slate-700 dark:text-slate-300 uppercase">
+                            <span className="rounded-full bg-active px-2 py-0.5 text-[10px] font-bold text-ink-secondary uppercase">
                               {pkg.packageType}
                             </span>
                             {pkg.sealNumber && (
-                              <span className="rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 border border-emerald-300 px-2 py-0.5 text-[10px] font-mono font-bold">
+                              <span className="rounded-full bg-tone-green-solid text-tone-green-text border border-tone-green-solid/25 px-2 py-0.5 text-[10px] font-mono font-bold">
                                 Seal #{pkg.sealNumber}
                               </span>
                             )}
                           </div>
-                          <div className="text-xs text-slate-500 dark:text-slate-400">
-                            Dimensions: <strong className="text-slate-700 dark:text-slate-300 font-semibold">{pkg.lengthCm || 30} × {pkg.widthCm || 20} × {pkg.heightCm || 15} cm</strong>
+                          <div className="text-xs text-ink-muted">
+                            Dimensions: <strong className="text-ink-secondary font-semibold">{pkg.lengthCm || 30} × {pkg.widthCm || 20} × {pkg.heightCm || 15} cm</strong>
                           </div>
                         </div>
 
                         <div className="sm:text-right">
-                          <div className="font-mono text-base font-black text-slate-900 dark:text-white">
-                            {pkg.grossWeightKg} <span className="text-xs font-normal text-slate-400">kg gross</span>
+                          <div className="font-mono text-base font-black text-ink">
+                            {pkg.grossWeightKg} <span className="text-xs font-normal text-ink-placeholder">kg gross</span>
                           </div>
-                          <div className="text-[11px] text-slate-400">
+                          <div className="text-[11px] text-ink-placeholder">
                             Net: {pkg.netWeightKg || pkg.grossWeightKg} kg
                           </div>
                         </div>
@@ -639,13 +639,13 @@ export default function ShipmentDetailPage({ params }: { params: { id: string } 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               
               {/* Destination Card */}
-              <div className="rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-[#0c121e] p-4 sm:p-5 shadow-2xs space-y-3">
-                <div className="flex items-center gap-2 text-slate-900 dark:text-white font-bold text-xs">
-                  <MapPin className="h-4 w-4 text-[#004a80] dark:text-blue-400" />
+              <div className="rounded-2xl border border-border bg-surface p-4 sm:p-5 shadow-2xs space-y-3">
+                <div className="flex items-center gap-2 text-ink font-bold text-xs">
+                  <MapPin className="h-4 w-4 text-link" />
                   <span>Consignee Delivery Address</span>
                 </div>
-                <div className="text-xs text-slate-600 dark:text-slate-300 space-y-1 bg-slate-50 dark:bg-slate-900/40 p-3.5 rounded-xl border border-slate-100 dark:border-slate-800">
-                  <div className="font-bold text-slate-900 dark:text-white text-sm">
+                <div className="text-xs text-ink-secondary space-y-1 bg-muted p-3.5 rounded-xl border border-border">
+                  <div className="font-bold text-ink text-sm">
                     {shippingAddress?.name || (data.salesOrder?.orderNumber ? `${data.salesOrder.orderNumber} Consignee` : 'Direct Delivery Client')}
                   </div>
                   {shippingAddress?.addressLine1 && <div>{shippingAddress.addressLine1}</div>}
@@ -654,7 +654,7 @@ export default function ShipmentDetailPage({ params }: { params: { id: string } 
                     {shippingAddress?.city || 'Regional Distribution Hub'}, {shippingAddress?.state || 'MH'} - {shippingAddress?.postalCode || '400001'}
                   </div>
                   {shippingAddress?.phone && (
-                    <div className="inline-flex items-center gap-1.5 text-slate-500 font-mono text-[11px] mt-1">
+                    <div className="inline-flex items-center gap-1.5 text-ink-muted font-mono text-[11px] mt-1">
                       <Phone className="h-3 w-3" />
                       <span>{shippingAddress.phone}</span>
                     </div>
@@ -663,34 +663,34 @@ export default function ShipmentDetailPage({ params }: { params: { id: string } 
               </div>
 
               {/* Freight Logistics Vehicle Card */}
-              <div className="rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-[#0c121e] p-4 sm:p-5 shadow-2xs space-y-3">
-                <div className="flex items-center gap-2 text-slate-900 dark:text-white font-bold text-xs">
-                  <Truck className="h-4 w-4 text-amber-600 dark:text-amber-400" />
+              <div className="rounded-2xl border border-border bg-surface p-4 sm:p-5 shadow-2xs space-y-3">
+                <div className="flex items-center gap-2 text-ink font-bold text-xs">
+                  <Truck className="h-4 w-4 text-tone-amber-text" />
                   <span>Freight Vehicle & Driver</span>
                 </div>
-                <div className="text-xs text-slate-600 dark:text-slate-300 space-y-1.5 bg-slate-50 dark:bg-slate-900/40 p-3.5 rounded-xl border border-slate-100 dark:border-slate-800">
+                <div className="text-xs text-ink-secondary space-y-1.5 bg-muted p-3.5 rounded-xl border border-border">
                   <div className="flex items-center justify-between">
-                    <span className="text-slate-400">Vehicle Reg:</span>
-                    <span className="font-mono font-bold text-slate-900 dark:text-white bg-slate-200/70 dark:bg-slate-800 px-2 py-0.5 rounded text-[11px]">
+                    <span className="text-ink-placeholder">Vehicle Reg:</span>
+                    <span className="font-mono font-bold text-ink bg-active px-2 py-0.5 rounded text-[11px]">
                       {manifest?.vehicleNumber || data.vehicleNumber || 'MH-04-TR-8821'}
                     </span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-slate-400">Driver Name:</span>
-                    <span className="font-semibold text-slate-900 dark:text-white">
+                    <span className="text-ink-placeholder">Driver Name:</span>
+                    <span className="font-semibold text-ink">
                       {manifest?.driverName || data.driverName || 'Designated Courier Driver'}
                     </span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-slate-400">Driver Phone:</span>
-                    <span className="font-mono font-semibold text-[#004a80] dark:text-blue-400">
+                    <span className="text-ink-placeholder">Driver Phone:</span>
+                    <span className="font-mono font-semibold text-link">
                       {manifest?.driverPhone || data.driverPhone || '+91 98201 44819'}
                     </span>
                   </div>
                   {manifest && (
-                    <div className="flex items-center justify-between pt-1 border-t border-slate-200/60 dark:border-slate-800">
-                      <span className="text-slate-400">Outbound Manifest:</span>
-                      <span className="font-mono font-bold text-slate-700 dark:text-slate-300">
+                    <div className="flex items-center justify-between pt-1 border-t border-border">
+                      <span className="text-ink-placeholder">Outbound Manifest:</span>
+                      <span className="font-mono font-bold text-ink-secondary">
                         {manifest.manifestNumber}
                       </span>
                     </div>
@@ -700,16 +700,16 @@ export default function ShipmentDetailPage({ params }: { params: { id: string } 
             </div>
 
             {/* Section D: Dispatch Compliance Documents */}
-            <div className="rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-[#0c121e] p-5 shadow-2xs space-y-3">
-              <div className="flex items-center gap-2.5 border-b border-slate-100 dark:border-slate-800/80 pb-3">
-                <div className="p-2 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400">
+            <div className="rounded-2xl border border-border bg-surface p-5 shadow-2xs space-y-3">
+              <div className="flex items-center gap-2.5 border-border-strong border-border pb-3">
+                <div className="p-2 rounded-xl bg-tone-green-solid text-tone-green-text">
                   <FileCheck className="h-4 w-4" />
                 </div>
                 <div>
-                  <h2 className="text-sm font-bold text-slate-900 dark:text-white">
+                  <h2 className="text-sm font-bold text-ink">
                     Dispatch Compliance Documents
                   </h2>
-                  <p className="text-xs text-slate-500">
+                  <p className="text-xs text-ink-muted">
                     Invoices, packing slips, gate passes, and tax compliance records
                   </p>
                 </div>
@@ -719,15 +719,15 @@ export default function ShipmentDetailPage({ params }: { params: { id: string } 
                 {data.documents?.map((document) => (
                   <div
                     key={document.id}
-                    className="flex items-center justify-between rounded-xl border border-slate-200/80 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/40 p-3.5"
+                    className="flex items-center justify-between rounded-xl border border-border bg-muted/50 p-3.5"
                   >
                     <div className="flex items-center gap-2.5">
-                      <FileText className="h-4 w-4 text-[#004a80] dark:text-blue-400" />
+                      <FileText className="h-4 w-4 text-link" />
                       <div>
-                        <div className="text-xs font-bold text-slate-900 dark:text-white">
+                        <div className="text-xs font-bold text-ink">
                           {document.type.replaceAll('_', ' ')}
                         </div>
-                        <div className="font-mono text-[11px] text-slate-500">
+                        <div className="font-mono text-[11px] text-ink-muted">
                           {document.documentNumber || 'DOC-GEN'}
                         </div>
                       </div>
@@ -737,12 +737,12 @@ export default function ShipmentDetailPage({ params }: { params: { id: string } 
                         href={document.fileUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-1 text-xs font-bold text-[#004a80] dark:text-blue-400 hover:underline"
+                        className="inline-flex items-center gap-1 text-xs font-bold text-link hover:underline"
                       >
                         PDF <ExternalLink className="h-3 w-3" />
                       </a>
                     ) : (
-                      <span className="rounded-full bg-emerald-100 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-300 px-2 py-0.5 text-[10px] font-bold">
+                      <span className="rounded-full bg-tone-green-solid text-tone-green-text border border-tone-green-solid/25 px-2 py-0.5 text-[10px] font-bold">
                         Archived
                       </span>
                     )}
@@ -750,36 +750,36 @@ export default function ShipmentDetailPage({ params }: { params: { id: string } 
                 ))}
                 {(!data.documents || data.documents.length === 0) && (
                   <>
-                    <div className="flex items-center justify-between rounded-xl border border-slate-200/80 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/40 p-3.5">
+                    <div className="flex items-center justify-between rounded-xl border border-border bg-muted/50 p-3.5">
                       <div className="flex items-center gap-2.5">
-                        <FileText className="h-4 w-4 text-[#004a80] dark:text-blue-400" />
+                        <FileText className="h-4 w-4 text-link" />
                         <div>
-                          <div className="text-xs font-bold text-slate-900 dark:text-white">
+                          <div className="text-xs font-bold text-ink">
                             Tax Invoice
                           </div>
-                          <div className="font-mono text-[11px] text-slate-500">
+                          <div className="font-mono text-[11px] text-ink-muted">
                             INV-{data.salesOrder?.orderNumber || '2026'}
                           </div>
                         </div>
                       </div>
-                      <span className="rounded-full bg-emerald-100 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-300 px-2 py-0.5 text-[10px] font-bold">
+                      <span className="rounded-full bg-tone-green-solid text-tone-green-text border border-tone-green-solid/25 px-2 py-0.5 text-[10px] font-bold">
                         Generated & Archived
                       </span>
                     </div>
 
-                    <div className="flex items-center justify-between rounded-xl border border-slate-200/80 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/40 p-3.5">
+                    <div className="flex items-center justify-between rounded-xl border border-border bg-muted/50 p-3.5">
                       <div className="flex items-center gap-2.5">
-                        <FileText className="h-4 w-4 text-[#004a80] dark:text-blue-400" />
+                        <FileText className="h-4 w-4 text-link" />
                         <div>
-                          <div className="text-xs font-bold text-slate-900 dark:text-white">
+                          <div className="text-xs font-bold text-ink">
                             Packing Slip
                           </div>
-                          <div className="font-mono text-[11px] text-slate-500">
+                          <div className="font-mono text-[11px] text-ink-muted">
                             PS-{data.shipmentNumber}
                           </div>
                         </div>
                       </div>
-                      <span className="rounded-full bg-emerald-100 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-300 px-2 py-0.5 text-[10px] font-bold">
+                      <span className="rounded-full bg-tone-green-solid text-tone-green-text border border-tone-green-solid/25 px-2 py-0.5 text-[10px] font-bold">
                         Generated & Archived
                       </span>
                     </div>
@@ -793,17 +793,17 @@ export default function ShipmentDetailPage({ params }: { params: { id: string } 
           <div className="lg:col-span-5 space-y-6">
             
             {/* Hierarchical Timeline Card */}
-            <div className="rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-[#0c121e] p-5 shadow-2xs space-y-4">
-              <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800/80 pb-3">
+            <div className="rounded-2xl border border-border bg-surface p-5 shadow-2xs space-y-4">
+              <div className="flex items-center justify-between border-border-strong border-border pb-3">
                 <div className="flex items-center gap-2.5">
-                  <div className="p-2 rounded-xl bg-[#004a80]/10 text-[#004a80] dark:text-blue-400">
+                  <div className="p-2 rounded-xl bg-accent-soft text-link">
                     <Route className="h-4 w-4" />
                   </div>
                   <div>
-                    <h2 className="text-sm font-bold text-slate-900 dark:text-white">
+                    <h2 className="text-sm font-bold text-ink">
                       End-to-End Fulfillment Timeline
                     </h2>
-                    <p className="text-xs text-slate-500">
+                    <p className="text-xs text-ink-muted">
                       Chronological order, dispatch, carrier, and POD journey
                     </p>
                   </div>
@@ -812,14 +812,14 @@ export default function ShipmentDetailPage({ params }: { params: { id: string } 
                 <button
                   type="button"
                   onClick={() => setTrackingOpen(true)}
-                  className="px-2.5 py-1 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 text-xs font-semibold cursor-pointer shadow-2xs transition"
+                  className="px-2.5 py-1 rounded-lg border border-border text-ink-secondary hover:bg-hover text-xs font-semibold cursor-pointer shadow-2xs transition"
                 >
                   + Add Event
                 </button>
               </div>
 
               {/* Multi-Stage Hierarchical Vertical Timeline */}
-              <div className="relative pl-6 space-y-6 before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-0.5 before:bg-slate-200 dark:before:bg-slate-800">
+              <div className="relative pl-6 space-y-6 before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-0.5 before:bg-active">
                 {timelineEvents.map((item) => {
                   const isCompleted = item.status === 'COMPLETED';
                   const isProgress = item.status === 'IN_PROGRESS';
@@ -828,27 +828,27 @@ export default function ShipmentDetailPage({ params }: { params: { id: string } 
                     <div key={item.id} className="relative group">
                       {/* Node Bullet */}
                       <div
-                        className={`absolute -left-[23px] top-0.5 h-6 w-6 rounded-full border-2 flex items-center justify-center transition-all ${
+                        className={`absolute -left-[23px] top-0.5 h-6 w-6 rounded-full border-border flex items-center justify-center transition-all ${
                           isCompleted
-                            ? 'bg-[#004a80] border-[#004a80] text-white shadow-2xs'
+                            ? 'bg-action border-accent text-inverse shadow-2xs'
                             : isProgress
-                            ? 'bg-cyan-500 border-cyan-500 text-white animate-pulse'
-                            : 'bg-white dark:bg-slate-900 border-slate-300 dark:border-slate-700 text-slate-400'
+                            ? 'bg-tone-teal-solid border-tone-teal-solid/25 text-inverse animate-pulse'
+                            : 'bg-surface border-border-strong text-ink-placeholder'
                         }`}
                       >
                         {isCompleted ? (
                           <Check className="h-3 w-3" />
                         ) : isProgress ? (
-                          <span className="h-2 w-2 rounded-full bg-white animate-ping" />
+                          <span className="h-2 w-2 rounded-full bg-surface animate-ping" />
                         ) : (
-                          <span className="h-1.5 w-1.5 rounded-full bg-slate-300 dark:bg-slate-600" />
+                          <span className="h-1.5 w-1.5 rounded-full bg-active" />
                         )}
                       </div>
 
                       {/* Event Body Card */}
-                      <div className="rounded-xl border border-slate-100 dark:border-slate-800/80 bg-slate-50/50 dark:bg-slate-900/30 p-3.5 space-y-1.5 transition hover:border-slate-200 dark:hover:border-slate-700">
+                      <div className="rounded-xl border border-border bg-muted/50 p-3.5 space-y-1.5 transition hover:border-border">
                         <div className="flex flex-wrap items-center justify-between gap-1.5">
-                          <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500 font-mono">
+                          <span className="text-[10px] font-bold uppercase tracking-wider text-ink-muted font-mono">
                             {item.stage}
                           </span>
 
@@ -856,10 +856,10 @@ export default function ShipmentDetailPage({ params }: { params: { id: string } 
                             <span
                               className={`rounded-full px-2 py-0.5 text-[9px] font-bold uppercase ${
                                 isCompleted
-                                  ? 'bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 border border-emerald-300'
+                                  ? 'bg-tone-green-solid text-tone-green-text border border-tone-green-solid/25'
                                   : isProgress
-                                  ? 'bg-cyan-100 dark:bg-cyan-950 text-cyan-700 dark:text-cyan-300 border border-cyan-300'
-                                  : 'bg-slate-200/80 dark:bg-slate-800 text-slate-500'
+                                  ? 'bg-tone-teal-solid text-tone-teal-text border border-tone-teal-solid/25'
+                                  : 'bg-active text-ink-muted'
                               }`}
                             >
                               {item.badgeText}
@@ -867,18 +867,18 @@ export default function ShipmentDetailPage({ params }: { params: { id: string } 
                           )}
                         </div>
 
-                        <div className="text-xs font-bold text-slate-900 dark:text-white leading-snug">
+                        <div className="text-xs font-bold text-ink leading-snug">
                           {item.title}
                         </div>
 
-                        <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+                        <p className="text-xs text-ink-muted leading-relaxed">
                           {item.description}
                         </p>
 
-                        <div className="flex flex-wrap items-center justify-between gap-2 pt-1 border-t border-slate-100 dark:border-slate-800 text-[10.5px] text-slate-400">
+                        <div className="flex flex-wrap items-center justify-between gap-2 pt-1 border-t border-border text-[10.5px] text-ink-placeholder">
                           {item.timestamp ? (
                             <span className="inline-flex items-center gap-1 font-mono">
-                              <Clock className="h-3 w-3 text-slate-400" />
+                              <Clock className="h-3 w-3 text-ink-placeholder" />
                               {new Date(item.timestamp).toLocaleString('en-IN', {
                                 dateStyle: 'short',
                                 timeStyle: 'short',
@@ -889,8 +889,8 @@ export default function ShipmentDetailPage({ params }: { params: { id: string } 
                           )}
 
                           {item.actor && (
-                            <span className="inline-flex items-center gap-1 font-medium text-slate-600 dark:text-slate-300">
-                              <User className="h-3 w-3 text-slate-400" />
+                            <span className="inline-flex items-center gap-1 font-medium text-ink-secondary">
+                              <User className="h-3 w-3 text-ink-placeholder" />
                               {item.actor}
                             </span>
                           )}
@@ -903,16 +903,16 @@ export default function ShipmentDetailPage({ params }: { params: { id: string } 
             </div>
 
             {/* Proof of Delivery (POD) Authentication Card */}
-            <div className="rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-[#0c121e] p-5 shadow-2xs space-y-3">
-              <div className="flex items-center gap-2.5 border-b border-slate-100 dark:border-slate-800/80 pb-3">
-                <div className="p-2 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400">
+            <div className="rounded-2xl border border-border bg-surface p-5 shadow-2xs space-y-3">
+              <div className="flex items-center gap-2.5 border-border-strong border-border pb-3">
+                <div className="p-2 rounded-xl bg-tone-green-solid text-tone-green-text">
                   <ShieldCheck className="h-4 w-4" />
                 </div>
                 <div>
-                  <h2 className="text-sm font-bold text-slate-900 dark:text-white">
+                  <h2 className="text-sm font-bold text-ink">
                     Proof of Delivery (POD)
                   </h2>
-                  <p className="text-xs text-slate-500">
+                  <p className="text-xs text-ink-muted">
                     Recipient signature, OTP authentication, and delivery closure
                   </p>
                 </div>
@@ -920,33 +920,33 @@ export default function ShipmentDetailPage({ params }: { params: { id: string } 
 
               {data.proofOfDelivery ? (
                 <div className="space-y-3">
-                  <div className="flex items-center gap-2 text-xs font-bold text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950/40 p-3 rounded-xl border border-emerald-200 dark:border-emerald-800">
-                    <CheckCircle2 className="h-4 w-4 text-emerald-600" />
+                  <div className="flex items-center gap-2 text-xs font-bold text-tone-green-text bg-tone-green-solid p-3 rounded-xl border border-tone-green-solid/25">
+                    <CheckCircle2 className="h-4 w-4 text-tone-green-text" />
                     <span>Authenticated Consignee Delivery Closure</span>
                   </div>
-                  <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/30 p-3.5 space-y-2 text-xs">
+                  <div className="rounded-xl border border-border bg-muted/50 p-3.5 space-y-2 text-xs">
                     <div className="flex items-center justify-between">
-                      <span className="text-slate-400">Recipient Name:</span>
-                      <strong className="text-slate-900 dark:text-white font-semibold">
+                      <span className="text-ink-placeholder">Recipient Name:</span>
+                      <strong className="text-ink font-semibold">
                         {data.proofOfDelivery.recipientName}
                       </strong>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-slate-400">Verification Method:</span>
-                      <span className="rounded-full bg-slate-200 dark:bg-slate-800 px-2 py-0.5 text-[10px] font-bold text-slate-700 dark:text-slate-300">
+                      <span className="text-ink-placeholder">Verification Method:</span>
+                      <span className="rounded-full bg-active px-2 py-0.5 text-[10px] font-bold text-ink-secondary">
                         {data.proofOfDelivery.method}
                       </span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-slate-400">Timestamp:</span>
-                      <span className="font-mono text-slate-700 dark:text-slate-300">
+                      <span className="text-ink-placeholder">Timestamp:</span>
+                      <span className="font-mono text-ink-secondary">
                         {new Date(data.proofOfDelivery.deliveredAt).toLocaleString('en-IN')}
                       </span>
                     </div>
                     {data.proofOfDelivery.otpReference && (
-                      <div className="flex items-center justify-between pt-1 border-t border-slate-200/60 dark:border-slate-800">
-                        <span className="text-slate-400">OTP Ref:</span>
-                        <span className="font-mono font-bold text-[#004a80] dark:text-blue-400">
+                      <div className="flex items-center justify-between pt-1 border-t border-border">
+                        <span className="text-ink-placeholder">OTP Ref:</span>
+                        <span className="font-mono font-bold text-link">
                           {data.proofOfDelivery.otpReference}
                         </span>
                       </div>
@@ -954,7 +954,7 @@ export default function ShipmentDetailPage({ params }: { params: { id: string } 
                   </div>
                 </div>
               ) : (
-                <div className="text-xs text-slate-500 dark:text-slate-400 space-y-3 bg-slate-50/50 dark:bg-slate-900/20 p-4 rounded-xl border border-dashed border-slate-200 dark:border-slate-800 text-center">
+                <div className="text-xs text-ink-muted space-y-3 bg-muted/50 p-4 rounded-xl border border-dashed border-border text-center">
                   <p>Proof of Delivery has not yet been logged for this consignment.</p>
                   <Link href="/dispatch/delivery">
                     <Button size="sm" variant="outline" className="w-full text-xs font-semibold rounded-xl cursor-pointer">

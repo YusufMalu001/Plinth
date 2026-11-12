@@ -14,13 +14,13 @@ export const FormField = React.forwardRef<HTMLInputElement, FormFieldProps>(
       <div className="space-y-1.5 w-full">
         <label
           htmlFor={id}
-          className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300"
+          className="block text-xs font-bold uppercase tracking-wider text-ink-secondary"
         >
           {label}
         </label>
         <div className="relative flex items-center group">
           {Icon && (
-            <div className="pointer-events-none absolute left-3.5 flex items-center justify-center text-slate-400 group-focus-within:text-[#004a80] transition-colors z-10">
+            <div className="pointer-events-none absolute left-3.5 flex items-center justify-center text-ink-placeholder group-focus-within:text-accent-brand transition-colors z-10">
               <Icon className="h-4.5 w-4.5" />
             </div>
           )}
@@ -29,14 +29,14 @@ export const FormField = React.forwardRef<HTMLInputElement, FormFieldProps>(
             ref={ref}
             type={type}
             placeholder={placeholder}
-            className={`h-12 w-full rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-sm font-semibold text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 transition-all duration-150 focus:outline-none focus:border-[#004a80] dark:focus:border-blue-500 focus:ring-4 focus:ring-[#004a80]/15 shadow-2xs ${
+            className={`h-12 w-full rounded-control bg-muted border border-transparent text-sm font-semibold text-ink placeholder:text-ink-placeholder transition-all duration-150 focus:outline-none focus:bg-page focus:border-border-strong focus:ring-2 focus:ring-accent-brand ${
               Icon ? 'pl-11 pr-4' : 'px-4'
-            } ${error ? 'border-rose-500 focus:border-rose-500 focus:ring-rose-500/20' : ''} ${className || ''}`}
+            } ${error ? 'border-tone-red-solid focus:border-tone-red-solid focus:ring-tone-red-solid/20' : ''} ${className || ''}`}
             {...props}
           />
         </div>
         {error && (
-          <p className="text-xs text-rose-500 font-medium pl-1 leading-none mt-1">
+          <p className="text-xs text-tone-red-text font-medium pl-1 leading-none mt-1">
             {error}
           </p>
         )}

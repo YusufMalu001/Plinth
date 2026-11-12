@@ -127,7 +127,7 @@ export default function FinanceQueuePage() {
       <FinanceNavigationTabs />
 
       {/* Source Selector Tabs */}
-      <div className="flex items-center gap-2 overflow-x-auto pb-2 border-b border-border/60">
+      <div className="flex items-center gap-2 overflow-x-auto pb-2 border-border-strong border-border/60">
         {SOURCE_TYPES.map((st) => {
           const isSelected = selectedSource === st.key;
           const rd = readiness?.find((r) => r.sourceType === st.key);
@@ -149,9 +149,9 @@ export default function FinanceQueuePage() {
             >
               <span>{st.label}</span>
               {active ? (
-                <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                <span className="w-2 h-2 rounded-full bg-tone-green-solid" />
               ) : (
-                <span className="w-2 h-2 rounded-full bg-amber-500/80" />
+                <span className="w-2 h-2 rounded-full bg-tone-amber-bg" />
               )}
             </button>
           );
@@ -177,7 +177,7 @@ export default function FinanceQueuePage() {
       ) : (
         <div className="space-y-4">
           <Card className="p-0 rounded-2xl border overflow-hidden shadow-xs">
-            <div className="border-b border-border/60 bg-muted/40 px-5 py-3.5 flex items-center justify-between">
+            <div className="border-border-strong border-border/60 bg-muted/40 px-5 py-3.5 flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <button
                   type="button"

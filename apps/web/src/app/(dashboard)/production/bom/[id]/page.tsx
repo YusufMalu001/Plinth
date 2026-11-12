@@ -541,7 +541,7 @@ export default function BomDetailPage() {
             Retry
           </Button>
           <Link href="/production/bom">
-            <Button size="sm" className="text-xs bg-primary text-white">
+            <Button size="sm" className="text-xs bg-primary text-inverse">
               Back
             </Button>
           </Link>
@@ -573,7 +573,7 @@ export default function BomDetailPage() {
       </nav>
 
       {/* Header Banner */}
-      <header className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-border pb-5">
+      <header className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-border-strong border-border pb-5">
         <div className="space-y-1.5">
           <Link
             href="/production/bom"
@@ -661,7 +661,7 @@ export default function BomDetailPage() {
                 size="sm"
                 onClick={handleSaveFormula}
                 disabled={updateMutation.isPending || draftLines.length === 0}
-                className="h-8 px-4 rounded-lg text-xs font-bold bg-primary hover:bg-primary/90 text-white shadow-none"
+                className="h-8 px-4 rounded-lg text-xs font-bold bg-primary hover:bg-primary/90 text-inverse shadow-none"
                 icon={updateMutation.isPending ? Loader2 : Save}
               >
                 {updateMutation.isPending ? 'Saving...' : 'Save Changes'}
@@ -674,7 +674,7 @@ export default function BomDetailPage() {
       {/* 4-Card KPI Metric Grid */}
       <div className="grid gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-full">
         {/* Card 1: Total Formulation Items */}
-        <Card className="border border-border/80 dark:border-border/60 bg-card shadow-none rounded-xl p-3 sm:p-3.5 hover:border-primary/40 transition-all">
+        <Card className="border border-border/80 bg-card shadow-none rounded-xl p-3 sm:p-3.5 hover:border-primary/40 transition-all">
           <CardContent className="p-0 flex items-center justify-between">
             <div className="space-y-1">
               <p className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
@@ -694,7 +694,7 @@ export default function BomDetailPage() {
         </Card>
 
         {/* Card 2: Total Cost Basis */}
-        <Card className="border border-border/80 dark:border-border/60 bg-card shadow-none rounded-xl p-3 sm:p-3.5 hover:border-emerald-500/40 transition-all">
+        <Card className="border border-border/80 bg-card shadow-none rounded-xl p-3 sm:p-3.5 hover:border-tone-green-solid/25 transition-all">
           <CardContent className="p-0 flex items-center justify-between">
             <div className="space-y-1">
               <p className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
@@ -706,14 +706,14 @@ export default function BomDetailPage() {
                 </span>
               </div>
             </div>
-            <span className="rounded-lg bg-emerald-500/10 dark:bg-emerald-500/20 p-2 text-emerald-600 dark:text-emerald-400 shrink-0">
+            <span className="rounded-lg bg-tone-green-bg p-2 text-tone-green-text shrink-0">
               <Coins className="h-4 w-4" />
             </span>
           </CardContent>
         </Card>
 
         {/* Card 3: Effective Date */}
-        <Card className="border border-border/80 dark:border-border/60 bg-card shadow-none rounded-xl p-3 sm:p-3.5 hover:border-amber-500/40 transition-all">
+        <Card className="border border-border/80 bg-card shadow-none rounded-xl p-3 sm:p-3.5 hover:border-tone-amber-solid/25 transition-all">
           <CardContent className="p-0 flex items-center justify-between">
             <div className="space-y-1">
               <p className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
@@ -737,14 +737,14 @@ export default function BomDetailPage() {
                 )}
               </div>
             </div>
-            <span className="rounded-lg bg-amber-500/10 dark:bg-amber-500/20 p-2 text-amber-600 dark:text-amber-400 shrink-0">
+            <span className="rounded-lg bg-tone-amber-bg p-2 text-tone-amber-text shrink-0">
               <Calendar className="h-4 w-4" />
             </span>
           </CardContent>
         </Card>
 
         {/* Card 4: The product directly owned by this BOM */}
-        <Card className="border border-border/80 dark:border-border/60 bg-card shadow-none rounded-xl p-3 sm:p-3.5 hover:border-blue-500/40 transition-all">
+        <Card className="border border-border/80 bg-card shadow-none rounded-xl p-3 sm:p-3.5 hover:border-tone-blue-solid/25 transition-all">
           <CardContent className="p-0 flex items-center justify-between">
             <div className="min-w-0 space-y-1 pr-2">
               <p className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
@@ -765,7 +765,7 @@ export default function BomDetailPage() {
                 {attachedProduct?.name || 'No product attached'}
               </p>
             </div>
-            <span className="rounded-lg bg-blue-500/10 dark:bg-blue-500/20 p-2 text-blue-600 dark:text-blue-400 shrink-0">
+            <span className="rounded-lg bg-tone-blue-bg p-2 text-tone-blue-text shrink-0">
               <Package className="h-4 w-4" />
             </span>
           </CardContent>
@@ -775,7 +775,7 @@ export default function BomDetailPage() {
       {/* Main Formulation Recipe Table Card */}
       <Card className="rounded-xl border border-border overflow-hidden shadow-none w-full bg-card">
         {/* Table Header Bar */}
-        <div className="p-3 sm:p-4 border-b border-border bg-card flex items-center justify-between gap-3">
+        <div className="p-3 sm:p-4 border-border-strong border-border bg-card flex items-center justify-between gap-3">
           <div className="flex items-center gap-2">
             <span className="text-sm sm:text-base font-bold text-foreground">
               Formulation Recipe & Components
@@ -835,7 +835,7 @@ export default function BomDetailPage() {
             ) : (
               <Table className="w-full">
                 <TableHeader>
-                  <TableRow className="border-b border-border bg-muted/40 hover:bg-muted/40">
+                  <TableRow className="border-border-strong border-border bg-muted/40 hover:bg-muted/40">
                     <TableHead className="py-2.5 px-3.5 font-semibold text-xs text-muted-foreground w-12 text-center">
                       #
                     </TableHead>
@@ -890,7 +890,7 @@ export default function BomDetailPage() {
                     return (
                       <TableRow
                         key={line.id || idx}
-                        className="hover:bg-muted/40 transition-colors border-b border-border/60"
+                        className="hover:bg-muted/40 transition-colors border-border-strong border-border/60"
                       >
                         {/* Sequence */}
                         <TableCell className="py-2.5 px-3.5 text-center text-xs font-mono font-semibold text-muted-foreground">
@@ -910,7 +910,7 @@ export default function BomDetailPage() {
                               {variantLabel && (
                                 <div className="mt-0.5 flex items-center gap-2">
                                   <span className="text-[11px] font-normal text-muted-foreground">{variantLabel}</span>
-                                  <span className="shrink-0 rounded-md border border-violet-200 bg-violet-50 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide text-violet-700 dark:border-violet-800 dark:bg-violet-950/50 dark:text-violet-300">
+                                  <span className="shrink-0 rounded-md border border-tone-purple-solid/25 bg-tone-purple-solid px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide text-tone-purple-text">
                                     Variant
                                   </span>
                                 </div>
@@ -924,7 +924,7 @@ export default function BomDetailPage() {
                               {variantLabel && (
                                 <div className="mt-0.5 flex items-center gap-2">
                                   <span className="text-[11px] font-normal text-muted-foreground">{variantLabel}</span>
-                                  <span className="shrink-0 rounded-md border border-violet-200 bg-violet-50 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide text-violet-700 dark:border-violet-800 dark:bg-violet-950/50 dark:text-violet-300">
+                                  <span className="shrink-0 rounded-md border border-tone-purple-solid/25 bg-tone-purple-solid px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide text-tone-purple-text">
                                     Variant
                                   </span>
                                 </div>
@@ -936,8 +936,8 @@ export default function BomDetailPage() {
                         <TableCell className="py-2.5 px-3.5">
                           <span
                             className={`inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-bold ${isSubAssembly
-                              ? 'bg-purple-500/10 text-purple-600 dark:text-purple-400 border border-purple-500/20'
-                              : 'bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20'
+                              ? 'bg-tone-purple-bg text-tone-purple-text border border-tone-purple-solid/25'
+                              : 'bg-tone-blue-bg text-tone-blue-text border border-tone-blue-solid/25'
                               }`}
                           >
                             {isSubAssembly ? 'Sub-Assembly' : 'Raw Material'}
@@ -1018,7 +1018,7 @@ export default function BomDetailPage() {
             ) : (
               <table className="w-full text-left text-xs border-collapse">
                 <thead>
-                  <tr className="border-b border-border bg-muted/40 text-muted-foreground font-semibold">
+                  <tr className="border-border-strong border-border bg-muted/40 text-muted-foreground font-semibold">
                     <th className="py-2.5 px-3 text-center w-10">#</th>
                     <th className="py-2.5 px-3 min-w-[260px]">Item</th>
                     <th className="py-2.5 px-3 w-28 text-right">Required Qty</th>

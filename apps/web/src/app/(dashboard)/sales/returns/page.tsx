@@ -85,11 +85,11 @@ export default function ReturnsPage() {
                 <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
                   Active Returns
                 </span>
-                <div className="mt-2 text-3xl font-black font-mono text-rose-600">
+                <div className="mt-2 text-3xl font-black font-mono text-tone-red-text">
                   {returnsQueue.filter((o) => o.status === 'RETURNED').length}
                 </div>
               </div>
-              <div className="p-3 rounded-xl bg-rose-500/10 text-rose-600">
+              <div className="p-3 rounded-xl bg-tone-red-bg text-tone-red-text">
                 <RotateCcw className="h-6 w-6" />
               </div>
             </CardContent>
@@ -101,11 +101,11 @@ export default function ReturnsPage() {
                 <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
                   Resolved Returns
                 </span>
-                <div className="mt-2 text-3xl font-black font-mono text-emerald-600">
+                <div className="mt-2 text-3xl font-black font-mono text-tone-green-text">
                   {returnsQueue.filter((o) => o.status === 'CLOSED').length}
                 </div>
               </div>
-              <div className="p-3 rounded-xl bg-emerald-500/10 text-emerald-600">
+              <div className="p-3 rounded-xl bg-tone-green-bg text-tone-green-text">
                 <CheckCircle2 className="h-6 w-6" />
               </div>
             </CardContent>
@@ -123,7 +123,7 @@ export default function ReturnsPage() {
                   )}
                 </div>
               </div>
-              <div className="p-3 rounded-xl bg-amber-500/10 text-amber-600">
+              <div className="p-3 rounded-xl bg-tone-amber-bg text-tone-amber-text">
                 <AlertTriangle className="h-6 w-6" />
               </div>
             </CardContent>
@@ -132,7 +132,7 @@ export default function ReturnsPage() {
 
         {/* Returns Queue Table */}
         <Card>
-          <CardHeader className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-border">
+          <CardHeader className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-border-strong border-border">
             <div>
               <CardTitle className="text-base font-bold">Return Authorizations & Exceptions</CardTitle>
               <p className="text-xs text-muted-foreground mt-0.5">

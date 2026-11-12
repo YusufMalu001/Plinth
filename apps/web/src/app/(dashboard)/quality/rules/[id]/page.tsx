@@ -49,8 +49,8 @@ export default function QcRuleDetailsPage() {
   if (loading) {
     return (
       <div className="max-w-6xl mx-auto p-8 text-center space-y-3">
-        <div className="inline-block animate-spin rounded-full h-8 w-8 border-4 border-primary border-t-transparent" />
-        <p className="text-sm text-slate-500 font-medium">Loading quality rule configuration...</p>
+        <div className="inline-block animate-spin rounded-full h-8 w-8 border-accent border-primary border-t-transparent" />
+        <p className="text-sm text-ink-muted font-medium">Loading quality rule configuration...</p>
       </div>
     );
   }
@@ -58,7 +58,7 @@ export default function QcRuleDetailsPage() {
   if (error || !rule) {
     return (
       <div className="max-w-4xl mx-auto p-8 space-y-4 text-center">
-        <div className="p-6 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-sm max-w-md mx-auto">
+        <div className="p-6 rounded-xl bg-tone-red-solid border border-tone-red-solid/25 text-tone-red-text text-sm max-w-md mx-auto">
           {error || 'Quality Inspection Rule not found.'}
         </div>
         <Link
@@ -226,11 +226,11 @@ export default function QcRuleDetailsPage() {
       </div>
 
       {/* Navigation Tabs */}
-      <div className="border-b border-border flex items-center gap-6">
+      <div className="border-border-strong border-border flex items-center gap-6">
         <button
           type="button"
           onClick={() => setActiveTab('checklist')}
-          className={`pb-3 text-xs font-bold flex items-center gap-2 border-b-2 transition-all cursor-pointer ${
+          className={`pb-3 text-xs font-bold flex items-center gap-2 border-border-strong-2 transition-all cursor-pointer ${
             activeTab === 'checklist'
               ? 'border-primary text-foreground'
               : 'border-transparent text-muted-foreground hover:text-foreground'
@@ -243,7 +243,7 @@ export default function QcRuleDetailsPage() {
         <button
           type="button"
           onClick={() => setActiveTab('governance')}
-          className={`pb-3 text-xs font-bold flex items-center gap-2 border-b-2 transition-all cursor-pointer ${
+          className={`pb-3 text-xs font-bold flex items-center gap-2 border-border-strong-2 transition-all cursor-pointer ${
             activeTab === 'governance'
               ? 'border-primary text-foreground'
               : 'border-transparent text-muted-foreground hover:text-foreground'
@@ -256,7 +256,7 @@ export default function QcRuleDetailsPage() {
         <button
           type="button"
           onClick={() => setActiveTab('scope')}
-          className={`pb-3 text-xs font-bold flex items-center gap-2 border-b-2 transition-all cursor-pointer ${
+          className={`pb-3 text-xs font-bold flex items-center gap-2 border-border-strong-2 transition-all cursor-pointer ${
             activeTab === 'scope'
               ? 'border-primary text-foreground'
               : 'border-transparent text-muted-foreground hover:text-foreground'
@@ -270,7 +270,7 @@ export default function QcRuleDetailsPage() {
       {/* Tab 1: Checklist & Standards */}
       {activeTab === 'checklist' && (
         <div className="bg-card rounded-2xl border border-border shadow-2xs overflow-hidden">
-          <div className="p-4 bg-muted/40 border-b border-border flex items-center justify-between">
+          <div className="p-4 bg-muted/40 border-border-strong border-border flex items-center justify-between">
             <div>
               <h3 className="text-xs font-bold uppercase tracking-wider text-foreground">
                 Configured Inspection Criteria Checklist
@@ -336,15 +336,15 @@ export default function QcRuleDetailsPage() {
                 Rule Lifecycle &amp; Effective Dating
               </h3>
               <div className="bg-muted/30 rounded-xl p-4 border border-border space-y-3 text-xs">
-                <div className="flex justify-between py-1 border-b border-border">
+                <div className="flex justify-between py-1 border-border-strong border-border">
                   <span className="text-muted-foreground font-medium">Version</span>
                   <span className="font-bold text-foreground">v{rule.version || 1}</span>
                 </div>
-                <div className="flex justify-between py-1 border-b border-border">
+                <div className="flex justify-between py-1 border-border-strong border-border">
                   <span className="text-muted-foreground font-medium">Status</span>
                   <span className="font-bold text-foreground">{rule.status}</span>
                 </div>
-                <div className="flex justify-between py-1 border-b border-border">
+                <div className="flex justify-between py-1 border-border-strong border-border">
                   <span className="text-muted-foreground font-medium">Effective Start Date</span>
                   <span className="font-bold text-foreground">{new Date(rule.effectiveFrom).toLocaleString()}</span>
                 </div>

@@ -95,7 +95,7 @@ export default function StockAdjustmentsPage() {
               <Link href="/stock/adjustments/new">
                 <Button
                   size="sm"
-                  className="gap-1.5 rounded-full shadow-xs bg-primary hover:bg-amber-600 text-primary-foreground font-semibold"
+                  className="gap-1.5 rounded-full shadow-xs bg-primary hover:bg-[color:var(--tone-amber-solid)] text-primary-foreground font-semibold"
                 >
                   <Plus className="h-4 w-4" />
                   <span>Propose Adjustment</span>
@@ -169,7 +169,7 @@ export default function StockAdjustmentsPage() {
 
         {/* Standard @plinth/ui Table Card */}
         <Card className="shadow-xs overflow-hidden border border-border/80">
-          <div className="p-4 border-b border-border/80 flex items-center justify-between bg-card">
+          <div className="p-4 border-border-strong border-border/80 flex items-center justify-between bg-card">
             <div className="flex items-center gap-2">
               <SlidersHorizontal className="h-4 w-4 text-primary" />
               <h2 className="text-sm font-semibold text-foreground">

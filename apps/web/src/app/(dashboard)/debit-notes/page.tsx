@@ -62,7 +62,7 @@ export default function DebitNotesPage() {
               <CardTitle className="text-xs uppercase tracking-widest text-muted-foreground">
                 Open review queue
               </CardTitle>
-              <AlertTriangle className="h-4 w-4 text-amber-600" />
+              <AlertTriangle className="h-4 w-4 text-tone-amber-text" />
             </CardHeader>
             <CardContent>
               <div className="text-3xl font-black font-mono">{pending}</div>
@@ -75,7 +75,7 @@ export default function DebitNotesPage() {
               <CardTitle className="text-xs uppercase tracking-widest text-muted-foreground">
                 Recorded notes
               </CardTitle>
-              <FileCheck2 className="h-4 w-4 text-emerald-600" />
+              <FileCheck2 className="h-4 w-4 text-tone-green-text" />
             </CardHeader>
             <CardContent>
               <div className="text-3xl font-black font-mono">{recorded}</div>
@@ -185,10 +185,10 @@ export default function DebitNotesPage() {
                               <span
                                 className={`rounded-full px-2 py-0.5 text-[11px] font-semibold tracking-wide ${
                                   note.status === 'RECORDED' || note.status === 'APPROVED'
-                                    ? 'bg-emerald-100 text-emerald-800'
+                                    ? 'bg-tone-green-solid text-tone-green-text'
                                     : note.status === 'SUBMITTED'
-                                    ? 'bg-blue-100 text-blue-800'
-                                    : 'bg-amber-100 text-amber-800'
+                                    ? 'bg-tone-blue-solid text-tone-blue-text'
+                                    : 'bg-tone-amber-solid text-tone-amber-text'
                                 }`}
                               >
                                 {note.status === 'RECORDED' ? 'RECORDED' : note.status.replaceAll('_', ' ')}

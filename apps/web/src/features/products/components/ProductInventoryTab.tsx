@@ -62,33 +62,33 @@ export function ProductInventoryTab({ product, stocks }: ProductInventoryTabProp
             <div className="relative h-4 w-full rounded-full bg-muted overflow-hidden border border-border">
               {/* Safety Stock Marker (0 to safety) */}
               <div
-                className="absolute top-0 bottom-0 bg-red-500/20 border-r-2 border-red-500 z-10"
+                className="absolute top-0 bottom-0 bg-tone-red-bg border-r-2 border-tone-red-solid z-10"
                 style={{ width: `${maxCapacity && safetyStock != null ? (safetyStock / maxCapacity) * 100 : 0}%` }}
                 title={safetyStock == null ? 'Safety stock not configured' : `Safety Stock: ${safetyStock}`}
               />
               {/* Reorder Point Marker */}
               <div
-                className="absolute top-0 bottom-0 bg-amber-500/10 border-r-2 border-amber-500 z-10"
+                className="absolute top-0 bottom-0 bg-tone-amber-bg border-r-2 border-tone-amber-solid z-10"
                 style={{ width: `${maxCapacity && reorderPoint != null ? (reorderPoint / maxCapacity) * 100 : 0}%` }}
                 title={reorderPoint == null ? 'Reorder point not configured' : `Reorder Point: ${reorderPoint}`}
               />
               {/* Filled Current Level */}
               <div
-                className="h-full bg-gradient-to-r from-primary to-amber-500 rounded-full transition-all duration-500"
+                className="h-full bg-tone-amber-solid rounded-full transition-all duration-500"
                 style={{ width: `${gaugePercentage}%` }}
               />
             </div>
             <div className="flex items-center justify-between text-[11px] font-mono text-muted-foreground pt-1">
-              <div className="flex items-center gap-1 text-red-600 dark:text-red-400">
-                <span className="h-2 w-2 rounded-full bg-red-500" />
+              <div className="flex items-center gap-1 text-tone-red-text">
+                <span className="h-2 w-2 rounded-full bg-tone-red-bg" />
                 <span>Critical (&lt; {safetyStock ?? '—'})</span>
               </div>
-              <div className="flex items-center gap-1 text-amber-600 dark:text-amber-400">
-                <span className="h-2 w-2 rounded-full bg-amber-500" />
+              <div className="flex items-center gap-1 text-tone-amber-text">
+                <span className="h-2 w-2 rounded-full bg-tone-amber-bg" />
                 <span>Reorder Point ({reorderPoint ?? '—'})</span>
               </div>
-              <div className="flex items-center gap-1 text-emerald-600 dark:text-emerald-400">
-                <span className="h-2 w-2 rounded-full bg-emerald-500" />
+              <div className="flex items-center gap-1 text-tone-green-text">
+                <span className="h-2 w-2 rounded-full bg-tone-green-bg" />
                 <span>Optimal Capacity ({maxCapacity ?? '—'})</span>
               </div>
             </div>
@@ -102,13 +102,13 @@ export function ProductInventoryTab({ product, stocks }: ProductInventoryTabProp
             </div>
             <div className="rounded-lg bg-muted/40 p-3 border border-border/50">
               <p className="text-[10px] uppercase font-bold text-muted-foreground">Sales Allocated / Reserved</p>
-              <p className="font-mono text-xl font-bold text-amber-600 dark:text-amber-400 mt-0.5">
+              <p className="font-mono text-xl font-bold text-tone-amber-text mt-0.5">
                 {totalReserved} pcs
               </p>
             </div>
             <div className="rounded-lg bg-muted/40 p-3 border border-border/50">
               <p className="text-[10px] uppercase font-bold text-muted-foreground">In-Transit / Assembly WIP</p>
-              <p className="font-mono text-xl font-bold text-blue-600 dark:text-blue-400 mt-0.5">
+              <p className="font-mono text-xl font-bold text-tone-blue-text mt-0.5">
                 {totalInTransit} pcs
               </p>
             </div>

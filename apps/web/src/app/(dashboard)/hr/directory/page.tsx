@@ -233,7 +233,7 @@ export default function EmployeeDirectoryPage() {
       <Card className="overflow-hidden border-border bg-card shadow-xs rounded-2xl p-0">
         {loading ? (
           <div className="p-12 text-center text-muted-foreground">
-            <div className="animate-spin w-8 h-8 border-4 border-primary border-t-transparent rounded-full mx-auto mb-3" />
+            <div className="animate-spin w-8 h-8 border-accent border-primary border-t-transparent rounded-full mx-auto mb-3" />
             <p className="text-sm font-medium">Loading employee directory...</p>
           </div>
         ) : error ? (
@@ -326,12 +326,12 @@ export default function EmployeeDirectoryPage() {
                       {/* Onboarding */}
                       <TableCell>
                         {emp.onboardingCompleted ? (
-                          <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-md">
+                          <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-tone-green-text bg-tone-green-bg px-2 py-0.5 rounded-md">
                             <CheckCircle2 className="w-3 h-3" />
                             Completed
                           </span>
                         ) : (
-                          <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-amber-600 dark:text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded-md">
+                          <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-tone-amber-text bg-tone-amber-bg px-2 py-0.5 rounded-md">
                             <Clock className="w-3 h-3" />
                             Pending Link
                           </span>

@@ -80,7 +80,7 @@ export default function CreditNoteDetailPage() {
   if (noteQuery.isLoading) {
     return (
       <main className="flex min-h-[60vh] flex-col items-center justify-center p-8">
-        <div className="h-8 w-8 animate-spin rounded-full border-2 border-n-600 border-t-transparent mb-3" />
+        <div className="h-8 w-8 animate-spin rounded-full border-border border-n-600 border-t-transparent mb-3" />
         <p className="text-sm font-semibold text-muted-foreground">Loading credit note details…</p>
       </main>
     );
@@ -89,7 +89,7 @@ export default function CreditNoteDetailPage() {
   if (noteQuery.isError || !note) {
     return (
       <main className="space-y-4 p-5 md:p-8 max-w-2xl mx-auto mt-12 text-center">
-        <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-rose-50 text-rose-600 dark:bg-rose-950/40">
+        <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-tone-red-solid text-tone-red-text">
           <AlertCircle className="h-6 w-6" />
         </div>
         <h2 className="text-lg font-bold text-foreground">Could not load this credit note</h2>
@@ -147,7 +147,7 @@ export default function CreditNoteDetailPage() {
               {note.status}
             </span>
 
-            <span className="rounded-full bg-amber-500/10 px-2.5 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-400">
+            <span className="rounded-full bg-tone-amber-bg px-2.5 py-0.5 text-xs font-semibold text-tone-amber-text">
               {note.partyType} (AR Sales Return)
             </span>
           </div>
@@ -172,7 +172,7 @@ export default function CreditNoteDetailPage() {
             <Button
               size="sm"
               disabled={pending}
-              className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold gap-1.5 shadow-sm text-xs"
+              className="bg-action hover:bg-[color:var(--action-primary-bg-hover)] text-inverse font-semibold gap-1.5 shadow-sm text-xs"
               onClick={() => void runAction('approve', 'Credit note approved and verified for ledger posting.')}
             >
               <CheckCircle2 className="h-4 w-4" /> Approve Note
@@ -248,7 +248,7 @@ export default function CreditNoteDetailPage() {
           <div className="text-xl font-bold text-foreground font-mono mt-1">
             {formatCurrency(taxVal)}
           </div>
-          <span className="text-[11px] text-emerald-600 dark:text-emerald-400 mt-0.5 block font-medium">
+          <span className="text-[11px] text-tone-green-text mt-0.5 block font-medium">
             GSTR-1 CDNR Table 9B
           </span>
         </div>
@@ -271,7 +271,7 @@ export default function CreditNoteDetailPage() {
           <div className="lg:col-span-5 space-y-4 print:hidden">
             {/* Commercial & Statutory Summary */}
             <div className="rounded-2xl border border-border bg-card p-5 space-y-4">
-              <div className="flex items-center gap-2 border-b border-border/70 pb-3">
+              <div className="flex items-center gap-2 border-border-strong border-border/70 pb-3">
                 <ShieldCheck className="h-4 w-4 text-primary" />
                 <h3 className="text-sm font-bold text-foreground">Commercial &amp; Statutory Details</h3>
               </div>
@@ -292,7 +292,7 @@ export default function CreditNoteDetailPage() {
                 <div className="grid grid-cols-2 gap-2 pt-1">
                   <div className="rounded-xl bg-muted/20 p-2.5 border border-border">
                     <span className="text-[11px] text-muted-foreground">GSTR-1 CDNR Reversal</span>
-                    <p className="font-semibold text-emerald-600 dark:text-emerald-400 mt-0.5">
+                    <p className="font-semibold text-tone-green-text mt-0.5">
                       {note.adjustGst ? 'Yes (Output GST Reduced)' : 'No Tax Adjustment'}
                     </p>
                   </div>
@@ -308,7 +308,7 @@ export default function CreditNoteDetailPage() {
 
             {/* Party & Document Lineage */}
             <div className="rounded-2xl border border-border bg-card p-5 space-y-3 text-xs">
-              <div className="flex items-center gap-2 border-b border-border/70 pb-3">
+              <div className="flex items-center gap-2 border-border-strong border-border/70 pb-3">
                 <Building2 className="h-4 w-4 text-primary" />
                 <h3 className="text-sm font-bold text-foreground">Customer &amp; Document Lineage</h3>
               </div>
@@ -359,7 +359,7 @@ export default function CreditNoteDetailPage() {
 
             {/* Audit Trail */}
             <div className="rounded-2xl border border-border bg-card p-5 space-y-3 text-xs">
-              <div className="flex items-center gap-2 border-b border-border/70 pb-3">
+              <div className="flex items-center gap-2 border-border-strong border-border/70 pb-3">
                 <Clock className="h-4 w-4 text-primary" />
                 <h3 className="text-sm font-bold text-foreground">Audit &amp; Accountability</h3>
               </div>
@@ -397,69 +397,69 @@ export default function CreditNoteDetailPage() {
           <div
             id="credit-note-document"
             ref={printRef}
-            className="rounded-3xl border border-border bg-white text-slate-900 p-6 md:p-8 shadow-md dark:bg-card dark:text-foreground dark:border-border print:border-0 print:bg-white print:p-0 print:shadow-none w-full"
+            className="rounded-3xl border border-border bg-surface text-ink p-6 md:p-8 shadow-none print:border-accent print:bg-surface print:p-0 print:shadow-none w-full"
           >
             {/* Top Document Header */}
-            <div className="flex flex-wrap items-start justify-between gap-4 border-b-2 border-border pb-5">
+            <div className="flex flex-wrap items-start justify-between gap-4 border-border-strong-2 border-border pb-5">
               <div className="flex items-center gap-4">
                 <span className="text-2xl font-black tracking-tight text-ink uppercase">Plinth</span>
-                <div className="border-l border-slate-200 pl-4 dark:border-border">
+                <div className="border-l border-border pl-4">
                   <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-foreground">
                     Accounts Receivable · Statutory GST Adjustment
                   </p>
                   <h2 className="mt-0.5 text-xl md:text-2xl font-bold">Credit Note (CDNR)</h2>
-                  <p className="text-[11px] text-slate-500 dark:text-muted-foreground">
+                  <p className="text-[11px] text-ink-muted">
                     Issued under Section 34 of the CGST Act, 2017
                   </p>
                 </div>
               </div>
 
               <div className="text-right text-xs">
-                <p className="text-slate-500 dark:text-muted-foreground">Credit Note Number</p>
+                <p className="text-ink-muted">Credit Note Number</p>
                 <p className="font-mono font-bold text-base text-foreground">{note.noteNumber}</p>
-                <p className="mt-1 text-slate-500 dark:text-muted-foreground">Credit Note Date</p>
+                <p className="mt-1 text-ink-muted">Credit Note Date</p>
                 <p className="font-mono font-semibold text-foreground">{formatDate(note.issueDate)}</p>
               </div>
             </div>
 
             {/* Issuer & Recipient Profile Cards */}
-            <div className="grid gap-4 border-b border-slate-200 py-4 sm:grid-cols-2 dark:border-border">
+            <div className="grid gap-4 border-border-strong border-border py-4 sm:grid-cols-2">
               {/* Supplier Info */}
-              <div className="space-y-1.5 rounded-xl bg-slate-50/80 p-3.5 text-xs dark:bg-muted/20">
-                <p className="font-bold uppercase tracking-wider text-slate-400 text-[10px]">
+              <div className="space-y-1.5 rounded-xl bg-muted/80 p-3.5 text-xs">
+                <p className="font-bold uppercase tracking-wider text-ink-placeholder text-[10px]">
                   Issued By (Seller / Supplier)
                 </p>
-                <p className="text-sm font-bold text-slate-900 dark:text-foreground">
+                <p className="text-sm font-bold text-ink">
                   {COMPANY_INFO.name}
                 </p>
-                <p className="text-slate-600 dark:text-muted-foreground">
+                <p className="text-ink-secondary">
                   GSTIN: <span className="font-mono font-semibold">{COMPANY_INFO.gstin}</span> · State: {COMPANY_INFO.state} ({COMPANY_INFO.stateCode})
                 </p>
-                <p className="text-slate-600 dark:text-muted-foreground">
+                <p className="text-ink-secondary">
                   {COMPANY_INFO.addressLine1} {COMPANY_INFO.addressLine2} {COMPANY_INFO.addressLine3}
                 </p>
-                <p className="text-slate-600 dark:text-muted-foreground">
+                <p className="text-ink-secondary">
                   Phone: {COMPANY_INFO.phone} · Email: {COMPANY_INFO.email}
                 </p>
               </div>
 
               {/* Recipient / Customer Info */}
-              <div className="space-y-1.5 rounded-xl bg-slate-50/80 p-3.5 text-xs dark:bg-muted/20">
-                <p className="font-bold uppercase tracking-wider text-slate-400 text-[10px]">
+              <div className="space-y-1.5 rounded-xl bg-muted/80 p-3.5 text-xs">
+                <p className="font-bold uppercase tracking-wider text-ink-placeholder text-[10px]">
                   Issued To (Recipient / Customer)
                 </p>
-                <p className="text-sm font-bold text-slate-900 dark:text-foreground">
+                <p className="text-sm font-bold text-ink">
                   {note.partyName}
                 </p>
-                <p className="text-slate-600 dark:text-muted-foreground">
+                <p className="text-ink-secondary">
                   GSTIN: <span className="font-mono font-semibold">{note.partyGstin || 'URP / Consumer'}</span>
                 </p>
-                <p className="text-slate-600 dark:text-muted-foreground">
+                <p className="text-ink-secondary">
                   Place of Supply: <span className="font-semibold">{note.placeOfSupply}</span>
                 </p>
-                <p className="text-slate-600 dark:text-muted-foreground">
+                <p className="text-ink-secondary">
                   Original Invoice Ref:{' '}
-                  <span className="font-mono font-bold text-foreground dark:text-n-300">
+                  <span className="font-mono font-bold text-foreground">
                     {note.originalInvoiceNumber}
                   </span>{' '}
                   ({note.originalInvoiceDate ? formatDate(note.originalInvoiceDate) : 'N/A'})
@@ -468,11 +468,11 @@ export default function CreditNoteDetailPage() {
             </div>
 
             {/* Reason & Commercial Scope */}
-            <div className="py-3 border-b border-slate-200 text-xs flex flex-wrap justify-between items-center gap-2 dark:border-border">
+            <div className="py-3 border-border-strong border-border text-xs flex flex-wrap justify-between items-center gap-2">
               <div>
-                <span className="text-slate-500 dark:text-muted-foreground">Adjustment Reason: </span>
+                <span className="text-ink-muted">Adjustment Reason: </span>
                 <span className="font-bold text-foreground uppercase">{note.reasonCode}</span>
-                <span className="text-slate-500 dark:text-muted-foreground"> — {note.reasonDescription}</span>
+                <span className="text-ink-muted"> — {note.reasonDescription}</span>
               </div>
               <div className="text-[11px] font-mono text-muted-foreground">
                 Original Invoice Total: {formatCurrency(note.originalInvoiceTotal || 0)}
@@ -483,7 +483,7 @@ export default function CreditNoteDetailPage() {
             <div className="py-4">
               <table className="w-full text-left text-xs border-collapse">
                 <thead>
-                  <tr className="border-b border-slate-300 bg-slate-100 text-slate-700 font-bold dark:border-border dark:bg-muted/40 dark:text-muted-foreground">
+                  <tr className="border-border-strong border-border-strong bg-muted text-ink-secondary font-bold">
                     <th className="p-2.5 w-10 text-center">#</th>
                     <th className="p-2.5">Item Description</th>
                     <th className="p-2.5 text-center w-24">HSN/SAC</th>
@@ -494,31 +494,31 @@ export default function CreditNoteDetailPage() {
                     <th className="p-2.5 text-right w-24">Total (₹)</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-slate-200 font-mono dark:divide-border/60">
+                <tbody className="divide-y divide-border font-mono">
                   {note.lines && note.lines.length > 0 ? (
                     note.lines.map((item, idx) => (
-                      <tr key={item.id} className="hover:bg-slate-50/50 dark:hover:bg-muted/10">
-                        <td className="p-2.5 text-center text-slate-500 dark:text-muted-foreground">{idx + 1}</td>
+                      <tr key={item.id} className="hover:bg-hover">
+                        <td className="p-2.5 text-center text-ink-muted">{idx + 1}</td>
                         <td className="p-2.5 font-sans font-medium text-foreground">{item.description}</td>
-                        <td className="p-2.5 text-center text-slate-500 dark:text-muted-foreground">{item.hsnSacCode || '8421'}</td>
+                        <td className="p-2.5 text-center text-ink-muted">{item.hsnSacCode || '8421'}</td>
                         <td className="p-2.5 text-right text-foreground font-semibold">{item.quantity}</td>
-                        <td className="p-2.5 text-right text-slate-600 dark:text-muted-foreground">{formatCurrency(item.unitPrice)}</td>
+                        <td className="p-2.5 text-right text-ink-secondary">{formatCurrency(item.unitPrice)}</td>
                         <td className="p-2.5 text-right text-foreground font-semibold">{formatCurrency(item.taxableAmount)}</td>
-                        <td className="p-2.5 text-center text-slate-600 dark:text-muted-foreground">{item.gstRate}%</td>
+                        <td className="p-2.5 text-center text-ink-secondary">{item.gstRate}%</td>
                         <td className="p-2.5 text-right font-bold text-foreground">{formatCurrency(item.totalAmount)}</td>
                       </tr>
                     ))
                   ) : (
                     <tr>
-                      <td className="p-2.5 text-center text-slate-500 dark:text-muted-foreground">1</td>
+                      <td className="p-2.5 text-center text-ink-muted">1</td>
                       <td className="p-2.5 font-sans font-medium text-foreground">
                         {note.reasonDescription || 'Commercial Credit Note / Rate Adjustment'}
                       </td>
-                      <td className="p-2.5 text-center text-slate-500 dark:text-muted-foreground">998319</td>
+                      <td className="p-2.5 text-center text-ink-muted">998319</td>
                       <td className="p-2.5 text-right text-foreground font-semibold">1</td>
-                      <td className="p-2.5 text-right text-slate-600 dark:text-muted-foreground">{formatCurrency(taxableVal)}</td>
+                      <td className="p-2.5 text-right text-ink-secondary">{formatCurrency(taxableVal)}</td>
                       <td className="p-2.5 text-right text-foreground font-semibold">{formatCurrency(taxableVal)}</td>
-                      <td className="p-2.5 text-center text-slate-600 dark:text-muted-foreground">18%</td>
+                      <td className="p-2.5 text-center text-ink-secondary">18%</td>
                       <td className="p-2.5 text-right font-bold text-foreground">{formatCurrency(totalVal)}</td>
                     </tr>
                   )}
@@ -527,11 +527,11 @@ export default function CreditNoteDetailPage() {
             </div>
 
             {/* Totals & Tax Calculation Breakdown */}
-            <div className="grid gap-4 border-t-2 border-slate-300 py-4 sm:grid-cols-2 dark:border-border">
+            <div className="grid gap-4 border-t-2 border-border-strong py-4 sm:grid-cols-2">
               {/* Amount in words & statutory note */}
               <div className="space-y-3 text-xs">
                 <div>
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-muted-foreground">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-ink-muted">
                     Credit Amount (in words):
                   </span>
                   <p className="font-bold text-foreground capitalize mt-0.5">
@@ -539,8 +539,8 @@ export default function CreditNoteDetailPage() {
                   </p>
                 </div>
 
-                <div className="rounded-xl bg-slate-50 p-3 text-[11px] text-slate-600 leading-relaxed border border-slate-200 dark:bg-muted/20 dark:text-muted-foreground dark:border-border">
-                  <p className="font-semibold text-slate-800 dark:text-foreground mb-1">
+                <div className="rounded-xl bg-muted p-3 text-[11px] text-ink-secondary leading-relaxed border border-border">
+                  <p className="font-semibold text-ink mb-1">
                     Statutory Declaration:
                   </p>
                   This Credit Note is issued in accordance with Section 34 of the CGST Act, 2017. Tax liability
@@ -551,25 +551,25 @@ export default function CreditNoteDetailPage() {
 
               {/* Financial Totals */}
               <div className="space-y-1.5 font-mono text-xs text-right">
-                <div className="flex justify-between text-slate-600 dark:text-muted-foreground">
+                <div className="flex justify-between text-ink-secondary">
                   <span>Total Taxable Amount:</span>
                   <span className="font-bold text-foreground">{formatCurrency(taxableVal)}</span>
                 </div>
 
                 {note.adjustGst && (
                   <>
-                    <div className="flex justify-between text-slate-600 dark:text-muted-foreground">
+                    <div className="flex justify-between text-ink-secondary">
                       <span>Output CGST (9%):</span>
                       <span className="font-bold text-foreground">{formatCurrency(cgstVal)}</span>
                     </div>
-                    <div className="flex justify-between text-slate-600 dark:text-muted-foreground">
+                    <div className="flex justify-between text-ink-secondary">
                       <span>Output SGST (9%):</span>
                       <span className="font-bold text-foreground">{formatCurrency(sgstVal)}</span>
                     </div>
                   </>
                 )}
 
-                <div className="flex justify-between border-t-2 border-slate-300 pt-2 text-sm font-bold text-foreground dark:border-border">
+                <div className="flex justify-between border-t-2 border-border-strong pt-2 text-sm font-bold text-foreground">
                   <span>Grand Total Credit:</span>
                   <span className="text-foreground">
                     {formatCurrency(totalVal)}
@@ -579,17 +579,17 @@ export default function CreditNoteDetailPage() {
             </div>
 
             {/* Signatory Box */}
-            <div className="mt-6 pt-6 border-t border-slate-200 flex justify-between items-end text-xs dark:border-border">
-              <div className="text-slate-500 dark:text-muted-foreground text-[11px]">
+            <div className="mt-6 pt-6 border-t border-border flex justify-between items-end text-xs">
+              <div className="text-ink-muted text-[11px]">
                 <p>Generated electronically by Plinth Platform</p>
                 <p>Authentic official document · Valid without physical seal</p>
               </div>
 
               <div className="text-right space-y-8">
-                <p className="font-bold text-slate-900 dark:text-foreground">
+                <p className="font-bold text-ink">
                   For {COMPANY_INFO.name}
                 </p>
-                <div className="border-t border-slate-400 pt-1 text-[11px] font-semibold text-slate-600 dark:text-muted-foreground">
+                <div className="border-t border-border-strong pt-1 text-[11px] font-semibold text-ink-secondary">
                   Authorized Signatory
                 </div>
               </div>

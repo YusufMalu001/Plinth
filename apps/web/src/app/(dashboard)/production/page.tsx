@@ -158,7 +158,7 @@ export default function ProductionOverviewPage() {
       {/* 3 Consistent KPI Metric Cards */}
       <div className="grid gap-4 grid-cols-1 sm:grid-cols-3 w-full">
         {/* Card 1: Active Plans */}
-        <Card className="border border-border/80 dark:border-border/60 bg-card shadow-none rounded-2xl p-5 hover:border-primary/40 transition-all">
+        <Card className="border border-border/80 bg-card shadow-none rounded-2xl p-5 hover:border-primary/40 transition-all">
           <CardContent className="p-0 flex items-start justify-between">
             <div className="space-y-1">
               <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Active Plans</p>
@@ -174,7 +174,7 @@ export default function ProductionOverviewPage() {
         </Card>
 
         {/* Card 2: Awaiting Approval */}
-        <Card className="border border-border/80 dark:border-border/60 bg-card shadow-none rounded-2xl p-5 hover:border-primary/40 transition-all">
+        <Card className="border border-border/80 bg-card shadow-none rounded-2xl p-5 hover:border-primary/40 transition-all">
           <CardContent className="p-0 flex items-start justify-between">
             <div className="space-y-1">
               <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Awaiting Approval</p>
@@ -190,7 +190,7 @@ export default function ProductionOverviewPage() {
         </Card>
 
         {/* Card 3: Completed Output */}
-        <Card className="border border-border/80 dark:border-border/60 bg-card shadow-none rounded-2xl p-5 hover:border-primary/40 transition-all">
+        <Card className="border border-border/80 bg-card shadow-none rounded-2xl p-5 hover:border-primary/40 transition-all">
           <CardContent className="p-0 flex items-start justify-between">
             <div className="space-y-1">
               <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Completed Runs</p>
@@ -209,7 +209,7 @@ export default function ProductionOverviewPage() {
       {/* Production Plans Registry Card */}
       <Card className="rounded-2xl border border-border overflow-hidden shadow-none w-full bg-card">
         {/* Controls / Filter Bar */}
-        <div className="p-4 sm:p-5 border-b border-border bg-card flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+        <div className="p-4 sm:p-5 border-border-strong border-border bg-card flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
           <div className="flex items-center gap-2.5">
             <h3 className="text-lg font-bold text-foreground">Current Production Plans</h3>
             <span className="rounded-full bg-primary/10 border border-primary/20 px-2.5 py-0.5 text-xs font-bold text-primary">

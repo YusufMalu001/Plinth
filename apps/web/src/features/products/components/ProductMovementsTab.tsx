@@ -183,7 +183,7 @@ export function ProductMovementsTab({ productId }: ProductMovementsTabProps) {
               type="button"
               onClick={() => setFilterType('IN')}
               className={`px-3 py-1 rounded-md transition-colors ${
-                filterType === 'IN' ? 'bg-background text-emerald-600 shadow-2xs' : 'text-muted-foreground hover:text-foreground'
+                filterType === 'IN' ? 'bg-background text-tone-green-text shadow-2xs' : 'text-muted-foreground hover:text-foreground'
               }`}
             >
               Inward (+)
@@ -192,7 +192,7 @@ export function ProductMovementsTab({ productId }: ProductMovementsTabProps) {
               type="button"
               onClick={() => setFilterType('OUT')}
               className={`px-3 py-1 rounded-md transition-colors ${
-                filterType === 'OUT' ? 'bg-background text-amber-600 shadow-2xs' : 'text-muted-foreground hover:text-foreground'
+                filterType === 'OUT' ? 'bg-background text-tone-amber-text shadow-2xs' : 'text-muted-foreground hover:text-foreground'
               }`}
             >
               Outward (-)
@@ -205,7 +205,7 @@ export function ProductMovementsTab({ productId }: ProductMovementsTabProps) {
           onClick={exportMovementsCSV}
           className="flex items-center justify-center gap-1.5 rounded-lg border border-border bg-background px-3 py-1.5 text-xs font-semibold text-foreground hover:bg-muted transition-colors shadow-2xs cursor-pointer"
         >
-          <FileSpreadsheet className="h-3.5 w-3.5 text-emerald-600" />
+          <FileSpreadsheet className="h-3.5 w-3.5 text-tone-green-text" />
           <span>Export Movement Log</span>
         </button>
       </div>
@@ -237,14 +237,14 @@ export function ProductMovementsTab({ productId }: ProductMovementsTabProps) {
                       <span
                         className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-md text-xs font-bold ${
                           mov.direction === 'IN'
-                            ? 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20'
-                            : 'bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20'
+                            ? 'bg-tone-green-bg text-tone-green-text border border-tone-green-solid'
+                            : 'bg-tone-amber-bg text-tone-amber-text border border-tone-amber-solid'
                         }`}
                       >
                         {mov.direction === 'IN' ? (
-                          <ArrowDownLeft className="h-3 w-3 text-emerald-600" />
+                          <ArrowDownLeft className="h-3 w-3 text-tone-green-text" />
                         ) : (
-                          <ArrowUpRight className="h-3 w-3 text-amber-600" />
+                          <ArrowUpRight className="h-3 w-3 text-tone-amber-text" />
                         )}
                         {mov.movementType.replace('_', ' ')}
                       </span>
@@ -269,7 +269,7 @@ export function ProductMovementsTab({ productId }: ProductMovementsTabProps) {
                       )}
                     </td>
                     <td className="px-4 py-3.5 text-right font-mono font-bold text-sm">
-                      <span className={mov.direction === 'IN' ? 'text-emerald-600' : 'text-amber-600'}>
+                      <span className={mov.direction === 'IN' ? 'text-tone-green-text' : 'text-tone-amber-text'}>
                         {mov.direction === 'IN' ? '+' : '-'}
                         {mov.quantity} {mov.uom}
                       </span>

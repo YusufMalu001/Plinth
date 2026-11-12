@@ -167,7 +167,7 @@ export default function ScrapWastageDashboardPage() {
     : 'All Departments';
 
   return (
-    <main className="flex-1 overflow-y-auto bg-slate-50/50 p-4 sm:p-6 lg:p-8 dark:bg-[#070b14]/70 font-manrope">
+    <main className="flex-1 overflow-y-auto bg-muted/50 p-4 sm:p-6 lg:p-8 font-manrope">
       <div className="mx-auto max-w-[1680px] space-y-6">
 
         {/* ======================================================== */}
@@ -175,7 +175,7 @@ export default function ScrapWastageDashboardPage() {
         {/* ======================================================== */}
         <div className="relative overflow-hidden rounded-3xl border border-primary/20 bg-card p-6 shadow-xs">
           {/* Subtle Ambient Glow */}
-          <div className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-gradient-to-br from-primary/15 via-primary/5 to-transparent blur-2xl" />
+          <div className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-transparent blur-2xl" />
 
           <div className="relative flex flex-wrap items-center justify-between gap-4">
             <div>
@@ -563,7 +563,7 @@ export default function ScrapWastageDashboardPage() {
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-xs border-collapse">
                   <thead>
-                    <tr className="border-b border-border bg-muted/40 text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+                    <tr className="border-border-strong border-border bg-muted/40 text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
                       <th className="px-4 py-3">Manufacturing Department</th>
                       <th className="px-4 py-3 text-right">Incidents</th>
                       <th className="px-4 py-3 text-right">Scrapped Qty</th>
@@ -655,7 +655,7 @@ export default function ScrapWastageDashboardPage() {
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-xs border-collapse">
                   <thead>
-                    <tr className="border-b border-border bg-muted/40 text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+                    <tr className="border-border-strong border-border bg-muted/40 text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
                       <th className="px-4 py-3">Item / SKU</th>
                       <th className="px-4 py-3 text-right">Qty Lost</th>
                       <th className="px-4 py-3 text-right">% Plant Loss</th>

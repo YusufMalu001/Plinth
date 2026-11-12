@@ -760,7 +760,7 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
   ];
 
   return (
-    <div className="flex-1 bg-slate-50/60 dark:bg-slate-950 min-h-screen">
+    <div className="flex-1 bg-muted min-h-screen">
       {/* Full-width container covering entire screen without squished max-w */}
       <div className={`w-full px-4 sm:px-6 lg:px-8 py-6 space-y-6 ${isBarcodeOpen ? 'print:hidden' : ''}`}>
 
@@ -769,7 +769,7 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
            ------------------------------------------------------------------------- */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-1">
           {/* Breadcrumb Navigation */}
-          <nav className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
+          <nav className="flex items-center gap-2 text-xs text-ink-muted">
             <Link
               href={isMaterialEntity ? "/products?type=MATERIAL" : "/products"}
               className="hover:text-primary transition-colors font-medium"
@@ -778,7 +778,7 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
             </Link>
             {itemCategoryName && (
               <>
-                <ChevronRight className="h-3.5 w-3.5 text-slate-400 shrink-0" />
+                <ChevronRight className="h-3.5 w-3.5 text-ink-placeholder shrink-0" />
                 <Link
                   href={`/products?categoryId=${encodeURIComponent(itemCategoryId)}`}
                   className="hover:text-primary transition-colors font-medium"
@@ -789,7 +789,7 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
             )}
             {matchedFamily?.name && (
               <>
-                <ChevronRight className="h-3.5 w-3.5 text-slate-400 shrink-0" />
+                <ChevronRight className="h-3.5 w-3.5 text-ink-placeholder shrink-0" />
                 <Link
                   href={`/products?familyId=${encodeURIComponent(matchedFamily.id)}`}
                   className="hover:text-primary transition-colors font-medium"
@@ -798,8 +798,8 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
                 </Link>
               </>
             )}
-            <ChevronRight className="h-3.5 w-3.5 text-slate-400 shrink-0" />
-            <span className="text-slate-900 dark:text-slate-100 font-bold truncate max-w-[320px]">
+            <ChevronRight className="h-3.5 w-3.5 text-ink-placeholder shrink-0" />
+            <span className="text-ink font-bold truncate max-w-[320px]">
               {itemName}
             </span>
           </nav>
@@ -819,7 +819,7 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
                   router.push(isMaterialEntity ? '/products?type=MATERIAL' : '/products');
                 }
               }}
-              className="h-10 px-4 rounded-xl border-slate-300 dark:border-slate-700 font-bold text-xs hover:bg-slate-100 dark:hover:bg-slate-800 transition cursor-pointer"
+              className="h-10 px-4 rounded-xl border-border-strong font-bold text-xs hover:bg-muted transition cursor-pointer"
             >
               Back
             </Button>
@@ -829,7 +829,7 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
               size="sm"
               icon={QrCode}
               onClick={() => setIsBarcodeOpen(true)}
-              className="h-10 px-4 rounded-xl border-slate-300 dark:border-slate-700 font-bold text-xs hover:bg-slate-100 dark:hover:bg-slate-800 transition cursor-pointer"
+              className="h-10 px-4 rounded-xl border-border-strong font-bold text-xs hover:bg-muted transition cursor-pointer"
             >
               Barcode
             </Button>
@@ -857,7 +857,7 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
                   router.push(`/products/new?editId=${currentItem.id}&mode=edit`);
                 }
               }}
-              className="h-10 px-5 rounded-xl bg-primary hover:bg-[#003c68] text-white font-bold text-xs shadow-sm transition cursor-pointer"
+              className="h-10 px-5 rounded-xl bg-primary hover:bg-[color:var(--action-primary-bg-hover)] text-inverse font-bold text-xs shadow-sm transition cursor-pointer"
             >
               Edit Item
             </Button>
@@ -867,13 +867,13 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
         {/* -------------------------------------------------------------------------
             2. UNIFIED PRODUCT PRESENTATION STAGE (HERO CARD - CAPSULES REMOVED)
            ------------------------------------------------------------------------- */}
-        <Card className="rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm overflow-hidden">
+        <Card className="rounded-2xl border border-border bg-surface shadow-sm overflow-hidden">
 
           {/* Top Identity & Title Area (Clean typography, NO SKU capsule, NO ACTIVE capsule, NO SKU CODE) */}
-          <div className="p-5 sm:p-6 border-b border-slate-100 dark:border-slate-800">
+          <div className="p-5 sm:p-6 border-b border-border">
             <div className="space-y-1.5">
               {/* Meta details line (SKU code removed as requested) */}
-              <div className="flex flex-wrap items-center gap-2 text-xs font-medium text-slate-500 dark:text-slate-400">
+              <div className="flex flex-wrap items-center gap-2 text-xs font-medium text-ink-muted">
                 <span className="font-bold text-primary">
                   {categoryBadgeLabel}
                 </span>
@@ -899,25 +899,25 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
                 {hsnCode && (
                   <>
                     <span>•</span>
-                    <span className="font-mono font-bold text-slate-700 dark:text-slate-300">HSN: {hsnCode}</span>
+                    <span className="font-mono font-bold text-ink-secondary">HSN: {hsnCode}</span>
                   </>
                 )}
               </div>
 
               {/* Primary Heading */}
-              <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-slate-900 dark:text-white">
+              <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-ink">
                 {itemName}
               </h1>
             </div>
           </div>
 
           {/* Main Visual & Key Metrics Grid (Compact Height) */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-slate-100 dark:divide-slate-800">
+          <div className="grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-border">
 
             {/* Visual Media Showcase (Properly styled without grey background, full visibility) */}
             <div className="lg:col-span-4 p-5 sm:p-6 flex flex-col justify-center space-y-3">
               <div
-                className="relative h-64 sm:h-72 w-full rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 flex items-center justify-center p-3 overflow-hidden group select-none cursor-pointer shadow-2xs"
+                className="relative h-64 sm:h-72 w-full rounded-2xl bg-surface border border-border flex items-center justify-center p-3 overflow-hidden group select-none cursor-pointer shadow-2xs"
                 onClick={() => galleryImages.length > 0 && setIsImageZoomed(!isImageZoomed)}
               >
                 {galleryImages.length > 0 ? (
@@ -940,7 +940,7 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
                             e.stopPropagation();
                             setActiveImageIndex((prev) => (prev > 0 ? prev - 1 : galleryImages.length - 1));
                           }}
-                          className="absolute left-3 top-1/2 -translate-y-1/2 h-8 w-8 rounded-full bg-white/95 dark:bg-slate-900/95 shadow-md border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-700 dark:text-slate-200 hover:scale-105 transition cursor-pointer"
+                          className="absolute left-3 top-1/2 -translate-y-1/2 h-8 w-8 rounded-full bg-surface shadow-none border border-border flex items-center justify-center text-ink-secondary hover:scale-105 transition cursor-pointer"
                         >
                           <ChevronLeft className="w-4 h-4" />
                         </button>
@@ -950,7 +950,7 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
                             e.stopPropagation();
                             setActiveImageIndex((prev) => (prev < galleryImages.length - 1 ? prev + 1 : 0));
                           }}
-                          className="absolute right-3 top-1/2 -translate-y-1/2 h-8 w-8 rounded-full bg-white/95 dark:bg-slate-900/95 shadow-md border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-700 dark:text-slate-200 hover:scale-105 transition cursor-pointer"
+                          className="absolute right-3 top-1/2 -translate-y-1/2 h-8 w-8 rounded-full bg-surface shadow-none border border-border flex items-center justify-center text-ink-secondary hover:scale-105 transition cursor-pointer"
                         >
                           <ChevronRight className="w-4 h-4" />
                         </button>
@@ -958,20 +958,20 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
                     )}
 
                     {/* Image indicator */}
-                    <div className="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-slate-900/80 backdrop-blur-xs text-[10px] font-mono font-bold text-white shadow-sm">
+                    <div className="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-inverse backdrop-blur-xs text-[10px] font-mono font-bold text-inverse shadow-sm">
                       {activeImageIndex + 1} / {galleryImages.length}
                     </div>
                   </>
                 ) : (
                   <div className="flex flex-col items-center justify-center text-center p-4 space-y-2">
-                    <div className="h-12 w-12 rounded-2xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-400">
+                    <div className="h-12 w-12 rounded-2xl bg-muted flex items-center justify-center text-ink-placeholder">
                       <Package className="h-6 w-6 stroke-[1.5]" />
                     </div>
                     <div>
-                      <p className="text-xs font-bold text-slate-700 dark:text-slate-300">
+                      <p className="text-xs font-bold text-ink-secondary">
                         No product image uploaded
                       </p>
-                      <p className="text-[11px] text-slate-400">
+                      <p className="text-[11px] text-ink-placeholder">
                         Technical diagram or media photo has not been added
                       </p>
                     </div>
@@ -988,10 +988,10 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
                       type="button"
                       onClick={() => setActiveImageIndex(idx)}
                       className={clsx(
-                        'relative h-12 w-12 shrink-0 rounded-xl border overflow-hidden p-1 bg-white dark:bg-slate-900 transition cursor-pointer',
+                        'relative h-12 w-12 shrink-0 rounded-xl border overflow-hidden p-1 bg-surface transition cursor-pointer',
                         idx === activeImageIndex
                           ? 'border-primary ring-2 ring-primary/20 shadow-xs'
-                          : 'border-slate-200 dark:border-slate-700 hover:border-slate-400'
+                          : 'border-border hover:border-border-strong'
                       )}
                     >
                       <img src={imgUrl} alt="" className="h-full w-full object-contain" />
@@ -1005,11 +1005,11 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
             <div className="lg:col-span-8 p-5 sm:p-6 space-y-4">
 
               {/* Clean Metric Ribbon (High-contrast numbers, dedicated HSN code field) */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 py-3 border-b border-slate-100 dark:border-slate-800">
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 py-3 border-b border-border">
 
                 {/* 1. Rate */}
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                  <p className="text-xs font-bold uppercase tracking-wider text-ink-muted">
                     {standardCost > 0 ? 'Valuation Rate' : sellingPrice > 0 ? 'Selling Rate' : 'Standard Rate'}
                   </p>
                   <p className="text-2xl font-black font-mono text-primary mt-1">
@@ -1019,24 +1019,24 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
                       ? `₹${sellingPrice.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
                       : '—'}
                   </p>
-                  <p className="text-xs font-medium text-slate-500 mt-0.5">
+                  <p className="text-xs font-medium text-ink-muted mt-0.5">
                     Per {uomSymbol || 'unit'}
                   </p>
                 </div>
 
                 {/* 2. Available Stock */}
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                  <p className="text-xs font-bold uppercase tracking-wider text-ink-muted">
                     Available Stock
                   </p>
-                  <p className="text-2xl font-black font-mono text-emerald-600 dark:text-emerald-400 mt-1">
-                    {liveAvailable.toLocaleString()} <span className="text-xs font-semibold text-slate-500">{uomSymbol}</span>
+                  <p className="text-2xl font-black font-mono text-tone-green-text mt-1">
+                    {liveAvailable.toLocaleString()} <span className="text-xs font-semibold text-ink-muted">{uomSymbol}</span>
                   </p>
-                  <p className="text-xs font-medium text-slate-500 mt-0.5">
+                  <p className="text-xs font-medium text-ink-muted mt-0.5">
                     {liveOnHand.toLocaleString()} on-hand {liveReserved > 0 ? `(${liveReserved} reserved)` : ''}
                   </p>
                   {unconvertibleBalanceCount > 0 && (
-                    <p className="text-xs font-medium text-amber-700 dark:text-amber-400 mt-1">
+                    <p className="text-xs font-medium text-tone-amber-text mt-1">
                       Stock in other units is listed separately until a conversion is approved.
                     </p>
                   )}
@@ -1044,39 +1044,39 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
 
                 {/* 3. Safety buffer */}
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                  <p className="text-xs font-bold uppercase tracking-wider text-ink-muted">
                     Buffer
                   </p>
-                  <p className="text-2xl font-black font-mono text-slate-900 dark:text-white mt-1">
+                  <p className="text-2xl font-black font-mono text-ink mt-1">
                     {bufferValue != null && Number.isFinite(bufferValue)
                       ? `${bufferValue.toLocaleString('en-IN')}${uomSymbol ? ` ${uomSymbol}` : ''}`
                       : '—'}
                   </p>
-                  {targetMaxStock > 0 && <p className="text-xs font-medium text-slate-500 mt-0.5">Max: {targetMaxStock} {uomSymbol}</p>}
+                  {targetMaxStock > 0 && <p className="text-xs font-medium text-ink-muted mt-0.5">Max: {targetMaxStock} {uomSymbol}</p>}
                 </div>
 
                 {/* 4. HSN Code */}
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                  <p className="text-xs font-bold uppercase tracking-wider text-ink-muted">
                     HSN / SAC Code
                   </p>
-                  <p className="text-2xl font-black font-mono text-slate-900 dark:text-white mt-1">
+                  <p className="text-2xl font-black font-mono text-ink mt-1">
                     {hsnCode || '—'}
                   </p>
-                  <p className="text-xs font-medium text-slate-500 mt-0.5">
+                  <p className="text-xs font-medium text-ink-muted mt-0.5">
                     Tariff Classification
                   </p>
                 </div>
 
                 {/* 5. GST / Tax Slab */}
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                  <p className="text-xs font-bold uppercase tracking-wider text-ink-muted">
                     GST / Tax Slab
                   </p>
-                  <p className="text-2xl font-black font-mono text-slate-900 dark:text-white mt-1">
+                  <p className="text-2xl font-black font-mono text-ink mt-1">
                     {taxRate != null ? `${taxRate}%` : '—'}
                   </p>
-                  <p className="text-xs font-medium text-slate-500 mt-0.5">
+                  <p className="text-xs font-medium text-ink-muted mt-0.5">
                     Standard Slab Rate
                   </p>
                 </div>
@@ -1085,10 +1085,10 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
               {/* Description (Clean prose) */}
               {itemDescription && (
                 <div className="space-y-1.5">
-                  <h3 className="text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300">
+                  <h3 className="text-xs font-bold uppercase tracking-wider text-ink-secondary">
                     Description & Scope
                   </h3>
-                  <p className="text-sm font-medium text-slate-800 dark:text-slate-200 leading-relaxed whitespace-pre-line">
+                  <p className="text-sm font-medium text-ink leading-relaxed whitespace-pre-line">
                     {itemDescription}
                   </p>
                 </div>
@@ -1097,85 +1097,85 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
               {/* Essential Physical & Technical Attributes - Only displayed if fields exist */}
               {hasPhysicalAttributes && (
                 <div className="space-y-3 pt-2">
-                  <h3 className="text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300">
+                  <h3 className="text-xs font-bold uppercase tracking-wider text-ink-secondary">
                     Physical & Engineering Attributes
                   </h3>
 
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-3.5 text-xs">
                     {steelGrade && (
                       <div className="flex flex-col">
-                        <span className="font-semibold text-slate-500 dark:text-slate-400">Material Grade</span>
-                        <span className="font-bold text-slate-900 dark:text-white mt-0.5">{steelGrade}</span>
+                        <span className="font-semibold text-ink-muted">Material Grade</span>
+                        <span className="font-bold text-ink mt-0.5">{steelGrade}</span>
                       </div>
                     )}
 
                     {dimensions && (
                       <div className="flex flex-col">
-                        <span className="font-semibold text-slate-500 dark:text-slate-400">Dimensions</span>
-                        <span className="font-mono font-bold text-slate-900 dark:text-white mt-0.5">{dimensions}</span>
+                        <span className="font-semibold text-ink-muted">Dimensions</span>
+                        <span className="font-mono font-bold text-ink mt-0.5">{dimensions}</span>
                       </div>
                     )}
 
                     {pipeDiameter && (
                       <div className="flex flex-col">
-                        <span className="font-semibold text-slate-500 dark:text-slate-400">Pipe Diameter</span>
-                        <span className="font-bold text-slate-900 dark:text-white mt-0.5">{pipeDiameter}</span>
+                        <span className="font-semibold text-ink-muted">Pipe Diameter</span>
+                        <span className="font-bold text-ink mt-0.5">{pipeDiameter}</span>
                       </div>
                     )}
 
                     {rodThickness && (
                       <div className="flex flex-col">
-                        <span className="font-semibold text-slate-500 dark:text-slate-400">Thickness</span>
-                        <span className="font-bold text-slate-900 dark:text-white mt-0.5">{rodThickness}</span>
+                        <span className="font-semibold text-ink-muted">Thickness</span>
+                        <span className="font-bold text-ink mt-0.5">{rodThickness}</span>
                       </div>
                     )}
 
                     {loadCapacity && (
                       <div className="flex flex-col">
-                        <span className="font-semibold text-slate-500 dark:text-slate-400">Load Capacity</span>
-                        <span className="font-bold text-emerald-600 dark:text-emerald-400 mt-0.5">{loadCapacity}</span>
+                        <span className="font-semibold text-ink-muted">Load Capacity</span>
+                        <span className="font-bold text-tone-green-text mt-0.5">{loadCapacity}</span>
                       </div>
                     )}
 
                     {surfaceFinish && (
                       <div className="flex flex-col">
-                        <span className="font-semibold text-slate-500 dark:text-slate-400">Surface Finish</span>
-                        <span className="font-bold text-slate-900 dark:text-white mt-0.5">{surfaceFinish}</span>
+                        <span className="font-semibold text-ink-muted">Surface Finish</span>
+                        <span className="font-bold text-ink mt-0.5">{surfaceFinish}</span>
                       </div>
                     )}
 
                     {netWeight && (
                       <div className="flex flex-col">
-                        <span className="font-semibold text-slate-500 dark:text-slate-400">Net Weight</span>
-                        <span className="font-bold text-slate-900 dark:text-white mt-0.5">{netWeight}</span>
+                        <span className="font-semibold text-ink-muted">Net Weight</span>
+                        <span className="font-bold text-ink mt-0.5">{netWeight}</span>
                       </div>
                     )}
 
                     {grossWeight && (
                       <div className="flex flex-col">
-                        <span className="font-semibold text-slate-500 dark:text-slate-400">Gross Weight</span>
-                        <span className="font-bold text-slate-900 dark:text-white mt-0.5">{grossWeight}</span>
+                        <span className="font-semibold text-ink-muted">Gross Weight</span>
+                        <span className="font-bold text-ink mt-0.5">{grossWeight}</span>
                       </div>
                     )}
 
                     {packagingType && (
                       <div className="flex flex-col">
-                        <span className="font-semibold text-slate-500 dark:text-slate-400">Packaging Type</span>
-                        <span className="font-bold text-slate-900 dark:text-white mt-0.5">{packagingType}</span>
+                        <span className="font-semibold text-ink-muted">Packaging Type</span>
+                        <span className="font-bold text-ink mt-0.5">{packagingType}</span>
                       </div>
                     )}
 
                     {unitsPerCarton && (
                       <div className="flex flex-col">
-                        <span className="font-semibold text-slate-500 dark:text-slate-400">Units Per Carton</span>
-                        <span className="font-bold font-mono text-slate-900 dark:text-white mt-0.5">{unitsPerCarton}</span>
+                        <span className="font-semibold text-ink-muted">Units Per Carton</span>
+                        <span className="font-bold font-mono text-ink mt-0.5">{unitsPerCarton}</span>
                       </div>
                     )}
 
                     {leadTimeDays > 0 && (
                       <div className="flex flex-col">
-                        <span className="font-semibold text-slate-500 dark:text-slate-400">Procurement Lead Time</span>
-                        <span className="font-bold text-slate-900 dark:text-white mt-0.5">
+                        <span className="font-semibold text-ink-muted">Procurement Lead Time</span>
+                        <span className="font-bold text-ink mt-0.5">
                           {leadTimeDays} Days
                         </span>
                       </div>
@@ -1194,7 +1194,7 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
         <div className="space-y-4">
 
           {/* Distinct Tab Navigation Header (Clean pill navigation, no dull gray washout) */}
-          <div className="flex items-center gap-2 border-b border-slate-200 dark:border-slate-800 pb-3 overflow-x-auto scrollbar-none">
+          <div className="flex items-center gap-2 border-b border-border pb-3 overflow-x-auto scrollbar-none">
             {tabs.map((t) => {
               const Icon = t.icon;
               const isActive = activeTab === t.id;
@@ -1206,11 +1206,11 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
                   className={clsx(
                     'flex items-center gap-2.5 px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap cursor-pointer',
                     isActive
-                      ? 'bg-primary text-white shadow-sm ring-1 ring-primary/20'
-                      : 'text-slate-700 dark:text-slate-300 bg-white dark:bg-slate-900 hover:text-primary dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200/90 dark:border-slate-800'
+                      ? 'bg-primary text-inverse shadow-sm ring-1 ring-primary/20'
+                      : 'text-ink-secondary bg-surface hover:text-primary hover:bg-muted border border-border'
                   )}
                 >
-                  <Icon className={clsx('h-4 w-4 shrink-0', isActive ? 'text-white' : 'text-primary')} />
+                  <Icon className={clsx('h-4 w-4 shrink-0', isActive ? 'text-inverse' : 'text-primary')} />
                   <span>{t.label}</span>
                 </button>
               );
@@ -1222,13 +1222,13 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
             <div className="space-y-6 pt-2">
 
               {/* Variants Matrix Table Card (Flat Inventory List Style) */}
-              <Card className="rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm overflow-hidden">
-                <CardHeader className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 p-5 flex flex-row items-center justify-between">
+              <Card className="rounded-2xl border border-border bg-surface shadow-sm overflow-hidden">
+                <CardHeader className="bg-surface border-b border-border p-5 flex flex-row items-center justify-between">
                   <div className="flex items-center gap-3">
                     <div className="h-9 w-9 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
                       <Boxes className="h-5 w-5" />
                     </div>
-                    <CardTitle className="text-sm font-bold text-slate-900 dark:text-white">
+                    <CardTitle className="text-sm font-bold text-ink">
                       Configured Variants Matrix
                     </CardTitle>
                   </div>
@@ -1250,26 +1250,26 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
                         {variantsList.length > 0 ? (
                           variantsList.map((v, idx) => (
                             <TableRow key={v.id || idx} className="hover:bg-muted/40 transition-colors">
-                              <TableCell className="font-bold text-slate-900 dark:text-white text-xs">
+                              <TableCell className="font-bold text-ink text-xs">
                                 {v.name || `Variant ${idx + 1}`}
                               </TableCell>
-                              <TableCell className="font-medium text-slate-700 dark:text-slate-300 text-xs">
+                              <TableCell className="font-medium text-ink-secondary text-xs">
                                 {v.measurementValue || '—'}
                               </TableCell>
-                              <TableCell className="text-right font-mono font-bold text-emerald-600 dark:text-emerald-400 text-xs">
+                              <TableCell className="text-right font-mono font-bold text-tone-green-text text-xs">
                                 {v.openingStock ?? 0} {uomSymbol}
                               </TableCell>
-                              <TableCell className="text-right font-mono font-semibold text-slate-700 dark:text-slate-300 text-xs">
+                              <TableCell className="text-right font-mono font-semibold text-ink-secondary text-xs">
                                 {v.minStockLevel ?? 0} {uomSymbol}
                               </TableCell>
-                              <TableCell className="text-right font-mono font-extrabold text-slate-900 dark:text-white text-xs">
+                              <TableCell className="text-right font-mono font-extrabold text-ink text-xs">
                                 {Number(v.standardPrice) > 0 ? `₹${Number(v.standardPrice).toLocaleString('en-IN')}` : '—'}
                               </TableCell>
                             </TableRow>
                           ))
                         ) : (
                           <TableRow>
-                            <TableCell colSpan={5} className="h-28 text-center text-slate-400 font-medium">
+                            <TableCell colSpan={5} className="h-28 text-center text-ink-placeholder font-medium">
                               No discrete variants configured. This item exists as a single standard catalog item.
                             </TableCell>
                           </TableRow>
@@ -1282,11 +1282,11 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
 
               {/* Units of Measure & Conversion Relations Card */}
               {uomRelations.length > 0 && (
-                <Card className="rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm p-6 space-y-4">
-                  <div className="border-b border-slate-100 dark:border-slate-800 pb-3 flex items-center justify-between">
+                <Card className="rounded-2xl border border-border bg-surface shadow-sm p-6 space-y-4">
+                  <div className="border-b border-border pb-3 flex items-center justify-between">
                     <div className="flex items-center gap-2.5">
                       <Scale className="h-4 w-4 text-primary" />
-                      <CardTitle className="text-sm font-bold text-slate-900 dark:text-white">
+                      <CardTitle className="text-sm font-bold text-ink">
                         Units of Measure &amp; Conversion Relations
                       </CardTitle>
                     </div>
@@ -1297,14 +1297,14 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
                     {/* Primary Base UOM Card */}
-                    <div className="rounded-xl border border-primary/20 bg-primary/5 dark:bg-primary/10 p-4 space-y-1">
+                    <div className="rounded-xl border border-primary/20 bg-primary/5 p-4 space-y-1">
                       <span className="text-[10px] font-bold uppercase tracking-wider text-primary block">
                         Primary Base UOM
                       </span>
-                      <p className="text-base font-black text-slate-900 dark:text-white">
+                      <p className="text-base font-black text-ink">
                         {uomName} {uomSymbol ? `(${uomSymbol})` : ''}
                       </p>
-                      <span className="inline-block text-[10px] font-bold px-2 py-0.5 rounded bg-primary text-white shadow-2xs">
+                      <span className="inline-block text-[10px] font-bold px-2 py-0.5 rounded bg-primary text-inverse shadow-2xs">
                         Base Anchor
                       </span>
                     </div>
@@ -1321,16 +1321,16 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
                       return (
                         <div
                           key={rel.id || idx}
-                          className="rounded-xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 space-y-1.5 shadow-2xs hover:border-primary/40 transition-colors"
+                          className="rounded-xl border border-border bg-surface p-4 space-y-1.5 shadow-2xs hover:border-primary/40 transition-colors"
                         >
-                          <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 block">
+                          <span className="text-[10px] font-bold uppercase tracking-wider text-ink-muted block">
                             Conversion #{idx + 1}
                           </span>
                           <p className="font-mono font-bold text-sm text-primary">
                             {rel.fromQuantity ?? 1} {fromLabel} = {rel.toQuantity ?? rel.factor} {toLabel}
                           </p>
                           {inverseNum !== null && (
-                            <p className="text-[11px] font-mono text-slate-500 dark:text-slate-400">
+                            <p className="text-[11px] font-mono text-ink-muted">
                               ⇄ 1 {toLabel} = {inverseNum} {fromLabel}
                             </p>
                           )}
@@ -1343,11 +1343,11 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
 
               {/* Technical Specifications (Custom Attributes) */}
               {technicalFields.length > 0 && (
-                <Card className="rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm p-6 space-y-4">
-                  <div className="border-b border-slate-100 dark:border-slate-800 pb-3 flex items-center justify-between">
+                <Card className="rounded-2xl border border-border bg-surface shadow-sm p-6 space-y-4">
+                  <div className="border-b border-border pb-3 flex items-center justify-between">
                     <div className="flex items-center gap-2.5">
                       <Wrench className="h-4 w-4 text-primary" />
-                      <CardTitle className="text-sm font-bold text-slate-900 dark:text-white">
+                      <CardTitle className="text-sm font-bold text-ink">
                         Technical Parameters & Metallurgy
                       </CardTitle>
                     </div>
@@ -1360,12 +1360,12 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
                     {technicalFields.map((field, index) => (
                       <div
                         key={index}
-                        className="rounded-xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 transition-all hover:border-primary/40 shadow-2xs"
+                        className="rounded-xl border border-border bg-surface p-4 transition-all hover:border-primary/40 shadow-2xs"
                       >
-                        <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 block">
+                        <span className="text-[11px] font-bold uppercase tracking-wider text-ink-muted block">
                           {field.name || 'Specification'}
                         </span>
-                        <span className="text-sm font-extrabold text-slate-900 dark:text-white mt-1 block break-words">
+                        <span className="text-sm font-extrabold text-ink mt-1 block break-words">
                           {field.value || '—'}
                         </span>
                       </div>
@@ -1376,9 +1376,9 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
 
               {/* Custom Business Identifiers */}
               {customFields.length > 0 && (
-                <Card className="rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm p-6 space-y-4">
-                  <div className="border-b border-slate-100 dark:border-slate-800 pb-3 flex items-center justify-between">
-                    <CardTitle className="text-sm font-bold text-slate-900 dark:text-white">
+                <Card className="rounded-2xl border border-border bg-surface shadow-sm p-6 space-y-4">
+                  <div className="border-b border-border pb-3 flex items-center justify-between">
+                    <CardTitle className="text-sm font-bold text-ink">
                       Commercial & Custom Business Identifiers
                     </CardTitle>
                     <Badge variant="outline" className="font-mono text-xs font-bold">
@@ -1390,12 +1390,12 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
                     {customFields.map((field, index) => (
                       <div
                         key={index}
-                        className="rounded-xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 transition-all hover:border-primary/40 shadow-2xs"
+                        className="rounded-xl border border-border bg-surface p-4 transition-all hover:border-primary/40 shadow-2xs"
                       >
-                        <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 block">
+                        <span className="text-[11px] font-bold uppercase tracking-wider text-ink-muted block">
                           {field.name || 'Identifier'}
                         </span>
-                        <span className="text-sm font-mono font-bold text-slate-900 dark:text-white mt-1 block break-words">
+                        <span className="text-sm font-mono font-bold text-ink mt-1 block break-words">
                           {field.value || '—'}
                         </span>
                       </div>
@@ -1442,13 +1442,13 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
               <div className="space-y-6 pt-2">
 
                 {/* 1. BOM (Appears First) */}
-                <Card className="rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm overflow-hidden">
-                  <CardHeader className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <Card className="rounded-2xl border border-border bg-surface shadow-sm overflow-hidden">
+                  <CardHeader className="bg-surface border-b border-border p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                     <div className="flex items-center gap-3">
                       <div className="h-9 w-9 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
                         <Layers className="h-5 w-5" />
                       </div>
-                      <CardTitle className="text-sm font-bold text-slate-900 dark:text-white">
+                      <CardTitle className="text-sm font-bold text-ink">
                         BOM
                       </CardTitle>
                     </div>
@@ -1469,8 +1469,8 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
 
                   <CardContent className="p-6">
                     {bomVersions.length === 0 ? (
-                      <div className="text-center py-10 text-xs text-slate-400 space-y-3 font-medium">
-                        <Layers className="h-8 w-8 mx-auto text-slate-300 dark:text-slate-600" />
+                      <div className="text-center py-10 text-xs text-ink-placeholder space-y-3 font-medium">
+                        <Layers className="h-8 w-8 mx-auto text-ink-placeholder" />
                         <p>No Bill of Materials recipe configured for this item.</p>
                       </div>
                     ) : (() => {
@@ -1497,12 +1497,12 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
                                     className={clsx(
                                       'rounded-lg border px-3 py-2 text-xs font-semibold transition-colors',
                                       isSelected
-                                        ? 'border-primary bg-primary text-white shadow-sm'
+                                        ? 'border-primary bg-primary text-inverse shadow-sm'
                                         : 'border-border bg-background text-foreground hover:bg-muted'
                                     )}
                                   >
                                     {bom.bomNumber || `BOM v${bom.version}`}
-                                    <span className={clsx('ml-2 text-[10px]', isSelected ? 'text-white/80' : 'text-muted-foreground')}>
+                                    <span className={clsx('ml-2 text-[10px]', isSelected ? 'text-inverse' : 'text-muted-foreground')}>
                                       {(bom.lines || []).length} items
                                     </span>
                                   </button>
@@ -1525,7 +1525,7 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
                               <TableBody>
                                 {lines.length === 0 ? (
                                   <TableRow>
-                                    <TableCell colSpan={5} className="h-24 text-center text-slate-400 font-medium">
+                                    <TableCell colSpan={5} className="h-24 text-center text-ink-placeholder font-medium">
                                       No component parts listed in this formulation version.
                                     </TableCell>
                                   </TableRow>
@@ -1542,21 +1542,21 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
                                     return (
                                       <TableRow key={line.id || idx} className="hover:bg-muted/40 transition-colors">
                                         <TableCell>
-                                          <div className="font-bold text-slate-900 dark:text-white text-xs">
+                                          <div className="font-bold text-ink text-xs">
                                             {partTitle}
                                           </div>
-                                          {variantLabel && <div className="mt-0.5 flex items-center gap-2"><span className="text-[11px] font-normal text-muted-foreground">{variantLabel}</span><span className="shrink-0 rounded-md border border-violet-200 bg-violet-50 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide text-violet-700 dark:border-violet-800 dark:bg-violet-950/50 dark:text-violet-300">Variant</span></div>}
+                                          {variantLabel && <div className="mt-0.5 flex items-center gap-2"><span className="text-[11px] font-normal text-muted-foreground">{variantLabel}</span><span className="shrink-0 rounded-md border border-tone-purple-solid/25 bg-tone-purple-bg px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide text-tone-purple-text">Variant</span></div>}
                                         </TableCell>
-                                        <TableCell className="text-right font-mono font-bold text-slate-900 dark:text-white text-xs">
+                                        <TableCell className="text-right font-mono font-bold text-ink text-xs">
                                           {qty.toLocaleString('en-IN', { maximumFractionDigits: 4 })}
                                         </TableCell>
-                                        <TableCell className="font-mono font-semibold text-slate-600 dark:text-slate-300 text-xs">
+                                        <TableCell className="font-mono font-semibold text-ink-secondary text-xs">
                                           {uomText}
                                         </TableCell>
-                                        <TableCell className="text-right font-mono font-semibold text-slate-600 dark:text-slate-400 text-xs">
+                                        <TableCell className="text-right font-mono font-semibold text-ink-secondary text-xs">
                                           ₹{rate.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                                         </TableCell>
-                                        <TableCell className="text-right font-mono font-extrabold text-slate-900 dark:text-white text-xs">
+                                        <TableCell className="text-right font-mono font-extrabold text-ink text-xs">
                                           ₹{lineCost.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                                         </TableCell>
                                       </TableRow>
@@ -1565,12 +1565,12 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
                                 )}
                               </TableBody>
                               {lines.length > 0 && (
-                                <TableFooter className="bg-slate-50/90 dark:bg-slate-800/80 border-t-2 border-slate-200 dark:border-slate-700">
+                                <TableFooter className="bg-muted border-t-2 border-border">
                                   <TableRow>
-                                    <TableCell colSpan={4} className="text-right font-extrabold text-xs uppercase tracking-wider text-slate-700 dark:text-slate-200 py-3">
+                                    <TableCell colSpan={4} className="text-right font-extrabold text-xs uppercase tracking-wider text-ink-secondary py-3">
                                       Total BOM Cost:
                                     </TableCell>
-                                    <TableCell className="text-right font-mono font-black text-sm text-primary dark:text-primary-foreground py-3">
+                                    <TableCell className="text-right font-mono font-black text-sm text-primary py-3">
                                       ₹{totalBomCost.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                                     </TableCell>
                                   </TableRow>
@@ -1585,13 +1585,13 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
                 </Card>
 
                 {/* 2. Production Route Operations (Appears Below BOM) */}
-                <Card className="rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm overflow-hidden">
-                  <CardHeader className="bg-slate-50/80 dark:bg-slate-800/40 border-b border-slate-200/80 dark:border-slate-800 p-5 flex flex-row items-center justify-between">
+                <Card className="rounded-2xl border border-border bg-surface shadow-sm overflow-hidden">
+                  <CardHeader className="bg-muted border-b border-border p-5 flex flex-row items-center justify-between">
                     <div className="flex items-center gap-3">
                       <div className="h-9 w-9 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
                         <GitBranch className="h-5 w-5" />
                       </div>
-                      <CardTitle className="text-sm font-bold text-slate-900 dark:text-white">
+                      <CardTitle className="text-sm font-bold text-ink">
                         Production Route Operations
                       </CardTitle>
                     </div>
@@ -1599,7 +1599,7 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
 
                   <CardContent className="p-6">
                     {displayRoutes.length === 0 ? (
-                      <div className="text-center py-8 text-xs text-slate-400 font-medium">
+                      <div className="text-center py-8 text-xs text-ink-placeholder font-medium">
                         No active production route assigned to this item.
                       </div>
                     ) : (
@@ -1610,7 +1610,7 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
                         return (
                           <div key={route.id} className="space-y-4">
                             <div className="flex items-center justify-between">
-                              <span className="font-extrabold text-slate-900 dark:text-white text-base">
+                              <span className="font-extrabold text-ink text-base">
                                 {routeTitle}
                               </span>
                               {route.id !== 'spec-route' && <Link href={`/inventory/routing/${route.id}`}>
@@ -1634,16 +1634,16 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
                                 return (
                                   <div
                                     key={step.id || sIdx}
-                                    className="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex items-start gap-3 transition-all hover:border-primary/40 shadow-2xs"
+                                    className="p-4 rounded-xl border border-border bg-surface flex items-start gap-3 transition-all hover:border-primary/40 shadow-2xs"
                                   >
-                                    <span className="h-7 w-7 rounded-lg bg-primary text-white font-mono text-xs font-black flex items-center justify-center shrink-0 shadow-xs">
+                                    <span className="h-7 w-7 rounded-lg bg-primary text-inverse font-mono text-xs font-black flex items-center justify-center shrink-0 shadow-xs">
                                       {step.sequenceNumber || sIdx + 1}
                                     </span>
                                     <div className="space-y-1 min-w-0">
-                                      <p className="text-xs font-extrabold text-slate-900 dark:text-white truncate">
+                                      <p className="text-xs font-extrabold text-ink truncate">
                                         {stepTitle}
                                       </p>
-                                      <p className="text-[11px] font-semibold text-slate-500">
+                                      <p className="text-[11px] font-semibold text-ink-muted">
                                         {deptName}
                                       </p>
                                       <p className="font-mono text-[11px] font-bold text-primary">
@@ -1671,53 +1671,53 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
 
               {/* Warehouse Inventory Metric Summary Cards */}
               <div className={clsx('grid grid-cols-1 gap-4', hasLiveStockValue ? 'sm:grid-cols-4' : 'sm:grid-cols-3')}>
-                <Card className="p-5 border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 block">Total On-Hand</span>
-                  <p className="text-2xl font-black font-mono text-slate-900 dark:text-white mt-1">
-                    {liveOnHand.toLocaleString()} <span className="text-xs font-semibold text-slate-500">{uomSymbol}</span>
+                <Card className="p-5 border border-border bg-surface shadow-sm">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-ink-muted block">Total On-Hand</span>
+                  <p className="text-2xl font-black font-mono text-ink mt-1">
+                    {liveOnHand.toLocaleString()} <span className="text-xs font-semibold text-ink-muted">{uomSymbol}</span>
                   </p>
-                  <p className="text-xs text-slate-400 mt-0.5">From posted stock balances</p>
+                  <p className="text-xs text-ink-placeholder mt-0.5">From posted stock balances</p>
                 </Card>
 
-                <Card className="p-5 border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 block">Allocated / Reserved</span>
-                  <p className="text-2xl font-black font-mono text-amber-600 dark:text-amber-400 mt-1">
-                    {liveReserved.toLocaleString()} <span className="text-xs font-semibold text-slate-500">{uomSymbol}</span>
+                <Card className="p-5 border border-border bg-surface shadow-sm">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-ink-muted block">Allocated / Reserved</span>
+                  <p className="text-2xl font-black font-mono text-tone-amber-text mt-1">
+                    {liveReserved.toLocaleString()} <span className="text-xs font-semibold text-ink-muted">{uomSymbol}</span>
                   </p>
-                  <p className="text-xs text-slate-400 mt-0.5">From active reservations</p>
+                  <p className="text-xs text-ink-placeholder mt-0.5">From active reservations</p>
                 </Card>
 
-                <Card className="p-5 border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 block">Available to Pick</span>
-                  <p className="text-2xl font-black font-mono text-emerald-600 dark:text-emerald-400 mt-1">
-                    {liveAvailable.toLocaleString()} <span className="text-xs font-semibold text-slate-500">{uomSymbol}</span>
+                <Card className="p-5 border border-border bg-surface shadow-sm">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-ink-muted block">Available to Pick</span>
+                  <p className="text-2xl font-black font-mono text-tone-green-text mt-1">
+                    {liveAvailable.toLocaleString()} <span className="text-xs font-semibold text-ink-muted">{uomSymbol}</span>
                   </p>
-                  <p className="text-xs text-slate-400 mt-0.5">On-hand less reserved</p>
+                  <p className="text-xs text-ink-placeholder mt-0.5">On-hand less reserved</p>
                 </Card>
 
                 {hasLiveStockValue && (
-                <Card className="p-5 border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 block">Total Stock Valuation</span>
-                  <p className="text-2xl font-black font-mono text-slate-900 dark:text-white mt-1">
+                <Card className="p-5 border border-border bg-surface shadow-sm">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-ink-muted block">Total Stock Valuation</span>
+                  <p className="text-2xl font-black font-mono text-ink mt-1">
                     ₹{liveStockValue.toLocaleString('en-IN', { maximumFractionDigits: 2 })}
                   </p>
-                  <p className="text-xs text-slate-400 mt-0.5">From inventory balance cost</p>
+                  <p className="text-xs text-ink-placeholder mt-0.5">From inventory balance cost</p>
                 </Card>
                 )}
               </div>
 
               {/* Stock Balances Table Card (Flat Inventory List Style) */}
-              <Card className="rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm overflow-hidden">
-                <CardHeader className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 p-5 flex flex-row items-center justify-between">
+              <Card className="rounded-2xl border border-border bg-surface shadow-sm overflow-hidden">
+                <CardHeader className="bg-surface border-b border-border p-5 flex flex-row items-center justify-between">
                   <div className="flex items-center gap-3">
                     <div className="h-9 w-9 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
                       <Package className="h-5 w-5" />
                     </div>
                     <div>
-                      <CardTitle className="text-sm font-bold text-slate-900 dark:text-white">
+                      <CardTitle className="text-sm font-bold text-ink">
                         Stock Balances
                       </CardTitle>
-                      <CardDescription className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                      <CardDescription className="text-xs text-ink-muted mt-0.5">
                         Consolidated stock for this item and its variants
                       </CardDescription>
                     </div>
@@ -1736,21 +1736,21 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
                       <TableBody>
                         {loadingInventoryBalances || loadingVariantInventory || loadingFamilyAvailability ? (
                           <TableRow>
-                            <TableCell colSpan={2} className="h-28 text-center text-slate-400 font-medium">
+                            <TableCell colSpan={2} className="h-28 text-center text-ink-placeholder font-medium">
                               Loading stock balances...
                             </TableCell>
                           </TableRow>
                         ) : consolidatedStockBalances.length === 0 ? (
                           <TableRow>
-                            <TableCell colSpan={2} className="h-28 text-center text-slate-400 font-medium">
+                            <TableCell colSpan={2} className="h-28 text-center text-ink-placeholder font-medium">
                               No posted stock balances for this item or its variants.
                             </TableCell>
                           </TableRow>
                         ) : (
                           consolidatedStockBalances.map((balance) => (
                             <TableRow key={`${balance.itemId}:${balance.uomId}`} className="hover:bg-muted/40 transition-colors">
-                              <TableCell className="font-semibold text-slate-700 dark:text-slate-200 text-xs">{balance.itemName} <span className="font-normal text-slate-500">({balance.uom})</span></TableCell>
-                              <TableCell className="text-right font-mono font-black text-emerald-600 dark:text-emerald-400 text-xs">
+                              <TableCell className="font-semibold text-ink-secondary text-xs">{balance.itemName} <span className="font-normal text-ink-muted">({balance.uom})</span></TableCell>
+                              <TableCell className="text-right font-mono font-black text-tone-green-text text-xs">
                                 {balance.available.toLocaleString()} {balance.uom}
                               </TableCell>
                             </TableRow>
@@ -1767,17 +1767,17 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
 
           {/* Inventory balances and the immutable movement ledger share one tab. */}
           {activeTab === 'inventory' && (
-            <Card className="rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm overflow-hidden pt-1">
-              <CardHeader className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 p-5 flex flex-row items-center justify-between">
+            <Card className="rounded-2xl border border-border bg-surface shadow-sm overflow-hidden pt-1">
+              <CardHeader className="bg-surface border-b border-border p-5 flex flex-row items-center justify-between">
                 <div className="flex items-center gap-3">
                   <div className="h-9 w-9 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
                     <History className="h-5 w-5" />
                   </div>
                   <div>
-                    <CardTitle className="text-sm font-bold text-slate-900 dark:text-white">
+                    <CardTitle className="text-sm font-bold text-ink">
                       Stock Movement Audit Trail
                     </CardTitle>
-                    <CardDescription className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                    <CardDescription className="text-xs text-ink-muted mt-0.5">
                       Immutable transaction log of receipts, production issues, transfers, and inventory adjustments
                     </CardDescription>
                   </div>
@@ -1807,7 +1807,7 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
                     <TableBody>
                     {combinedLedgerRows.length === 0 ? (
                       <TableRow>
-                        <TableCell colSpan={7} className="px-6 py-10 text-center text-slate-400 font-medium">
+                        <TableCell colSpan={7} className="px-6 py-10 text-center text-ink-placeholder font-medium">
                           No stock movements have been recorded for this item yet.
                         </TableCell>
                       </TableRow>
@@ -1825,8 +1825,8 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
                         const planId = mov.productionPlan?.id || (mov.sourceType === 'PRODUCTION_PLAN' ? mov.sourceId : null);
 
                         return (
-                          <TableRow key={mov.id} className="hover:bg-slate-50 dark:hover:bg-slate-800/40 transition-colors">
-                            <TableCell className="px-6 py-4 font-mono font-semibold text-slate-600 dark:text-slate-400 text-xs whitespace-nowrap">
+                          <TableRow key={mov.id} className="hover:bg-muted transition-colors">
+                            <TableCell className="px-6 py-4 font-mono font-semibold text-ink-secondary text-xs whitespace-nowrap">
                               {new Date(mov.postedAt).toLocaleString('en-IN', {
                                 day: '2-digit',
                                 month: 'short',
@@ -1836,7 +1836,7 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
                               })}
                             </TableCell>
 
-                            <TableCell className="px-6 py-4 font-semibold text-slate-700 dark:text-slate-200 text-xs">
+                            <TableCell className="px-6 py-4 font-semibold text-ink-secondary text-xs">
                               {mov.itemName}
                             </TableCell>
 
@@ -1845,26 +1845,26 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
                                 className={clsx(
                                   'inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-bold',
                                   isReceipt
-                                    ? 'bg-emerald-100 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300'
+                                    ? 'bg-tone-green-bg text-tone-green-text'
                                     : isIssue
-                                    ? 'bg-amber-100 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300'
-                                    : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300'
+                                    ? 'bg-tone-amber-bg text-tone-amber-text'
+                                    : 'bg-muted text-ink-secondary'
                                 )}
                               >
-                                {isReceipt ? <ArrowDownLeft className="w-3.5 h-3.5 text-emerald-600" /> : isIssue ? <ArrowUpRight className="w-3.5 h-3.5 text-amber-600" /> : null}
+                                {isReceipt ? <ArrowDownLeft className="w-3.5 h-3.5 text-tone-green-text" /> : isIssue ? <ArrowUpRight className="w-3.5 h-3.5 text-tone-amber-text" /> : null}
                                 <span>{isReceipt ? 'Receipt (GRN)' : isIssue ? 'Production Issue' : isOpening ? 'Opening Stock' : (mov.movementType || 'Movement')}</span>
                               </span>
                             </TableCell>
 
                             <TableCell className="px-6 py-4">
                               {mov.location ? (
-                                <span className="inline-flex items-center gap-1 text-xs font-semibold text-slate-700 dark:text-slate-300">
+                                <span className="inline-flex items-center gap-1 text-xs font-semibold text-ink-secondary">
                                   <span className="font-mono font-bold text-primary">{mov.location.code}</span>
-                                  <span className="text-slate-400">·</span>
+                                  <span className="text-ink-placeholder">·</span>
                                   <span>{mov.location.name}</span>
                                 </span>
                               ) : (
-                                <span className="text-slate-400 text-xs">—</span>
+                                <span className="text-ink-placeholder text-xs">—</span>
                               )}
                             </TableCell>
 
@@ -1887,18 +1887,18 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
                                   <ExternalLink className="h-3 w-3" />
                                 </Link>
                               ) : (
-                                <span className="text-slate-400 text-xs">—</span>
+                                <span className="text-ink-placeholder text-xs">—</span>
                               )}
                             </TableCell>
 
                             <TableCell className="px-6 py-4 text-right font-mono font-extrabold text-xs">
-                              <span className={isOut ? 'text-rose-600 dark:text-rose-400' : 'text-emerald-600 dark:text-emerald-400'}>
+                              <span className={isOut ? 'text-tone-red-text' : 'text-tone-green-text'}>
                                 {isOut ? '−' : '+'}
                                 {Math.abs(Number(mov.quantityDelta ?? mov.quantity ?? 0))} {uomSymbol}
                               </span>
                             </TableCell>
 
-                            <TableCell className="px-6 py-4 text-right font-mono font-black text-slate-900 dark:text-white text-xs">
+                            <TableCell className="px-6 py-4 text-right font-mono font-black text-ink text-xs">
                               {mov.totalBalanceAfter != null
                                 ? `${Number(mov.totalBalanceAfter).toLocaleString('en-IN')} ${uomSymbol}`
                                 : crossLocationRunningTotal.has(mov.id)
@@ -1925,8 +1925,8 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
 
             {/* Commercial Summary Cards */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              <Card className="p-5 border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 block">
+              <Card className="p-5 border border-border bg-surface shadow-sm">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-ink-muted block">
                   Benchmark Selling Rate
                 </span>
                 <p className="text-2xl font-black font-mono text-primary mt-1">
@@ -1934,52 +1934,52 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
                     ? `₹${sellingPrice.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
                     : '—'}
                 </p>
-                <p className="text-xs text-slate-400 mt-0.5">Base catalog rate per {uomSymbol || 'unit'}</p>
+                <p className="text-xs text-ink-placeholder mt-0.5">Base catalog rate per {uomSymbol || 'unit'}</p>
               </Card>
 
-              <Card className="p-5 border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 block">
+              <Card className="p-5 border border-border bg-surface shadow-sm">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-ink-muted block">
                   Assigned Pricing Master
                 </span>
-                <p className="text-lg font-black text-slate-900 dark:text-white mt-1 truncate" title={pricingMasterName || 'Standard Catalog Pricing'}>
+                <p className="text-lg font-black text-ink mt-1 truncate" title={pricingMasterName || 'Standard Catalog Pricing'}>
                   {pricingMasterName || (pricingMasterId ? 'Custom Pricing Master' : 'Standard Catalog')}
                 </p>
-                <p className="text-xs font-mono font-semibold text-slate-400 mt-0.5">
+                <p className="text-xs font-mono font-semibold text-ink-placeholder mt-0.5">
                   {matchedPricingMaster?.code ? `Code: ${matchedPricingMaster.code}` : (pricingMasterId ? 'Master Active' : 'No master linked')}
                 </p>
               </Card>
 
-              <Card className="p-5 border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 block">
+              <Card className="p-5 border border-border bg-surface shadow-sm">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-ink-muted block">
                   Customer Tiers Matrix
                 </span>
-                <p className="text-2xl font-black font-mono text-emerald-600 dark:text-emerald-400 mt-1">
+                <p className="text-2xl font-black font-mono text-tone-green-text mt-1">
                   {effectiveTiers.length} {effectiveTiers.length === 1 ? 'Tier' : 'Tiers'}
                 </p>
-                <p className="text-xs text-slate-400 mt-0.5">Configured channel discounts</p>
+                <p className="text-xs text-ink-placeholder mt-0.5">Configured channel discounts</p>
               </Card>
 
-              <Card className="p-5 border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 block">
+              <Card className="p-5 border border-border bg-surface shadow-sm">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-ink-muted block">
                   GST & Tariff Slab
                 </span>
-                <p className="text-2xl font-black font-mono text-slate-900 dark:text-white mt-1">
+                <p className="text-2xl font-black font-mono text-ink mt-1">
                   {taxRate != null ? `${taxRate}%` : '—'}
                 </p>
-                <p className="text-xs font-mono font-semibold text-slate-500 mt-0.5">HSN: {hsnCode || '—'}</p>
+                <p className="text-xs font-mono font-semibold text-ink-muted mt-0.5">HSN: {hsnCode || '—'}</p>
               </Card>
             </div>
 
             {/* Customer Pricing Tiers Matrix Table Card */}
-            <Card className="rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm overflow-hidden">
-              <CardHeader className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <Card className="rounded-2xl border border-border bg-surface shadow-sm overflow-hidden">
+              <CardHeader className="bg-surface border-b border-border p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                 <div className="flex items-center gap-3">
                   <div className="h-9 w-9 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
                     <BadgePercent className="h-5 w-5" />
                   </div>
                   <div>
                     <div className="flex items-center gap-2">
-                      <CardTitle className="text-sm font-bold text-slate-900 dark:text-white">
+                      <CardTitle className="text-sm font-bold text-ink">
                         Customer Pricing Tiers Matrix
                       </CardTitle>
                       {pricingMasterName && (
@@ -1988,7 +1988,7 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
                         </Badge>
                       )}
                     </div>
-                    <CardDescription className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                    <CardDescription className="text-xs text-ink-muted mt-0.5">
                       Wholesale, e-commerce, dealer, and distribution tier discount rules and net applied prices
                     </CardDescription>
                   </div>
@@ -1998,7 +1998,7 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
                   {pricingMasterId && (
                     <Link
                       href={`/products/pricing-masters/${pricingMasterId}`}
-                      className="h-9 px-3.5 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 text-xs font-bold text-slate-700 dark:text-slate-200 inline-flex items-center gap-1.5 transition"
+                      className="h-9 px-3.5 rounded-xl border border-border hover:bg-muted text-xs font-bold text-ink-secondary inline-flex items-center gap-1.5 transition"
                     >
                       <span>View Master</span>
                       <ExternalLink className="h-3 w-3 opacity-70" />
@@ -2006,7 +2006,7 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
                   )}
                   <Link
                     href={isMaterialEntity ? `/products/new?editId=${currentItem.id}&mode=edit&type=MATERIAL` : `/products/new?editId=${currentItem.id}&mode=edit`}
-                    className="h-9 px-3.5 rounded-xl bg-primary hover:bg-[#003c68] text-white text-xs font-bold inline-flex items-center gap-1.5 transition shadow-xs cursor-pointer"
+                    className="h-9 px-3.5 rounded-xl bg-primary hover:bg-[color:var(--action-primary-bg-hover)] text-inverse text-xs font-bold inline-flex items-center gap-1.5 transition shadow-xs cursor-pointer"
                   >
                     <Pencil className="h-3 w-3" />
                     <span>Edit Tiers</span>
@@ -2030,7 +2030,7 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
                     <TableBody>
                       {effectiveTiers.length === 0 ? (
                         <TableRow>
-                          <TableCell colSpan={6} className="h-28 text-center text-slate-400 font-medium">
+                          <TableCell colSpan={6} className="h-28 text-center text-ink-placeholder font-medium">
                             No customer pricing tiers configured for this item. Standard catalog rate applies.
                           </TableCell>
                         </TableRow>
@@ -2041,27 +2041,27 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
                           return (
                             <TableRow key={tier.id} className="hover:bg-muted/40 transition-colors">
                               <TableCell>
-                                <div className="font-bold text-slate-900 dark:text-white text-xs">
+                                <div className="font-bold text-ink text-xs">
                                   {tier.tierName}
                                 </div>
                                 {tier.tierCode && (
-                                  <span className="font-mono text-[10px] font-semibold text-slate-400 block mt-0.5">
+                                  <span className="font-mono text-[10px] font-semibold text-ink-placeholder block mt-0.5">
                                     {tier.tierCode}
                                   </span>
                                 )}
                               </TableCell>
-                              <TableCell className="text-right font-mono font-bold text-slate-700 dark:text-slate-300 text-xs">
+                              <TableCell className="text-right font-mono font-bold text-ink-secondary text-xs">
                                 ₹{tier.masterPrice.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                               </TableCell>
-                              <TableCell className="text-right font-mono font-bold text-amber-600 dark:text-amber-400 text-xs">
+                              <TableCell className="text-right font-mono font-bold text-tone-amber-text text-xs">
                                 {tier.discountPercentage}%
                               </TableCell>
-                              <TableCell className="text-right font-mono font-black text-primary dark:text-primary-foreground text-sm">
+                              <TableCell className="text-right font-mono font-black text-primary text-sm">
                                 ₹{tier.appliedPrice.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                               </TableCell>
                               <TableCell className="text-right font-mono font-semibold text-xs">
                                 {realization != null ? (
-                                  <span className={realization >= 80 ? 'text-emerald-600 dark:text-emerald-400 font-bold' : 'text-slate-600 dark:text-slate-400'}>
+                                  <span className={realization >= 80 ? 'text-tone-green-text font-bold' : 'text-ink-secondary'}>
                                     {realization.toFixed(1)}% of MRP
                                   </span>
                                 ) : (
@@ -2085,11 +2085,11 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
 
             {/* Custom Pricing Master Fields / Rules */}
             {effectivePricingFields.length > 0 && (
-              <Card className="rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm p-6 space-y-4">
-                <div className="border-b border-slate-100 dark:border-slate-800 pb-3 flex items-center justify-between">
+              <Card className="rounded-2xl border border-border bg-surface shadow-sm p-6 space-y-4">
+                <div className="border-b border-border pb-3 flex items-center justify-between">
                   <div className="flex items-center gap-2.5">
                     <BadgeDollarSign className="h-4 w-4 text-primary" />
-                    <CardTitle className="text-sm font-bold text-slate-900 dark:text-white">
+                    <CardTitle className="text-sm font-bold text-ink">
                       Commercial Pricing Master Rules & Attributes
                     </CardTitle>
                   </div>
@@ -2102,12 +2102,12 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
                   {effectivePricingFields.map((field: any, index: number) => (
                     <div
                       key={index}
-                      className="rounded-xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 transition-all hover:border-primary/40 shadow-2xs"
+                      className="rounded-xl border border-border bg-surface p-4 transition-all hover:border-primary/40 shadow-2xs"
                     >
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 block">
+                      <span className="text-[11px] font-bold uppercase tracking-wider text-ink-muted block">
                         {field.name || 'Rule'}
                       </span>
-                      <span className="text-sm font-extrabold text-slate-900 dark:text-white mt-1 block break-words">
+                      <span className="text-sm font-extrabold text-ink mt-1 block break-words">
                         {field.value || '—'}
                       </span>
                     </div>
@@ -2125,55 +2125,55 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
 
             {/* Vendor Sourcing Summary Cards */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              <Card className="p-5 border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 block">Valuation Rate</span>
-                <p className="text-2xl font-black font-mono text-slate-900 dark:text-white mt-1">
+              <Card className="p-5 border border-border bg-surface shadow-sm">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-ink-muted block">Valuation Rate</span>
+                <p className="text-2xl font-black font-mono text-ink mt-1">
                   {standardCost > 0
                     ? `₹${standardCost.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
                     : '—'}
                 </p>
-                <p className="text-xs text-slate-400 mt-0.5">Per {uomSymbol || 'unit'}</p>
+                <p className="text-xs text-ink-placeholder mt-0.5">Per {uomSymbol || 'unit'}</p>
               </Card>
 
-              <Card className="p-5 border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 block">Approved Vendors</span>
-                <p className="text-2xl font-black font-mono text-slate-900 dark:text-white mt-1">
+              <Card className="p-5 border border-border bg-surface shadow-sm">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-ink-muted block">Approved Vendors</span>
+                <p className="text-2xl font-black font-mono text-ink mt-1">
                   {vendorSources.length} Sources
                 </p>
-                <p className="text-xs text-slate-400 mt-0.5">Contracted suppliers</p>
+                <p className="text-xs text-ink-placeholder mt-0.5">Contracted suppliers</p>
               </Card>
 
-              <Card className="p-5 border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 block">Best Procurement Rate</span>
-                <p className="text-2xl font-black font-mono text-emerald-600 dark:text-emerald-400 mt-1">
+              <Card className="p-5 border border-border bg-surface shadow-sm">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-ink-muted block">Best Procurement Rate</span>
+                <p className="text-2xl font-black font-mono text-tone-green-text mt-1">
                   {vendorSources.length > 0
                     ? `₹${Math.min(...vendorSources.map((r) => Number(r.unitPrice || 0))).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
                     : '—'}
                 </p>
-                <p className="text-xs text-slate-400 mt-0.5">Lowest active quote</p>
+                <p className="text-xs text-ink-placeholder mt-0.5">Lowest active quote</p>
               </Card>
 
-              <Card className="p-5 border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 block">Procurement Lead Time</span>
-                <p className="text-2xl font-black font-mono text-slate-900 dark:text-white mt-1">
+              <Card className="p-5 border border-border bg-surface shadow-sm">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-ink-muted block">Procurement Lead Time</span>
+                <p className="text-2xl font-black font-mono text-ink mt-1">
                   {leadTimeDays > 0 ? `${leadTimeDays}d` : '7d'}
                 </p>
-                <p className="text-xs text-slate-400 mt-0.5">Contract turnaround</p>
+                <p className="text-xs text-ink-placeholder mt-0.5">Contract turnaround</p>
               </Card>
             </div>
 
             {/* Vendors List Table Card */}
-            <Card className="rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm overflow-hidden">
-              <CardHeader className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 p-5 flex flex-row items-center justify-between">
+            <Card className="rounded-2xl border border-border bg-surface shadow-sm overflow-hidden">
+              <CardHeader className="bg-surface border-b border-border p-5 flex flex-row items-center justify-between">
                 <div className="flex items-center gap-3">
                   <div className="h-9 w-9 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
                     <Scale className="h-5 w-5" />
                   </div>
                   <div>
-                    <CardTitle className="text-sm font-bold text-slate-900 dark:text-white">
+                    <CardTitle className="text-sm font-bold text-ink">
                       Approved Sourcing Vendors
                     </CardTitle>
-                    <CardDescription className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                    <CardDescription className="text-xs text-ink-muted mt-0.5">
                       Suppliers contracted for this item with lead times, minimum order quantities, and agreed prices
                     </CardDescription>
                   </div>
@@ -2200,7 +2200,7 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
                     <TableBody>
                       {loadingVendorPricings ? (
                         <TableRow>
-                          <TableCell colSpan={showVendorItemColumn ? 7 : 6} className="h-28 text-center text-slate-400 font-medium">
+                          <TableCell colSpan={showVendorItemColumn ? 7 : 6} className="h-28 text-center text-ink-placeholder font-medium">
                             Loading vendor pricing data...
                           </TableCell>
                         </TableRow>
@@ -2213,23 +2213,23 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
                           return (
                             <TableRow key={row.id} className="hover:bg-muted/40 transition-colors">
                               {showVendorItemColumn && (
-                                <TableCell className="font-medium text-slate-700 dark:text-slate-200 text-xs">
+                                <TableCell className="font-medium text-ink-secondary text-xs">
                                   {row.itemName || currentItem?.name || 'Item'}
                                 </TableCell>
                               )}
                               <TableCell className="font-mono font-bold text-primary text-xs">
                                 {v?.code || '—'}
                               </TableCell>
-                              <TableCell className="font-bold text-slate-900 dark:text-white text-xs">
+                              <TableCell className="font-bold text-ink text-xs">
                                 {v?.name || 'Supplier'}
                               </TableCell>
-                              <TableCell className="text-right font-mono font-black text-slate-900 dark:text-white text-sm">
+                              <TableCell className="text-right font-mono font-black text-ink text-sm">
                                 ₹{price.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                               </TableCell>
-                              <TableCell className="text-right font-mono font-semibold text-slate-600 dark:text-slate-400 text-xs">
+                              <TableCell className="text-right font-mono font-semibold text-ink-secondary text-xs">
                                 {leadTime}d
                               </TableCell>
-                              <TableCell className="text-slate-600 dark:text-slate-300 font-medium text-xs">
+                              <TableCell className="text-ink-secondary font-medium text-xs">
                                 {v?.paymentTerms || 'Net 30'}
                               </TableCell>
                               <TableCell className="text-right">
@@ -2247,7 +2247,7 @@ export function MaterialDetailWorkspace({ id, entityType = 'auto' }: MaterialDet
                         })
                       ) : (
                         <TableRow>
-                          <TableCell colSpan={showVendorItemColumn ? 7 : 6} className="h-28 text-center text-slate-400 font-medium">
+                          <TableCell colSpan={showVendorItemColumn ? 7 : 6} className="h-28 text-center text-ink-placeholder font-medium">
                             No approved vendor pricing records mapped for this item.
                           </TableCell>
                         </TableRow>
@@ -2309,8 +2309,8 @@ function ItemBarcodeModal({
             fontSize: 14,
             height: 64,
             margin: 8,
-            lineColor: '#0f172a',
-            background: '#ffffff',
+            lineColor: '#171717',
+            background: '#FFFFFF',
           });
         } catch {
           // ignore fallback
@@ -2329,19 +2329,19 @@ function ItemBarcodeModal({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-xs p-4 animate-in fade-in duration-200">
-      <div className="w-full max-w-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-xl overflow-hidden p-6 space-y-4">
-        <div className="flex justify-between items-center pb-2 border-b border-slate-100 dark:border-slate-800">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-inverse backdrop-blur-xs p-4 animate-in fade-in duration-200">
+      <div className="w-full max-w-md bg-surface border border-border rounded-2xl shadow-none overflow-hidden p-6 space-y-4">
+        <div className="flex justify-between items-center pb-2 border-b border-border">
           <div>
-            <h3 className="text-sm font-bold text-slate-900 dark:text-white">
+            <h3 className="text-sm font-bold text-ink">
               Inventory Bin Label
             </h3>
-            <p className="text-[11px] text-slate-500">Standard Code-128 Warehouse Barcode</p>
+            <p className="text-[11px] text-ink-muted">Standard Code-128 Warehouse Barcode</p>
           </div>
           <button
             type="button"
             onClick={onClose}
-            className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 cursor-pointer"
+            className="text-ink-placeholder hover:text-ink-secondary cursor-pointer"
           >
             <X className="w-5 h-5" />
           </button>
@@ -2349,12 +2349,12 @@ function ItemBarcodeModal({
 
         <div
           ref={printRef}
-          className="border border-slate-200 dark:border-slate-700 rounded-xl p-5 bg-white text-slate-900 flex flex-col items-center justify-center space-y-2"
+          className="border border-border rounded-xl p-5 bg-surface text-ink flex flex-col items-center justify-center space-y-2"
         >
           <svg ref={barcodeRef} className="max-w-full" />
           <div className="text-center pt-1">
-            <p className="text-xs font-bold text-slate-900">{name}</p>
-            <p className="text-[10px] text-slate-500 font-mono mt-0.5">
+            <p className="text-xs font-bold text-ink">{name}</p>
+            <p className="text-[10px] text-ink-muted font-mono mt-0.5">
               Code: {code} • UOM: {uom || 'units'}
             </p>
           </div>
@@ -2372,7 +2372,7 @@ function ItemBarcodeModal({
           <Button
             size="sm"
             onClick={() => handlePrint()}
-            className="rounded-xl h-10 px-4 bg-primary hover:bg-[#003c68] text-white text-xs font-bold shadow-xs cursor-pointer"
+            className="rounded-xl h-10 px-4 bg-primary hover:bg-[color:var(--action-primary-bg-hover)] text-inverse text-xs font-bold shadow-xs cursor-pointer"
           >
             <Printer className="w-4 h-4 mr-1.5" />
             Print Bin Tag

@@ -172,7 +172,7 @@ export function EvidenceAttachmentField({
               >
                 {isPdfFile ? (
                   <div className="w-full h-full flex flex-col items-center justify-center bg-muted/40 p-2 text-center">
-                    <FileText className="w-8 h-8 text-rose-500 mb-1" />
+                    <FileText className="w-8 h-8 text-tone-red-text mb-1" />
                     <span className="text-[10px] font-mono text-muted-foreground truncate w-full">
                       Document #{idx + 1} (PDF)
                     </span>
@@ -194,7 +194,7 @@ export function EvidenceAttachmentField({
                       e.stopPropagation();
                       setPreviewModalUrl(url);
                     }}
-                    className="p-1.5 rounded-lg bg-white/90 text-slate-800 hover:bg-white transition-colors cursor-pointer"
+                    className="p-1.5 rounded-lg bg-white/90 text-ink hover:bg-white transition-colors cursor-pointer"
                     title="Zoom / View Photo"
                   >
                     <ZoomIn className="w-4 h-4" />
@@ -207,7 +207,7 @@ export function EvidenceAttachmentField({
                         e.stopPropagation();
                         handleRemove(idx);
                       }}
-                      className="p-1.5 rounded-lg bg-rose-600 text-white hover:bg-rose-700 transition-colors cursor-pointer"
+                      className="p-1.5 rounded-lg bg-tone-rose-bg text-white hover:bg-tone-rose-bg transition-colors cursor-pointer"
                       title="Remove Photo"
                     >
                       <Trash2 className="w-4 h-4" />

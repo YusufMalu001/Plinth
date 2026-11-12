@@ -190,7 +190,7 @@ export default function NewMiscellaneousExpensePage() {
   return (
     <main className="flex-1 space-y-5 p-5 md:p-8">
       {/* Top Header & Breadcrumb */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-1 border-b border-border/60">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-1 border-border-strong border-border/60">
         <div>
           <Link
             href="/accounts/expenses"
@@ -240,7 +240,7 @@ export default function NewMiscellaneousExpensePage() {
         <div className="lg:col-span-7 xl:col-span-8 space-y-5">
           {/* Card 1: Expense Purpose & Classification */}
           <Card className="rounded-xl border border-border/80 bg-card p-5 shadow-sm space-y-4">
-            <div className="flex items-center justify-between border-b border-border/60 pb-3">
+            <div className="flex items-center justify-between border-border-strong border-border/60 pb-3">
               <div className="flex items-center gap-2">
                 <Tag className="h-4 w-4 text-primary" />
                 <h2 className="text-sm font-bold text-foreground">Expense Purpose &amp; Classification</h2>
@@ -253,7 +253,7 @@ export default function NewMiscellaneousExpensePage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label className="block text-xs font-semibold text-foreground mb-1.5">
-                  Expense Category <span className="text-rose-500">*</span>
+                  Expense Category <span className="text-tone-red-text">*</span>
                 </label>
                 <select
                   value={category}
@@ -276,7 +276,7 @@ export default function NewMiscellaneousExpensePage() {
 
               <div>
                 <label className="block text-xs font-semibold text-foreground mb-1.5">
-                  Expense Date <span className="text-rose-500">*</span>
+                  Expense Date <span className="text-tone-red-text">*</span>
                 </label>
                 <div className="relative">
                   <input
@@ -291,7 +291,7 @@ export default function NewMiscellaneousExpensePage() {
 
               <div className="sm:col-span-2">
                 <label className="block text-xs font-semibold text-foreground mb-1.5">
-                  Expense Title / Purpose <span className="text-rose-500">*</span>
+                  Expense Title / Purpose <span className="text-tone-red-text">*</span>
                 </label>
                 <input
                   type="text"
@@ -320,7 +320,7 @@ export default function NewMiscellaneousExpensePage() {
 
           {/* Card 2: Payee / Contractor Details */}
           <Card className="rounded-xl border border-border/80 bg-card p-5 shadow-sm space-y-4">
-            <div className="flex items-center justify-between border-b border-border/60 pb-3">
+            <div className="flex items-center justify-between border-border-strong border-border/60 pb-3">
               <div className="flex items-center gap-2">
                 <Building className="h-4 w-4 text-primary" />
                 <h2 className="text-sm font-bold text-foreground">Payee / Service Provider</h2>
@@ -333,7 +333,7 @@ export default function NewMiscellaneousExpensePage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label className="block text-xs font-semibold text-foreground mb-1.5">
-                  Payee / Contractor Name <span className="text-rose-500">*</span>
+                  Payee / Contractor Name <span className="text-tone-red-text">*</span>
                 </label>
                 <input
                   type="text"
@@ -375,7 +375,7 @@ export default function NewMiscellaneousExpensePage() {
 
           {/* Card 3: Supporting Document / Receipt Attachment */}
           <Card className="rounded-xl border border-border/80 bg-card p-5 shadow-sm space-y-4">
-            <div className="flex items-center justify-between border-b border-border/60 pb-3">
+            <div className="flex items-center justify-between border-border-strong border-border/60 pb-3">
               <div className="flex items-center gap-2">
                 <Paperclip className="h-4 w-4 text-primary" />
                 <h2 className="text-sm font-bold text-foreground">Attach Bill / Physical Receipt (Image or PDF)</h2>
@@ -387,7 +387,7 @@ export default function NewMiscellaneousExpensePage() {
 
             <div>
               {!receiptUrl ? (
-                <label className="flex flex-col items-center justify-center border-2 border-dashed border-border/80 hover:border-primary bg-muted/10 hover:bg-muted/30 rounded-xl p-6 cursor-pointer transition-all text-center group">
+                <label className="flex flex-col items-center justify-center border-border border-dashed border-border/80 hover:border-primary bg-muted/10 hover:bg-muted/30 rounded-xl p-6 cursor-pointer transition-all text-center group">
                   <div className="h-10 w-10 rounded-full bg-muted text-primary flex items-center justify-center mb-2 group-hover:scale-105 transition-transform">
                     <Upload className="h-5 w-5" />
                   </div>
@@ -429,7 +429,7 @@ export default function NewMiscellaneousExpensePage() {
                         {receiptFileSize ? `${(receiptFileSize / 1024).toFixed(1)} KB` : 'Attached'} ·{' '}
                         {receiptFileType || 'document'}
                       </p>
-                      <span className="inline-flex items-center gap-1 text-[10px] text-emerald-600 font-semibold mt-0.5">
+                      <span className="inline-flex items-center gap-1 text-[10px] text-tone-green-text font-semibold mt-0.5">
                         <CheckCircle2 className="h-3 w-3" /> Attached &amp; ready to store
                       </span>
                     </div>
@@ -448,7 +448,7 @@ export default function NewMiscellaneousExpensePage() {
                       type="button"
                       variant="ghost"
                       onClick={handleRemoveFile}
-                      className="text-rose-600 hover:text-rose-700 hover:bg-rose-50 dark:hover:bg-rose-950/30 text-xs gap-1 h-8 px-2.5"
+                      className="text-tone-red-text hover:text-tone-red-text hover:bg-tone-red-solid text-xs gap-1 h-8 px-2.5"
                     >
                       <X className="h-3.5 w-3.5" />
                       Remove
@@ -464,7 +464,7 @@ export default function NewMiscellaneousExpensePage() {
         <div className="lg:col-span-5 xl:col-span-4 space-y-5">
           {/* Card 1: Disbursement & Amounts */}
           <Card className="rounded-xl border border-border/80 bg-card p-5 shadow-sm space-y-4">
-            <div className="flex items-center justify-between border-b border-border/60 pb-3">
+            <div className="flex items-center justify-between border-border-strong border-border/60 pb-3">
               <div className="flex items-center gap-2">
                 <CreditCard className="h-4 w-4 text-primary" />
                 <h2 className="text-sm font-bold text-foreground">Disbursement &amp; Amounts</h2>
@@ -481,7 +481,7 @@ export default function NewMiscellaneousExpensePage() {
             </div>
 
             {/* Total Highlight Banner */}
-            <div className="rounded-xl border border-border bg-n-500/5 dark:bg-n-950/30 p-4">
+            <div className="rounded-xl border border-border bg-n-500/5 p-4">
               <span className="text-[10px] uppercase font-bold tracking-wider text-muted-foreground block">
                 Total Net Expense
               </span>
@@ -498,7 +498,7 @@ export default function NewMiscellaneousExpensePage() {
               <div className="grid grid-cols-2 gap-3">
                 <div>
                   <label className="block text-xs font-semibold text-foreground mb-1">
-                    Base Amount (₹) <span className="text-rose-500">*</span>
+                    Base Amount (₹) <span className="text-tone-red-text">*</span>
                   </label>
                   <input
                     type="number"
@@ -531,7 +531,7 @@ export default function NewMiscellaneousExpensePage() {
               <div className="grid grid-cols-2 gap-3">
                 <div>
                   <label className="block text-xs font-semibold text-foreground mb-1">
-                    Payment Status <span className="text-rose-500">*</span>
+                    Payment Status <span className="text-tone-red-text">*</span>
                   </label>
                   <select
                     value={paymentStatus}
@@ -545,7 +545,7 @@ export default function NewMiscellaneousExpensePage() {
 
                 <div>
                   <label className="block text-xs font-semibold text-foreground mb-1">
-                    Payment Mode <span className="text-rose-500">*</span>
+                    Payment Mode <span className="text-tone-red-text">*</span>
                   </label>
                   <select
                     value={paymentMode}
@@ -579,7 +579,7 @@ export default function NewMiscellaneousExpensePage() {
 
           {/* Card 2: General Ledger Accounts */}
           <Card className="rounded-xl border border-border/80 bg-card p-5 shadow-sm space-y-4">
-            <div className="flex items-center gap-2 border-b border-border/60 pb-3">
+            <div className="flex items-center gap-2 border-border-strong border-border/60 pb-3">
               <BookOpen className="h-4 w-4 text-primary" />
               <h2 className="text-sm font-bold text-foreground">General Ledger Posting</h2>
             </div>
@@ -632,11 +632,11 @@ export default function NewMiscellaneousExpensePage() {
                 <div className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground mb-1">
                   Double-Entry Ledger Impact:
                 </div>
-                <div className="flex items-center justify-between text-emerald-700 dark:text-emerald-400">
+                <div className="flex items-center justify-between text-tone-green-text">
                   <span>DR: {selectedExpenseAccount ? selectedExpenseAccount.name : 'Miscellaneous Expenses'}</span>
                   <span>{formatCurrency(totalNum)}</span>
                 </div>
-                <div className="flex items-center justify-between text-blue-700 dark:text-blue-400">
+                <div className="flex items-center justify-between text-tone-blue-text">
                   <span>CR: {selectedPaidAccount ? selectedPaidAccount.name : 'Cash in Hand / Bank'}</span>
                   <span>{formatCurrency(totalNum)}</span>
                 </div>

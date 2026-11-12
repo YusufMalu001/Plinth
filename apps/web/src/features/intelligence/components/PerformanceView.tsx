@@ -66,30 +66,30 @@ export function PerformanceView() {
           return (
             <div
               key={key}
-              className="rounded-2xl border border-slate-200/90 bg-white p-4 shadow-xs dark:border-slate-800 dark:bg-slate-900 space-y-3"
+              className="rounded-2xl border border-border/90 bg-surface p-4 shadow-xs space-y-3"
             >
               <div className="flex items-center justify-between">
-                <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400 truncate pr-2">
+                <p className="text-[10px] font-bold uppercase tracking-wider text-ink-placeholder truncate pr-2">
                   {label}
                 </p>
-                <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[#004a80]/10 text-[#004a80] dark:bg-blue-950/60 dark:text-blue-300">
+                <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-accent-brand-soft text-link">
                   <Icon className="h-3.5 w-3.5" />
                 </div>
               </div>
 
-                <div className="text-xl font-bold text-slate-900 dark:text-slate-100">
+                <div className="text-xl font-bold text-ink">
                   {metricValue(value)}
                 </div>
-              <p className="text-[10px] uppercase tracking-wide text-slate-500">Provenance: {value?.provenance ?? 'UNKNOWN'} · {value?.freshnessStatus ?? 'UNKNOWN'}</p>
+              <p className="text-[10px] uppercase tracking-wide text-ink-muted">Provenance: {value?.provenance ?? 'UNKNOWN'} · {value?.freshnessStatus ?? 'UNKNOWN'}</p>
 
-              <div className="pt-2 border-t border-slate-100 dark:border-slate-800 text-[11px] text-slate-500 space-y-1">
+              <div className="pt-2 border-t border-border text-[11px] text-ink-muted space-y-1">
                 <div className="flex justify-between">
                   <span>Data Freshness:</span>
-                  <strong className="text-slate-700 dark:text-slate-300">{percent(freshness)}</strong>
+                  <strong className="text-ink-secondary">{percent(freshness)}</strong>
                 </div>
                 <div className="flex justify-between">
                   <span>Cost Coverage:</span>
-                  <strong className="text-slate-700 dark:text-slate-300">{percent(coverage)}</strong>
+                  <strong className="text-ink-secondary">{percent(coverage)}</strong>
                 </div>
               </div>
             </div>
@@ -98,23 +98,23 @@ export function PerformanceView() {
       </div>
 
       {/* Metric Certification Matrix Table */}
-      <div className="rounded-2xl border border-slate-200/90 bg-white shadow-xs dark:border-slate-800 dark:bg-slate-900 overflow-hidden">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 p-5 dark:border-slate-800">
+      <div className="rounded-2xl border border-border/90 bg-surface shadow-xs overflow-hidden">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-border p-5">
           <div>
-            <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100">
+            <h3 className="text-sm font-bold text-ink">
               Metric Provenance and Snapshot Matrix
             </h3>
-            <p className="text-xs text-slate-500">
+            <p className="text-xs text-ink-muted">
               Point-in-time source snapshots; individual metrics may be estimated, stale, or unavailable.
             </p>
           </div>
-          <span className="inline-flex items-center gap-1 text-xs font-semibold text-emerald-700 dark:text-emerald-400">
+          <span className="inline-flex items-center gap-1 text-xs font-semibold text-tone-green-text">
             <CheckCircle2 className="h-3.5 w-3.5" />
             {snapshots.length} Snapshots Captured
           </span>
         </div>
 
-        <div className="divide-y divide-slate-100 dark:divide-slate-800">
+        <div className="divide-y divide-border">
           {snapshots.map((snapshot) => {
             const isQualityAtRisk =
               Number(snapshot.freshnessScore) < 0.75 || Number(snapshot.costCoverageScore) < 0.8;
@@ -122,31 +122,31 @@ export function PerformanceView() {
             return (
               <div
                 key={snapshot.id}
-                className="grid gap-4 p-5 md:grid-cols-[1.5fr_1fr_1fr_auto] md:items-center hover:bg-slate-50/50 dark:hover:bg-slate-800/30 transition-colors"
+                className="grid gap-4 p-5 md:grid-cols-[1.5fr_1fr_1fr_auto] md:items-center hover:bg-muted/50 transition-colors"
               >
                 <div>
                   <div className="flex items-center gap-2">
-                    <span className="font-bold text-sm text-slate-900 dark:text-slate-100">
+                    <span className="font-bold text-sm text-ink">
                       {snapshot.module}
                     </span>
-                    <span className="rounded border border-slate-200 bg-slate-50 px-1.5 py-0.2 font-mono text-[10px] text-slate-600 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300">
+                    <span className="rounded border border-border bg-muted px-1.5 py-0.2 font-mono text-[10px] text-ink-secondary">
                       v{snapshot.metricVersion}
                     </span>
                   </div>
-                  <p className="mt-1 text-xs text-slate-400">
+                  <p className="mt-1 text-xs text-ink-placeholder">
                     Captured: {dateTime(snapshot.capturedAt)} · Period: {dateTime(snapshot.periodStart)} – {dateTime(snapshot.periodEnd)}
                   </p>
                 </div>
 
                 <div>
-                  <p className="text-[10px] font-bold uppercase text-slate-400">Data Freshness</p>
+                  <p className="text-[10px] font-bold uppercase text-ink-placeholder">Data Freshness</p>
                   <div className="mt-1 flex items-center gap-2">
-                    <span className="text-xs font-bold text-slate-800 dark:text-slate-200">
+                    <span className="text-xs font-bold text-ink">
                       {percent(snapshot.freshnessScore)}
                     </span>
-                    <div className="h-1.5 w-16 rounded-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
+                    <div className="h-1.5 w-16 rounded-full bg-muted overflow-hidden">
                       <div
-                        className="h-full bg-[#004a80] dark:bg-blue-500 rounded-full"
+                        className="h-full bg-accent-brand rounded-full"
                         style={{ width: percent(snapshot.freshnessScore) }}
                       />
                     </div>
@@ -154,14 +154,14 @@ export function PerformanceView() {
                 </div>
 
                 <div>
-                  <p className="text-[10px] font-bold uppercase text-slate-400">Cost Coverage</p>
+                  <p className="text-[10px] font-bold uppercase text-ink-placeholder">Cost Coverage</p>
                   <div className="mt-1 flex items-center gap-2">
-                    <span className="text-xs font-bold text-slate-800 dark:text-slate-200">
+                    <span className="text-xs font-bold text-ink">
                       {percent(snapshot.costCoverageScore)}
                     </span>
-                    <div className="h-1.5 w-16 rounded-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
+                    <div className="h-1.5 w-16 rounded-full bg-muted overflow-hidden">
                       <div
-                        className="h-full bg-emerald-500 rounded-full"
+                        className="h-full bg-tone-green-solid rounded-full"
                         style={{ width: percent(snapshot.costCoverageScore) }}
                       />
                     </div>
@@ -170,12 +170,12 @@ export function PerformanceView() {
 
                 <div className="shrink-0">
                   {isQualityAtRisk ? (
-                    <span className="inline-flex items-center gap-1 rounded-full border border-amber-200 bg-amber-50 px-2.5 py-1 text-xs font-bold text-amber-800 dark:border-amber-900 dark:bg-amber-950/60 dark:text-amber-300">
+                    <span className="inline-flex items-center gap-1 rounded-full border border-tone-amber-solid/25 bg-tone-amber-bg px-2.5 py-1 text-xs font-bold text-tone-amber-text">
                       <AlertTriangle className="h-3.5 w-3.5" />
                       Data Quality Check
                     </span>
                   ) : (
-                    <span className="inline-flex items-center gap-1 rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-1 text-xs font-bold text-emerald-800 dark:border-emerald-900 dark:bg-emerald-950/60 dark:text-emerald-300">
+                    <span className="inline-flex items-center gap-1 rounded-full border border-tone-green-solid/25 bg-tone-green-bg px-2.5 py-1 text-xs font-bold text-tone-green-text">
                       <ShieldCheck className="h-3.5 w-3.5" />
                       Snapshot Captured
                     </span>
@@ -188,7 +188,7 @@ export function PerformanceView() {
       </div>
 
       {/* Financial Terminology Guardrail Notice */}
-      <div className="rounded-2xl border border-blue-200/80 bg-blue-50/40 p-4 text-xs text-slate-700 dark:border-blue-900/60 dark:bg-blue-950/20 dark:text-slate-300 leading-relaxed">
+      <div className="rounded-2xl border border-tone-blue-solid/25 bg-tone-blue-bg p-4 text-xs text-ink-secondary leading-relaxed">
         <strong>Financial Standards Notice:</strong> Shipped net revenue is operational, not accounting-recognized revenue. Known contribution margin is shown only with complete eligible COGS coverage; it subtracts recorded outbound freight but excludes unrecorded labor, overhead, marketplace fees, commissions, and other costs. It is not net profit.
       </div>
     </div>

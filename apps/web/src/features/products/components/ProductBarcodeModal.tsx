@@ -38,8 +38,8 @@ export function ProductBarcodeModal({ isOpen, onClose, product }: ProductBarcode
             fontSize: 13,
             height: 68,
             margin: 10,
-            lineColor: '#111827',
-            background: '#ffffff',
+            lineColor: '#171717',
+            background: '#FFFFFF',
           });
         } catch (err) {
           console.error('Barcode render error, falling back:', err);
@@ -76,8 +76,8 @@ export function ProductBarcodeModal({ isOpen, onClose, product }: ProductBarcode
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4 backdrop-blur-xs animate-in fade-in duration-200">
-      <div ref={printRef} className="print-label-document flex w-full max-w-md flex-col rounded-2xl bg-card border border-border shadow-2xl overflow-hidden">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-inverse p-4 backdrop-blur-xs animate-in fade-in duration-200">
+      <div ref={printRef} className="print-label-document flex w-full max-w-md flex-col rounded-2xl bg-card border border-border shadow-none overflow-hidden">
         {/* Modal Header */}
         <div className="flex items-center justify-between border-b border-border bg-muted/40 px-5 py-3.5">
           <div className="flex items-center gap-2">
@@ -97,14 +97,14 @@ export function ProductBarcodeModal({ isOpen, onClose, product }: ProductBarcode
 
         {/* Printable Barcode Label */}
         <div className="p-6 text-center space-y-5">
-          <div className="rounded-xl border border-border bg-white p-5 dark:bg-zinc-900 shadow-inner flex flex-col items-center justify-center min-h-[130px]">
+          <div className="rounded-xl border border-border bg-surface p-5 shadow-inner flex flex-col items-center justify-center min-h-[130px]">
             <svg ref={barcodeRef} role="img" aria-label={`Barcode for ${product.name}`} className="max-w-full" />
             <p className="text-[10px] uppercase font-bold text-muted-foreground mt-1">Code 128 Product Barcode</p>
           </div>
 
-          <div className="rounded-xl bg-slate-50 dark:bg-slate-800/50 p-3 border border-slate-200/80 dark:border-slate-700/80 text-left">
-            <p className="text-[10px] uppercase font-bold text-slate-500 dark:text-slate-400">Barcode Identifier (Product Name)</p>
-            <p className="font-mono text-sm font-bold text-slate-900 dark:text-white mt-0.5 break-words">
+          <div className="rounded-xl bg-muted p-3 border border-border text-left">
+            <p className="text-[10px] uppercase font-bold text-ink-muted">Barcode Identifier (Product Name)</p>
+            <p className="font-mono text-sm font-bold text-ink mt-0.5 break-words">
               {product.name}
             </p>
           </div>

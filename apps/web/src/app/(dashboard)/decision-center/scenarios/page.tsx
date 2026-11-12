@@ -10,8 +10,8 @@ export default function DecisionCenterScenariosPage() {
     >
       <div className="space-y-8">
         <SimulationWorkbench />
-        <div className="space-y-4 pt-4 border-t border-slate-200/80 dark:border-slate-800">
-          <h2 className="text-lg font-black text-slate-900 dark:text-white">
+        <div className="space-y-4 pt-4 border-t border-border">
+          <h2 className="text-lg font-black text-ink">
             Server-Evaluated Scenario Records & Opportunity Ranges
           </h2>
           <IntelligenceScenariosView />

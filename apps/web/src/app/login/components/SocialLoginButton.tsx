@@ -12,7 +12,7 @@ export function SocialLoginButton({
     <button
       type="button"
       className={cn(
-        "flex h-11 w-full items-center justify-center gap-3 rounded-xl border border-border bg-white dark:bg-card px-4 text-xs font-semibold text-foreground transition-all duration-200 hover:bg-neutral-50 dark:hover:bg-neutral-900 active:scale-[0.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
+        "flex h-11 w-full items-center justify-center gap-3 rounded-control border border-border bg-muted px-4 text-xs font-semibold text-ink transition-colors hover:bg-hover active:bg-active focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-brand focus-visible:ring-offset-2",
         className
       )}
       {...props}

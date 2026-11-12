@@ -411,7 +411,7 @@ export default function OnboardingPage() {
     }
     return (
       <div className="min-h-screen flex items-center justify-center bg-muted/20">
-        <div className="animate-spin w-8 h-8 border-4 border-primary border-t-transparent rounded-full" />
+        <div className="animate-spin w-8 h-8 border-accent border-primary border-t-transparent rounded-full" />
       </div>
     );
   }
@@ -419,7 +419,7 @@ export default function OnboardingPage() {
   if (loading || userLoading) {
     return (
       <div className="min-h-screen p-12 flex flex-col items-center justify-center text-muted-foreground bg-muted/20">
-        <div className="animate-spin w-8 h-8 border-4 border-primary border-t-transparent rounded-full mb-3" />
+        <div className="animate-spin w-8 h-8 border-accent border-primary border-t-transparent rounded-full mb-3" />
         <p className="text-xs font-medium">Loading onboarding workspace...</p>
       </div>
     );
@@ -518,7 +518,7 @@ export default function OnboardingPage() {
     return (
       <div className="min-h-screen bg-muted/20 flex items-center justify-center p-6">
         <div className="max-w-md w-full bg-card rounded-2xl border border-border p-8 shadow-xs text-center space-y-6">
-          <div className="w-16 h-16 bg-muted rounded-2xl flex items-center justify-center mx-auto text-emerald-600 border border-border">
+          <div className="w-16 h-16 bg-muted rounded-2xl flex items-center justify-center mx-auto text-tone-green-text border border-border">
             <CheckCircle2 className="w-8 h-8" />
           </div>
 
@@ -526,7 +526,7 @@ export default function OnboardingPage() {
             <h1 className="text-2xl font-bold text-foreground tracking-tight">
               {hasDemoData ? 'Demo Onboarding Ready' : 'Congratulations!'}
             </h1>
-            <h2 className="text-sm font-semibold text-emerald-600">
+            <h2 className="text-sm font-semibold text-tone-green-text">
               {hasDemoData ? 'Sample workflow data is available' : 'Onboarding Completed &amp; Verified'}
             </h2>
             <p className="text-xs text-muted-foreground max-w-sm mx-auto leading-relaxed pt-1">
@@ -619,7 +619,7 @@ export default function OnboardingPage() {
       )}
 
       {hasDemoData && (
-        <div role="status" className="rounded-xl border border-amber-300 bg-amber-50 px-4 py-3 text-xs text-amber-950">
+        <div role="status" className="rounded-xl border border-tone-amber-solid/25 bg-tone-amber-solid px-4 py-3 text-xs text-tone-amber-text">
           <strong>Local demo data is prefilled.</strong> Replace the sample contact, address, experience, and document entries before submitting. Sample document rows are placeholders, not uploaded files. Agreements remain unchecked and require the worker’s own confirmation.
         </div>
       )}
@@ -627,7 +627,7 @@ export default function OnboardingPage() {
       {/* PHASE 1: PERSONAL DETAILS FORM (EXPANDED) */}
       {step === 1 && (
         <div className="bg-card rounded-xl border border-border p-6 md:p-8 shadow-xs space-y-6">
-          <div className="flex items-center gap-2.5 text-primary border-b border-border pb-3">
+          <div className="flex items-center gap-2.5 text-primary border-border-strong border-border pb-3">
             <User className="w-5 h-5" />
             <h2 className="text-sm font-semibold text-foreground">1. Personal & Contact Information</h2>
           </div>
@@ -861,7 +861,7 @@ export default function OnboardingPage() {
       {/* PHASE 2: DOCUMENTS UPLOAD SCREEN */}
       {step === 2 && (
         <div className="bg-card rounded-xl border border-border p-6 md:p-8 shadow-xs space-y-6">
-          <div className="flex items-center gap-2.5 text-primary border-b border-border pb-3">
+          <div className="flex items-center gap-2.5 text-primary border-border-strong border-border pb-3">
             <FileText className="w-5 h-5" />
             <h2 className="text-sm font-semibold text-foreground">2. Upload Identity & Verification Documents</h2>
           </div>
@@ -965,7 +965,7 @@ export default function OnboardingPage() {
             {newDoc.fileUrl && (
               <div className="flex items-center justify-between p-2.5 bg-primary/5 rounded-lg border border-primary/20 text-[11px]">
                 <div className="flex items-center gap-2 truncate">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-500 flex-shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-tone-green-text flex-shrink-0" />
                   <span className="text-foreground font-medium truncate">Selected: {newDoc.fileName}</span>
                   {newDoc.fileSize && (
                     <span className="text-muted-foreground font-mono">({(newDoc.fileSize / 1024).toFixed(1)} KB)</span>
@@ -1020,7 +1020,7 @@ export default function OnboardingPage() {
       {/* PHASE 3: WORK EXPERIENCE SCREEN */}
       {step === 3 && (
         <div className="bg-card rounded-xl border border-border p-6 md:p-8 shadow-xs space-y-6">
-          <div className="flex items-center gap-2.5 text-primary border-b border-border pb-3">
+          <div className="flex items-center gap-2.5 text-primary border-border-strong border-border pb-3">
             <Briefcase className="w-5 h-5" />
             <h2 className="text-sm font-semibold text-foreground">3. Prior Industrial Work Experience</h2>
           </div>
@@ -1139,7 +1139,7 @@ export default function OnboardingPage() {
       {/* PHASE 4: ACKNOWLEDGEMENTS & POLICY AGREEMENTS */}
       {step === 4 && (
         <div className="bg-card rounded-xl border border-border p-6 md:p-8 shadow-xs space-y-6">
-          <div className="flex items-center gap-2.5 text-primary border-b border-border pb-3">
+          <div className="flex items-center gap-2.5 text-primary border-border-strong border-border pb-3">
             <ShieldCheck className="w-5 h-5" />
             <h2 className="text-sm font-semibold text-foreground">4. Acknowledgements & Compliance Agreements</h2>
           </div>

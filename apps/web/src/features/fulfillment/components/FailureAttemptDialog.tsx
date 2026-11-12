@@ -110,7 +110,7 @@ export function FailureAttemptDialog({
           </label>
         </div>
 
-        <div className="rounded-xl border border-amber-500/20 bg-amber-500/5 p-3 text-xs text-amber-800">
+        <div className="rounded-xl border border-tone-amber-solid/20 bg-tone-amber-bg/5 p-3 text-xs text-tone-amber-text">
           Recording a failed attempt flags an operational delivery exception and tracks carrier re-attempt SLAs. If 3 attempts fail, an RTO return workflow should be initiated.
         </div>
 

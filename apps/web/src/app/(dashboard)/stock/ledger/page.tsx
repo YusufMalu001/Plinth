@@ -702,7 +702,7 @@ export default function StockLedgerPage() {
 
                           {/* Inline Expandable Row showing all issued BOM materials */}
                           {isExpanded && (
-                            <TableRow className="bg-muted/15 border-b border-border/80">
+                            <TableRow className="bg-muted/15 border-border-strong border-border/80">
                               <TableCell colSpan={7} className="p-0">
                                 <div className="p-4 pl-12 pr-6 space-y-3 bg-muted/10 border-l-4 border-l-primary/50">
                                   <div className="flex items-center justify-between">
@@ -850,7 +850,7 @@ export default function StockLedgerPage() {
 
                           {/* Inline Expandable Row showing all pulled components */}
                           {isExpanded && (
-                            <TableRow className="bg-muted/15 border-b border-border/80">
+                            <TableRow className="bg-muted/15 border-border-strong border-border/80">
                               <TableCell colSpan={7} className="p-0">
                                 <div className="p-4 pl-12 pr-6 space-y-3 bg-muted/10 border-l-4 border-l-primary/50">
                                   <div className="flex items-center justify-between">
@@ -1006,9 +1006,9 @@ export default function StockLedgerPage() {
                             <Link
                               href={movementHref}
                               title="Open movement record"
-                              className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-medium transition-shadow hover:ring-2 ${
+                              className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-medium transition-shadow-none hover:ring-2 ${
                                 movementType === 'JOB_WORK_ISSUE'
-                                  ? 'bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/30 hover:ring-amber-500/20'
+                                  ? 'bg-tone-amber-bg text-tone-amber-text border border-tone-amber-solid/25 hover:ring-tone-amber-solid/25'
                                   : 'bg-primary/10 text-primary border border-primary/20 hover:ring-primary/20'
                               }`}
                             >
@@ -1025,7 +1025,7 @@ export default function StockLedgerPage() {
                             <span
                               className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-medium ${
                                 movementType === 'JOB_WORK_ISSUE'
-                                  ? 'bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/30'
+                                  ? 'bg-tone-amber-bg text-tone-amber-text border border-tone-amber-solid/25'
                                   : 'bg-primary/10 text-primary border border-primary/20'
                               }`}
                             >

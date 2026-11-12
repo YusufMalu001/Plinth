@@ -268,7 +268,7 @@ export default function TaskQueuePage() {
       <Card className="overflow-hidden border-border bg-card shadow-xs rounded-2xl p-0">
         {loading ? (
           <div className="p-12 text-center text-muted-foreground">
-            <div className="animate-spin w-8 h-8 border-4 border-primary border-t-transparent rounded-full mx-auto mb-3" />
+            <div className="animate-spin w-8 h-8 border-accent border-primary border-t-transparent rounded-full mx-auto mb-3" />
             <p className="text-sm font-medium">Loading tasks queue...</p>
           </div>
         ) : error ? (
@@ -358,7 +358,7 @@ export default function TaskQueuePage() {
                             <span>Review Proof</span>
                           </button>
                         ) : (
-                          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-semibold bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20">
+                          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-semibold bg-tone-amber-bg text-tone-amber-text border border-tone-amber-solid/25">
                             Task Incomplete
                           </span>
                         )}

@@ -86,11 +86,11 @@ export function RecommendationsView() {
   return (
     <div className="space-y-6 font-manrope">
       {/* Filter & View Deck */}
-      <div className="rounded-2xl border border-slate-200/90 bg-white p-5 shadow-xs dark:border-slate-800 dark:bg-slate-900 space-y-4">
+      <div className="rounded-2xl border border-border/90 bg-surface p-5 shadow-xs space-y-4">
         <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
           {/* Search Input */}
           <div className="relative flex-1">
-            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
+            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-ink-placeholder" />
             <input
               type="text"
               value={searchQuery}
@@ -99,13 +99,13 @@ export function RecommendationsView() {
                 setCurrentPage(1);
               }}
               placeholder="Search recommendations by title, SKU, domain, or situation keywords…"
-              className="h-10 w-full rounded-xl border border-slate-200 bg-slate-50 pl-10 pr-10 text-xs font-semibold text-slate-900 placeholder:text-slate-400 focus:border-[#004a80] focus:bg-white focus:outline-none dark:border-slate-700 dark:bg-slate-800 dark:text-white"
+              className="h-10 w-full rounded-xl border border-border bg-muted pl-10 pr-10 text-xs font-semibold text-ink placeholder:text-ink-placeholder focus:border-accent-brand focus:bg-surface focus:outline-none"
             />
             {searchQuery && (
               <button
                 type="button"
                 onClick={() => setSearchQuery('')}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-ink-placeholder hover:text-ink-secondary"
               >
                 <X className="h-3.5 w-3.5" />
               </button>
@@ -114,15 +114,15 @@ export function RecommendationsView() {
 
           <div className="flex items-center gap-2 shrink-0">
             {/* View Mode Toggle */}
-            <div className="flex items-center rounded-xl border border-slate-200 bg-slate-100 p-0.5 dark:border-slate-700 dark:bg-slate-800">
+            <div className="flex items-center rounded-xl border border-border bg-muted p-0.5">
               <button
                 type="button"
                 onClick={() => setViewMode('cards')}
                 title="Cards View"
                 className={`flex h-8 items-center gap-1.5 rounded-lg px-2.5 text-xs font-bold transition-all ${
                   viewMode === 'cards'
-                    ? 'bg-white text-[#004a80] shadow-xs dark:bg-slate-900 dark:text-blue-300'
-                    : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-200'
+                    ? 'bg-surface text-link shadow-xs'
+                    : 'text-ink-secondary hover:text-ink'
                 }`}
               >
                 <LayoutGrid className="h-3.5 w-3.5" />
@@ -134,8 +134,8 @@ export function RecommendationsView() {
                 title="Table View"
                 className={`flex h-8 items-center gap-1.5 rounded-lg px-2.5 text-xs font-bold transition-all ${
                   viewMode === 'table'
-                    ? 'bg-white text-[#004a80] shadow-xs dark:bg-slate-900 dark:text-blue-300'
-                    : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-200'
+                    ? 'bg-surface text-link shadow-xs'
+                    : 'text-ink-secondary hover:text-ink'
                 }`}
               >
                 <TableIcon className="h-3.5 w-3.5" />
@@ -144,7 +144,7 @@ export function RecommendationsView() {
             </div>
 
             {/* Status Filter Segmented Control */}
-            <div className="flex flex-wrap items-center gap-1 p-1 rounded-xl bg-slate-100 dark:bg-slate-800">
+            <div className="flex flex-wrap items-center gap-1 p-1 rounded-xl bg-muted">
               {statusFilterOptions.map((st) => {
                 const active = selectedStatus === st.key;
                 return (
@@ -157,8 +157,8 @@ export function RecommendationsView() {
                     }}
                     className={`rounded-lg px-3 py-1 text-xs font-bold transition-all ${
                       active
-                        ? 'bg-white text-[#004a80] shadow-xs dark:bg-slate-900 dark:text-blue-300'
-                        : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-200'
+                        ? 'bg-surface text-link shadow-xs'
+                        : 'text-ink-secondary hover:text-ink'
                     }`}
                   >
                     {st.label}
@@ -170,8 +170,8 @@ export function RecommendationsView() {
         </div>
 
         {/* Module Chips Filter Bar */}
-        <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pt-2 border-t border-slate-100 dark:border-slate-800">
-          <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mr-1 shrink-0 flex items-center gap-1">
+        <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pt-2 border-t border-border">
+          <span className="text-[11px] font-bold text-ink-placeholder uppercase tracking-wider mr-1 shrink-0 flex items-center gap-1">
             <Filter className="h-3 w-3" />
             Domain:
           </span>
@@ -188,11 +188,11 @@ export function RecommendationsView() {
                 }}
                 className={`inline-flex items-center gap-1.5 shrink-0 rounded-lg border px-3 py-1.5 text-xs font-bold transition-all ${
                   active
-                    ? 'border-[#004a80] bg-[#004a80] text-white shadow-xs dark:border-blue-500 dark:bg-blue-600'
-                    : 'border-slate-200 bg-slate-50 text-slate-700 hover:border-slate-300 hover:bg-white dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300'
+                    ? 'border-accent-brand bg-action text-inverse shadow-xs'
+                    : 'border-border bg-muted text-ink-secondary hover:border-border-strong hover:bg-surface'
                 }`}
               >
-                <ModIcon className={`h-3.5 w-3.5 ${active ? 'text-white' : 'text-slate-400'}`} />
+                <ModIcon className={`h-3.5 w-3.5 ${active ? 'text-inverse' : 'text-ink-placeholder'}`} />
                 <span>{mod.label}</span>
               </button>
             );
@@ -207,10 +207,10 @@ export function RecommendationsView() {
         <ErrorState error={query.error} retry={() => query.refetch()} />
       ) : filteredItems.length > 0 ? (
         <div className="space-y-4">
-          <div className="flex items-center justify-between px-1 text-xs text-slate-500">
+          <div className="flex items-center justify-between px-1 text-xs text-ink-muted">
             <span>
-              Showing <strong className="text-slate-900 dark:text-slate-100">{paginatedItems.length}</strong> of{' '}
-              <strong className="text-slate-900 dark:text-slate-100">{filteredItems.length}</strong> recommendations
+              Showing <strong className="text-ink">{paginatedItems.length}</strong> of{' '}
+              <strong className="text-ink">{filteredItems.length}</strong> recommendations
             </span>
             <span className="text-[11px] font-medium">Click any recommendation to inspect details & take next steps</span>
           </div>
@@ -226,11 +226,11 @@ export function RecommendationsView() {
 
           {/* VIEW: Table */}
           {viewMode === 'table' && (
-            <div className="overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-xs dark:border-slate-800 dark:bg-slate-900">
+            <div className="overflow-hidden rounded-2xl border border-border/90 bg-surface shadow-xs">
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-xs">
                   <thead>
-                    <tr className="border-b border-slate-200 bg-slate-50/80 text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:border-slate-800 dark:bg-slate-800/60 dark:text-slate-400">
+                    <tr className="border-b border-border bg-muted/80 text-[10px] font-bold uppercase tracking-wider text-ink-muted">
                       <th className="py-3 px-4">Priority</th>
                       <th className="py-3 px-4">Domain</th>
                       <th className="py-3 px-4">Recommendation</th>
@@ -240,14 +240,14 @@ export function RecommendationsView() {
                       <th className="py-3 px-4 text-right">Action</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
+                  <tbody className="divide-y divide-border">
                     {paginatedItems.map((rec) => {
                       const prioBadge =
                         rec.priority === 'CRITICAL'
-                          ? 'bg-rose-50 text-rose-700 border-rose-200 dark:bg-rose-950 dark:text-rose-300 dark:border-rose-900'
+                          ? 'bg-tone-red-bg text-tone-red-text border-tone-red-solid/25'
                           : rec.priority === 'HIGH'
-                          ? 'bg-amber-50 text-amber-700 border-amber-200 dark:bg-amber-950 dark:text-amber-300 dark:border-amber-900'
-                          : 'bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-950 dark:text-blue-300 dark:border-blue-900';
+                          ? 'bg-tone-amber-bg text-tone-amber-text border-tone-amber-solid/25'
+                          : 'bg-tone-blue-bg text-link border-tone-blue-solid/25';
 
                       const impactVal = rec.expectedImpact
                         ? rec.expectedImpact.currency
@@ -258,42 +258,42 @@ export function RecommendationsView() {
                       return (
                         <tr
                           key={rec.id}
-                          className="transition-colors hover:bg-slate-50/80 dark:hover:bg-slate-800/50"
+                          className="transition-colors hover:bg-muted/80"
                         >
                           <td className="py-3.5 px-4 whitespace-nowrap">
                             <span className={`inline-flex rounded-md border px-2 py-0.5 text-[10px] font-bold ${prioBadge}`}>
                               {rec.priority}
                             </span>
                           </td>
-                          <td className="py-3.5 px-4 whitespace-nowrap font-bold text-slate-700 dark:text-slate-300">
+                          <td className="py-3.5 px-4 whitespace-nowrap font-bold text-ink-secondary">
                             {rec.module}
                           </td>
                           <td className="py-3.5 px-4 min-w-[280px]">
                             <Link
                               href={`/intelligence/recommendations/${rec.id}`}
-                              className="font-bold text-slate-900 hover:text-[#004a80] dark:text-white dark:hover:text-blue-400"
+                              className="font-bold text-ink hover:text-link-hover"
                             >
                               {rec.title}
                             </Link>
-                            <p className="text-[11px] text-slate-500 line-clamp-1 mt-0.5">
+                            <p className="text-[11px] text-ink-muted line-clamp-1 mt-0.5">
                               {rec.situation}
                             </p>
                           </td>
-                          <td className="py-3.5 px-4 whitespace-nowrap font-bold text-emerald-700 dark:text-emerald-400">
+                          <td className="py-3.5 px-4 whitespace-nowrap font-bold text-tone-green-text">
                             {impactVal}
                           </td>
-                          <td className="py-3.5 px-4 whitespace-nowrap font-semibold text-slate-600 dark:text-slate-400">
+                          <td className="py-3.5 px-4 whitespace-nowrap font-semibold text-ink-secondary">
                             {percent(Number(rec.confidence) || 0)}
                           </td>
                           <td className="py-3.5 px-4 whitespace-nowrap">
-                            <span className="inline-flex rounded-md border border-slate-200 bg-slate-50 px-2 py-0.5 text-[10px] font-bold text-slate-700 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300">
+                            <span className="inline-flex rounded-md border border-border bg-muted px-2 py-0.5 text-[10px] font-bold text-ink-secondary">
                               {rec.status}
                             </span>
                           </td>
                           <td className="py-3.5 px-4 whitespace-nowrap text-right">
                             <Link
                               href={`/intelligence/recommendations/${rec.id}`}
-                              className="inline-flex items-center gap-1 rounded-lg bg-[#004a80] px-3 py-1 text-xs font-bold text-white hover:bg-[#003860] active:scale-98 dark:bg-blue-600 dark:hover:bg-blue-500"
+                              className="inline-flex items-center gap-1 rounded-lg bg-action px-3 py-1 text-xs font-bold text-inverse hover:bg-[color:var(--action-primary-bg-hover)] active:scale-98"
                             >
                               <span>Next Steps</span>
                               <ArrowRight className="h-3 w-3" />
@@ -310,17 +310,17 @@ export function RecommendationsView() {
 
           {/* Pagination Controls */}
           {totalPages > 1 && (
-            <div className="flex items-center justify-between rounded-xl border border-slate-200/90 bg-white p-3.5 shadow-2xs dark:border-slate-800 dark:bg-slate-900 text-xs">
-              <span className="text-slate-500">
-                Page <strong className="text-slate-900 dark:text-white">{currentPage}</strong> of{' '}
-                <strong className="text-slate-900 dark:text-white">{totalPages}</strong>
+            <div className="flex items-center justify-between rounded-xl border border-border/90 bg-surface p-3.5 shadow-2xs text-xs">
+              <span className="text-ink-muted">
+                Page <strong className="text-ink">{currentPage}</strong> of{' '}
+                <strong className="text-ink">{totalPages}</strong>
               </span>
               <div className="flex items-center gap-1.5">
                 <button
                   type="button"
                   disabled={currentPage <= 1}
                   onClick={() => handlePageChange(currentPage - 1)}
-                  className="flex h-8 items-center gap-1 rounded-lg border border-slate-200 px-3 font-bold text-slate-600 disabled:opacity-40 hover:bg-slate-50 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800"
+                  className="flex h-8 items-center gap-1 rounded-lg border border-border px-3 font-bold text-ink-secondary disabled:opacity-40 hover:bg-muted"
                 >
                   <ChevronLeft className="h-4 w-4" />
                   <span>Previous</span>
@@ -329,7 +329,7 @@ export function RecommendationsView() {
                   type="button"
                   disabled={currentPage >= totalPages}
                   onClick={() => handlePageChange(currentPage + 1)}
-                  className="flex h-8 items-center gap-1 rounded-lg border border-slate-200 px-3 font-bold text-slate-600 disabled:opacity-40 hover:bg-slate-50 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800"
+                  className="flex h-8 items-center gap-1 rounded-lg border border-border px-3 font-bold text-ink-secondary disabled:opacity-40 hover:bg-muted"
                 >
                   <span>Next</span>
                   <ChevronRight className="h-4 w-4" />
@@ -340,7 +340,7 @@ export function RecommendationsView() {
         </div>
       ) : (
         <EmptyState
-          className="min-h-[220px] rounded-2xl border border-slate-200/90 bg-white p-10 dark:border-slate-800 dark:bg-slate-900"
+          className="min-h-[220px] rounded-2xl border border-border/90 bg-surface p-10"
           title="No recommendations match your filters"
           description="Try selecting a different domain or clearing search criteria. Only recommendations that pass certified ERP evidence validation are presented."
         />

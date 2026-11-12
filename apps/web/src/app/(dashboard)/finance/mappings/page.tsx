@@ -126,7 +126,7 @@ export default function FinanceMappingsPage() {
       <FinanceNavigationTabs />
 
       {/* Source Type Selector Tabs */}
-      <div className="flex items-center gap-2 overflow-x-auto pb-2 border-b border-border/60">
+      <div className="flex items-center gap-2 overflow-x-auto pb-2 border-border-strong border-border/60">
         {SOURCE_TYPES.map((st) => {
           const isSelected = selectedSource === st.key;
           const rd = readiness?.find((r) => r.sourceType === st.key);
@@ -145,9 +145,9 @@ export default function FinanceMappingsPage() {
             >
               <span>{st.label}</span>
               {active ? (
-                <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                <span className="w-2 h-2 rounded-full bg-tone-green-solid" />
               ) : (
-                <span className="w-2 h-2 rounded-full bg-amber-500/80" />
+                <span className="w-2 h-2 rounded-full bg-tone-amber-bg" />
               )}
             </button>
           );
@@ -190,7 +190,7 @@ export default function FinanceMappingsPage() {
 
                 return (
                   <Card key={mapConfig.id} className="p-6 rounded-2xl border shadow-xs space-y-4">
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-b border-border/60 pb-3">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-border-strong border-border/60 pb-3">
                       <div className="flex items-center gap-3">
                         <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 text-primary font-mono font-extrabold text-xs">
                           v{mapConfig.version}
@@ -221,7 +221,7 @@ export default function FinanceMappingsPage() {
                                   size="sm"
                                   disabled={approveMutation.isPending || isCreator}
                                   onClick={() => handleApprove(mapConfig.id)}
-                                  className="text-xs font-semibold bg-emerald-600 hover:bg-emerald-700 text-white"
+                                  className="text-xs font-semibold bg-action hover:bg-[color:var(--action-primary-bg-hover)] text-inverse"
                                 >
                                   {isCreator ? 'Creator Cannot Approve' : 'Confirm'}
                                 </Button>
@@ -246,7 +246,7 @@ export default function FinanceMappingsPage() {
                                     : 'Approve mapping version for active export'
                                 }
                                 className={`text-xs font-semibold gap-1.5 ${
-                                  isCreator ? 'opacity-60 cursor-not-allowed' : 'text-emerald-600 hover:text-emerald-700'
+                                  isCreator ? 'opacity-60 cursor-not-allowed' : 'text-tone-green-text hover:text-tone-green-text'
                                 }`}
                               >
                                 <CheckCircle2 className="h-3.5 w-3.5" />
@@ -309,8 +309,8 @@ export default function FinanceMappingsPage() {
       {/* Create Modal */}
       {showCreateModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-background/80 backdrop-blur-xs p-4">
-          <Card className="w-full max-w-xl p-6 rounded-2xl shadow-xl border space-y-4 bg-card">
-            <div className="flex items-center justify-between border-b border-border/60 pb-3">
+          <Card className="w-full max-w-xl p-6 rounded-2xl shadow-popover border space-y-4 bg-card">
+            <div className="flex items-center justify-between border-border-strong border-border/60 pb-3">
               <div>
                 <h3 className="text-base font-bold text-foreground font-manrope">
                   Draft New Mapping Version

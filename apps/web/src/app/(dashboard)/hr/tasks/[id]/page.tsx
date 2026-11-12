@@ -161,7 +161,7 @@ export default function HRTaskDetailPage() {
     return (
       <div className="flex-1 w-full p-8 flex items-center justify-center">
         <div className="text-center space-y-3">
-          <div className="animate-spin w-8 h-8 border-4 border-primary border-t-transparent rounded-full mx-auto" />
+          <div className="animate-spin w-8 h-8 border-accent border-primary border-t-transparent rounded-full mx-auto" />
           <p className="text-sm font-medium text-muted-foreground">Loading task details...</p>
         </div>
       </div>
@@ -253,14 +253,14 @@ export default function HRTaskDetailPage() {
                   Review Proof
                 </span>
               ) : (
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/30">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-tone-amber-bg text-tone-amber-text border border-tone-amber-solid/25">
                   <AlertCircle className="w-3.5 h-3.5" />
                   Task Incomplete
                 </span>
               )}
 
               {task.status === 'COMPLETED' && (
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/30">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-tone-green-bg text-tone-green-text border border-tone-green-solid/25">
                   <CheckCircle2 className="w-3.5 h-3.5" />
                   Validated & Completed
                 </span>
@@ -407,7 +407,7 @@ export default function HRTaskDetailPage() {
                         <iframe
                           src={task.proofUrl}
                           title="Proof PDF"
-                          className="w-full h-[380px] rounded-lg border-0"
+                          className="w-full h-[380px] rounded-lg border-accent"
                         />
                       ) : (
                         <div className="text-center p-6 space-y-2">
@@ -439,7 +439,7 @@ export default function HRTaskDetailPage() {
                     setIsSubmitModalOpen(true);
                   }
                 }}
-                className={`p-8 border-2 border-dashed rounded-2xl text-center space-y-3 transition-colors ${
+                className={`p-8 border-border border-dashed rounded-2xl text-center space-y-3 transition-colors ${
                   isDraggingInline
                     ? 'border-primary bg-primary/5'
                     : 'border-border bg-muted/10 hover:border-primary/50 hover:bg-muted/20'
@@ -458,7 +458,7 @@ export default function HRTaskDetailPage() {
                   }}
                 />
                 <label htmlFor="inline-proof-dropzone" className="cursor-pointer block space-y-3">
-                  <AlertCircle className="w-10 h-10 mx-auto text-amber-500/70" />
+                  <AlertCircle className="w-10 h-10 mx-auto text-tone-amber-text" />
                   <div>
                     <h4 className="text-sm font-semibold text-foreground">Task Incomplete (No Proof Uploaded)</h4>
                     <p className="text-xs text-muted-foreground mt-0.5">
@@ -534,8 +534,8 @@ export default function HRTaskDetailPage() {
                 </Button>
               </div>
             ) : (
-              <div className="p-4 bg-amber-500/10 border border-amber-500/20 rounded-xl space-y-2">
-                <div className="flex items-center gap-2 text-amber-700 dark:text-amber-400 font-bold text-xs">
+              <div className="p-4 bg-tone-amber-bg border border-tone-amber-solid/25 rounded-xl space-y-2">
+                <div className="flex items-center gap-2 text-tone-amber-text font-bold text-xs">
                   <AlertCircle className="w-4 h-4" />
                   <span>Task Incomplete</span>
                 </div>
@@ -615,7 +615,7 @@ export default function HRTaskDetailPage() {
                   processUploadedFile(file);
                 }
               }}
-              className={`border-2 border-dashed rounded-xl p-5 text-center transition-colors ${
+              className={`border-border border-dashed rounded-xl p-5 text-center transition-colors ${
                 isDraggingModal
                   ? 'border-primary bg-primary/10'
                   : 'border-border hover:bg-muted/30'
@@ -651,7 +651,7 @@ export default function HRTaskDetailPage() {
                     <FileText className="w-4 h-4 shrink-0" />
                     <span className="truncate">{proofForm.proofFileName}</span>
                   </div>
-                  <span className="text-[10px] uppercase font-bold text-emerald-600 shrink-0">Attached ✓</span>
+                  <span className="text-[10px] uppercase font-bold text-tone-green-text shrink-0">Attached ✓</span>
                 </div>
               )}
             </div>

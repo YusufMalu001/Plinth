@@ -128,24 +128,24 @@ export default function CustomerDetailPage() {
     // Credit Health Score Calculation (0-100)
     let score = 95;
     let label = 'EXCELLENT';
-    let badgeClass = 'bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-400 dark:border-emerald-800';
+    let badgeClass = 'bg-tone-green-solid text-tone-green-text border-tone-green-solid/25';
 
     if (creditLimit <= 0) {
       score = 75;
       label = 'STANDARD CASH';
-      badgeClass = 'bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-950/40 dark:text-blue-400 dark:border-blue-800';
+      badgeClass = 'bg-tone-blue-solid text-tone-blue-text border-tone-blue-solid/25';
     } else if (isCreditExceeded) {
       score = 35;
       label = 'CREDIT HOLD';
-      badgeClass = 'bg-rose-50 text-rose-700 border-rose-200 dark:bg-rose-950/40 dark:text-rose-400 dark:border-rose-800';
+      badgeClass = 'bg-tone-red-solid text-tone-red-text border-tone-red-solid/25';
     } else if (utilizationPercent > 80) {
       score = 62;
       label = 'HIGH UTILIZATION';
-      badgeClass = 'bg-amber-50 text-amber-700 border-amber-200 dark:bg-amber-950/40 dark:text-amber-400 dark:border-amber-800';
+      badgeClass = 'bg-tone-amber-solid text-tone-amber-text border-tone-amber-solid/25';
     } else if (utilizationPercent > 50) {
       score = 82;
       label = 'GOOD';
-      badgeClass = 'bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-400 dark:border-emerald-800';
+      badgeClass = 'bg-tone-green-solid text-tone-green-text border-tone-green-solid/25';
     }
 
     return {
@@ -204,15 +204,15 @@ export default function CustomerDetailPage() {
   const getTypeBadgeColor = (type: string) => {
     switch (type) {
       case 'DEALER':
-        return 'bg-blue-500/10 text-blue-700 border-blue-500/30';
+        return 'bg-tone-blue-bg text-tone-blue-text border-tone-blue-solid/25';
       case 'DISTRIBUTOR':
-        return 'bg-purple-500/10 text-purple-700 border-purple-500/30';
+        return 'bg-tone-purple-bg text-tone-purple-text border-tone-purple-solid/25';
       case 'RETAIL':
-        return 'bg-emerald-500/10 text-emerald-700 border-emerald-500/30';
+        return 'bg-tone-green-bg text-tone-green-text border-tone-green-solid/25';
       case 'CORPORATE':
-        return 'bg-amber-500/10 text-amber-700 border-amber-500/30';
+        return 'bg-tone-amber-bg text-tone-amber-text border-tone-amber-solid/25';
       default:
-        return 'bg-slate-500/10 text-slate-700 border-slate-500/30';
+        return 'bg-tone-grey-bg text-ink-secondary border-border';
     }
   };
 
@@ -278,7 +278,7 @@ export default function CustomerDetailPage() {
             <Button
               size="sm"
               onClick={() => router.push(`/sales/orders/new`)}
-              className="font-bold shadow-md shadow-primary/20 bg-primary hover:bg-primary/90 text-primary-foreground gap-1.5"
+              className="font-bold shadow-none shadow-primary/20 bg-primary hover:bg-primary/90 text-primary-foreground gap-1.5"
             >
               <ShoppingCart className="h-4 w-4" />
               <span>+ Create Sales Order</span>
@@ -312,10 +312,10 @@ export default function CustomerDetailPage() {
                 <div
                   className={`h-full rounded-full ${
                     financials.isCreditExceeded
-                      ? 'bg-rose-600'
+                      ? 'bg-tone-red-solid'
                       : financials.utilizationPercent > 75
-                      ? 'bg-amber-500'
-                      : 'bg-emerald-500'
+                      ? 'bg-tone-amber-solid'
+                      : 'bg-tone-green-solid'
                   }`}
                   style={{ width: `${Math.min(100, financials.utilizationPercent)}%` }}
                 />
@@ -331,9 +331,9 @@ export default function CustomerDetailPage() {
               Credit Score &amp; Rating
             </span>
             {financials.isCreditExceeded ? (
-              <ShieldAlert className="h-4 w-4 text-rose-600" />
+              <ShieldAlert className="h-4 w-4 text-tone-red-text" />
             ) : (
-              <ShieldCheck className="h-4 w-4 text-emerald-600" />
+              <ShieldCheck className="h-4 w-4 text-tone-green-text" />
             )}
           </CardHeader>
           <CardContent className="space-y-2">
@@ -359,7 +359,7 @@ export default function CustomerDetailPage() {
             <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
               Outstanding Dues
             </span>
-            <Wallet className="h-4 w-4 text-amber-600" />
+            <Wallet className="h-4 w-4 text-tone-amber-text" />
           </CardHeader>
           <CardContent className="space-y-1">
             <div className="text-2xl font-black text-foreground font-mono">
@@ -367,7 +367,7 @@ export default function CustomerDetailPage() {
             </div>
             <div className="text-[11px] text-muted-foreground flex items-center justify-between">
               <span>Total Paid:</span>
-              <strong className="font-mono text-emerald-600 font-semibold">
+              <strong className="font-mono text-tone-green-text font-semibold">
                 {formatCurrency(financials.totalPaid)}
               </strong>
             </div>
@@ -380,7 +380,7 @@ export default function CustomerDetailPage() {
             <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
               Purchased Orders
             </span>
-            <Package className="h-4 w-4 text-blue-600" />
+            <Package className="h-4 w-4 text-tone-blue-text" />
           </CardHeader>
           <CardContent className="space-y-1">
             <div className="text-2xl font-black text-foreground font-mono">
@@ -397,11 +397,11 @@ export default function CustomerDetailPage() {
       </div>
 
       {/* Tabs Bar */}
-      <div className="border-b border-border flex flex-wrap gap-2">
+      <div className="border-border-strong border-border flex flex-wrap gap-2">
         <button
           type="button"
           onClick={() => setActiveTab('orders')}
-          className={`pb-3 px-4 text-xs font-bold transition-colors border-b-2 flex items-center gap-1.5 ${
+          className={`pb-3 px-4 text-xs font-bold transition-colors border-border-strong-2 flex items-center gap-1.5 ${
             activeTab === 'orders'
               ? 'border-primary text-primary'
               : 'border-transparent text-muted-foreground hover:text-foreground'
@@ -413,7 +413,7 @@ export default function CustomerDetailPage() {
         <button
           type="button"
           onClick={() => setActiveTab('invoices')}
-          className={`pb-3 px-4 text-xs font-bold transition-colors border-b-2 flex items-center gap-1.5 ${
+          className={`pb-3 px-4 text-xs font-bold transition-colors border-border-strong-2 flex items-center gap-1.5 ${
             activeTab === 'invoices'
               ? 'border-primary text-primary'
               : 'border-transparent text-muted-foreground hover:text-foreground'
@@ -425,7 +425,7 @@ export default function CustomerDetailPage() {
         <button
           type="button"
           onClick={() => setActiveTab('ledger')}
-          className={`pb-3 px-4 text-xs font-bold transition-colors border-b-2 flex items-center gap-1.5 ${
+          className={`pb-3 px-4 text-xs font-bold transition-colors border-border-strong-2 flex items-center gap-1.5 ${
             activeTab === 'ledger'
               ? 'border-primary text-primary'
               : 'border-transparent text-muted-foreground hover:text-foreground'
@@ -437,7 +437,7 @@ export default function CustomerDetailPage() {
         <button
           type="button"
           onClick={() => setActiveTab('addresses')}
-          className={`pb-3 px-4 text-xs font-bold transition-colors border-b-2 flex items-center gap-1.5 ${
+          className={`pb-3 px-4 text-xs font-bold transition-colors border-border-strong-2 flex items-center gap-1.5 ${
             activeTab === 'addresses'
               ? 'border-primary text-primary'
               : 'border-transparent text-muted-foreground hover:text-foreground'
@@ -449,7 +449,7 @@ export default function CustomerDetailPage() {
         <button
           type="button"
           onClick={() => setActiveTab('profile')}
-          className={`pb-3 px-4 text-xs font-bold transition-colors border-b-2 flex items-center gap-1.5 ${
+          className={`pb-3 px-4 text-xs font-bold transition-colors border-border-strong-2 flex items-center gap-1.5 ${
             activeTab === 'profile'
               ? 'border-primary text-primary'
               : 'border-transparent text-muted-foreground hover:text-foreground'
@@ -462,7 +462,7 @@ export default function CustomerDetailPage() {
       {/* Tab Content 1: Orders History */}
       {activeTab === 'orders' && (
         <Card className="rounded-2xl border-border shadow-sm overflow-hidden">
-          <CardHeader className="bg-card/40 border-b border-border pb-3">
+          <CardHeader className="bg-card/40 border-border-strong border-border pb-3">
             <CardTitle className="text-base font-bold flex items-center gap-2">
               <ShoppingCart className="h-4 w-4 text-primary" /> Customer Purchase &amp; Sales Orders
             </CardTitle>
@@ -521,8 +521,8 @@ export default function CustomerDetailPage() {
                         <span
                           className={`inline-flex px-2 py-0.5 rounded-full text-[10px] font-bold uppercase font-mono ${
                             ord.paymentStatus === 'PAID'
-                              ? 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-400'
-                              : 'bg-amber-500/10 text-amber-700 dark:text-amber-400'
+                              ? 'bg-tone-green-bg text-tone-green-text'
+                              : 'bg-tone-amber-bg text-tone-amber-text'
                           }`}
                         >
                           {ord.paymentStatus || 'PENDING'}
@@ -549,7 +549,7 @@ export default function CustomerDetailPage() {
       {/* Tab Content 2: Tax Invoices & Credit Notes */}
       {activeTab === 'invoices' && (
         <Card className="rounded-2xl border-border shadow-sm overflow-hidden">
-          <CardHeader className="bg-card/40 border-b border-border pb-3 flex flex-row items-center justify-between">
+          <CardHeader className="bg-card/40 border-border-strong border-border pb-3 flex flex-row items-center justify-between">
             <CardTitle className="text-base font-bold flex items-center gap-2">
               <Receipt className="h-4 w-4 text-primary" /> Accounts AR Tax Invoices &amp; Credit Notes
             </CardTitle>
@@ -604,18 +604,18 @@ export default function CustomerDetailPage() {
                       <TableCell className="text-right font-mono font-bold text-foreground">
                         {formatCurrency(inv.totalAmount)}
                       </TableCell>
-                      <TableCell className="text-right font-mono font-semibold text-emerald-600">
+                      <TableCell className="text-right font-mono font-semibold text-tone-green-text">
                         {formatCurrency(inv.paidAmount || 0)}
                       </TableCell>
-                      <TableCell className="text-right font-mono font-bold text-amber-700 dark:text-amber-400">
+                      <TableCell className="text-right font-mono font-bold text-tone-amber-text">
                         {formatCurrency(inv.outstandingAmount || inv.totalAmount)}
                       </TableCell>
                       <TableCell className="text-center">
                         <span
                           className={`inline-flex px-2 py-0.5 rounded-full text-[10px] font-bold uppercase font-mono ${
                             inv.status === 'POSTED' || inv.status === 'APPROVED'
-                              ? 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-400'
-                              : 'bg-n-500/10 text-n-700 dark:text-n-400'
+                              ? 'bg-tone-green-bg text-tone-green-text'
+                              : 'bg-n-500/10 text-n-700'
                           }`}
                         >
                           {inv.status}
@@ -642,9 +642,9 @@ export default function CustomerDetailPage() {
       {/* Tab Content 3: Customer Financial Running Ledger */}
       {activeTab === 'ledger' && (
         <Card className="rounded-2xl border-border shadow-sm overflow-hidden">
-          <CardHeader className="bg-card/40 border-b border-border pb-3 flex flex-row items-center justify-between">
+          <CardHeader className="bg-card/40 border-border-strong border-border pb-3 flex flex-row items-center justify-between">
             <CardTitle className="text-base font-bold flex items-center gap-2">
-              <TrendingUp className="h-4 w-4 text-emerald-600" /> Customer Account Ledger &amp; Transaction Statement
+              <TrendingUp className="h-4 w-4 text-tone-green-text" /> Customer Account Ledger &amp; Transaction Statement
             </CardTitle>
             <div className="text-xs font-mono font-bold text-foreground">
               Net Balance: {formatCurrency(financials.outstanding)}
@@ -693,10 +693,10 @@ export default function CustomerDetailPage() {
                           <span
                             className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold uppercase font-mono ${
                               row.entryType === 'INVOICE'
-                                ? 'bg-blue-500/10 text-blue-700 dark:text-blue-400'
+                                ? 'bg-tone-blue-bg text-tone-blue-text'
                                 : row.entryType === 'RECEIPT'
-                                ? 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-400'
-                                : 'bg-purple-500/10 text-purple-700 dark:text-purple-400'
+                                ? 'bg-tone-green-bg text-tone-green-text'
+                                : 'bg-tone-purple-bg text-tone-purple-text'
                             }`}
                           >
                             {row.entryType === 'INVOICE' ? (
@@ -710,7 +710,7 @@ export default function CustomerDetailPage() {
                         <TableCell className="text-right font-mono font-bold text-foreground">
                           {debit > 0 ? formatCurrency(debit) : '—'}
                         </TableCell>
-                        <TableCell className="text-right font-mono font-bold text-emerald-600">
+                        <TableCell className="text-right font-mono font-bold text-tone-green-text">
                           {credit > 0 ? formatCurrency(credit) : '—'}
                         </TableCell>
                         <TableCell className="text-right font-mono font-black text-foreground">
@@ -730,7 +730,7 @@ export default function CustomerDetailPage() {
       {activeTab === 'addresses' && (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <Card className="rounded-2xl border-border shadow-sm">
-            <CardHeader className="bg-card/40 border-b border-border pb-3">
+            <CardHeader className="bg-card/40 border-border-strong border-border pb-3">
               <CardTitle className="text-base font-bold flex items-center gap-2">
                 <Building2 className="h-4 w-4 text-primary" /> Primary Billing Address
               </CardTitle>
@@ -756,9 +756,9 @@ export default function CustomerDetailPage() {
           </Card>
 
           <Card className="rounded-2xl border-border shadow-sm">
-            <CardHeader className="bg-card/40 border-b border-border pb-3">
+            <CardHeader className="bg-card/40 border-border-strong border-border pb-3">
               <CardTitle className="text-base font-bold flex items-center gap-2">
-                <Truck className="h-4 w-4 text-blue-500" /> Default Shipping Address
+                <Truck className="h-4 w-4 text-tone-blue-text" /> Default Shipping Address
               </CardTitle>
             </CardHeader>
             <CardContent className="p-5 space-y-2 text-xs">
@@ -781,7 +781,7 @@ export default function CustomerDetailPage() {
       {/* Tab Content 5: Profile & KYC */}
       {activeTab === 'profile' && (
         <Card className="rounded-2xl border-border shadow-sm">
-          <CardHeader className="bg-card/40 border-b border-border pb-3">
+          <CardHeader className="bg-card/40 border-border-strong border-border pb-3">
             <CardTitle className="text-base font-bold flex items-center gap-2">
               <FileText className="h-4 w-4 text-primary" /> Master Data &amp; Accounting Parameters
             </CardTitle>

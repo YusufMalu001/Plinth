@@ -234,10 +234,10 @@ export function PurchaseBillModal({
                 <h2 className="text-xl font-bold tracking-tight text-foreground">
                   Supplier Bill: {viewBill.supplierInvoiceNumber}
                 </h2>
-                <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-foreground dark:text-primary">
+                <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-foreground ">
                   {viewBill.kind}
                 </span>
-                <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-primary dark:text-primary">
+                <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-primary ">
                   {viewBill.status}
                 </span>
               </div>
@@ -262,8 +262,8 @@ export function PurchaseBillModal({
                   <div
                     key={idx}
                     className={`flex items-start gap-2.5 rounded-xl border p-3 text-xs ${finding.severity === 'BLOCKING'
-                      ? 'border-destructive/30 bg-destructive/100/5 text-destructive dark:text-destructive'
-                      : 'border-border bg-muted/40 text-foreground dark:text-muted-foreground'
+                      ? 'border-destructive/30 bg-destructive/100/5 text-destructive '
+                      : 'border-border bg-muted/40 text-foreground '
                       }`}
                   >
                     <ShieldAlert className="h-4 w-4 shrink-0 mt-0.5" />
@@ -358,7 +358,7 @@ export function PurchaseBillModal({
 
         <form ref={formRef} onSubmit={handleSubmit} className="mt-5 space-y-5">
           {submissionError && (
-            <div role="alert" className="sticky top-0 z-20 flex items-start justify-between gap-3 rounded-xl border border-destructive/30 bg-destructive/10 px-4 py-3 text-sm text-destructive shadow-lg dark:border-destructive/30 dark:bg-destructive dark:text-destructive">
+            <div role="alert" className="sticky top-0 z-20 flex items-start justify-between gap-3 rounded-xl border border-destructive/30 bg-destructive/10 px-4 py-3 text-sm text-destructive shadow-lg   ">
               <span>{submissionError}</span>
               <button type="button" onClick={() => setSubmissionError('')} className="shrink-0 text-xs font-semibold underline">Dismiss</button>
             </div>
@@ -442,7 +442,7 @@ export function PurchaseBillModal({
                 <button
                   type="button"
                   onClick={addLine}
-                  className="inline-flex items-center gap-1 text-xs font-semibold text-muted-foreground hover:text-foreground dark:text-primary"
+                  className="inline-flex items-center gap-1 text-xs font-semibold text-muted-foreground hover:text-foreground "
                 >
                   <Plus className="h-3.5 w-3.5" />
                   Add Line <kbd className="ml-1 rounded border border-border bg-muted px-1 py-0.5 text-[9px] font-mono">Alt+A</kbd>
@@ -633,10 +633,10 @@ export function PurchaseBillModal({
                           <div className="mt-1 flex flex-wrap items-center justify-between gap-x-2 text-[10px] text-muted-foreground">
                             <span>PO rate: <strong className="font-mono text-foreground">{formatCurrency(poRate)}</strong></span>
                             {line.unitPrice ? (
-                              <span className={Math.abs(variance) < 0.005 ? 'text-emerald-700' : 'text-amber-700'}>
+                              <span className={Math.abs(variance) < 0.005 ? 'text-tone-green-text' : 'text-tone-amber-text'}>
                                 {Math.abs(variance) < 0.005 ? 'Matches PO rate' : `Variance ${variance > 0 ? '+' : ''}${formatCurrency(variance)}`}
                               </span>
-                            ) : <span className="text-amber-700">Invoice rate not extracted</span>}
+                            ) : <span className="text-tone-amber-text">Invoice rate not extracted</span>}
                           </div>
                         );
                       })()}
@@ -710,7 +710,7 @@ export function PurchaseBillModal({
               </div>
               <div className="flex justify-between border-t border-border/70 pt-2 text-sm font-bold text-foreground">
                 <span>Invoice Total:</span>
-                <span className="text-muted-foreground dark:text-primary">{formatCurrency(totalAmount)}</span>
+                <span className="text-muted-foreground ">{formatCurrency(totalAmount)}</span>
               </div>
             </div>
           </div>

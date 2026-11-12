@@ -231,16 +231,16 @@ export function FgReceiptQueueWorkspace() {
       {activeTab === 'queue' && (
         <div className="space-y-6">
           {/* Section 1: Ready to Receive Gate Clearances */}
-          <Card className="border-emerald-500/30 bg-emerald-500/5 shadow-xs">
-            <CardHeader className="pb-3 border-b border-emerald-500/20">
+          <Card className="border-tone-green-solid/30 bg-tone-emerald-bg/5 shadow-xs">
+            <CardHeader className="pb-3 border-b border-tone-green-solid/20">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-5 w-5 text-emerald-600" />
-                  <CardTitle className="text-sm font-black uppercase text-emerald-900 dark:text-emerald-300">
+                  <CheckCircle2 className="h-5 w-5 text-tone-green-text" />
+                  <CardTitle className="text-sm font-black uppercase text-tone-green-text ">
                     1. Ready to Receive into FG Stock ({readyOutputs.length})
                   </CardTitle>
                 </div>
-                <span className="text-xs text-emerald-700 dark:text-emerald-400 font-medium">
+                <span className="text-xs text-tone-green-text  font-medium">
                   Gate Passed: FINAL_FG QC PASS + Packaging Ready
                 </span>
               </div>
@@ -268,7 +268,7 @@ export function FgReceiptQueueWorkspace() {
                   </TableHeader>
                   <TableBody>
                     {readyOutputs.map(output => (
-                      <TableRow key={output.id} className="hover:bg-emerald-500/10">
+                      <TableRow key={output.id} className="hover:bg-tone-emerald-bg/10">
                         <TableCell className="font-mono font-bold text-xs">{output.outputNumber}</TableCell>
                         <TableCell>
                           <div className="font-bold text-xs">{output.productName || 'Product'}</div>
@@ -281,7 +281,7 @@ export function FgReceiptQueueWorkspace() {
                           {output.quantity} {output.uomSymbol || 'pcs'}
                         </TableCell>
                         <TableCell>
-                          <span className="inline-flex items-center gap-1 text-emerald-700 dark:text-emerald-400 font-bold text-xs">
+                          <span className="inline-flex items-center gap-1 text-tone-green-text  font-bold text-xs">
                             <ShieldCheck className="h-3.5 w-3.5" />
                             FINAL_FG PASS
                           </span>
@@ -295,14 +295,14 @@ export function FgReceiptQueueWorkspace() {
                             Edit
                           </button>
                         </TableCell>
-                        <TableCell className="text-xs font-mono font-medium text-slate-700 dark:text-slate-300 whitespace-nowrap">
+                        <TableCell className="text-xs font-mono font-medium text-ink-secondary  whitespace-nowrap">
                           {formatDateTime(output.createdAt)}
                         </TableCell>
                         <TableCell className="text-right">
                           <Button
                             size="sm"
                             onClick={() => handleOpenReceive(output)}
-                            className="bg-emerald-600 hover:bg-emerald-700 text-white gap-1.5 shadow-2xs text-xs"
+                            className="bg-tone-emerald-bg hover:bg-tone-emerald-bg text-white gap-1.5 shadow-2xs text-xs"
                           >
                             <PackageCheck className="h-3.5 w-3.5" />
                             Receive FG
@@ -317,16 +317,16 @@ export function FgReceiptQueueWorkspace() {
           </Card>
 
           {/* Section 2: Awaiting QC or Packaging Gate Clearance */}
-          <Card className="border-amber-500/30 bg-amber-500/5 shadow-xs">
-            <CardHeader className="pb-3 border-b border-amber-500/20">
+          <Card className="border-tone-amber-solid/30 bg-tone-amber-bg/5 shadow-xs">
+            <CardHeader className="pb-3 border-b border-tone-amber-solid/20">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <Clock className="h-5 w-5 text-amber-600" />
-                  <CardTitle className="text-sm font-black uppercase text-amber-900 dark:text-amber-300">
+                  <Clock className="h-5 w-5 text-tone-amber-text" />
+                  <CardTitle className="text-sm font-black uppercase text-tone-amber-text ">
                     2. Awaiting QC / Packaging Gate Clearance ({awaitingGateOutputs.length})
                   </CardTitle>
                 </div>
-                <span className="text-xs text-amber-700 dark:text-amber-400 font-medium">
+                <span className="text-xs text-tone-amber-text  font-medium">
                   Physically produced intermediate outputs requiring completion before FG entry.
                 </span>
               </div>
@@ -352,7 +352,7 @@ export function FgReceiptQueueWorkspace() {
                   </TableHeader>
                   <TableBody>
                     {awaitingGateOutputs.map(output => (
-                      <TableRow key={output.id} className="hover:bg-amber-500/10">
+                      <TableRow key={output.id} className="hover:bg-tone-amber-bg/10">
                         <TableCell className="font-mono font-bold text-xs">{output.outputNumber}</TableCell>
                         <TableCell>
                           <div className="font-bold text-xs">{output.productName || 'Product'}</div>
@@ -366,11 +366,11 @@ export function FgReceiptQueueWorkspace() {
                         </TableCell>
                         <TableCell>
                           {output.isQcPassed ? (
-                            <span className="text-emerald-600 font-bold text-xs flex items-center gap-1">
+                            <span className="text-tone-green-text font-bold text-xs flex items-center gap-1">
                               <CheckCircle2 className="h-3.5 w-3.5" /> PASS
                             </span>
                           ) : (
-                            <span className="text-amber-600 font-bold text-xs flex items-center gap-1">
+                            <span className="text-tone-amber-text font-bold text-xs flex items-center gap-1">
                               <Clock className="h-3.5 w-3.5" /> QC Pending
                             </span>
                           )}
@@ -384,10 +384,10 @@ export function FgReceiptQueueWorkspace() {
                             Update
                           </button>
                         </TableCell>
-                        <TableCell className="text-xs font-mono font-medium text-slate-700 dark:text-slate-300 whitespace-nowrap">
+                        <TableCell className="text-xs font-mono font-medium text-ink-secondary  whitespace-nowrap">
                           {formatDateTime(output.createdAt)}
                         </TableCell>
-                        <TableCell className="text-right text-xs text-amber-800 dark:text-amber-300 font-mono">
+                        <TableCell className="text-right text-xs text-tone-amber-text  font-mono">
                           {output.gateBlockReason || 'Awaiting final gate criteria'}
                         </TableCell>
                       </TableRow>
@@ -441,7 +441,7 @@ export function FgReceiptQueueWorkspace() {
                         <TableCell className="text-right font-mono font-black text-xs">
                           {output.quantity} {output.uomSymbol || 'pcs'}
                         </TableCell>
-                        <TableCell className="text-xs font-mono font-medium text-slate-700 dark:text-slate-300 whitespace-nowrap">
+                        <TableCell className="text-xs font-mono font-medium text-ink-secondary  whitespace-nowrap">
                           {formatDateTime(output.createdAt)}
                         </TableCell>
                         <TableCell className="text-xs text-destructive font-medium">
@@ -521,7 +521,7 @@ export function FgReceiptQueueWorkspace() {
                           </div>
                         )}
                       </TableCell>
-                      <TableCell className="text-xs font-mono font-bold text-slate-700 dark:text-slate-300 whitespace-nowrap">
+                      <TableCell className="text-xs font-mono font-bold text-ink-secondary  whitespace-nowrap">
                         {formatDateTime(receipt.receivedAt || receipt.createdAt)}
                       </TableCell>
                       <TableCell className="text-right space-x-2">
@@ -550,7 +550,7 @@ export function FgReceiptQueueWorkspace() {
                             size="sm"
                             variant="outline"
                             onClick={() => handleExecuteRelease(receipt)}
-                            className="text-xs gap-1 text-emerald-600 border-emerald-500/40 hover:bg-emerald-50"
+                            className="text-xs gap-1 text-tone-green-text border-tone-green-solid/40 hover:bg-tone-emerald-bg"
                           >
                             <Unlock className="h-3 w-3" />
                             Release
@@ -656,7 +656,7 @@ export function FgReceiptQueueWorkspace() {
               <Button variant="outline" size="sm" onClick={() => setReceiveModalOpen(false)}>
                 Cancel
               </Button>
-              <Button size="sm" onClick={handleExecuteReceive} className="bg-emerald-600 hover:bg-emerald-700 text-white">
+              <Button size="sm" onClick={handleExecuteReceive} className="bg-tone-emerald-bg hover:bg-tone-emerald-bg text-white">
                 Confirm &amp; Post to Inventory
               </Button>
             </div>

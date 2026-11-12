@@ -285,12 +285,12 @@ export default function ProductionScheduleExecutionDetail() {
             <span className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
               Completed Good Output
             </span>
-            <div className="h-9 w-9 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 flex items-center justify-center shrink-0">
+            <div className="h-9 w-9 rounded-xl bg-tone-green-bg text-tone-green-text border border-tone-green-solid/25 flex items-center justify-center shrink-0">
               <PackageCheck size={18} />
             </div>
           </div>
           <div className="mt-4 flex items-baseline gap-2">
-            <span className="font-mono text-3xl font-extrabold text-emerald-700 dark:text-emerald-400 tracking-tight">
+            <span className="font-mono text-3xl font-extrabold text-tone-green-text tracking-tight">
               {completedQty.toLocaleString()}
             </span>
             <span className="text-xs text-muted-foreground font-semibold">{uomSymbol} ({overallProgress}%)</span>
@@ -335,12 +335,12 @@ export default function ProductionScheduleExecutionDetail() {
       </div>
 
       {/* ── 3. Navigation Tabs ─────────────────────────────────────────────────── */}
-      <div className="border-b border-border">
+      <div className="border-border-strong border-border">
         <div className="flex items-center gap-1 sm:gap-2 overflow-x-auto">
           <button
             type="button"
             onClick={() => setActiveTab("departments")}
-            className={`flex items-center gap-2 border-b-2 px-4 py-3 text-xs font-bold transition-all cursor-pointer whitespace-nowrap ${
+            className={`flex items-center gap-2 border-border-strong-2 px-4 py-3 text-xs font-bold transition-all cursor-pointer whitespace-nowrap ${
               activeTab === "departments"
                 ? "border-primary text-primary"
                 : "border-transparent text-muted-foreground hover:text-foreground"
@@ -353,7 +353,7 @@ export default function ProductionScheduleExecutionDetail() {
           <button
             type="button"
             onClick={() => setActiveTab("progress")}
-            className={`flex items-center gap-2 border-b-2 px-4 py-3 text-xs font-bold transition-all cursor-pointer whitespace-nowrap ${
+            className={`flex items-center gap-2 border-border-strong-2 px-4 py-3 text-xs font-bold transition-all cursor-pointer whitespace-nowrap ${
               activeTab === "progress"
                 ? "border-primary text-primary"
                 : "border-transparent text-muted-foreground hover:text-foreground"
@@ -366,7 +366,7 @@ export default function ProductionScheduleExecutionDetail() {
           <button
             type="button"
             onClick={() => setActiveTab("materials")}
-            className={`flex items-center gap-2 border-b-2 px-4 py-3 text-xs font-bold transition-all cursor-pointer whitespace-nowrap ${
+            className={`flex items-center gap-2 border-border-strong-2 px-4 py-3 text-xs font-bold transition-all cursor-pointer whitespace-nowrap ${
               activeTab === "materials"
                 ? "border-primary text-primary"
                 : "border-transparent text-muted-foreground hover:text-foreground"
@@ -379,7 +379,7 @@ export default function ProductionScheduleExecutionDetail() {
           <button
             type="button"
             onClick={() => setActiveTab("assembly")}
-            className={`flex items-center gap-2 border-b-2 px-4 py-3 text-xs font-bold transition-all cursor-pointer whitespace-nowrap ${
+            className={`flex items-center gap-2 border-border-strong-2 px-4 py-3 text-xs font-bold transition-all cursor-pointer whitespace-nowrap ${
               activeTab === "assembly"
                 ? "border-primary text-primary"
                 : "border-transparent text-muted-foreground hover:text-foreground"
@@ -440,7 +440,7 @@ export default function ProductionScheduleExecutionDetail() {
                         >
                           <div className="space-y-3.5">
                             {/* Card Header: Batch Number & Status */}
-                            <div className="flex items-center justify-between gap-2 border-b border-border/60 pb-3">
+                            <div className="flex items-center justify-between gap-2 border-border-strong border-border/60 pb-3">
                               <span className="font-mono text-xs font-bold text-foreground group-hover:text-primary transition-colors">
                                 {batch.batchNumber}
                               </span>
@@ -486,7 +486,7 @@ export default function ProductionScheduleExecutionDetail() {
                                 <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-muted">
                                   <div
                                     className={`h-full rounded-full transition-all duration-300 ${
-                                      batchProgress === 100 ? "bg-emerald-500" : "bg-primary"
+                                      batchProgress === 100 ? "bg-tone-green-solid" : "bg-primary"
                                     }`}
                                     style={{ width: `${batchProgress}%` }}
                                   />
@@ -515,7 +515,7 @@ export default function ProductionScheduleExecutionDetail() {
 
                               <div className="rounded-lg bg-muted/20 border border-border/60 p-2">
                                 <p className="text-[10px] font-semibold uppercase text-muted-foreground">Scrap / Loss</p>
-                                <p className="font-mono text-xs font-bold text-rose-700 dark:text-rose-400 mt-0.5">
+                                <p className="font-mono text-xs font-bold text-tone-red-text mt-0.5">
                                   {scrapQty.toLocaleString()}
                                 </p>
                               </div>
@@ -538,11 +538,11 @@ export default function ProductionScheduleExecutionDetail() {
                             </div>
 
                             {batch.availableToSend > 0 ? (
-                              <span className="text-[10px] font-bold text-emerald-700 dark:text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded border border-emerald-500/20 whitespace-nowrap">
+                              <span className="text-[10px] font-bold text-tone-green-text bg-tone-green-bg px-1.5 py-0.5 rounded border border-tone-green-solid/25 whitespace-nowrap">
                                 {batch.availableToSend} ready
                               </span>
                             ) : batch.outgoingHandovers?.some((h) => h.status === "PROPOSED") ? (
-                              <span className="text-[10px] font-bold text-amber-700 dark:text-amber-400 bg-amber-500/10 px-1.5 py-0.5 rounded border border-amber-500/20 whitespace-nowrap">
+                              <span className="text-[10px] font-bold text-tone-amber-text bg-tone-amber-bg px-1.5 py-0.5 rounded border border-tone-amber-solid/25 whitespace-nowrap">
                                 Handover Dispatched
                               </span>
                             ) : null}
@@ -563,7 +563,7 @@ export default function ProductionScheduleExecutionDetail() {
         <div className="space-y-6">
           {/* 1. Schedule Completion Master Overview */}
           <Card className="rounded-xl border border-border/80 bg-card p-5 shadow-xs space-y-4">
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-b border-border/60 pb-3.5">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-border-strong border-border/60 pb-3.5">
               <div>
                 <h3 className="text-sm font-bold uppercase tracking-wider text-foreground flex items-center gap-2">
                   <Activity className="h-4 w-4 text-primary" />
@@ -603,7 +603,7 @@ export default function ProductionScheduleExecutionDetail() {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-1">
               <div className="rounded-lg bg-muted/20 border border-border/60 p-3">
                 <p className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Completed Finished Goods</p>
-                <p className="font-mono text-base font-bold text-emerald-700 dark:text-emerald-400 mt-1">
+                <p className="font-mono text-base font-bold text-tone-green-text mt-1">
                   {completedQty.toLocaleString()} <span className="text-xs text-muted-foreground font-normal">{uomSymbol}</span>
                 </p>
                 <p className="text-[10px] text-muted-foreground mt-0.5">Fully inspected &amp; approved</p>
@@ -629,7 +629,7 @@ export default function ProductionScheduleExecutionDetail() {
 
               <div className="rounded-lg bg-muted/20 border border-border/60 p-3">
                 <p className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Scrap / Loss Reported</p>
-                <p className="font-mono text-base font-bold text-rose-700 dark:text-rose-400 mt-1">
+                <p className="font-mono text-base font-bold text-tone-red-text mt-1">
                   {totalLosses.toLocaleString()} <span className="text-xs text-muted-foreground font-normal">units</span>
                 </p>
                 <p className="text-[10px] text-muted-foreground mt-0.5">Recorded scrap &amp; defects</p>
@@ -651,7 +651,7 @@ export default function ProductionScheduleExecutionDetail() {
             <Card className="rounded-xl border border-border/80 bg-card shadow-xs overflow-hidden">
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-xs">
-                  <thead className="bg-muted/40 border-b border-border/80 text-muted-foreground font-semibold">
+                  <thead className="bg-muted/40 border-border-strong border-border/80 text-muted-foreground font-semibold">
                     <tr>
                       <th className="p-3.5">Department &amp; Stage</th>
                       <th className="p-3.5">Produced Output</th>
@@ -727,7 +727,7 @@ export default function ProductionScheduleExecutionDetail() {
                                   {destinationDeptName}
                                 </span>
                                 {isAssembly ? (
-                                  <span className="inline-flex items-center gap-1 mt-1 px-1.5 py-0.5 rounded text-[10px] font-bold bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20">
+                                  <span className="inline-flex items-center gap-1 mt-1 px-1.5 py-0.5 rounded text-[10px] font-bold bg-tone-green-bg text-tone-green-text border border-tone-green-solid/25">
                                     Final Assembly · FG Gate
                                   </span>
                                 ) : (
@@ -746,14 +746,14 @@ export default function ProductionScheduleExecutionDetail() {
                                 <span className="font-mono font-bold text-foreground">
                                   {compQty.toLocaleString()} / {expQty.toLocaleString()} <span className="font-normal text-muted-foreground">{batchUnit}</span>
                                 </span>
-                                <span className={`font-mono font-bold ${progressPercent === 100 ? "text-emerald-700 dark:text-emerald-400" : "text-primary"}`}>
+                                <span className={`font-mono font-bold ${progressPercent === 100 ? "text-tone-green-text" : "text-primary"}`}>
                                   {progressPercent}%
                                 </span>
                               </div>
                               <div className="h-2 w-full overflow-hidden rounded-full bg-muted">
                                 <div
                                   className={`h-full rounded-full transition-all duration-300 ${
-                                    progressPercent === 100 ? "bg-emerald-500" : "bg-primary"
+                                    progressPercent === 100 ? "bg-tone-green-solid" : "bg-primary"
                                   }`}
                                   style={{ width: `${progressPercent}%` }}
                                 />
@@ -763,7 +763,7 @@ export default function ProductionScheduleExecutionDetail() {
                                   Floor WIP: <strong className="font-mono font-semibold text-foreground">{pndQty.toLocaleString()} {batchUnit}</strong>
                                 </span>
                                 {scrapQty > 0 && (
-                                  <span className="font-bold text-rose-700 dark:text-rose-400">
+                                  <span className="font-bold text-tone-red-text">
                                     {scrapQty.toLocaleString()} scrap
                                   </span>
                                 )}
@@ -775,8 +775,8 @@ export default function ProductionScheduleExecutionDetail() {
                           <td className="p-3.5">
                             <div>
                               {isWorking && (
-                                <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 px-2.5 py-0.5 text-[11px] font-bold border border-emerald-500/20">
-                                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                                <span className="inline-flex items-center gap-1.5 rounded-full bg-tone-green-bg text-tone-green-text px-2.5 py-0.5 text-[11px] font-bold border border-tone-green-solid/25">
+                                  <span className="h-1.5 w-1.5 rounded-full bg-tone-green-solid animate-pulse" />
                                   Working Now
                                 </span>
                               )}
@@ -786,7 +786,7 @@ export default function ProductionScheduleExecutionDetail() {
                                 </span>
                               )}
                               {isAwaiting && (
-                                <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-400 px-2.5 py-0.5 text-[11px] font-bold border border-amber-500/20">
+                                <span className="inline-flex items-center gap-1.5 rounded-full bg-tone-amber-bg text-tone-amber-text px-2.5 py-0.5 text-[11px] font-bold border border-tone-amber-solid/25">
                                   Awaiting Receipt
                                 </span>
                               )}
@@ -853,7 +853,7 @@ export default function ProductionScheduleExecutionDetail() {
             <Card className="rounded-xl border border-border/80 bg-card shadow-xs overflow-hidden">
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-xs">
-                  <thead className="bg-muted/40 border-b border-border/80 text-muted-foreground font-semibold">
+                  <thead className="bg-muted/40 border-border-strong border-border/80 text-muted-foreground font-semibold">
                     <tr>
                       <th className="p-3.5">Material Name</th>
                       <th className="p-3.5">Destination Department</th>
@@ -905,12 +905,12 @@ export default function ProductionScheduleExecutionDetail() {
                                   <span>Receive</span>
                                 </Button>
                               ) : (
-                                <span className="inline-flex items-center text-[11px] font-semibold text-amber-700 dark:text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">
+                                <span className="inline-flex items-center text-[11px] font-semibold text-tone-amber-text bg-tone-amber-bg px-2 py-0.5 rounded border border-tone-amber-solid/25">
                                   Awaiting Receipt
                                 </span>
                               )
                             ) : (
-                              <span className="inline-flex items-center text-[11px] font-semibold text-emerald-700 dark:text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
+                              <span className="inline-flex items-center text-[11px] font-semibold text-tone-green-text bg-tone-green-bg px-2 py-0.5 rounded border border-tone-green-solid/25">
                                 <Check className="h-3 w-3 mr-1" /> Fully Received
                               </span>
                             )}
@@ -957,7 +957,7 @@ export default function ProductionScheduleExecutionDetail() {
 
           {/* Intake Requirements Table */}
           <Card className="rounded-xl border border-border/80 bg-card shadow-xs overflow-hidden">
-            <div className="p-4 border-b border-border/80 bg-muted/20">
+            <div className="p-4 border-border-strong border-border/80 bg-muted/20">
               <h4 className="text-xs font-bold uppercase tracking-wider text-foreground">
                 Intake Component Balances
               </h4>
@@ -965,7 +965,7 @@ export default function ProductionScheduleExecutionDetail() {
 
             <div className="overflow-x-auto">
               <table className="w-full text-left text-xs">
-                <thead className="bg-muted/40 border-b border-border/80 text-muted-foreground font-semibold">
+                <thead className="bg-muted/40 border-border-strong border-border/80 text-muted-foreground font-semibold">
                   <tr>
                     <th className="p-3.5">Component Item</th>
                     <th className="p-3.5">Source Operation</th>
@@ -1001,7 +1001,7 @@ export default function ProductionScheduleExecutionDetail() {
                         <td className="p-3.5 text-right font-mono font-bold text-foreground">
                           {accepted.toLocaleString()} {item.unitName}
                         </td>
-                        <td className="p-3.5 text-right font-mono font-bold text-emerald-700 dark:text-emerald-400">
+                        <td className="p-3.5 text-right font-mono font-bold text-tone-green-text">
                           {unallocated.toLocaleString()} {item.unitName}
                         </td>
                         <td className="p-3.5">
@@ -1021,7 +1021,7 @@ export default function ProductionScheduleExecutionDetail() {
                                       size="sm"
                                       onClick={() => handleDecideHandover(handover.id, "ACCEPTED")}
                                       disabled={decideHandoverMutation.isPending}
-                                      className="h-6 px-2 bg-emerald-600 hover:bg-emerald-700 text-white text-[10px] font-bold shadow-none"
+                                      className="h-6 px-2 bg-action hover:bg-[color:var(--action-primary-bg-hover)] text-inverse text-[10px] font-bold shadow-none"
                                     >
                                       Accept
                                     </Button>
@@ -1036,7 +1036,7 @@ export default function ProductionScheduleExecutionDetail() {
                                           setActiveHandoverRefusalId(handover.id);
                                         }
                                       }}
-                                      className="h-6 px-2 text-rose-700 dark:text-rose-400 border-rose-500/30 text-[10px] font-bold"
+                                      className="h-6 px-2 text-tone-red-text border-tone-red-solid/25 text-[10px] font-bold"
                                     >
                                       Refuse
                                     </Button>
@@ -1051,7 +1051,7 @@ export default function ProductionScheduleExecutionDetail() {
                                     placeholder="Enter refusal reason..."
                                     value={refusalReason}
                                     onChange={(e) => setRefusalReason(e.target.value)}
-                                    className="flex-1 rounded border border-rose-500/40 bg-background px-2 py-1 text-xs"
+                                    className="flex-1 rounded border border-tone-red-solid/25 bg-background px-2 py-1 text-xs"
                                   />
                                 </div>
                               )}

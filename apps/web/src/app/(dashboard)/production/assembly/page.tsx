@@ -54,12 +54,12 @@ function AssemblyScheduleCard({ schedule }: { schedule: ProductionScheduleSummar
             <span className="font-mono text-sm font-bold text-primary">{schedule.planNumber}</span>
             <StatusBadge status={schedule.status} />
             {buildableKits > 0 && (
-              <span className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-2 py-0.5 text-[11px] font-bold text-emerald-700 dark:text-emerald-400">
+              <span className="rounded-lg border border-tone-green-solid/25 bg-tone-green-bg px-2 py-0.5 text-[11px] font-bold text-tone-green-text">
                 {buildableKits.toLocaleString()} kits ready to assemble
               </span>
             )}
             {pendingTransfers > 0 && (
-              <span className="rounded-lg border border-amber-500/30 bg-amber-500/10 px-2 py-0.5 text-[11px] font-bold text-amber-700 dark:text-amber-400 flex items-center gap-1">
+              <span className="rounded-lg border border-tone-amber-solid/25 bg-tone-amber-bg px-2 py-0.5 text-[11px] font-bold text-tone-amber-text flex items-center gap-1">
                 <Clock className="w-3 h-3" />
                 <span>{pendingTransfers} transfer{pendingTransfers > 1 ? 's' : ''} pending</span>
               </span>
@@ -97,7 +97,7 @@ function AssemblyScheduleCard({ schedule }: { schedule: ProductionScheduleSummar
                   key={item.id}
                   className={`rounded-md border px-2 py-0.5 font-medium ${
                     isFulfilled
-                      ? 'border-emerald-500/30 bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 font-semibold'
+                      ? 'border-tone-green-solid/25 bg-tone-green-bg text-tone-green-text font-semibold'
                       : 'border-border/70 bg-muted/40 text-foreground'
                   }`}
                 >
@@ -124,7 +124,7 @@ function AssemblyScheduleCard({ schedule }: { schedule: ProductionScheduleSummar
           <div className="flex items-center justify-between text-xs text-muted-foreground">
             <span>{activeRunsCount} active run{activeRunsCount > 1 ? 's' : ''}</span>
             {buildableKits > 0 ? (
-              <span className="text-emerald-600 dark:text-emerald-400 font-bold flex items-center gap-1">
+              <span className="text-tone-green-text font-bold flex items-center gap-1">
                 <CheckCircle2 className="w-3.5 h-3.5" />
                 <span>Ready to Assemble</span>
               </span>

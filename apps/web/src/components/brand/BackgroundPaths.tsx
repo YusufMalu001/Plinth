@@ -334,7 +334,7 @@ export default function BackgroundPaths({
   return (
     <div
       className={cn(
-        "relative flex min-h-[560px] w-full items-center justify-center overflow-hidden bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100",
+        "relative flex min-h-[560px] w-full items-center justify-center overflow-hidden bg-page text-ink",
         className
       )}
       ref={rootRef}
@@ -366,7 +366,7 @@ function DefaultContent() {
       <h1 className="font-semibold text-4xl tracking-tight sm:text-5xl">
         Calm by default
       </h1>
-      <p className="max-w-sm text-base text-zinc-500 dark:text-zinc-400">
+      <p className="max-w-sm text-base text-ink-secondary">
         A ribbon of lines that keeps flowing in one color, at any size. Move the
         cursor through it and the lines part around you.
       </p>

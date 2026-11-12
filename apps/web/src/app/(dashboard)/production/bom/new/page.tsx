@@ -524,9 +524,9 @@ export default function NewBomFormulaPage() {
 
             {/* SECTION 01: BOM DETAILS */}
             <div className="bg-card rounded-xl border border-border shadow-none overflow-hidden">
-              <div className="px-6 py-4 border-b border-border/70 flex flex-wrap items-center justify-between gap-3 bg-card">
+              <div className="px-6 py-4 border-border-strong border-border/70 flex flex-wrap items-center justify-between gap-3 bg-card">
                 <div className="flex items-center gap-3">
-                  <div className="flex items-center justify-center w-7 h-7 rounded-lg bg-primary text-white font-mono text-xs font-black shadow-none ring-2 ring-primary/20">
+                  <div className="flex items-center justify-center w-7 h-7 rounded-lg bg-primary text-inverse font-mono text-xs font-black shadow-none ring-2 ring-primary/20">
                     01
                   </div>
                   <div>
@@ -619,9 +619,9 @@ export default function NewBomFormulaPage() {
             {/* SECTION 02: COMPONENT MATERIALS & RATIO RECIPE */}
             <div className="bg-card rounded-xl border border-border shadow-none overflow-hidden">
               {/* Section Header */}
-              <div className="px-6 py-4 border-b border-border/70 flex flex-wrap items-center justify-between gap-3 bg-card">
+              <div className="px-6 py-4 border-border-strong border-border/70 flex flex-wrap items-center justify-between gap-3 bg-card">
                 <div className="flex items-center gap-3">
-                  <div className="flex items-center justify-center w-7 h-7 rounded-lg bg-primary text-white font-mono text-xs font-black shadow-none ring-2 ring-primary/20">
+                  <div className="flex items-center justify-center w-7 h-7 rounded-lg bg-primary text-inverse font-mono text-xs font-black shadow-none ring-2 ring-primary/20">
                     02
                   </div>
                   <div>
@@ -680,7 +680,7 @@ export default function NewBomFormulaPage() {
                 {/* BOM Item Table - Exact columns matching Item Creation page */}
                 <div className="overflow-x-auto rounded-xl border border-border shadow-none">
                   <table className="w-full min-w-[900px] text-left text-xs">
-                    <thead className="bg-muted/50 font-bold uppercase tracking-wider text-muted-foreground border-b border-border">
+                    <thead className="bg-muted/50 font-bold uppercase tracking-wider text-muted-foreground border-border-strong border-border">
                       <tr>
                         <th className="px-3 py-3.5 w-16 text-center">#</th>
                         <th className="px-4 py-3.5 min-w-[240px]">Item</th>
@@ -1022,7 +1022,7 @@ export default function NewBomFormulaPage() {
               type="submit"
               size="sm"
               disabled={isSaving || lines.length === 0}
-              className="h-9 px-5 rounded-xl text-xs font-bold bg-primary hover:bg-primary/90 text-white shadow-none"
+              className="h-9 px-5 rounded-xl text-xs font-bold bg-primary hover:bg-primary/90 text-inverse shadow-none"
               icon={Save}
             >
               {isSaving ? 'Creating BOM...' : 'Create BOM'}

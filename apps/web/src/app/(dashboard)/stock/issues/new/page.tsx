@@ -203,12 +203,12 @@ export default function NewStockIssuePage() {
         />
 
         {formError && (
-          <div className="rounded-2xl border border-rose-500/30 bg-rose-500/10 p-4 shadow-sm animate-in fade-in-0 duration-200">
+          <div className="rounded-2xl border border-tone-red-solid/25 bg-tone-red-bg p-4 shadow-sm animate-in fade-in-0 duration-200">
             <div className="flex items-start gap-3">
-              <XCircle className="h-5 w-5 text-rose-600 dark:text-rose-400 mt-0.5 shrink-0" />
+              <XCircle className="h-5 w-5 text-tone-red-text mt-0.5 shrink-0" />
               <div>
-                <h4 className="text-xs font-bold text-rose-900 dark:text-rose-300 uppercase tracking-wider">Validation Error</h4>
-                <p className="text-xs text-rose-700 dark:text-rose-300 mt-0.5 leading-relaxed">{formError}</p>
+                <h4 className="text-xs font-bold text-tone-red-text uppercase tracking-wider">Validation Error</h4>
+                <p className="text-xs text-tone-red-text mt-0.5 leading-relaxed">{formError}</p>
               </div>
             </div>
           </div>
@@ -322,17 +322,17 @@ export default function NewStockIssuePage() {
                   isError={stockAvailabilityError}
                 />
                 {stockAvailability?.unconvertibleBalanceCount ? (
-                  <p className="text-[11px] font-medium text-amber-800 dark:text-amber-300">
+                  <p className="text-[11px] font-medium text-tone-amber-text">
                     Some stock uses a different unit and has no approved conversion, so it is excluded from the available total.
                   </p>
                 ) : null}
                 {noAvailableStock && !stockAvailability?.unconvertibleBalanceCount && (
-                  <p className="text-[11px] font-semibold text-amber-800 dark:text-amber-300">
+                  <p className="text-[11px] font-semibold text-tone-amber-text">
                     No unreserved company stock is available in this unit.
                   </p>
                 )}
                 {stockShortage && (
-                  <p className="text-[11px] font-semibold text-rose-700 dark:text-rose-300">
+                  <p className="text-[11px] font-semibold text-tone-red-text">
                     Short by {formatQuantity(shortageQuantity)} {selectedUomLabel} for this issue.
                   </p>
                 )}
@@ -391,7 +391,7 @@ export default function NewStockIssuePage() {
                 type="submit"
                 disabled={createIssue.isPending || stockShortage}
                 size="sm"
-                className="rounded-full shadow-xs bg-primary hover:bg-amber-600 text-primary-foreground font-bold text-xs px-6 h-9"
+                className="rounded-full shadow-xs bg-primary hover:bg-[color:var(--tone-amber-solid)] text-primary-foreground font-bold text-xs px-6 h-9"
               >
                 {createIssue.isPending ? 'Issuing...' : 'Issue Stock'}
               </Button>

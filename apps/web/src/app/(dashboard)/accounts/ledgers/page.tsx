@@ -195,7 +195,7 @@ export default function LedgersPage() {
 
       {/* Statement Table */}
       <Card className="rounded-2xl border-border/80 shadow-none">
-        <CardHeader className="border-b border-border/70 p-5">
+        <CardHeader className="border-border-strong border-border/70 p-5">
           <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <CardTitle className="text-base font-bold">

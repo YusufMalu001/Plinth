@@ -124,7 +124,7 @@ export function IssueReplacementChallanModal({
         {/* Header */}
         <div className="flex items-center justify-between border-b border-border px-6 py-4 shrink-0">
           <div className="flex items-center gap-2.5">
-            <div className="p-2 rounded-xl bg-violet-500/10 text-violet-600">
+            <div className="p-2 rounded-xl bg-tone-violet-bg/10 text-tone-purple-text">
               <RefreshCw className="w-4 h-4" />
             </div>
             <div>
@@ -177,7 +177,7 @@ export function IssueReplacementChallanModal({
           {/* Selected Event Details Banner */}
           {currentEvent && (
             <>
-            <div className="grid grid-cols-2 gap-3 p-3.5 rounded-xl bg-violet-500/5 border border-violet-500/20 text-xs">
+            <div className="grid grid-cols-2 gap-3 p-3.5 rounded-xl bg-tone-violet-bg/5 border border-tone-purple-solid/20 text-xs">
               <div>
                 <span className="text-muted-foreground block text-[11px]">Material / Item</span>
                 <span className="font-semibold text-foreground">
@@ -189,7 +189,7 @@ export function IssueReplacementChallanModal({
               </div>
               <div>
                 <span className="text-muted-foreground block text-[11px]">Reported Proposal Qty</span>
-                <span className="font-mono text-base font-bold text-slate-900 dark:text-white">
+                <span className="font-mono text-base font-bold text-ink ">
                   {currentEvent.quantity} {currentEvent.uomCode || 'units'}
                 </span>
               </div>
@@ -206,7 +206,7 @@ export function IssueReplacementChallanModal({
 
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="text-[11px] font-semibold text-emerald-700 dark:text-emerald-400 block mb-1">
+                  <label className="text-[11px] font-semibold text-tone-green-text  block mb-1">
                     Accept &amp; Replace (From Store) *
                   </label>
                   <input
@@ -223,13 +223,13 @@ export function IssueReplacementChallanModal({
                         setRejectedQty(String(Math.max(0, +(totalProposalQty - parsed).toFixed(4))));
                       }
                     }}
-                    className="w-full h-8 px-2.5 text-xs font-mono font-bold bg-background border border-emerald-500/40 rounded-lg text-foreground focus:ring-2 focus:ring-emerald-500/20"
+                    className="w-full h-8 px-2.5 text-xs font-mono font-bold bg-background border border-tone-green-solid/40 rounded-lg text-foreground focus:ring-2 focus:ring-tone-green-solid/20"
                     required
                   />
                 </div>
 
                 <div>
-                  <label className="text-[11px] font-semibold text-rose-700 dark:text-rose-400 block mb-1">
+                  <label className="text-[11px] font-semibold text-tone-red-text  block mb-1">
                     Reject &amp; Return to Dept
                   </label>
                   <input
@@ -246,7 +246,7 @@ export function IssueReplacementChallanModal({
                         setReplacementQty(String(Math.max(0, +(totalProposalQty - parsed).toFixed(4))));
                       }
                     }}
-                    className="w-full h-8 px-2.5 text-xs font-mono font-bold bg-background border border-rose-500/40 rounded-lg text-foreground focus:ring-2 focus:ring-rose-500/20"
+                    className="w-full h-8 px-2.5 text-xs font-mono font-bold bg-background border border-tone-red-solid/40 rounded-lg text-foreground focus:ring-2 focus:ring-tone-red-solid/20"
                   />
                 </div>
               </div>
@@ -353,7 +353,7 @@ export function IssueReplacementChallanModal({
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="h-9 px-5 text-xs font-semibold bg-violet-600 hover:bg-violet-700 text-white shadow-xs"
+              className="h-9 px-5 text-xs font-semibold bg-tone-violet-bg hover:bg-tone-violet-bg text-white shadow-xs"
             >
               {isSubmitting ? 'Issuing...' : 'Issue Replacement Challan'}
             </Button>

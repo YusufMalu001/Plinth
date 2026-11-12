@@ -114,8 +114,8 @@ export function PickDialog({
           height: 30,
           width: 1.2,
           margin: 2,
-          lineColor: '#111827',
-          background: '#ffffff',
+          lineColor: '#171717',
+          background: '#FFFFFF',
         });
       } catch {
         // The server still validates the SKU when legacy barcode data is invalid.
@@ -256,7 +256,7 @@ export function PickDialog({
           </div>
         )}
 
-        <div className="grid gap-3 rounded-xl border border-blue-500/20 bg-blue-500/[0.04] p-4 sm:grid-cols-[1fr_auto] sm:items-center">
+        <div className="grid gap-3 rounded-xl border border-tone-blue-solid/20 bg-tone-blue-bg/[0.04] p-4 sm:grid-cols-[1fr_auto] sm:items-center">
           <div>
             <div className="flex items-center gap-2">
               <Scan className="h-4 w-4 text-primary" />
@@ -301,9 +301,9 @@ export function PickDialog({
                   key={item.id}
                   className={`rounded-xl border p-4 transition-all ${
                     isShortage
-                      ? 'border-amber-500/40 bg-amber-500/[0.03]'
+                      ? 'border-tone-amber-solid/40 bg-tone-amber-bg/[0.03]'
                       : isScanned && matchesBarcode
-                      ? 'border-emerald-500/40 bg-emerald-500/[0.02]'
+                      ? 'border-tone-green-solid/40 bg-tone-emerald-bg/[0.02]'
                       : 'border-border bg-card shadow-2xs'
                   }`}
                 >
@@ -358,7 +358,7 @@ export function PickDialog({
                           }
                           className={`w-full h-9 text-center font-mono font-bold text-sm rounded-lg border bg-background transition-all outline-none focus:ring-1 focus:ring-primary ${
                             isShortage
-                              ? 'border-amber-500 text-amber-700 dark:text-amber-400 bg-amber-500/10'
+                              ? 'border-tone-amber-solid text-tone-amber-text  bg-tone-amber-bg/10'
                               : 'border-border text-foreground'
                           }`}
                         />
@@ -391,17 +391,17 @@ export function PickDialog({
                             className={`h-9 w-full text-xs font-mono pr-8 ${
                               isScanned
                                 ? matchesBarcode
-                                  ? 'border-emerald-500/60 bg-emerald-500/[0.04]'
-                                  : 'border-amber-500/60 bg-amber-500/[0.04]'
+                                  ? 'border-tone-green-solid/60 bg-tone-emerald-bg/[0.04]'
+                                  : 'border-tone-amber-solid/60 bg-tone-amber-bg/[0.04]'
                                 : ''
                             }`}
                           />
                           {isScanned && (
                             <span className="absolute right-2.5 top-2.5">
                               {matchesBarcode ? (
-                                <CheckCircle2 className="h-4 w-4 text-emerald-600" />
+                                <CheckCircle2 className="h-4 w-4 text-tone-green-text" />
                               ) : (
-                                <AlertCircle className="h-4 w-4 text-amber-600" />
+                                <AlertCircle className="h-4 w-4 text-tone-amber-text" />
                               )}
                             </span>
                           )}
@@ -412,11 +412,11 @@ export function PickDialog({
 
                   {/* Shortage Discrepancy Note */}
                   {isShortage && (
-                    <div className="mt-3 flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3 rounded-lg bg-amber-500/10 border border-amber-500/30">
+                    <div className="mt-3 flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3 rounded-lg bg-tone-amber-bg/10 border border-tone-amber-solid/30">
                       <div className="flex items-center gap-2">
-                        <AlertTriangle className="h-4 w-4 text-amber-600 dark:text-amber-400 shrink-0" />
+                        <AlertTriangle className="h-4 w-4 text-tone-amber-text  shrink-0" />
                         <div className="text-xs">
-                          <strong className="text-amber-700 dark:text-amber-400">Shortage Detected: </strong>
+                          <strong className="text-tone-amber-text ">Shortage Detected: </strong>
                           <span className="text-muted-foreground">
                             Picking <strong className="text-foreground">{currentPicked}</strong> of <strong className="text-foreground">{item.remainingQuantity}</strong> ({shortageCount} units short).
                           </span>
@@ -451,13 +451,13 @@ export function PickDialog({
         </div>
 
         {/* Discrepancy & Supervisor Justification */}
-        <div className={`space-y-2 rounded-xl border p-4 transition-all ${hasAnyDiscrepancy ? 'border-amber-500/40 bg-amber-500/[0.04]' : 'border-border/80 bg-muted/10'}`}>
+        <div className={`space-y-2 rounded-xl border p-4 transition-all ${hasAnyDiscrepancy ? 'border-tone-amber-solid/40 bg-tone-amber-bg/[0.04]' : 'border-border/80 bg-muted/10'}`}>
           <div className="flex items-center justify-between">
             <label className="block text-xs font-bold text-foreground">
               Supervisor Override & Discrepancy Remarks {hasAnyDiscrepancy ? '(Recommended for Short Pick)' : '(Optional)'}
             </label>
             {hasAnyDiscrepancy && (
-              <Badge variant="outline" className="text-[10px] text-amber-700 dark:text-amber-400 border-amber-500/40 font-mono">
+              <Badge variant="outline" className="text-[10px] text-tone-amber-text  border-tone-amber-solid/40 font-mono">
                 Partial Fulfillment Wave
               </Badge>
             )}
@@ -478,11 +478,11 @@ export function PickDialog({
         <div className="flex justify-between items-center border-t border-border/60 pt-4">
           <div className="text-xs text-muted-foreground">
             {hasAnyDiscrepancy ? (
-              <span className="font-semibold text-amber-600 dark:text-amber-400 flex items-center gap-1.5">
+              <span className="font-semibold text-tone-amber-text  flex items-center gap-1.5">
                 <Split className="h-3.5 w-3.5" /> Partial Pick Mode Active
               </span>
             ) : (
-              <span className="text-emerald-600 dark:text-emerald-400 font-semibold flex items-center gap-1.5">
+              <span className="text-tone-green-text  font-semibold flex items-center gap-1.5">
                 <CheckCircle2 className="h-3.5 w-3.5" /> Full Quantity Match
               </span>
             )}

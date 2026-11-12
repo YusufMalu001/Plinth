@@ -76,7 +76,7 @@ export function InviteEmployeeModal({ isOpen, onClose, onSuccess }: InviteEmploy
 
         {result ? (
           <div className="space-y-4">
-            <div className="flex items-center space-x-3 text-emerald-600 dark:text-emerald-400">
+            <div className="flex items-center space-x-3 text-tone-green-text ">
               <CheckCircle2 className="w-6 h-6 shrink-0" />
               <div>
                 <h3 className="text-base font-bold text-foreground">Credentials & Invite Generated</h3>
@@ -126,7 +126,7 @@ export function InviteEmployeeModal({ isOpen, onClose, onSuccess }: InviteEmploy
             </div>
 
             {copied && (
-              <p className="text-xs text-emerald-600 dark:text-emerald-400 font-semibold text-center">Copied to clipboard!</p>
+              <p className="text-xs text-tone-green-text  font-semibold text-center">Copied to clipboard!</p>
             )}
 
             <div className="flex justify-end pt-2">

@@ -228,7 +228,7 @@ export function GenericList<T extends { id: string; status: LifecycleStatus }>({
                       <button
                         type="button"
                         onClick={() => setSort((current) => current.startsWith(String(col.key)) && !current.endsWith('-desc') ? `${String(col.key)}-desc` : String(col.key))}
-                        className="inline-flex items-center gap-1.5 text-white hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-sm"
+                        className="inline-flex items-center gap-1.5 text-inverse hover:text-inverse focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-sm"
                         aria-label={`Sort by ${col.header}`}
                       >
                         {col.header}<ArrowDownUp aria-hidden="true" className="h-3.5 w-3.5" />
@@ -329,7 +329,7 @@ export function GenericList<T extends { id: string; status: LifecycleStatus }>({
         <PaginationControls page={page} pageSize={pageSize} total={items.length} onPageChange={setPage} onPageSizeChange={updatePageSize} />
       </Card>
       {descriptor.allowBulkDelete && selectedIds.size > 0 && (
-        <div className="fixed bottom-6 left-1/2 z-40 flex -translate-x-1/2 items-center gap-3 rounded-xl border border-border bg-card px-4 py-3 shadow-xl">
+        <div className="fixed bottom-6 left-1/2 z-40 flex -translate-x-1/2 items-center gap-3 rounded-xl border border-border bg-card px-4 py-3 shadow-none">
           <span className="text-sm font-semibold">{selectedIds.size} selected</span>
           <Button type="button" variant="destructive" size="sm" onClick={() => { setDeleteError(null); setDeleteTarget(items.filter((item) => selectedIds.has(item.id))); }}>
             <Trash2 className="mr-1.5 h-4 w-4" /> Delete selected
@@ -339,8 +339,8 @@ export function GenericList<T extends { id: string; status: LifecycleStatus }>({
 
       {children}
       {deleteTarget && typeof document !== 'undefined' && createPortal(
-        <div className="fixed inset-0 z-[9999] flex min-h-screen min-h-[100dvh] w-screen items-center justify-center bg-black/70 p-4 backdrop-blur-[1px]" role="presentation" onMouseDown={() => !isDeleting && setDeleteTarget(null)}>
-          <div className="w-full max-w-md rounded-2xl border border-border bg-card p-6 shadow-2xl" role="dialog" aria-modal="true" aria-labelledby="delete-master-data-title" onMouseDown={(event) => event.stopPropagation()}>
+        <div className="fixed inset-0 z-[9999] flex min-h-screen min-h-[100dvh] w-screen items-center justify-center bg-inverse p-4 backdrop-blur-[1px]" role="presentation" onMouseDown={() => !isDeleting && setDeleteTarget(null)}>
+          <div className="w-full max-w-md rounded-2xl border border-border bg-card p-6 shadow-none" role="dialog" aria-modal="true" aria-labelledby="delete-master-data-title" onMouseDown={(event) => event.stopPropagation()}>
             <div className="flex items-start gap-3">
               <div className="rounded-full bg-destructive/10 p-2 text-destructive"><AlertTriangle className="h-5 w-5" /></div>
               <div>

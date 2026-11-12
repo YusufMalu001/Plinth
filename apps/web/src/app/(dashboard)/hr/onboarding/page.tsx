@@ -87,15 +87,15 @@ export default function HrOnboardingHubPage() {
           onClick={() => setActiveFilter('COMPLETED')}
           className={`rounded-2xl border p-5 shadow-xs transition-all cursor-pointer relative overflow-hidden group bg-card ${
             activeFilter === 'COMPLETED'
-              ? 'border-emerald-500 ring-2 ring-emerald-500/20'
-              : 'border-border/80 hover:border-emerald-500/40'
+              ? 'border-tone-green-solid/25 ring-2 ring-tone-green-solid/25'
+              : 'border-border/80 hover:border-tone-green-solid/25'
           }`}
         >
           <div className="flex items-center justify-between">
             <span className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
               Completed Onboarding
             </span>
-            <div className="rounded-xl bg-emerald-500/10 p-2 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+            <div className="rounded-xl bg-tone-green-bg p-2 text-tone-green-text border border-tone-green-solid/25">
               <CheckCircle2 size={18} />
             </div>
           </div>
@@ -110,15 +110,15 @@ export default function HrOnboardingHubPage() {
           onClick={() => setActiveFilter('PENDING')}
           className={`rounded-2xl border p-5 shadow-xs transition-all cursor-pointer relative overflow-hidden group bg-card ${
             activeFilter === 'PENDING'
-              ? 'border-amber-500 ring-2 ring-amber-500/20'
-              : 'border-border/80 hover:border-amber-500/40'
+              ? 'border-tone-amber-solid/25 ring-2 ring-tone-amber-solid/25'
+              : 'border-border/80 hover:border-tone-amber-solid/25'
           }`}
         >
           <div className="flex items-center justify-between">
             <span className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
               Pending Onboarding
             </span>
-            <div className="rounded-xl bg-amber-500/10 p-2 text-amber-600 dark:text-amber-400 border border-amber-500/20">
+            <div className="rounded-xl bg-tone-amber-bg p-2 text-tone-amber-text border border-tone-amber-solid/25">
               <Clock size={18} />
             </div>
           </div>
@@ -173,7 +173,7 @@ export default function HrOnboardingHubPage() {
 
       {/* Unified Table Card matching Inventory Table */}
       <Card className="shadow-xs overflow-hidden border border-border/80 w-full rounded-2xl p-0">
-        <div className="p-4 border-b border-border/80 flex items-center justify-between bg-card">
+        <div className="p-4 border-border-strong border-border/80 flex items-center justify-between bg-card">
           <div className="flex items-center gap-2">
             <UserCheck className="h-4 w-4 text-primary" />
             <h2 className="text-sm font-bold text-foreground">
@@ -189,7 +189,7 @@ export default function HrOnboardingHubPage() {
         </div>
         {loading ? (
           <div className="p-12 text-center text-xs text-muted-foreground font-medium">
-            <div className="animate-spin w-6 h-6 border-2 border-primary border-t-transparent rounded-full mx-auto mb-3" />
+            <div className="animate-spin w-6 h-6 border-border border-primary border-t-transparent rounded-full mx-auto mb-3" />
             Loading onboarding records...
           </div>
         ) : error ? (
@@ -239,13 +239,13 @@ export default function HrOnboardingHubPage() {
                     </TableCell>
                     <TableCell>
                       {emp.onboardingCompleted ? (
-                        <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20">
-                          <CheckCircle2 className="w-3 h-3 text-emerald-600 dark:text-emerald-400" />
+                        <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-tone-green-bg text-tone-green-text border border-tone-green-solid/25">
+                          <CheckCircle2 className="w-3 h-3 text-tone-green-text" />
                           Completed
                         </span>
                       ) : (
-                        <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20">
-                          <Clock className="w-3 h-3 text-amber-500" />
+                        <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-tone-amber-bg text-tone-amber-text border border-tone-amber-solid/25">
+                          <Clock className="w-3 h-3 text-tone-amber-text" />
                           Pending
                         </span>
                       )}

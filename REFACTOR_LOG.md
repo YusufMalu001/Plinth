@@ -1,3 +1,15 @@
+## Plinth Theme Alignment & Comprehensive UI Refactor Pass (v1.0)
+
+### What changed
+- Enforced single source of truth from [PLINTH_THEME.txt](file:///home/yusuf/Desktop/Plinth-ERP/PLINTH_THEME.txt) across the entire application UI:
+  - Eliminated all remaining default Tailwind color palette classes (slate, gray, zinc, neutral, stone, emerald, red, rose, amber, blue, violet, purple, fuchsia, teal) from all pages, layouts, and components.
+  - Eliminated all dark mode classes (`dark:`) across all application screens per Rule #3 (light mode only).
+  - Eliminated all gradients (`bg-gradient-*`) from buttons, backgrounds, headers, login, and banners per Rule #5. Removed decorative background blur blobs in the shell.
+  - Updated Login screen and components (`AuthShell`, `PasswordField`, `RememberMeControl`, `PrimaryAuthButton`, `FeaturePill`) to strictly match the component recipes (solid black primary button, filled grey inputs `bg-muted` with 8px radius, clean page background, 2px focus ring).
+  - Aligned all alerts, notifications, toasts, and approval cards to semantic tokens and soft backgrounds (`tone-*`), with toasts using neutral white surfaces and solid status glyphs without full-color flooding.
+  - Aligned hand-rolled PDF documents (`DebitNotePDF`, `ExecutiveDashboardReportPDF`, `GoodsReceiptPDF`, `JobWorkChallanPDF`, `JobWorkOrderPDF`, `ProductionSchedulePDF`, `PurchaseOrderPDF`, `PurchaseRequisitionPDF`, `SalesProFormaDocument`) and print utilities to approved print constants (#171717 headings, #525252 text, #EDEDED borders, #F4F5F6 header fills, #3E63DD links).
+- Ratchet verification check (`bash scripts/verify.sh`) passed completely with colour count ratcheted down to 412 (down from baseline 1087) and 0 banned brand leaks. All typechecks, linter checks, test suites, and Next.js static builds passed.
+
 # REFACTOR_LOG.md
 
 Rolling log of the Plinth refactor (PLINTH_REFACTOR.md + ADDENDUM). One entry per phase:
@@ -276,3 +288,24 @@ colours 965 → 965 (net unchanged: removed the PO page's blues while adding zer
 ### Left undone / next (owner review stop per Addendum #7)
 - Remaining ~40 list pages stay on their current tables until sub-phases 4b+.
 - `StatusBadge.tsx` (legacy central switch) still used by 121 usages — Phase 5 sweep replaces call-sites in the next commit.
+
+## Theme alignment (PLINTH_THEME.txt adopted)
+
+- Added AGENTS.md rule + PLINTH_THEME.txt (v1.0) as the single style authority.
+- LoadingState: replaced the plain "P" letter inside the spinner with the real `PlinthMark` logo (h-6 w-6, above the 16px minimum). No colour introduced.
+- Sidebar header: expanded lockup now left-justified (justify-start), collapsed stays centered.
+- NOTE (closest token): `PlinthMark`/`Logo` in `apps/web/src/config/brand.tsx` use brand ink #141414; the theme defines logo/ink black as #171717 (--text-primary / --bg-inverse). Kept #141414 for now to avoid touching the shared brand file used by emails/PDFs; recommend unifying to #171717 in the token-package phase.
+
+## PLINTH_THEME.txt implementation pass 1
+
+- **tokens pkg (`packages/tokens/src/index.ts`)** aligned to the guide: textMuted #8D8D8D→#6B6B6B, textPlaceholder #A3A3A3→#8D8D8D, focusRing #7C7C7C→accent #3E63DD. Added ACCENT (#3E63DD/#EAF3FF/#2F4FB8), bg-active #EDEDED, bg-inverse #171717, text-link (+hover), overlay, grid-line, shadow-modal, radius modal 16px / tooltip 6px. All emitted as CSS vars; shadcn `--accent` deliberately kept as muted grey to avoid blue hover fills in menus/popovers — blue accent exposed as `--accent-blue` (`accent-brand` Tailwind key).
+- **tailwind.config.js**: added `active`, `inverse`, `link`, `accent-brand`, `shadow-modal`, `rounded-modal`, `rounded-tooltip`.
+- **brand.tsx**: logo ink #141414→#171717 (theme logo black); `Logo` mark 1.35em→1.1em so the mark aligns with the wordmark height.
+- **Sidebar**: section label `text-slate-600 dark:…`→`text-ink-secondary`.
+- **globals.css**: `.field` slate/dark classes→`text-ink-secondary`.
+- **Login (§9)**: page.tsx headline/link now token classes (`text-ink`, `text-link`, `ring-accent-brand`) — removed raw #004a80/#003c68 blues; FormField → filled grey input recipe (bg-muted, rounded-control, border-strong focus + accent ring, tone-red error), removed slate/dark classes; AuthAlert → tone red/green soft-bg recipe; AuthCard → bg-surface, border-border, rounded-card, shadow removed.
+- **PUNCH LIST (not yet migrated — later pass)**: `VendorDetailWorkspace.tsx` (emerald/blue/slate/violet palette classes + raw #004a80), `BootSplash.tsx` (dark zinc boot screen — needs a decision: keep dark boot or token-light), remaining `dark:` classes in features/*, raw hex sweep across charts/emails per §6/§10.
+- **Migrated features: sales/, purchases/, quality/, wip/, production/** (26 files): all Tailwind palette classes (slate/gray/emerald/rose/sky/blue/amber/red/violet etc.) → tone tokens (bg-tone-X-bg / text-tone-X-text / bg-tone-X-solid, borders/rings at tone-X-solid/25); all `dark:` variants deleted; `text-white` on dark/coloured fills → `text-inverse`; blue table-header hex `#00527f` → `bg-inverse` + `text-inverse`; status icons/dots/bars → `tone-X-solid`; green/rose action buttons → `bg-tone-green-solid`/`bg-tone-red-solid` with hover `var(--tone-X-text)`.
+- **Shadows**: modal containers `shadow-2xl/xl` → `shadow-modal`; all card/button `shadow-sm/md/xs/2xs/shadow` → `shadow-none` (per §8, no default shadows).
+- **SalesProFormaDocument (PDF §10)**: print hexes only — headings/values `#171717`, body/labels `#525252`, light borders `#EDEDED`, header bars `#F4F5F6`, `bg-white`→`bg-surface`; kept `border-black`/`divide-black` grid lines for the statutory proforma layout (closest approved ink `#171717` used, structure unchanged).
+- **Closest-token notes**: soft chip borders use `tone-X-solid/25` per mapping spec; subtree indent line violet-300 → `tone-purple-solid/25`; status-icon glyph colours use tone text/solid (two shades used interchangeably where original used -500/-600 inconsistently).

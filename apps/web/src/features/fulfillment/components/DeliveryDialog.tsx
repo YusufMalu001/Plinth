@@ -164,8 +164,8 @@ export function DeliveryDialog({
         </div>
 
         {/* POD Impact Notice */}
-        <div className="flex items-start gap-2.5 rounded-xl border border-emerald-500/20 bg-emerald-500/5 p-3.5 text-xs text-emerald-800">
-          <ShieldCheck className="h-4 w-4 text-emerald-600 shrink-0 mt-0.5" />
+        <div className="flex items-start gap-2.5 rounded-xl border border-tone-green-solid/20 bg-tone-emerald-bg/5 p-3.5 text-xs text-tone-green-text">
+          <ShieldCheck className="h-4 w-4 text-tone-green-text shrink-0 mt-0.5" />
           <span>
             Recording valid Proof of Delivery marks this shipment as <strong>Delivered</strong>, closes the sales order delivery requirement, and satisfies marketplace fulfillment SLA criteria.
           </span>

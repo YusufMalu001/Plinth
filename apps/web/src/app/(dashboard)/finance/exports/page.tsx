@@ -177,7 +177,7 @@ export default function FinanceExportsPage() {
             <div className="space-y-6">
               {/* Batch Summary Card */}
               <Card className="p-6 rounded-2xl border shadow-xs space-y-4">
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-b border-border/60 pb-4">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-border-strong border-border/60 pb-4">
                   <div>
                     <div className="flex items-center gap-2">
                       <h2 className="text-lg font-bold text-foreground font-mono">
@@ -205,10 +205,10 @@ export default function FinanceExportsPage() {
 
                 {/* Batch File Reference Callout */}
                 {currentJob.batchFileRef && (
-                  <div className="p-3.5 rounded-xl border border-emerald-500/30 bg-emerald-500/10 flex items-start gap-3">
-                    <FileText className="h-5 w-5 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
+                  <div className="p-3.5 rounded-xl border border-tone-green-solid/25 bg-tone-green-bg flex items-start gap-3">
+                    <FileText className="h-5 w-5 text-tone-green-text shrink-0 mt-0.5" />
                     <div className="space-y-0.5">
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-800 dark:text-emerald-300">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-tone-green-text">
                         Export File Generated (Stub Adapter)
                       </span>
                       <p className="font-mono text-xs text-foreground font-semibold break-all">
@@ -243,7 +243,7 @@ export default function FinanceExportsPage() {
 
               {/* Items Table */}
               <Card className="p-0 rounded-2xl border overflow-hidden shadow-xs">
-                <div className="border-b border-border/60 bg-muted/40 px-5 py-3.5 flex items-center justify-between">
+                <div className="border-border-strong border-border/60 bg-muted/40 px-5 py-3.5 flex items-center justify-between">
                   <h3 className="text-xs font-bold uppercase tracking-wider text-foreground">
                     Batch Items ({currentJob.items?.length || currentJob.totalItems})
                   </h3>
@@ -321,8 +321,8 @@ export default function FinanceExportsPage() {
       {/* Manual Acknowledgement Modal */}
       {ackItemId && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-background/80 backdrop-blur-xs p-4">
-          <Card className="w-full max-w-lg p-6 rounded-2xl shadow-xl border space-y-4 bg-card">
-            <div className="flex items-center justify-between border-b border-border/60 pb-3">
+          <Card className="w-full max-w-lg p-6 rounded-2xl shadow-popover border space-y-4 bg-card">
+            <div className="flex items-center justify-between border-border-strong border-border/60 pb-3">
               <div>
                 <h3 className="text-base font-bold text-foreground font-manrope">
                   Manual Finance Acknowledgement
@@ -342,7 +342,7 @@ export default function FinanceExportsPage() {
               </div>
             )}
 
-            <div className="p-3 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-800 dark:text-amber-300 text-xs leading-relaxed">
+            <div className="p-3 rounded-xl bg-tone-amber-bg border border-tone-amber-solid/25 text-tone-amber-text text-xs leading-relaxed">
               <strong>Human Confirmation Step:</strong> This action certifies that the batch voucher entry has been manually posted and verified in Tally ERP. The system will NOT auto-acknowledge.
             </div>
 
@@ -381,7 +381,7 @@ export default function FinanceExportsPage() {
                 size="sm"
                 onClick={() => handleManualAcknowledge(ackItemId)}
                 disabled={ackMutation.isPending}
-                className="font-semibold text-xs bg-emerald-600 hover:bg-emerald-700 text-white"
+                className="font-semibold text-xs bg-action hover:bg-[color:var(--action-primary-bg-hover)] text-inverse"
               >
                 {ackMutation.isPending ? 'Confirming...' : 'I Confirm Entry in Tally'}
               </Button>

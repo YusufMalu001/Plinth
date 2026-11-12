@@ -98,13 +98,13 @@ export function ProductPricingTab({ product, onOpenEdit }: ProductPricingTabProp
           </div>
           {!isRawMaterial && <div className="rounded-xl border border-border/80 bg-muted/20 p-3.5">
             <p className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">Global Discount</p>
-            <p className="mt-1 flex items-center gap-1 font-mono text-xl font-black text-emerald-600 dark:text-emerald-400">
+            <p className="mt-1 flex items-center gap-1 font-mono text-xl font-black text-tone-green-text">
               <Percent className="h-4 w-4" /> {globalDiscount}%
             </p>
           </div>}
           {!isRawMaterial && <div className="rounded-xl border border-border/80 bg-muted/20 p-3.5">
             <p className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">Addl. Discount</p>
-            <p className="mt-1 flex items-center gap-1 font-mono text-xl font-black text-emerald-600 dark:text-emerald-400">
+            <p className="mt-1 flex items-center gap-1 font-mono text-xl font-black text-tone-green-text">
               <Percent className="h-4 w-4" /> {additionalDiscount}%
             </p>
           </div>}
@@ -173,7 +173,7 @@ export function ProductPricingTab({ product, onOpenEdit }: ProductPricingTabProp
                     <td className="px-5 py-4 font-mono font-bold text-primary">
                       ₹{Number(tier.masterPrice || 0).toLocaleString('en-IN', { minimumFractionDigits: 2 })}
                     </td>
-                    <td className="px-5 py-4 font-mono font-bold text-emerald-600 dark:text-emerald-400">
+                    <td className="px-5 py-4 font-mono font-bold text-tone-green-text">
                       {isCustom ? (
                         <span className="text-xs text-muted-foreground font-normal italic">N/A (Fixed Rate)</span>
                       ) : (
@@ -267,7 +267,7 @@ export function ProductPricingTab({ product, onOpenEdit }: ProductPricingTabProp
                       <td className="px-5 py-3.5">
                         <span className={`inline-flex px-2 py-0.5 rounded text-[11px] font-semibold ${
                           v?.status === 'ACTIVE' || v?.status === 'APPROVED'
-                            ? 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-400'
+                            ? 'bg-tone-green-bg text-tone-green-text'
                             : 'bg-muted text-muted-foreground'
                         }`}>
                           {v?.status ? v.status.replace('_', ' ') : 'ACTIVE'}

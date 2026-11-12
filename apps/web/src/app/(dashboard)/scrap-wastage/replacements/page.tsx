@@ -242,13 +242,13 @@ export default function ReplacementChallansPage() {
   }, [unifiedRows, safePage, pageSize]);
 
   return (
-    <main className="flex-1 overflow-y-auto bg-slate-50/50 p-4 sm:p-6 lg:p-8 dark:bg-[#070b14]/70 font-manrope">
+    <main className="flex-1 overflow-y-auto bg-muted/50 p-4 sm:p-6 lg:p-8 font-manrope">
       <div className="mx-auto max-w-[1680px] space-y-5">
         
         {/* ======================================================== */}
         {/* 1. STREAMLINED HEADER BAR WITH CLEAN 1-ROW ACTIONS       */}
         {/* ======================================================== */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-border pb-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-border-strong border-border pb-4">
           <div>
             <div className="flex items-center gap-2 text-xs text-muted-foreground mb-1">
               <Link href="/scrap-wastage" className="hover:text-primary transition-colors font-medium">
@@ -416,7 +416,7 @@ export default function ReplacementChallansPage() {
         {/* Proposals Awaiting Store Manager Review & Replenishment Dispatch */}
         {allEventsList.filter((e) => ['REPORTED', 'REVIEWED', 'INVESTIGATED', 'APPROVED'].includes(e.status) && !e.replacementChallanRef).length > 0 && (
           <div className="rounded-2xl border border-border bg-card p-5 shadow-xs space-y-4">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-border pb-3">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-border-strong border-border pb-3">
               <div className="flex items-center gap-2.5">
                 <div className="p-2 rounded-xl bg-primary/10 text-primary">
                   <Trash2 className="w-5 h-5" />
@@ -599,7 +599,7 @@ export default function ReplacementChallansPage() {
             <div className="overflow-x-auto">
               <Table className="w-full text-xs">
                 <TableHeader>
-                  <TableRow className="bg-muted/40 hover:bg-muted/40 border-b border-border/80">
+                  <TableRow className="bg-muted/40 hover:bg-muted/40 border-border-strong border-border/80">
                     <TableHead className="p-3.5 font-bold text-foreground">Challan Number</TableHead>
                     <TableHead className="p-3.5 font-bold text-foreground">Direction &amp; Type</TableHead>
                     <TableHead className="p-3.5 font-bold text-foreground">Material / Item</TableHead>
@@ -846,22 +846,22 @@ export default function ReplacementChallansPage() {
         {/* DOCUMENT PREVIEW POPUP */}
         {previewDocUrl && (
           <div className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-4 backdrop-blur-xs">
-            <div className="bg-white dark:bg-slate-900 rounded-3xl max-w-2xl w-full p-6 shadow-2xl border border-slate-200 dark:border-slate-800 space-y-4">
-              <div className="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-3">
-                <h3 className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                  <FileText className="w-4 h-4 text-[#173796]" />
+            <div className="bg-surface rounded-3xl max-w-2xl w-full p-6 shadow-modal border border-border space-y-4">
+              <div className="flex items-center justify-between border-border-strong border-border pb-3">
+                <h3 className="text-sm font-bold text-ink flex items-center gap-2">
+                  <FileText className="w-4 h-4 text-link" />
                   Uploaded Physical Delivery Proof
                 </h3>
                 <button
                   type="button"
                   onClick={() => setPreviewDocUrl(null)}
-                  className="p-1 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500"
+                  className="p-1 rounded-lg hover:bg-hover text-ink-muted"
                 >
                   <X className="w-4 h-4" />
                 </button>
               </div>
 
-              <div className="h-96 w-full flex items-center justify-center bg-slate-100 dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700">
+              <div className="h-96 w-full flex items-center justify-center bg-muted rounded-2xl overflow-hidden border border-border">
                 <img
                   src={previewDocUrl}
                   alt="Delivery Challan Document"

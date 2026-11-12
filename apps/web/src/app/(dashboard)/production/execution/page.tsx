@@ -160,7 +160,7 @@ export default function ProductionExecutionDashboard() {
   return (
     <div className="w-full min-w-0 max-w-full min-h-screen p-4 sm:p-6 lg:p-8 space-y-6 pb-20">
       {/* ── 1. Top Header ───────────────────────────────────────────────────────── */}
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between border-b border-border/80 pb-5">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between border-border-strong border-border/80 pb-5">
         <div>
           <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
             Production Execution
@@ -230,20 +230,20 @@ export default function ProductionExecutionDashboard() {
 
       {/* Assembly Department Guidance Banner */}
       {isAssemblyUser && (
-        <div className="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4 text-emerald-950 dark:text-emerald-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-xs">
+        <div className="rounded-xl border border-tone-green-solid/25 bg-tone-green-bg p-4 text-tone-green-text flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-xs">
           <div className="flex items-center gap-3">
-            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 font-bold text-xs shrink-0">
+            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-tone-green-bg text-tone-green-text font-bold text-xs shrink-0">
               ASY
             </span>
             <div>
               <p className="text-xs font-bold">Assembly &amp; Convergence Workspace</p>
-              <p className="text-[11px] text-emerald-800 dark:text-emerald-300 mt-0.5">
+              <p className="text-[11px] text-tone-green-text mt-0.5">
                 You are assigned to an Assembly department. Your wave dispatches, sub-assembly collections, and finished good gates are managed in Assembly &amp; Convergence.
               </p>
             </div>
           </div>
           <Link href="/production/assembly" className="shrink-0">
-            <Button size="sm" className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs shadow-none cursor-pointer">
+            <Button size="sm" className="bg-action hover:bg-[color:var(--action-primary-bg-hover)] text-inverse font-semibold text-xs shadow-none cursor-pointer">
               Go to Assembly Workspace
             </Button>
           </Link>
@@ -270,7 +270,7 @@ export default function ProductionExecutionDashboard() {
           </div>
           <div className="mt-2.5 pt-2 border-t border-border/60 flex items-center justify-between text-xs text-muted-foreground">
             <span>Floor Active: <strong className="text-foreground font-mono">{metrics.inProgressCount}</strong></span>
-            <span>Completed: <strong className="text-emerald-600 dark:text-emerald-400 font-mono">{metrics.completedCount}</strong></span>
+            <span>Completed: <strong className="text-tone-green-text font-mono">{metrics.completedCount}</strong></span>
           </div>
         </div>
 
@@ -280,7 +280,7 @@ export default function ProductionExecutionDashboard() {
             <span className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
               Work In Progress (WIP)
             </span>
-            <div className="h-9 w-9 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20 flex items-center justify-center shrink-0">
+            <div className="h-9 w-9 rounded-xl bg-tone-amber-bg text-tone-amber-text border border-tone-amber-solid/25 flex items-center justify-center shrink-0">
               <Cpu size={18} />
             </div>
           </div>
@@ -301,7 +301,7 @@ export default function ProductionExecutionDashboard() {
             <span className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
               Scheduled Production
             </span>
-            <div className="h-9 w-9 rounded-xl bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20 flex items-center justify-center shrink-0">
+            <div className="h-9 w-9 rounded-xl bg-tone-blue-bg text-tone-blue-text border border-tone-blue-solid/25 flex items-center justify-center shrink-0">
               <Boxes size={18} />
             </div>
           </div>
@@ -322,12 +322,12 @@ export default function ProductionExecutionDashboard() {
             <span className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
               Good Completed Units
             </span>
-            <div className="h-9 w-9 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 flex items-center justify-center shrink-0">
+            <div className="h-9 w-9 rounded-xl bg-tone-green-bg text-tone-green-text border border-tone-green-solid/25 flex items-center justify-center shrink-0">
               <PackageCheck size={18} />
             </div>
           </div>
           <div className="mt-3 flex items-baseline gap-2">
-            <span className="font-mono text-3xl font-extrabold text-emerald-700 dark:text-emerald-400 tracking-tight">
+            <span className="font-mono text-3xl font-extrabold text-tone-green-text tracking-tight">
               {metrics.totalCompletedUnits.toLocaleString()}
             </span>
             <span className="text-xs text-muted-foreground font-semibold">units ready</span>
@@ -339,7 +339,7 @@ export default function ProductionExecutionDashboard() {
       </div>
 
       {/* ── 3. Filters Toolbar ─────────────────────────────────────────────────── */}
-      <div className="flex w-full min-w-0 flex-col gap-2 border-b border-border/80 pb-5 xl:flex-row xl:items-start">
+      <div className="flex w-full min-w-0 flex-col gap-2 border-border-strong border-border/80 pb-5 xl:flex-row xl:items-start">
         <div className="relative w-full min-w-0 xl:w-[23%] xl:shrink-0">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground pointer-events-none" />
           <input
@@ -452,10 +452,10 @@ export default function ProductionExecutionDashboard() {
                 href={`/production/execution/plans/${schedule.id}`}
                 className="group block focus:outline-none h-full"
               >
-                <Card className="h-full flex flex-col justify-between overflow-hidden rounded-xl border border-border/80 bg-card p-5 shadow-xs transition-all hover:border-primary/60 hover:shadow-md cursor-pointer">
+                <Card className="h-full flex flex-col justify-between overflow-hidden rounded-xl border border-border/80 bg-card p-5 shadow-xs transition-all hover:border-primary/60 hover:shadow-none cursor-pointer">
                   <div className="space-y-3.5">
                     {/* Card Header: Schedule Number, Status, and Date in top right */}
-                    <div className="flex items-start justify-between gap-2 border-b border-border/60 pb-3">
+                    <div className="flex items-start justify-between gap-2 border-border-strong border-border/60 pb-3">
                       <div className="space-y-1">
                         <div className="flex items-center gap-2 flex-wrap">
                           <span className="font-mono text-xs font-bold text-foreground">
@@ -499,11 +499,11 @@ export default function ProductionExecutionDashboard() {
                             const isPaused = batch.status === "PAUSED";
 
                             const dotColor = isDone
-                              ? "bg-emerald-500"
+                              ? "bg-tone-green-solid"
                               : isActive
                               ? "bg-primary animate-pulse"
                               : isPaused
-                              ? "bg-amber-500"
+                              ? "bg-tone-amber-solid"
                               : "bg-muted-foreground/50";
 
                             return (
@@ -547,7 +547,7 @@ export default function ProductionExecutionDashboard() {
 
                     <div className="rounded-lg bg-muted/30 border border-border/60 p-2">
                       <p className="text-[10px] font-semibold uppercase text-muted-foreground">Assembly</p>
-                      <p className="font-mono text-xs font-bold text-emerald-700 dark:text-emerald-400 mt-0.5">
+                      <p className="font-mono text-xs font-bold text-tone-green-text mt-0.5">
                         {schedule.buildableQuantity ?? 0} ready
                       </p>
                     </div>

@@ -127,13 +127,13 @@ export default function AbnormalReviewQueuePage() {
   }, [filteredItems, safePage, pageSize]);
 
   return (
-    <main className="flex-1 overflow-y-auto bg-slate-50/50 p-4 sm:p-6 lg:p-8 dark:bg-[#070b14]/70 font-manrope">
+    <main className="flex-1 overflow-y-auto bg-muted/50 p-4 sm:p-6 lg:p-8 font-manrope">
       <div className="mx-auto max-w-[1680px] space-y-5">
         
         {/* ======================================================== */}
         {/* 1. STREAMLINED HEADER BAR WITH CLEAN 1-ROW ACTIONS       */}
         {/* ======================================================== */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-border pb-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-border-strong border-border pb-4">
           <div>
             <div className="flex items-center gap-2 text-xs text-muted-foreground mb-1">
               <Link href="/scrap-wastage" className="hover:text-primary transition-colors font-medium">
@@ -388,7 +388,7 @@ export default function AbnormalReviewQueuePage() {
             <div className="overflow-x-auto">
               <Table className="w-full text-xs">
                 <TableHeader>
-                  <TableRow className="bg-muted/40 hover:bg-muted/40 border-b border-border">
+                  <TableRow className="bg-muted/40 hover:bg-muted/40 border-border-strong border-border">
                     <TableHead className="p-3.5 font-bold text-muted-foreground uppercase text-[10px] tracking-wider">
                       Event Number
                     </TableHead>
@@ -465,7 +465,7 @@ export default function AbnormalReviewQueuePage() {
                         <TableCell className="p-3.5">
                           <div className="space-y-1">
                             <div className="flex items-center gap-2">
-                              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10.5px] font-bold border bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/25">
+                              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10.5px] font-bold border bg-tone-amber-bg text-tone-amber-text border-tone-amber-solid/25">
                                 <AlertTriangle className="w-3 h-3" />
                                 Abnormal Variance
                               </span>

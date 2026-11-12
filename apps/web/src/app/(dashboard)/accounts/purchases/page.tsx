@@ -212,7 +212,7 @@ export default function PurchasesPage() {
             <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
               Total Invoiced Payables
             </span>
-            <span className="rounded-lg p-1.5 border bg-n-500/10 text-n-700 dark:text-n-400 border-n-500/20">
+            <span className="rounded-lg p-1.5 border bg-n-500/10 text-n-700 border-n-500/20">
               <Receipt className="h-3.5 w-3.5" />
             </span>
           </div>
@@ -306,7 +306,7 @@ export default function PurchasesPage() {
             }}
             className={`flex items-center gap-2 rounded-xl px-3.5 py-2 text-xs font-semibold transition-all ${
               activeTab === 'bills'
-                ? 'bg-n-600 text-white shadow-sm'
+                ? 'bg-n-600 text-inverse shadow-sm'
                 : 'text-muted-foreground hover:bg-muted hover:text-foreground'
             }`}
           >
@@ -314,7 +314,7 @@ export default function PurchasesPage() {
             Supplier Bills Register
             <span
               className={`rounded-full px-2 py-0.5 text-[10px] font-bold ${
-                activeTab === 'bills' ? 'bg-white/20 text-white' : 'bg-muted text-muted-foreground'
+                activeTab === 'bills' ? 'bg-surface/20 text-inverse' : 'bg-muted text-muted-foreground'
               }`}
             >
               {totalBillsCount}
@@ -328,7 +328,7 @@ export default function PurchasesPage() {
             }}
             className={`flex items-center gap-2 rounded-xl px-3.5 py-2 text-xs font-semibold transition-all ${
               activeTab === 'grns'
-                ? 'bg-n-600 text-white shadow-sm'
+                ? 'bg-n-600 text-inverse shadow-sm'
                 : 'text-muted-foreground hover:bg-muted hover:text-foreground'
             }`}
           >
@@ -336,7 +336,7 @@ export default function PurchasesPage() {
             Accepted Goods Receipts (PO Inbound)
             <span
               className={`rounded-full px-2 py-0.5 text-[10px] font-bold ${
-                activeTab === 'grns' ? 'bg-white/20 text-white' : 'bg-muted text-muted-foreground'
+                activeTab === 'grns' ? 'bg-surface/20 text-inverse' : 'bg-muted text-muted-foreground'
               }`}
             >
               {totalGrnCount}
@@ -484,10 +484,10 @@ export default function PurchasesPage() {
                         className="hover:bg-muted/50 transition-colors cursor-pointer group"
                       >
                         <TableCell className="p-4 font-mono font-bold text-foreground">
-                          <div className="flex items-center gap-1.5 group-hover:text-n-600 dark:group-hover:text-n-400 transition-colors">
+                          <div className="flex items-center gap-1.5 group-hover:text-n-600 transition-colors">
                             <FileText className="h-3.5 w-3.5 text-n-600 shrink-0" />
                             <span>{bill.supplierInvoiceNumber}</span>
-                            <ChevronRight className="h-3.5 w-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all shrink-0 text-n-600 dark:text-n-400" />
+                            <ChevronRight className="h-3.5 w-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all shrink-0 text-n-600" />
                           </div>
                         </TableCell>
                         <TableCell className="p-4 font-medium text-foreground">
@@ -620,10 +620,10 @@ export default function PurchasesPage() {
                         className="hover:bg-muted/50 transition-colors cursor-pointer group"
                       >
                         <TableCell className="p-4">
-                          <div className="font-mono font-bold text-foreground flex items-center gap-1.5 group-hover:text-n-600 dark:group-hover:text-n-400 transition-colors">
+                          <div className="font-mono font-bold text-foreground flex items-center gap-1.5 group-hover:text-n-600 transition-colors">
                             <PackageCheck className="h-3.5 w-3.5 text-n-600 shrink-0" />
                             <span>{grn.grnNumber}</span>
-                            <ChevronRight className="h-3.5 w-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all shrink-0 text-n-600 dark:text-n-400" />
+                            <ChevronRight className="h-3.5 w-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all shrink-0 text-n-600" />
                           </div>
                         </TableCell>
                         <TableCell className="p-4 font-mono text-muted-foreground">
@@ -643,7 +643,7 @@ export default function PurchasesPage() {
                             <Link
                               href={`/accounts/purchases/bills/${linkedBill.id}`}
                               onClick={(e) => e.stopPropagation()}
-                              className="font-mono text-xs font-semibold text-n-700 dark:text-n-400 hover:underline inline-flex items-center gap-1"
+                              className="font-mono text-xs font-semibold text-n-700 hover:underline inline-flex items-center gap-1"
                             >
                               <FileText className="h-3.5 w-3.5" />
                               {linkedBill.supplierInvoiceNumber}

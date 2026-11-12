@@ -60,7 +60,7 @@ export function MetricCard({
           {trend && (
             <span
               className={`font-semibold shrink-0 ${
-                trend.isPositive ? 'text-emerald-600 dark:text-emerald-400' : 'text-rose-600 dark:text-rose-400'
+                trend.isPositive ? 'text-tone-green-text ' : 'text-tone-red-text '
               }`}
             >
               {trend.value} {trend.label && <span className="font-normal text-muted-foreground">{trend.label}</span>}

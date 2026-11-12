@@ -395,7 +395,7 @@ export function PhysicalVerificationModal({
                                 acceptedQuantity: String(newAcc),
                               });
                             }}
-                            className="w-20 rounded-lg border border-border bg-background p-1.5 text-center font-mono text-xs font-bold text-amber-700 dark:text-amber-400 focus:border-primary focus:outline-hidden"
+                            className="w-20 rounded-lg border border-border bg-background p-1.5 text-center font-mono text-xs font-bold text-tone-amber-text  focus:border-primary focus:outline-hidden"
                           />
                         </td>
 

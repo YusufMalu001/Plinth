@@ -101,7 +101,7 @@ export default function FinanceErrorsPage() {
           </div>
         ) : allExceptionItems.length === 0 ? (
           <Card className="p-12 text-center rounded-2xl border-dashed">
-            <CheckCircle2 className="h-8 w-8 text-emerald-500 mx-auto mb-2" />
+            <CheckCircle2 className="h-8 w-8 text-tone-green-text mx-auto mb-2" />
             <h3 className="text-sm font-bold text-foreground">Zero Export Exceptions</h3>
             <p className="text-xs text-muted-foreground mt-1">
               All financial integration items have processed successfully with no failed or held records.
@@ -111,7 +111,7 @@ export default function FinanceErrorsPage() {
           <div className="space-y-3">
             {allExceptionItems.map((item) => (
               <Card key={item.id} className="p-5 rounded-2xl border shadow-xs space-y-3">
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-b border-border/60 pb-3">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-border-strong border-border/60 pb-3">
                   <div className="flex items-center gap-3">
                     <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-destructive/10 text-destructive">
                       <AlertOctagon className="h-4 w-4" />
@@ -173,8 +173,8 @@ export default function FinanceErrorsPage() {
       {/* Investigate & Retry Modal */}
       {selectedItemId && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-background/80 backdrop-blur-xs p-4">
-          <Card className="w-full max-w-lg p-6 rounded-2xl shadow-xl border space-y-4 bg-card">
-            <div className="flex items-center justify-between border-b border-border/60 pb-3">
+          <Card className="w-full max-w-lg p-6 rounded-2xl shadow-popover border space-y-4 bg-card">
+            <div className="flex items-center justify-between border-border-strong border-border/60 pb-3">
               <div>
                 <h3 className="text-base font-bold text-foreground font-manrope">
                   Controlled Retry & Resolution
@@ -232,7 +232,7 @@ export default function FinanceErrorsPage() {
                 size="sm"
                 onClick={() => handleAction(selectedItemId)}
                 disabled={retryMutation.isPending}
-                className="font-semibold text-xs bg-primary text-white"
+                className="font-semibold text-xs bg-primary text-inverse"
               >
                 {retryMutation.isPending ? 'Executing...' : 'Submit Disposition'}
               </Button>

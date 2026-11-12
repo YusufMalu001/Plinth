@@ -137,8 +137,8 @@ export default function JournalsPage() {
         <div
           className={`flex items-center justify-between rounded-2xl p-4 text-xs font-medium border ${
             notification.type === 'success'
-              ? 'border-emerald-500/30 bg-emerald-500/10 text-emerald-800 dark:text-emerald-300'
-              : 'border-rose-500/30 bg-rose-500/10 text-rose-800 dark:text-rose-300'
+              ? 'border-tone-green-solid/25 bg-tone-green-bg text-tone-green-text'
+              : 'border-tone-red-solid/25 bg-tone-red-bg text-tone-red-text'
           }`}
         >
           <span>{notification.message}</span>
@@ -184,7 +184,7 @@ export default function JournalsPage() {
       <div className="grid gap-6 lg:grid-cols-[1.3fr_1fr]">
         {/* Left: Vouchers Table Card */}
         <Card className="rounded-2xl border-border/80 shadow-none">
-          <CardHeader className="border-b border-border/70 p-5">
+          <CardHeader className="border-border-strong border-border/70 p-5">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <CardTitle className="text-base font-bold">Voucher Register</CardTitle>
@@ -259,12 +259,12 @@ export default function JournalsPage() {
                       <TableRow
                         key={v.id}
                         className={`hover:bg-muted/50 transition-colors cursor-pointer group ${
-                          activeVoucherId === v.id ? 'bg-n-50/70 dark:bg-n-950/20' : ''
+                          activeVoucherId === v.id ? 'bg-n-50/70' : ''
                         }`}
                         onClick={() => setActiveVoucherId(v.id)}
                       >
                         <TableCell className="p-3 font-mono font-bold text-foreground">
-                          <div className="flex items-center gap-1.5 font-mono group-hover:text-primary dark:group-hover:text-primary transition-colors">
+                          <div className="flex items-center gap-1.5 font-mono group-hover:text-primary transition-colors">
                             <span>{v.voucherNumber || 'Draft'}</span>
                             <ChevronRight className="h-3.5 w-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all shrink-0 text-primary" />
                           </div>
@@ -335,7 +335,7 @@ export default function JournalsPage() {
 
         {/* Right: Active Voucher Inspector */}
         <Card className="rounded-2xl border-border/80 shadow-none">
-          <CardHeader className="border-b border-border/70 p-5">
+          <CardHeader className="border-border-strong border-border/70 p-5">
             <CardTitle className="text-base font-bold">Voucher Inspector</CardTitle>
             <p className="text-xs text-muted-foreground mt-0.5">
               Maker-checker verification and double-entry debits & credits
@@ -421,7 +421,7 @@ export default function JournalsPage() {
                   {activeVoucher.status === 'SUBMITTED' && can('approve') && (
                     <Button
                       size="sm"
-                      className="bg-emerald-600 hover:bg-emerald-700 text-white text-xs rounded-xl"
+                      className="bg-action hover:bg-[color:var(--action-primary-bg-hover)] text-inverse text-xs rounded-xl"
                       disabled={actionPending}
                       onClick={() =>
                         void executeAction(
@@ -454,7 +454,7 @@ export default function JournalsPage() {
                     <Button
                       size="sm"
                       variant="outline"
-                      className="text-rose-600 hover:bg-rose-50 dark:hover:bg-rose-950/20 text-xs rounded-xl"
+                      className="text-tone-red-text hover:bg-tone-red-solid text-xs rounded-xl"
                       onClick={() => setShowReversalForm(!showReversalForm)}
                     >
                       <RotateCcw className="h-3.5 w-3.5 mr-1" />
@@ -480,9 +480,9 @@ export default function JournalsPage() {
                         'Reversal draft created. It must now be submitted and approved.'
                       );
                     }}
-                    className="rounded-2xl border border-rose-500/30 bg-rose-500/5 p-4 space-y-3"
+                    className="rounded-2xl border border-tone-red-solid/25 bg-tone-red-bg p-4 space-y-3"
                   >
-                    <h4 className="text-xs font-bold text-rose-700 dark:text-rose-400">
+                    <h4 className="text-xs font-bold text-tone-red-text">
                       Approved Reversal Request
                     </h4>
                     <textarea
@@ -497,7 +497,7 @@ export default function JournalsPage() {
                       <Button
                         type="submit"
                         size="sm"
-                        className="bg-rose-600 hover:bg-rose-700 text-white text-xs rounded-xl"
+                        className="bg-tone-red-solid hover:bg-[color:var(--tone-red-text)] text-inverse text-xs rounded-xl"
                         disabled={actionPending || reversalReason.trim().length < 5}
                       >
                         Create Reversal Voucher

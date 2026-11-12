@@ -88,7 +88,7 @@ export function SendDebitNoteModal({
         </div>
 
         {error && (
-          <div className="mt-4 flex items-center gap-2 rounded-xl border border-destructive/30 bg-destructive/10 p-3 text-xs text-destructive dark:border-destructive/30/40 dark:bg-destructive/10 dark:text-destructive">
+          <div className="mt-4 flex items-center gap-2 rounded-xl border border-destructive/30 bg-destructive/10 p-3 text-xs text-destructive   ">
             <AlertCircle className="h-4 w-4 shrink-0" />
             <span>{error}</span>
           </div>

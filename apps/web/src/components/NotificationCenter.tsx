@@ -553,7 +553,7 @@ export function NotificationCenter({ compact = false }: { compact?: boolean }) {
               >
                 <span>Approvals</span>
                 {approvalsCount > 0 && (
-                  <span className="flex h-3.5 w-3.5 items-center justify-center rounded-full bg-blue-500 text-white text-[8px] font-bold">
+                  <span className="flex h-3.5 w-3.5 items-center justify-center rounded-full bg-tone-blue-bg text-white text-[8px] font-bold">
                     {approvalsCount}
                   </span>
                 )}
@@ -569,7 +569,7 @@ export function NotificationCenter({ compact = false }: { compact?: boolean }) {
               >
                 <span>Receipts</span>
                 {receiptsCount > 0 && (
-                  <span className="flex h-3.5 w-3.5 items-center justify-center rounded-full bg-emerald-500 text-white text-[8px] font-bold">
+                  <span className="flex h-3.5 w-3.5 items-center justify-center rounded-full bg-tone-emerald-bg text-white text-[8px] font-bold">
                     {receiptsCount}
                   </span>
                 )}
@@ -585,7 +585,7 @@ export function NotificationCenter({ compact = false }: { compact?: boolean }) {
               >
                 <span>Advisor</span>
                 {intelligenceCount > 0 && (
-                  <span className="flex h-3.5 w-3.5 items-center justify-center rounded-full bg-violet-600 text-white text-[8px] font-bold">
+                  <span className="flex h-3.5 w-3.5 items-center justify-center rounded-full bg-tone-violet-bg text-white text-[8px] font-bold">
                     {intelligenceCount}
                   </span>
                 )}
@@ -622,15 +622,15 @@ export function NotificationCenter({ compact = false }: { compact?: boolean }) {
                       {/* Icon */}
                       <div
                         className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-xl ${isStockAlert
-                            ? 'bg-amber-500/10 text-amber-600 border border-amber-500/20'
+                            ? 'bg-tone-amber-bg/10 text-tone-amber-text border border-tone-amber-solid/20'
                             : notification.type === 'sales'
-                              ? 'bg-indigo-500/10 text-indigo-600 border border-indigo-500/20'
+                              ? 'bg-tone-indigo-bg/10 text-tone-purple-text border border-tone-purple-solid/20'
                               : notification.type === 'approval'
-                                ? 'bg-blue-500/10 text-blue-600 border border-blue-500/20'
+                                ? 'bg-tone-blue-bg/10 text-link border border-tone-blue-solid/20'
                             : notification.type === 'receipt'
-                                  ? 'bg-emerald-500/10 text-emerald-600 border border-emerald-500/20'
+                                  ? 'bg-tone-emerald-bg/10 text-tone-green-text border border-tone-green-solid/20'
                                   : notification.category === 'intelligence'
-                                    ? 'bg-violet-500/10 text-violet-600 border border-violet-500/20'
+                                    ? 'bg-tone-violet-bg/10 text-tone-purple-text border border-tone-purple-solid/20'
                                   : 'bg-primary/10 text-primary border border-primary/20'
                           }`}
                       >
@@ -687,7 +687,7 @@ export function NotificationCenter({ compact = false }: { compact?: boolean }) {
                               }}
                               className={`inline-flex items-center gap-1 rounded-lg px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider transition-all ${
                                 isStockAlert
-                                  ? 'bg-primary text-primary-foreground hover:bg-[#003c68] shadow-2xs'
+                                  ? 'bg-primary text-primary-foreground hover:bg-[var(--accent-hover)] shadow-2xs'
                                   : 'border border-border bg-card text-foreground hover:bg-muted'
                                 }`}
                             >

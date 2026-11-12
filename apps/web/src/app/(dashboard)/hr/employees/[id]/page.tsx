@@ -112,7 +112,7 @@ export default function EmployeeProfilePage() {
   if (loading) {
     return (
       <div className="min-h-screen p-12 flex flex-col items-center justify-center text-muted-foreground">
-        <div className="animate-spin w-8 h-8 border-4 border-primary border-t-transparent rounded-full mb-3" />
+        <div className="animate-spin w-8 h-8 border-accent border-primary border-t-transparent rounded-full mb-3" />
         <p className="text-sm font-medium">Loading employee profile...</p>
       </div>
     );
@@ -346,7 +346,7 @@ export default function EmployeeProfilePage() {
           <span className={`text-xs px-2.5 py-1 rounded-md font-medium border ${
             employee.onboardingCompleted
               ? 'bg-muted text-foreground border-border'
-              : 'bg-muted text-amber-600 border-border'
+              : 'bg-muted text-tone-amber-text border-border'
           }`}>
             {employee.onboardingCompleted ? 'Onboarded' : 'Onboarding Pending'}
           </span>
@@ -409,7 +409,7 @@ export default function EmployeeProfilePage() {
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div className="flex items-center gap-3 text-foreground">
                 <div className="p-2 bg-muted rounded-lg text-muted-foreground">
-                  <Clock className="w-5 h-5 text-amber-500" />
+                  <Clock className="w-5 h-5 text-tone-amber-text" />
                 </div>
                 <div>
                   <h3 className="text-xs font-bold">Onboarding Verification Incomplete</h3>
@@ -472,7 +472,7 @@ export default function EmployeeProfilePage() {
         )}
 
         {/* Tab Navigation */}
-        <div className="flex items-center gap-1 border-b border-border mt-6 pt-2 overflow-x-auto">
+        <div className="flex items-center gap-1 border-border-strong border-border mt-6 pt-2 overflow-x-auto">
           {[
             { id: 'details', label: 'Employee Details', icon: User },
             { id: 'credentials', label: 'Credentials', icon: Key },
@@ -490,7 +490,7 @@ export default function EmployeeProfilePage() {
                 variant={isActive ? 'default' : 'ghost'}
                 size="sm"
                 onClick={() => setActiveTab(tab.id as any)}
-                className="gap-1.5 text-xs h-8 whitespace-nowrap rounded-b-none border-b-2"
+                className="gap-1.5 text-xs h-8 whitespace-nowrap rounded-b-none border-border-strong-2"
               >
                 <Icon className="w-3.5 h-3.5" />
                 {tab.label}
@@ -871,7 +871,7 @@ export default function EmployeeProfilePage() {
       {activeTab === 'credentials' && (
         <div className="space-y-6">
           <div className="bg-card rounded-xl border border-border p-6 shadow-xs space-y-6">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-border pb-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-border-strong border-border pb-4">
               <div>
                 <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
                   <Key className="w-4 h-4 text-primary" />
@@ -895,7 +895,7 @@ export default function EmployeeProfilePage() {
 
             {resetSuccessMessage && (
               <div className="p-3.5 rounded-lg bg-muted border border-border flex items-start gap-3">
-                <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                <ShieldCheck className="w-4 h-4 text-tone-green-text shrink-0 mt-0.5" />
                 <div className="text-xs">
                   <p className="font-semibold text-foreground">Credentials Updated Successfully</p>
                   <p className="text-muted-foreground mt-0.5 font-mono">{resetSuccessMessage}</p>
@@ -928,7 +928,7 @@ export default function EmployeeProfilePage() {
                         title="Copy Username"
                       >
                         {copiedField === 'username' ? (
-                          <Check className="w-3.5 h-3.5 text-emerald-600" />
+                          <Check className="w-3.5 h-3.5 text-tone-green-text" />
                         ) : (
                           <Copy className="w-3.5 h-3.5" />
                         )}
@@ -958,7 +958,7 @@ export default function EmployeeProfilePage() {
                         title="Copy Email"
                       >
                         {copiedField === 'email' ? (
-                          <Check className="w-3.5 h-3.5 text-emerald-600" />
+                          <Check className="w-3.5 h-3.5 text-tone-green-text" />
                         ) : (
                           <Copy className="w-3.5 h-3.5" />
                         )}
@@ -1005,7 +1005,7 @@ export default function EmployeeProfilePage() {
                           title="Copy Password"
                         >
                           {copiedField === 'password' ? (
-                            <Check className="w-3.5 h-3.5 text-emerald-600" />
+                            <Check className="w-3.5 h-3.5 text-tone-green-text" />
                           ) : (
                             <Copy className="w-3.5 h-3.5" />
                           )}
@@ -1051,7 +1051,7 @@ export default function EmployeeProfilePage() {
                 >
                   {copiedField === 'message' ? (
                     <>
-                      <Check className="w-3 h-3 text-emerald-600" />
+                      <Check className="w-3 h-3 text-tone-green-text" />
                       <span>Copied Message</span>
                     </>
                   ) : (
@@ -1080,7 +1080,7 @@ export default function EmployeeProfilePage() {
       {activeTab === 'accessibility' && (
         <div className="space-y-6">
           <div className="bg-card rounded-xl border border-border p-6 shadow-xs space-y-6">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-border pb-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-border-strong border-border pb-4">
               <div>
                 <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
                   <Shield className="w-4 h-4 text-primary" />
@@ -1105,7 +1105,7 @@ export default function EmployeeProfilePage() {
 
             {accessSuccessMessage && (
               <div className="p-3.5 rounded-lg bg-muted border border-border flex items-start gap-3">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-4 h-4 text-tone-green-text shrink-0 mt-0.5" />
                 <div className="text-xs">
                   <p className="font-semibold text-foreground">Accessibility Updated</p>
                   <p className="text-muted-foreground mt-0.5">{accessSuccessMessage}</p>
@@ -1225,7 +1225,7 @@ export default function EmployeeProfilePage() {
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
                           {Object.entries(byResource).map(([resource, actions]) => (
                             <div key={resource} className="p-3 rounded-lg border border-border bg-muted/20 space-y-2">
-                              <div className="flex items-center justify-between border-b border-border pb-1.5">
+                              <div className="flex items-center justify-between border-border-strong border-border pb-1.5">
                                 <span className="font-semibold text-xs text-foreground">
                                   {resource}
                                 </span>
@@ -1236,7 +1236,7 @@ export default function EmployeeProfilePage() {
                               <div className="flex flex-wrap gap-1.5 pt-0.5">
                                 {actions.map((act, i) => (
                                   <span key={i} className="inline-flex items-center gap-1 text-[10px] font-mono font-medium px-2 py-0.5 rounded bg-background border border-border text-foreground">
-                                    <Check className="w-2.5 h-2.5 text-emerald-600" />
+                                    <Check className="w-2.5 h-2.5 text-tone-green-text" />
                                     {act.action}
                                   </span>
                                 ))}
@@ -1593,7 +1593,7 @@ export default function EmployeeProfilePage() {
           {docForm.fileUrl && (
             <div className="flex items-center justify-between p-2.5 bg-primary/5 rounded-lg border border-primary/20 text-[11px]">
               <div className="flex items-center gap-2 truncate">
-                <CheckCircle2 className="w-4 h-4 text-emerald-500 flex-shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-tone-green-text flex-shrink-0" />
                 <span className="text-foreground font-medium truncate">{docForm.fileName}</span>
                 {docForm.fileSize && (
                   <span className="text-muted-foreground font-mono">({(docForm.fileSize / 1024).toFixed(1)} KB)</span>

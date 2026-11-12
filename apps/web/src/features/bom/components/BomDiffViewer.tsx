@@ -190,7 +190,7 @@ export function BomDiffViewer({ diff }: Props) {
                       <td className="py-2.5 px-3 text-center font-mono text-muted-foreground">{index + 1}</td>
                       <td className="py-2.5 px-3">
                         <div className="font-medium text-foreground">{row.itemName}</div>
-                        {row.variant && <div className="flex items-center gap-2 text-[11px] text-muted-foreground"><span>{row.variant}</span><span className="shrink-0 rounded-md border border-violet-200 bg-violet-50 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide text-violet-700 dark:border-violet-800 dark:bg-violet-950/50 dark:text-violet-300">Variant</span></div>}
+                        {row.variant && <div className="flex items-center gap-2 text-[11px] text-muted-foreground"><span>{row.variant}</span><span className="shrink-0 rounded-md border border-tone-purple-solid bg-tone-violet-bg px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide text-tone-purple-text   ">Variant</span></div>}
                         {itemCode && (
                           <div className="text-[10px] font-mono text-muted-foreground">{itemCode}</div>
                         )}

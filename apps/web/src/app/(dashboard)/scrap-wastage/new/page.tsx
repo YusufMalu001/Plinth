@@ -59,7 +59,7 @@ const REGISTRATION_SCENARIOS: ScenarioConfig[] = [
     description: 'Raw material arrives and fails incoming QC rules or is physically damaged during delivery.',
     badge: '1. Inward Raw Material QC',
     icon: Truck,
-    accentColor: 'from-amber-500/10 to-amber-500/5 border-amber-300 dark:border-amber-700/60 text-amber-600 dark:text-amber-400',
+    accentColor: 'bg-tone-amber-bg border-tone-amber-solid/25 text-tone-amber-text',
     defaultItemType: 'MATERIAL',
     defaultSourceType: 'QC_REJECTION_NO_BATCH',
     reasonPresets: [
@@ -77,7 +77,7 @@ const REGISTRATION_SCENARIOS: ScenarioConfig[] = [
     description: 'During a production run while making semi-finished goods, a damaged or faulty product/part is obtained.',
     badge: '2. In-Process WIP Run',
     icon: Cog,
-    accentColor: 'from-blue-500/10 to-blue-500/5 border-blue-300 dark:border-blue-700/60 text-blue-600 dark:text-blue-400',
+    accentColor: 'bg-tone-blue-bg border-tone-blue-solid/25 text-tone-blue-text',
     defaultItemType: 'PRODUCT',
     defaultSourceType: 'DEPARTMENT_EXECUTION_EXCEPTION',
     reasonPresets: [
@@ -95,7 +95,7 @@ const REGISTRATION_SCENARIOS: ScenarioConfig[] = [
     description: 'When inspecting final goods, damaged or faulty product is obtained after assembly of semi-finished goods.',
     badge: '3. Final Goods Assembly QA',
     icon: ShieldAlert,
-    accentColor: 'from-rose-500/10 to-rose-500/5 border-rose-300 dark:border-rose-700/60 text-rose-600 dark:text-rose-400',
+    accentColor: 'bg-tone-red-bg border-tone-red-solid/25 text-tone-red-text',
     defaultItemType: 'PRODUCT',
     defaultSourceType: 'QC_REJECTION_NO_BATCH',
     reasonPresets: [
@@ -113,7 +113,7 @@ const REGISTRATION_SCENARIOS: ScenarioConfig[] = [
     description: 'A return received from the User/Trader/Customer that is damaged, faulty, or has any loss, error, or fault.',
     badge: '4. Customer / Trader RMA',
     icon: RotateCcw,
-    accentColor: 'from-purple-500/10 to-purple-500/5 border-purple-300 dark:border-purple-700/60 text-purple-600 dark:text-purple-400',
+    accentColor: 'bg-tone-purple-bg border-tone-purple-solid/25 text-tone-purple-text',
     defaultItemType: 'PRODUCT',
     defaultSourceType: 'MANUAL_REPORT',
     reasonPresets: [
@@ -282,7 +282,7 @@ export default function NewLossEventPage() {
           </Link>
           <div>
             <div className="flex items-center gap-2">
-              <Trash2 className="w-5 h-5 text-rose-500" />
+              <Trash2 className="w-5 h-5 text-tone-red-text" />
               <h1 className="text-xl font-bold tracking-tight text-foreground">
                 Report Scrap, Wastage & Defect Event
               </h1>
@@ -362,7 +362,7 @@ export default function NewLossEventPage() {
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Section 1: Scenario Context & Origin Linkage */}
           <Card className="rounded-2xl border border-border bg-card p-6 shadow-xs space-y-4">
-            <div className="flex items-center justify-between border-b border-border pb-3">
+            <div className="flex items-center justify-between border-border-strong border-border pb-3">
               <div className="flex items-center gap-2">
                 <LinkIcon className="w-4 h-4 text-primary" />
                 <h3 className="text-sm font-bold text-foreground">
@@ -447,7 +447,7 @@ export default function NewLossEventPage() {
 
           {/* Section 2: Material / Product Details */}
           <Card className="rounded-2xl border border-border bg-card p-6 shadow-xs space-y-4">
-            <div className="flex items-center justify-between border-b border-border pb-3">
+            <div className="flex items-center justify-between border-border-strong border-border pb-3">
               <div className="flex items-center gap-2">
                 <Package className="w-4 h-4 text-primary" />
                 <h3 className="text-sm font-bold text-foreground">
@@ -617,7 +617,7 @@ export default function NewLossEventPage() {
 
           {/* Section 3: Reason, Justification & Evidence */}
           <Card className="rounded-2xl border border-border bg-card p-6 shadow-xs space-y-4">
-            <div className="flex items-center gap-2 border-b border-border pb-3">
+            <div className="flex items-center gap-2 border-border-strong border-border pb-3">
               <Info className="w-4 h-4 text-primary" />
               <h3 className="text-sm font-bold text-foreground">
                 3. Reason & Evidence Attachments

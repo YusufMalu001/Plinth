@@ -373,7 +373,7 @@ export default function MiscellaneousExpensesPage() {
                               e.stopPropagation();
                               setSelectedBill(exp);
                             }}
-                            className="inline-flex items-center gap-1.5 rounded-lg bg-muted px-2.5 py-1 text-[11px] font-semibold text-foreground hover:bg-muted0/20 dark:text-primary dark:hover:bg-muted0/20 border border-border transition-all cursor-pointer shadow-xs active:scale-95"
+                            className="inline-flex items-center gap-1.5 rounded-lg bg-muted px-2.5 py-1 text-[11px] font-semibold text-foreground hover:bg-tone-grey-bg border border-border transition-all cursor-pointer shadow-xs active:scale-95"
                             title={exp.receiptFileName ? `View ${exp.receiptFileName}` : 'Click to view attached bill'}
                           >
                             <Paperclip className="h-3 w-3" />
@@ -404,7 +404,7 @@ export default function MiscellaneousExpensesPage() {
                               e.stopPropagation();
                               setExpenseToDelete(exp);
                             }}
-                            className="h-8 w-8 p-0 text-muted-foreground hover:text-rose-600 hover:bg-rose-50 dark:hover:bg-rose-950/30 rounded-lg transition-colors inline-flex items-center justify-center"
+                            className="h-8 w-8 p-0 text-muted-foreground hover:text-tone-red-text hover:bg-tone-red-solid rounded-lg transition-colors inline-flex items-center justify-center"
                             title="Delete Expense Voucher"
                           >
                             <Trash2 className="h-4 w-4" />
@@ -459,11 +459,11 @@ export default function MiscellaneousExpensesPage() {
           onClick={() => setSelectedBill(null)}
         >
           <div
-            className="w-full max-w-3xl rounded-2xl border border-border bg-card p-5 sm:p-6 shadow-2xl space-y-4 max-h-[90vh] flex flex-col animate-in fade-in zoom-in-95 duration-150"
+            className="w-full max-w-3xl rounded-2xl border border-border bg-card p-5 sm:p-6 shadow-modal space-y-4 max-h-[90vh] flex flex-col animate-in fade-in zoom-in-95 duration-150"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
-            <div className="flex items-start justify-between border-b border-border/70 pb-3">
+            <div className="flex items-start justify-between border-border-strong border-border/70 pb-3">
               <div className="flex items-center gap-2.5">
                 <div className="rounded-lg bg-muted p-2 text-foreground border border-border">
                   <Paperclip className="h-4 w-4" />
@@ -551,7 +551,7 @@ export default function MiscellaneousExpensesPage() {
                 ) : selectedBill.receiptFileType === 'application/pdf' || /\.pdf(\?.*)?$/i.test(selectedBill.receiptUrl) ? (
                   <iframe
                     src={selectedBill.receiptUrl}
-                    className="w-full h-[60vh] rounded-lg border-0"
+                    className="w-full h-[60vh] rounded-lg border-accent"
                     title={selectedBill.receiptFileName || 'Bill PDF Preview'}
                   />
                 ) : (
@@ -569,7 +569,7 @@ export default function MiscellaneousExpensesPage() {
                       <a
                         href={selectedBill.receiptUrl}
                         download={selectedBill.receiptFileName || `bill_${selectedBill.expenseNumber}`}
-                        className="inline-flex items-center gap-1.5 rounded-xl bg-primary px-3.5 py-1.5 text-xs font-semibold text-white hover:bg-primary/90 shadow-sm"
+                        className="inline-flex items-center gap-1.5 rounded-xl bg-primary px-3.5 py-1.5 text-xs font-semibold text-inverse hover:bg-primary/90 shadow-sm"
                       >
                         <Download className="h-3.5 w-3.5" /> Download Document
                       </a>

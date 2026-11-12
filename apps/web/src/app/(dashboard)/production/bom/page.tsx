@@ -165,7 +165,7 @@ export default function BomListPage() {
       {/* Compact 3-Card KPI Grid */}
       <div className="grid gap-3 grid-cols-1 sm:grid-cols-3 w-full">
         {/* Card 1: Total Specifications */}
-        <Card className="border border-border/80 dark:border-border/60 bg-card shadow-none rounded-xl p-3 sm:p-3.5 hover:border-primary/40 transition-all">
+        <Card className="border border-border/80 bg-card shadow-none rounded-xl p-3 sm:p-3.5 hover:border-primary/40 transition-all">
           <CardContent className="p-0 flex items-center justify-between">
             <div className="space-y-1">
               <p className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
@@ -185,7 +185,7 @@ export default function BomListPage() {
         </Card>
 
         {/* Card 2: Active Specifications */}
-        <Card className="border border-border/80 dark:border-border/60 bg-card shadow-none rounded-xl p-3 sm:p-3.5 hover:border-emerald-500/40 transition-all">
+        <Card className="border border-border/80 bg-card shadow-none rounded-xl p-3 sm:p-3.5 hover:border-tone-green-solid/25 transition-all">
           <CardContent className="p-0 flex items-center justify-between">
             <div className="space-y-1">
               <p className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
@@ -198,14 +198,14 @@ export default function BomListPage() {
                 <span className="text-xs font-medium text-muted-foreground">active / approved</span>
               </div>
             </div>
-            <span className="rounded-lg bg-emerald-500/10 dark:bg-emerald-500/20 p-2 text-emerald-600 dark:text-emerald-400 shrink-0">
+            <span className="rounded-lg bg-tone-green-bg p-2 text-tone-green-text shrink-0">
               <Boxes className="h-4 w-4" />
             </span>
           </CardContent>
         </Card>
 
         {/* Card 3: Formula Components */}
-        <Card className="border border-border/80 dark:border-border/60 bg-card shadow-none rounded-xl p-3 sm:p-3.5 hover:border-amber-500/40 transition-all">
+        <Card className="border border-border/80 bg-card shadow-none rounded-xl p-3 sm:p-3.5 hover:border-tone-amber-solid/25 transition-all">
           <CardContent className="p-0 flex items-center justify-between">
             <div className="space-y-1">
               <p className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
@@ -218,7 +218,7 @@ export default function BomListPage() {
                 <span className="text-xs font-medium text-muted-foreground">components & items</span>
               </div>
             </div>
-            <span className="rounded-lg bg-amber-500/10 dark:bg-amber-500/20 p-2 text-amber-600 dark:text-amber-400 shrink-0">
+            <span className="rounded-lg bg-tone-amber-bg p-2 text-tone-amber-text shrink-0">
               <Layers className="h-4 w-4" />
             </span>
           </CardContent>
@@ -228,14 +228,14 @@ export default function BomListPage() {
       {/* Main Table Card spanning full width */}
       <Card className="rounded-xl border border-border overflow-hidden shadow-none w-full bg-card">
         {/* Table Toolbar / Filters Bar */}
-        <div className="p-3 sm:p-4 border-b border-border bg-card flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div className="p-3 sm:p-4 border-border-strong border-border bg-card flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div className="flex items-center gap-2">
             <span className="text-sm sm:text-base font-bold text-foreground">BOM Registry</span>
             <span className="rounded-full bg-primary/10 border border-primary/20 px-2 py-0.5 text-[11px] font-bold text-primary">
               {totalCount} Total
             </span>
             {selectedIds.size > 0 && (
-              <span className="rounded-full bg-amber-500/10 border border-amber-500/20 px-2 py-0.5 text-[11px] font-bold text-amber-600 dark:text-amber-400">
+              <span className="rounded-full bg-tone-amber-bg border border-tone-amber-solid/25 px-2 py-0.5 text-[11px] font-bold text-tone-amber-text">
                 {selectedIds.size} Selected
               </span>
             )}
@@ -325,7 +325,7 @@ export default function BomListPage() {
           ) : (
             <Table className="w-full">
               <TableHeader>
-                <TableRow className="border-b border-border bg-muted/40 hover:bg-muted/40">
+                <TableRow className="border-border-strong border-border bg-muted/40 hover:bg-muted/40">
                   <TableHead className="py-2.5 px-3 w-10 text-center">
                     <Checkbox
 
@@ -365,7 +365,7 @@ export default function BomListPage() {
                     <TableRow
                       key={bom.id}
                       onClick={() => router.push(`/production/bom/${bom.id}`)}
-                      className={`cursor-pointer transition-colors group border-b border-border/60 ${
+                      className={`cursor-pointer transition-colors group border-border-strong border-border/60 ${
                         isChecked ? 'bg-primary/5 hover:bg-primary/10' : 'hover:bg-muted/40'
                       }`}
                     >

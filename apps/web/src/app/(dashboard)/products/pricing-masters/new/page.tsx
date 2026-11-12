@@ -57,7 +57,7 @@ export default function CreatePricingMasterPage() {
         <ReturnToProductDraftBanner currentFlowName="Pricing Master" />
         <header><h1 className="text-2xl sm:text-3xl font-black tracking-tight text-foreground">Create Pricing Master</h1></header>
         <form onSubmit={submit} className="overflow-hidden rounded-2xl border border-border bg-card shadow-xs">
-          <div className="grid grid-cols-1 gap-4 border-b border-border p-6 md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-4 border-border-strong border-border p-6 md:grid-cols-2">
             <label className="block text-sm font-bold">Master name <span className="text-destructive">*</span><input required value={name} onChange={(event) => setName(event.target.value)} placeholder="e.g. Standard Commercial Pricing" className="mt-1.5 h-10 w-full rounded-xl border border-input bg-background px-3.5 text-sm font-semibold" /></label>
             <label className="block text-sm font-bold">Description<input value={description} onChange={(event) => setDescription(event.target.value)} placeholder="Optional pricing policy description" className="mt-1.5 h-10 w-full rounded-xl border border-input bg-background px-3.5 text-sm font-medium" /></label>
           </div>
@@ -81,7 +81,7 @@ export default function CreatePricingMasterPage() {
                     const unusedLevel = pricingLevels.find((lvl) => !tiers.some((t) => t.name === lvl)) || pricingLevels[0] || 'Dealer';
                     setTiers((current) => [...current, blankTier(unusedLevel)]);
                   }}
-                  className="inline-flex items-center gap-1.5 rounded-xl border border-primary/50 bg-primary px-3.5 py-2 text-xs font-bold text-white shadow-sm hover:bg-primary/90 transition-colors cursor-pointer"
+                  className="inline-flex items-center gap-1.5 rounded-xl border border-primary/50 bg-primary px-3.5 py-2 text-xs font-bold text-inverse shadow-sm hover:bg-primary/90 transition-colors cursor-pointer"
                 >
                   <Plus className="h-3.5 w-3.5" /> Add Tier
                 </button>

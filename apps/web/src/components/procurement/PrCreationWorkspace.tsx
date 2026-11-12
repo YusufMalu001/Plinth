@@ -1109,13 +1109,13 @@ export function PrCreationWorkspace() {
                           placeholder="Search material..."
                           showOptionCode={false}
                           renderOption={(item) => (
-                            <div className={`flex min-w-0 items-center justify-between gap-2 py-1 ${item.parentOptionId ? 'ml-2 border-l-2 border-violet-300 pl-2 dark:border-violet-700' : ''}`}>
+                            <div className={`flex min-w-0 items-center justify-between gap-2 py-1 ${item.parentOptionId ? 'ml-2 border-l-2 border-tone-purple-solid pl-2 ' : ''}`}>
                               <span className="flex min-w-0 items-center gap-1.5">
-                                {item.parentOptionId && <span className="shrink-0 font-bold text-violet-500" aria-hidden="true">↳</span>}
+                                {item.parentOptionId && <span className="shrink-0 font-bold text-tone-purple-text" aria-hidden="true">↳</span>}
                                 <span className="truncate text-xs font-semibold text-foreground">
                                   {item.name}
                                 </span>
-                                {item.isVariant && <span className="shrink-0 rounded border border-violet-200 bg-violet-50 px-1 py-0.5 text-[9px] font-bold uppercase text-violet-700 dark:border-violet-800 dark:bg-violet-950/50 dark:text-violet-300">Variant</span>}
+                                {item.isVariant && <span className="shrink-0 rounded border border-tone-purple-solid bg-tone-violet-bg px-1 py-0.5 text-[9px] font-bold uppercase text-tone-purple-text   ">Variant</span>}
                               </span>
                               <span className="shrink-0 rounded-full border border-primary/20 bg-primary/10 px-1.5 py-0.5 text-[10px] font-semibold text-primary">
                                 {item.category?.name || 'Material'}
@@ -1138,7 +1138,7 @@ export function PrCreationWorkspace() {
                         />
                         {line.bomNumber ? (
                           <div className="mt-1 flex items-center gap-1.5">
-                            <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-mono font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-300 dark:border-emerald-800">
+                            <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-mono font-semibold bg-tone-emerald-bg text-tone-green-text border border-tone-green-solid   ">
                               BOM: {line.bomNumber} (Approved)
                             </span>
                           </div>
@@ -1301,7 +1301,7 @@ export function PrCreationWorkspace() {
                                       {option.badges.map((b, bIdx) => (
                                         <span
                                           key={bIdx}
-                                          className="inline-flex items-center px-1.5 py-0.2 rounded text-[10px] font-bold bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/30 transition-colors"
+                                          className="inline-flex items-center px-1.5 py-0.2 rounded text-[10px] font-bold bg-tone-emerald-bg/10 text-tone-green-text  border border-tone-green-solid/30 transition-colors"
                                         >
                                           {b.label}
                                         </span>

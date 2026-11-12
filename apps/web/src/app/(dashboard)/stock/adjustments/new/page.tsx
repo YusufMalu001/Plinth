@@ -182,12 +182,12 @@ export default function NewStockAdjustmentPage() {
         />
 
         {formError && (
-          <div className="rounded-2xl border border-rose-500/30 bg-rose-500/10 p-4 shadow-sm animate-in fade-in-0 duration-200">
+          <div className="rounded-2xl border border-tone-red-solid/25 bg-tone-red-bg p-4 shadow-sm animate-in fade-in-0 duration-200">
             <div className="flex items-start gap-3">
-              <XCircle className="h-5 w-5 text-rose-600 dark:text-rose-400 mt-0.5 shrink-0" />
+              <XCircle className="h-5 w-5 text-tone-red-text mt-0.5 shrink-0" />
               <div>
-                <h4 className="text-xs font-bold text-rose-900 dark:text-rose-300 uppercase tracking-wider">Validation Error</h4>
-                <p className="text-xs text-rose-700 dark:text-rose-300 mt-0.5 leading-relaxed">{formError}</p>
+                <h4 className="text-xs font-bold text-tone-red-text uppercase tracking-wider">Validation Error</h4>
+                <p className="text-xs text-tone-red-text mt-0.5 leading-relaxed">{formError}</p>
               </div>
             </div>
           </div>
@@ -238,7 +238,7 @@ export default function NewStockAdjustmentPage() {
                     onClick={() => setForm((f) => ({ ...f, direction: 'DECREASE' }))}
                     className={`h-full rounded-xl border text-xs font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer ${
                       form.direction === 'DECREASE'
-                        ? 'border-rose-500/60 bg-rose-500/10 text-rose-600 dark:text-rose-400 ring-2 ring-rose-500/20 shadow-xs'
+                        ? 'border-tone-red-solid/25 bg-tone-red-bg text-tone-red-text ring-2 ring-tone-red-solid/25 shadow-xs'
                         : 'border-border/80 text-muted-foreground hover:bg-muted/40'
                     }`}
                   >
@@ -251,7 +251,7 @@ export default function NewStockAdjustmentPage() {
                     onClick={() => setForm((f) => ({ ...f, direction: 'INCREASE' }))}
                     className={`h-full rounded-xl border text-xs font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer ${
                       form.direction === 'INCREASE'
-                        ? 'border-emerald-500/60 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 ring-2 ring-emerald-500/20 shadow-xs'
+                        ? 'border-tone-green-solid/25 bg-tone-green-bg text-tone-green-text ring-2 ring-tone-green-solid/25 shadow-xs'
                         : 'border-border/80 text-muted-foreground hover:bg-muted/40'
                     }`}
                   >
@@ -308,17 +308,17 @@ export default function NewStockAdjustmentPage() {
                   isError={stockAvailabilityError}
                 />
                 {stockAvailability?.unconvertibleBalanceCount ? (
-                  <p className="text-[11px] font-medium text-amber-800 dark:text-amber-300">
+                  <p className="text-[11px] font-medium text-tone-amber-text">
                     Some stock is recorded in other units without an approved conversion, so it is shown separately and excluded from this {selectedUomLabel} balance.
                   </p>
                 ) : null}
                 {adjustmentShortage && (
-                  <p className="text-[11px] font-semibold text-rose-700 dark:text-rose-300">
+                  <p className="text-[11px] font-semibold text-tone-red-text">
                     This write-off exceeds the selected item’s available stock by {new Intl.NumberFormat('en-IN', { maximumFractionDigits: 4 }).format(adjustmentQuantity - (stockAvailability?.availableQuantity ?? 0))} {selectedUomLabel}.
                   </p>
                 )}
                 {stockAvailabilityError && (
-                  <p className="text-[11px] font-medium text-amber-800 dark:text-amber-300">
+                  <p className="text-[11px] font-medium text-tone-amber-text">
                     Current stock could not be loaded. The server will verify availability before posting.
                   </p>
                 )}
@@ -379,7 +379,7 @@ export default function NewStockAdjustmentPage() {
                 type="submit"
                 disabled={proposeAdjustment.isPending || adjustmentShortage}
                 size="sm"
-                className="rounded-full shadow-xs bg-primary hover:bg-amber-600 text-primary-foreground font-bold text-xs px-6 h-9"
+                className="rounded-full shadow-xs bg-primary hover:bg-[color:var(--tone-amber-solid)] text-primary-foreground font-bold text-xs px-6 h-9"
               >
                 {proposeAdjustment.isPending ? 'Adjusting Stock...' : 'Adjust Stock'}
               </Button>

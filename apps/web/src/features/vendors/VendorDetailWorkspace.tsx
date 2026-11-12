@@ -215,7 +215,7 @@ export function VendorDetailWorkspace({ id }: VendorDetailWorkspaceProps) {
                   size="sm"
                   disabled={availabilityMutation.isPending}
                   onClick={() => availabilityMutation.mutate(vendor.status === 'INACTIVE' ? 'ACTIVE' : 'INACTIVE')}
-                  className={`h-10 px-4 rounded-xl text-sm font-semibold shadow-none ${vendor.status === 'INACTIVE' ? 'border-emerald-500/30 bg-emerald-500/5 text-emerald-700 hover:bg-emerald-500/10 dark:text-emerald-400' : 'border-destructive/25 bg-destructive/5 text-destructive hover:bg-destructive/10'}`}
+                  className={`h-10 px-4 rounded-xl text-sm font-semibold shadow-none ${vendor.status === 'INACTIVE' ? 'border-tone-green-solid bg-tone-green-bg text-tone-green-text hover:bg-tone-green-bg' : 'border-destructive/25 bg-destructive/5 text-destructive hover:bg-destructive/10'}`}
                 >
                   {availabilityMutation.isPending ? 'Saving…' : vendor.status === 'INACTIVE' ? 'Set Active' : 'Set Inactive'}
                 </Button>
@@ -245,7 +245,7 @@ export function VendorDetailWorkspace({ id }: VendorDetailWorkspaceProps) {
               <Button
                 size="sm"
                 onClick={() => router.push(`/vendors/${vendor.id}/edit`)}
-                  className="h-10 px-5 rounded-xl text-sm font-bold shadow-none bg-primary text-white hover:bg-[#003c68]"
+                  className="h-10 px-5 rounded-xl text-sm font-bold shadow-none bg-primary text-inverse hover:bg-[color:var(--action-primary-bg-hover)]"
                 icon={Pencil}
               >
                 Edit Vendor
@@ -364,7 +364,7 @@ export function VendorDetailWorkspace({ id }: VendorDetailWorkspaceProps) {
                   void queryClient.invalidateQueries({ queryKey: ['vendor-profile', id] });
                 }}
                 className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-bold transition-all whitespace-nowrap cursor-pointer ${isActive
-                    ? 'bg-primary text-white'
+                    ? 'bg-primary text-inverse'
                     : 'text-muted-foreground hover:text-foreground hover:bg-card border border-transparent'
                   }`}
               >
@@ -382,7 +382,7 @@ export function VendorDetailWorkspace({ id }: VendorDetailWorkspaceProps) {
             {activeTab === 'profile' && (
               <div className="grid grid-cols-1 xl:grid-cols-2 gap-5">
                 <section className="overflow-hidden rounded-2xl border border-border bg-card shadow-xs">
-                  <div className="flex items-start justify-between gap-4 border-b border-border/70 bg-gradient-to-r from-primary/[0.08] to-transparent px-6 py-5">
+                  <div className="flex items-start justify-between gap-4 border-b border-border/70 bg-muted px-6 py-5">
                     <div><p className="text-[10px] font-bold uppercase tracking-[0.16em] text-primary">Vendor profile</p><h2 className="mt-1 text-lg font-bold text-foreground">Identity &amp; terms</h2></div>
                     <Building2 className="mt-1 h-5 w-5 text-primary" />
                   </div>
@@ -396,7 +396,7 @@ export function VendorDetailWorkspace({ id }: VendorDetailWorkspaceProps) {
                 </section>
 
                 <section className="overflow-hidden rounded-2xl border border-border bg-card shadow-xs">
-                  <div className="flex items-start justify-between gap-4 border-b border-border/70 bg-gradient-to-r from-primary/[0.08] to-transparent px-6 py-5">
+                  <div className="flex items-start justify-between gap-4 border-b border-border/70 bg-muted px-6 py-5">
                     <div><p className="text-[10px] font-bold uppercase tracking-[0.16em] text-primary">Key contact</p><h2 className="mt-1 text-lg font-bold text-foreground">Dispatch location</h2></div>
                     <MapPin className="mt-1 h-5 w-5 text-primary" />
                   </div>
@@ -484,13 +484,13 @@ export function VendorDetailWorkspace({ id }: VendorDetailWorkspaceProps) {
                           <span
                             className={`px-2.5 py-0.5 rounded-full text-xs font-bold ${
                               scoringDetail.classification === 'STRONG'
-                                ? 'bg-emerald-500/10 text-emerald-600 border border-emerald-500/20'
+                                ? 'bg-tone-green-bg text-tone-green-text border border-tone-green-solid'
                                 : scoringDetail.classification === 'GOOD'
-                                ? 'bg-blue-500/10 text-blue-600 border border-blue-500/20'
+                                ? 'bg-tone-blue-bg text-tone-blue-text border border-tone-blue-solid'
                                 : scoringDetail.classification === 'WATCH'
-                                ? 'bg-amber-500/10 text-amber-600 border border-amber-500/20'
+                                ? 'bg-tone-amber-bg text-tone-amber-text border border-tone-amber-solid'
                                 : scoringDetail.classification === 'AT_RISK'
-                                ? 'bg-rose-500/10 text-rose-600 border border-rose-500/20'
+                                ? 'bg-tone-red-bg text-tone-red-text border border-tone-red-solid'
                                 : 'bg-muted text-muted-foreground border border-border'
                             }`}
                           >
@@ -499,7 +499,7 @@ export function VendorDetailWorkspace({ id }: VendorDetailWorkspaceProps) {
                           <span
                             className={`px-2 py-0.5 rounded-md text-[11px] font-medium ${
                               scoringDetail.confidenceStatus === 'SUFFICIENT_EVIDENCE'
-                                ? 'bg-emerald-500/10 text-emerald-600'
+                                ? 'bg-tone-green-bg text-tone-green-text'
                                 : 'bg-muted text-muted-foreground border border-border'
                             }`}
                           >
@@ -532,7 +532,7 @@ export function VendorDetailWorkspace({ id }: VendorDetailWorkspaceProps) {
                           </span>
                         </div>
                       </div>
-                      <div className="text-2xl font-black font-mono text-emerald-600 truncate" title={`${scoringDetail?.breakdown.quality.score ?? performance.qualityRate}%`}>
+                      <div className="text-2xl font-black font-mono text-tone-green-text truncate" title={`${scoringDetail?.breakdown.quality.score ?? performance.qualityRate}%`}>
                         {(() => {
                           const val = scoringDetail?.breakdown.quality.score ?? performance.qualityRate;
                           return val != null ? `${Number(val.toFixed(2))}%` : '—';
@@ -540,7 +540,7 @@ export function VendorDetailWorkspace({ id }: VendorDetailWorkspaceProps) {
                       </div>
                       <div className="w-full h-1.5 rounded-full bg-muted overflow-hidden">
                         <div
-                          className="h-full bg-emerald-500 rounded-full transition-all"
+                          className="h-full bg-tone-green-bg rounded-full transition-all"
                           style={{ width: `${scoringDetail?.breakdown.quality.score ?? performance.qualityRate ?? 0}%` }}
                         />
                       </div>
@@ -725,21 +725,21 @@ export function VendorDetailWorkspace({ id }: VendorDetailWorkspaceProps) {
                                 <span
                                   className={`px-2 py-0.5 rounded text-[10px] uppercase font-bold ${
                                     dn.severityLabel === 'minor'
-                                      ? 'bg-slate-500/10 text-slate-600'
+                                      ? 'bg-muted text-ink-secondary'
                                       : dn.severityLabel === 'low'
-                                      ? 'bg-blue-500/10 text-blue-600'
+                                      ? 'bg-tone-blue-bg text-tone-blue-text'
                                       : dn.severityLabel === 'moderate'
-                                      ? 'bg-amber-500/10 text-amber-600'
+                                      ? 'bg-tone-amber-bg text-tone-amber-text'
                                       : dn.severityLabel === 'high'
-                                      ? 'bg-orange-500/10 text-orange-600'
-                                      : 'bg-rose-500/10 text-rose-600'
+                                      ? 'bg-tone-orange-bg text-tone-orange-text'
+                                      : 'bg-tone-red-bg text-tone-red-text'
                                   }`}
                                 >
                                   {dn.severityLabel}
                                 </span>
                               </td>
-                              <td className="py-3 px-3 text-rose-600 font-bold">-{dn.penaltyPoints.toFixed(1)} pts</td>
-                              <td className="py-3 px-3 text-rose-600">-{dn.overallContribution.toFixed(2)} pts</td>
+                              <td className="py-3 px-3 text-tone-red-text font-bold">-{dn.penaltyPoints.toFixed(1)} pts</td>
+                              <td className="py-3 px-3 text-tone-red-text">-{dn.overallContribution.toFixed(2)} pts</td>
                             </tr>
                           ))}
                         </tbody>
@@ -773,7 +773,7 @@ export function VendorDetailWorkspace({ id }: VendorDetailWorkspaceProps) {
                     </div>
                     <div className="p-4 rounded-xl bg-muted/20 border border-border">
                       <p className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">QA Accepted</p>
-                      <p className="text-2xl font-black text-emerald-600 font-mono mt-1">
+                      <p className="text-2xl font-black text-tone-green-text font-mono mt-1">
                         {metrics.acceptedQuantity.toLocaleString('en-IN')}
                       </p>
                     </div>
@@ -1013,7 +1013,7 @@ export function VendorDetailWorkspace({ id }: VendorDetailWorkspaceProps) {
                             <TableRow key={cap.id}>
                               <TableCell className="font-semibold text-foreground">
                                 <div>{isVariant && parentName ? parentName : itemName}</div>
-                                {isVariant && <div className="mt-1 flex items-center gap-2"><span className="text-[11px] font-medium text-muted-foreground">{variantLabel}</span><span className="shrink-0 rounded-md border border-violet-200 bg-violet-50 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide text-violet-700 dark:border-violet-800 dark:bg-violet-950/50 dark:text-violet-300">Variant</span></div>}
+                                {isVariant && <div className="mt-1 flex items-center gap-2"><span className="text-[11px] font-medium text-muted-foreground">{variantLabel}</span><span className="shrink-0 rounded-md border border-tone-purple-solid/25 bg-tone-purple-bg px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide text-tone-purple-text">Variant</span></div>}
                               </TableCell>
                               <TableCell className="text-xs font-medium text-foreground">{category}</TableCell>
                               <TableCell className="font-mono text-muted-foreground">{uomSymbol}</TableCell>
@@ -1103,8 +1103,8 @@ function VendorProfileSheetModal({
   ];
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-xs animate-in fade-in duration-200">
-      <div className="flex max-h-[92vh] w-full max-w-5xl flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-2xl">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-inverse p-4 backdrop-blur-xs animate-in fade-in duration-200">
+      <div className="flex max-h-[92vh] w-full max-w-5xl flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-none">
         <div className="flex items-center justify-between border-b border-border bg-muted/40 px-6 py-4 print:hidden">
           <div className="flex items-center gap-3">
             <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary/10 text-primary"><Printer className="h-4 w-4" /></div>
@@ -1116,48 +1116,48 @@ function VendorProfileSheetModal({
           </div>
         </div>
 
-        <div className="flex-1 overflow-y-auto bg-muted/20 p-5 sm:p-8 print:overflow-visible print:bg-white print:p-0">
-          <article ref={printRef} className="printable-document print-target mx-auto block w-full max-w-4xl space-y-6 bg-white p-6 text-slate-900 shadow-sm print:visible print:max-w-none print:space-y-5 print:p-0 print:shadow-none">
-            <header className="flex flex-wrap items-start justify-between gap-5 border-b-2 border-[#004a80] pb-5">
+        <div className="flex-1 overflow-y-auto bg-muted/20 p-5 sm:p-8 print:overflow-visible print:bg-surface print:p-0">
+          <article ref={printRef} className="printable-document print-target mx-auto block w-full max-w-4xl space-y-6 bg-surface p-6 text-ink shadow-sm print:visible print:max-w-none print:space-y-5 print:p-0 print:shadow-none">
+            <header className="flex flex-wrap items-start justify-between gap-5 border-b-2 border-[color:var(--action-primary-bg)] pb-5">
               <div>
-                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#004a80]">Plinth · Vendor Directory</p>
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[color:var(--action-primary-bg)]">Plinth · Vendor Directory</p>
                 <h1 className="mt-2 text-3xl font-bold tracking-tight">{vendor.name}</h1>
-                <p className="mt-2 text-xs text-slate-600">Vendor profile generated {new Date().toLocaleDateString('en-IN')}</p>
+                <p className="mt-2 text-xs text-ink-secondary">Vendor profile generated {new Date().toLocaleDateString('en-IN')}</p>
               </div>
-              <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-right">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Vendor status</p>
-                <p className="mt-1 text-sm font-bold uppercase text-[#004a80]">{vendor.status.replace(/_/g, ' ')}</p>
-                <p className="mt-2 text-xs font-semibold text-slate-700">Score {vendor.score != null ? `${vendor.score}/100` : 'N/A'}</p>
+              <div className="rounded-xl border border-border bg-muted px-4 py-3 text-right">
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-ink-muted">Vendor status</p>
+                <p className="mt-1 text-sm font-bold uppercase text-[color:var(--action-primary-bg)]">{vendor.status.replace(/_/g, ' ')}</p>
+                <p className="mt-2 text-xs font-semibold text-ink-secondary">Score {vendor.score != null ? `${vendor.score}/100` : 'N/A'}</p>
               </div>
             </header>
 
-            <section className="overflow-hidden rounded-xl border border-slate-200">
-              <div className="border-b border-slate-200 bg-slate-50 px-4 py-3"><h2 className="text-xs font-bold uppercase tracking-wider text-[#004a80]">Vendor details</h2></div>
+            <section className="overflow-hidden rounded-xl border border-border">
+              <div className="border-b border-border bg-muted px-4 py-3"><h2 className="text-xs font-bold uppercase tracking-wider text-[color:var(--action-primary-bg)]">Vendor details</h2></div>
               <dl className="grid grid-cols-1 gap-x-8 px-4 sm:grid-cols-2 lg:grid-cols-3">
-                {profileFields.map(([label, value]) => <div key={label} className="border-b border-slate-100 py-3"><dt className="text-[10px] font-semibold uppercase tracking-wide text-slate-500">{label}</dt><dd className="mt-1 break-words text-sm font-semibold text-slate-900">{value}</dd></div>)}
+                {profileFields.map(([label, value]) => <div key={label} className="border-b border-border py-3"><dt className="text-[10px] font-semibold uppercase tracking-wide text-ink-muted">{label}</dt><dd className="mt-1 break-words text-sm font-semibold text-ink">{value}</dd></div>)}
               </dl>
             </section>
 
-            <section className="overflow-hidden rounded-xl border border-slate-200">
-              <div className="border-b border-slate-200 bg-slate-50 px-4 py-3"><h2 className="text-xs font-bold uppercase tracking-wider text-[#004a80]">Key contact &amp; dispatch</h2></div>
+            <section className="overflow-hidden rounded-xl border border-border">
+              <div className="border-b border-border bg-muted px-4 py-3"><h2 className="text-xs font-bold uppercase tracking-wider text-[color:var(--action-primary-bg)]">Key contact &amp; dispatch</h2></div>
               <div className="grid grid-cols-1 gap-5 p-4 sm:grid-cols-2">
-                <div><p className="text-[10px] font-semibold uppercase tracking-wide text-slate-500">Contact person</p><p className="mt-1 text-sm font-semibold">{typeof primaryContact?.name === 'string' ? primaryContact.name : '—'}</p></div>
-                <div><p className="text-[10px] font-semibold uppercase tracking-wide text-slate-500">PO delivery email</p><p className="mt-1 break-all text-sm font-medium">{vendor.contactEmail || '—'}</p></div>
-                <div><p className="text-[10px] font-semibold uppercase tracking-wide text-slate-500">Phone</p><p className="mt-1 text-sm font-medium">{vendor.contactPhone || '—'}</p></div>
-                <div className="sm:col-span-2"><p className="text-[10px] font-semibold uppercase tracking-wide text-slate-500">Registered address</p><p className="mt-1 text-sm leading-6">{fullAddress}</p></div>
+                <div><p className="text-[10px] font-semibold uppercase tracking-wide text-ink-muted">Contact person</p><p className="mt-1 text-sm font-semibold">{typeof primaryContact?.name === 'string' ? primaryContact.name : '—'}</p></div>
+                <div><p className="text-[10px] font-semibold uppercase tracking-wide text-ink-muted">PO delivery email</p><p className="mt-1 break-all text-sm font-medium">{vendor.contactEmail || '—'}</p></div>
+                <div><p className="text-[10px] font-semibold uppercase tracking-wide text-ink-muted">Phone</p><p className="mt-1 text-sm font-medium">{vendor.contactPhone || '—'}</p></div>
+                <div className="sm:col-span-2"><p className="text-[10px] font-semibold uppercase tracking-wide text-ink-muted">Registered address</p><p className="mt-1 text-sm leading-6">{fullAddress}</p></div>
               </div>
             </section>
 
-            <section className="overflow-hidden rounded-xl border border-slate-200">
-              <div className="flex items-center justify-between border-b border-slate-200 bg-slate-50 px-4 py-3"><h2 className="text-xs font-bold uppercase tracking-wider text-[#004a80]">Supplied items</h2><span className="text-xs font-semibold text-slate-500">{catalogItems.length} items</span></div>
-              {catalogItems.length ? <div className="overflow-x-auto"><table className="w-full min-w-[480px] text-left text-xs"><thead className="bg-white text-[10px] uppercase tracking-wide text-slate-500"><tr><th className="px-4 py-2.5">Item</th><th className="px-4 py-2.5">Type</th><th className="px-4 py-2.5 text-right">Price</th></tr></thead><tbody className="divide-y divide-slate-100">{catalogItems.map((cap) => { const item = cap.material || cap.product; const itemPrice = cap.unitPrice == null ? null : Number(cap.unitPrice); return <tr key={String(cap.id)}><td className="px-4 py-3 font-semibold">{item?.name || 'Catalog item'}</td><td className="px-4 py-3">{cap.material ? 'Material' : cap.product ? 'Product' : 'Item'}</td><td className="px-4 py-3 text-right font-mono font-semibold">{itemPrice == null ? '—' : `₹${itemPrice.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`}</td></tr>; })}</tbody></table></div> : <p className="px-4 py-6 text-sm text-slate-500">No supplied items are linked to this vendor.</p>}
+            <section className="overflow-hidden rounded-xl border border-border">
+              <div className="flex items-center justify-between border-b border-border bg-muted px-4 py-3"><h2 className="text-xs font-bold uppercase tracking-wider text-[color:var(--action-primary-bg)]">Supplied items</h2><span className="text-xs font-semibold text-ink-muted">{catalogItems.length} items</span></div>
+              {catalogItems.length ? <div className="overflow-x-auto"><table className="w-full min-w-[480px] text-left text-xs"><thead className="bg-surface text-[10px] uppercase tracking-wide text-ink-muted"><tr><th className="px-4 py-2.5">Item</th><th className="px-4 py-2.5">Type</th><th className="px-4 py-2.5 text-right">Price</th></tr></thead><tbody className="divide-y divide-border">{catalogItems.map((cap) => { const item = cap.material || cap.product; const itemPrice = cap.unitPrice == null ? null : Number(cap.unitPrice); return <tr key={String(cap.id)}><td className="px-4 py-3 font-semibold">{item?.name || 'Catalog item'}</td><td className="px-4 py-3">{cap.material ? 'Material' : cap.product ? 'Product' : 'Item'}</td><td className="px-4 py-3 text-right font-mono font-semibold">{itemPrice == null ? '—' : `₹${itemPrice.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`}</td></tr>; })}</tbody></table></div> : <p className="px-4 py-6 text-sm text-ink-muted">No supplied items are linked to this vendor.</p>}
             </section>
 
-            {(vendor.performance?.onTimeRate != null || vendor.performance?.qualityRate != null || vendor.performance?.fillRate != null) && <section className="overflow-hidden rounded-xl border border-slate-200">
-              <div className="border-b border-slate-200 bg-slate-50 px-4 py-3"><h2 className="text-xs font-bold uppercase tracking-wider text-[#004a80]">Performance summary</h2></div>
-              <div className="grid grid-cols-1 gap-4 p-4 sm:grid-cols-3">{[['On-time delivery', vendor.performance?.onTimeRate], ['Quality acceptance', vendor.performance?.qualityRate], ['Order fill rate', vendor.performance?.fillRate]].filter((entry) => entry[1] != null).map(([label, value]) => <div key={String(label)}><p className="text-[10px] font-semibold uppercase tracking-wide text-slate-500">{label}</p><p className="mt-1 text-lg font-bold">{value}%</p></div>)}</div>
+            {(vendor.performance?.onTimeRate != null || vendor.performance?.qualityRate != null || vendor.performance?.fillRate != null) && <section className="overflow-hidden rounded-xl border border-border">
+              <div className="border-b border-border bg-muted px-4 py-3"><h2 className="text-xs font-bold uppercase tracking-wider text-[color:var(--action-primary-bg)]">Performance summary</h2></div>
+              <div className="grid grid-cols-1 gap-4 p-4 sm:grid-cols-3">{[['On-time delivery', vendor.performance?.onTimeRate], ['Quality acceptance', vendor.performance?.qualityRate], ['Order fill rate', vendor.performance?.fillRate]].filter((entry) => entry[1] != null).map(([label, value]) => <div key={String(label)}><p className="text-[10px] font-semibold uppercase tracking-wide text-ink-muted">{label}</p><p className="mt-1 text-lg font-bold">{value}%</p></div>)}</div>
             </section>}
-            <footer className="border-t border-slate-200 pt-3 text-[10px] text-slate-500">Generated from the current vendor directory record.</footer>
+            <footer className="border-t border-border pt-3 text-[10px] text-ink-muted">Generated from the current vendor directory record.</footer>
           </article>
         </div>
       </div>
@@ -1182,8 +1182,8 @@ function VendorBarcodeModal({
   });
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-xs animate-in fade-in duration-200 p-4">
-      <div className="w-full max-w-sm bg-card rounded-xl shadow-2xl border border-border overflow-hidden">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-inverse backdrop-blur-xs animate-in fade-in duration-200 p-4">
+      <div className="w-full max-w-sm bg-card rounded-xl shadow-none border border-border overflow-hidden">
         <div className="p-4 border-b border-border flex items-center justify-between print:hidden">
           <div className="flex items-center gap-2">
             <QrCode className="w-4 h-4 text-primary" />
@@ -1199,9 +1199,9 @@ function VendorBarcodeModal({
             <X className="w-3.5 h-3.5" />
           </button>
         </div>
-        <div ref={printRef} className="print-label-document p-6 text-center space-y-4 bg-white dark:bg-card">
-          <div className="p-4 rounded-2xl bg-white border border-border inline-block shadow-sm">
-            <div className="w-48 h-48 mx-auto flex items-center justify-center bg-white p-2">
+        <div ref={printRef} className="print-label-document p-6 text-center space-y-4 bg-surface">
+          <div className="p-4 rounded-2xl bg-surface border border-border inline-block shadow-sm">
+            <div className="w-48 h-48 mx-auto flex items-center justify-center bg-surface p-2">
               {(() => {
                 const qrValue = vendor.code || vendor.id;
                 try {
@@ -1210,7 +1210,7 @@ function VendorBarcodeModal({
                   const cellSize = 100 / size;
                   return (
                     <svg viewBox="0 0 100 100" className="w-full h-full" shapeRendering="crispEdges">
-                      <rect width="100" height="100" fill="#ffffff" />
+                      <rect width="100" height="100" fill="#FFFFFF" />
                       {matrix.map((row, r) =>
                         row.map((cell, c) =>
                           cell ? (
@@ -1220,7 +1220,7 @@ function VendorBarcodeModal({
                               y={r * cellSize}
                               width={cellSize}
                               height={cellSize}
-                              fill="#000000"
+                              fill="var(--text-primary)"
                             />
                           ) : null
                         )
@@ -1236,7 +1236,7 @@ function VendorBarcodeModal({
                 }
               })()}
             </div>
-            <p className="font-mono text-xs font-bold text-slate-900 mt-2 tracking-wider">{vendor.code}</p>
+            <p className="font-mono text-xs font-bold text-ink mt-2 tracking-wider">{vendor.code}</p>
           </div>
 
           <div>

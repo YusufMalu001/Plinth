@@ -280,7 +280,7 @@ export default function StockIssuesPage() {
               <Link href="/stock/issues/new">
                 <Button
                   size="sm"
-                  className="gap-1.5 rounded-full shadow-xs bg-primary hover:bg-amber-600 text-primary-foreground font-semibold"
+                  className="gap-1.5 rounded-full shadow-xs bg-primary hover:bg-[color:var(--tone-amber-solid)] text-primary-foreground font-semibold"
                 >
                   <Plus className="h-4 w-4" />
                   <span>Direct Stock Issue</span>
@@ -337,7 +337,7 @@ export default function StockIssuesPage() {
 
         {/* Standard @plinth/ui Table Card */}
         <Card className="shadow-xs overflow-hidden border border-border/80">
-          <div className="p-4 border-b border-border/80 flex items-center justify-between bg-card">
+          <div className="p-4 border-border-strong border-border/80 flex items-center justify-between bg-card">
             <div className="flex items-center gap-2">
               <ArrowUpRightSquare className="h-4 w-4 text-primary" />
               <h2 className="text-sm font-semibold text-foreground">
@@ -386,7 +386,7 @@ export default function StockIssuesPage() {
                         <TableCell className="min-w-0 pl-4 font-mono text-xs font-semibold text-primary">
                           <Link
                             href={`/stock/issues/${issue.id || issue.issueNumber}`}
-                            className="block break-all transition-colors hover:text-amber-600 hover:underline"
+                            className="block break-all transition-colors hover:text-tone-amber-text hover:underline"
                             title="View Stock Issue Details"
                           >
                             <span>{issue.issueNumber}</span>
@@ -492,9 +492,9 @@ export default function StockIssuesPage() {
         {/* Modal: New Stock Issue */}
         {createOpen && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs">
-            <Card className="w-full max-w-lg p-6 shadow-xl space-y-5 border border-border">
+            <Card className="w-full max-w-lg p-6 shadow-popover space-y-5 border border-border">
               
-              <div className="flex items-center justify-between pb-3 border-b border-border">
+              <div className="flex items-center justify-between pb-3 border-border-strong border-border">
                 <div className="flex items-center gap-2">
                   <ArrowUpRightSquare className="h-5 w-5 text-primary" />
                   <h3 className="text-base font-bold text-foreground">
@@ -511,7 +511,7 @@ export default function StockIssuesPage() {
               </div>
 
               {formError && (
-                <div className="p-3 rounded-lg bg-rose-500/10 border border-rose-500/20 text-xs font-semibold text-rose-700 dark:text-rose-400">
+                <div className="p-3 rounded-lg bg-tone-red-bg border border-tone-red-solid/25 text-xs font-semibold text-tone-red-text">
                   {formError}
                 </div>
               )}
@@ -626,7 +626,7 @@ export default function StockIssuesPage() {
                       isError={selectedItemAvailabilityError}
                     />
                     {issueShortage && (
-                      <p className="text-[11px] font-semibold text-rose-700 dark:text-rose-300">
+                      <p className="text-[11px] font-semibold text-tone-red-text">
                         This issue exceeds the selected item’s available stock by {new Intl.NumberFormat('en-IN', { maximumFractionDigits: 4 }).format(requestedIssueQuantity - (selectedItemAvailability?.availableQuantity ?? 0))} {selectedUomLabel}.
                       </p>
                     )}
@@ -662,7 +662,7 @@ export default function StockIssuesPage() {
                     type="submit"
                     size="sm"
                     disabled={createIssue.isPending || issueShortage}
-                    className="rounded-full shadow-xs bg-primary hover:bg-amber-600 text-primary-foreground font-semibold"
+                    className="rounded-full shadow-xs bg-primary hover:bg-tone-amber-solid text-primary-foreground font-semibold"
                   >
                     {createIssue.isPending ? 'Posting Issue...' : 'Confirm Issue'}
                   </Button>
@@ -675,8 +675,8 @@ export default function StockIssuesPage() {
         {/* Modal: Reverse Stock Issue */}
         {reversingId && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs">
-            <Card className="w-full max-w-md p-6 shadow-xl space-y-4 border border-border">
-              <div className="flex items-center gap-2 text-rose-600">
+            <Card className="w-full max-w-md p-6 shadow-popover space-y-4 border border-border">
+              <div className="flex items-center gap-2 text-tone-red-text">
                 <Undo2 className="h-5 w-5" />
                 <h3 className="text-base font-bold text-foreground">
                   Reverse Stock Issue
@@ -688,7 +688,7 @@ export default function StockIssuesPage() {
               </p>
 
               {formError && (
-                <div className="p-3 rounded-lg bg-rose-500/10 border border-rose-500/20 text-xs font-semibold text-rose-700 dark:text-rose-400">
+                <div className="p-3 rounded-lg bg-tone-red-bg border border-tone-red-solid/25 text-xs font-semibold text-tone-red-text">
                   {formError}
                 </div>
               )}
@@ -702,7 +702,7 @@ export default function StockIssuesPage() {
                   value={reverseReason}
                   onChange={(e) => setReverseReason(e.target.value)}
                   placeholder="e.g., Unused material returned from Assembly Line 1 due to batch completion"
-                  className="w-full px-3 py-2 text-sm bg-background border border-border rounded-lg text-foreground focus:outline-none focus:ring-2 focus:ring-rose-500 placeholder:text-muted-foreground resize-none"
+                  className="w-full px-3 py-2 text-sm bg-background border border-border rounded-lg text-foreground focus:outline-none focus:ring-2 focus:ring-tone-red-solid/25 placeholder:text-muted-foreground resize-none"
                   required
                 />
               </div>
@@ -722,7 +722,7 @@ export default function StockIssuesPage() {
                   size="sm"
                   onClick={() => handleReverse(reversingId)}
                   disabled={reverseIssue.isPending}
-                  className="bg-rose-600 hover:bg-rose-700 text-white rounded-full font-semibold"
+                  className="bg-tone-red-solid hover:bg-[color:var(--tone-red-text)] text-inverse rounded-full font-semibold"
                 >
                   {reverseIssue.isPending ? 'Reversing...' : 'Authorize Reversal'}
                 </Button>

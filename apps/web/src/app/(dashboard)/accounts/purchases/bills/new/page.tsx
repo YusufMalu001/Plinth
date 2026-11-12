@@ -53,7 +53,7 @@ export default function NewSupplierBillPage({ searchParams }: { searchParams: { 
         activePeriod={periods.data?.find((period) => period.status === 'OPEN')?.code}
       />
 
-      <div className="rounded-2xl border border-border bg-muted/40 p-4 dark:bg-muted">
+      <div className="rounded-2xl border border-border bg-muted/40 p-4">
         <div className="flex items-start gap-3">
           <span className="mt-0.5 rounded-xl bg-primary/10 p-2 text-foreground"><PackageCheck className="h-4 w-4" /></span>
           <div>

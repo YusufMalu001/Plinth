@@ -121,10 +121,10 @@ export default function WipControlCenterPage() {
           )}
 
           {/* 3. Navigation Tabs */}
-          <div className="flex items-center gap-1 border-b border-border overflow-x-auto pb-px">
+          <div className="flex items-center gap-1 border-border-strong border-border overflow-x-auto pb-px">
             <button
               onClick={() => setActiveTab("overview")}
-              className={`flex items-center gap-2 px-4 py-2.5 text-sm font-medium border-b-2 transition-colors whitespace-nowrap ${
+              className={`flex items-center gap-2 px-4 py-2.5 text-sm font-medium border-border-strong-2 transition-colors whitespace-nowrap ${
                 activeTab === "overview"
                   ? "border-primary text-primary"
                   : "border-transparent text-muted-foreground hover:text-foreground hover:border-muted-foreground/30"
@@ -137,7 +137,7 @@ export default function WipControlCenterPage() {
 
             <button
               onClick={() => setActiveTab("batches")}
-              className={`flex items-center gap-2 px-4 py-2.5 text-sm font-medium border-b-2 transition-colors whitespace-nowrap ${
+              className={`flex items-center gap-2 px-4 py-2.5 text-sm font-medium border-border-strong-2 transition-colors whitespace-nowrap ${
                 activeTab === "batches"
                   ? "border-primary text-primary"
                   : "border-transparent text-muted-foreground hover:text-foreground hover:border-muted-foreground/30"
@@ -150,7 +150,7 @@ export default function WipControlCenterPage() {
 
             <button
               onClick={() => setActiveTab("queue")}
-              className={`flex items-center gap-2 px-4 py-2.5 text-sm font-medium border-b-2 transition-colors whitespace-nowrap ${
+              className={`flex items-center gap-2 px-4 py-2.5 text-sm font-medium border-border-strong-2 transition-colors whitespace-nowrap ${
                 activeTab === "queue"
                   ? "border-primary text-primary"
                   : "border-transparent text-muted-foreground hover:text-foreground hover:border-muted-foreground/30"
@@ -163,7 +163,7 @@ export default function WipControlCenterPage() {
 
             <button
               onClick={() => setActiveTab("timing")}
-              className={`flex items-center gap-2 px-4 py-2.5 text-sm font-medium border-b-2 transition-colors whitespace-nowrap ${
+              className={`flex items-center gap-2 px-4 py-2.5 text-sm font-medium border-border-strong-2 transition-colors whitespace-nowrap ${
                 activeTab === "timing"
                   ? "border-primary text-primary"
                   : "border-transparent text-muted-foreground hover:text-foreground hover:border-muted-foreground/30"
@@ -176,7 +176,7 @@ export default function WipControlCenterPage() {
 
             <button
               onClick={() => setActiveTab("reconciliation")}
-              className={`flex items-center gap-2 px-4 py-2.5 text-sm font-medium border-b-2 transition-colors whitespace-nowrap ${
+              className={`flex items-center gap-2 px-4 py-2.5 text-sm font-medium border-border-strong-2 transition-colors whitespace-nowrap ${
                 activeTab === "reconciliation"
                   ? "border-primary text-primary"
                   : "border-transparent text-muted-foreground hover:text-foreground hover:border-muted-foreground/30"

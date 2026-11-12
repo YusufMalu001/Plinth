@@ -294,7 +294,7 @@ export function BomLineEditor({ lines, isReadOnly, onSaveLines, isSaving }: Prop
                       <span className={`inline-flex px-2 py-0.5 rounded-md text-[11px] font-medium ${
                         line.lineType === 'COMPONENT'
                           ? 'bg-primary/10 text-primary border border-primary/20'
-                          : 'bg-amber-500/10 text-amber-400 border border-amber-500/20'
+                          : 'bg-tone-amber-bg/10 text-tone-amber-solid border border-tone-amber-solid/20'
                       }`}>
                         {line.lineType}
                       </span>
@@ -370,8 +370,8 @@ export function BomLineEditor({ lines, isReadOnly, onSaveLines, isSaving }: Prop
                     {isReadOnly ? (
                       <span className={`inline-flex px-1.5 py-0.5 rounded text-[10px] font-semibold ${
                         line.quantityMode === 'SCALED'
-                          ? 'bg-purple-500/10 text-purple-400'
-                          : 'bg-emerald-500/10 text-emerald-400'
+                          ? 'bg-tone-purple-bg/10 text-tone-purple-solid'
+                          : 'bg-tone-emerald-bg/10 text-tone-green-solid'
                       }`}>
                         {line.quantityMode}
                       </span>
@@ -537,7 +537,7 @@ export function BomLineEditor({ lines, isReadOnly, onSaveLines, isSaving }: Prop
                         <button
                           type="button"
                           onClick={() => handleRemoveLine(idx)}
-                          className="p-1 rounded hover:bg-red-500/10 text-muted-foreground hover:text-red-400"
+                          className="p-1 rounded hover:bg-tone-red-bg/10 text-muted-foreground hover:text-tone-red-solid"
                           title="Delete line"
                         >
                           <Trash2 className="h-3 w-3" />

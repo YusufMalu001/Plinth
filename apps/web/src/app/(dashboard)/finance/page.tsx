@@ -96,8 +96,8 @@ export default function FinanceReadinessPage() {
                 key={source.sourceType}
                 className={`rounded-2xl p-6 transition-all border ${
                   isActive
-                    ? 'border-emerald-500/40 bg-emerald-500/5 shadow-xs'
-                    : 'border-amber-500/30 bg-amber-500/5'
+                    ? 'border-tone-green-solid/25 bg-tone-green-bg shadow-xs'
+                    : 'border-tone-amber-solid/25 bg-tone-amber-bg'
                 }`}
               >
                 <div className="flex items-start justify-between gap-3 mb-3">
@@ -105,8 +105,8 @@ export default function FinanceReadinessPage() {
                     <div
                       className={`flex h-9 w-9 items-center justify-center rounded-xl ${
                         isActive
-                          ? 'bg-emerald-500/20 text-emerald-600 dark:text-emerald-400'
-                          : 'bg-amber-500/20 text-amber-600 dark:text-amber-400'
+                          ? 'bg-tone-green-bg text-tone-green-text'
+                          : 'bg-tone-amber-bg text-tone-amber-text'
                       }`}
                     >
                       {isActive ? <CheckCircle2 className="h-5 w-5" /> : <Lock className="h-5 w-5" />}
@@ -124,8 +124,8 @@ export default function FinanceReadinessPage() {
                   <span
                     className={`font-mono text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider ${
                       isActive
-                        ? 'bg-emerald-500/20 text-emerald-700 dark:text-emerald-300'
-                        : 'bg-amber-500/20 text-amber-700 dark:text-amber-300'
+                        ? 'bg-tone-green-bg text-tone-green-text'
+                        : 'bg-tone-amber-bg text-tone-amber-text'
                     }`}
                   >
                     {isActive ? 'Active / Ready' : 'NOT YET SUPPORTED'}
@@ -169,7 +169,7 @@ export default function FinanceReadinessPage() {
                           {source.validationItems.map((v) => (
                             <span
                               key={v}
-                              className="font-mono text-[10px] bg-amber-500/10 border border-amber-500/20 text-amber-700 dark:text-amber-300 px-1.5 py-0.2 rounded font-semibold"
+                              className="font-mono text-[10px] bg-tone-amber-bg border border-tone-amber-solid/25 text-tone-amber-text px-1.5 py-0.2 rounded font-semibold"
                             >
                               {v}
                             </span>

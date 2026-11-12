@@ -97,7 +97,7 @@ export default function BankingPage() {
           <div className="flex gap-2">
             <Button
               onClick={() => setIsImportModalOpen(true)}
-              className="bg-primary hover:bg-primary/90 text-white font-semibold gap-1.5 shadow-sm rounded-xl text-xs"
+              className="bg-primary hover:bg-primary/90 text-inverse font-semibold gap-1.5 shadow-sm rounded-xl text-xs"
             >
               <UploadCloud className="h-4 w-4" />
               Import Statement
@@ -154,7 +154,7 @@ export default function BankingPage() {
             onClick={() => setSelectedBankId(b.id)}
             className={`rounded-2xl border p-5 cursor-pointer transition-all ${
               activeBankId === b.id
-                ? 'border-border bg-muted/30 dark:bg-muted shadow-md ring-1 ring-ring'
+                ? 'border-border bg-muted/30 shadow-none ring-1 ring-ring'
                 : 'border-border/80 bg-card hover:border-border'
             }`}
           >
@@ -182,7 +182,7 @@ export default function BankingPage() {
                 <span className="text-[10px] text-muted-foreground block">Unreconciled:</span>
                 <span
                   className={`font-bold ${
-                    b.unreconciledCount > 0 ? 'text-foreground dark:text-muted-foreground' : 'text-primary dark:text-primary'
+                    b.unreconciledCount > 0 ? 'text-foreground' : 'text-primary'
                   }`}
                 >
                   {b.unreconciledCount} items
@@ -196,7 +196,7 @@ export default function BankingPage() {
       {/* Statement Reconciliation Lines */}
       {activeBank && (
         <Card className="rounded-2xl border-border/80 shadow-none">
-          <CardHeader className="border-b border-border/70 p-5">
+          <CardHeader className="border-border-strong border-border/70 p-5">
             <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <CardTitle className="text-base font-bold">
@@ -208,7 +208,7 @@ export default function BankingPage() {
               </div>
 
               <div className="flex items-center gap-2">
-                <span className="inline-flex items-center gap-1 text-xs text-primary dark:text-primary font-semibold bg-primary/10 px-2.5 py-1 rounded-xl">
+                <span className="inline-flex items-center gap-1 text-xs text-primary font-semibold bg-primary/10 px-2.5 py-1 rounded-xl">
                   <Sparkles className="h-3.5 w-3.5" />
                   Auto-Match Active
                 </span>
@@ -249,10 +249,10 @@ export default function BankingPage() {
                         {r.description}
                       </TableCell>
                       <TableCell className="p-3 text-muted-foreground">{r.referenceNo}</TableCell>
-                      <TableCell className="p-3 text-right font-bold text-destructive dark:text-destructive">
+                      <TableCell className="p-3 text-right font-bold text-destructive">
                         {parseFloat(r.withdrawal) > 0 ? formatCurrency(r.withdrawal) : '—'}
                       </TableCell>
-                      <TableCell className="p-3 text-right font-bold text-primary dark:text-primary">
+                      <TableCell className="p-3 text-right font-bold text-primary">
                         {parseFloat(r.deposit) > 0 ? formatCurrency(r.deposit) : '—'}
                       </TableCell>
                       <TableCell className="p-3 text-right font-bold text-foreground">
@@ -262,8 +262,8 @@ export default function BankingPage() {
                         <span
                           className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-bold ${
                             r.matchStatus === 'MATCHED'
-                              ? 'bg-primary/10 text-primary dark:text-primary'
-                              : 'bg-muted text-foreground dark:text-muted-foreground'
+                              ? 'bg-primary/10 text-primary'
+                              : 'bg-muted text-foreground'
                           }`}
                         >
                           {r.matchStatus === 'MATCHED' ? (

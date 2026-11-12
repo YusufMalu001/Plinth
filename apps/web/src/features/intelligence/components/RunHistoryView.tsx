@@ -22,13 +22,13 @@ const runnableModules: IntelligenceModule[] = ['EXECUTIVE', 'SALES', 'INVENTORY'
 
 function RunTrace({ id }: { id: string }) {
   const query = useRun(id);
-  if (query.isLoading) return <p className="text-xs text-slate-500">Loading trace…</p>;
+  if (query.isLoading) return <p className="text-xs text-ink-muted">Loading trace…</p>;
   if (query.error || !query.data) return <p className="text-xs text-muted-foreground">Trace unavailable.</p>;
   const run = query.data;
-  return <div className="rounded-lg border border-slate-200 p-3 text-xs space-y-2 dark:border-slate-700">
+  return <div className="rounded-lg border border-border p-3 text-xs space-y-2">
     <p>Request ID: <code>{run.correlationId ?? 'NOT VERIFIED'}</code> · Run ID: <code>{run.id}</code></p>
     <p>Stages: {run.toolAudit?.map((stage) => `${stage.stage.replaceAll('HERMES', 'ADVISOR')}${stage.reason ? `: ${stage.reason}` : ''}`).join(' → ') || 'NOT VERIFIED'}</p>
-    {(run.providerAttempts ?? []).map((attempt) => <div key={attempt.id} className="border-t border-slate-100 pt-2 dark:border-slate-800">
+    {(run.providerAttempts ?? []).map((attempt) => <div key={attempt.id} className="border-t border-border pt-2">
       <p>{attempt.operation.replaceAll('HERMES', 'ADVISOR')} · {attempt.status} · {attempt.errorCategory ?? 'No error recorded'}</p>
       <p>Requested: {attempt.requestedModel ?? 'NOT VERIFIED'} · Runtime reported: {attempt.resolvedModel ?? 'NOT VERIFIED'} · Provider: {attempt.provider ?? 'NOT VERIFIED'}</p>
       <p>HTTP: {attempt.httpStatus ?? 'NOT VERIFIED'} · Generation: {attempt.generationId ?? 'NOT VERIFIED'} · Provider request: {attempt.providerRequestId ?? 'NOT VERIFIED'}</p>
@@ -45,7 +45,7 @@ function RunNowPanel() {
   return (
     <div className="flex flex-wrap items-center gap-2">
       <label htmlFor="manual-intelligence-module" className="sr-only">Module to analyze</label>
-      <select id="manual-intelligence-module" value={module} onChange={(event) => setModule(event.target.value as IntelligenceModule)} className="rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-semibold text-slate-700 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200">
+      <select id="manual-intelligence-module" value={module} onChange={(event) => setModule(event.target.value as IntelligenceModule)} className="rounded-lg border border-border bg-surface px-3 py-2 text-xs font-semibold text-ink-secondary">
         {runnableModules.map((item) => <option key={item} value={item}>{item}</option>)}
       </select>
       <button type="button" disabled={run.isPending} onClick={() => run.mutate(module, { onSuccess: () => showToast({ kind: 'success', title: 'Advisor analysis queued', message: `${module} results will appear after the worker finishes.` }) })} className="inline-flex items-center gap-2 rounded-lg bg-primary px-3 py-2 text-xs font-semibold text-primary-foreground disabled:opacity-60">
@@ -78,26 +78,26 @@ export function RunHistoryView() {
   return (
     <div className="space-y-5">
       {/* Header Overview Card */}
-      <div className="rounded-2xl border border-slate-200/90 bg-white p-5 shadow-xs dark:border-slate-800 dark:bg-slate-900 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+      <div className="rounded-2xl border border-border/90 bg-surface p-5 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div>
-          <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100">
+          <h3 className="text-sm font-bold text-ink">
             Intelligence Audit & Observability Ledger
           </h3>
-          <p className="text-xs text-slate-500">
+          <p className="text-xs text-ink-muted">
             Immutable log of all advisor runs, model routing, token economics, and policy validation results
           </p>
         </div>
         <div className="flex items-center gap-2">
           <RunNowPanel />
-          <span className="rounded-xl border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-bold text-slate-700 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300">
+          <span className="rounded-xl border border-border bg-muted px-3 py-1 text-xs font-bold text-ink-secondary">
             {items.length} Evaluated Runs
           </span>
         </div>
       </div>
 
       {/* Audit Log Table */}
-      <div className="rounded-2xl border border-slate-200/90 bg-white shadow-xs dark:border-slate-800 dark:bg-slate-900 overflow-hidden">
-        <div className="divide-y divide-slate-100 dark:divide-slate-800">
+      <div className="rounded-2xl border border-border/90 bg-surface shadow-xs overflow-hidden">
+        <div className="divide-y divide-border">
           {items.map((run) => {
             const isSuccess = run.status === 'COMPLETED';
             const isFailed = run.status === 'FAILED' || run.status === 'REJECTED';
@@ -105,26 +105,26 @@ export function RunHistoryView() {
             return (
               <div
                 key={run.id}
-                className="p-5 space-y-3 hover:bg-slate-50/50 dark:hover:bg-slate-800/30 transition-colors"
+                className="p-5 space-y-3 hover:bg-muted/50 transition-colors"
               >
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
                   <div className="space-y-1">
                     <div className="flex flex-wrap items-center gap-2">
-                      <span className="font-bold text-xs sm:text-sm text-slate-900 dark:text-slate-100">
+                      <span className="font-bold text-xs sm:text-sm text-ink">
                         {run.module} Advisor
                       </span>
 
-                      <span className="inline-flex items-center rounded-lg border border-slate-200 bg-slate-50 px-2 py-0.5 text-[11px] font-semibold text-slate-600 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300">
+                      <span className="inline-flex items-center rounded-lg border border-border bg-muted px-2 py-0.5 text-[11px] font-semibold text-ink-secondary">
                         {run.trigger} Trigger
                       </span>
 
                       <span
                         className={`inline-flex items-center gap-1 rounded-lg border px-2.5 py-0.5 text-[11px] font-bold ${
                           isSuccess
-                            ? 'border-emerald-200 bg-emerald-50 text-emerald-800 dark:border-emerald-900 dark:bg-emerald-950/60 dark:text-emerald-300'
+                            ? 'border-tone-green-solid/25 bg-tone-green-bg text-tone-green-text'
                             : isFailed
-                            ? 'border-rose-200 bg-rose-50 text-rose-800 dark:border-rose-900 dark:bg-rose-950/60 dark:text-rose-300'
-                            : 'border-blue-200 bg-blue-50 text-[#004a80] dark:border-blue-900 dark:bg-blue-950/60 dark:text-blue-300'
+                            ? 'border-tone-red-solid/25 bg-tone-red-bg text-tone-red-text'
+                            : 'border-tone-blue-solid/25 bg-tone-blue-bg text-link'
                         }`}
                       >
                         {isSuccess ? (
@@ -138,29 +138,29 @@ export function RunHistoryView() {
                       </span>
                     </div>
 
-                    <p className="font-mono text-[11px] text-slate-400">
+                    <p className="font-mono text-[11px] text-ink-placeholder">
                       Run UUID: {run.id}
                     </p>
                   </div>
 
-                  <div className="flex flex-wrap items-center gap-4 text-xs text-slate-500 shrink-0">
+                  <div className="flex flex-wrap items-center gap-4 text-xs text-ink-muted shrink-0">
                     <div className="text-left md:text-right">
-                      <p className="text-[10px] font-bold uppercase text-slate-400">Model Route</p>
-                      <p className="font-semibold text-slate-800 dark:text-slate-200">
+                      <p className="text-[10px] font-bold uppercase text-ink-placeholder">Model Route</p>
+                      <p className="font-semibold text-ink">
                         {run.modelProvider ?? 'NOT VERIFIED'} / {run.modelId ?? 'NOT VERIFIED'}
                       </p>
                     </div>
 
                     <div className="text-left md:text-right">
-                      <p className="text-[10px] font-bold uppercase text-slate-400">Inference Cost</p>
-                      <p className="font-semibold text-slate-800 dark:text-slate-200 font-mono">
+                      <p className="text-[10px] font-bold uppercase text-ink-placeholder">Inference Cost</p>
+                      <p className="font-semibold text-ink font-mono">
                         {money(run.costUsd ?? 0, 'USD')}
                       </p>
                     </div>
 
                     <div className="text-left md:text-right">
-                      <p className="text-[10px] font-bold uppercase text-slate-400">Timestamp</p>
-                      <p className="font-medium text-slate-600 dark:text-slate-300">
+                      <p className="text-[10px] font-bold uppercase text-ink-placeholder">Timestamp</p>
+                      <p className="font-medium text-ink-secondary">
                         {dateTime(run.createdAt)}
                       </p>
                     </div>
@@ -168,7 +168,7 @@ export function RunHistoryView() {
                 </div>
 
                 {run.errorCode && (
-                  <div className="rounded-xl bg-rose-50 border border-rose-200/80 p-3 text-xs text-rose-900 dark:bg-rose-950/40 dark:border-rose-900 dark:text-rose-200">
+                  <div className="rounded-xl bg-tone-red-bg border border-tone-red-solid/25 p-3 text-xs text-tone-red-text">
                     <strong>Safe Failure Code:</strong> {run.errorCode}
                   </div>
                 )}

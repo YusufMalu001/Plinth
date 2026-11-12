@@ -32,7 +32,7 @@ export default function ProcurementLanding() {
       value: data.metrics.awaitingApproval,
       hint: 'Admin sign-off required before vendor dispatch',
       icon: Clock3,
-      tone: 'text-amber-600 bg-amber-500/10 border-amber-500/20',
+      tone: 'text-tone-amber-text bg-tone-amber-bg border-tone-amber-solid/25',
       href: '/procurement/purchase-orders?status=DRAFT',
       badgeText: 'Action required',
     },
@@ -41,7 +41,7 @@ export default function ProcurementLanding() {
       value: data.metrics.cancelledPos,
       hint: 'Purchase orders cancelled before fulfillment',
       icon: AlertTriangle,
-      tone: 'text-rose-600 bg-rose-500/10 border-rose-500/20',
+      tone: 'text-tone-red-text bg-tone-red-bg border-tone-red-solid/25',
       href: '/procurement/purchase-orders?status=CANCELLED',
       badgeText: data.metrics.cancelledPos > 0 ? 'Cancelled orders' : 'None cancelled',
     },
@@ -50,7 +50,7 @@ export default function ProcurementLanding() {
       value: data.metrics.activePos,
       hint: 'Approved, vendor-issued, or in transit',
       icon: ShoppingCart,
-      tone: 'text-blue-600 bg-blue-500/10 border-blue-500/20',
+      tone: 'text-tone-blue-text bg-tone-blue-bg border-tone-blue-solid/25',
       href: '/procurement/purchase-orders',
       badgeText: 'Active orders',
     },
@@ -59,7 +59,7 @@ export default function ProcurementLanding() {
       value: data.metrics.pendingReceipts,
       hint: `${data.metrics.overdueReceipts} overdue for warehouse gate intake`,
       icon: Truck,
-      tone: 'text-emerald-600 bg-emerald-500/10 border-emerald-500/20',
+      tone: 'text-tone-green-text bg-tone-green-bg border-tone-green-solid/25',
       href: '/receiving/expected',
       badgeText: data.metrics.overdueReceipts > 0 ? `${data.metrics.overdueReceipts} overdue` : 'On schedule',
     },
@@ -116,7 +116,7 @@ export default function ProcurementLanding() {
                 <Button
                   variant="default"
                   size="sm"
-                  className="rounded-full shadow-xs bg-primary hover:bg-amber-600 text-primary-foreground font-semibold text-xs h-9"
+                  className="rounded-full shadow-xs bg-primary hover:bg-[color:var(--tone-amber-solid)] text-primary-foreground font-semibold text-xs h-9"
                 >
                   <Plus size={14} className="mr-1.5" />
                   <span>Create Purchase Order</span>
@@ -188,7 +188,7 @@ export default function ProcurementLanding() {
         <div className="grid gap-6 xl:grid-cols-2">
           {/* Card 1: Recent Purchase Orders */}
           <Card className="overflow-hidden p-0 shadow-xs border border-border/80">
-            <div className="flex items-center justify-between border-b border-border/70 bg-muted/30 px-5 py-4">
+            <div className="flex items-center justify-between border-border-strong border-border/70 bg-muted/30 px-5 py-4">
               <div className="flex items-center gap-2">
                 <FileText size={16} className="text-primary" />
                 <div>
@@ -245,7 +245,7 @@ export default function ProcurementLanding() {
 
           {/* Card 2: Purchase Order Register */}
           <Card className="overflow-hidden p-0 shadow-xs border border-border/80">
-            <div className="flex items-center justify-between border-b border-border/70 bg-muted/30 px-5 py-4">
+            <div className="flex items-center justify-between border-border-strong border-border/70 bg-muted/30 px-5 py-4">
               <div className="flex items-center gap-2">
                 <ShoppingCart size={16} className="text-primary" />
                 <div>

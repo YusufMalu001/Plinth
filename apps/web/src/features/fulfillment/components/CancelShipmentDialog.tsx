@@ -63,7 +63,7 @@ export function CancelShipmentDialog({
           </div>
         )}
 
-        <div className="rounded-xl border border-amber-500/20 bg-amber-500/5 p-4 text-xs text-amber-800 space-y-1">
+        <div className="rounded-xl border border-tone-amber-solid/20 bg-tone-amber-bg/5 p-4 text-xs text-tone-amber-text space-y-1">
           <div className="flex items-center gap-1.5 font-bold">
             <AlertTriangle className="h-4 w-4" />
             <span>Pre-Handover Cancellation Rule</span>

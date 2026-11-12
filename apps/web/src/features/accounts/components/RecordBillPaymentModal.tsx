@@ -131,7 +131,7 @@ export function RecordBillPaymentModal({
         {/* Header */}
         <div className="flex items-center justify-between border-b border-border/70 px-6 py-5 bg-card">
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-muted dark:bg-muted text-muted-foreground border border-border dark:border-border">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-muted  text-muted-foreground border border-border ">
               <CreditCard className="h-5 w-5" />
             </div>
             <div>
@@ -163,7 +163,7 @@ export function RecordBillPaymentModal({
             </div>
             <div className="rounded-xl bg-card p-3 border border-border bg-muted/30">
               <div className="flex items-center justify-between">
-                <span className="text-[10px] uppercase font-bold tracking-wider text-foreground dark:text-primary">Balance Due</span>
+                <span className="text-[10px] uppercase font-bold tracking-wider text-foreground ">Balance Due</span>
                 {balanceNumber > 0 && (
                   <button
                     type="button"
@@ -174,7 +174,7 @@ export function RecordBillPaymentModal({
                   </button>
                 )}
               </div>
-              <p className="mt-1 text-sm font-bold font-mono text-foreground dark:text-n-300">
+              <p className="mt-1 text-sm font-bold font-mono text-foreground ">
                 {formatCurrency(balanceNumber)}
               </p>
             </div>
@@ -184,7 +184,7 @@ export function RecordBillPaymentModal({
         {/* Form Body */}
         <form onSubmit={handleSubmit} className="p-6 space-y-4">
           {error && (
-            <div className="flex items-start gap-2.5 rounded-xl border border-destructive/30 bg-destructive/10 dark:bg-destructive/10 p-3 text-xs text-destructive dark:text-destructive">
+            <div className="flex items-start gap-2.5 rounded-xl border border-destructive/30 bg-destructive/10  p-3 text-xs text-destructive ">
               <AlertCircle className="h-4 w-4 shrink-0 mt-0.5 text-destructive" />
               <span>{error}</span>
             </div>
@@ -284,11 +284,11 @@ export function RecordBillPaymentModal({
             <div className="flex items-center gap-2">
               <span className="font-semibold text-muted-foreground">Settlement Outcome:</span>
               {willBeFullyPaid ? (
-                <span className="inline-flex items-center gap-1 rounded-full bg-primary/10 text-primary dark:text-primary font-bold px-2 py-0.5">
+                <span className="inline-flex items-center gap-1 rounded-full bg-primary/10 text-primary  font-bold px-2 py-0.5">
                   <CheckCircle2 className="h-3 w-3" /> Fully Settled (PAID)
                 </span>
               ) : currentAmountNum > 0 ? (
-                <span className="inline-flex items-center gap-1 rounded-full bg-muted text-foreground dark:text-muted-foreground font-bold px-2 py-0.5">
+                <span className="inline-flex items-center gap-1 rounded-full bg-muted text-foreground  font-bold px-2 py-0.5">
                   Partially Paid
                 </span>
               ) : (

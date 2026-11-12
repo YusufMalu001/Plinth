@@ -30,7 +30,7 @@ export default function WorkstationQueue() {
   return (
     <div className="w-full min-h-screen p-4 sm:p-6 lg:p-8 space-y-6 pb-20">
       {/* Header */}
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between border-b border-border/80 pb-5">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between border-border-strong border-border/80 pb-5">
         <div>
           <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground mb-1">
             <Link
@@ -91,7 +91,7 @@ export default function WorkstationQueue() {
                 className="group relative flex flex-col justify-between overflow-hidden rounded-xl border border-border/80 bg-card p-5 shadow-xs transition-all hover:border-primary/50"
               >
                 <div>
-                  <div className="flex items-start justify-between gap-2 border-b border-border/60 pb-3">
+                  <div className="flex items-start justify-between gap-2 border-border-strong border-border/60 pb-3">
                     <div>
                       <div className="flex items-center gap-2">
                         <span className="font-mono text-xs font-bold text-foreground">

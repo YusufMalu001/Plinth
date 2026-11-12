@@ -246,8 +246,8 @@ export default function StorePosPage() {
           </Link>
 
           <div className="flex items-center gap-2">
-            <span className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-600 border border-emerald-500/20 text-xs font-semibold">
-              <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+            <span className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-tone-green-bg text-tone-green-text border border-tone-green-solid/25 text-xs font-semibold">
+              <span className="h-2 w-2 rounded-full bg-tone-green-solid animate-pulse" />
               Live POS Terminal Active
             </span>
           </div>
@@ -269,7 +269,7 @@ export default function StorePosPage() {
           {/* Left Column: Product Catalog & Fast Search (7 cols) */}
           <div className="lg:col-span-7 space-y-4">
             <Card className="shadow-xs border-border">
-              <CardHeader className="p-4 border-b border-border space-y-3">
+              <CardHeader className="p-4 border-border-strong border-border space-y-3">
                 {/* Search Bar */}
                 <div className="relative">
                   <Input
@@ -369,9 +369,9 @@ export default function StorePosPage() {
                               <span
                                 className={`text-[10px] font-semibold px-1.5 py-0.5 rounded-md border ${
                                   stock > 10
-                                    ? 'bg-emerald-500/10 text-emerald-600 border-emerald-500/20'
+                                    ? 'bg-tone-green-bg text-tone-green-text border-tone-green-solid/25'
                                     : stock > 0
-                                    ? 'bg-amber-500/10 text-amber-600 border-amber-500/20'
+                                    ? 'bg-tone-amber-bg text-tone-amber-text border-tone-amber-solid/25'
                                     : 'bg-muted text-muted-foreground border-border'
                                 }`}
                               >
@@ -444,7 +444,7 @@ export default function StorePosPage() {
           {/* Right Column: Active Cart & Fast Checkout (5 cols) */}
           <div className="lg:col-span-5 space-y-4 sticky top-6">
             <Card className="shadow-xs border-border">
-              <CardHeader className="p-4 border-b border-border">
+              <CardHeader className="p-4 border-border-strong border-border">
                 <div className="flex items-center justify-between">
                   <CardTitle className="text-sm font-bold flex items-center gap-2 text-foreground">
                     <ShoppingCart className="h-4 w-4 text-primary" /> Active Cart ({totals.itemCount} items)
@@ -608,7 +608,7 @@ export default function StorePosPage() {
         >
           <div className="space-y-4 text-xs font-mono p-3 bg-card border border-border rounded-xl">
             {/* Store Header */}
-            <div className="text-center border-b border-border pb-3 space-y-1">
+            <div className="text-center border-border-strong border-border pb-3 space-y-1">
               <h2 className="text-base font-black tracking-wider text-foreground">PLINTH ENTERPRISES</h2>
               <p className="text-muted-foreground text-[11px]">Retail Store & Direct Sales Terminal</p>
               <div className="flex justify-between items-center text-[10px] text-muted-foreground pt-1">

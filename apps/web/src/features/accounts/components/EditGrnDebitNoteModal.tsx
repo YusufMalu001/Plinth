@@ -105,7 +105,7 @@ export function EditGrnDebitNoteModal({ id, onClose, onSaved }: EditGrnDebitNote
         {loading ? <div className="p-10 text-center text-sm text-muted-foreground"><Loader2 className="mr-2 inline h-4 w-4 animate-spin" />Loading debit note…</div> : (
           <>
             <div className="max-h-[65vh] space-y-4 overflow-y-auto p-5">
-              {note && !['DRAFT', 'RECORDED'].includes(note.status) && <p className="rounded-lg bg-amber-50 p-3 text-sm text-amber-800">This debit note has moved forward in approval and is read-only.</p>}
+              {note && !['DRAFT', 'RECORDED'].includes(note.status) && <p className="rounded-lg bg-tone-amber-bg p-3 text-sm text-tone-amber-text">This debit note has moved forward in approval and is read-only.</p>}
               <label className="block space-y-1.5 text-xs font-semibold text-foreground">
                 Claim reason
                 <textarea value={reason} onChange={(event) => setReason(event.target.value)} rows={2} className="w-full rounded-xl border border-border bg-background px-3 py-2 text-sm font-normal outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary" />
@@ -130,7 +130,7 @@ export function EditGrnDebitNoteModal({ id, onClose, onSaved }: EditGrnDebitNote
                 </table>
               </div>
               <div className="flex justify-end rounded-xl bg-muted/40 px-4 py-3 text-sm"><span className="mr-4 text-muted-foreground">Recalculated claim total</span><strong className="font-mono">{formatCurrency(total)}</strong></div>
-              {error && <p role="alert" className="rounded-lg bg-rose-50 px-3 py-2 text-xs text-rose-700">{error}</p>}
+              {error && <p role="alert" className="rounded-lg bg-tone-rose-bg px-3 py-2 text-xs text-tone-red-text">{error}</p>}
             </div>
             <footer className="flex justify-end gap-2 border-t border-border px-5 py-4">
               <Button variant="outline" onClick={onClose} disabled={saving}>Cancel</Button>

@@ -88,15 +88,15 @@ export default function OperationsCalendarPage() {
   };
 
   return (
-    <div className="flex-1 p-4 sm:p-6 lg:p-7 overflow-y-auto bg-slate-50/50 dark:bg-[#070b14]/70">
+    <div className="flex-1 p-4 sm:p-6 lg:p-7 overflow-y-auto bg-muted/50">
       <div className="max-w-[1680px] mx-auto space-y-5">
         {/* Clean Header */}
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div>
-            <h1 className="text-xl font-bold tracking-tight text-slate-900 dark:text-white">
+            <h1 className="text-xl font-bold tracking-tight text-ink">
               Operations Calendar
             </h1>
-            <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+            <p className="text-xs text-ink-muted mt-0.5">
               Live manufacturing, procurement, goods receipt, and dispatch schedules
             </p>
           </div>
@@ -106,16 +106,16 @@ export default function OperationsCalendarPage() {
               type="button"
               onClick={handleSyncRealtime}
               disabled={isRefreshing}
-              className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-3.5 py-1.5 text-xs font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors shadow-2xs cursor-pointer"
+              className="inline-flex items-center gap-1.5 rounded-xl border border-border bg-surface px-3.5 py-1.5 text-xs font-medium text-ink-secondary hover:bg-hover transition-colors shadow-2xs cursor-pointer"
             >
-              <RefreshCw className={`h-3.5 w-3.5 ${isRefreshing ? 'animate-spin text-[#004a80]' : 'text-slate-400'}`} />
+              <RefreshCw className={`h-3.5 w-3.5 ${isRefreshing ? 'animate-spin text-link' : 'text-ink-placeholder'}`} />
               <span>{isRefreshing ? 'Syncing...' : 'Sync Live'}</span>
             </button>
 
             <button
               type="button"
               onClick={() => setIsAddModalOpen(true)}
-              className="inline-flex items-center gap-1.5 rounded-xl bg-[#004a80] hover:bg-[#003c68] text-white px-3.5 py-1.5 text-xs font-semibold shadow-2xs transition-colors cursor-pointer"
+              className="inline-flex items-center gap-1.5 rounded-xl bg-action hover:bg-[color:var(--action-primary-bg-hover)] text-inverse px-3.5 py-1.5 text-xs font-semibold shadow-2xs transition-colors cursor-pointer"
             >
               <Plus className="h-4 w-4" />
               <span>Schedule Event</span>
@@ -142,10 +142,10 @@ export default function OperationsCalendarPage() {
           {/* Right Statistics & Day Details Panel (7 Columns ~ 58.3%) */}
           <div className="lg:col-span-7 flex flex-col relative">
             {isLoadingDay && (
-              <div className="absolute inset-0 bg-white/50 dark:bg-slate-950/50 backdrop-blur-[1px] z-20 flex items-center justify-center rounded-2xl">
-                <div className="flex items-center gap-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-4 py-2 rounded-xl shadow-lg">
-                  <RefreshCw className="h-4 w-4 text-[#004a80] animate-spin" />
-                  <span className="text-xs font-medium text-slate-700 dark:text-slate-300">Updating day operations...</span>
+              <div className="absolute inset-0 bg-surface/50 backdrop-blur-[1px] z-20 flex items-center justify-center rounded-2xl">
+                <div className="flex items-center gap-2 bg-surface border border-border px-4 py-2 rounded-xl shadow-popover">
+                  <RefreshCw className="h-4 w-4 text-[var(--chart-1)] animate-spin" />
+                  <span className="text-xs font-medium text-ink-secondary">Updating day operations...</span>
                 </div>
               </div>
             )}
@@ -155,9 +155,9 @@ export default function OperationsCalendarPage() {
                 selectedDate={selectedDate}
               />
             ) : (
-              <div className="flex-1 flex items-center justify-center rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0c121e] text-xs text-slate-400 p-24">
+              <div className="flex-1 flex items-center justify-center rounded-2xl border border-border bg-surface text-xs text-ink-placeholder p-24">
                 <div className="flex flex-col items-center gap-2">
-                  <RefreshCw className="h-6 w-6 text-[#004a80] animate-spin" />
+                  <RefreshCw className="h-6 w-6 text-link animate-spin" />
                   <span>Loading live operations data...</span>
                 </div>
               </div>

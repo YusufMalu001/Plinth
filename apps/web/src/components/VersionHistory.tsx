@@ -37,7 +37,7 @@ export function VersionHistory({ versions }: { versions: VersionInfo[] }) {
     return (
       <Card className="rounded-2xl border border-border/80 p-5 shadow-xs">
         <div className="flex items-center gap-2 mb-2">
-          <Clock className="w-4 h-4 text-[#004a80]" />
+          <Clock className="w-4 h-4 text-[var(--accent-blue)]" />
           <h3 className="text-xs font-bold uppercase tracking-wider text-foreground">
             Version & Audit History
           </h3>
@@ -61,18 +61,18 @@ export function VersionHistory({ versions }: { versions: VersionInfo[] }) {
     <Card className="rounded-2xl border border-border/80 shadow-xs overflow-hidden">
       <div className="border-b border-border/60 bg-muted/40 px-5 py-3.5 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <History className="w-4 h-4 text-[#004a80]" />
+          <History className="w-4 h-4 text-[var(--accent-blue)]" />
           <h3 className="text-xs font-bold uppercase tracking-wider text-foreground">
             Version & Audit History
           </h3>
         </div>
-        <span className="font-mono text-[11px] font-bold text-[#004a80] dark:text-blue-300 bg-[#004a80]/10 px-2.5 py-0.5 rounded-md border border-[#004a80]/20">
+        <span className="font-mono text-[11px] font-bold text-[var(--accent-blue)]  bg-[var(--accent-blue)]/10 px-2.5 py-0.5 rounded-md border border-[var(--accent-blue)]/20">
           {sorted.length} {sorted.length === 1 ? 'Revision' : 'Revisions'}
         </span>
       </div>
 
       <div className="p-5">
-        <div className="relative border-l-2 border-[#004a80]/30 pl-4 ml-1 space-y-4">
+        <div className="relative border-l-2 border-[var(--accent-blue)]/30 pl-4 ml-1 space-y-4">
           {sorted.map((v, index) => {
             const dateLabel = formatDateSafe(v.createdAt || v.timestamp || v.updatedAt);
             const author = v.createdBy || v.actor || 'System';
@@ -88,7 +88,7 @@ export function VersionHistory({ versions }: { versions: VersionInfo[] }) {
                 <span
                   className={`absolute -left-[21px] top-1.5 h-2.5 w-2.5 rounded-full ring-4 ${
                     isLatest
-                      ? 'bg-[#004a80] ring-[#004a80]/20'
+                      ? 'bg-[var(--accent-blue)] ring-[var(--accent-blue)]/20'
                       : 'bg-muted-foreground/50 ring-border'
                   }`}
                 />

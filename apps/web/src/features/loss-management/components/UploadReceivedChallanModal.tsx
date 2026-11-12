@@ -119,7 +119,7 @@ export function UploadReceivedChallanModal({
         {/* Header */}
         <div className="flex items-center justify-between border-b border-border px-6 py-4 shrink-0">
           <div className="flex items-center gap-2.5">
-            <div className="p-2 rounded-xl bg-emerald-500/10 text-emerald-600">
+            <div className="p-2 rounded-xl bg-tone-emerald-bg/10 text-tone-green-text">
               <UploadCloud className="w-4 h-4" />
             </div>
             <div>
@@ -316,7 +316,7 @@ export function UploadReceivedChallanModal({
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="h-9 px-5 text-xs font-semibold bg-emerald-600 hover:bg-emerald-700 text-white shadow-xs"
+              className="h-9 px-5 text-xs font-semibold bg-tone-emerald-bg hover:bg-tone-emerald-bg text-white shadow-xs"
             >
               {isSubmitting ? 'Saving...' : 'Record Received Challan'}
             </Button>

@@ -805,7 +805,7 @@ export default function DepartmentBatchExecutionPage() {
                 className="p-1 text-muted-foreground hover:text-foreground rounded transition-colors cursor-pointer"
                 title="Copy Batch Number"
               >
-                {copiedBatch ? <Check className="h-3.5 w-3.5 text-emerald-600" /> : <Copy className="h-3.5 w-3.5" />}
+                {copiedBatch ? <Check className="h-3.5 w-3.5 text-tone-green-text" /> : <Copy className="h-3.5 w-3.5" />}
               </button>
             </span>
           </nav>
@@ -857,12 +857,12 @@ export default function DepartmentBatchExecutionPage() {
 
         {/* Cross-Department Access Notice (Read-Only) */}
         {!isUserAssemblyDept && isDifferentDept && (
-          <div className="rounded-2xl border border-blue-500/30 bg-blue-500/10 p-4 text-blue-900 dark:text-blue-200">
+          <div className="rounded-2xl border border-tone-blue-solid/25 bg-tone-blue-bg p-4 text-tone-blue-text">
             <div className="flex items-start gap-3">
-              <AlertTriangle className="h-5 w-5 text-blue-600 dark:text-blue-400 shrink-0 mt-0.5" />
+              <AlertTriangle className="h-5 w-5 text-tone-blue-text shrink-0 mt-0.5" />
               <div>
                 <h4 className="text-sm font-bold">Read-Only View · Department Scoping</h4>
-                <p className="text-xs text-blue-800 dark:text-blue-300 mt-0.5">
+                <p className="text-xs text-tone-blue-text mt-0.5">
                   You are viewing a <strong className="underline">{batch.department?.name || 'Department'}</strong> stage. You are assigned to <strong className="underline">{user?.assignedDepartment?.name || 'a different department'}</strong>. Execution actions are restricted to operators and supervisors of this department.
                 </p>
               </div>
@@ -932,9 +932,9 @@ export default function DepartmentBatchExecutionPage() {
                       size="sm"
                       variant="outline"
                       onClick={() => setShowReportLossModal(true)}
-                      className="text-xs font-semibold cursor-pointer border-rose-500/30 text-rose-700 dark:text-rose-400 hover:bg-rose-500/10"
+                      className="text-xs font-semibold cursor-pointer border-tone-red-solid/25 text-tone-red-text hover:bg-tone-red-bg"
                     >
-                      <Trash2 className="h-3.5 w-3.5 mr-1.5 text-rose-500" />
+                      <Trash2 className="h-3.5 w-3.5 mr-1.5 text-tone-red-text" />
                       Report Loss &amp; Scrap
                     </Button>
                   )}
@@ -966,7 +966,7 @@ export default function DepartmentBatchExecutionPage() {
                       size="sm"
                       onClick={handleReceiveAllMaterials}
                       disabled={receiveAssignmentMutation.isPending}
-                      className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs shadow-none cursor-pointer"
+                      className="bg-action hover:bg-[color:var(--action-primary-bg-hover)] text-inverse font-semibold text-xs shadow-none cursor-pointer"
                     >
                       <PackageCheck className="h-3.5 w-3.5 mr-1.5" />
                       {receiveAssignmentMutation.isPending ? 'Recording receipt...' : 'Accept Allocated Materials'}
@@ -1029,7 +1029,7 @@ export default function DepartmentBatchExecutionPage() {
                           size="sm"
                           onClick={handleCompleteBatch}
                           disabled={completeBatchMutation.isPending}
-                          className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs shadow-none cursor-pointer"
+                          className="bg-tone-green-solid hover:bg-[color:var(--tone-green-text)] text-inverse font-semibold text-xs shadow-none cursor-pointer"
                         >
                           <Check className="h-3.5 w-3.5 mr-1.5" />
                           Complete Stage
@@ -1065,7 +1065,7 @@ export default function DepartmentBatchExecutionPage() {
                       setHandoverQty(String(availableToHandover));
                       setShowHandoverModal(true);
                     }}
-                    className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs shadow-none cursor-pointer disabled:opacity-50"
+                    className="bg-tone-green-solid hover:bg-tone-green-solid text-inverse font-semibold text-xs shadow-none cursor-pointer disabled:opacity-50"
                   >
                     <Send className="h-3.5 w-3.5 mr-1.5" />
                     <span>Hand Over ({availableToHandover} {uomSymbol})</span>
@@ -1078,7 +1078,7 @@ export default function DepartmentBatchExecutionPage() {
                   </span>
                   {isUserAssemblyDept && (
                     <Link href="/production/assembly">
-                      <Button size="sm" className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs shadow-none cursor-pointer">
+                      <Button size="sm" className="bg-tone-green-solid hover:bg-tone-green-solid text-inverse font-semibold text-xs shadow-none cursor-pointer">
                         Assembly & Convergence
                       </Button>
                     </Link>
@@ -1118,11 +1118,11 @@ export default function DepartmentBatchExecutionPage() {
               ) : ['AWAITING_RECEIPT', 'PENDING'].includes(batch.status) ? (
                 <span className="text-primary font-medium">Awaiting acceptance</span>
               ) : allMaterialsReceived ? (
-                <span className="text-emerald-600 dark:text-emerald-400 font-medium">All materials received</span>
+                <span className="text-tone-green-text font-medium">All materials received</span>
               ) : awaitingUpstream > 0 ? (
                 <span className="text-muted-foreground font-medium">{awaitingUpstream} {uomSymbol} awaiting {upstreamDeptName}</span>
               ) : (
-                <span className="text-emerald-600 dark:text-emerald-400 font-medium">Accepted in custody</span>
+                <span className="text-tone-green-text font-medium">Accepted in custody</span>
               )}
               {firstMaterialAssignment?.issuedQty && (
                 <span>• {Number(firstMaterialAssignment.receivedQty || 0)} / {Number(firstMaterialAssignment.issuedQty)} {firstMaterialAssignment.bomLine?.uom?.symbol || 'units'}</span>
@@ -1174,11 +1174,11 @@ export default function DepartmentBatchExecutionPage() {
         </div>
 
         {/* ── Tab Navigation ─────────────────────────────────────────────────── */}
-        <div className="flex border-b border-border/80">
+        <div className="flex border-border-strong border-border/80">
           <button
             type="button"
             onClick={() => setActiveTab('workstation')}
-            className={`flex items-center gap-2 px-4 py-2.5 text-xs font-bold border-b-2 transition-colors cursor-pointer ${activeTab === 'workstation'
+            className={`flex items-center gap-2 px-4 py-2.5 text-xs font-bold border-border-strong-2 transition-colors cursor-pointer ${activeTab === 'workstation'
               ? 'border-primary text-primary'
               : 'border-transparent text-muted-foreground hover:text-foreground'
               }`}
@@ -1190,7 +1190,7 @@ export default function DepartmentBatchExecutionPage() {
           <button
             type="button"
             onClick={() => setActiveTab('handovers')}
-            className={`flex items-center gap-2 px-4 py-2.5 text-xs font-bold border-b-2 transition-colors cursor-pointer ${activeTab === 'handovers'
+            className={`flex items-center gap-2 px-4 py-2.5 text-xs font-bold border-border-strong-2 transition-colors cursor-pointer ${activeTab === 'handovers'
               ? 'border-primary text-primary'
               : 'border-transparent text-muted-foreground hover:text-foreground'
               }`}
@@ -1204,7 +1204,7 @@ export default function DepartmentBatchExecutionPage() {
           <button
             type="button"
             onClick={() => setActiveTab('history')}
-            className={`flex items-center gap-2 px-4 py-2.5 text-xs font-bold border-b-2 transition-colors cursor-pointer ${activeTab === 'history'
+            className={`flex items-center gap-2 px-4 py-2.5 text-xs font-bold border-border-strong-2 transition-colors cursor-pointer ${activeTab === 'history'
               ? 'border-primary text-primary'
               : 'border-transparent text-muted-foreground hover:text-foreground'
               }`}
@@ -1220,7 +1220,7 @@ export default function DepartmentBatchExecutionPage() {
         <div className="space-y-6">
           {/* Card 1: Allocated BOM Materials (Intake) */}
           <Card className="rounded-xl border border-border bg-card p-5 space-y-4 shadow-xs">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-border/60 pb-3">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-border-strong border-border/60 pb-3">
               <div>
                 <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
                   <PackageCheck className="h-4 w-4 text-primary" />
@@ -1237,7 +1237,7 @@ export default function DepartmentBatchExecutionPage() {
               <div className="rounded-lg border border-border/80 overflow-hidden">
                 <table className="w-full text-left text-xs border-collapse">
                   <thead>
-                    <tr className="bg-muted/40 border-b border-border/60 text-muted-foreground font-semibold">
+                    <tr className="bg-muted/40 border-border-strong border-border/60 text-muted-foreground font-semibold">
                       <th className="py-2.5 px-3">Item / Material</th>
                       <th className="py-2.5 px-3">Required</th>
                       <th className="py-2.5 px-3">Issued</th>
@@ -1273,11 +1273,11 @@ export default function DepartmentBatchExecutionPage() {
                           </td>
                           <td className="py-2 px-3">
                             {isFullyReceived ? (
-                              <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">
+                              <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-tone-green-text">
                                 <CheckCircle2 className="h-3.5 w-3.5" /> Received
                               </span>
                             ) : isPartiallyReceived ? (
-                              <span className="inline-flex flex-col text-[11px] font-semibold text-blue-600 dark:text-blue-400">
+                              <span className="inline-flex flex-col text-[11px] font-semibold text-tone-blue-text">
                                 <span>Partially received</span>
                                 <span className="font-mono text-[10px]">{receivedQty} / {issuedQty} {unit}</span>
                               </span>
@@ -1302,7 +1302,7 @@ export default function DepartmentBatchExecutionPage() {
 
           {/* Card 2: Department Workers Assignment */}
           <Card className="rounded-xl border border-border bg-card p-5 space-y-4 shadow-xs">
-            <div className="border-b border-border/60 pb-3">
+            <div className="border-border-strong border-border/60 pb-3">
               <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
                 <Users className="h-4 w-4 text-primary" />
                 Assigned Department Workers
@@ -1370,7 +1370,7 @@ export default function DepartmentBatchExecutionPage() {
 
           {/* Card 3: Work in Progress (WIP) Tracking */}
           <Card className="rounded-xl border border-border bg-card p-5 space-y-4 shadow-xs">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-border/60 pb-3">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-border-strong border-border/60 pb-3">
               <div>
                 <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
                   <CheckCircle2 className="h-4 w-4 text-primary" />
@@ -1387,9 +1387,9 @@ export default function DepartmentBatchExecutionPage() {
                   variant="outline"
                   size="sm"
                   onClick={() => setShowReportLossModal(true)}
-                  className="h-8 text-xs font-semibold border-rose-500/30 text-rose-700 dark:text-rose-400 hover:bg-rose-500/10 cursor-pointer"
+                  className="h-8 text-xs font-semibold border-tone-red-solid/25 text-tone-red-text hover:bg-tone-red-bg cursor-pointer"
                 >
-                  <Trash2 className="h-3.5 w-3.5 mr-1.5 text-rose-500" />
+                  <Trash2 className="h-3.5 w-3.5 mr-1.5 text-tone-red-text" />
                   Report Loss &amp; Scrap
                 </Button>
               )}
@@ -1416,15 +1416,15 @@ export default function DepartmentBatchExecutionPage() {
                 <span className="text-[11px] text-muted-foreground font-medium flex items-center gap-1.5">
                   <span>Available to Hand Over</span>
                   {isQcFailed && (
-                    <span className="px-1.5 py-0.2 rounded text-[9px] font-bold bg-rose-500/15 text-rose-700 dark:text-rose-400 border border-rose-500/30">
+                    <span className="px-1.5 py-0.2 rounded text-[9px] font-bold bg-tone-red-bg text-tone-red-text border border-tone-red-solid/25">
                       HELD
                     </span>
                   )}
                 </span>
-                <p className={`text-lg font-black font-mono mt-0.5 ${isQcFailed ? 'text-rose-600 dark:text-rose-400' : 'text-emerald-600 dark:text-emerald-400'}`}>
+                <p className={`text-lg font-black font-mono mt-0.5 ${isQcFailed ? 'text-tone-red-text' : 'text-tone-green-text'}`}>
                   {availableToHandover} <span className="text-xs font-normal text-muted-foreground">{uomSymbol}</span>
                 </p>
-                <p className={`text-[11px] mt-1 truncate ${isQcFailed ? 'text-rose-600 dark:text-rose-400 font-semibold' : 'text-muted-foreground'}`} title={isQcFailed ? `Quality Gate Non-Conformance (${defectiveQty} defective held)` : `Good ${outputItemName} ready for transfer`}>
+                <p className={`text-[11px] mt-1 truncate ${isQcFailed ? 'text-tone-red-text font-semibold' : 'text-muted-foreground'}`} title={isQcFailed ? `Quality Gate Non-Conformance (${defectiveQty} defective held)` : `Good ${outputItemName} ready for transfer`}>
                   {isQcFailed ? `Quality Gate Non-Conformance (${defectiveQty} defective held)` : `Good ${outputItemName} ready for transfer`}
                 </p>
               </div>
@@ -1442,9 +1442,9 @@ export default function DepartmentBatchExecutionPage() {
 
             {/* Reported Scrap & Loss Events Table */}
             <div className="rounded-xl border border-border overflow-hidden bg-card shadow-2xs">
-              <div className="px-4 py-2.5 bg-muted/30 border-b border-border flex items-center justify-between text-xs">
+              <div className="px-4 py-2.5 bg-muted/30 border-border-strong border-border flex items-center justify-between text-xs">
                 <span className="font-bold text-foreground flex items-center gap-2">
-                  <Trash2 className="w-4 h-4 text-rose-500" />
+                  <Trash2 className="w-4 h-4 text-tone-red-text" />
                   <span>Reported Scrap &amp; Loss Events ({batchLossEvents.length})</span>
                 </span>
                 <span className="text-muted-foreground text-[11px]">
@@ -1460,7 +1460,7 @@ export default function DepartmentBatchExecutionPage() {
                 <div className="overflow-x-auto">
                   <table className="w-full text-left text-xs border-collapse">
                     <thead>
-                      <tr className="border-b border-border bg-muted/20 text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+                      <tr className="border-border-strong border-border bg-muted/20 text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
                         <th className="px-4 py-2">Event #</th>
                         <th className="px-3 py-2">Classification</th>
                         <th className="px-3 py-2 text-right">Quantity</th>
@@ -1516,7 +1516,7 @@ export default function DepartmentBatchExecutionPage() {
 
           {/* Card 3.5: In-Process Quality Inspection Gate (QC Gate) */}
           <Card className="rounded-xl border border-border bg-card p-5 space-y-4 shadow-xs">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-border/60 pb-3">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-border-strong border-border/60 pb-3">
               <div className="flex items-center gap-2.5">
                 <div className="p-2 rounded-xl bg-primary/10 text-primary border border-primary/20">
                   <ShieldCheck className="h-5 w-5" />
@@ -1565,13 +1565,13 @@ export default function DepartmentBatchExecutionPage() {
                           {currentCheckpoint.qcRuleCode || 'QC-ACTIVE'}
                         </span>
                         {isQcFailed ? (
-                          <span className="text-[10px] font-extrabold px-2.5 py-1 rounded-lg bg-rose-500/15 text-rose-700 dark:text-rose-400 border border-rose-500/30 flex items-center gap-1.5 shadow-2xs">
-                            <ShieldAlert className="w-3.5 h-3.5 text-rose-600 dark:text-rose-400" />
+                          <span className="text-[10px] font-extrabold px-2.5 py-1 rounded-lg bg-tone-red-bg text-tone-red-text border border-tone-red-solid/25 flex items-center gap-1.5 shadow-2xs">
+                            <ShieldAlert className="w-3.5 h-3.5 text-tone-red-text" />
                             <span>GATE BLOCKED · NON-CONFORMANCE ({latestInspection?.status})</span>
                           </span>
                         ) : isQcPassed ? (
-                          <span className="text-[10px] font-extrabold px-2.5 py-1 rounded-lg bg-emerald-500/15 text-emerald-700 dark:text-emerald-400 border border-emerald-500/30 flex items-center gap-1.5 shadow-2xs">
-                            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
+                          <span className="text-[10px] font-extrabold px-2.5 py-1 rounded-lg bg-tone-green-bg text-tone-green-text border border-tone-green-solid/25 flex items-center gap-1.5 shadow-2xs">
+                            <CheckCircle2 className="w-3.5 h-3.5 text-tone-green-text" />
                             <span>GATE CLEARED · PASSED (V-009)</span>
                           </span>
                         ) : (
@@ -1611,7 +1611,7 @@ export default function DepartmentBatchExecutionPage() {
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-3 border-t border-border/60 text-xs">
                     <div className="p-2.5 rounded-xl bg-muted/40 border border-border/50">
                       <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground block">Passing Threshold</span>
-                      <span className="font-mono font-bold text-emerald-600 dark:text-emerald-400 text-xs mt-0.5 block">
+                      <span className="font-mono font-bold text-tone-green-text text-xs mt-0.5 block">
                         {(currentCheckpoint.qcRuleParameters as any)?.minPassingScore ?? (currentCheckpoint.qcRuleParameters as any)?.passingScoreThreshold ?? 95}% Minimum
                       </span>
                     </div>
@@ -1646,7 +1646,7 @@ export default function DepartmentBatchExecutionPage() {
 
                   return (
                     <div className="rounded-2xl border border-border overflow-hidden bg-card shadow-2xs">
-                      <div className="px-4 py-3 bg-muted/30 border-b border-border flex items-center justify-between text-xs">
+                      <div className="px-4 py-3 bg-muted/30 border-border-strong border-border flex items-center justify-between text-xs">
                         <span className="font-bold text-foreground flex items-center gap-2">
                           <FileCheck2 className="w-4 h-4 text-primary" />
                           <span>Configured Quality Criteria Checklist ({checklist.length})</span>
@@ -1706,10 +1706,10 @@ export default function DepartmentBatchExecutionPage() {
                 {/* 3. Non-Conformance Disposition Hub or Cleared Banner */}
                 {latestInspection && (
                   isQcFailed ? (
-                    <div className="p-5 rounded-2xl border border-rose-500/30 bg-rose-500/5 space-y-4 shadow-xs">
+                    <div className="p-5 rounded-2xl border border-tone-red-solid/25 bg-tone-red-bg space-y-4 shadow-xs">
                       <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
                         <div className="flex items-start gap-3">
-                          <div className="p-2.5 rounded-xl bg-rose-500/15 text-rose-600 dark:text-rose-400 border border-rose-500/30 shrink-0 mt-0.5">
+                          <div className="p-2.5 rounded-xl bg-tone-red-bg text-tone-red-text border border-tone-red-solid/25 shrink-0 mt-0.5">
                             <ShieldAlert className="h-6 w-6" />
                           </div>
                           <div className="space-y-1">
@@ -1717,18 +1717,18 @@ export default function DepartmentBatchExecutionPage() {
                               <h4 className="text-sm font-bold text-foreground">
                                 Quality Non-Conformance Active · Handover Blocked
                               </h4>
-                              <span className="px-2 py-0.5 text-[10px] font-mono font-extrabold rounded-md bg-rose-500/20 text-rose-700 dark:text-rose-400 border border-rose-500/30 uppercase">
+                              <span className="px-2 py-0.5 text-[10px] font-mono font-extrabold rounded-md bg-tone-red-bg text-tone-red-text border border-tone-red-solid/25 uppercase">
                                 {latestInspection.status}
                               </span>
                             </div>
                             <p className="text-xs text-muted-foreground">
                               Inspection #{latestInspection.inspectionNumber} recorded{' '}
-                              <strong className="font-mono text-rose-600 dark:text-rose-400 font-bold">{latestInspection.defectiveQuantity} defective {uomSymbol}</strong> out of{' '}
+                              <strong className="font-mono text-tone-red-text font-bold">{latestInspection.defectiveQuantity} defective {uomSymbol}</strong> out of{' '}
                               <strong className="font-mono text-foreground font-bold">{latestInspection.sampledQuantity} {uomSymbol} sampled</strong>.
                               Downstream handover is held under Invariant V-009 until non-conformance is dispositioned.
                             </p>
                             {latestInspection.reason && (
-                              <p className="text-xs italic text-rose-900/80 dark:text-rose-200/80 bg-rose-500/10 border border-rose-500/20 rounded-lg p-2 mt-1.5">
+                              <p className="text-xs italic text-tone-red-text bg-tone-red-bg border border-tone-red-solid/25 rounded-lg p-2 mt-1.5">
                                 Defect Observation: &quot;{latestInspection.reason}&quot;
                               </p>
                             )}
@@ -1752,25 +1752,25 @@ export default function DepartmentBatchExecutionPage() {
                           <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground block">
                             Conforming / Good WIP
                           </span>
-                          <span className="font-mono text-base font-bold text-emerald-600 dark:text-emerald-400 mt-0.5 block">
+                          <span className="font-mono text-base font-bold text-tone-green-text mt-0.5 block">
                             {Math.max(0, Number(latestInspection.sampledQuantity) - Number(latestInspection.defectiveQuantity))} {uomSymbol}
                           </span>
-                          <span className="text-[10px] text-emerald-600 dark:text-emerald-400 font-medium">Passed specification</span>
+                          <span className="text-[10px] text-tone-green-text font-medium">Passed specification</span>
                         </div>
 
-                        <div className="p-3 rounded-xl bg-background border border-rose-500/30 bg-rose-500/5">
-                          <span className="text-[10px] font-bold uppercase tracking-wider text-rose-700 dark:text-rose-400 block">
+                        <div className="p-3 rounded-xl bg-background border border-tone-red-solid/25 bg-tone-red-bg">
+                          <span className="text-[10px] font-bold uppercase tracking-wider text-tone-red-text block">
                             Defective / Non-Conforming
                           </span>
-                          <span className="font-mono text-base font-bold text-rose-600 dark:text-rose-400 mt-0.5 block">
+                          <span className="font-mono text-base font-bold text-tone-red-text mt-0.5 block">
                             {latestInspection.defectiveQuantity} {uomSymbol}
                           </span>
-                          <span className="text-[10px] text-rose-600 dark:text-rose-400 font-semibold">Held in Quarantine</span>
+                          <span className="text-[10px] text-tone-red-text font-semibold">Held in Quarantine</span>
                         </div>
                       </div>
 
                       {/* Interactive Resolution Action Bar */}
-                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-3 border-t border-rose-500/20">
+                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-3 border-t border-tone-red-solid/25">
                         <div className="text-xs text-muted-foreground">
                           <strong className="text-foreground">Required Action:</strong> Route defective units to Scrap &amp; Loss ledger, or re-inspect after rework to unlock handover.
                         </div>
@@ -1783,7 +1783,7 @@ export default function DepartmentBatchExecutionPage() {
                               setQcScrapNotes(latestInspection.reason ? `QC defect: ${latestInspection.reason}` : 'Defective tolerances flagged in in-process QC');
                               setShowQcScrapModal(true);
                             }}
-                            className="h-9 px-3.5 text-xs font-bold rounded-xl bg-rose-600 hover:bg-rose-700 text-white shadow-xs flex items-center gap-1.5 cursor-pointer"
+                            className="h-9 px-3.5 text-xs font-bold rounded-xl bg-tone-red-solid hover:bg-[color:var(--tone-red-text)] text-inverse shadow-xs flex items-center gap-1.5 cursor-pointer"
                           >
                             <Trash2 className="h-3.5 w-3.5" />
                             <span>Write Off {latestInspection.defectiveQuantity} to Scrap</span>
@@ -1814,10 +1814,10 @@ export default function DepartmentBatchExecutionPage() {
                       </div>
                     </div>
                   ) : (
-                    <div className="p-4 rounded-xl border border-emerald-500/30 bg-emerald-500/5 space-y-3">
+                    <div className="p-4 rounded-xl border border-tone-green-solid/25 bg-tone-green-bg space-y-3">
                       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                         <div className="flex items-start gap-3">
-                          <div className="p-2 rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5">
+                          <div className="p-2 rounded-lg bg-tone-green-bg text-tone-green-text shrink-0 mt-0.5">
                             <CheckCircle2 className="h-5 w-5" />
                           </div>
                           <div>
@@ -1848,7 +1848,7 @@ export default function DepartmentBatchExecutionPage() {
 
                 {/* 4. Recorded Quality Inspections (History & Audit Log) */}
                 <div className="rounded-2xl border border-border overflow-hidden bg-card shadow-2xs">
-                  <div className="px-4 py-3 bg-muted/30 border-b border-border flex items-center justify-between text-xs">
+                  <div className="px-4 py-3 bg-muted/30 border-border-strong border-border flex items-center justify-between text-xs">
                     <span className="font-bold text-foreground flex items-center gap-2">
                       <ShieldCheck className="w-4 h-4 text-primary" />
                       <span>Recorded Quality Inspections &amp; Audit Log ({inspectionHistory.length})</span>
@@ -1866,7 +1866,7 @@ export default function DepartmentBatchExecutionPage() {
                     <div className="overflow-x-auto">
                       <table className="w-full text-left text-xs border-collapse">
                         <thead>
-                          <tr className="border-b border-border bg-muted/20 text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+                          <tr className="border-border-strong border-border bg-muted/20 text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
                             <th className="px-4 py-2">Inspection #</th>
                             <th className="px-3 py-2">Inspector</th>
                             <th className="px-3 py-2">Timestamp</th>
@@ -1884,7 +1884,7 @@ export default function DepartmentBatchExecutionPage() {
                             const isFail = insp.status === 'FAIL' || insp.status === 'REJECT' || insp.status === 'REJECT_SCRAP';
 
                             const statusColor = isPass
-                              ? 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20'
+                              ? 'bg-tone-green-bg text-tone-green-text border-tone-green-solid/25'
                               : isRework
                                 ? 'bg-primary/10 text-primary border-primary/20'
                                 : isFail
@@ -1984,7 +1984,7 @@ export default function DepartmentBatchExecutionPage() {
               <div className="rounded-xl border border-border/80 overflow-x-auto">
                 <table className="w-full text-left text-xs border-collapse min-w-[700px]">
                   <thead>
-                    <tr className="bg-muted/40 border-b border-border/60 text-muted-foreground font-semibold">
+                    <tr className="bg-muted/40 border-border-strong border-border/60 text-muted-foreground font-semibold">
                       <th className="py-2.5 px-3">Destination Department</th>
                       <th className="py-2.5 px-3">Component / Item Sent</th>
                       <th className="py-2.5 px-3 text-right">Quantity</th>
@@ -2043,7 +2043,7 @@ export default function DepartmentBatchExecutionPage() {
               <div className="rounded-xl border border-border/80 overflow-x-auto">
                 <table className="w-full text-left text-xs border-collapse min-w-[700px]">
                   <thead>
-                    <tr className="bg-muted/40 border-b border-border/60 text-muted-foreground font-semibold">
+                    <tr className="bg-muted/40 border-border-strong border-border/60 text-muted-foreground font-semibold">
                       <th className="py-2.5 px-3">Origin Department</th>
                       <th className="py-2.5 px-3">Component / Item Received</th>
                       <th className="py-2.5 px-3 text-right">Quantity</th>
@@ -2081,7 +2081,7 @@ export default function DepartmentBatchExecutionPage() {
                                   size="sm"
                                   onClick={() => handleAcceptIncomingHandover(h.id)}
                                   disabled={decideHandoverMutation.isPending}
-                                  className="h-7 text-xs bg-emerald-600 hover:bg-emerald-700 text-white font-semibold cursor-pointer shadow-none"
+                                  className="h-7 text-xs bg-tone-green-solid hover:bg-tone-green-solid text-inverse font-semibold cursor-pointer shadow-none"
                                 >
                                   Accept
                                 </Button>
@@ -2130,7 +2130,7 @@ export default function DepartmentBatchExecutionPage() {
           {historyData?.timeline && historyData.timeline.length > 0 ? (
             <div className="space-y-3">
               {historyData.timeline.map((event: any, idx: number) => (
-                <div key={idx} className="flex items-start gap-3 text-xs border-b border-border/50 pb-2.5 last:border-0">
+                <div key={idx} className="flex items-start gap-3 text-xs border-border-strong border-border/50 pb-2.5 last:border-accent">
                   <span className="p-1 rounded-full bg-primary/10 text-primary mt-0.5">
                     <Clock className="h-3 w-3" />
                   </span>
@@ -2194,7 +2194,7 @@ export default function DepartmentBatchExecutionPage() {
             </div>
             <div>
               <p className="text-[10px] font-medium text-muted-foreground uppercase">Completed</p>
-              <p className="text-xs font-bold font-mono text-emerald-600 dark:text-emerald-400 mt-0.5">{compQty} {uomSymbol}</p>
+              <p className="text-xs font-bold font-mono text-tone-green-text mt-0.5">{compQty} {uomSymbol}</p>
             </div>
             <div>
               <p className="text-[10px] font-medium text-muted-foreground uppercase">Ready to Work</p>
@@ -2218,9 +2218,9 @@ export default function DepartmentBatchExecutionPage() {
               </p>
             </div>
           ) : custodyAvailable <= 0 ? (
-            <div className="p-3 rounded-lg border border-emerald-300 dark:border-emerald-800/80 bg-emerald-50 dark:bg-emerald-950/30 text-emerald-900 dark:text-emerald-200 text-xs space-y-1">
-              <div className="flex items-center gap-1.5 font-bold text-emerald-800 dark:text-emerald-300">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+            <div className="p-3 rounded-lg border border-tone-green-solid/25 bg-tone-green-solid text-tone-green-text text-xs space-y-1">
+              <div className="flex items-center gap-1.5 font-bold text-tone-green-text">
+                <CheckCircle2 className="w-4 h-4 text-tone-green-text shrink-0" />
                 <span>Batch Target Fully Completed ({compQty} / {expQty} {uomSymbol})</span>
               </div>
               <p className="leading-relaxed">
@@ -2250,7 +2250,7 @@ export default function DepartmentBatchExecutionPage() {
               className="text-xs font-mono"
             />
             {progressUnits && Number(progressUnits) > 0 && (
-              <p className="text-[11px] text-emerald-600 dark:text-emerald-400 font-medium">
+              <p className="text-[11px] text-tone-green-text font-medium">
                 Cumulative progress: {compQty} + {progressUnits} = <strong className="font-mono">{Number((compQty + Number(progressUnits)).toFixed(4))}</strong> / {expQty} {uomSymbol}
               </p>
             )}
@@ -2380,7 +2380,7 @@ export default function DepartmentBatchExecutionPage() {
                   </p>
                 </div>
               </div>
-              <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 shrink-0">
+              <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-tone-green-bg text-tone-green-text shrink-0">
                 Auto-Routed
               </span>
             </div>
@@ -2432,7 +2432,7 @@ export default function DepartmentBatchExecutionPage() {
             <Button
               type="submit"
               disabled={proposeHandoverMutation.isPending || !handoverQty || Number(handoverQty) <= 0 || Number(handoverQty) > availableToHandover}
-              className="text-xs font-semibold bg-emerald-600 hover:bg-emerald-700 text-white"
+              className="text-xs font-semibold bg-tone-green-solid hover:bg-tone-green-solid text-inverse"
             >
               {proposeHandoverMutation.isPending ? 'Dispatching...' : `Dispatch Handover (${handoverQty || 0} ${uomSymbol})`}
             </Button>
@@ -2526,7 +2526,7 @@ export default function DepartmentBatchExecutionPage() {
           </div>
           <div className="flex justify-end gap-2 border-t border-border/60 pt-3">
             <Button type="button" variant="outline" onClick={() => setShowReceiveMaterialsModal(false)}>Cancel</Button>
-            <Button type="submit" disabled={receiveAssignmentMutation.isPending} className="bg-emerald-600 text-white hover:bg-emerald-700">
+            <Button type="submit" disabled={receiveAssignmentMutation.isPending} className="bg-tone-green-solid text-inverse hover:bg-tone-green-solid">
               {receiveAssignmentMutation.isPending ? 'Recording...' : 'Confirm Receipt'}
             </Button>
           </div>
@@ -2573,7 +2573,7 @@ export default function DepartmentBatchExecutionPage() {
             <Button
               type="submit"
               disabled={decideHandoverMutation.isPending || !refusalReason.trim()}
-              className="text-xs font-semibold bg-destructive hover:bg-destructive/90 text-white"
+              className="text-xs font-semibold bg-destructive hover:bg-destructive/90 text-inverse"
             >
               Confirm Refusal
             </Button>
@@ -2647,7 +2647,7 @@ export default function DepartmentBatchExecutionPage() {
         className="max-w-md"
       >
         <form onSubmit={handleExecuteQcScrapWriteOff} className="space-y-4 pt-2">
-          <div className="p-3.5 bg-rose-500/10 border border-rose-500/20 rounded-xl space-y-2 text-xs">
+          <div className="p-3.5 bg-tone-red-bg border border-tone-red-solid/25 rounded-xl space-y-2 text-xs">
             <div className="flex justify-between font-semibold">
               <span className="text-muted-foreground">Workstation Batch:</span>
               <span className="font-mono text-foreground font-bold">{batch?.batchNumber}</span>
@@ -2658,11 +2658,11 @@ export default function DepartmentBatchExecutionPage() {
             </div>
             <div className="flex justify-between font-semibold">
               <span className="text-muted-foreground">Defective Quantity:</span>
-              <span className="font-mono font-bold text-rose-600 dark:text-rose-400">
+              <span className="font-mono font-bold text-tone-red-text">
                 {latestInspection?.defectiveQuantity || 0} {uomSymbol}
               </span>
             </div>
-            <div className="flex justify-between font-semibold border-t border-rose-500/20 pt-2 text-emerald-700 dark:text-emerald-400">
+            <div className="flex justify-between font-semibold border-t border-tone-red-solid/25 pt-2 text-tone-green-text">
               <span>Conforming Lot to Release:</span>
               <span className="font-mono font-bold">
                 {Math.max(0, Number(batch?.completed_qty || 0) - Number(latestInspection?.defectiveQuantity || 0))} {uomSymbol}
@@ -2704,7 +2704,7 @@ export default function DepartmentBatchExecutionPage() {
               type="submit"
               size="sm"
               disabled={isWritingOffScrap}
-              className="bg-rose-600 hover:bg-rose-700 text-white font-bold shadow-none"
+              className="bg-tone-red-solid hover:bg-[color:var(--tone-red-text)] text-inverse font-bold shadow-none"
             >
               <Trash2 className="w-4 h-4 mr-1" />
               <span>{isWritingOffScrap ? 'Writing Off...' : 'Confirm & Write Off to Scrap'}</span>

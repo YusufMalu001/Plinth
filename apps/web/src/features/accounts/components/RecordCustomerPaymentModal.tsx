@@ -158,7 +158,7 @@ export function RecordCustomerPaymentModal({
             </div>
             <div className="rounded-xl bg-card p-3 border border-border/60">
               <span className="text-[10px] uppercase font-bold tracking-wider text-muted-foreground">Already Collected</span>
-              <p className="mt-1 text-sm font-bold font-mono text-emerald-600">{formatCurrency(paidNumber)}</p>
+              <p className="mt-1 text-sm font-bold font-mono text-tone-green-text">{formatCurrency(paidNumber)}</p>
             </div>
             <div className="rounded-xl bg-card p-3 border border-border bg-n-500/5">
               <div className="flex items-center justify-between">
@@ -173,7 +173,7 @@ export function RecordCustomerPaymentModal({
                   </button>
                 )}
               </div>
-              <p className="mt-1 text-sm font-bold font-mono text-foreground dark:text-n-300">
+              <p className="mt-1 text-sm font-bold font-mono text-foreground ">
                 {formatCurrency(balanceNumber)}
               </p>
             </div>
@@ -183,7 +183,7 @@ export function RecordCustomerPaymentModal({
         {/* Form Body */}
         <form onSubmit={handleSubmit} className="p-6 space-y-4">
           {error && (
-            <div className="flex items-center gap-2 rounded-xl bg-rose-50 dark:bg-rose-950/30 border border-rose-200 dark:border-rose-900/40 p-3 text-xs text-rose-700 dark:text-rose-300">
+            <div className="flex items-center gap-2 rounded-xl bg-tone-rose-bg  border border-tone-red-solid  p-3 text-xs text-tone-red-text ">
               <AlertCircle className="h-4 w-4 shrink-0" />
               <span>{error}</span>
             </div>
@@ -294,8 +294,8 @@ export function RecordCustomerPaymentModal({
           {currentAmountNum > 0 && (
             <div className={`rounded-xl p-3 border text-xs flex items-center justify-between ${
               willBeFullyPaid
-                ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-700 dark:text-emerald-300'
-                : 'bg-amber-500/10 border-amber-500/30 text-amber-700 dark:text-amber-300'
+                ? 'bg-tone-emerald-bg/10 border-tone-green-solid/30 text-tone-green-text '
+                : 'bg-tone-amber-bg/10 border-tone-amber-solid/30 text-tone-amber-text '
             }`}>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="h-4 w-4 shrink-0" />

@@ -179,7 +179,7 @@ export default function GoodsReceiptsListPage({ searchParams }: { searchParams?:
     : 0;
   const summaryMetrics = activeTab === 'discrepancies'
     ? [
-        { label: 'Discrepant Receipts', value: total, icon: AlertTriangle, iconClassName: 'text-red-500' },
+        { label: 'Discrepant Receipts', value: total, icon: AlertTriangle, iconClassName: 'text-tone-red-text' },
         { label: 'Affected Lines', value: discrepancyLineCount, icon: Layers },
         { label: 'Suppliers', value: discrepancyVendorCount, icon: Building2 },
         { label: 'Multi-Line Receipts', value: multiLineDiscrepancyCount, icon: Layers },
@@ -190,7 +190,7 @@ export default function GoodsReceiptsListPage({ searchParams }: { searchParams?:
         { label: 'Arrived / Staging', value: arrivedCount, icon: Clock },
         { label: 'Pending Review', value: underVerificationCount + discrepancyCount, icon: AlertTriangle },
         { label: 'Verified & Finalized', value: finalizedCount, icon: CheckCircle2 },
-        { label: 'Discrepancy Pending', value: discrepancyCount, icon: AlertTriangle, iconClassName: 'text-red-500' },
+        { label: 'Discrepancy Pending', value: discrepancyCount, icon: AlertTriangle, iconClassName: 'text-tone-red-text' },
       ];
 
   return (
@@ -353,7 +353,7 @@ export default function GoodsReceiptsListPage({ searchParams }: { searchParams?:
                     {/* Source PO */}
                     <TableCell>
                       {grn.isUnreferenced ? (
-                        <span className="text-[11px] bg-amber-500/10 text-amber-700 dark:text-amber-400 px-2.5 py-0.5 rounded-full font-semibold border border-amber-500/20">
+                        <span className="text-[11px] bg-tone-amber-bg text-tone-amber-text px-2.5 py-0.5 rounded-full font-semibold border border-tone-amber-solid/25">
                           Unreferenced
                         </span>
                       ) : grn.poId || grn.po?.id ? (

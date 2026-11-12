@@ -54,7 +54,7 @@ export function BankReconModal({ isOpen, onClose, bankAccounts, onImportStatemen
 
         {successMessage ? (
           <div className="py-8 text-center space-y-3">
-            <div className="mx-auto w-12 h-12 rounded-full bg-primary/10 text-primary dark:text-primary flex items-center justify-center">
+            <div className="mx-auto w-12 h-12 rounded-full bg-primary/10 text-primary  flex items-center justify-center">
               <CheckCircle2 className="h-7 w-7" />
             </div>
             <h3 className="text-base font-bold text-foreground">Statement Processed</h3>
@@ -110,7 +110,7 @@ export function BankReconModal({ isOpen, onClose, bankAccounts, onImportStatemen
               )}
             </div>
 
-            <div className="rounded-xl bg-primary/10 p-3 text-xs text-foreground dark:text-n-300 border border-border">
+            <div className="rounded-xl bg-primary/10 p-3 text-xs text-foreground  border border-border">
               <p className="flex items-center gap-1.5 font-semibold">
                 <Sparkles className="h-4 w-4" />
                 Auto-Matching Engine

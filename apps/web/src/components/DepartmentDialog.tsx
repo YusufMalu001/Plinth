@@ -171,7 +171,7 @@ export function DepartmentDialog({
             <div className="space-y-0.5 select-none">
               <div className="flex items-center gap-1.5">
                 <span className="text-xs font-semibold text-foreground">Assembly Department</span>
-                <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
+                <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-tone-emerald-bg/10 text-tone-green-text ">
                   Convergence Station
                 </span>
               </div>

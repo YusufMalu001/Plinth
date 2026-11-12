@@ -72,7 +72,7 @@ export function ProductOrdersTab({ productId }: ProductOrdersTabProps) {
             type="button"
             onClick={() => setActiveSubTab('SALES')}
             className={`px-3 py-1.5 rounded-md transition-colors ${
-              activeSubTab === 'SALES' ? 'bg-background text-emerald-600 shadow-2xs' : 'text-muted-foreground hover:text-foreground'
+              activeSubTab === 'SALES' ? 'bg-background text-tone-green-text shadow-2xs' : 'text-muted-foreground hover:text-foreground'
             }`}
           >
             Sales Orders ({liveSalesOrders.filter(o => o.type === 'SALES_ORDER').length})
@@ -90,7 +90,7 @@ export function ProductOrdersTab({ productId }: ProductOrdersTabProps) {
             type="button"
             onClick={() => setActiveSubTab('PURCHASE')}
             className={`px-3 py-1.5 rounded-md transition-colors ${
-              activeSubTab === 'PURCHASE' ? 'bg-background text-blue-600 shadow-2xs' : 'text-muted-foreground hover:text-foreground'
+              activeSubTab === 'PURCHASE' ? 'bg-background text-tone-blue-text shadow-2xs' : 'text-muted-foreground hover:text-foreground'
             }`}
           >
             Component POs (0)
@@ -113,7 +113,7 @@ export function ProductOrdersTab({ productId }: ProductOrdersTabProps) {
               type="button"
               className="flex items-center gap-1.5 rounded-lg border border-border bg-background px-3 py-1.5 text-xs font-semibold text-foreground hover:bg-muted transition-colors shadow-2xs cursor-pointer"
             >
-              <ShoppingBag className="h-3.5 w-3.5 text-emerald-600" />
+              <ShoppingBag className="h-3.5 w-3.5 text-tone-green-text" />
               <span>Sales Orders</span>
               <ExternalLink className="h-3 w-3 text-muted-foreground" />
             </button>
@@ -166,10 +166,10 @@ export function ProductOrdersTab({ productId }: ProductOrdersTabProps) {
                       <span
                         className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-md text-[11px] font-bold ${
                           order.type === 'SALES_ORDER'
-                            ? 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20'
+                            ? 'bg-tone-green-bg text-tone-green-text border border-tone-green-solid'
                             : order.type === 'WORK_ORDER'
                             ? 'bg-primary/10 text-primary border border-primary/20'
-                            : 'bg-blue-500/10 text-blue-700 dark:text-blue-400 border border-blue-500/20'
+                            : 'bg-tone-blue-bg text-tone-blue-text border border-tone-blue-solid'
                         }`}
                       >
                         {order.type === 'SALES_ORDER' && <ShoppingBag className="h-3 w-3" />}
@@ -188,16 +188,16 @@ export function ProductOrdersTab({ productId }: ProductOrdersTabProps) {
                       <span
                         className={`inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs ${
                           (order.allocatedQuantity ?? 0) >= order.quantity
-                            ? 'bg-emerald-500/10 text-emerald-600 font-bold'
+                            ? 'bg-tone-green-bg text-tone-green-text font-bold'
                             : (order.allocatedQuantity ?? 0) > 0
-                            ? 'bg-amber-500/10 text-amber-600 font-bold'
+                            ? 'bg-tone-amber-bg text-tone-amber-text font-bold'
                             : 'bg-muted text-muted-foreground'
                         }`}
                       >
                         {(order.allocatedQuantity ?? 0) >= order.quantity ? (
-                          <ShieldCheck className="h-3 w-3 text-emerald-600" />
+                          <ShieldCheck className="h-3 w-3 text-tone-green-text" />
                         ) : (
-                          <Clock className="h-3 w-3 text-amber-600" />
+                          <Clock className="h-3 w-3 text-tone-amber-text" />
                         )}
                         {order.allocatedQuantity ?? 0} pcs
                       </span>
@@ -212,12 +212,12 @@ export function ProductOrdersTab({ productId }: ProductOrdersTabProps) {
                       <span
                         className={`inline-flex px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider ${
                           order.status === 'CONFIRMED' || order.status === 'APPROVED'
-                            ? 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20'
+                            ? 'bg-tone-green-bg text-tone-green-text border border-tone-green-solid'
                             : order.status === 'ALLOCATED' || order.status === 'PICKED' || order.status === 'PACKED'
-                            ? 'bg-purple-500/10 text-purple-700 dark:text-purple-400 border border-purple-500/20'
+                            ? 'bg-tone-purple-bg text-tone-purple-text border border-tone-purple-solid'
                             : order.status === 'DISPATCHED' || order.status === 'DELIVERED'
-                            ? 'bg-blue-500/10 text-blue-700 dark:text-blue-400 border border-blue-500/20'
-                            : 'bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20'
+                            ? 'bg-tone-blue-bg text-tone-blue-text border border-tone-blue-solid'
+                            : 'bg-tone-amber-bg text-tone-amber-text border border-tone-amber-solid'
                         }`}
                       >
                         {order.status.replace('_', ' ')}

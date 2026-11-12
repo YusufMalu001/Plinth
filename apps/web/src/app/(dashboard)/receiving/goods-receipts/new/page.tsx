@@ -323,7 +323,7 @@ function ReceivingStudio() {
         <section className="grid gap-6 xl:grid-cols-2 items-start">
           {/* Left Column: Select a Purchase Order (Elongated to match right side) */}
           <div className="flex flex-col space-y-4 rounded-2xl border border-border bg-card p-5 shadow-sm h-full">
-            <div className="flex items-center justify-between pb-1 border-b border-border/60">
+            <div className="flex items-center justify-between pb-1 border-border-strong border-border/60">
               <h2 className="font-semibold text-base text-foreground">1. Select a purchase order</h2>
             </div>
             <PoSearchSelector
@@ -355,11 +355,11 @@ function ReceivingStudio() {
               onDragOver={handleDragOver}
               onDragLeave={handleDragLeave}
               onDrop={handleDrop}
-              className={`flex min-h-48 cursor-pointer flex-col items-center justify-center gap-3 rounded-xl border-2 border-dashed p-6 text-center transition-all ${
+              className={`flex min-h-48 cursor-pointer flex-col items-center justify-center gap-3 rounded-xl border-border border-dashed p-6 text-center transition-all ${
                 isDragging
-                  ? 'border-primary bg-primary/10 shadow-md scale-[1.01]'
+                  ? 'border-primary bg-primary/10 shadow-none scale-[1.01]'
                   : invoiceFile
-                  ? 'border-emerald-500/50 bg-emerald-500/5'
+                  ? 'border-tone-green-solid/25 bg-tone-green-bg'
                   : 'border-border bg-muted/20 hover:border-primary/50 hover:bg-muted/30'
               }`}
             >
@@ -371,7 +371,7 @@ function ReceivingStudio() {
                 </>
               ) : invoiceFile ? (
                 <div className="flex flex-col items-center gap-2">
-                  <FileCheck className="h-9 w-9 text-emerald-600 dark:text-emerald-400" />
+                  <FileCheck className="h-9 w-9 text-tone-green-text" />
                   <div className="flex items-center gap-2">
                     <span className="text-sm font-semibold text-foreground max-w-[280px] sm:max-w-md truncate">
                       {invoiceFile.name}
@@ -446,7 +446,7 @@ function ReceivingStudio() {
             ) : capabilities?.verify ? (
               null
             ) : (
-              <div className="rounded-xl border border-amber-500/30 bg-amber-500/5 p-4 text-sm">
+              <div className="rounded-xl border border-tone-amber-solid/25 bg-tone-amber-bg p-4 text-sm">
                 <div className="flex items-center gap-2 font-semibold"><PackageCheck size={16} /> Manager verification required</div>
                 <p className="mt-1 text-xs text-muted-foreground">You can register the arrived invoice. An Admin or Store Manager must complete physical verification from the GRN detail page.</p>
               </div>

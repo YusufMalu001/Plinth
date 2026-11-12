@@ -55,8 +55,8 @@ export function ProductSpecSheetModal({ isOpen, onClose, product }: ProductSpecS
   }));
 
   return (
-    <div className="spec-sheet-overlay fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4 backdrop-blur-xs animate-in fade-in duration-200">
-      <div ref={printRef} className="spec-sheet-document flex max-h-[90vh] w-full max-w-4xl flex-col rounded-2xl bg-card border border-border shadow-2xl overflow-hidden">
+    <div className="spec-sheet-overlay fixed inset-0 z-50 flex items-center justify-center bg-inverse p-4 backdrop-blur-xs animate-in fade-in duration-200">
+      <div ref={printRef} className="spec-sheet-document flex max-h-[90vh] w-full max-w-4xl flex-col rounded-2xl bg-card border border-border shadow-none overflow-hidden">
         {/* Modal Controls Header */}
         <div className="flex items-center justify-between border-b border-border bg-muted/40 px-6 py-3.5 print:hidden">
           <div className="flex items-center gap-2">
@@ -77,7 +77,7 @@ export function ProductSpecSheetModal({ isOpen, onClose, product }: ProductSpecS
         </div>
 
         {/* Printable Technical Spec Document Body */}
-        <div className="printable-spec-sheet flex-1 overflow-y-auto p-8 space-y-6 text-foreground bg-white dark:bg-zinc-950 print:p-0 print:bg-white print:text-slate-900">
+        <div className="printable-spec-sheet flex-1 overflow-y-auto p-8 space-y-6 text-foreground bg-surface print:p-0 print:bg-surface print:text-ink">
           {/* Document Header */}
           <div className="flex items-start justify-between border-b-2 border-primary pb-6 print-avoid-break">
             <div>
@@ -86,17 +86,17 @@ export function ProductSpecSheetModal({ isOpen, onClose, product }: ProductSpecS
                   S
                 </div>
                 <div>
-                  <h1 className="text-xl font-black tracking-tight text-foreground uppercase print:text-slate-900">
+                  <h1 className="text-xl font-black tracking-tight text-foreground uppercase print:text-ink">
                     Plinth
                   </h1>
-                  <p className="text-[10px] font-bold tracking-widest text-muted-foreground uppercase print:text-slate-500">
+                  <p className="text-[10px] font-bold tracking-widest text-muted-foreground uppercase print:text-ink-muted">
                     Industrial Manufacturing & Precision Engineering Standards
                   </p>
                 </div>
               </div>
               <div className="mt-4">
-                <h2 className="text-2xl font-black text-foreground print:text-slate-900">{product.name}</h2>
-                <p className="font-mono text-sm text-primary font-bold mt-0.5 print:text-[#004a80]">
+                <h2 className="text-2xl font-black text-foreground print:text-ink">{product.name}</h2>
+                <p className="font-mono text-sm text-primary font-bold mt-0.5 print:text-[color:var(--action-primary-bg)]">
                   SKU: {product.sku} · REV v{product.version ?? 1} · {product.status}
                 </p>
               </div>
@@ -124,7 +124,7 @@ export function ProductSpecSheetModal({ isOpen, onClose, product }: ProductSpecS
             <h3 className="text-xs font-black uppercase tracking-widest text-primary mb-3">
               1. Engineering & Structural Specifications
             </h3>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 border border-border rounded-xl p-4 bg-muted/10 text-xs print:border-slate-300 print:bg-slate-50/70">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 border border-border rounded-xl p-4 bg-muted/10 text-xs print:border-border-strong print:bg-muted">
               <div>
                 <p className="text-[10px] uppercase font-bold text-muted-foreground">Material Alloy</p>
                 <p className="font-semibold text-foreground mt-0.5">{specs.materialGrade || '—'}</p>
@@ -170,9 +170,9 @@ export function ProductSpecSheetModal({ isOpen, onClose, product }: ProductSpecS
             <h3 className="text-xs font-black uppercase tracking-widest text-primary mb-3">
               Configured Product Variants &amp; Specifications
             </h3>
-            <table className="w-full text-left text-xs border border-border rounded-xl overflow-hidden print:border-slate-300">
-              <thead className="bg-muted/40 text-[10px] font-bold uppercase text-muted-foreground print:bg-slate-100 print:text-slate-600">
-                <tr className="border-b border-border print:border-slate-300">
+            <table className="w-full text-left text-xs border border-border rounded-xl overflow-hidden print:border-border-strong">
+              <thead className="bg-muted/40 text-[10px] font-bold uppercase text-muted-foreground print:bg-muted print:text-ink-secondary">
+                <tr className="border-b border-border print:border-border-strong">
                   <th className="p-2.5">Variant Name</th>
                   <th className="p-2.5">SKU Code</th>
                   <th className="p-2.5">Specification / Type</th>
@@ -180,14 +180,14 @@ export function ProductSpecSheetModal({ isOpen, onClose, product }: ProductSpecS
                   <th className="p-2.5 text-right">Standard Rate</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-border/60 print:divide-slate-200">
+              <tbody className="divide-y divide-border/60 print:divide-border">
                 {measurementVariants.map((v, i) => (
                   <tr key={i}>
-                    <td className="p-2.5 font-medium print:text-slate-900">{getVariantLabel(product.name, v.name, v.measurementValue)}</td>
-                    <td className="p-2.5 font-mono text-muted-foreground print:text-slate-600">{v.sku || '—'}</td>
-                    <td className="p-2.5 print:text-slate-900">{v.measurementValue || '—'}</td>
-                    <td className="p-2.5 text-right font-mono font-bold print:text-slate-900">{v.openingStock ?? 0} {product.uom?.symbol || 'units'}</td>
-                    <td className="p-2.5 text-right font-mono font-bold print:text-slate-900">{Number(v.standardPrice) > 0 ? `₹${Number(v.standardPrice).toLocaleString('en-IN')}` : '—'}</td>
+                    <td className="p-2.5 font-medium print:text-ink">{getVariantLabel(product.name, v.name, v.measurementValue)}</td>
+                    <td className="p-2.5 font-mono text-muted-foreground print:text-ink-secondary">{v.sku || '—'}</td>
+                    <td className="p-2.5 print:text-ink">{v.measurementValue || '—'}</td>
+                    <td className="p-2.5 text-right font-mono font-bold print:text-ink">{v.openingStock ?? 0} {product.uom?.symbol || 'units'}</td>
+                    <td className="p-2.5 text-right font-mono font-bold print:text-ink">{Number(v.standardPrice) > 0 ? `₹${Number(v.standardPrice).toLocaleString('en-IN')}` : '—'}</td>
                   </tr>
                 ))}
               </tbody>
@@ -201,9 +201,9 @@ export function ProductSpecSheetModal({ isOpen, onClose, product }: ProductSpecS
             <h3 className="text-xs font-black uppercase tracking-widest text-primary mb-3">
               2. Standard Production Formula & Components (BOM)
             </h3>
-            <table className="w-full text-left text-xs border border-border rounded-xl overflow-hidden print:border-slate-300">
-              <thead className="bg-muted/40 text-[10px] font-bold uppercase text-muted-foreground print:bg-slate-100 print:text-slate-600">
-                <tr className="border-b border-border print:border-slate-300">
+            <table className="w-full text-left text-xs border border-border rounded-xl overflow-hidden print:border-border-strong">
+              <thead className="bg-muted/40 text-[10px] font-bold uppercase text-muted-foreground print:bg-muted print:text-ink-secondary">
+                <tr className="border-b border-border print:border-border-strong">
                   <th className="p-2.5">Component</th>
                   <th className="p-2.5">Code</th>
                   <th className="p-2.5 text-right">Quantity</th>
@@ -211,14 +211,14 @@ export function ProductSpecSheetModal({ isOpen, onClose, product }: ProductSpecS
                   <th className="p-2.5">Process Note</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-border/60 print:divide-slate-200">
+              <tbody className="divide-y divide-border/60 print:divide-border">
                 {bom.slice(0, 10).map((item, i) => (
                   <tr key={i}>
-                    <td className="p-2.5 font-medium print:text-slate-900">{item.component}</td>
-                    <td className="p-2.5 font-mono text-muted-foreground print:text-slate-600">{item.code}</td>
-                    <td className="p-2.5 text-right font-mono font-bold print:text-slate-900">{item.quantity}</td>
-                    <td className="p-2.5 text-muted-foreground print:text-slate-600">{item.uom}</td>
-                    <td className="p-2.5 text-muted-foreground text-[11px] print:text-slate-600">{item.note || '—'}</td>
+                    <td className="p-2.5 font-medium print:text-ink">{item.component}</td>
+                    <td className="p-2.5 font-mono text-muted-foreground print:text-ink-secondary">{item.code}</td>
+                    <td className="p-2.5 text-right font-mono font-bold print:text-ink">{item.quantity}</td>
+                    <td className="p-2.5 text-muted-foreground print:text-ink-secondary">{item.uom}</td>
+                    <td className="p-2.5 text-muted-foreground text-[11px] print:text-ink-secondary">{item.note || '—'}</td>
                   </tr>
                 ))}
               </tbody>
@@ -227,10 +227,10 @@ export function ProductSpecSheetModal({ isOpen, onClose, product }: ProductSpecS
           )}
 
           {/* Quality Assurance & Compliance */}
-          <div className="border-t border-border pt-4 flex items-center justify-between text-xs text-muted-foreground print:border-slate-300 print:text-slate-600 print-avoid-break">
+          <div className="border-t border-border pt-4 flex items-center justify-between text-xs text-muted-foreground print:border-border-strong print:text-ink-secondary print-avoid-break">
             <div className="flex items-center gap-4">
-              <span className="flex items-center gap-1 font-semibold text-foreground print:text-slate-900">
-                <ShieldCheck className="h-4 w-4 text-emerald-600" />
+              <span className="flex items-center gap-1 font-semibold text-foreground print:text-ink">
+                <ShieldCheck className="h-4 w-4 text-tone-green-text" />
                 Product master data
               </span>
               <span>HSN Code: {String(product.metadata?.hsnCode || product.metadata?.hsn || '—')}</span>

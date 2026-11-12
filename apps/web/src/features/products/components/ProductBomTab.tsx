@@ -152,12 +152,12 @@ export function ProductBomTab({ product, onOpenEdit }: ProductBomTabProps) {
                   className={clsx(
                     'inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold border transition-all cursor-pointer',
                     isSelected
-                      ? 'bg-primary text-white border-primary shadow-2xs ring-2 ring-primary/20'
+                      ? 'bg-primary text-inverse border-primary shadow-2xs ring-2 ring-primary/20'
                       : 'bg-background text-foreground border-border hover:bg-muted'
                   )}
                 >
                   <span className="font-bold">{b.bomNumber || `v${b.version}`}</span>
-                  <span className={clsx('text-[10px]', isSelected ? 'text-white/80' : 'text-muted-foreground')}>
+                  <span className={clsx('text-[10px]', isSelected ? 'text-inverse' : 'text-muted-foreground')}>
                     ({(b.lines || []).length} parts)
                   </span>
                 </button>
@@ -209,7 +209,7 @@ export function ProductBomTab({ product, onOpenEdit }: ProductBomTabProps) {
                     <td className="px-5 py-3.5">
                       <div className="flex items-center gap-2">
                         <p className="font-semibold text-foreground text-sm">{item.component}</p>
-                        {item.variant && <span className="shrink-0 rounded-md border border-violet-200 bg-violet-50 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide text-violet-700 dark:border-violet-800 dark:bg-violet-950/50 dark:text-violet-300">Variant</span>}
+                        {item.variant && <span className="shrink-0 rounded-md border border-tone-purple-solid/25 bg-tone-purple-bg px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide text-tone-purple-text">Variant</span>}
                       </div>
                       {item.variant && <p className="mt-0.5 text-xs font-normal text-muted-foreground">{item.variant}</p>}
                     </td>

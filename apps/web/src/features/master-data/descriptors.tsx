@@ -109,7 +109,7 @@ export const productsListDescriptor: EntityDescriptor<any> = {
       header: 'Code',
       width: '20%',
       render: (row) => (
-        <span className="font-mono text-xs font-bold bg-muted/60 dark:bg-muted/40 px-2.5 py-1 rounded-md border border-border/60 text-foreground">
+        <span className="font-mono text-xs font-bold bg-muted/60 px-2.5 py-1 rounded-md border border-border/60 text-foreground">
           {row.code || row.sku}
         </span>
       ),
@@ -168,7 +168,7 @@ export const vendorsListDescriptor: EntityDescriptor<any> = {
       header: 'Vendor code',
       width: '20%',
       render: (row) => (
-        <span className="font-mono text-xs font-bold bg-muted/60 dark:bg-muted/40 px-2.5 py-1 rounded-md border border-border/60 text-foreground">
+        <span className="font-mono text-xs font-bold bg-muted/60 px-2.5 py-1 rounded-md border border-border/60 text-foreground">
           {row.code}
         </span>
       ),
@@ -220,7 +220,7 @@ export const customersListDescriptor: EntityDescriptor<any> = {
       header: 'Code',
       width: '25%',
       render: (row) => (
-        <span className="font-mono text-xs font-bold bg-muted/60 dark:bg-muted/40 px-2.5 py-1 rounded-md border border-border/60 text-foreground">
+        <span className="font-mono text-xs font-bold bg-muted/60 px-2.5 py-1 rounded-md border border-border/60 text-foreground">
           {row.code}
         </span>
       ),
@@ -268,7 +268,7 @@ export const materialsListDescriptor: EntityDescriptor<any> = {
       header: 'Code',
       width: '20%',
       render: (row) => (
-        <span className="font-mono text-xs font-bold bg-muted/60 dark:bg-muted/40 px-2.5 py-1 rounded-md border border-border/60 text-foreground">
+        <span className="font-mono text-xs font-bold bg-muted/60 px-2.5 py-1 rounded-md border border-border/60 text-foreground">
           {row.code}
         </span>
       ),
@@ -327,7 +327,7 @@ export const factoriesListDescriptor: EntityDescriptor<any> = {
       header: 'Code',
       width: '25%',
       render: (row) => (
-        <span className="font-mono text-xs font-bold bg-muted/60 dark:bg-muted/40 px-2.5 py-1 rounded-md border border-border/60 text-foreground">
+        <span className="font-mono text-xs font-bold bg-muted/60 px-2.5 py-1 rounded-md border border-border/60 text-foreground">
           {row.code}
         </span>
       ),
@@ -372,7 +372,7 @@ export const qcRulesListDescriptor: EntityDescriptor<any> = {
       header: 'Code',
       width: '25%',
       render: (row) => (
-        <span className="font-mono text-xs font-bold bg-muted/60 dark:bg-muted/40 px-2.5 py-1 rounded-md border border-border/60 text-foreground">
+        <span className="font-mono text-xs font-bold bg-muted/60 px-2.5 py-1 rounded-md border border-border/60 text-foreground">
           {row.code}
         </span>
       ),
@@ -426,7 +426,7 @@ export const routingListDescriptor: EntityDescriptor<any> = {
       header: 'Code',
       width: '35%',
       render: (row) => (
-        <span className="font-mono text-xs font-bold bg-muted/60 dark:bg-muted/40 px-2.5 py-1 rounded-md border border-border/60 text-foreground">
+        <span className="font-mono text-xs font-bold bg-muted/60 px-2.5 py-1 rounded-md border border-border/60 text-foreground">
           {row.code}
         </span>
       ),

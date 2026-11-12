@@ -65,7 +65,7 @@ const stageMeta: Record<
     step: 'Step 1 of 6',
     icon: Boxes,
     instruction: 'Allocating an order creates real inventory reservations against batches and generates a warehouse pick list.',
-    badgeStyle: 'bg-amber-500/10 text-amber-700 border-amber-300',
+    badgeStyle: 'bg-tone-amber-bg/10 text-tone-amber-text border-tone-amber-solid',
   },
   picking: {
     title: 'Barcoded Picking Station',
@@ -73,7 +73,7 @@ const stageMeta: Record<
     step: 'Step 2 of 6',
     icon: ClipboardCheck,
     instruction: 'Barcode verification is mandatory. Mismatched scans require authorized supervisor justification.',
-    badgeStyle: 'bg-blue-500/10 text-blue-700 border-blue-300',
+    badgeStyle: 'bg-tone-blue-bg/10 text-link border-tone-blue-solid',
   },
   packing: {
     title: 'Packaging & Weight Workstation',
@@ -81,7 +81,7 @@ const stageMeta: Record<
     step: 'Step 3 of 6',
     icon: PackageCheck,
     instruction: 'Sealing a carton automatically deducts packaging materials (boxes, tape, bubble wrap) from warehouse inventory.',
-    badgeStyle: 'bg-indigo-500/10 text-indigo-700 border-indigo-300',
+    badgeStyle: 'bg-tone-indigo-bg/10 text-tone-purple-text border-tone-purple-solid',
   },
   staging: {
     title: 'Dispatch Staging & Carrier Gates',
@@ -89,7 +89,7 @@ const stageMeta: Record<
     step: 'Step 4 of 6',
     icon: Truck,
     instruction: 'Dispatch execution permanently posts stock issues to the inventory ledger and unlocks manifest generation.',
-    badgeStyle: 'bg-purple-500/10 text-purple-700 border-purple-300',
+    badgeStyle: 'bg-tone-purple-bg/10 text-tone-purple-text border-tone-purple-solid',
   },
   dispatched: {
     title: 'Dispatched In-Transit Shipments',
@@ -97,7 +97,7 @@ const stageMeta: Record<
     step: 'Step 5 of 6',
     icon: Clock3,
     instruction: 'Shipments handed over to carriers cannot be cancelled directly; returns must proceed via Reverse Logistics / RTO.',
-    badgeStyle: 'bg-emerald-500/10 text-emerald-700 border-emerald-300',
+    badgeStyle: 'bg-tone-emerald-bg/10 text-tone-green-text border-tone-green-solid',
   },
   delivery: {
     title: 'Delivery Exceptions & Proof of Delivery',
@@ -105,15 +105,15 @@ const stageMeta: Record<
     step: 'Step 6 of 6',
     icon: CheckCircle2,
     instruction: 'Recording valid Proof of Delivery marks the sales order as Delivered and completes the fulfillment lifecycle.',
-    badgeStyle: 'bg-emerald-500/10 text-emerald-700 border-emerald-300',
+    badgeStyle: 'bg-tone-emerald-bg/10 text-tone-green-text border-tone-green-solid',
   },
 };
 
 const channelStyles: Record<string, { label: string; tone: string }> = {
-  AMAZON: { label: 'Amazon India', tone: 'bg-orange-500/10 text-orange-700 border-orange-300 font-semibold' },
-  E_TRADE: { label: 'E-Trade Direct', tone: 'bg-violet-500/10 text-violet-700 border-violet-300 font-semibold' },
-  PHYSICAL: { label: 'Physical Wholesale', tone: 'bg-blue-500/10 text-blue-700 border-blue-300 font-semibold' },
-  STORE_POS: { label: 'Store POS', tone: 'bg-emerald-500/10 text-emerald-700 border-emerald-300 font-semibold' },
+  AMAZON: { label: 'Amazon India', tone: 'bg-tone-orange-bg/10 text-tone-orange-text border-tone-orange-solid font-semibold' },
+  E_TRADE: { label: 'E-Trade Direct', tone: 'bg-tone-violet-bg/10 text-tone-purple-text border-tone-purple-solid font-semibold' },
+  PHYSICAL: { label: 'Physical Wholesale', tone: 'bg-tone-blue-bg/10 text-link border-tone-blue-solid font-semibold' },
+  STORE_POS: { label: 'Store POS', tone: 'bg-tone-emerald-bg/10 text-tone-green-text border-tone-green-solid font-semibold' },
 };
 
 export function FulfillmentQueueWorkspace({ stage }: { stage: FulfillmentStage | 'delivery' }) {
@@ -182,7 +182,7 @@ export function FulfillmentQueueWorkspace({ stage }: { stage: FulfillmentStage |
   ];
 
   return (
-    <div className="flex-1 overflow-y-auto bg-gradient-to-b from-background via-muted/10 to-muted/30 p-4 sm:p-6 lg:p-8">
+    <div className="flex-1 overflow-y-auto bg-page p-4 sm:p-6 lg:p-8">
       <div className="mx-auto max-w-[1600px] space-y-6">
         {/* Workspace Breadcrumbs / Navigation Tabs */}
         <div className="flex flex-wrap items-center justify-between gap-4 border-b border-border/60 pb-4">
@@ -272,15 +272,15 @@ export function FulfillmentQueueWorkspace({ stage }: { stage: FulfillmentStage |
           <div
             className={`flex items-center justify-between rounded-xl border p-4 text-sm font-medium shadow-sm ${
               feedback.type === 'success'
-                ? 'border-emerald-500/30 bg-emerald-500/10 text-emerald-800'
-                : 'border-rose-500/30 bg-rose-500/10 text-rose-800'
+                ? 'border-tone-green-solid/30 bg-tone-emerald-bg/10 text-tone-green-text'
+                : 'border-tone-red-solid/30 bg-tone-rose-bg/10 text-tone-red-text'
             }`}
           >
             <div className="flex items-center gap-2">
               {feedback.type === 'success' ? (
-                <CheckCircle2 className="h-4 w-4 text-emerald-600" />
+                <CheckCircle2 className="h-4 w-4 text-tone-green-text" />
               ) : (
-                <AlertCircle className="h-4 w-4 text-rose-600" />
+                <AlertCircle className="h-4 w-4 text-tone-red-text" />
               )}
               <span>{feedback.text}</span>
             </div>
@@ -453,12 +453,12 @@ export function FulfillmentQueueWorkspace({ stage }: { stage: FulfillmentStage |
                           </TableCell>
                           <TableCell>
                             {openExceptions.length > 0 ? (
-                              <div className="flex items-center gap-1.5 text-xs font-bold text-rose-700">
+                              <div className="flex items-center gap-1.5 text-xs font-bold text-tone-red-text">
                                 <AlertTriangle className="h-4 w-4" />
                                 <span>{openExceptions.length} blocking exception(s)</span>
                               </div>
                             ) : (
-                              <div className="flex items-center gap-1.5 text-xs font-medium text-emerald-700">
+                              <div className="flex items-center gap-1.5 text-xs font-medium text-tone-green-text">
                                 <CheckCircle2 className="h-3.5 w-3.5" />
                                 <span>Clear / Ready</span>
                               </div>
@@ -469,9 +469,9 @@ export function FulfillmentQueueWorkspace({ stage }: { stage: FulfillmentStage |
                               variant="outline"
                               className={
                                 item.status === 'ALLOCATED' || item.status === 'PICKED' || item.status === 'STAGED' || item.status === 'DISPATCHED' || item.status === 'COMPLETED'
-                                  ? 'bg-emerald-500/10 text-emerald-700 border-emerald-300 font-semibold'
+                                  ? 'bg-tone-emerald-bg/10 text-tone-green-text border-tone-green-solid font-semibold'
                                   : item.status === 'PARTIALLY_ALLOCATED' || item.status === 'PARTIALLY_PICKED' || item.status === 'PARTIALLY_DISPATCHED'
-                                  ? 'bg-amber-500/10 text-amber-700 border-amber-300 font-semibold'
+                                  ? 'bg-tone-amber-bg/10 text-tone-amber-text border-tone-amber-solid font-semibold'
                                   : 'font-semibold'
                               }
                             >
@@ -659,16 +659,16 @@ export function FulfillmentQueueWorkspace({ stage }: { stage: FulfillmentStage |
                                           <td className="py-2.5 text-right font-mono font-bold">
                                             {Number(line.orderedQuantity)} {line.uomId || ''}
                                           </td>
-                                          <td className="py-2.5 text-right font-mono text-amber-700 font-semibold">
+                                          <td className="py-2.5 text-right font-mono text-tone-amber-text font-semibold">
                                             {Number(line.allocatedQuantity)}
                                           </td>
-                                          <td className="py-2.5 text-right font-mono text-blue-700 font-semibold">
+                                          <td className="py-2.5 text-right font-mono text-link font-semibold">
                                             {Number(line.pickedQuantity)}
                                           </td>
-                                          <td className="py-2.5 text-right font-mono text-indigo-700 font-semibold">
+                                          <td className="py-2.5 text-right font-mono text-tone-purple-text font-semibold">
                                             {Number(line.packedQuantity)}
                                           </td>
-                                          <td className="py-2.5 text-right font-mono text-emerald-700 font-semibold">
+                                          <td className="py-2.5 text-right font-mono text-tone-green-text font-semibold">
                                             {Number(line.shippedQuantity)}
                                           </td>
                                         </tr>

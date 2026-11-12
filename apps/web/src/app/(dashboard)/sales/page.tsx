@@ -170,7 +170,7 @@ export default function SalesPage() {
 
         {/* Order Register Table */}
         <Card className="rounded-2xl border-border/70 overflow-hidden shadow-none hover:border-border transition-all">
-          <CardHeader className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 p-4 sm:p-5 border-b border-border/60 bg-card/40">
+          <CardHeader className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 p-4 sm:p-5 border-border-strong border-border/60 bg-card/40">
             <div>
               <CardTitle className="text-base font-bold flex items-center gap-2">
                 <span>Sales Order Register</span>

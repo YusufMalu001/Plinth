@@ -441,7 +441,7 @@ export default function AccountsOverviewPage() {
       {/* Production Grade Executive Financial KPI Cards */}
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {/* Total Money in Account */}
-        <Card className="rounded-2xl border border-border/80 bg-card p-5 shadow-sm hover:shadow-md transition-shadow">
+        <Card className="rounded-2xl border border-border/80 bg-card p-5 shadow-sm hover:shadow-none transition-shadow-none">
           <div className="flex items-center justify-between">
             <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
               Total Money in Account
@@ -464,7 +464,7 @@ export default function AccountsOverviewPage() {
         </Card>
 
         {/* Amount to be Taken (Receivables) */}
-        <Card className="rounded-2xl border border-border/80 bg-card p-5 shadow-sm hover:shadow-md transition-shadow">
+        <Card className="rounded-2xl border border-border/80 bg-card p-5 shadow-sm hover:shadow-none transition-shadow-none">
           <div className="flex items-center justify-between">
             <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
               Amount to be Taken
@@ -489,7 +489,7 @@ export default function AccountsOverviewPage() {
         </Card>
 
         {/* Amount to be Given (Payables) */}
-        <Card className="rounded-2xl border border-border/80 bg-card p-5 shadow-sm hover:shadow-md transition-shadow">
+        <Card className="rounded-2xl border border-border/80 bg-card p-5 shadow-sm hover:shadow-none transition-shadow-none">
           <div className="flex items-center justify-between">
             <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
               Amount to be Given
@@ -514,7 +514,7 @@ export default function AccountsOverviewPage() {
         </Card>
 
         {/* Net Financial Position / Working Capital */}
-        <Card className="rounded-2xl border border-border/80 bg-card p-5 shadow-sm hover:shadow-md transition-shadow">
+        <Card className="rounded-2xl border border-border/80 bg-card p-5 shadow-sm hover:shadow-none transition-shadow-none">
           <div className="flex items-center justify-between">
             <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
               Net Financial Position
@@ -595,7 +595,7 @@ export default function AccountsOverviewPage() {
       {/* Production-Grade Master Account Ledger Table Section */}
       <Card className="rounded-2xl border border-border/80 shadow-sm overflow-hidden bg-card">
         {/* Table Controls: Real-Time Filters & Sorting */}
-        <div className="p-4 sm:p-5 border-b border-border/80 bg-muted/20 space-y-4">
+        <div className="p-4 sm:p-5 border-border-strong border-border/80 bg-muted/20 space-y-4">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <h2 className="text-base font-bold text-foreground flex items-center gap-2">
@@ -685,7 +685,7 @@ export default function AccountsOverviewPage() {
         <div className="overflow-x-auto">
           <Table className="w-full text-xs">
             <TableHeader>
-              <TableRow className="bg-muted/40 hover:bg-muted/40 border-b border-border/80 font-bold">
+              <TableRow className="bg-muted/40 hover:bg-muted/40 border-border-strong border-border/80 font-bold">
                 <TableHead className="p-3.5 text-foreground">Date</TableHead>
                 <TableHead className="p-3.5 text-foreground">Voucher / ID</TableHead>
                 <TableHead className="p-3.5 text-foreground">Flow Classification</TableHead>
@@ -703,7 +703,7 @@ export default function AccountsOverviewPage() {
                   <TableRow
                     key={tx.id}
                     onClick={() => setSelectedTx(tx)}
-                    className="hover:bg-muted/50 transition-colors cursor-pointer group border-b border-border/60"
+                    className="hover:bg-muted/50 transition-colors cursor-pointer group border-border-strong border-border/60"
                   >
                     {/* Date */}
                     <TableCell className="p-3.5 font-medium text-muted-foreground whitespace-nowrap">
@@ -712,7 +712,7 @@ export default function AccountsOverviewPage() {
 
                     {/* Voucher ID with interactive micro-chevron */}
                     <TableCell className="p-3.5 font-bold text-foreground">
-                      <div className="flex items-center gap-1.5 font-mono group-hover:text-primary dark:group-hover:text-n-400 transition-colors">
+                      <div className="flex items-center gap-1.5 font-mono group-hover:text-primary transition-colors">
                         <span>{tx.voucherNumber}</span>
                         <ChevronRight className="h-3.5 w-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all shrink-0 text-primary" />
                       </div>
@@ -837,12 +837,12 @@ export default function AccountsOverviewPage() {
           onClick={() => setSelectedTx(null)}
         >
           <div
-            className="h-full w-full max-w-md bg-card border-l border-border/80 shadow-2xl p-6 overflow-y-auto space-y-6 flex flex-col justify-between"
+            className="h-full w-full max-w-md bg-card border-l border-border/80 shadow-modal p-6 overflow-y-auto space-y-6 flex flex-col justify-between"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="space-y-6">
               {/* Drawer Header */}
-              <div className="flex items-center justify-between border-b border-border/80 pb-4">
+              <div className="flex items-center justify-between border-border-strong border-border/80 pb-4">
                 <div>
                   <span className="text-[10px] font-bold uppercase tracking-wider text-primary">
                     Transaction Audit Inspector
@@ -885,34 +885,34 @@ export default function AccountsOverviewPage() {
 
               {/* Detailed Audit Metadata */}
               <div className="space-y-3 text-xs">
-                <div className="flex justify-between py-1.5 border-b border-border/60">
+                <div className="flex justify-between py-1.5 border-border-strong border-border/60">
                   <span className="text-muted-foreground">Date:</span>
                   <span className="font-medium text-foreground">{formatDate(selectedTx.date)}</span>
                 </div>
 
-                <div className="flex justify-between py-1.5 border-b border-border/60">
+                <div className="flex justify-between py-1.5 border-border-strong border-border/60">
                   <span className="text-muted-foreground">Party:</span>
                   <span className="font-semibold text-foreground">{selectedTx.partyName}</span>
                 </div>
 
-                <div className="flex justify-between py-1.5 border-b border-border/60">
+                <div className="flex justify-between py-1.5 border-border-strong border-border/60">
                   <span className="text-muted-foreground">Classification:</span>
                   <span className="font-semibold text-foreground">{selectedTx.flowType}</span>
                 </div>
 
-                <div className="flex justify-between py-1.5 border-b border-border/60">
+                <div className="flex justify-between py-1.5 border-border-strong border-border/60">
                   <span className="text-muted-foreground">Proof / Reference:</span>
                   <span className="font-mono font-medium text-foreground break-all">{selectedTx.referenceProof}</span>
                 </div>
 
                 {selectedTx.paymentMode && (
-                  <div className="flex justify-between py-1.5 border-b border-border/60">
+                  <div className="flex justify-between py-1.5 border-border-strong border-border/60">
                     <span className="text-muted-foreground">Payment Mode:</span>
                     <span className="font-medium text-foreground">{selectedTx.paymentMode}</span>
                   </div>
                 )}
 
-                <div className="flex justify-between py-1.5 border-b border-border/60">
+                <div className="flex justify-between py-1.5 border-border-strong border-border/60">
                   <span className="text-muted-foreground">Accounting Context:</span>
                   <span className="font-medium text-foreground">Plinth (Master Book)</span>
                 </div>
@@ -933,7 +933,7 @@ export default function AccountsOverviewPage() {
                   navigateToSource(selectedTx);
                   setSelectedTx(null);
                 }}
-                className="w-full bg-n-600 hover:bg-n-700 text-white font-semibold gap-1.5 rounded-xl text-xs py-2.5 shadow-sm"
+                className="w-full bg-n-600 hover:bg-n-700 text-inverse font-semibold gap-1.5 rounded-xl text-xs py-2.5 shadow-sm"
               >
                 <ExternalLink className="h-4 w-4" />
                 View Full Document & Records

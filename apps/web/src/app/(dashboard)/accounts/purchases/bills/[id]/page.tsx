@@ -161,7 +161,7 @@ export default function SupplierBillDetailPage() {
   if (billQuery.isLoading) {
     return (
       <main className="flex min-h-[60vh] flex-col items-center justify-center p-8">
-        <div className="h-8 w-8 animate-spin rounded-full border-2 border-n-600 border-t-transparent mb-3" />
+        <div className="h-8 w-8 animate-spin rounded-full border-border border-n-600 border-t-transparent mb-3" />
         <p className="text-sm font-semibold text-muted-foreground">Loading supplier bill…</p>
       </main>
     );
@@ -170,7 +170,7 @@ export default function SupplierBillDetailPage() {
   if (billQuery.isError || !bill) {
     return (
       <main className="space-y-4 p-5 md:p-8 max-w-2xl mx-auto mt-12 text-center">
-        <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-rose-50 text-rose-600">
+        <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-tone-red-solid text-tone-red-text">
           <AlertCircle className="h-6 w-6" />
         </div>
         <h2 className="text-lg font-bold text-foreground">Could not load this supplier bill</h2>
@@ -340,7 +340,7 @@ export default function SupplierBillDetailPage() {
             <Button
               size="sm"
               disabled={pending}
-              className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold gap-1.5 shadow-sm"
+              className="bg-action hover:bg-[color:var(--action-primary-bg-hover)] text-inverse font-semibold gap-1.5 shadow-sm"
               onClick={() =>
                 void runAction(
                   () => accountsApi.approveApBill(bill.id, bill.version),
@@ -357,7 +357,7 @@ export default function SupplierBillDetailPage() {
             <Button
               size="sm"
               disabled={pending}
-              className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold gap-1.5 shadow-sm"
+              className="bg-tone-green-solid hover:bg-[color:var(--tone-green-text)] text-inverse font-semibold gap-1.5 shadow-sm"
               onClick={() =>
                 void runAction(
                   () => accountsApi.approveApBill(bill.id, bill.version),
@@ -386,7 +386,7 @@ export default function SupplierBillDetailPage() {
               size="sm"
               variant="outline"
               onClick={() => setIsDebitCreditNoteModalOpen(true)}
-              className="gap-1.5 text-xs font-semibold shadow-sm border-n-200 hover:bg-muted text-foreground dark:text-n-300 dark:border-n-900"
+              className="gap-1.5 text-xs font-semibold shadow-sm border-n-200 hover:bg-muted text-foreground"
             >
               <FileText className="h-4 w-4" /> Credit / Debit Note
             </Button>
@@ -419,24 +419,24 @@ export default function SupplierBillDetailPage() {
 
       {/* Admin Review Notification Banner if SUBMITTED */}
       {bill.status === 'SUBMITTED' && (
-        <div className="rounded-3xl border border-amber-300 bg-amber-50/80 p-5 shadow-sm dark:border-amber-900/60 dark:bg-amber-950/30">
+        <div className="rounded-3xl border border-tone-amber-solid/25 bg-tone-amber-bg p-5 shadow-sm">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-start gap-3">
-              <div className="rounded-2xl bg-amber-100 p-2.5 text-amber-700 dark:bg-amber-900/50 dark:text-amber-300">
+              <div className="rounded-2xl bg-tone-amber-solid p-2.5 text-tone-amber-text">
                 <AlertTriangle className="h-6 w-6" />
               </div>
               <div>
-                <h3 className="text-base font-bold text-amber-950 dark:text-amber-200">
+                <h3 className="text-base font-bold text-tone-amber-text">
                   Bill Changes Awaiting Admin Approval
                 </h3>
-                <p className="mt-0.5 text-xs text-amber-800 dark:text-amber-300/90 leading-relaxed max-w-2xl">
+                <p className="mt-0.5 text-xs text-tone-amber-text leading-relaxed max-w-2xl">
                   {bill.submittedByUser
                     ? `Accounts user ${bill.submittedByUser.name || bill.submittedByUser.email} edited the details of this bill.`
                     : 'Accounts personnel updated this bill.'}{' '}
                   An Administrator must review and approve these modifications before payment disbursement can proceed.
                 </p>
                 {bill.resolutionNote && (
-                  <p className="mt-2 text-xs font-medium italic text-amber-900 dark:text-amber-200">
+                  <p className="mt-2 text-xs font-medium italic text-tone-amber-text">
                     Accounts note: &ldquo;{bill.resolutionNote}&rdquo;
                   </p>
                 )}
@@ -447,7 +447,7 @@ export default function SupplierBillDetailPage() {
               <Button
                 size="sm"
                 disabled={pending}
-                className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold gap-1.5 shadow-md"
+                className="bg-tone-green-solid hover:bg-tone-green-solid text-inverse font-semibold gap-1.5 shadow-none"
                 onClick={() =>
                   void runAction(
                     () => accountsApi.approveApBill(bill.id, bill.version),
@@ -463,7 +463,7 @@ export default function SupplierBillDetailPage() {
       )}
 
       {/* Bill Header Hero Banner */}
-      <section className="rounded-3xl border border-border bg-gradient-to-br from-card via-card to-n-500/5 p-6 shadow-sm md:p-8">
+      <section className="rounded-3xl border border-border bg-surface p-6 shadow-sm md:p-8">
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div>
             <div className="flex items-center gap-2">
@@ -473,7 +473,7 @@ export default function SupplierBillDetailPage() {
               <span className="rounded-full bg-muted px-2.5 py-0.5 text-[10px] font-bold font-mono">
                 {bill.kind}
               </span>
-              <span className="rounded-full bg-n-50 px-2 py-0.5 text-[10px] font-bold text-foreground dark:bg-n-950/50 dark:text-n-300">
+              <span className="rounded-full bg-n-50 px-2 py-0.5 text-[10px] font-bold text-foreground">
                 Direct GRN Conversion
               </span>
             </div>
@@ -514,7 +514,7 @@ export default function SupplierBillDetailPage() {
           </span>
 
           {primaryPo ? (
-            <span className="inline-flex items-center gap-1.5 rounded-xl border border-border bg-background px-3 py-1 text-xs font-mono font-medium shadow-2xl">
+            <span className="inline-flex items-center gap-1.5 rounded-xl border border-border bg-background px-3 py-1 text-xs font-mono font-medium shadow-modal">
               <FileText className="h-3.5 w-3.5 text-primary" />
               <span>PO:</span>
               <span className="font-bold text-foreground">{primaryPo}</span>
@@ -526,9 +526,9 @@ export default function SupplierBillDetailPage() {
           {primaryGrn ? (
             <Link
               href={`/receiving/goods-receipts/${bill.relatedGrns?.[0]?.id || ''}`}
-              className="inline-flex items-center gap-1.5 rounded-xl border border-border bg-background px-3 py-1 text-xs font-mono font-medium shadow-2xl hover:border-primary hover:text-primary transition"
+              className="inline-flex items-center gap-1.5 rounded-xl border border-border bg-background px-3 py-1 text-xs font-mono font-medium shadow-modal hover:border-primary hover:text-primary transition"
             >
-              <Receipt className="h-3.5 w-3.5 text-emerald-600" />
+              <Receipt className="h-3.5 w-3.5 text-tone-green-text" />
               <span>GRN:</span>
               <span className="font-bold text-foreground">{primaryGrn}</span>
               <ExternalLink className="h-3 w-3 text-muted-foreground" />
@@ -538,12 +538,12 @@ export default function SupplierBillDetailPage() {
           )}
 
           {bill.debitNotes && bill.debitNotes.length > 0 && (
-            <span className="inline-flex items-center gap-1.5 rounded-xl border border-rose-300 bg-rose-50 px-3 py-1 text-xs font-mono font-bold text-rose-800 dark:border-rose-900/40 dark:bg-rose-950/30 dark:text-rose-300">
-              <Tag className="h-3.5 w-3.5 text-rose-600" />
+            <span className="inline-flex items-center gap-1.5 rounded-xl border border-tone-red-solid/25 bg-tone-red-solid px-3 py-1 text-xs font-mono font-bold text-tone-red-text">
+              <Tag className="h-3.5 w-3.5 text-tone-red-text" />
               <span>Debit Notes ({bill.debitNotes.length}):</span>
               <span>{bill.debitNotes.map((d) => d.debitNoteNumber).join(', ')}</span>
               <span>Claim {formatCurrency(debitNoteClaimTotal)}</span>
-              {pendingDebitNoteClaimTotal > 0 && <span className="text-amber-700">· {formatCurrency(pendingDebitNoteClaimTotal)} awaiting approval</span>}
+              {pendingDebitNoteClaimTotal > 0 && <span className="text-tone-amber-text">· {formatCurrency(pendingDebitNoteClaimTotal)} awaiting approval</span>}
               {debitNoteDeduction > 0 && <span>· {formatCurrency(debitNoteDeduction)} offset</span>}
             </span>
           )}
@@ -561,7 +561,7 @@ export default function SupplierBillDetailPage() {
 
           <div className="rounded-2xl border border-border/70 bg-card p-4 shadow-sm">
             <span className="text-[10px] uppercase font-bold tracking-wider text-muted-foreground">Debit Notes Offset</span>
-            <p className="mt-1 text-xl font-bold font-mono text-rose-600 dark:text-rose-400">
+            <p className="mt-1 text-xl font-bold font-mono text-tone-red-text">
               {debitNoteDeduction > 0 ? `- ${formatCurrency(debitNoteDeduction)}` : '₹0.00'}
             </p>
             <p className="mt-0.5 text-[11px] text-muted-foreground">
@@ -571,7 +571,7 @@ export default function SupplierBillDetailPage() {
 
           <div className="rounded-2xl border border-border/70 bg-card p-4 shadow-sm">
             <span className="text-[10px] uppercase font-bold tracking-wider text-muted-foreground">Settled / Paid</span>
-            <p className="mt-1 text-xl font-bold font-mono text-emerald-600 dark:text-emerald-400">
+            <p className="mt-1 text-xl font-bold font-mono text-tone-green-text">
               {formatCurrency(paid)}
             </p>
             <p className="mt-0.5 text-[11px] text-muted-foreground">
@@ -583,7 +583,7 @@ export default function SupplierBillDetailPage() {
             className={`rounded-2xl border p-4 shadow-sm ${
               balance > 0
                 ? 'border-border bg-n-500/5'
-                : 'border-emerald-500/30 bg-emerald-500/5'
+                : 'border-tone-green-solid/25 bg-tone-green-bg'
             }`}
           >
             <div className="flex items-center justify-between">
@@ -591,7 +591,7 @@ export default function SupplierBillDetailPage() {
               {balance > 0 && isApprovedOrPosted && (
                 <button
                   onClick={() => setIsPaymentModalOpen(true)}
-                  className="text-[10px] font-bold text-foreground dark:text-n-300 underline hover:opacity-80"
+                  className="text-[10px] font-bold text-foreground underline hover:opacity-80"
                 >
                   Pay Now
                 </button>
@@ -599,7 +599,7 @@ export default function SupplierBillDetailPage() {
             </div>
             <p
               className={`mt-1 text-xl font-bold font-mono ${
-                balance > 0 ? 'text-foreground dark:text-n-300' : 'text-emerald-600 dark:text-emerald-400'
+                balance > 0 ? 'text-foreground' : 'text-tone-green-text'
               }`}
             >
               {formatCurrency(balance)}
@@ -618,7 +618,7 @@ export default function SupplierBillDetailPage() {
           aria-labelledby="bill-preview-title"
           className={`${
             viewMode === 'split' ? 'lg:col-span-7' : 'w-full'
-          } min-w-0 rounded-3xl border border-border bg-slate-100/80 p-4 shadow-sm md:p-6 dark:bg-card print:border-0 print:bg-white print:p-0 print:shadow-none`}
+          } min-w-0 rounded-3xl border border-border bg-muted/80 p-4 shadow-sm md:p-6 print:border-accent print:bg-surface print:p-0 print:shadow-none`}
         >
           <div className="mb-4 flex flex-wrap items-center justify-between gap-3 print:hidden">
             <div>
@@ -639,7 +639,7 @@ export default function SupplierBillDetailPage() {
                 size="sm"
                 variant="outline"
                 onClick={() => setViewMode(viewMode === 'split' ? 'full' : 'split')}
-                className="gap-1.5 text-xs font-semibold shadow-sm text-foreground dark:text-n-300 border-n-200 dark:border-n-900/50 hover:bg-muted dark:hover:bg-n-950/30"
+                className="gap-1.5 text-xs font-semibold shadow-sm text-foreground border-n-200 hover:bg-muted"
               >
                 {viewMode === 'split' ? (
                   <>
@@ -659,48 +659,48 @@ export default function SupplierBillDetailPage() {
           <div
             id="supplier-bill-document"
             ref={printRef}
-            className={`mx-auto rounded-2xl border border-slate-200 bg-white p-5 text-slate-900 shadow-md md:p-7 dark:bg-card dark:text-foreground dark:border-border print:max-w-none print:rounded-none print:border-0 print:p-0 print:shadow-none ${
+            className={`mx-auto rounded-2xl border border-border bg-surface p-5 text-ink shadow-none md:p-7 print:max-w-none print:rounded-none print:border-accent print:p-0 print:shadow-none ${
               viewMode === 'full' ? 'max-w-[1040px]' : 'w-full'
             }`}
           >
             {/* Document Header */}
-            <div className="flex flex-wrap items-start justify-between gap-4 border-b-2 border-border pb-5">
+            <div className="flex flex-wrap items-start justify-between gap-4 border-border-strong-2 border-border pb-5">
               <div className="flex items-center gap-4">
                 <span className="text-2xl font-black tracking-tight text-ink uppercase">Plinth</span>
-                <div className="border-l border-slate-200 pl-4 dark:border-border">
+                <div className="border-l border-border pl-4">
                   <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-foreground">Accounts Payable</p>
                   <h2 className="mt-0.5 text-xl md:text-2xl font-bold">Supplier Bill</h2>
-                  <p className="mt-0.5 text-xs text-slate-500 dark:text-muted-foreground">
+                  <p className="mt-0.5 text-xs text-ink-muted">
                     Plinth · INR (₹)
                   </p>
                 </div>
               </div>
               <div className="text-right text-xs">
-                <p className="text-slate-500 dark:text-muted-foreground">Supplier Invoice Reference</p>
+                <p className="text-ink-muted">Supplier Invoice Reference</p>
                 <p className="font-mono font-bold text-base">{bill.supplierInvoiceNumber}</p>
-                <p className="mt-1.5 text-slate-500 dark:text-muted-foreground">Bill Status</p>
-                <p className="font-semibold text-foreground dark:text-n-300">
+                <p className="mt-1.5 text-ink-muted">Bill Status</p>
+                <p className="font-semibold text-foreground">
                   {billStatusLabel(bill.status)}
                 </p>
               </div>
             </div>
 
             {/* Entity & Vendor Profile Cards */}
-            <div className="grid gap-4 border-b border-slate-200 py-4 sm:grid-cols-2 dark:border-border">
+            <div className="grid gap-4 border-border-strong border-border py-4 sm:grid-cols-2">
               {/* Supplier Info */}
-              <div className="space-y-1.5 rounded-xl bg-slate-50/80 p-3.5 text-xs dark:bg-muted/20">
-                <p className="font-bold uppercase tracking-wider text-slate-400 text-[10px]">Supplier / Vendor</p>
-                <p className="text-sm font-bold text-slate-900 dark:text-foreground">
+              <div className="space-y-1.5 rounded-xl bg-muted/80 p-3.5 text-xs">
+                <p className="font-bold uppercase tracking-wider text-ink-placeholder text-[10px]">Supplier / Vendor</p>
+                <p className="text-sm font-bold text-ink">
                   {bill.vendor?.legalName || bill.vendorNameSnapshot}
                 </p>
                 {bill.vendor?.code && (
-                  <p className="text-slate-500 dark:text-muted-foreground">Vendor Code: <span className="font-mono font-medium">{bill.vendor.code}</span></p>
+                  <p className="text-ink-muted">Vendor Code: <span className="font-mono font-medium">{bill.vendor.code}</span></p>
                 )}
-                <p className="text-slate-600 dark:text-muted-foreground">
+                <p className="text-ink-secondary">
                   GSTIN: <span className="font-mono font-semibold">{bill.vendorGstinSnapshot || bill.vendor?.taxNumber || 'Unregistered'}</span>
                 </p>
                 {bill.vendor?.address && (
-                  <p className="text-slate-600 dark:text-muted-foreground text-[11px] leading-relaxed">
+                  <p className="text-ink-secondary text-[11px] leading-relaxed">
                     {typeof bill.vendor.address === 'string'
                       ? bill.vendor.address
                       : [bill.vendor.address.street, bill.vendor.address.city, bill.vendor.address.state, bill.vendor.address.postalCode]
@@ -709,36 +709,36 @@ export default function SupplierBillDetailPage() {
                   </p>
                 )}
                 {(bill.vendor?.contactEmail || bill.vendor?.contactPhone) && (
-                  <p className="text-slate-500 dark:text-muted-foreground text-[11px]">
+                  <p className="text-ink-muted text-[11px]">
                     Contact: {[bill.vendor.contactEmail, bill.vendor.contactPhone].filter(Boolean).join(' · ')}
                   </p>
                 )}
               </div>
 
               {/* Billed Entity & Date Info */}
-              <div className="space-y-1.5 rounded-xl bg-slate-50/80 p-3.5 text-xs dark:bg-muted/20">
-                <p className="font-bold uppercase tracking-wider text-slate-400 text-[10px]">Billed Entity (Buyer)</p>
-                <p className="text-sm font-bold text-slate-900 dark:text-foreground">
+              <div className="space-y-1.5 rounded-xl bg-muted/80 p-3.5 text-xs">
+                <p className="font-bold uppercase tracking-wider text-ink-placeholder text-[10px]">Billed Entity (Buyer)</p>
+                <p className="text-sm font-bold text-ink">
                   {bill.entity?.legalName || entities.data?.find((e) => e.id === bill.entityId)?.legalName || 'Plinth'}
                 </p>
-                <p className="text-slate-600 dark:text-muted-foreground">
+                <p className="text-ink-secondary">
                   GSTIN: <span className="font-mono font-semibold">{bill.entity?.gstin || entities.data?.find((e) => e.id === bill.entityId)?.gstin || 'Main'}</span>
                 </p>
-                <div className="grid grid-cols-2 gap-2 pt-2 border-t border-slate-200/80 dark:border-border/60">
+                <div className="grid grid-cols-2 gap-2 pt-2 border-t border-border">
                   <div>
-                    <span className="text-slate-400 text-[10px] uppercase font-bold">Invoice Date</span>
+                    <span className="text-ink-placeholder text-[10px] uppercase font-bold">Invoice Date</span>
                     <p className="font-semibold text-foreground">{formatDate(bill.invoiceDate)}</p>
                   </div>
                   <div>
-                    <span className="text-slate-400 text-[10px] uppercase font-bold">Payment Due Date</span>
+                    <span className="text-ink-placeholder text-[10px] uppercase font-bold">Payment Due Date</span>
                     <p className="font-semibold text-foreground">{formatDate(bill.dueDate)}</p>
                   </div>
                   <div>
-                    <span className="text-slate-400 text-[10px] uppercase font-bold">Classification</span>
+                    <span className="text-ink-placeholder text-[10px] uppercase font-bold">Classification</span>
                     <p className="font-semibold text-foreground">{bill.kind}</p>
                   </div>
                   <div>
-                    <span className="text-slate-400 text-[10px] uppercase font-bold">Payment Terms</span>
+                    <span className="text-ink-placeholder text-[10px] uppercase font-bold">Payment Terms</span>
                     <p className="font-semibold text-foreground">{bill.vendor?.paymentTerms || 'Net 30'}</p>
                   </div>
                 </div>
@@ -746,18 +746,18 @@ export default function SupplierBillDetailPage() {
             </div>
 
             {/* Document References Block: PO, GRN, Debit Notes */}
-            <div className="border-b border-slate-200 py-3 px-3.5 bg-n-50/40 rounded-xl my-3.5 text-xs flex flex-wrap items-center justify-between gap-4 dark:bg-muted/10 dark:border-border">
+            <div className="border-border-strong border-border py-3 px-3.5 bg-n-50/40 rounded-xl my-3.5 text-xs flex flex-wrap items-center justify-between gap-4">
               <div className="flex flex-wrap items-center gap-5">
                 <div>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-muted-foreground">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-ink-muted">
                     Purchase Order
                   </span>
                   <p className="font-mono font-bold text-foreground">
                     {primaryPo || 'Direct PO Intake'}
                   </p>
                 </div>
-                <div className="border-l border-slate-200 pl-4 dark:border-border">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-muted-foreground">
+                <div className="border-l border-border pl-4">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-ink-muted">
                     Goods Receipt (GRN)
                   </span>
                   <p className="font-mono font-bold text-foreground">
@@ -765,18 +765,18 @@ export default function SupplierBillDetailPage() {
                   </p>
                 </div>
                 {bill.debitNotes && bill.debitNotes.length > 0 && (
-                  <div className="border-l border-slate-200 pl-4 dark:border-border">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-rose-600 dark:text-rose-400">
+                  <div className="border-l border-border pl-4">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-tone-red-text">
                       Debit Note Claims
                     </span>
-                    <p className="font-mono font-bold text-rose-700 dark:text-rose-300">
+                    <p className="font-mono font-bold text-tone-red-text">
                       {bill.debitNotes.map((d) => d.debitNoteNumber).join(', ')} · Claim {formatCurrency(debitNoteClaimTotal)} · Offset {formatCurrency(debitNoteDeduction)}
                     </p>
                   </div>
                 )}
               </div>
               <div className="text-right">
-                <span className="text-[10px] uppercase font-bold tracking-wider text-slate-500 dark:text-muted-foreground">
+                <span className="text-[10px] uppercase font-bold tracking-wider text-ink-muted">
                   Audit Version
                 </span>
                 <p className="font-mono font-semibold text-foreground">v{bill.version}</p>
@@ -784,9 +784,9 @@ export default function SupplierBillDetailPage() {
             </div>
 
             {/* Line Items Table */}
-            <div className="mt-4 overflow-x-auto rounded-xl border border-slate-200 dark:border-border print:overflow-visible">
+            <div className="mt-4 overflow-x-auto rounded-xl border border-border print:overflow-visible">
               <table className="w-full min-w-[680px] text-left text-xs print:min-w-0 print:text-[9px]">
-                <thead className="bg-n-800 text-white print:bg-slate-100 print:text-slate-900">
+                <thead className="bg-n-800 text-inverse print:bg-muted print:text-ink">
                   <tr>
                     <th className="px-2.5 py-2 font-semibold w-7">#</th>
                     <th className="px-2.5 py-2 font-semibold">Item &amp; Description</th>
@@ -800,7 +800,7 @@ export default function SupplierBillDetailPage() {
                     <th className="px-2.5 py-2 font-semibold text-right">Line Total (₹)</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-slate-200 dark:divide-border">
+                <tbody className="divide-y divide-border">
                   {bill.lines.map((line) => {
                     const lineTax =
                       Number(line.cgstAmount || 0) + Number(line.sgstAmount || 0) + Number(line.igstAmount || 0);
@@ -810,12 +810,12 @@ export default function SupplierBillDetailPage() {
                     const itemCode = line.product?.sku || line.material?.code;
 
                     return (
-                      <tr key={line.id} className="hover:bg-slate-50/50 dark:hover:bg-muted/10 transition">
-                        <td className="px-2.5 py-2 font-mono text-slate-500">{line.lineNumber}</td>
+                      <tr key={line.id} className="hover:bg-hover transition">
+                        <td className="px-2.5 py-2 font-mono text-ink-muted">{line.lineNumber}</td>
                         <td className="px-2.5 py-2">
                           <p className="font-semibold text-foreground">{line.description}</p>
                           {itemCode && (
-                            <p className="font-mono text-[10px] text-slate-500 dark:text-muted-foreground">
+                            <p className="font-mono text-[10px] text-ink-muted">
                               SKU: {itemCode}
                             </p>
                           )}
@@ -823,7 +823,7 @@ export default function SupplierBillDetailPage() {
                         <td className="px-2.5 py-2 font-mono">{line.hsnSacCode || '—'}</td>
                         <td className="px-2.5 py-2">
                           <div className="font-mono text-xs text-foreground">{poNumber || '—'}</div>
-                          <div className="font-mono text-slate-500 text-[10px] dark:text-muted-foreground">
+                          <div className="font-mono text-ink-muted text-[10px]">
                             {grnNumber || '—'}
                           </div>
                         </td>
@@ -833,7 +833,7 @@ export default function SupplierBillDetailPage() {
                         <td className="px-2.5 py-2 font-mono text-right">{formatCurrency(line.unitPrice)}</td>
                         <td className="px-2.5 py-2 text-center font-mono">{line.gstRate}%</td>
                         <td className="px-2.5 py-2 font-mono text-right">{formatCurrency(line.taxableAmount)}</td>
-                        <td className="px-2.5 py-2 font-mono text-right text-slate-600 dark:text-muted-foreground">
+                        <td className="px-2.5 py-2 font-mono text-right text-ink-secondary">
                           {formatCurrency(lineTax)}
                         </td>
                         <td className="px-2.5 py-2 font-mono font-bold text-right text-foreground">
@@ -848,49 +848,49 @@ export default function SupplierBillDetailPage() {
 
             {/* Subtotal & Deductions Summary */}
             <div className="mt-4 grid gap-4 sm:grid-cols-[1fr_290px]">
-              <div className="rounded-xl bg-slate-50 p-3.5 text-xs dark:bg-muted/20 space-y-1.5">
+              <div className="rounded-xl bg-muted p-3.5 text-xs space-y-1.5">
                 <p className="font-bold text-foreground">Accounts Control &amp; Settlement Policy</p>
-                <p className="text-slate-600 dark:text-muted-foreground leading-relaxed text-[11px]">
+                <p className="text-ink-secondary leading-relaxed text-[11px]">
                   This bill was generated directly from verified warehouse receipt intake. All unit prices adhere to the
                   authorized Purchase Order terms. Any damaged, short, or rejected items are offset via formal Debit Notes.
                 </p>
-                <div className="pt-2 border-t border-slate-200 dark:border-border/60 text-[11px] text-slate-500 dark:text-muted-foreground space-y-1">
+                <div className="pt-2 border-t border-border text-[11px] text-ink-muted space-y-1">
                   <p>• Created from GRN: <span className="font-mono font-medium text-foreground">{primaryGrn || 'N/A'}</span></p>
                   {bill.createdByUser && (
                     <p>• Generated by: <span className="font-medium text-foreground">{bill.createdByUser.name || bill.createdByUser.email}</span></p>
                   )}
                   {bill.approvedByUser && (
-                    <p>• Approved by Admin: <span className="font-medium text-emerald-700 dark:text-emerald-400 font-semibold">{bill.approvedByUser.name || bill.approvedByUser.email}</span></p>
+                    <p>• Approved by Admin: <span className="font-medium text-tone-green-text font-semibold">{bill.approvedByUser.name || bill.approvedByUser.email}</span></p>
                   )}
                 </div>
               </div>
 
-              <div className="space-y-1.5 rounded-xl border border-slate-200 p-3.5 text-xs dark:border-border bg-slate-50/50 dark:bg-muted/10">
+              <div className="space-y-1.5 rounded-xl border border-border p-3.5 text-xs bg-muted/50">
                 <Amount label="Taxable Subtotal" value={formatCurrency(totalTaxable)} />
                 {totalCgst > 0 && <Amount label="CGST" value={formatCurrency(totalCgst)} />}
                 {totalSgst > 0 && <Amount label="SGST" value={formatCurrency(totalSgst)} />}
                 {totalIgst > 0 && <Amount label="IGST" value={formatCurrency(totalIgst)} />}
                 <Amount label="Total Input GST" value={formatCurrency(totalTax)} />
 
-                <div className="border-t border-slate-200 pt-1.5 dark:border-border font-bold">
+                <div className="border-t border-border pt-1.5 font-bold">
                   <Amount label="Gross Invoiced Total" value={formatCurrency(grossTotal)} strong />
                 </div>
 
                 {debitNoteDeduction > 0 && (
-                  <div className="text-rose-600 dark:text-rose-400">
+                  <div className="text-tone-red-text">
                     <Amount label="Less: Debit Notes Deduction" value={`- ${formatCurrency(debitNoteDeduction)}`} />
                   </div>
                 )}
 
-                <div className="border-t-2 border-slate-300 pt-1.5 dark:border-border font-bold text-sm">
+                <div className="border-t-2 border-border-strong pt-1.5 font-bold text-sm">
                   <Amount label="Net Payable to Vendor" value={formatCurrency(netPayable)} strong />
                 </div>
 
-                <div className="border-t border-slate-200 pt-1.5 dark:border-border text-emerald-600 dark:text-emerald-400">
+                <div className="border-t border-border pt-1.5 text-tone-green-text">
                   <Amount label="Total Settled / Paid" value={formatCurrency(paid)} />
                 </div>
 
-                <div className="border-t border-slate-200 pt-1.5 dark:border-border font-bold text-sm">
+                <div className="border-t border-border pt-1.5 font-bold text-sm">
                   <Amount label="Net Balance Due" value={formatCurrency(balance)} strong />
                 </div>
               </div>
@@ -929,7 +929,7 @@ export default function SupplierBillDetailPage() {
                 <ShoppingBag className="h-3.5 w-3.5 text-primary" />
                 <span className="text-[11px]">PO</span>
                 {linkedPos.length > 0 && (
-                  <span className="rounded-full bg-muted px-1.5 py-0.2 text-[9px] font-mono text-foreground dark:text-n-300">
+                  <span className="rounded-full bg-muted px-1.5 py-0.2 text-[9px] font-mono text-foreground">
                     {linkedPos.length}
                   </span>
                 )}
@@ -944,10 +944,10 @@ export default function SupplierBillDetailPage() {
                     : 'text-muted-foreground hover:text-foreground'
                 }`}
               >
-                <PackageCheck className="h-3.5 w-3.5 text-emerald-600" />
+                <PackageCheck className="h-3.5 w-3.5 text-tone-green-text" />
                 <span className="text-[11px]">GRN</span>
                 {linkedGrns.length > 0 && (
-                  <span className="rounded-full bg-emerald-500/10 px-1.5 py-0.2 text-[9px] font-mono text-emerald-700 dark:text-emerald-300">
+                  <span className="rounded-full bg-tone-green-bg px-1.5 py-0.2 text-[9px] font-mono text-tone-green-text">
                     {linkedGrns.length}
                   </span>
                 )}
@@ -962,10 +962,10 @@ export default function SupplierBillDetailPage() {
                     : 'text-muted-foreground hover:text-foreground'
                 }`}
               >
-                <Tag className="h-3.5 w-3.5 text-rose-600" />
+                <Tag className="h-3.5 w-3.5 text-tone-red-text" />
                 <span className="text-[11px]">Debit Note</span>
                 {bill.debitNotes && bill.debitNotes.length > 0 && (
-                  <span className="rounded-full bg-rose-500/10 px-1.5 py-0.2 text-[9px] font-mono font-bold text-rose-700 dark:text-rose-300">
+                  <span className="rounded-full bg-tone-red-bg px-1.5 py-0.2 text-[9px] font-mono font-bold text-tone-red-text">
                     {bill.debitNotes.length}
                   </span>
                 )}
@@ -983,7 +983,7 @@ export default function SupplierBillDetailPage() {
                 <CreditCard className="h-3.5 w-3.5 text-foreground" />
                 <span className="text-[11px]">Payments</span>
                 {bill.payments && bill.payments.length > 0 && (
-                  <span className="rounded-full bg-muted px-1.5 py-0.2 text-[9px] font-mono text-foreground dark:text-n-300">
+                  <span className="rounded-full bg-muted px-1.5 py-0.2 text-[9px] font-mono text-foreground">
                     {bill.payments.length}
                   </span>
                 )}
@@ -997,13 +997,13 @@ export default function SupplierBillDetailPage() {
               {linkedPos.length > 0 ? (
                 linkedPos.map((po) => (
                   <div key={po.poNumber} className="rounded-3xl border border-border bg-card p-5 shadow-sm space-y-4">
-                    <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border pb-3">
+                    <div className="flex flex-wrap items-center justify-between gap-3 border-border-strong border-border pb-3">
                       <div>
                         <div className="flex items-center gap-2">
                           <ShoppingBag className="h-4 w-4 text-primary" />
                           <span className="font-mono font-bold text-base text-foreground">{po.poNumber}</span>
                           {po.status && (
-                            <span className="rounded-full bg-n-100 dark:bg-n-950/50 text-foreground dark:text-n-300 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider">
+                            <span className="rounded-full bg-n-100 text-foreground px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider">
                               {po.status}
                             </span>
                           )}
@@ -1046,7 +1046,7 @@ export default function SupplierBillDetailPage() {
                       <p className="text-xs font-bold text-foreground">Billed Lines Under This PO</p>
                       <div className="overflow-x-auto rounded-2xl border border-border">
                         <table className="w-full text-left text-xs">
-                          <thead className="bg-muted/40 border-b border-border text-muted-foreground">
+                          <thead className="bg-muted/40 border-border-strong border-border text-muted-foreground">
                             <tr>
                               <th className="p-2.5 font-semibold">Item</th>
                               <th className="p-2.5 font-semibold text-right">Qty</th>
@@ -1091,13 +1091,13 @@ export default function SupplierBillDetailPage() {
               {linkedGrns.length > 0 ? (
                 linkedGrns.map((grn) => (
                   <div key={grn.grnNumber} className="rounded-3xl border border-border bg-card p-5 shadow-sm space-y-4">
-                    <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border pb-3">
+                    <div className="flex flex-wrap items-center justify-between gap-3 border-border-strong border-border pb-3">
                       <div>
                         <div className="flex items-center gap-2">
-                          <PackageCheck className="h-4 w-4 text-emerald-600" />
+                          <PackageCheck className="h-4 w-4 text-tone-green-text" />
                           <span className="font-mono font-bold text-base text-foreground">{grn.grnNumber}</span>
                           {grn.status && (
-                            <span className="rounded-full bg-emerald-100 dark:bg-emerald-950/50 text-emerald-800 dark:text-emerald-300 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider">
+                            <span className="rounded-full bg-tone-green-solid text-tone-green-text px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider">
                               {grn.status}
                             </span>
                           )}
@@ -1123,7 +1123,7 @@ export default function SupplierBillDetailPage() {
                       </div>
                       <div>
                         <span className="text-[10px] font-bold uppercase text-muted-foreground">Warehouse Action</span>
-                        <p className="font-medium text-emerald-700 dark:text-emerald-400 font-semibold">Goods Inspected &amp; Inwarded</p>
+                        <p className="font-medium text-tone-green-text font-semibold">Goods Inspected &amp; Inwarded</p>
                       </div>
                     </div>
 
@@ -1132,7 +1132,7 @@ export default function SupplierBillDetailPage() {
                       <p className="text-xs font-bold text-foreground">Verified Receipt Lines</p>
                       <div className="overflow-x-auto rounded-2xl border border-border">
                         <table className="w-full text-left text-xs">
-                          <thead className="bg-muted/40 border-b border-border text-muted-foreground">
+                          <thead className="bg-muted/40 border-border-strong border-border text-muted-foreground">
                             <tr>
                               <th className="p-2.5 font-semibold">Item</th>
                               <th className="p-2.5 font-semibold font-mono">HSN</th>
@@ -1146,7 +1146,7 @@ export default function SupplierBillDetailPage() {
                                   {line.description}
                                 </td>
                                 <td className="p-2.5 font-mono text-muted-foreground">{line.hsnSacCode || '—'}</td>
-                                <td className="p-2.5 font-mono font-bold text-right text-emerald-600 dark:text-emerald-400">
+                                <td className="p-2.5 font-mono font-bold text-right text-tone-green-text">
                                   {line.quantity}
                                 </td>
                               </tr>
@@ -1173,19 +1173,19 @@ export default function SupplierBillDetailPage() {
           {activeLineageTab === 'debit_notes' && (
             <div className="space-y-4">
               {/* Claims Overview */}
-              <div className="rounded-3xl border border-rose-200 bg-rose-50/50 p-4 dark:border-rose-900/40 dark:bg-rose-950/20">
+              <div className="rounded-3xl border border-tone-red-solid/25 bg-tone-red-bg p-4">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <Tag className="h-4 w-4 text-rose-600" />
-                    <span className="text-xs font-bold text-rose-950 dark:text-rose-200 uppercase tracking-wider">
+                    <Tag className="h-4 w-4 text-tone-red-text" />
+                    <span className="text-xs font-bold text-tone-red-text uppercase tracking-wider">
                       Debit Note Claim Value
                     </span>
                   </div>
-                  <span className="font-mono font-bold text-rose-700 dark:text-rose-300 text-sm">
+                  <span className="font-mono font-bold text-tone-red-text text-sm">
                     {formatCurrency(debitNoteClaimTotal)}
                   </span>
                 </div>
-                <p className="mt-1 text-[11px] text-rose-800 dark:text-rose-300/80">
+                <p className="mt-1 text-[11px] text-tone-red-text">
                   {pendingDebitNoteClaimTotal > 0 ? `${formatCurrency(pendingDebitNoteClaimTotal)} is pending submission or approval and is not yet deducted from the payable.` : 'Approved debit note claims are deducted from the payable.'}
                 </p>
               </div>
@@ -1196,15 +1196,15 @@ export default function SupplierBillDetailPage() {
                     key={note.id}
                     className="rounded-3xl border border-border bg-card p-5 shadow-sm space-y-3.5"
                   >
-                    <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border pb-3">
+                    <div className="flex flex-wrap items-center justify-between gap-2 border-border-strong border-border pb-3">
                       <div className="flex items-center gap-2">
-                        <Tag className="h-4 w-4 text-rose-600" />
+                        <Tag className="h-4 w-4 text-tone-red-text" />
                         <span className="font-mono font-bold text-sm text-foreground">{note.debitNoteNumber}</span>
-                        <span className="rounded-full bg-rose-100 dark:bg-rose-950/60 text-rose-800 dark:text-rose-300 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider">
+                        <span className="rounded-full bg-tone-red-solid text-tone-red-text px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider">
                           {note.status}
                         </span>
                       </div>
-                      <span className="font-mono font-bold text-rose-600 dark:text-rose-400 text-sm">
+                      <span className="font-mono font-bold text-tone-red-text text-sm">
                         {formatCurrency(note.totalAmount)}
                       </span>
                     </div>
@@ -1228,7 +1228,7 @@ export default function SupplierBillDetailPage() {
                       )}
                       <Button
                         size="sm"
-                        className="bg-n-700 hover:bg-n-800 text-white font-semibold gap-1.5 text-xs shadow-sm"
+                        className="bg-n-700 hover:bg-n-800 text-inverse font-semibold gap-1.5 text-xs shadow-sm"
                         onClick={() => setSelectedDebitNoteForSend(note)}
                       >
                         <Send className="h-3.5 w-3.5" /> Send to Vendor
@@ -1243,7 +1243,7 @@ export default function SupplierBillDetailPage() {
                 ))
               ) : (
                 <div className="rounded-3xl border border-border bg-card p-8 text-center space-y-2">
-                  <CheckCircle2 className="mx-auto h-8 w-8 text-emerald-600" />
+                  <CheckCircle2 className="mx-auto h-8 w-8 text-tone-green-text" />
                   <p className="text-sm font-semibold text-foreground">Zero Deductions or Discrepancies</p>
                   <p className="text-xs text-muted-foreground max-w-xs mx-auto">
                     All items received in the GRN passed quality inspection with 100% acceptance. No debit notes are required for this bill.
@@ -1258,7 +1258,7 @@ export default function SupplierBillDetailPage() {
             <div className="space-y-4">
               {/* Financial Settlement Card */}
               <div className="rounded-3xl border border-border bg-card p-5 shadow-sm space-y-3">
-                <div className="flex items-center justify-between border-b border-border pb-3">
+                <div className="flex items-center justify-between border-border-strong border-border pb-3">
                   <div className="flex items-center gap-2">
                     <CreditCard className="h-4 w-4 text-foreground" />
                     <h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
@@ -1274,7 +1274,7 @@ export default function SupplierBillDetailPage() {
                     <span className="font-mono font-medium">{formatCurrency(grossTotal)}</span>
                   </div>
                   {debitNoteDeduction > 0 && (
-                    <div className="flex justify-between text-rose-600 dark:text-rose-400">
+                    <div className="flex justify-between text-tone-red-text">
                       <span>Debit Notes Deduction</span>
                       <span className="font-mono font-medium">- {formatCurrency(debitNoteDeduction)}</span>
                     </div>
@@ -1283,15 +1283,15 @@ export default function SupplierBillDetailPage() {
                     <span>Net Payable to Vendor</span>
                     <span className="font-mono">{formatCurrency(netPayable)}</span>
                   </div>
-                  <div className="flex justify-between text-emerald-600 dark:text-emerald-400">
+                  <div className="flex justify-between text-tone-green-text">
                     <span>Paid to Date</span>
                     <span className="font-mono font-medium">{formatCurrency(paid)}</span>
                   </div>
                   <div className="flex justify-between font-bold text-sm pt-1 border-t border-border">
-                    <span className={balance > 0 ? 'text-foreground dark:text-n-300' : 'text-emerald-600'}>
+                    <span className={balance > 0 ? 'text-foreground' : 'text-tone-green-text'}>
                       Balance Outstanding
                     </span>
-                    <span className={`font-mono ${balance > 0 ? 'text-foreground dark:text-n-300' : 'text-emerald-600'}`}>
+                    <span className={`font-mono ${balance > 0 ? 'text-foreground' : 'text-tone-green-text'}`}>
                       {formatCurrency(balance)}
                     </span>
                   </div>
@@ -1300,7 +1300,7 @@ export default function SupplierBillDetailPage() {
                 {isApprovedOrPosted && balance > 0 && can('create') && (
                   <Button
                     size="sm"
-                    className="w-full mt-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold gap-1.5 shadow-sm"
+                    className="w-full mt-2 bg-tone-green-solid hover:bg-tone-green-solid text-inverse font-semibold gap-1.5 shadow-sm"
                     onClick={() => setIsPaymentModalOpen(true)}
                   >
                     <CreditCard className="h-4 w-4" /> Record Bill Payment
@@ -1318,10 +1318,10 @@ export default function SupplierBillDetailPage() {
                       className="rounded-3xl border border-border bg-card p-4 text-xs shadow-sm space-y-2"
                     >
                       <div className="flex items-center justify-between">
-                        <span className="font-mono font-bold text-emerald-600 dark:text-emerald-400 text-sm">
+                        <span className="font-mono font-bold text-tone-green-text text-sm">
                           {formatCurrency(payment.amount)}
                         </span>
-                        <span className="rounded-full bg-muted px-2 py-0.5 text-[10px] font-bold text-foreground dark:text-n-300">
+                        <span className="rounded-full bg-muted px-2 py-0.5 text-[10px] font-bold text-foreground">
                           {payment.paymentMode.replaceAll('_', ' ')}
                         </span>
                       </div>
@@ -1443,10 +1443,10 @@ function StatusPill({
 }) {
   const tones = {
     slate: 'bg-muted text-foreground',
-    green: 'bg-emerald-100 text-emerald-800 dark:bg-emerald-950/40 dark:text-emerald-300',
-    blue: 'bg-sky-100 text-sky-800 dark:bg-sky-950/40 dark:text-sky-300',
-    amber: 'bg-amber-100 text-amber-900 dark:bg-amber-950/40 dark:text-amber-300',
-    red: 'bg-rose-100 text-rose-800 dark:bg-rose-950/40 dark:text-rose-300',
+    green: 'bg-tone-green-solid text-tone-green-text',
+    blue: 'bg-tone-blue-solid text-tone-blue-text',
+    amber: 'bg-tone-amber-solid text-tone-amber-text',
+    red: 'bg-tone-red-solid text-tone-red-text',
   };
   return (
     <span className={`rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-wide ${tones[tone]}`}>
@@ -1458,20 +1458,20 @@ function StatusPill({
 function PaymentStatusPill({ status }: { status?: string }) {
   if (status === 'PAID') {
     return (
-      <span className="rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-950/40 dark:text-emerald-300 px-3 py-1 text-[10px] font-bold uppercase tracking-wide">
+      <span className="rounded-full bg-tone-green-solid text-tone-green-text px-3 py-1 text-[10px] font-bold uppercase tracking-wide">
         Settled · Paid
       </span>
     );
   }
   if (status === 'PARTIALLY_PAID') {
     return (
-      <span className="rounded-full bg-amber-100 text-amber-900 dark:bg-amber-950/40 dark:text-amber-300 px-3 py-1 text-[10px] font-bold uppercase tracking-wide">
+      <span className="rounded-full bg-tone-amber-solid text-tone-amber-text px-3 py-1 text-[10px] font-bold uppercase tracking-wide">
         Partially Paid
       </span>
     );
   }
   return (
-    <span className="rounded-full bg-n-100 text-foreground dark:bg-n-950/40 dark:text-n-300 px-3 py-1 text-[10px] font-bold uppercase tracking-wide">
+    <span className="rounded-full bg-n-100 text-foreground px-3 py-1 text-[10px] font-bold uppercase tracking-wide">
       Payment Pending
     </span>
   );

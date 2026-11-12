@@ -120,7 +120,7 @@ export default function ManifestsPage() {
   };
 
   return (
-    <div className="flex-1 overflow-y-auto bg-gradient-to-b from-background via-muted/10 to-muted/30 p-4 sm:p-6 lg:p-8">
+    <div className="flex-1 overflow-y-auto bg-muted p-4 sm:p-6 lg:p-8">
       <div className="mx-auto max-w-[1500px] space-y-6">
         {/* Navigation Breadcrumbs */}
         <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground">
@@ -230,8 +230,8 @@ export default function ManifestsPage() {
                           variant="outline"
                           className={
                             manifest.status === 'CLOSED'
-                              ? 'bg-emerald-500/10 text-emerald-700 border-emerald-300 font-semibold'
-                              : 'bg-purple-500/10 text-purple-700 border-purple-300 font-semibold'
+                              ? 'bg-tone-green-bg text-tone-green-text border-tone-green-solid/25 font-semibold'
+                              : 'bg-tone-purple-bg text-tone-purple-text border-tone-purple-solid/25 font-semibold'
                           }
                         >
                           {manifest.status === 'CLOSED' ? 'Gate Cleared' : 'Open / Staging'}

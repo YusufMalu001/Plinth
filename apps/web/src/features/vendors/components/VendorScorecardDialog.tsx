@@ -280,13 +280,13 @@ export function VendorScorecardDialog({
     if (!mounted || typeof document === 'undefined') return null;
     return createPortal(
       <div
-        className="fixed inset-0 z-[1000000] flex justify-end bg-black/50 backdrop-blur-xs transition-opacity animate-in fade-in duration-200"
+        className="fixed inset-0 z-[1000000] flex justify-end bg-inverse backdrop-blur-xs transition-opacity animate-in fade-in duration-200"
         onClick={onClose}
         role="dialog"
         aria-modal="true"
       >
         <div
-          className="flex h-full w-full max-w-xl flex-col bg-card border-l border-border shadow-2xl overflow-hidden animate-in slide-in-from-right duration-300"
+          className="flex h-full w-full max-w-xl flex-col bg-card border-l border-border shadow-none overflow-hidden animate-in slide-in-from-right duration-300"
           onClick={(e) => e.stopPropagation()}
         >
           <div className="flex items-center justify-between border-b border-border bg-muted/30 px-6 py-4">

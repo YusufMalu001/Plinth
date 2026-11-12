@@ -17,22 +17,35 @@ export const COLOR = {
   bgSurface: '#FFFFFF',
   bgMuted: '#F4F5F6',
   bgHover: '#F8F8F8',
+  bgActive: '#EDEDED',
+  bgInverse: '#171717',
   border: '#EDEDED',
   borderStrong: '#D9D9D9',
   textPrimary: '#171717',
   textSecondary: '#525252',
-  textMuted: '#8D8D8D',
-  textPlaceholder: '#A3A3A3',
+  textMuted: '#6B6B6B',
+  textPlaceholder: '#8D8D8D',
+  textInverse: '#FFFFFF',
+  textLink: '#3E63DD',
+  textLinkHover: '#2F4FB8',
 } as const;
 
 /** Primary action (black) and focus. */
 export const ACTION = {
   primaryBg: '#171717',
   primaryBgHover: '#2E2E2E',
+  primaryBgActive: '#000000',
   primaryText: '#FFFFFF',
   secondaryBg: COLOR.bgMuted,
   secondaryText: COLOR.textPrimary,
-  focusRing: '#7C7C7C',
+  focusRing: '#3E63DD',
+} as const;
+
+/** Brand accent — links, focus ring, active tab indicator, logo accent mark. */
+export const ACCENT = {
+  DEFAULT: '#3E63DD',
+  soft: '#EAF3FF',
+  hover: '#2F4FB8',
 } as const;
 
 /** Semantic tones — statuses, charts, alerts, progress, tags ONLY. */
@@ -81,6 +94,8 @@ export const TYPE_SCALES = {
 export const SHAPE = {
   radiusControl: '8px',
   radiusCard: '12px',
+  radiusModal: '16px',
+  radiusTooltip: '6px',
   radiusPill: '999px',
   spacingBase: '4px',
   rowHeight: '44px',
@@ -92,6 +107,13 @@ export const SHAPE = {
 export const SHADOWS = {
   none: 'none',
   popover: '0 6px 24px rgba(0,0,0,.08)',
+  modal: '0 12px 40px rgba(0,0,0,.12)',
+} as const;
+
+/** Overlay & blueprint grid (login left panel only). */
+export const EFFECTS = {
+  overlay: 'rgba(23,23,23,0.40)',
+  gridLine: 'rgba(23,23,23,0.04)',
 } as const;
 
 /**
@@ -105,12 +127,22 @@ export const CSS_TOKENS = `
   --bg-surface: ${COLOR.bgSurface};
   --bg-muted: ${COLOR.bgMuted};
   --bg-hover: ${COLOR.bgHover};
+  --bg-active: ${COLOR.bgActive};
+  --bg-inverse: ${COLOR.bgInverse};
   --border: ${COLOR.border};
   --border-strong: ${COLOR.borderStrong};
   --text-primary: ${COLOR.textPrimary};
   --text-secondary: ${COLOR.textSecondary};
   --text-muted: ${COLOR.textMuted};
   --text-placeholder: ${COLOR.textPlaceholder};
+  --text-inverse: ${COLOR.textInverse};
+  --text-link: ${COLOR.textLink};
+  --text-link-hover: ${COLOR.textLinkHover};
+  --accent-blue: ${ACCENT.DEFAULT};
+  --accent-soft: ${ACCENT.soft};
+  --accent-hover: ${ACCENT.hover};
+  --overlay: ${EFFECTS.overlay};
+  --grid-line: ${EFFECTS.gridLine};
   --action-primary-bg: ${ACTION.primaryBg};
   --action-primary-bg-hover: ${ACTION.primaryBgHover};
   --action-primary-text: ${ACTION.primaryText};
@@ -154,11 +186,14 @@ export const CSS_TOKENS = `
   --chart-8: ${CHART_PALETTE[7]};
   --radius-control: ${SHAPE.radiusControl};
   --radius-card: ${SHAPE.radiusCard};
+  --radius-modal: ${SHAPE.radiusModal};
+  --radius-tooltip: ${SHAPE.radiusTooltip};
   --radius-pill: ${SHAPE.radiusPill};
   --row-height: ${SHAPE.rowHeight};
   --control-height-compact: ${SHAPE.controlHeightCompact};
   --control-height: ${SHAPE.controlHeight};
   --shadow-popover: ${SHADOWS.popover};
+  --shadow-modal: ${SHADOWS.modal};
   --font-sans: ${TYPE_SCALES.fontFamily};
 }
 `.trim();

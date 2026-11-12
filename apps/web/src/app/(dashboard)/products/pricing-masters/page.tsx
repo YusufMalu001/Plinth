@@ -63,7 +63,7 @@ export default function PricingMastersPage() {
         </div>
 
         <Card className="rounded-2xl border border-border overflow-hidden shadow-xs w-full bg-card">
-          <div className="p-4 sm:p-5 border-b border-border bg-card flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div className="p-4 sm:p-5 border-border-strong border-border bg-card flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div className="flex items-center gap-2">
               <Layers className="h-4 w-4 text-primary" />
               <span className="text-lg font-bold text-foreground">Pricing Masters</span>

@@ -229,7 +229,7 @@ export default function DebitNotesPage() {
               Supplier Claims from GRNs
               <span
                 className={`rounded-full px-2 py-0.5 text-[10px] font-bold ${
-                  activeTab === 'claims' ? 'bg-white/20 text-white' : 'bg-muted text-muted-foreground'
+                  activeTab === 'claims' ? 'bg-surface/20 text-inverse' : 'bg-muted text-muted-foreground'
                 }`}
               >
                 {allClaims.length}
@@ -248,7 +248,7 @@ export default function DebitNotesPage() {
               Debit Notes Register
               <span
                 className={`rounded-full px-2 py-0.5 text-[10px] font-bold ${
-                  activeTab === 'register' ? 'bg-white/20 text-white' : 'bg-muted text-muted-foreground'
+                  activeTab === 'register' ? 'bg-surface/20 text-inverse' : 'bg-muted text-muted-foreground'
                 }`}
               >
                 {allDebitNotes.length}
@@ -309,7 +309,7 @@ export default function DebitNotesPage() {
                     </TableRow>
                   ) : grnClaims.isError ? (
                     <TableRow>
-                      <TableCell colSpan={7} className="p-8 text-center text-rose-700">
+                      <TableCell colSpan={7} className="p-8 text-center text-tone-red-text">
                         Could not load GRN supplier claims.
                       </TableCell>
                     </TableRow>

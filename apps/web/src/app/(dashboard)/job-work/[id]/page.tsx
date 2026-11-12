@@ -111,7 +111,7 @@ export default function JobWorkOrderDetailPage() {
   return (
     <div className="flex-1 w-full overflow-y-auto bg-muted/20 pb-16">
       {/* Top Header & Breadcrumb Ribbon */}
-      <div className="border-b border-border bg-card w-full">
+      <div className="border-border-strong border-border bg-card w-full">
         <div className="w-full px-4 sm:px-6 lg:px-8 py-5">
           <nav className="mb-2.5 flex items-center gap-1.5 text-xs text-muted-foreground">
             <Link href="/job-work" className="hover:text-foreground transition-colors flex items-center gap-1">
@@ -200,7 +200,7 @@ export default function JobWorkOrderDetailPage() {
                   size="sm"
                   disabled={actionLoading}
                   onClick={handleApprove}
-                  className="font-bold gap-2 bg-emerald-600 hover:bg-emerald-700 text-white shadow-xs"
+                  className="font-bold gap-2 bg-action hover:bg-[color:var(--action-primary-bg-hover)] text-inverse shadow-xs"
                 >
                   <Check className="h-4 w-4" />
                   Approve Order
@@ -224,7 +224,7 @@ export default function JobWorkOrderDetailPage() {
                   size="sm"
                   disabled={actionLoading}
                   onClick={handleClose}
-                  className="font-bold gap-2 bg-slate-800 hover:bg-slate-900 text-white shadow-xs dark:bg-slate-200 dark:text-slate-900"
+                  className="font-bold gap-2 bg-inverse hover:bg-[color:var(--action-primary-bg-hover)] text-inverse shadow-xs"
                 >
                   <CheckCircle2 className="h-4 w-4" />
                   Close Order
@@ -238,7 +238,7 @@ export default function JobWorkOrderDetailPage() {
       {/* Document View Mode */}
       {viewMode === 'document' ? (
         <div className="p-4 sm:p-6 lg:p-8 flex justify-center">
-          <div className="w-full max-w-[850px] bg-white shadow-2xl rounded-sm border border-border/40 overflow-hidden">
+          <div className="w-full max-w-[850px] bg-surface shadow-modal rounded-sm border border-border/40 overflow-hidden">
             <JobWorkOrderPDF ref={printRef} order={order} isPrintPreview />
           </div>
         </div>
@@ -252,7 +252,7 @@ export default function JobWorkOrderDetailPage() {
               <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider">
                 Raw Material Allocation
               </span>
-              <div className="rounded-xl bg-amber-500/10 p-2.5 text-amber-600 dark:text-amber-400">
+              <div className="rounded-xl bg-tone-amber-bg p-2.5 text-tone-amber-text">
                 <Layers className="h-5 w-5" />
               </div>
             </div>
@@ -290,7 +290,7 @@ export default function JobWorkOrderDetailPage() {
               <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider">
                 Target Output
               </span>
-              <div className="rounded-xl bg-indigo-500/10 p-2.5 text-indigo-600 dark:text-indigo-400">
+              <div className="rounded-xl bg-tone-purple-bg p-2.5 text-tone-purple-text">
                 <Package className="h-5 w-5" />
               </div>
             </div>
@@ -309,7 +309,7 @@ export default function JobWorkOrderDetailPage() {
               <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider">
                 Vendor Custody Balance
               </span>
-              <div className={`rounded-xl p-2.5 ${outstandingCustody > 0 ? 'bg-amber-500/10 text-amber-600' : 'bg-emerald-500/10 text-emerald-600'}`}>
+              <div className={`rounded-xl p-2.5 ${outstandingCustody > 0 ? 'bg-tone-amber-bg text-tone-amber-text' : 'bg-tone-green-bg text-tone-green-text'}`}>
                 <Scale className="h-5 w-5" />
               </div>
             </div>
@@ -325,10 +325,10 @@ export default function JobWorkOrderDetailPage() {
         </div>
 
         {/* Tab Navigation */}
-        <div className="flex border-b border-border">
+        <div className="flex border-border-strong border-border">
           <button
             onClick={() => setActiveTab('overview')}
-            className={`px-4 py-2.5 text-xs font-bold border-b-2 transition ${
+            className={`px-4 py-2.5 text-xs font-bold border-border-strong-2 transition ${
               activeTab === 'overview'
                 ? 'border-primary text-primary'
                 : 'border-transparent text-muted-foreground hover:text-foreground'
@@ -338,7 +338,7 @@ export default function JobWorkOrderDetailPage() {
           </button>
           <button
             onClick={() => setActiveTab('lines')}
-            className={`px-4 py-2.5 text-xs font-bold border-b-2 transition ${
+            className={`px-4 py-2.5 text-xs font-bold border-border-strong-2 transition ${
               activeTab === 'lines'
                 ? 'border-primary text-primary'
                 : 'border-transparent text-muted-foreground hover:text-foreground'
@@ -348,7 +348,7 @@ export default function JobWorkOrderDetailPage() {
           </button>
           <button
             onClick={() => setActiveTab('challans')}
-            className={`px-4 py-2.5 text-xs font-bold border-b-2 transition ${
+            className={`px-4 py-2.5 text-xs font-bold border-border-strong-2 transition ${
               activeTab === 'challans'
                 ? 'border-primary text-primary'
                 : 'border-transparent text-muted-foreground hover:text-foreground'
@@ -358,7 +358,7 @@ export default function JobWorkOrderDetailPage() {
           </button>
           <button
             onClick={() => setActiveTab('returns')}
-            className={`px-4 py-2.5 text-xs font-bold border-b-2 transition ${
+            className={`px-4 py-2.5 text-xs font-bold border-border-strong-2 transition ${
               activeTab === 'returns'
                 ? 'border-primary text-primary'
                 : 'border-transparent text-muted-foreground hover:text-foreground'
@@ -431,7 +431,7 @@ export default function JobWorkOrderDetailPage() {
               {/* Linked Purchase Order & Logistics */}
               <Card className="p-6 border-border bg-card shadow-xs rounded-2xl">
                 <h3 className="text-sm font-bold text-foreground mb-4 flex items-center gap-2">
-                  <Truck className="h-4 w-4 text-indigo-500" />
+                  <Truck className="h-4 w-4 text-tone-purple-text" />
                   Logistics & Linked Documents
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
@@ -467,14 +467,14 @@ export default function JobWorkOrderDetailPage() {
         {/* Tab 2: BOM Lines */}
         {activeTab === 'lines' && (
           <Card className="overflow-hidden border-border bg-card shadow-xs rounded-2xl p-0">
-            <div className="p-4 border-b border-border flex items-center justify-between">
+            <div className="p-4 border-border-strong border-border flex items-center justify-between">
               <h3 className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
                 Required Materials & Input Quantities
               </h3>
             </div>
             <div className="overflow-x-auto">
               <table className="w-full text-left text-xs">
-                <thead className="bg-muted/50 text-muted-foreground uppercase font-bold border-b border-border">
+                <thead className="bg-muted/50 text-muted-foreground uppercase font-bold border-border-strong border-border">
                   <tr>
                     <th className="p-3.5">Material / Item</th>
                     <th className="p-3.5">Required Qty</th>
@@ -551,7 +551,7 @@ export default function JobWorkOrderDetailPage() {
             <Card className="overflow-hidden border-border bg-card shadow-xs rounded-2xl p-0">
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-xs">
-                  <thead className="bg-muted/50 text-muted-foreground uppercase font-bold border-b border-border">
+                  <thead className="bg-muted/50 text-muted-foreground uppercase font-bold border-border-strong border-border">
                     <tr>
                       <th className="p-3.5">Challan Number</th>
                       <th className="p-3.5">Dispatched Material</th>
@@ -635,7 +635,7 @@ export default function JobWorkOrderDetailPage() {
             <Card className="overflow-hidden border-border bg-card shadow-xs rounded-2xl p-0">
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-xs">
-                  <thead className="bg-muted/50 text-muted-foreground uppercase font-bold border-b border-border">
+                  <thead className="bg-muted/50 text-muted-foreground uppercase font-bold border-border-strong border-border">
                     <tr>
                       <th className="p-3.5">Return #</th>
                       <th className="p-3.5">Output Product</th>
@@ -672,7 +672,7 @@ export default function JobWorkOrderDetailPage() {
                             <div className="font-mono font-bold text-foreground">
                               {ret.receivedQuantity} {ret.uom?.symbol || 'Units'}
                             </div>
-                            <div className="text-[11px] text-emerald-600 font-semibold">
+                            <div className="text-[11px] text-tone-green-text font-semibold">
                               Accepted: {ret.acceptedQuantity}
                             </div>
                           </td>
@@ -682,7 +682,7 @@ export default function JobWorkOrderDetailPage() {
                           <td className="p-3.5 font-mono text-muted-foreground">
                             {ret.scrapQuantity} MT
                           </td>
-                          <td className="p-3.5 font-mono font-bold text-rose-600">
+                          <td className="p-3.5 font-mono font-bold text-tone-red-text">
                             {ret.shortQuantity > 0 ? `${ret.shortQuantity} Short` : '—'}
                           </td>
                           <td className="p-3.5">

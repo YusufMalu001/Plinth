@@ -110,13 +110,13 @@ export default function CustomersDirectoryPage() {
   const getTypeBadgeColor = (type: string) => {
     switch (type) {
       case 'DISTRIBUTOR':
-        return 'bg-purple-500/15 text-purple-700 dark:text-purple-400 border-purple-500/30';
+        return 'bg-tone-purple-bg text-tone-purple-text border-tone-purple-solid/25';
       case 'DEALER':
-        return 'bg-indigo-500/15 text-indigo-700 dark:text-indigo-400 border-indigo-500/30';
+        return 'bg-tone-purple-bg text-tone-purple-text border-tone-purple-solid/25';
       case 'CORPORATE':
-        return 'bg-blue-500/15 text-blue-700 dark:text-blue-400 border-blue-500/30';
+        return 'bg-tone-blue-bg text-tone-blue-text border-tone-blue-solid/25';
       case 'RETAIL':
-        return 'bg-emerald-500/15 text-emerald-700 dark:text-emerald-400 border-emerald-500/30';
+        return 'bg-tone-green-bg text-tone-green-text border-tone-green-solid/25';
       default:
         return 'bg-muted text-muted-foreground border-border';
     }
@@ -150,7 +150,7 @@ export default function CustomersDirectoryPage() {
               size="sm"
               icon={UserPlus}
               onClick={() => setIsRegisterModalOpen(true)}
-              className="font-bold shadow-md shadow-primary/20"
+              className="font-bold shadow-none shadow-primary/20"
             >
               Register Customer / Dealer
             </Button>
@@ -160,7 +160,7 @@ export default function CustomersDirectoryPage() {
 
       {/* KPI Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <Card className="rounded-2xl border-border/70 shadow-sm hover:shadow-md transition-all">
+        <Card className="rounded-2xl border-border/70 shadow-sm hover:shadow-none transition-all">
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
               Total Accounts
@@ -174,12 +174,12 @@ export default function CustomersDirectoryPage() {
           </CardContent>
         </Card>
 
-        <Card className="rounded-2xl border-border/70 shadow-sm hover:shadow-md transition-all">
+        <Card className="rounded-2xl border-border/70 shadow-sm hover:shadow-none transition-all">
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
               Dealers & Partners
             </span>
-            <Building2 className="h-4 w-4 text-indigo-500" />
+            <Building2 className="h-4 w-4 text-tone-purple-text" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-black text-foreground font-mono">
@@ -188,12 +188,12 @@ export default function CustomersDirectoryPage() {
           </CardContent>
         </Card>
 
-        <Card className="rounded-2xl border-border/70 shadow-sm hover:shadow-md transition-all">
+        <Card className="rounded-2xl border-border/70 shadow-sm hover:shadow-none transition-all">
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
               Total Credit Extended
             </span>
-            <CreditCard className="h-4 w-4 text-emerald-500" />
+            <CreditCard className="h-4 w-4 text-tone-green-text" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-black text-foreground font-mono">
@@ -202,12 +202,12 @@ export default function CustomersDirectoryPage() {
           </CardContent>
         </Card>
 
-        <Card className="rounded-2xl border-border/70 shadow-sm hover:shadow-md transition-all">
+        <Card className="rounded-2xl border-border/70 shadow-sm hover:shadow-none transition-all">
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
               Channel Growth
             </span>
-            <TrendingUp className="h-4 w-4 text-blue-500" />
+            <TrendingUp className="h-4 w-4 text-tone-blue-text" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-black text-foreground font-mono">
@@ -219,7 +219,7 @@ export default function CustomersDirectoryPage() {
 
       {/* Directory Table Card */}
       <Card className="rounded-2xl border-border/70 shadow-sm overflow-hidden">
-        <CardHeader className="bg-card/40 border-b border-border/50 pb-4">
+        <CardHeader className="bg-card/40 border-border-strong border-border/50 pb-4">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <CardTitle className="text-base font-bold flex items-center gap-2">
               <Building2 className="h-4 w-4 text-primary" /> Customer & Dealer Directory

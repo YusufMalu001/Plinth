@@ -8,8 +8,8 @@ export const PRODUCT_NAME = 'Plinth';
 export const COMPANY_NAME = 'Plinth';
 export const PRODUCT_TAGLINE = 'Enterprise resource planning';
 
-/** Brand ink: near-black used by the mark and lockup text. */
-export const BRAND_INK = '#141414';
+/** Brand ink: near-black used by the mark and lockup text (--text-primary token). */
+export const BRAND_INK = '#171717';
 
 /**
  * PlinthMark — the geometric brand mark: a rounded black square carrying the
@@ -65,7 +65,7 @@ export function Logo({
     >
       <PlinthMark
         tone={tone}
-        className="h-[1.35em] w-[1.35em] shrink-0"
+        className="h-[1em] w-[1em] shrink-0"
         title=""
       />
       <span

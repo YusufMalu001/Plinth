@@ -226,7 +226,7 @@ export function JournalEntryModal({
                 <button
                   type="button"
                   onClick={addLine}
-                  className="inline-flex items-center gap-1 text-xs font-semibold text-muted-foreground hover:text-foreground dark:text-primary"
+                  className="inline-flex items-center gap-1 text-xs font-semibold text-muted-foreground hover:text-foreground "
                 >
                   <Plus className="h-3.5 w-3.5" />
                   Add Entry Line <kbd className="ml-1 rounded border border-border bg-muted px-1 py-0.5 text-[9px] font-mono">Alt+A</kbd>
@@ -405,8 +405,8 @@ export function JournalEntryModal({
               <div
                 className={`rounded-xl p-2 ${
                   isBalanced
-                    ? 'bg-primary/10 text-primary dark:text-primary'
-                    : 'bg-destructive/100/10 text-destructive dark:text-destructive'
+                    ? 'bg-primary/10 text-primary '
+                    : 'bg-destructive/100/10 text-destructive '
                 }`}
               >
                 {isBalanced ? <CheckCircle2 className="h-5 w-5" /> : <AlertCircle className="h-5 w-5" />}

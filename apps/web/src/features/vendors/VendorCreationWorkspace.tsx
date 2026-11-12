@@ -719,7 +719,7 @@ export function VendorCreationWorkspace({ mode: initialMode, editId: initialEdit
             <div className="order-1 bg-card rounded-xl border border-border shadow-xs overflow-hidden">
               <div className="px-6 py-4 border-b border-border/70 flex flex-wrap items-center justify-between gap-3 bg-card">
                 <div className="flex items-center gap-3">
-                  <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-primary text-white font-mono text-xs font-black shadow-xs ring-2 ring-primary/20">
+                  <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-primary text-inverse font-mono text-xs font-black shadow-xs ring-2 ring-primary/20">
                     01
                   </div>
                   <div>
@@ -773,7 +773,7 @@ export function VendorCreationWorkspace({ mode: initialMode, editId: initialEdit
                         onClick={() => setIsVendorActive((active) => !active)}
                         className={`relative inline-flex h-6 w-11 shrink-0 items-center rounded-full border transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${isVendorActive ? 'border-primary bg-primary' : 'border-border bg-muted'}`}
                       >
-                        <span className={`inline-block h-4 w-4 rounded-full bg-white shadow-sm transition-transform ${isVendorActive ? 'translate-x-5' : 'translate-x-1'}`} />
+                        <span className={`inline-block h-4 w-4 rounded-full bg-surface shadow-sm transition-transform ${isVendorActive ? 'translate-x-5' : 'translate-x-1'}`} />
                       </button>
                     </div>
                   )}
@@ -798,7 +798,7 @@ export function VendorCreationWorkspace({ mode: initialMode, editId: initialEdit
             <div className="order-5 xl:col-span-2 bg-card rounded-xl border border-border shadow-xs overflow-hidden">
               <div className="px-6 py-4 border-b border-border/70 flex flex-wrap items-center justify-between gap-3 bg-card">
                 <div className="flex items-center gap-3">
-                  <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-primary text-white font-mono text-xs font-black shadow-xs ring-2 ring-primary/20">
+                  <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-primary text-inverse font-mono text-xs font-black shadow-xs ring-2 ring-primary/20">
                     05
                   </div>
                   <div>
@@ -840,7 +840,7 @@ export function VendorCreationWorkspace({ mode: initialMode, editId: initialEdit
                       type="button"
                       onClick={() => setCatalogFilter('ALL')}
                       className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${catalogFilter === 'ALL'
-                          ? 'bg-primary text-white font-bold'
+                          ? 'bg-primary text-inverse font-bold'
                           : 'bg-muted/50 hover:bg-muted text-muted-foreground hover:text-foreground border border-border/80'
                         }`}
                     >
@@ -853,7 +853,7 @@ export function VendorCreationWorkspace({ mode: initialMode, editId: initialEdit
                           type="button"
                           onClick={() => setCatalogFilter('FINISHED_GOODS')}
                           className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${catalogFilter === 'FINISHED_GOODS'
-                              ? 'bg-primary text-white font-bold'
+                              ? 'bg-primary text-inverse font-bold'
                               : 'bg-muted/50 hover:bg-muted text-muted-foreground hover:text-foreground border border-border/80'
                             }`}
                         >
@@ -863,7 +863,7 @@ export function VendorCreationWorkspace({ mode: initialMode, editId: initialEdit
                           type="button"
                           onClick={() => setCatalogFilter('SEMI_FINISHED')}
                           className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${catalogFilter === 'SEMI_FINISHED'
-                              ? 'bg-primary text-white font-bold'
+                              ? 'bg-primary text-inverse font-bold'
                               : 'bg-muted/50 hover:bg-muted text-muted-foreground hover:text-foreground border border-border/80'
                             }`}
                         >
@@ -876,7 +876,7 @@ export function VendorCreationWorkspace({ mode: initialMode, editId: initialEdit
                           type="button"
                           onClick={() => setCatalogFilter('RAW_MATERIALS')}
                           className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${catalogFilter === 'RAW_MATERIALS'
-                              ? 'bg-primary text-white font-bold'
+                              ? 'bg-primary text-inverse font-bold'
                               : 'bg-muted/50 hover:bg-muted text-muted-foreground hover:text-foreground border border-border/80'
                             }`}
                         >
@@ -886,7 +886,7 @@ export function VendorCreationWorkspace({ mode: initialMode, editId: initialEdit
                           type="button"
                           onClick={() => setCatalogFilter('HARDWARE')}
                           className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${catalogFilter === 'HARDWARE'
-                              ? 'bg-primary text-white font-bold'
+                              ? 'bg-primary text-inverse font-bold'
                               : 'bg-muted/50 hover:bg-muted text-muted-foreground hover:text-foreground border border-border/80'
                             }`}
                         >
@@ -896,7 +896,7 @@ export function VendorCreationWorkspace({ mode: initialMode, editId: initialEdit
                           type="button"
                           onClick={() => setCatalogFilter('PACKAGING')}
                           className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${catalogFilter === 'PACKAGING'
-                              ? 'bg-primary text-white font-bold'
+                              ? 'bg-primary text-inverse font-bold'
                               : 'bg-muted/50 hover:bg-muted text-muted-foreground hover:text-foreground border border-border/80'
                             }`}
                         >
@@ -906,7 +906,7 @@ export function VendorCreationWorkspace({ mode: initialMode, editId: initialEdit
                           type="button"
                           onClick={() => setCatalogFilter('OUTSOURCING')}
                           className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${catalogFilter === 'OUTSOURCING'
-                              ? 'bg-primary text-white font-bold'
+                              ? 'bg-primary text-inverse font-bold'
                               : 'bg-muted/50 hover:bg-muted text-muted-foreground hover:text-foreground border border-border/80'
                             }`}
                         >
@@ -916,7 +916,7 @@ export function VendorCreationWorkspace({ mode: initialMode, editId: initialEdit
                           type="button"
                           onClick={() => setCatalogFilter('FINISHED_GOODS')}
                           className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${catalogFilter === 'FINISHED_GOODS'
-                              ? 'bg-primary text-white font-bold'
+                              ? 'bg-primary text-inverse font-bold'
                               : 'bg-muted/50 hover:bg-muted text-muted-foreground hover:text-foreground border border-border/80'
                             }`}
                         >
@@ -928,7 +928,7 @@ export function VendorCreationWorkspace({ mode: initialMode, editId: initialEdit
                       type="button"
                       onClick={() => setCatalogFilter('SELECTED')}
                       className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${catalogFilter === 'SELECTED'
-                          ? 'bg-primary text-white font-bold'
+                          ? 'bg-primary text-inverse font-bold'
                           : 'bg-muted/50 hover:bg-muted text-muted-foreground hover:text-foreground border border-border/80'
                         }`}
                     >
@@ -1043,16 +1043,16 @@ export function VendorCreationWorkspace({ mode: initialMode, editId: initialEdit
                               <span
                                 className={`inline-flex items-center gap-1 text-[10px] font-bold px-2.5 py-0.5 rounded-full border ${
                                   item.displayType === 'Semi-Finished Goods'
-                                    ? 'bg-fuchsia-500/10 text-fuchsia-700 dark:text-fuchsia-400 border-fuchsia-500/20'
+                                    ? 'bg-tone-purple-bg text-tone-purple-text border-tone-purple-solid'
                                     : item.displayType === 'Finished Goods'
                                       ? 'bg-primary/10 text-primary border-primary/20'
                                       : item.displayType === 'Hardware & Fasteners'
-                                        ? 'bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300 border border-blue-200 dark:border-blue-900'
+                                        ? 'bg-tone-blue-bg text-tone-blue-text border border-tone-blue-solid/25'
                                         : item.displayType === 'Packaging'
-                                          ? 'bg-purple-100 text-purple-800 dark:bg-purple-950 dark:text-purple-300 border border-purple-200 dark:border-purple-900'
+                                          ? 'bg-tone-purple-bg text-tone-purple-text border border-tone-purple-solid/25'
                                           : item.displayType === 'Outsource Processing'
-                                            ? 'bg-orange-100 text-orange-800 dark:bg-orange-950 dark:text-orange-300 border border-orange-200 dark:border-orange-900'
-                                            : 'bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300 border border-amber-200 dark:border-amber-900'
+                                            ? 'bg-tone-orange-bg text-tone-orange-text border border-tone-orange-solid/25'
+                                            : 'bg-tone-amber-bg text-tone-amber-text border border-tone-amber-solid/25'
                                 }`}
                               >
                                 {item.categoryName}
@@ -1160,7 +1160,7 @@ export function VendorCreationWorkspace({ mode: initialMode, editId: initialEdit
             <div className="order-3 bg-card rounded-xl border border-border shadow-xs overflow-hidden">
               <div className="px-6 py-4 border-b border-border/70 flex flex-wrap items-center justify-between gap-3 bg-card">
                 <div className="flex items-center gap-3">
-                  <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-primary text-white font-mono text-xs font-black shadow-xs ring-2 ring-primary/20">
+                  <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-primary text-inverse font-mono text-xs font-black shadow-xs ring-2 ring-primary/20">
                     03
                   </div>
                   <div>
@@ -1329,7 +1329,7 @@ export function VendorCreationWorkspace({ mode: initialMode, editId: initialEdit
             {/* 4. STATUTORY, TAX & COMPLIANCE */}
             <div className="order-2 bg-card rounded-xl border border-border shadow-xs overflow-hidden">
               <div className="px-6 py-4 border-b border-border/70 flex items-center gap-3 bg-card">
-                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-xs font-black text-white shadow-xs ring-2 ring-primary/20">02</div>
+                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-xs font-black text-inverse shadow-xs ring-2 ring-primary/20">02</div>
                 <h2 className="flex items-center gap-2 text-sm font-bold tracking-tight text-foreground">
                   Statutory & Tax Compliance
                 </h2>
@@ -1428,7 +1428,7 @@ export function VendorCreationWorkspace({ mode: initialMode, editId: initialEdit
             {/* 4. COMMERCIAL & BANKING TERMS */}
             <div className="order-4 bg-card rounded-xl border border-border shadow-xs overflow-hidden">
               <div className="px-6 py-4 border-b border-border/70 flex items-center gap-3 bg-card">
-                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-xs font-black text-white shadow-xs ring-2 ring-primary/20">04</div>
+                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-xs font-black text-inverse shadow-xs ring-2 ring-primary/20">04</div>
                 <h2 className="flex items-center gap-2 text-sm font-bold tracking-tight text-foreground">
                   Commercial & Bank Details
                 </h2>

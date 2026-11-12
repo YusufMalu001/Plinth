@@ -82,10 +82,10 @@ export default function DebitNoteDetailPage({ params }: PageProps) {
 
   const statusTone =
     data.status === 'RECORDED' || data.status === 'APPROVED'
-      ? 'bg-emerald-50 text-emerald-800 border-emerald-200'
+      ? 'bg-tone-green-solid text-tone-green-text border-tone-green-solid/25'
       : data.status === 'SUBMITTED'
-      ? 'bg-blue-50 text-blue-800 border-blue-200'
-      : 'bg-amber-50 text-amber-800 border-amber-200';
+      ? 'bg-tone-blue-solid text-tone-blue-text border-tone-blue-solid/25'
+      : 'bg-tone-amber-solid text-tone-amber-text border-tone-amber-solid/25';
 
   const lines = data.lines || [];
   const totalClaimedUnits = lines.reduce(
@@ -111,7 +111,7 @@ export default function DebitNoteDetailPage({ params }: PageProps) {
   return (
     <main className="min-h-screen bg-muted/20 pb-20 w-full">
       {/* Top Header & Breadcrumb Ribbon (Full Width) */}
-      <div className="border-b border-border bg-card w-full">
+      <div className="border-border-strong border-border bg-card w-full">
         <div className="w-full px-4 sm:px-6 lg:px-8 py-5">
           <nav className="mb-2.5 flex items-center gap-1.5 text-xs text-muted-foreground">
             <Link href={data.grnId ? '/accounts/debit-notes' : '/debit-notes'} className="hover:text-foreground transition-colors flex items-center gap-1">
@@ -123,7 +123,7 @@ export default function DebitNoteDetailPage({ params }: PageProps) {
 
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div className="flex items-center gap-3.5">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-amber-500/10 text-amber-600 border border-amber-500/20">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-tone-amber-bg text-tone-amber-text border border-tone-amber-solid/25">
                 <Receipt className="h-6 w-6" />
               </div>
               <div>
@@ -154,7 +154,7 @@ export default function DebitNoteDetailPage({ params }: PageProps) {
               <button
                 type="button"
                 onClick={() => setIsSendModalOpen(true)}
-                className="inline-flex items-center gap-1.5 rounded-xl bg-n-600 hover:bg-n-700 text-white px-3.5 py-2 text-xs font-bold shadow-xs transition-colors cursor-pointer"
+                className="inline-flex items-center gap-1.5 rounded-xl bg-n-600 hover:bg-n-700 text-inverse px-3.5 py-2 text-xs font-bold shadow-xs transition-colors cursor-pointer"
               >
                 <Send size={13} />
                 <span>Send to Vendor</span>
@@ -249,7 +249,7 @@ export default function DebitNoteDetailPage({ params }: PageProps) {
           <div className="space-y-6 lg:col-span-6">
             {/* Vendor Commercial Information */}
             <div className="rounded-2xl border border-border/80 bg-card p-5 shadow-xs space-y-4">
-              <div className="flex items-center gap-2 border-b border-border/70 pb-3">
+              <div className="flex items-center gap-2 border-border-strong border-border/70 pb-3">
                 <Building2 size={16} className="text-primary" />
                 <h2 className="text-xs font-bold uppercase tracking-wider text-foreground">
                   Vendor Commercial Identification
@@ -275,7 +275,7 @@ export default function DebitNoteDetailPage({ params }: PageProps) {
                   <p className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
                     Claim Basis Category
                   </p>
-                  <span className="mt-1 inline-flex rounded-md bg-amber-100 px-2 py-0.5 text-[11px] font-bold text-amber-900 uppercase">
+                  <span className="mt-1 inline-flex rounded-md bg-tone-amber-solid px-2 py-0.5 text-[11px] font-bold text-tone-amber-text uppercase">
                     {(data.evidence as { reasonCategory?: string } | null | undefined)?.reasonCategory?.replaceAll('_', ' ') || 'RECEIPT SHORTAGE / DAMAGE'}
                   </span>
                   <p className="mt-1 text-[11px] text-muted-foreground">
@@ -287,7 +287,7 @@ export default function DebitNoteDetailPage({ params }: PageProps) {
 
             {/* Comprehensive Discrepancies Comparison Table */}
             <div className="rounded-2xl border border-border/80 bg-card shadow-xs overflow-hidden">
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 border-b border-border/70 bg-muted/20 px-5 py-4">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 border-border-strong border-border/70 bg-muted/20 px-5 py-4">
                 <div>
                   <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
                     <Layers size={15} className="text-primary" />
@@ -305,7 +305,7 @@ export default function DebitNoteDetailPage({ params }: PageProps) {
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-xs border-collapse">
                   <thead>
-                    <tr className="border-b border-border bg-muted/40 text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+                    <tr className="border-border-strong border-border bg-muted/40 text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
                       <th className="px-4 py-3">Item Specification</th>
                       <th className="px-2 py-3 text-center">PO Expected</th>
                       <th className="px-2 py-3 text-center">Delivered</th>
@@ -340,7 +340,7 @@ export default function DebitNoteDetailPage({ params }: PageProps) {
                               <span className="uppercase">{line.uomSymbol || 'EA'}</span>
                             </div>
                             {line.reason && (
-                              <p className="mt-1 text-[11px] text-amber-800 italic bg-amber-50/70 rounded px-1.5 py-0.5 border border-amber-200/60">
+                              <p className="mt-1 text-[11px] text-tone-amber-text italic bg-tone-amber-bg rounded px-1.5 py-0.5 border border-tone-amber-solid/25">
                                 {line.reason}
                               </p>
                             )}
@@ -357,7 +357,7 @@ export default function DebitNoteDetailPage({ params }: PageProps) {
                           </td>
 
                           {/* Accepted Stock */}
-                          <td className="px-2 py-3.5 text-center font-mono text-xs font-bold text-emerald-600">
+                          <td className="px-2 py-3.5 text-center font-mono text-xs font-bold text-tone-green-text">
                             {acc}
                           </td>
 
@@ -386,7 +386,7 @@ export default function DebitNoteDetailPage({ params }: PageProps) {
                       </td>
                       <td className="px-2 py-3 text-center font-mono text-xs">{totalContractExpected}</td>
                       <td className="px-2 py-3 text-center font-mono text-xs">{totalDeliveredPhysical}</td>
-                      <td className="px-2 py-3 text-center font-mono text-xs text-emerald-600">{totalAcceptedStock}</td>
+                      <td className="px-2 py-3 text-center font-mono text-xs text-tone-green-text">{totalAcceptedStock}</td>
                       <td className="px-3 py-3 text-center font-mono text-xs text-destructive">{totalClaimedUnits}</td>
                       <td className="px-3 py-3 text-right text-[10px] uppercase text-muted-foreground">Total</td>
                       <td className="px-4 py-3 text-right font-mono text-sm font-bold text-foreground">
@@ -399,16 +399,16 @@ export default function DebitNoteDetailPage({ params }: PageProps) {
             </div>
 
             {/* Discrepancy Justification */}
-            <div className="rounded-2xl border border-amber-300 bg-amber-50/40 p-5 shadow-xs space-y-3">
-              <div className="flex items-center gap-2 text-amber-950">
-                <AlertTriangle size={16} className="text-amber-600" />
+            <div className="rounded-2xl border border-tone-amber-solid/25 bg-tone-amber-bg p-5 shadow-xs space-y-3">
+              <div className="flex items-center gap-2 text-tone-amber-text">
+                <AlertTriangle size={16} className="text-tone-amber-text" />
                 <h2 className="text-xs font-bold uppercase tracking-wider">
                   Commercial Discrepancy Justification
                 </h2>
               </div>
 
-              <div className="rounded-xl border border-amber-200 bg-white/90 p-4 text-xs leading-relaxed text-amber-950 shadow-2xs">
-                <p className="font-semibold text-amber-900 mb-1">
+              <div className="rounded-xl border border-tone-amber-solid/25 bg-surface/90 p-4 text-xs leading-relaxed text-tone-amber-text shadow-2xs">
+                <p className="font-semibold text-tone-amber-text mb-1">
                   Reason Note:
                 </p>
                 <p>{data.reason}</p>
@@ -417,8 +417,8 @@ export default function DebitNoteDetailPage({ params }: PageProps) {
               {(() => {
                 const evidence = data.evidence as { discrepancyIds?: string[] } | null | undefined;
                 return evidence?.discrepancyIds && evidence.discrepancyIds.length > 0 ? (
-                  <div className="flex items-center gap-1.5 text-[11px] text-amber-900">
-                    <ShieldCheck size={13} className="text-amber-700" />
+                  <div className="flex items-center gap-1.5 text-[11px] text-tone-amber-text">
+                    <ShieldCheck size={13} className="text-tone-amber-text" />
                     <span>
                       Linked to {evidence.discrepancyIds.length} formal inspection discrepancy marker(s).
                     </span>
@@ -429,7 +429,7 @@ export default function DebitNoteDetailPage({ params }: PageProps) {
 
             {/* Workflow Timeline */}
             <div className="rounded-2xl border border-border/80 bg-card p-5 shadow-xs space-y-4">
-              <div className="flex items-center gap-2 border-b border-border/70 pb-3">
+              <div className="flex items-center gap-2 border-border-strong border-border/70 pb-3">
                 <Clock size={16} className="text-primary" />
                 <h3 className="text-xs font-bold uppercase tracking-wider text-foreground">
                   Authorization &amp; Financial Workflow
@@ -530,7 +530,7 @@ export default function DebitNoteDetailPage({ params }: PageProps) {
                   <div className="space-y-6">
                     {/* Top: Raised Purchase Order Contract */}
                     <div className="space-y-2">
-                      <div className="flex items-center justify-between border-b border-border/60 pb-2 px-1">
+                      <div className="flex items-center justify-between border-border-strong border-border/60 pb-2 px-1">
                         <div className="flex items-center gap-2">
                           <FileText size={14} className="text-primary" />
                           <span className="font-bold text-xs text-foreground uppercase tracking-wider">
@@ -548,7 +548,7 @@ export default function DebitNoteDetailPage({ params }: PageProps) {
                           </button>
                         )}
                       </div>
-                      <div className="rounded-xl border border-border/80 bg-white p-2 shadow-xs overflow-x-auto min-h-[500px]">
+                      <div className="rounded-xl border border-border/80 bg-surface p-2 shadow-xs overflow-x-auto min-h-[500px]">
                         {poDetail ? (
                           <PurchaseOrderPDF po={poDetail} ref={printPoRef} isPrintPreview={true} />
                         ) : (
@@ -561,9 +561,9 @@ export default function DebitNoteDetailPage({ params }: PageProps) {
 
                     {/* Bottom: Generated Claim Voucher */}
                     <div className="space-y-2">
-                      <div className="flex items-center justify-between border-b border-border/60 pb-2 px-1">
+                      <div className="flex items-center justify-between border-border-strong border-border/60 pb-2 px-1">
                         <div className="flex items-center gap-2">
-                          <Receipt size={14} className="text-amber-600" />
+                          <Receipt size={14} className="text-tone-amber-text" />
                           <span className="font-bold text-xs text-foreground uppercase tracking-wider">
                             2. Commercial Debit Claim Voucher ({data.debitNoteNumber})
                           </span>
@@ -577,7 +577,7 @@ export default function DebitNoteDetailPage({ params }: PageProps) {
                           <span>Print Claim</span>
                         </button>
                       </div>
-                      <div className="rounded-xl border border-border/80 bg-white p-2 shadow-xs overflow-x-auto min-h-[500px]">
+                      <div className="rounded-xl border border-border/80 bg-surface p-2 shadow-xs overflow-x-auto min-h-[500px]">
                         <DebitNotePDF note={data} ref={printRef} />
                       </div>
                     </div>
@@ -587,7 +587,7 @@ export default function DebitNoteDetailPage({ params }: PageProps) {
                 {/* 2. ONLY CLAIM VOUCHER */}
                 {previewTab === 'claim' && (
                   <div className="space-y-2">
-                    <div className="flex items-center justify-between border-b border-border/60 pb-2 px-1">
+                    <div className="flex items-center justify-between border-border-strong border-border/60 pb-2 px-1">
                       <span className="font-bold text-xs text-foreground uppercase tracking-wider">
                         Official Debit Claim Voucher ({data.debitNoteNumber})
                       </span>
@@ -600,7 +600,7 @@ export default function DebitNoteDetailPage({ params }: PageProps) {
                         <span>Print Claim</span>
                       </button>
                     </div>
-                    <div className="rounded-xl border border-border/80 bg-white p-2 shadow-xs overflow-auto">
+                    <div className="rounded-xl border border-border/80 bg-surface p-2 shadow-xs overflow-auto">
                       <DebitNotePDF note={data} ref={printRef} />
                     </div>
                   </div>
@@ -609,7 +609,7 @@ export default function DebitNoteDetailPage({ params }: PageProps) {
                 {/* 3. ONLY PURCHASE ORDER */}
                 {previewTab === 'po' && (
                   <div className="space-y-2">
-                    <div className="flex items-center justify-between border-b border-border/60 pb-2 px-1">
+                    <div className="flex items-center justify-between border-border-strong border-border/60 pb-2 px-1">
                       <span className="font-bold text-xs text-foreground uppercase tracking-wider">
                         Contractual Purchase Order ({poDetail?.poNumber || data.po?.poNumber || 'PO'})
                       </span>
@@ -624,7 +624,7 @@ export default function DebitNoteDetailPage({ params }: PageProps) {
                         </button>
                       )}
                     </div>
-                    <div className="rounded-xl border border-border/80 bg-white p-2 shadow-xs overflow-auto">
+                    <div className="rounded-xl border border-border/80 bg-surface p-2 shadow-xs overflow-auto">
                       {poDetail ? (
                         <PurchaseOrderPDF po={poDetail} ref={printPoRef} isPrintPreview={true} />
                       ) : (
@@ -639,7 +639,7 @@ export default function DebitNoteDetailPage({ params }: PageProps) {
                 {/* 4. ATTACHED VENDOR DELIVERY PROOF */}
                 {previewTab === 'vendor_doc' && uploadedVendorDoc && (
                   <div className="space-y-2">
-                    <div className="flex items-center justify-between border-b border-border/60 pb-2 px-1">
+                    <div className="flex items-center justify-between border-border-strong border-border/60 pb-2 px-1">
                       <div className="flex items-center gap-2">
                         <FileText size={14} className="text-primary" />
                         <span className="font-bold text-xs text-foreground uppercase tracking-wider">
@@ -656,21 +656,21 @@ export default function DebitNoteDetailPage({ params }: PageProps) {
                         <span>Open Raw File</span>
                       </a>
                     </div>
-                    <div className="rounded-xl border border-border/80 bg-white p-2 shadow-xs overflow-hidden">
+                    <div className="rounded-xl border border-border/80 bg-surface p-2 shadow-xs overflow-hidden">
                       {/\.(png|jpe?g|webp|gif|bmp|svg)(\?.*)?$/i.test(uploadedVendorDoc) ||
                       Boolean(grnDocs?.[0]?.fileName?.match(/\.(png|jpe?g|webp|gif|bmp|svg)$/i)) ? (
-                        <div className="min-h-[500px] flex items-center justify-center p-2 bg-slate-50/50 rounded-lg">
+                        <div className="min-h-[500px] flex items-center justify-center p-2 bg-muted/50 rounded-lg">
                           <img
                             src={uploadedVendorDoc}
                             alt="Vendor Delivery Proof"
-                            className="max-w-full max-h-[750px] object-contain mx-auto rounded shadow-sm bg-white"
+                            className="max-w-full max-h-[750px] object-contain mx-auto rounded shadow-sm bg-surface"
                           />
                         </div>
                       ) : (
                         <iframe
                           src={uploadedVendorDoc}
                           title="Vendor Delivery Proof"
-                          className="w-full h-[750px] rounded-lg border-0 bg-white"
+                          className="w-full h-[750px] rounded-lg border-accent bg-surface"
                         />
                       )}
                     </div>

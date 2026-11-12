@@ -31,15 +31,15 @@ export function BlockedSourceState({
   const name = displayName || sourceType.replace(/_/g, ' ');
 
   return (
-    <Card className="rounded-2xl border border-amber-500/30 bg-amber-500/5 p-8 shadow-xs">
+    <Card className="rounded-2xl border border-tone-amber-solid/30 bg-tone-amber-bg/5 p-8 shadow-xs">
       <div className="max-w-2xl space-y-4">
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amber-500/20 text-amber-600 dark:text-amber-400">
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-tone-amber-bg/20 text-tone-amber-text ">
             <Lock className="h-5 w-5" />
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <span className="font-mono text-[10px] font-bold uppercase tracking-wider bg-amber-500/20 text-amber-700 dark:text-amber-300 px-2 py-0.5 rounded">
+              <span className="font-mono text-[10px] font-bold uppercase tracking-wider bg-tone-amber-bg/20 text-tone-amber-text  px-2 py-0.5 rounded">
                 NOT YET SUPPORTED
               </span>
               <span className="font-mono text-xs text-muted-foreground">{sourceType}</span>
@@ -84,7 +84,7 @@ export function BlockedSourceState({
                   {validationItems.map((v) => (
                     <span
                       key={v}
-                      className="font-mono text-[11px] font-semibold bg-amber-500/10 border border-amber-500/20 text-amber-700 dark:text-amber-300 px-2 py-0.5 rounded"
+                      className="font-mono text-[11px] font-semibold bg-tone-amber-bg/10 border border-tone-amber-solid/20 text-tone-amber-text  px-2 py-0.5 rounded"
                     >
                       {v}
                     </span>

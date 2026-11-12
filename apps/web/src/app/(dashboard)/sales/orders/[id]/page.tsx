@@ -406,7 +406,7 @@ export default function SalesOrderDetailPage({ params }: { params: { id: string 
                   className="p-1 text-muted-foreground hover:text-foreground rounded transition-colors"
                   title="Copy Order Number"
                 >
-                  {copied ? <Check className="h-3.5 w-3.5 text-emerald-600" /> : <Copy className="h-3.5 w-3.5" />}
+                  {copied ? <Check className="h-3.5 w-3.5 text-tone-green-text" /> : <Copy className="h-3.5 w-3.5" />}
                 </button>
               </span>
             </nav>
@@ -526,7 +526,7 @@ export default function SalesOrderDetailPage({ params }: { params: { id: string 
                   <Button
                     size="sm"
                     onClick={() => setAdminOverrideModalOpen(true)}
-                    className="inline-flex items-center gap-1.5 bg-amber-600 hover:bg-amber-700 text-white font-bold shadow-2xs"
+                    className="inline-flex items-center gap-1.5 bg-tone-amber-solid hover:bg-tone-amber-solid text-inverse font-bold shadow-2xs"
                   >
                     <ShieldAlert className="h-3.5 w-3.5" />
                     <span>Executive Override</span>
@@ -538,7 +538,7 @@ export default function SalesOrderDetailPage({ params }: { params: { id: string 
                     size="sm"
                     onClick={() => action.mutate({ id: order.id, action: 'confirm' })}
                     disabled={action.isPending}
-                    className="inline-flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold shadow-2xs"
+                    className="inline-flex items-center gap-1.5 bg-action hover:bg-[color:var(--action-primary-bg-hover)] text-inverse font-bold shadow-2xs"
                   >
                     <CheckCircle2 className="h-3.5 w-3.5" />
                     <span>{action.isPending ? 'Confirming...' : 'Confirm Order'}</span>
@@ -549,7 +549,7 @@ export default function SalesOrderDetailPage({ params }: { params: { id: string 
                   variant="default"
                   size="sm"
                   onClick={() => handlePrint()}
-                  className="inline-flex items-center gap-1.5 bg-primary hover:bg-amber-600 text-white font-bold shadow-2xs cursor-pointer"
+                  className="inline-flex items-center gap-1.5 bg-primary hover:bg-[color:var(--tone-amber-solid)] text-inverse font-bold shadow-2xs cursor-pointer"
                 >
                   <Printer className="h-3.5 w-3.5" />
                   <span>Print Pro Forma</span>
@@ -580,7 +580,7 @@ export default function SalesOrderDetailPage({ params }: { params: { id: string 
                           },
                         })
                       }
-                      className="inline-flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold shadow-2xs"
+                      className="inline-flex items-center gap-1.5 bg-tone-green-solid hover:bg-[color:var(--tone-green-text)] text-inverse font-bold shadow-2xs"
                     >
                       <Save className="h-3.5 w-3.5" />
                       <span>Save Changes</span>
@@ -620,7 +620,7 @@ export default function SalesOrderDetailPage({ params }: { params: { id: string 
                 {order.status !== 'DRAFT' && order.status !== 'CANCELLED' && (
                   <Link
                     href="/accounts/sales"
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-n-50 text-n-700 hover:bg-n-100 dark:bg-n-950/40 dark:text-n-300 border border-n-200 dark:border-n-900/50 transition-colors"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-n-50 text-n-700 hover:bg-n-100 border border-n-200 transition-colors"
                   >
                     <Receipt className="h-3.5 w-3.5 text-n-600" />
                     <span>Accounts Tax Invoice</span>
@@ -713,7 +713,7 @@ export default function SalesOrderDetailPage({ params }: { params: { id: string 
           <div className="p-5 rounded-2xl bg-card border border-border/80 shadow-2xs space-y-4">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
               <div className="flex items-start gap-3.5">
-                <div className="p-2.5 rounded-xl bg-amber-500/10 text-amber-600 border border-amber-500/20 shrink-0">
+                <div className="p-2.5 rounded-xl bg-tone-amber-bg text-tone-amber-text border border-tone-amber-solid/25 shrink-0">
                   <ShieldAlert className="h-6 w-6" />
                 </div>
                 <div className="space-y-1">
@@ -721,7 +721,7 @@ export default function SalesOrderDetailPage({ params }: { params: { id: string 
                     <h3 className="text-base font-bold text-foreground">
                       Order is in the Executive Hold Queue
                     </h3>
-                    <Badge variant="outline" className="font-mono text-[10px] uppercase font-bold text-amber-600 border-amber-500/40">
+                    <Badge variant="outline" className="font-mono text-[10px] uppercase font-bold text-tone-amber-text border-tone-amber-solid/25">
                       ON_HOLD
                     </Badge>
                   </div>
@@ -737,7 +737,7 @@ export default function SalesOrderDetailPage({ params }: { params: { id: string 
                     <Button
                       size="sm"
                       onClick={() => setAdminOverrideModalOpen(true)}
-                      className="font-bold flex items-center gap-1.5 bg-primary text-white shadow-2xs"
+                      className="font-bold flex items-center gap-1.5 bg-primary text-inverse shadow-2xs"
                     >
                       <TrendingUp className="h-4 w-4" />
                       Executive Override
@@ -908,7 +908,7 @@ export default function SalesOrderDetailPage({ params }: { params: { id: string 
 
             {/* Fulfillment Packages */}
             <div className="rounded-2xl border border-border bg-card p-5 shadow-2xs space-y-4">
-              <div className="flex items-center justify-between border-b border-border pb-3">
+              <div className="flex items-center justify-between border-border-strong border-border pb-3">
                 <h4 className="text-xs font-bold uppercase tracking-wider text-foreground flex items-center gap-2">
                   <Package className="h-4 w-4 text-primary" /> Dispatched Packages &amp; Shipments
                 </h4>
@@ -974,7 +974,7 @@ export default function SalesOrderDetailPage({ params }: { params: { id: string 
 
             {/* Audit History & Timeline */}
             <div className="rounded-2xl border border-border bg-card p-5 shadow-2xs space-y-4">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-foreground flex items-center gap-2 border-b border-border pb-3">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-foreground flex items-center gap-2 border-border-strong border-border pb-3">
                 <Clock className="h-4 w-4 text-primary" /> Lifecycle Audit History &amp; Event Trail
               </h4>
 
@@ -986,7 +986,7 @@ export default function SalesOrderDetailPage({ params }: { params: { id: string 
                 <div className="relative pl-6 space-y-6 before:absolute before:left-2.5 before:top-2 before:bottom-2 before:w-0.5 before:bg-border">
                   {order.statusHistory.map((item) => (
                     <div key={item.id} className="relative">
-                      <div className="absolute -left-6 top-1 h-3.5 w-3.5 rounded-full border-2 border-background bg-primary" />
+                      <div className="absolute -left-6 top-1 h-3.5 w-3.5 rounded-full border-border border-background bg-primary" />
                       <div className="font-semibold text-xs text-foreground">
                         {item.toStatus.replace(/_/g, ' ')}
                       </div>

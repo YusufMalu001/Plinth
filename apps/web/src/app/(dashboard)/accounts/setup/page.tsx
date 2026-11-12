@@ -108,8 +108,8 @@ export default function AccountsSetupPage() {
         <div
           className={`flex items-center justify-between rounded-2xl p-4 text-xs font-medium border ${
             notification.type === 'success'
-              ? 'border-primary/20 bg-primary/10 text-primary dark:text-primary'
-              : 'border-destructive/30 bg-destructive/100/10 text-destructive dark:text-destructive'
+              ? 'border-primary/20 bg-primary/10 text-primary'
+              : 'border-destructive/30 bg-destructive/100/10 text-destructive'
           }`}
         >
           <span>{notification.message}</span>
@@ -157,7 +157,7 @@ export default function AccountsSetupPage() {
           onClick={() => setActiveTab('BOOK')}
           className={`rounded-xl px-4 py-1.5 text-xs font-semibold transition-all ${
             activeTab === 'BOOK'
-              ? 'bg-primary text-white shadow-sm'
+              ? 'bg-primary text-inverse shadow-sm'
               : 'text-muted-foreground hover:text-foreground'
           }`}
         >
@@ -167,7 +167,7 @@ export default function AccountsSetupPage() {
           onClick={() => setActiveTab('PERIODS')}
           className={`rounded-xl px-4 py-1.5 text-xs font-semibold transition-all ${
             activeTab === 'PERIODS'
-              ? 'bg-primary text-white shadow-sm'
+              ? 'bg-primary text-inverse shadow-sm'
               : 'text-muted-foreground hover:text-foreground'
           }`}
         >
@@ -177,7 +177,7 @@ export default function AccountsSetupPage() {
           onClick={() => setActiveTab('CHART')}
           className={`rounded-xl px-4 py-1.5 text-xs font-semibold transition-all ${
             activeTab === 'CHART'
-              ? 'bg-primary text-white shadow-sm'
+              ? 'bg-primary text-inverse shadow-sm'
               : 'text-muted-foreground hover:text-foreground'
           }`}
         >
@@ -185,7 +185,7 @@ export default function AccountsSetupPage() {
         </button>
         <button
           onClick={() => setActiveTab('MAPPINGS')}
-          className={`rounded-xl px-4 py-1.5 text-xs font-semibold transition-all ${activeTab === 'MAPPINGS' ? 'bg-primary text-white shadow-sm' : 'text-muted-foreground hover:text-foreground'}`}
+          className={`rounded-xl px-4 py-1.5 text-xs font-semibold transition-all ${activeTab === 'MAPPINGS' ? 'bg-primary text-inverse shadow-sm' : 'text-muted-foreground hover:text-foreground'}`}
         >
           Sales Posting Mappings
         </button>
@@ -196,7 +196,7 @@ export default function AccountsSetupPage() {
         <div className="grid gap-6 lg:grid-cols-2">
           {!selectedEntity && (
             <Card className="rounded-2xl border-border/80 shadow-none p-5">
-              <CardHeader className="p-0 pb-4 border-b border-border/70">
+              <CardHeader className="p-0 pb-4 border-border-strong border-border/70">
                 <CardTitle className="text-base font-bold">Plinth Accounts Setup</CardTitle>
                 <p className="text-xs text-muted-foreground mt-0.5">This platform is configured for Plinth only.</p>
               </CardHeader>
@@ -206,7 +206,7 @@ export default function AccountsSetupPage() {
                   <Button
                     onClick={() => void execute(() => accountsApi.initializePlinthBook(), 'Plinth Accounts setup initialized.')}
                     disabled={pending}
-                    className="bg-primary hover:bg-primary/90 text-white font-semibold rounded-xl text-xs"
+                    className="bg-primary hover:bg-primary/90 text-inverse font-semibold rounded-xl text-xs"
                   >
                     {pending ? 'Initializing…' : 'Set Up Plinth Accounts'}
                   </Button>
@@ -216,7 +216,7 @@ export default function AccountsSetupPage() {
           )}
           {selectedEntity && (
             <Card className="rounded-2xl border-border/80 shadow-none p-5">
-              <CardHeader className="p-0 pb-4 border-b border-border/70">
+              <CardHeader className="p-0 pb-4 border-border-strong border-border/70">
                 <div className="flex items-center justify-between">
                   <div>
                     <CardTitle className="text-base font-bold">Independent Activation Review</CardTitle>
@@ -227,8 +227,8 @@ export default function AccountsSetupPage() {
                   <span
                     className={`rounded-full px-2.5 py-0.5 text-xs font-bold ${
                       selectedEntity.status === 'ACTIVE'
-                        ? 'bg-primary/10 text-primary dark:text-primary'
-                        : 'bg-muted text-foreground dark:text-muted-foreground'
+                        ? 'bg-primary/10 text-primary'
+                        : 'bg-muted text-foreground'
                     }`}
                   >
                     {selectedEntity.status}
@@ -269,7 +269,7 @@ export default function AccountsSetupPage() {
                           'Accounting book independently activated for financial postings.'
                         )
                       }
-                      className="w-full bg-primary hover:bg-primary/90 text-white font-semibold rounded-xl text-xs"
+                      className="w-full bg-primary hover:bg-primary/90 text-inverse font-semibold rounded-xl text-xs"
                       disabled={pending || verificationReference.trim().length < 5}
                     >
                       {pending ? 'Activating…' : 'Activate Verified Book'}
@@ -303,7 +303,7 @@ export default function AccountsSetupPage() {
               <Button
                 onClick={() => void execute(() => accountsApi.initializePlinthBook(), 'Plinth Accounts setup initialized.')}
                 disabled={pending}
-                className="bg-primary hover:bg-primary/90 text-white font-semibold rounded-xl text-xs"
+                className="bg-primary hover:bg-primary/90 text-inverse font-semibold rounded-xl text-xs"
               >
                 {pending ? 'Initializing…' : 'Set Up Plinth Accounts'}
               </Button>
@@ -316,7 +316,7 @@ export default function AccountsSetupPage() {
       {activeTab === 'PERIODS' && entityId && (
         <div className="grid gap-6 lg:grid-cols-[1fr_1.3fr]">
           <Card className="rounded-2xl border-border/80 shadow-none p-5">
-            <CardHeader className="p-0 pb-4 border-b border-border/70">
+            <CardHeader className="p-0 pb-4 border-border-strong border-border/70">
               <CardTitle className="text-base font-bold">Open New Fiscal Period</CardTitle>
               <p className="text-xs text-muted-foreground mt-0.5">
                 Define the financial cutoff dates and fiscal year
@@ -372,7 +372,7 @@ export default function AccountsSetupPage() {
                 <div className="flex justify-end pt-2">
                   <Button
                     type="submit"
-                    className="bg-primary hover:bg-primary/90 text-white font-semibold rounded-xl text-xs"
+                    className="bg-primary hover:bg-primary/90 text-inverse font-semibold rounded-xl text-xs"
                     disabled={pending}
                   >
                     {pending ? 'Opening…' : 'Open Fiscal Period'}
@@ -383,7 +383,7 @@ export default function AccountsSetupPage() {
           </Card>
 
           <Card className="rounded-2xl border-border/80 shadow-none">
-            <CardHeader className="border-b border-border/70 p-5">
+            <CardHeader className="border-border-strong border-border/70 p-5">
               <CardTitle className="text-base font-bold">Configured Periods</CardTitle>
               <p className="text-xs text-muted-foreground mt-0.5">
                 Current and historical financial posting periods
@@ -419,7 +419,7 @@ export default function AccountsSetupPage() {
                             <span
                               className={`rounded-full px-2.5 py-0.5 text-[10px] font-bold ${
                                 p.status === 'OPEN'
-                                  ? 'bg-primary/10 text-primary dark:text-primary'
+                                  ? 'bg-primary/10 text-primary'
                                   : 'bg-muted text-muted-foreground'
                               }`}
                             >
@@ -447,7 +447,7 @@ export default function AccountsSetupPage() {
       {activeTab === 'CHART' && entityId && (
         <div className="grid gap-6 lg:grid-cols-[1fr_1.4fr]">
           <Card className="rounded-2xl border-border/80 shadow-none p-5">
-            <CardHeader className="p-0 pb-4 border-b border-border/70">
+            <CardHeader className="p-0 pb-4 border-border-strong border-border/70">
               <CardTitle className="text-base font-bold">Add Ledger Account</CardTitle>
               <p className="text-xs text-muted-foreground mt-0.5">
                 Create an approved account in the chart with Tally mapping
@@ -516,7 +516,7 @@ export default function AccountsSetupPage() {
                 <div className="flex justify-end pt-2">
                   <Button
                     type="submit"
-                    className="bg-primary hover:bg-primary/90 text-white font-semibold rounded-xl text-xs"
+                    className="bg-primary hover:bg-primary/90 text-inverse font-semibold rounded-xl text-xs"
                     disabled={pending}
                   >
                     {pending ? 'Saving…' : 'Add to Chart'}
@@ -527,7 +527,7 @@ export default function AccountsSetupPage() {
           </Card>
 
           <Card className="rounded-2xl border-border/80 shadow-none">
-            <CardHeader className="border-b border-border/70 p-5">
+            <CardHeader className="border-border-strong border-border/70 p-5">
               <div className="flex items-center justify-between">
                 <div>
                   <CardTitle className="text-base font-bold">Chart of Accounts</CardTitle>
@@ -571,7 +571,7 @@ export default function AccountsSetupPage() {
                           </TableCell>
                           <TableCell className="p-3 text-center font-sans">
                             {acc.isControl && (
-                              <span className="rounded-full bg-muted px-2 py-0.5 text-[10px] font-bold text-foreground dark:text-muted-foreground">
+                              <span className="rounded-full bg-muted px-2 py-0.5 text-[10px] font-bold text-foreground">
                                 Control
                               </span>
                             )}
@@ -594,7 +594,7 @@ export default function AccountsSetupPage() {
       )}
       {activeTab === 'MAPPINGS' && entityId && (
         <Card className="rounded-2xl border-border/80 shadow-none p-5">
-          <CardHeader className="p-0 pb-4 border-b border-border/70">
+          <CardHeader className="p-0 pb-4 border-border-strong border-border/70">
             <CardTitle className="text-base font-bold">Sales and Receivables Ledger Mappings</CardTitle>
             <p className="mt-1 text-xs text-muted-foreground">Choose accounts from the active chart. Posting is blocked until each required mapping is configured.</p>
           </CardHeader>

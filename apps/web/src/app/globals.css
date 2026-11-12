@@ -43,7 +43,7 @@
 }
 
 @layer components {
-  .field { @apply flex flex-col gap-2 text-sm font-bold text-slate-800 dark:text-slate-200; }
+  .field { @apply flex flex-col gap-2 text-sm font-bold text-ink-secondary; }
   /* Filled grey input: no border, 8px radius; focus = white fill + strong outline. */
   .input { @apply h-11 w-full rounded-control bg-surface-muted px-3.5 text-sm font-semibold text-ink outline-none border border-transparent transition focus:border-[color:var(--border-strong)] focus:bg-page focus:ring-0; }
 }
@@ -80,7 +80,7 @@ input[type='number']::-webkit-outer-spin-button {
   --accent: var(--bg-muted);
   --accent-foreground: var(--text-primary);
   --destructive: var(--tone-red-text);
-  --destructive-foreground: #ffffff;
+  --destructive-foreground: var(--text-inverse);
   --input: var(--border-strong);
   --ring: var(--focus-ring);
 
@@ -99,10 +99,10 @@ input[type='number']::-webkit-outer-spin-button {
   --shadow-xs: none;
   --shadow-sm: none;
   --shadow: none;
-  --shadow-md: none;
-  --shadow-lg: none;
-  --shadow-xl: none;
-  --shadow-2xl: none;
+  --shadow-none: none;
+  --shadow-popover: none;
+  --shadow-popover: none;
+  --shadow-modal: none;
 
   --tracking-normal: 0em;
   --spacing: 0.25rem;
@@ -132,7 +132,7 @@ input[type='number']::-webkit-outer-spin-button {
     outline: none;
     accent-color: var(--action-primary-bg);
     color-scheme: light;
-    transition: border-color .15s ease, box-shadow .15s ease, background-color .15s ease;
+    transition: border-color .15s ease, box-shadow-none .15s ease, background-color .15s ease;
   }
   select:hover { border-color: var(--border-strong); background-color: var(--bg-muted); }
   select:focus { border-color: var(--border-strong); box-shadow: 0 0 0 2px var(--focus-ring); }

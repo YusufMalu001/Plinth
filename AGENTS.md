@@ -1,0 +1,1 @@
+For ANY UI work (colours, components, charts, emails, PDFs), read PLINTH_THEME.txt first and follow it exactly. Never use a colour, spacing, radius or shadow that is not defined there. If something is missing, use the closest token and note it in REFACTOR_LOG.md.

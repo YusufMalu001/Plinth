@@ -105,7 +105,7 @@ export function TallyExportModal({ isOpen, onClose, entityId: _entityId, onExpor
           <div>
             <div className="flex items-center gap-2">
               <h2 className="text-xl font-bold tracking-tight text-foreground">Export to TallyPrime</h2>
-              <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-foreground dark:text-primary">
+              <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-foreground ">
                 XML / JSON Sync
               </span>
             </div>

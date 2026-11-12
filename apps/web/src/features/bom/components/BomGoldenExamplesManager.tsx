@@ -80,7 +80,7 @@ export function BomGoldenExamplesManager({ version, isReadOnly }: Props) {
       <div className="flex items-center justify-between">
         <div>
           <h3 className="text-base font-semibold text-foreground flex items-center gap-2">
-            <Sparkles className="h-5 w-5 text-[#004a80] dark:text-blue-400" />
+            <Sparkles className="h-5 w-5 text-[var(--accent-blue)] " />
             Golden Example Reference Cases ({version.goldenExamples.length})
           </h3>
           <p className="text-xs text-muted-foreground mt-0.5">
@@ -93,7 +93,7 @@ export function BomGoldenExamplesManager({ version, isReadOnly }: Props) {
             type="button"
             onClick={handleOpenModal}
             disabled={version.lines.length === 0}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-[#004a80] text-white hover:bg-[#003c68] disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-sm"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-[var(--accent-blue)] text-white hover:bg-[var(--accent-hover)] disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-sm"
           >
             <Plus className="h-3.5 w-3.5" />
             Add Golden Fixture
@@ -103,7 +103,7 @@ export function BomGoldenExamplesManager({ version, isReadOnly }: Props) {
 
       {version.goldenExamples.length === 0 ? (
         <div className="p-8 border border-dashed rounded-xl text-center space-y-3 bg-muted/20">
-          <ShieldAlert className="h-10 w-10 text-[#004a80]/60 dark:text-blue-400/60 mx-auto" />
+          <ShieldAlert className="h-10 w-10 text-[var(--accent-blue)]/60  mx-auto" />
           <div>
             <p className="text-sm font-medium text-foreground">No Golden Examples Linked</p>
             <p className="text-xs text-muted-foreground mt-1 max-w-md mx-auto">
@@ -114,7 +114,7 @@ export function BomGoldenExamplesManager({ version, isReadOnly }: Props) {
             <button
               type="button"
               onClick={handleOpenModal}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-[#004a80] text-white hover:bg-[#003c68]"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-[var(--accent-blue)] text-white hover:bg-[var(--accent-hover)]"
             >
               <Plus className="h-3.5 w-3.5" />
               Create Golden Example Test Case
@@ -126,19 +126,19 @@ export function BomGoldenExamplesManager({ version, isReadOnly }: Props) {
           {version.goldenExamples.map((example) => (
             <div
               key={example.id}
-              className="p-4 rounded-xl border border-border bg-card shadow-sm space-y-3 hover:border-[#004a80]/40 transition-all"
+              className="p-4 rounded-xl border border-border bg-card shadow-sm space-y-3 hover:border-[var(--accent-blue)]/40 transition-all"
             >
               <div className="flex items-start justify-between">
                 <div>
                   <h4 className="text-sm font-semibold text-foreground flex items-center gap-1.5">
-                    <CheckCheck className="h-4 w-4 text-emerald-500" />
+                    <CheckCheck className="h-4 w-4 text-tone-green-text" />
                     {example.label}
                   </h4>
                   <p className="text-xs text-muted-foreground font-mono mt-0.5">
                     Input: {example.inputQuantity} {example.inputUom?.symbol || 'units'}
                   </p>
                 </div>
-                <span className="px-2 py-0.5 rounded text-[10px] font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                <span className="px-2 py-0.5 rounded text-[10px] font-medium bg-tone-emerald-bg/10 text-tone-green-solid border border-tone-green-solid/20">
                   Verified
                 </span>
               </div>
@@ -152,7 +152,7 @@ export function BomGoldenExamplesManager({ version, isReadOnly }: Props) {
                     return (
                       <div key={i} className="flex items-center justify-between text-xs py-1 px-2 rounded bg-muted/40 font-mono">
                         <span className="text-foreground text-[11px] truncate max-w-[180px] font-sans">{name}</span>
-                        <span className="font-semibold text-emerald-400">{r.expectedQuantity}</span>
+                        <span className="font-semibold text-tone-green-solid">{r.expectedQuantity}</span>
                       </div>
                     );
                   })}
@@ -297,7 +297,7 @@ export function BomGoldenExamplesManager({ version, isReadOnly }: Props) {
                 <button
                   type="submit"
                   disabled={addMutation.isPending}
-                  className="px-4 py-1.5 text-xs rounded-lg bg-[#004a80] text-white hover:bg-[#003c68] font-semibold shadow-sm disabled:opacity-50"
+                  className="px-4 py-1.5 text-xs rounded-lg bg-[var(--accent-blue)] text-white hover:bg-[var(--accent-hover)] font-semibold shadow-sm disabled:opacity-50"
                 >
                   {addMutation.isPending ? 'Saving Fixture...' : 'Save Golden Fixture'}
                 </button>

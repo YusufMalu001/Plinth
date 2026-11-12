@@ -166,7 +166,7 @@ function StartAssemblyModal({
           </div>
           <div className="space-y-1 border-t border-border/70 pt-3">
             <span className="block text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Complete Kits Ready</span>
-            <span className={`font-mono text-base font-bold ${maxKits > 0 ? 'text-emerald-600 dark:text-emerald-400' : 'text-destructive'}`}>
+            <span className={`font-mono text-base font-bold ${maxKits > 0 ? 'text-tone-green-text' : 'text-destructive'}`}>
               {maxKits.toLocaleString()} kits
             </span>
           </div>
@@ -236,7 +236,7 @@ function StartAssemblyModal({
               className="h-10 rounded-xl font-mono text-base font-bold"
               autoFocus
             />
-            <p className="text-[11px] text-emerald-600 dark:text-emerald-400 font-medium">
+            <p className="text-[11px] text-tone-green-text font-medium">
               All feeder components are ready! You can assemble up to {maxKits.toLocaleString()} finished unit(s) in this run.
             </p>
           </div>
@@ -1044,7 +1044,7 @@ export default function AssemblyStationDetailPage() {
         </div>
 
         {/* Top Header Card */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-border/80 pb-5">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-border-strong border-border/80 pb-5">
           <div className="space-y-1.5">
             <div className="flex flex-wrap items-center gap-3">
               <h1 className="text-2xl font-bold tracking-tight text-foreground font-mono">
@@ -1052,12 +1052,12 @@ export default function AssemblyStationDetailPage() {
               </h1>
               <StatusBadge status={batch?.status || (scheduleDetail?.status as any) || 'IN_PROGRESS'} />
               {buildableKits > 0 && (
-                <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-xs font-bold text-emerald-700 dark:text-emerald-400">
+                <span className="px-2.5 py-0.5 rounded-full bg-tone-green-bg border border-tone-green-solid/25 text-xs font-bold text-tone-green-text">
                   {buildableKits.toLocaleString()} kits ready to assemble
                 </span>
               )}
               {isReceivedInInventory && (
-                <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-xs font-bold text-emerald-700 dark:text-emerald-400 flex items-center gap-1">
+                <span className="px-2.5 py-0.5 rounded-full bg-tone-green-bg border border-tone-green-solid/25 text-xs font-bold text-tone-green-text flex items-center gap-1">
                   <CheckCircle2 className="w-3.5 h-3.5" />
                   <span>Received in Inventory ({fgReceipt?.receiptNumber || 'FGR'})</span>
                 </span>
@@ -1087,7 +1087,7 @@ export default function AssemblyStationDetailPage() {
                 size="sm"
                 onClick={handleAcceptAllPending}
                 disabled={isAcceptingAll || handoverMutation.isPending}
-                className="gap-1.5 font-bold bg-emerald-600 hover:bg-emerald-700 text-white shadow-none text-xs"
+                className="gap-1.5 font-bold bg-action hover:bg-[color:var(--action-primary-bg-hover)] text-inverse shadow-none text-xs"
               >
                 <CheckCircle2 className="h-3.5 w-3.5" />
                 <span>Accept All Transfers ({pendingHandovers.length})</span>
@@ -1110,7 +1110,7 @@ export default function AssemblyStationDetailPage() {
                   setActiveTab('inventory');
                   setIsReceiveModalOpen(true);
                 }}
-                className="gap-1.5 font-bold bg-emerald-600 hover:bg-emerald-700 text-white shadow-none text-xs"
+                className="gap-1.5 font-bold bg-tone-green-solid hover:bg-[color:var(--tone-green-text)] text-inverse shadow-none text-xs"
               >
                 <PackageCheck className="h-3.5 w-3.5" />
                 <span>Receive into FG Inventory</span>
@@ -1141,7 +1141,7 @@ export default function AssemblyStationDetailPage() {
               <span className="font-mono text-xl font-bold text-foreground">
                 {intakeItems.filter((i) => Number(i.acceptedQty) >= Number(i.requiredQty)).length} / {intakeItems.length} Parts
               </span>
-              <span className="font-bold text-xs text-emerald-600 dark:text-emerald-400">
+              <span className="font-bold text-xs text-tone-green-text">
                 {buildableKits} kits buildable
               </span>
             </div>
@@ -1166,7 +1166,7 @@ export default function AssemblyStationDetailPage() {
               Finished Goods Inventory
             </span>
             <div className="flex items-baseline justify-between">
-              <span className="font-mono text-xl font-bold text-emerald-600 dark:text-emerald-400">
+              <span className="font-mono text-xl font-bold text-tone-green-text">
                 {isReceivedInInventory ? `${totalCompleted} NOS Received` : '0 NOS in FG'}
               </span>
               <span className="text-xs text-muted-foreground">
@@ -1177,7 +1177,7 @@ export default function AssemblyStationDetailPage() {
         </div>
 
         {/* Tab Navigation */}
-        <div className="flex flex-wrap items-center gap-2 border-b border-border pb-2">
+        <div className="flex flex-wrap items-center gap-2 border-border-strong border-border pb-2">
           {tabs.map((tab) => {
             const isActive = activeTab === tab.id;
             return (
@@ -1208,7 +1208,7 @@ export default function AssemblyStationDetailPage() {
         {activeTab === 'intake' && (
           <div className="space-y-6">
             <Card className="p-5 rounded-2xl border border-border bg-card shadow-none space-y-5">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-border/60 pb-3">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-border-strong border-border/60 pb-3">
                 <div>
                   <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
                     <Boxes className="h-4 w-4 text-primary" />
@@ -1225,7 +1225,7 @@ export default function AssemblyStationDetailPage() {
                       {pendingHandovers.length} incoming {pendingHandovers.length === 1 ? 'handover' : 'handovers'} pending acceptance
                     </span>
                   ) : (
-                    <span className="px-2.5 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-xs font-semibold text-emerald-600 dark:text-emerald-400 flex items-center gap-1.5">
+                    <span className="px-2.5 py-1 rounded-lg bg-tone-green-bg border border-tone-green-solid/25 text-xs font-semibold text-tone-green-text flex items-center gap-1.5">
                       <CheckCircle2 className="w-3.5 h-3.5" />
                       <span>All components in custody · {buildableKits} kits buildable</span>
                     </span>
@@ -1259,7 +1259,7 @@ export default function AssemblyStationDetailPage() {
                         key={item.id}
                         className={`p-4 sm:p-5 rounded-2xl border transition-all shadow-none flex flex-col justify-between space-y-4 ${
                           isFullyReceived
-                            ? 'border-emerald-500/30 bg-card'
+                            ? 'border-tone-green-solid/25 bg-card'
                             : pendingForThis.length > 0
                               ? 'border-primary/40 bg-card'
                               : 'border-border/80 bg-card'
@@ -1271,7 +1271,7 @@ export default function AssemblyStationDetailPage() {
                             <div className="flex items-center gap-3">
                               <div className={`h-10 w-10 rounded-xl flex items-center justify-center shrink-0 border ${
                                 isFullyReceived
-                                  ? 'bg-emerald-500/10 border-emerald-500/20 text-emerald-600 dark:text-emerald-400'
+                                  ? 'bg-tone-green-bg border-tone-green-solid/25 text-tone-green-text'
                                   : 'bg-primary/10 border-primary/20 text-primary'
                               }`}>
                                 <Building2 className="h-5 w-5" />
@@ -1295,7 +1295,7 @@ export default function AssemblyStationDetailPage() {
                                 <span>Pending Acceptance</span>
                               </span>
                             ) : isFullyReceived ? (
-                              <span className="px-2.5 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-xs font-semibold text-emerald-600 dark:text-emerald-400 flex items-center gap-1.5 shrink-0">
+                              <span className="px-2.5 py-1 rounded-lg bg-tone-green-bg border border-tone-green-solid/25 text-xs font-semibold text-tone-green-text flex items-center gap-1.5 shrink-0">
                                 <CheckCircle2 className="w-3.5 h-3.5" />
                                 <span>Fulfilled (100%)</span>
                               </span>
@@ -1345,14 +1345,14 @@ export default function AssemblyStationDetailPage() {
 
                           <div className={`rounded-xl border p-2.5 flex flex-col justify-center ${
                             acc > 0
-                              ? 'border-emerald-500/20 bg-emerald-500/5'
+                              ? 'border-tone-green-solid/25 bg-tone-green-bg'
                               : 'border-border/80 bg-muted/20'
                           }`}>
                             <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
                               In Custody
                             </span>
                             <span className={`font-mono text-base font-bold mt-0.5 ${
-                              acc > 0 ? 'text-emerald-600 dark:text-emerald-400' : 'text-foreground'
+                              acc > 0 ? 'text-tone-green-text' : 'text-foreground'
                             }`}>
                               {acc.toLocaleString()}
                             </span>
@@ -1381,7 +1381,7 @@ export default function AssemblyStationDetailPage() {
                           <div className="h-2 w-full rounded-full bg-muted overflow-hidden">
                             <div
                               className={`h-full rounded-full transition-all duration-300 ${
-                                isFullyReceived ? 'bg-emerald-500' : 'bg-primary'
+                                isFullyReceived ? 'bg-tone-green-solid' : 'bg-primary'
                               }`}
                               style={{ width: `${percent}%` }}
                             />
@@ -1427,7 +1427,7 @@ export default function AssemblyStationDetailPage() {
                                       <div className="flex items-center gap-2 shrink-0">
                                         <Button
                                           size="sm"
-                                          className="h-8 px-3.5 text-xs bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl shadow-xs cursor-pointer"
+                                          className="h-8 px-3.5 text-xs bg-tone-green-solid hover:bg-tone-green-solid text-inverse font-bold rounded-xl shadow-xs cursor-pointer"
                                           disabled={handoverMutation.isPending}
                                           onClick={() =>
                                             handoverMutation.mutate(
@@ -1480,10 +1480,10 @@ export default function AssemblyStationDetailPage() {
                           ) : acceptedForThis.length > 0 ? (
                             <div className="flex items-center justify-between text-xs text-muted-foreground bg-muted/20 px-3.5 py-2.5 rounded-xl border border-border/60">
                               <span className="flex items-center gap-2 font-medium text-foreground">
-                                <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
+                                <CheckCircle2 className="w-4 h-4 text-tone-green-text" />
                                 <span>Accepted in Assembly Custody</span>
                               </span>
-                              <span className="font-mono font-bold text-emerald-600 dark:text-emerald-400">
+                              <span className="font-mono font-bold text-tone-green-text">
                                 {acceptedForThis.reduce((s: number, h: any) => s + Number(h.quantity), 0).toLocaleString()} {item.unitName}
                               </span>
                             </div>
@@ -1506,7 +1506,7 @@ export default function AssemblyStationDetailPage() {
                 <h3 className="text-sm font-bold text-foreground">Direct Warehouse Inventory Issues</h3>
                 <div className="overflow-x-auto rounded-xl border border-border/70 bg-card">
                   <table className="w-full min-w-[620px] text-left text-xs">
-                    <thead className="border-b border-border/70 bg-muted/40 text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
+                    <thead className="border-border-strong border-border/70 bg-muted/40 text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
                       <tr>
                         <th className="p-3">Material</th>
                         <th className="p-3 text-right">Issued</th>
@@ -1534,7 +1534,7 @@ export default function AssemblyStationDetailPage() {
                                   Receive
                                 </Button>
                               ) : (
-                                <span className="inline-flex items-center gap-1 font-semibold text-emerald-700 dark:text-emerald-400">
+                                <span className="inline-flex items-center gap-1 font-semibold text-tone-green-text">
                                   <CheckCircle2 className="h-3.5 w-3.5" />
                                   Received
                                 </span>
@@ -1657,7 +1657,7 @@ export default function AssemblyStationDetailPage() {
 
                 {/* Worker Assignment Section */}
                 <Card className="p-5 rounded-2xl border border-border bg-card shadow-none space-y-4">
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-border/60 pb-3">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-border-strong border-border/60 pb-3">
                     <div className="flex items-center gap-2.5">
                       <div className="p-2 rounded-xl bg-muted text-foreground">
                         <Users className="w-5 h-5 text-primary" />
@@ -1692,7 +1692,7 @@ export default function AssemblyStationDetailPage() {
                   <div className="rounded-xl border border-border overflow-hidden">
                     <table className="w-full text-left text-xs border-collapse">
                       <thead>
-                        <tr className="border-b border-border bg-muted/30 text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+                        <tr className="border-border-strong border-border bg-muted/30 text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
                           <th className="px-4 py-2">Worker Name &amp; Code</th>
                           <th className="px-3 py-2">Station Subtask</th>
                           <th className="px-3 py-2">Assigned At</th>
@@ -1758,7 +1758,7 @@ export default function AssemblyStationDetailPage() {
                 {/* Progress Delta Events */}
                 {isStarted && (
                   <Card className="p-5 rounded-2xl border border-border bg-card shadow-none space-y-4">
-                    <div className="flex items-center justify-between border-b border-border/60 pb-3">
+                    <div className="flex items-center justify-between border-border-strong border-border/60 pb-3">
                       <div className="flex items-center gap-2.5">
                         <div className="p-2 rounded-xl bg-muted text-foreground">
                           <TrendingUp className="w-5 h-5 text-primary" />
@@ -1800,7 +1800,7 @@ export default function AssemblyStationDetailPage() {
                                 className="w-full text-xs"
                               />
                             ) : (
-                              <div className="text-[11px] text-amber-600 dark:text-amber-400 font-semibold py-1.5 px-2 rounded-lg bg-amber-500/10 border border-amber-500/20">
+                              <div className="text-[11px] text-tone-amber-text font-semibold py-1.5 px-2 rounded-lg bg-tone-amber-bg border border-tone-amber-solid/25">
                                 Assign operator above first
                               </div>
                             )}
@@ -1859,16 +1859,16 @@ export default function AssemblyStationDetailPage() {
                         </div>
                       </form>
                     ) : (
-                      <div className="p-4 rounded-xl border border-emerald-500/30 bg-emerald-500/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
-                        <div className="flex items-center gap-2 font-semibold text-emerald-800 dark:text-emerald-300">
-                          <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
+                      <div className="p-4 rounded-xl border border-tone-green-solid/25 bg-tone-green-bg flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+                        <div className="flex items-center gap-2 font-semibold text-tone-green-text">
+                          <CheckCircle2 className="w-4 h-4 text-tone-green-text shrink-0" />
                           <span>All {targetQty} planned finished goods units have been logged. Workstation execution is complete.</span>
                         </div>
                         <Button
                           type="button"
                           size="sm"
                           onClick={() => setActiveTab('completion')}
-                          className="gap-1.5 font-bold shadow-none shrink-0 bg-emerald-600 hover:bg-emerald-700 text-white"
+                          className="gap-1.5 font-bold shadow-none shrink-0 bg-tone-green-solid hover:bg-tone-green-solid text-inverse"
                         >
                           <Scale className="w-4 h-4" />
                           <span>Proceed to Completion &amp; QC →</span>
@@ -1880,7 +1880,7 @@ export default function AssemblyStationDetailPage() {
                     <div className="rounded-xl border border-border overflow-hidden">
                       <table className="w-full text-left text-xs border-collapse">
                         <thead>
-                          <tr className="border-b border-border bg-muted/30 text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+                          <tr className="border-border-strong border-border bg-muted/30 text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
                             <th className="px-4 py-2">Timestamp</th>
                             <th className="px-3 py-2">Operator</th>
                             <th className="px-3 py-2">Event Type</th>
@@ -1907,7 +1907,7 @@ export default function AssemblyStationDetailPage() {
                                 <td className="px-3 py-2.5 font-mono font-semibold text-foreground">
                                   {ev.eventType}
                                 </td>
-                                <td className="px-3 py-2.5 text-right font-mono font-bold text-emerald-600 dark:text-emerald-400">
+                                <td className="px-3 py-2.5 text-right font-mono font-bold text-tone-green-text">
                                   +{Number(ev.quantityDelta)}
                                 </td>
                                 <td className="px-3 py-2.5 text-muted-foreground">
@@ -1922,9 +1922,9 @@ export default function AssemblyStationDetailPage() {
 
                     {/* Reported Scrap & Loss Events Table */}
                     <div className="rounded-xl border border-border overflow-hidden bg-background/50">
-                      <div className="px-4 py-2.5 bg-muted/40 border-b border-border flex items-center justify-between text-xs">
+                      <div className="px-4 py-2.5 bg-muted/40 border-border-strong border-border flex items-center justify-between text-xs">
                         <span className="font-bold text-foreground flex items-center gap-2">
-                          <Trash2 className="w-4 h-4 text-rose-500" />
+                          <Trash2 className="w-4 h-4 text-tone-red-text" />
                           <span>Reported Scrap &amp; Loss Events ({batchLossEvents.length})</span>
                         </span>
                         <span className="text-muted-foreground text-[11px]">
@@ -1940,7 +1940,7 @@ export default function AssemblyStationDetailPage() {
                         <div className="overflow-x-auto">
                           <table className="w-full text-left text-xs border-collapse">
                             <thead>
-                              <tr className="border-b border-border bg-muted/20 text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+                              <tr className="border-border-strong border-border bg-muted/20 text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
                                 <th className="px-4 py-2">Event #</th>
                                 <th className="px-3 py-2">Classification</th>
                                 <th className="px-3 py-2 text-right">Quantity</th>
@@ -2032,7 +2032,7 @@ export default function AssemblyStationDetailPage() {
                 )}
 
                 <Card className="p-6 rounded-2xl border border-border bg-card shadow-none space-y-5">
-                  <div className="flex items-center gap-2.5 border-b border-border/60 pb-3">
+                  <div className="flex items-center gap-2.5 border-border-strong border-border/60 pb-3">
                     <div className="p-2 rounded-xl bg-muted text-foreground">
                       <Scale className="w-5 h-5 text-primary" />
                     </div>
@@ -2164,7 +2164,7 @@ export default function AssemblyStationDetailPage() {
                 )}
 
                 <Card className="p-6 rounded-2xl border border-border bg-card shadow-none space-y-5">
-                  <div className="flex items-center justify-between border-b border-border/60 pb-3">
+                  <div className="flex items-center justify-between border-border-strong border-border/60 pb-3">
                     <div className="flex items-center gap-2.5">
                       <div className="p-2 rounded-xl bg-muted text-foreground">
                         <ShieldCheck className="w-5 h-5 text-primary" />
@@ -2186,7 +2186,7 @@ export default function AssemblyStationDetailPage() {
                     <form onSubmit={handleQcSubmit} className="space-y-4">
                       {/* Interactive QC Criteria Checklist */}
                       <div className="space-y-2 rounded-xl border border-border/80 bg-muted/20 p-3.5">
-                        <div className="flex items-center justify-between pb-2 border-b border-border/60">
+                        <div className="flex items-center justify-between pb-2 border-border-strong border-border/60">
                           <span className="text-xs font-bold text-foreground flex items-center gap-1.5">
                             <ShieldCheck className="h-4 w-4 text-primary" />
                             {activeQcRule?.name || `${productName} Quality Criteria Gate`}
@@ -2201,7 +2201,7 @@ export default function AssemblyStationDetailPage() {
                             <button
                               type="button"
                               onClick={handlePassAllChecks}
-                              className="text-xs font-bold text-emerald-600 dark:text-emerald-400 hover:underline flex items-center gap-1 cursor-pointer"
+                              className="text-xs font-bold text-tone-green-text hover:underline flex items-center gap-1 cursor-pointer"
                             >
                               <CheckCircle2 className="h-3.5 w-3.5" />
                               Verify All (100%)
@@ -2245,16 +2245,16 @@ export default function AssemblyStationDetailPage() {
                                 <div className="flex items-center gap-2 shrink-0">
                                   <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
                                     crit.severity === 'CRITICAL'
-                                      ? 'bg-rose-500/10 text-rose-600 dark:text-rose-400'
+                                      ? 'bg-tone-red-bg text-tone-red-text'
                                       : crit.severity === 'MAJOR'
-                                        ? 'bg-amber-500/10 text-amber-600 dark:text-amber-400'
-                                        : 'bg-blue-500/10 text-blue-600 dark:text-blue-400'
+                                        ? 'bg-tone-amber-bg text-tone-amber-text'
+                                        : 'bg-tone-blue-bg text-tone-blue-text'
                                   }`}>
                                     {crit.severity || 'STANDARD'}
                                   </span>
                                   <span className={`text-xs font-bold font-mono px-2 py-0.5 rounded ${
                                     isChecked
-                                      ? 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400'
+                                      ? 'bg-tone-green-bg text-tone-green-text'
                                       : 'bg-muted text-muted-foreground'
                                   }`}>
                                     {isChecked ? 'PASS' : 'PENDING'}
@@ -2280,7 +2280,7 @@ export default function AssemblyStationDetailPage() {
                               key={disp.id}
                               type="button"
                               onClick={() => setQcDisposition(disp.id as 'PASSED_TO_FG' | 'REWORK' | 'REJECTED')}
-                              className={`p-4 rounded-xl text-left border-2 transition-all cursor-pointer ${qcDisposition === disp.id
+                              className={`p-4 rounded-xl text-left border-border transition-all cursor-pointer ${qcDisposition === disp.id
                                   ? 'border-primary bg-primary/10 text-foreground font-bold'
                                   : 'border-border bg-muted/20 text-muted-foreground hover:border-border/80'
                                 }`}
@@ -2332,9 +2332,9 @@ export default function AssemblyStationDetailPage() {
                     </form>
                   ) : isQcPassed ? (
                     <div className="space-y-4">
-                      <div className="p-4 rounded-xl border border-emerald-500/30 bg-emerald-500/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
-                        <div className="flex items-center gap-2 font-semibold text-emerald-800 dark:text-emerald-300">
-                          <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
+                      <div className="p-4 rounded-xl border border-tone-green-solid/25 bg-tone-green-bg flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+                        <div className="flex items-center gap-2 font-semibold text-tone-green-text">
+                          <CheckCircle2 className="w-4 h-4 text-tone-green-text shrink-0" />
                           <span>
                             Assembly batch passed QC Gate with status <strong>PASSED_TO_FG</strong>. The batch is cleared and ready for Finished Goods warehouse intake.
                           </span>
@@ -2343,7 +2343,7 @@ export default function AssemblyStationDetailPage() {
                           <Button
                             size="sm"
                             onClick={() => setActiveTab('inventory')}
-                            className="gap-1.5 font-bold shadow-none bg-emerald-600 hover:bg-emerald-700 text-white shrink-0"
+                            className="gap-1.5 font-bold shadow-none bg-tone-green-solid hover:bg-tone-green-solid text-inverse shrink-0"
                           >
                             <PackageCheck className="w-4 h-4" />
                             <span>Post to Inventory Ledger →</span>
@@ -2364,10 +2364,10 @@ export default function AssemblyStationDetailPage() {
         {activeTab === 'inventory' && (
           <div className="space-y-6">
             {isReceivedInInventory ? (
-              <Card className="p-6 rounded-2xl border border-emerald-500/30 bg-card shadow-none space-y-5">
-                <div className="flex items-center justify-between border-b border-border/60 pb-3">
+              <Card className="p-6 rounded-2xl border border-tone-green-solid/25 bg-card shadow-none space-y-5">
+                <div className="flex items-center justify-between border-border-strong border-border/60 pb-3">
                   <div className="flex items-center gap-2.5">
-                    <div className="p-2 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
+                    <div className="p-2 rounded-xl bg-tone-green-bg text-tone-green-text">
                       <CheckCircle2 className="w-6 h-6" />
                     </div>
                     <div>
@@ -2379,7 +2379,7 @@ export default function AssemblyStationDetailPage() {
                       </p>
                     </div>
                   </div>
-                  <span className="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-xs font-mono font-bold text-emerald-700 dark:text-emerald-400">
+                  <span className="px-3 py-1 rounded-full bg-tone-green-bg border border-tone-green-solid/25 text-xs font-mono font-bold text-tone-green-text">
                     RECEIVED
                   </span>
                 </div>
@@ -2398,7 +2398,7 @@ export default function AssemblyStationDetailPage() {
                     <span className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground block">
                       Inventory Status
                     </span>
-                    <span className="text-xs font-bold text-emerald-600 dark:text-emerald-400 block">
+                    <span className="text-xs font-bold text-tone-green-text block">
                       Posted to Finished Goods Stock
                     </span>
                   </div>
@@ -2407,16 +2407,16 @@ export default function AssemblyStationDetailPage() {
                     <span className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground block">
                       Quantity Received
                     </span>
-                    <span className="font-mono text-sm font-bold text-emerald-600 dark:text-emerald-400 block">
+                    <span className="font-mono text-sm font-bold text-tone-green-text block">
                       {fgReceipt?.quantity || batch?.actualOutputQuantity} {uomSymbol}
                     </span>
                   </div>
                 </div>
 
-                <div className="p-4 rounded-xl border border-emerald-500/30 bg-emerald-500/5 text-xs text-emerald-800 dark:text-emerald-300 flex items-center gap-3">
-                  <PackageCheck className="w-5 h-5 text-emerald-600 dark:text-emerald-400 shrink-0" />
+                <div className="p-4 rounded-xl border border-tone-green-solid/25 bg-tone-green-bg text-xs text-tone-green-text flex items-center gap-3">
+                  <PackageCheck className="w-5 h-5 text-tone-green-text shrink-0" />
                   <div>
-                    <strong className="block text-emerald-900 dark:text-emerald-200">
+                    <strong className="block text-tone-green-text">
                       Authoritative Stock Ledger Entry Posted (GRN_RECEIPT · Direction: IN)
                     </strong>
                     <span>
@@ -2442,7 +2442,7 @@ export default function AssemblyStationDetailPage() {
               </Card>
             ) : (
               <Card className="p-6 rounded-2xl border border-border bg-card shadow-none space-y-5">
-                <div className="flex items-center justify-between border-b border-border/60 pb-3">
+                <div className="flex items-center justify-between border-border-strong border-border/60 pb-3">
                   <div className="flex items-center gap-2.5">
                     <div className="p-2 rounded-xl bg-primary/10 text-primary">
                       <PackageCheck className="w-6 h-6" />
@@ -2457,7 +2457,7 @@ export default function AssemblyStationDetailPage() {
                     </div>
                   </div>
 
-                  <span className="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-xs font-mono font-bold text-emerald-700 dark:text-emerald-400">
+                  <span className="px-3 py-1 rounded-full bg-tone-green-bg border border-tone-green-solid/25 text-xs font-mono font-bold text-tone-green-text">
                     READY FOR INVENTORY
                   </span>
                 </div>
@@ -2474,13 +2474,13 @@ export default function AssemblyStationDetailPage() {
                   </div>
                   <div className="flex justify-between font-semibold">
                     <span className="text-muted-foreground">Approved Finished Goods Quantity:</span>
-                    <span className="font-mono text-emerald-600 dark:text-emerald-400 font-bold text-sm">
+                    <span className="font-mono text-tone-green-text font-bold text-sm">
                       {primaryFgOutput?.quantity || batch?.actualOutputQuantity || targetQty} {uomSymbol}
                     </span>
                   </div>
                   <div className="flex justify-between font-semibold">
                     <span className="text-muted-foreground">Quality Inspection Gate:</span>
-                    <span className="font-bold text-emerald-600 dark:text-emerald-400">PASSED (V-009 Cleared)</span>
+                    <span className="font-bold text-tone-green-text">PASSED (V-009 Cleared)</span>
                   </div>
                   <div className="flex justify-between font-semibold">
                     <span className="text-muted-foreground">Target Destination:</span>
@@ -2505,7 +2505,7 @@ export default function AssemblyStationDetailPage() {
                     <Button
                       type="submit"
                       disabled={receiveThroughGateMutation.isPending || !effectiveLocationId}
-                      className="gap-2 font-bold min-w-56 shadow-none bg-emerald-600 hover:bg-emerald-700 text-white"
+                      className="gap-2 font-bold min-w-56 shadow-none bg-tone-green-solid hover:bg-tone-green-solid text-inverse"
                     >
                       <PackageCheck className="w-4 h-4" />
                       <span>{receiveThroughGateMutation.isPending ? 'Posting to Inventory...' : 'Post to Finished Goods Inventory'}</span>
@@ -2625,7 +2625,7 @@ export default function AssemblyStationDetailPage() {
               </div>
               <div className="flex justify-between font-mono">
                 <span className="text-muted-foreground">Approved Output Qty:</span>
-                <span className="font-bold text-emerald-600 dark:text-emerald-400">
+                <span className="font-bold text-tone-green-text">
                   {primaryFgOutput?.quantity || batch?.actualOutputQuantity || targetQty} {uomSymbol}
                 </span>
               </div>
@@ -2635,7 +2635,7 @@ export default function AssemblyStationDetailPage() {
               </div>
               <div className="flex justify-between text-muted-foreground">
                 <span>Inventory Ledger:</span>
-                <span className="font-semibold text-emerald-600 dark:text-emerald-400">Finished Goods Stock Ledger (GRN_RECEIPT · IN)</span>
+                <span className="font-semibold text-tone-green-text">Finished Goods Stock Ledger (GRN_RECEIPT · IN)</span>
               </div>
             </div>
 
@@ -2665,7 +2665,7 @@ export default function AssemblyStationDetailPage() {
                 type="submit"
                 size="sm"
                 disabled={receiveThroughGateMutation.isPending || !effectiveLocationId}
-                className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold shadow-none"
+                className="bg-tone-green-solid hover:bg-tone-green-solid text-inverse font-bold shadow-none"
               >
                 <PackageCheck className="w-4 h-4 mr-1" />
                 <span>{receiveThroughGateMutation.isPending ? 'Posting...' : 'Confirm & Post to Inventory'}</span>

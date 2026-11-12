@@ -50,7 +50,7 @@ export function CustomerLedgerModal({
         id="customer-ledger-document"
         ref={printRef}
         data-printable="true"
-        className="relative max-h-[92vh] w-full max-w-5xl overflow-y-auto rounded-2xl bg-card border border-border shadow-2xl flex flex-col printable-document print-target bg-white text-slate-900 dark:bg-card dark:text-foreground"
+        className="relative max-h-[92vh] w-full max-w-5xl overflow-y-auto rounded-2xl bg-card border border-border shadow-2xl flex flex-col printable-document print-target bg-white text-ink  "
       >
         {/* Header */}
         <div className="flex items-start justify-between border-b border-border/70 p-6 bg-card sticky top-0 z-10 print:static print:border-b-2">
@@ -67,7 +67,7 @@ export function CustomerLedgerModal({
                   {customer.code}
                 </span>
                 {customer.isCreditExceeded && (
-                  <span className="rounded-full bg-rose-500/10 px-2.5 py-0.5 text-xs font-semibold text-rose-700 dark:text-rose-400 flex items-center gap-1">
+                  <span className="rounded-full bg-tone-rose-bg/10 px-2.5 py-0.5 text-xs font-semibold text-tone-red-text  flex items-center gap-1">
                     <ShieldAlert className="h-3 w-3" />
                     Credit Exceeded
                   </span>
@@ -115,18 +115,18 @@ export function CustomerLedgerModal({
 
           <div className="rounded-xl border border-border bg-card p-3">
             <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Total Payments Settled</span>
-            <p className="mt-1 text-base font-bold font-mono text-emerald-600 dark:text-emerald-400">{formatCurrency(customer.totalPaid)}</p>
+            <p className="mt-1 text-base font-bold font-mono text-tone-green-text ">{formatCurrency(customer.totalPaid)}</p>
             <p className="text-[11px] text-muted-foreground mt-0.5">Realized collections</p>
           </div>
 
           <div className={`rounded-xl border p-3 ${
-            outstandingNum > 0 ? 'bg-amber-500/5 border-amber-500/30' : 'bg-card border-border'
+            outstandingNum > 0 ? 'bg-tone-amber-bg/5 border-tone-amber-solid/30' : 'bg-card border-border'
           }`}>
             <div className="flex items-center justify-between">
-              <span className="text-[10px] font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400">Total Dues to Collect</span>
+              <span className="text-[10px] font-bold uppercase tracking-wider text-tone-amber-text ">Total Dues to Collect</span>
               <span className="text-[10px] font-mono font-bold text-muted-foreground">{customer.utilizationPercent}% limit</span>
             </div>
-            <p className="mt-1 text-base font-bold font-mono text-amber-700 dark:text-amber-400">{formatCurrency(outstandingNum)}</p>
+            <p className="mt-1 text-base font-bold font-mono text-tone-amber-text ">{formatCurrency(outstandingNum)}</p>
             <p className="text-[11px] text-muted-foreground mt-0.5">Available limit: {formatCurrency(availableCreditNum)}</p>
           </div>
         </div>
@@ -188,14 +188,14 @@ export function CustomerLedgerModal({
                         <TableCell className="p-3 text-right text-foreground">
                           {Number(entry.debit) > 0 ? formatCurrency(entry.debit) : '—'}
                         </TableCell>
-                        <TableCell className="p-3 text-right text-emerald-600 dark:text-emerald-400 font-bold">
+                        <TableCell className="p-3 text-right text-tone-green-text  font-bold">
                           {Number(entry.credit) > 0 ? formatCurrency(entry.credit) : '—'}
                         </TableCell>
                         <TableCell className="p-3 text-right text-muted-foreground">
                           {Number(entry.settled) > 0 ? formatCurrency(entry.settled) : '—'}
                         </TableCell>
                         <TableCell className={`p-3 text-right font-bold ${
-                          balanceNum > 0 ? 'text-amber-700 dark:text-amber-400' : 'text-emerald-600 dark:text-emerald-400'
+                          balanceNum > 0 ? 'text-tone-amber-text ' : 'text-tone-green-text '
                         }`}>
                           {formatCurrency(balanceNum)}
                         </TableCell>

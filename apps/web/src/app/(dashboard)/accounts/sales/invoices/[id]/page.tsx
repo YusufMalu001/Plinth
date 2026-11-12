@@ -167,7 +167,7 @@ export default function SalesInvoiceDetailPage() {
   if (invoiceQuery.isLoading) {
     return (
       <main className="flex min-h-[60vh] flex-col items-center justify-center p-8">
-        <div className="h-8 w-8 animate-spin rounded-full border-2 border-n-600 border-t-transparent mb-3" />
+        <div className="h-8 w-8 animate-spin rounded-full border-border border-n-600 border-t-transparent mb-3" />
         <p className="text-sm font-semibold text-muted-foreground">Loading sales bill &amp; tax invoice…</p>
       </main>
     );
@@ -176,7 +176,7 @@ export default function SalesInvoiceDetailPage() {
   if (invoiceQuery.isError || !invoice) {
     return (
       <main className="space-y-4 p-5 md:p-8 max-w-2xl mx-auto mt-12 text-center">
-        <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-rose-50 text-rose-600">
+        <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-tone-red-solid text-tone-red-text">
           <AlertCircle className="h-6 w-6" />
         </div>
         <h2 className="text-lg font-bold text-foreground">Could not load this sales tax invoice</h2>
@@ -257,7 +257,7 @@ export default function SalesInvoiceDetailPage() {
             <Button
               size="sm"
               disabled={pending}
-              className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold gap-1.5 shadow-sm"
+              className="bg-action hover:bg-[color:var(--action-primary-bg-hover)] text-inverse font-semibold gap-1.5 shadow-sm"
               onClick={() =>
                 void runAction(
                   () => accountsApi.transitionArInvoice(invoice.id, 'approve', invoice.version || 1),
@@ -292,9 +292,9 @@ export default function SalesInvoiceDetailPage() {
                 size="sm"
                 variant="outline"
                 onClick={() => setIsEditInvoiceModalOpen(true)}
-                className="gap-1.5 text-xs font-semibold shadow-sm border-amber-300 bg-amber-50/60 hover:bg-amber-100 text-amber-900 dark:bg-amber-950/20 dark:text-amber-300 dark:border-amber-800"
+                className="gap-1.5 text-xs font-semibold shadow-sm border-tone-amber-solid/25 bg-tone-amber-bg hover:bg-tone-amber-solid text-tone-amber-text"
               >
-                <Pencil className="h-3.5 w-3.5 text-amber-700 dark:text-amber-400" />
+                <Pencil className="h-3.5 w-3.5 text-tone-amber-text" />
                 <span>Modify Invoice (Admin)</span>
               </Button>
             ) : (
@@ -314,7 +314,7 @@ export default function SalesInvoiceDetailPage() {
               size="sm"
               variant="outline"
               onClick={() => setIsCreditNoteModalOpen(true)}
-              className="gap-1.5 text-xs font-semibold shadow-sm border-n-200 hover:bg-muted text-foreground dark:text-n-300 dark:border-n-900"
+              className="gap-1.5 text-xs font-semibold shadow-sm border-n-200 hover:bg-muted text-foreground"
             >
               <PlusCircle className="h-4 w-4" /> Issue Credit Note
             </Button>
@@ -324,7 +324,7 @@ export default function SalesInvoiceDetailPage() {
           {outstanding > 0 && can('create') && (
             <Button
               size="sm"
-              className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold gap-1.5 shadow-sm"
+              className="bg-tone-green-solid hover:bg-[color:var(--tone-green-text)] text-inverse font-semibold gap-1.5 shadow-sm"
               onClick={() => setIsPaymentModalOpen(true)}
             >
               <Wallet className="h-4 w-4" /> Record Payment
@@ -336,7 +336,7 @@ export default function SalesInvoiceDetailPage() {
             size="sm"
             variant="outline"
             onClick={() => handlePrint()}
-            className="gap-1.5 text-xs font-semibold shadow-sm border-slate-300 hover:bg-slate-50 dark:border-border dark:hover:bg-accent"
+            className="gap-1.5 text-xs font-semibold shadow-sm border-border-strong hover:bg-hover"
           >
             <Printer className="h-3.5 w-3.5" /> Print / PDF
           </Button>
@@ -344,7 +344,7 @@ export default function SalesInvoiceDetailPage() {
       </div>
 
       {/* Hero Banner (Same as Supplier Bill) */}
-      <section className="rounded-3xl border border-border bg-gradient-to-br from-card via-card to-n-500/5 p-6 shadow-sm md:p-8">
+      <section className="rounded-3xl border border-border bg-surface p-6 shadow-sm md:p-8">
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div>
             <div className="flex items-center gap-2">
@@ -354,7 +354,7 @@ export default function SalesInvoiceDetailPage() {
               <span className="rounded-full bg-muted px-2.5 py-0.5 text-[10px] font-bold font-mono">
                 {invoice.type || 'B2B'}
               </span>
-              <span className="rounded-full bg-n-50 px-2 py-0.5 text-[10px] font-bold text-foreground dark:bg-n-950/50 dark:text-n-300">
+              <span className="rounded-full bg-n-50 px-2 py-0.5 text-[10px] font-bold text-foreground">
                 Direct Order Billing
               </span>
             </div>
@@ -379,9 +379,9 @@ export default function SalesInvoiceDetailPage() {
             <span
               className={`rounded-full px-3 py-1 text-xs font-bold font-mono ${
                 isFullySettled
-                  ? 'bg-muted text-foreground border border-emerald-500/30'
+                  ? 'bg-muted text-foreground border border-tone-green-solid/25'
                   : paid > 0
-                  ? 'bg-muted text-foreground border border-amber-500/30'
+                  ? 'bg-muted text-foreground border border-tone-amber-solid/25'
                   : 'bg-muted text-muted-foreground border border-border'
               }`}
             >
@@ -391,9 +391,9 @@ export default function SalesInvoiceDetailPage() {
             <span
               className={`rounded-full px-3 py-1 text-xs font-bold ${
                 invoice.status === 'POSTED' || invoice.status === 'APPROVED'
-                  ? 'bg-muted text-foreground border border-emerald-500/30'
+                  ? 'bg-muted text-foreground border border-tone-green-solid/25'
                   : invoice.status === 'SUBMITTED'
-                  ? 'bg-muted text-foreground border border-amber-500/30'
+                  ? 'bg-muted text-foreground border border-tone-amber-solid/25'
                   : 'bg-muted text-foreground border border-border'
               }`}
             >
@@ -411,7 +411,7 @@ export default function SalesInvoiceDetailPage() {
           {invoice.salesOrderId && (
             <Link
               href={`/sales/orders/${invoice.salesOrderId}`}
-              className="inline-flex items-center gap-1.5 rounded-xl border border-border bg-background px-3 py-1 text-xs font-mono font-medium shadow-2xl hover:border-primary hover:text-primary transition"
+              className="inline-flex items-center gap-1.5 rounded-xl border border-border bg-background px-3 py-1 text-xs font-mono font-medium shadow-modal hover:border-primary hover:text-primary transition"
             >
               <FileText className="h-3.5 w-3.5 text-primary" />
               <span>Sales Order:</span>
@@ -422,21 +422,21 @@ export default function SalesInvoiceDetailPage() {
             </Link>
           )}
 
-          <span className="inline-flex items-center gap-1.5 rounded-xl border border-border bg-background px-3 py-1 text-xs font-mono font-medium shadow-2xl">
-            <Truck className="h-3.5 w-3.5 text-emerald-600" />
+          <span className="inline-flex items-center gap-1.5 rounded-xl border border-border bg-background px-3 py-1 text-xs font-mono font-medium shadow-modal">
+            <Truck className="h-3.5 w-3.5 text-tone-green-text" />
             <span>Dispatch Origin:</span>
             <span className="font-bold text-foreground">
               {salesOrder?.warehouseLocationId || 'Finished Goods Bay (Bay 1-4)'}
             </span>
           </span>
 
-          <span className="inline-flex items-center gap-1.5 rounded-xl border border-border bg-background px-3 py-1 text-xs font-mono font-medium shadow-2xl">
+          <span className="inline-flex items-center gap-1.5 rounded-xl border border-border bg-background px-3 py-1 text-xs font-mono font-medium shadow-modal">
             <Calendar className="h-3.5 w-3.5 text-primary" />
             <span>Bill Date:</span>
             <span className="font-bold text-foreground">{formatDate(invoice.invoiceDate)}</span>
           </span>
 
-          <span className="inline-flex items-center gap-1.5 rounded-xl border border-border bg-background px-3 py-1 text-xs font-mono font-medium shadow-2xl">
+          <span className="inline-flex items-center gap-1.5 rounded-xl border border-border bg-background px-3 py-1 text-xs font-mono font-medium shadow-modal">
             <Calendar className="h-3.5 w-3.5 text-muted-foreground" />
             <span>Due Date:</span>
             <span className="font-bold text-foreground">{formatDate(invoice.dueDate)}</span>
@@ -473,7 +473,7 @@ export default function SalesInvoiceDetailPage() {
             <span className="text-[10px] uppercase font-bold tracking-wider text-muted-foreground">
               Collected / Settled
             </span>
-            <p className="mt-1 text-xl font-bold font-mono text-emerald-600 dark:text-emerald-400">
+            <p className="mt-1 text-xl font-bold font-mono text-tone-green-text">
               {formatCurrency(paid)}
             </p>
             <p className="mt-0.5 text-[11px] text-muted-foreground">
@@ -487,7 +487,7 @@ export default function SalesInvoiceDetailPage() {
             className={`rounded-2xl border p-4 shadow-sm ${
               outstanding > 0
                 ? 'border-border bg-n-500/5'
-                : 'border-emerald-500/30 bg-emerald-500/5'
+                : 'border-tone-green-solid/25 bg-tone-green-bg'
             }`}
           >
             <div className="flex items-center justify-between">
@@ -495,11 +495,11 @@ export default function SalesInvoiceDetailPage() {
                 Net Outstanding Balance
               </span>
               {outstanding > 0 ? (
-                <span className="rounded-full bg-amber-500/10 px-2 py-0.5 text-[10px] font-bold text-amber-700 dark:text-amber-400">
+                <span className="rounded-full bg-tone-amber-bg px-2 py-0.5 text-[10px] font-bold text-tone-amber-text">
                   Due to Collect
                 </span>
               ) : (
-                <span className="rounded-full bg-emerald-500/10 px-2 py-0.5 text-[10px] font-bold text-emerald-700 dark:text-emerald-400">
+                <span className="rounded-full bg-tone-green-bg px-2 py-0.5 text-[10px] font-bold text-tone-green-text">
                   Fully Settled
                 </span>
               )}
@@ -519,7 +519,7 @@ export default function SalesInvoiceDetailPage() {
         {/* Left / Primary: Bill Document Preview (Matches Supplier Bill and PO Document Design) */}
         <section
           aria-labelledby="sales-bill-preview-title"
-          className="lg:col-span-7 min-w-0 rounded-3xl border border-border bg-slate-100/80 p-4 shadow-sm md:p-6 dark:bg-card print:border-0 print:bg-white print:p-0 print:shadow-none"
+          className="lg:col-span-7 min-w-0 rounded-3xl border border-border bg-muted/80 p-4 shadow-sm md:p-6 print:border-accent print:bg-surface print:p-0 print:shadow-none"
         >
           <div className="mb-4 flex flex-wrap items-center justify-between gap-3 print:hidden">
             <div>
@@ -534,7 +534,7 @@ export default function SalesInvoiceDetailPage() {
               size="sm"
               variant="outline"
               onClick={() => handlePrint()}
-              className="gap-1.5 text-xs font-semibold shadow-sm bg-white hover:bg-slate-50 dark:bg-card border-slate-200 dark:border-border"
+              className="gap-1.5 text-xs font-semibold shadow-sm bg-surface hover:bg-muted border-border"
             >
               <Printer className="h-3.5 w-3.5 text-foreground" /> Print / Download PDF
             </Button>
@@ -544,91 +544,91 @@ export default function SalesInvoiceDetailPage() {
           <div
             id="sales-bill-document"
             ref={printRef}
-            className="mx-auto rounded-2xl border border-slate-200 bg-white p-5 text-slate-900 shadow-md md:p-7 dark:bg-card dark:text-foreground dark:border-border print:max-w-none print:rounded-none print:border-0 print:p-0 print:shadow-none w-full"
+            className="mx-auto rounded-2xl border border-border bg-surface p-5 text-ink shadow-none md:p-7 print:max-w-none print:rounded-none print:border-accent print:p-0 print:shadow-none w-full"
           >
             {/* Top Document Header */}
-            <div className="flex flex-wrap items-start justify-between gap-4 border-b-2 border-border pb-5">
+            <div className="flex flex-wrap items-start justify-between gap-4 border-border-strong-2 border-border pb-5">
               <div className="flex items-center gap-4">
                 <span className="text-2xl font-black tracking-tight text-ink uppercase">Plinth</span>
-                <div className="border-l border-slate-200 pl-4 dark:border-border">
+                <div className="border-l border-border pl-4">
                   <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-foreground">
                     Accounts Receivable · GST Tax Invoice
                   </p>
                   <h2 className="mt-0.5 text-xl md:text-2xl font-bold">Tax Invoice</h2>
-                  <p className="mt-0.5 text-xs text-slate-500 dark:text-muted-foreground">
+                  <p className="mt-0.5 text-xs text-ink-muted">
                     Plinth · Original for Recipient
                   </p>
                 </div>
               </div>
               <div className="text-right text-xs">
-                <p className="text-slate-500 dark:text-muted-foreground">Invoice Reference</p>
+                <p className="text-ink-muted">Invoice Reference</p>
                 <p className="font-mono font-bold text-base text-foreground">{invoice.invoiceNumber}</p>
-                <p className="mt-1.5 text-slate-500 dark:text-muted-foreground">Bill Status</p>
-                <p className="font-semibold text-foreground dark:text-n-300">
+                <p className="mt-1.5 text-ink-muted">Bill Status</p>
+                <p className="font-semibold text-foreground">
                   {invoice.status}
                 </p>
               </div>
             </div>
 
             {/* Entity & Customer Profile Cards */}
-            <div className="grid gap-4 border-b border-slate-200 py-4 sm:grid-cols-2 dark:border-border">
+            <div className="grid gap-4 border-border-strong border-border py-4 sm:grid-cols-2">
               {/* Supplier / Seller Info */}
-              <div className="space-y-1.5 rounded-xl bg-slate-50/80 p-3.5 text-xs dark:bg-muted/20">
-                <p className="font-bold uppercase tracking-wider text-slate-400 text-[10px]">
+              <div className="space-y-1.5 rounded-xl bg-muted/80 p-3.5 text-xs">
+                <p className="font-bold uppercase tracking-wider text-ink-placeholder text-[10px]">
                   Supplier / Seller (Billed From)
                 </p>
-                <p className="text-sm font-bold text-slate-900 dark:text-foreground">
+                <p className="text-sm font-bold text-ink">
                   {COMPANY_INFO.name}
                 </p>
-                <p className="text-slate-600 dark:text-muted-foreground">
+                <p className="text-ink-secondary">
                   GSTIN: <span className="font-mono font-semibold">{COMPANY_INFO.gstin}</span> · State Code: 23
                 </p>
-                <p className="text-slate-600 dark:text-muted-foreground text-[11px] leading-relaxed">
+                <p className="text-ink-secondary text-[11px] leading-relaxed">
                   {COMPANY_INFO.addressLine1} {COMPANY_INFO.addressLine2} {COMPANY_INFO.addressLine3}
                 </p>
-                <p className="text-slate-500 dark:text-muted-foreground text-[11px]">
+                <p className="text-ink-muted text-[11px]">
                   Contact: {COMPANY_INFO.phone} · {COMPANY_INFO.email}
                 </p>
               </div>
 
               {/* Billed Entity (Customer / Buyer) */}
-              <div className="space-y-1.5 rounded-xl bg-slate-50/80 p-3.5 text-xs dark:bg-muted/20">
-                <p className="font-bold uppercase tracking-wider text-slate-400 text-[10px]">
+              <div className="space-y-1.5 rounded-xl bg-muted/80 p-3.5 text-xs">
+                <p className="font-bold uppercase tracking-wider text-ink-placeholder text-[10px]">
                   Buyer / Customer (Billed To)
                 </p>
-                <p className="text-sm font-bold text-slate-900 dark:text-foreground">
+                <p className="text-sm font-bold text-ink">
                   {invoice.customerName}
                 </p>
-                <p className="text-slate-600 dark:text-muted-foreground">
+                <p className="text-ink-secondary">
                   GSTIN: <span className="font-mono font-semibold">{invoice.customerGstin || 'Unregistered'}</span>
                 </p>
                 {shippingAddress ? (
-                  <p className="text-slate-600 dark:text-muted-foreground text-[11px] leading-relaxed">
+                  <p className="text-ink-secondary text-[11px] leading-relaxed">
                     {[shippingAddress.line1, shippingAddress.city, shippingAddress.state, shippingAddress.postalCode]
                       .filter(Boolean)
                       .join(', ')}
                   </p>
                 ) : (
-                  <p className="text-slate-600 dark:text-muted-foreground text-[11px]">
+                  <p className="text-ink-secondary text-[11px]">
                     Place of Supply: Maharashtra (27)
                   </p>
                 )}
 
-                <div className="grid grid-cols-2 gap-2 pt-2 border-t border-slate-200/80 dark:border-border/60">
+                <div className="grid grid-cols-2 gap-2 pt-2 border-t border-border">
                   <div>
-                    <span className="text-slate-400 text-[10px] uppercase font-bold">Invoice Date</span>
+                    <span className="text-ink-placeholder text-[10px] uppercase font-bold">Invoice Date</span>
                     <p className="font-semibold text-foreground">{formatDate(invoice.invoiceDate)}</p>
                   </div>
                   <div>
-                    <span className="text-slate-400 text-[10px] uppercase font-bold">Due Date</span>
+                    <span className="text-ink-placeholder text-[10px] uppercase font-bold">Due Date</span>
                     <p className="font-semibold text-foreground">{formatDate(invoice.dueDate)}</p>
                   </div>
                   <div>
-                    <span className="text-slate-400 text-[10px] uppercase font-bold">Category</span>
+                    <span className="text-ink-placeholder text-[10px] uppercase font-bold">Category</span>
                     <p className="font-semibold text-foreground">{invoice.type || 'B2B'}</p>
                   </div>
                   <div>
-                    <span className="text-slate-400 text-[10px] uppercase font-bold">Terms</span>
+                    <span className="text-ink-placeholder text-[10px] uppercase font-bold">Terms</span>
                     <p className="font-semibold text-foreground">{salesOrder?.notes || 'Net 30 Days'}</p>
                   </div>
                 </div>
@@ -636,26 +636,26 @@ export default function SalesInvoiceDetailPage() {
             </div>
 
             {/* Document References Block: Sales Order, Origin, Mode */}
-            <div className="border-b border-slate-200 py-3 px-3.5 bg-n-50/40 rounded-xl my-3.5 text-xs flex flex-wrap items-center justify-between gap-4 dark:bg-muted/10 dark:border-border">
+            <div className="border-border-strong border-border py-3 px-3.5 bg-n-50/40 rounded-xl my-3.5 text-xs flex flex-wrap items-center justify-between gap-4">
               <div className="flex flex-wrap items-center gap-5">
                 <div>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-muted-foreground">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-ink-muted">
                     Sales Order
                   </span>
                   <p className="font-mono font-bold text-foreground">
                     {invoice.salesOrderNumber || 'Direct Order Intake'}
                   </p>
                 </div>
-                <div className="border-l border-slate-200 pl-4 dark:border-border">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-muted-foreground">
+                <div className="border-l border-border pl-4">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-ink-muted">
                     Dispatch Origin
                   </span>
                   <p className="font-mono font-bold text-foreground">
                     {salesOrder?.warehouseLocationId || 'Finished Goods Bay 1-4'}
                   </p>
                 </div>
-                <div className="border-l border-slate-200 pl-4 dark:border-border">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-muted-foreground">
+                <div className="border-l border-border pl-4">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-ink-muted">
                     Transport &amp; Supply
                   </span>
                   <p className="font-medium text-foreground">
@@ -664,7 +664,7 @@ export default function SalesInvoiceDetailPage() {
                 </div>
               </div>
               <div className="text-right">
-                <span className="text-[10px] uppercase font-bold tracking-wider text-slate-500 dark:text-muted-foreground">
+                <span className="text-[10px] uppercase font-bold tracking-wider text-ink-muted">
                   Audit Version
                 </span>
                 <p className="font-mono font-semibold text-foreground">v{invoice.version || 1}</p>
@@ -672,9 +672,9 @@ export default function SalesInvoiceDetailPage() {
             </div>
 
             {/* Line Items Table with the exact signature navy header from Supplier Bill */}
-            <div className="mt-4 overflow-x-auto rounded-xl border border-slate-200 dark:border-border print:overflow-visible">
+            <div className="mt-4 overflow-x-auto rounded-xl border border-border print:overflow-visible">
               <table className="w-full min-w-[680px] text-left text-xs print:min-w-0 print:text-[9px]">
-                <thead className="bg-n-800 text-white print:bg-slate-100 print:text-slate-900">
+                <thead className="bg-n-800 text-inverse print:bg-muted print:text-ink">
                   <tr>
                     <th className="px-2.5 py-2 font-semibold w-7">#</th>
                     <th className="px-2.5 py-2 font-semibold">Item &amp; Description</th>
@@ -688,7 +688,7 @@ export default function SalesInvoiceDetailPage() {
                     <th className="px-2.5 py-2 font-semibold text-right">Line Total (₹)</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-slate-200 dark:divide-border">
+                <tbody className="divide-y divide-border">
                   {(invoice.lines || []).map((line: any, idx: number) => {
                     const lineTax =
                       Number(line.taxAmount || 0) ||
@@ -698,12 +698,12 @@ export default function SalesInvoiceDetailPage() {
                       (parseFloat(line.taxableAmount || '0') + lineTax);
 
                     return (
-                      <tr key={line.id || idx} className="hover:bg-slate-50/50 dark:hover:bg-muted/10 transition">
-                        <td className="px-2.5 py-2 font-mono text-slate-500">{line.lineNumber || idx + 1}</td>
+                      <tr key={line.id || idx} className="hover:bg-hover transition">
+                        <td className="px-2.5 py-2 font-mono text-ink-muted">{line.lineNumber || idx + 1}</td>
                         <td className="px-2.5 py-2">
                           <p className="font-semibold text-foreground uppercase">{line.description}</p>
                           {line.itemId && (
-                            <p className="font-mono text-[10px] text-slate-500 dark:text-muted-foreground">
+                            <p className="font-mono text-[10px] text-ink-muted">
                               ID: {line.itemId}
                             </p>
                           )}
@@ -718,7 +718,7 @@ export default function SalesInvoiceDetailPage() {
                         <td className="px-2.5 py-2 font-mono text-right">{formatCurrency(line.unitPrice)}</td>
                         <td className="px-2.5 py-2 text-center font-mono">{line.gstRate || 18}%</td>
                         <td className="px-2.5 py-2 font-mono text-right">{formatCurrency(line.taxableAmount)}</td>
-                        <td className="px-2.5 py-2 font-mono text-right text-slate-600 dark:text-muted-foreground">
+                        <td className="px-2.5 py-2 font-mono text-right text-ink-secondary">
                           {formatCurrency(lineTax)}
                         </td>
                         <td className="px-2.5 py-2 font-mono font-bold text-right text-foreground">
@@ -728,9 +728,9 @@ export default function SalesInvoiceDetailPage() {
                     );
                   })}
                 </tbody>
-                <tfoot className="border-t-2 border-slate-300 dark:border-border font-bold">
+                <tfoot className="border-t-2 border-border-strong font-bold">
                   <tr>
-                    <td colSpan={4} className="px-2.5 py-2 text-right uppercase text-slate-500 text-[10px]">
+                    <td colSpan={4} className="px-2.5 py-2 text-right uppercase text-ink-muted text-[10px]">
                       Total
                     </td>
                     <td className="px-2.5 py-2 font-mono text-right text-foreground">
@@ -740,7 +740,7 @@ export default function SalesInvoiceDetailPage() {
                     <td className="px-2.5 py-2 font-mono text-right text-foreground">
                       {formatCurrency(totalTaxable)}
                     </td>
-                    <td className="px-2.5 py-2 font-mono text-right text-slate-600 dark:text-muted-foreground">
+                    <td className="px-2.5 py-2 font-mono text-right text-ink-secondary">
                       {formatCurrency(totalTax)}
                     </td>
                     <td className="px-2.5 py-2 font-mono text-right text-foreground font-black">
@@ -753,9 +753,9 @@ export default function SalesInvoiceDetailPage() {
 
             {/* Subtotal, Amount in Words & Signatory Summary (Exact Supplier Bill Design) */}
             <div className="mt-4 grid gap-4 sm:grid-cols-[1fr_290px]">
-              <div className="rounded-xl bg-slate-50 p-3.5 text-xs dark:bg-muted/20 space-y-2">
+              <div className="rounded-xl bg-muted p-3.5 text-xs space-y-2">
                 <div>
-                  <span className="text-[10px] uppercase font-bold text-slate-500 dark:text-muted-foreground block">
+                  <span className="text-[10px] uppercase font-bold text-ink-muted block">
                     Amount Chargeable (in words)
                   </span>
                   <p className="font-bold text-foreground text-xs sm:text-sm">
@@ -763,30 +763,30 @@ export default function SalesInvoiceDetailPage() {
                   </p>
                 </div>
 
-                <div className="pt-2 border-t border-slate-200 dark:border-border/60 text-[11px] text-slate-600 dark:text-muted-foreground space-y-1">
+                <div className="pt-2 border-t border-border text-[11px] text-ink-secondary space-y-1">
                   <p className="font-bold text-foreground">Company&apos;s Bank Details for RTGS / NEFT / IMPS:</p>
                   <p>• Bank Name: <strong className="text-foreground">HDFC Bank Ltd.</strong></p>
                   <p>• A/c No.: <strong className="text-foreground font-mono">50200062819401</strong></p>
                   <p>• Branch &amp; IFS Code: <strong className="text-foreground font-mono">Indore Main Branch · HDFC0000123</strong></p>
                 </div>
 
-                <div className="pt-2 border-t border-slate-200 dark:border-border/60 text-[10px] text-slate-500 dark:text-muted-foreground space-y-0.5">
+                <div className="pt-2 border-t border-border text-[10px] text-ink-muted space-y-0.5">
                   <p>• Declaration: We declare that this invoice shows the actual price of goods described and that all particulars are true and correct.</p>
                   <p>• Terms: Goods once sold will not be accepted back without authorized return authorization. Subject to Indore Jurisdiction.</p>
                 </div>
 
                 <div className="pt-4 flex items-end justify-between text-xs">
                   <div>
-                    <span className="text-[9px] uppercase font-bold text-slate-400">Customer Acceptance</span>
-                    <div className="mt-6 border-t border-slate-300 w-28 text-center text-[10px] text-slate-400">
+                    <span className="text-[9px] uppercase font-bold text-ink-placeholder">Customer Acceptance</span>
+                    <div className="mt-6 border-t border-border-strong w-28 text-center text-[10px] text-ink-placeholder">
                       Receiver&apos;s Sign
                     </div>
                   </div>
                   <div className="text-right">
-                    <span className="text-[10px] font-bold uppercase text-foreground dark:text-n-300 block">
+                    <span className="text-[10px] font-bold uppercase text-foreground block">
                       for PLINTH
                     </span>
-                    <div className="mt-6 border-t border-slate-300 w-36 text-center text-[10px] text-slate-500 font-medium">
+                    <div className="mt-6 border-t border-border-strong w-36 text-center text-[10px] text-ink-muted font-medium">
                       Authorised Signatory
                     </div>
                   </div>
@@ -794,21 +794,21 @@ export default function SalesInvoiceDetailPage() {
               </div>
 
               {/* Calculations Box */}
-              <div className="space-y-1.5 rounded-xl border border-slate-200 p-3.5 text-xs dark:border-border bg-slate-50/50 dark:bg-muted/10">
+              <div className="space-y-1.5 rounded-xl border border-border p-3.5 text-xs bg-muted/50">
                 <Amount label="Taxable Subtotal" value={formatCurrency(totalTaxable)} />
                 <Amount label="CGST (9%)" value={formatCurrency(totalTax / 2)} />
                 <Amount label="SGST (9%)" value={formatCurrency(totalTax / 2)} />
                 <Amount label="Total Output GST (18%)" value={formatCurrency(totalTax)} />
 
-                <div className="border-t border-slate-200 pt-1.5 dark:border-border font-bold">
+                <div className="border-t border-border pt-1.5 font-bold">
                   <Amount label="Gross Invoiced Total" value={formatCurrency(grossTotal)} strong />
                 </div>
 
-                <div className="border-t border-slate-200 pt-1.5 dark:border-border text-emerald-600 dark:text-emerald-400">
+                <div className="border-t border-border pt-1.5 text-tone-green-text">
                   <Amount label="Total Collected / Paid" value={formatCurrency(paid)} />
                 </div>
 
-                <div className="border-t border-slate-200 pt-1.5 dark:border-border font-bold text-sm">
+                <div className="border-t border-border pt-1.5 font-bold text-sm">
                   <Amount label="Net Balance Due" value={formatCurrency(outstanding)} strong />
                 </div>
               </div>
@@ -843,7 +843,7 @@ export default function SalesInvoiceDetailPage() {
                 <ShoppingBag className="h-3.5 w-3.5 text-primary" />
                 <span className="text-[11px]">Order</span>
                 {invoice.lines?.length > 0 && (
-                  <span className="rounded-full bg-muted px-1.5 py-0.2 text-[9px] font-mono text-foreground dark:text-n-300">
+                  <span className="rounded-full bg-muted px-1.5 py-0.2 text-[9px] font-mono text-foreground">
                     {invoice.lines.length}
                   </span>
                 )}
@@ -858,10 +858,10 @@ export default function SalesInvoiceDetailPage() {
                     : 'text-muted-foreground hover:text-foreground'
                 }`}
               >
-                <CreditCard className="h-3.5 w-3.5 text-emerald-600" />
+                <CreditCard className="h-3.5 w-3.5 text-tone-green-text" />
                 <span className="text-[11px]">Receipts</span>
                 {uniquePayments.length > 0 && (
-                  <span className="rounded-full bg-emerald-500/10 px-1.5 py-0.2 text-[9px] font-mono text-emerald-700 dark:text-emerald-300">
+                  <span className="rounded-full bg-tone-green-bg px-1.5 py-0.2 text-[9px] font-mono text-tone-green-text">
                     {uniquePayments.length}
                   </span>
                 )}
@@ -889,7 +889,7 @@ export default function SalesInvoiceDetailPage() {
                     : 'text-muted-foreground hover:text-foreground'
                 }`}
               >
-                <ShieldCheck className="h-3.5 w-3.5 text-purple-600" />
+                <ShieldCheck className="h-3.5 w-3.5 text-tone-purple-text" />
                 <span className="text-[11px]">Tax &amp; Audit</span>
               </button>
             </div>
@@ -899,14 +899,14 @@ export default function SalesInvoiceDetailPage() {
           {activeTab === 'order' && (
             <div className="space-y-4">
               <div className="rounded-3xl border border-border bg-card p-5 shadow-sm space-y-4">
-                <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border pb-3">
+                <div className="flex flex-wrap items-center justify-between gap-3 border-border-strong border-border pb-3">
                   <div>
                     <div className="flex items-center gap-2">
                       <ShoppingBag className="h-4 w-4 text-primary" />
                       <span className="font-mono font-bold text-base text-foreground">
                         {invoice.salesOrderNumber || 'Direct Order Intake'}
                       </span>
-                      <span className="rounded-full bg-n-100 dark:bg-n-950/50 text-foreground dark:text-n-300 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider">
+                      <span className="rounded-full bg-n-100 text-foreground px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider">
                         {salesOrder?.status || 'CONFIRMED'}
                       </span>
                     </div>
@@ -964,7 +964,7 @@ export default function SalesInvoiceDetailPage() {
                   <p className="text-xs font-bold text-foreground">Billed Lines Under This Order</p>
                   <div className="overflow-x-auto rounded-2xl border border-border">
                     <table className="w-full text-left text-xs">
-                      <thead className="bg-muted/40 border-b border-border text-muted-foreground">
+                      <thead className="bg-muted/40 border-border-strong border-border text-muted-foreground">
                         <tr>
                           <th className="p-2.5 font-semibold">Item</th>
                           <th className="p-2.5 font-semibold text-right">Qty</th>
@@ -998,9 +998,9 @@ export default function SalesInvoiceDetailPage() {
             <div className="space-y-4">
               {/* Financial Settlement Card */}
               <div className="rounded-3xl border border-border bg-card p-5 shadow-sm space-y-3">
-                <div className="flex items-center justify-between border-b border-border pb-3">
+                <div className="flex items-center justify-between border-border-strong border-border pb-3">
                   <div className="flex items-center gap-2">
-                    <CreditCard className="h-4 w-4 text-emerald-600" />
+                    <CreditCard className="h-4 w-4 text-tone-green-text" />
                     <h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
                       Settlement Balance
                     </h4>
@@ -1023,15 +1023,15 @@ export default function SalesInvoiceDetailPage() {
                     <span className="text-muted-foreground">Gross Invoiced Total</span>
                     <span className="font-mono font-medium">{formatCurrency(grossTotal)}</span>
                   </div>
-                  <div className="flex justify-between text-emerald-600 dark:text-emerald-400 font-medium">
+                  <div className="flex justify-between text-tone-green-text font-medium">
                     <span>Received to Date</span>
                     <span className="font-mono">{formatCurrency(paid)}</span>
                   </div>
                   <div className="flex justify-between font-bold text-sm pt-1 border-t border-border">
-                    <span className={outstanding > 0 ? 'text-amber-700 dark:text-amber-400' : 'text-emerald-600'}>
+                    <span className={outstanding > 0 ? 'text-tone-amber-text' : 'text-tone-green-text'}>
                       Balance Outstanding
                     </span>
-                    <span className={`font-mono ${outstanding > 0 ? 'text-amber-700 dark:text-amber-400' : 'text-emerald-600'}`}>
+                    <span className={`font-mono ${outstanding > 0 ? 'text-tone-amber-text' : 'text-tone-green-text'}`}>
                       {formatCurrency(outstanding)}
                     </span>
                   </div>
@@ -1040,7 +1040,7 @@ export default function SalesInvoiceDetailPage() {
                 {outstanding > 0 && can('create') && (
                   <Button
                     size="sm"
-                    className="w-full mt-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold gap-1.5 shadow-sm"
+                    className="w-full mt-2 bg-tone-green-solid hover:bg-tone-green-solid text-inverse font-semibold gap-1.5 shadow-sm"
                     onClick={() => setIsPaymentModalOpen(true)}
                   >
                     <Wallet className="h-4 w-4" /> Record Customer Payment
@@ -1058,10 +1058,10 @@ export default function SalesInvoiceDetailPage() {
                       className="rounded-3xl border border-border bg-card p-4 text-xs shadow-sm space-y-2"
                     >
                       <div className="flex items-center justify-between">
-                        <span className="font-mono font-bold text-emerald-600 dark:text-emerald-400 text-sm">
+                        <span className="font-mono font-bold text-tone-green-text text-sm">
                           {formatCurrency(payment.amount)}
                         </span>
-                        <span className="rounded-full bg-muted px-2 py-0.5 text-[10px] font-bold text-foreground dark:text-n-300">
+                        <span className="rounded-full bg-muted px-2 py-0.5 text-[10px] font-bold text-foreground">
                           {payment.method.replaceAll('_', ' ')}
                         </span>
                       </div>
@@ -1104,16 +1104,16 @@ export default function SalesInvoiceDetailPage() {
           {activeTab === 'ledger' && (
             <div className="space-y-4">
               <div className="rounded-3xl border border-border bg-card p-5 shadow-sm space-y-4">
-                <div className="flex items-center justify-between border-b border-border pb-3">
+                <div className="flex items-center justify-between border-border-strong border-border pb-3">
                   <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
-                    <TrendingUp className="h-4 w-4 text-emerald-600" /> Customer Credit &amp; Dues
+                    <TrendingUp className="h-4 w-4 text-tone-green-text" /> Customer Credit &amp; Dues
                   </h3>
                   {invoice.customerId && (
                     <Link href={`/sales/customers/${invoice.customerId}`}>
                       <Button
                         size="sm"
                         variant="outline"
-                        className="h-7 text-xs rounded-xl gap-1 text-emerald-600"
+                        className="h-7 text-xs rounded-xl gap-1 text-tone-green-text"
                       >
                         Customer Ledger Profile <ExternalLink className="h-3 w-3" />
                       </Button>
@@ -1132,7 +1132,7 @@ export default function SalesInvoiceDetailPage() {
 
                     <div className="p-3 rounded-2xl bg-muted/20 border border-border/70 space-y-0.5">
                       <span className="text-[10px] uppercase font-bold text-muted-foreground">Total Dues</span>
-                      <span className="font-mono font-bold text-amber-600 block">
+                      <span className="font-mono font-bold text-tone-amber-text block">
                         {formatCurrency(effectiveCredit.outstandingBalance)}
                       </span>
                     </div>
@@ -1149,10 +1149,10 @@ export default function SalesInvoiceDetailPage() {
                       <div
                         className={`h-full rounded-full transition-all ${
                           effectiveCredit.isCreditExceeded
-                            ? 'bg-rose-500'
+                            ? 'bg-tone-red-solid'
                             : effectiveCredit.utilizationPercent > 80
-                            ? 'bg-amber-500'
-                            : 'bg-emerald-500'
+                            ? 'bg-tone-amber-solid'
+                            : 'bg-tone-green-solid'
                         }`}
                         style={{ width: `${Math.min(100, effectiveCredit.utilizationPercent)}%` }}
                       />
@@ -1191,8 +1191,8 @@ export default function SalesInvoiceDetailPage() {
           {activeTab === 'audit' && (
             <div className="space-y-4">
               <div className="rounded-3xl border border-border bg-card p-5 shadow-sm space-y-4">
-                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-foreground border-b border-border pb-3">
-                  <ShieldCheck className="h-4 w-4 text-purple-600" />
+                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-foreground border-border-strong border-border pb-3">
+                  <ShieldCheck className="h-4 w-4 text-tone-purple-text" />
                   <span>GST Governance &amp; Tax Audit</span>
                 </div>
 
@@ -1219,7 +1219,7 @@ export default function SalesInvoiceDetailPage() {
                     <div className="text-[11px] text-muted-foreground space-y-0.5">
                       <p>• Generated from Order: <span className="font-mono text-foreground">{invoice.salesOrderNumber || 'SO-Direct'}</span></p>
                       <p>• Creation Date: <span className="text-foreground">{formatDate(invoice.invoiceDate)}</span></p>
-                      <p>• Current Status: <strong className="text-foreground dark:text-n-300">{invoice.status}</strong></p>
+                      <p>• Current Status: <strong className="text-foreground">{invoice.status}</strong></p>
                     </div>
                   </div>
                 </div>

@@ -119,12 +119,12 @@ export default function StockIssueDetailPage({ params }: PageProps) {
         />
 
         {actionError && (
-          <div className="rounded-xl border border-rose-500/20 bg-rose-500/10 p-4">
+          <div className="rounded-xl border border-tone-red-solid/25 bg-tone-red-bg p-4">
             <div className="flex items-start gap-3">
-              <XCircle className="h-5 w-5 text-rose-600 mt-0.5 shrink-0" />
+              <XCircle className="h-5 w-5 text-tone-red-text mt-0.5 shrink-0" />
               <div>
-                <h4 className="text-xs font-bold text-rose-900 dark:text-rose-300">Action Failed</h4>
-                <p className="text-xs text-rose-700 dark:text-rose-400 mt-0.5">{actionError}</p>
+                <h4 className="text-xs font-bold text-tone-red-text">Action Failed</h4>
+                <p className="text-xs text-tone-red-text mt-0.5">{actionError}</p>
               </div>
             </div>
           </div>
@@ -132,7 +132,7 @@ export default function StockIssueDetailPage({ params }: PageProps) {
 
         {/* Status & Banner Summary */}
         <Card className="p-6 shadow-xs border border-border/80 space-y-6">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-border/70 pb-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-border-strong border-border/70 pb-6">
             <div>
               <div className="flex items-center gap-3">
                 <span className="font-mono text-2xl font-bold tracking-tight text-foreground">
@@ -174,7 +174,7 @@ export default function StockIssueDetailPage({ params }: PageProps) {
                     setActionError(null);
                     setShowReverseModal(true);
                   }}
-                  className="rounded-full shadow-xs gap-1.5 text-rose-600 hover:text-rose-700 hover:bg-rose-50 border-rose-200 dark:border-rose-900/40 font-semibold"
+                  className="rounded-full shadow-xs gap-1.5 text-tone-red-text hover:text-tone-red-text hover:bg-tone-red-solid border-tone-red-solid/25 font-semibold"
                 >
                   <Undo2 className="h-4 w-4" />
                   <span>Reverse Issue</span>
@@ -264,9 +264,9 @@ export default function StockIssueDetailPage({ params }: PageProps) {
 
           {/* Reversal Audit Box (if reversed) */}
           {isReversed && (
-            <div className="p-5 rounded-xl border border-amber-500/30 bg-amber-500/5 space-y-2">
+            <div className="p-5 rounded-xl border border-tone-amber-solid/25 bg-tone-amber-bg space-y-2">
               <div className="flex items-center gap-2">
-                <AlertTriangle className="h-4 w-4 text-amber-600 dark:text-amber-400" />
+                <AlertTriangle className="h-4 w-4 text-tone-amber-text" />
                 <h3 className="text-sm font-semibold text-foreground">
                   Reversal Audit Log
                 </h3>
@@ -318,9 +318,9 @@ export default function StockIssueDetailPage({ params }: PageProps) {
         {/* Modal for Authorizing Reversal */}
         {showReverseModal && (
           <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4">
-            <Card className="w-full max-w-lg p-6 bg-card border border-border shadow-xl space-y-5 animate-in fade-in-0 zoom-in-95">
-              <div className="flex items-center justify-between pb-3 border-b border-border">
-                <div className="flex items-center gap-2 text-rose-600">
+            <Card className="w-full max-w-lg p-6 bg-card border border-border shadow-popover space-y-5 animate-in fade-in-0 zoom-in-95">
+              <div className="flex items-center justify-between pb-3 border-border-strong border-border">
+                <div className="flex items-center gap-2 text-tone-red-text">
                   <Undo2 className="h-5 w-5" />
                   <h3 className="text-base font-bold text-foreground">
                     Reverse Stock Issue ({issue.issueNumber})
@@ -345,7 +345,7 @@ export default function StockIssueDetailPage({ params }: PageProps) {
               <form onSubmit={handleReverseSubmit} className="space-y-4">
                 <div>
                   <label className="text-xs font-semibold text-foreground block mb-1.5">
-                    Reversal Reason / Justification <span className="text-rose-500">*</span>
+                    Reversal Reason / Justification <span className="text-tone-red-text">*</span>
                   </label>
                   <textarea
                     rows={3}
@@ -372,7 +372,7 @@ export default function StockIssueDetailPage({ params }: PageProps) {
                     type="submit"
                     size="sm"
                     disabled={reverseIssue.isPending}
-                    className="bg-rose-600 hover:bg-rose-700 text-white rounded-full font-semibold"
+                    className="bg-tone-red-solid hover:bg-[color:var(--tone-red-text)] text-inverse rounded-full font-semibold"
                   >
                     {reverseIssue.isPending ? 'Reversing...' : 'Authorize Reversal'}
                   </Button>

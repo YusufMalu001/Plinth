@@ -107,24 +107,24 @@ export function SimulationWorkbench() {
   const requiredSafetyStockBuffer = serverSurgeScenario?.assumptions?.safetyStockPercent;
 
   return (
-    <div className="rounded-2xl border border-slate-200/90 bg-white shadow-xs dark:border-slate-800 dark:bg-slate-900 overflow-hidden">
+    <div className="rounded-2xl border border-border/90 bg-surface shadow-xs overflow-hidden">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-100 p-5 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-border p-5 bg-muted/50">
         <div className="flex items-center gap-3">
-          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#004a80] text-white shadow-xs">
+          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-action text-inverse shadow-xs">
             <Calculator className="h-4 w-4" />
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100">
+              <h3 className="text-sm font-bold text-ink">
                 Authoritative Operational Strategy Simulator
               </h3>
-              <span className="inline-flex items-center gap-1 rounded-full bg-blue-100 dark:bg-blue-950/70 text-blue-700 dark:text-blue-300 px-2 py-0.5 text-[10px] font-semibold border border-blue-200 dark:border-blue-800">
+              <span className="inline-flex items-center gap-1 rounded-full bg-tone-blue-bg text-link px-2 py-0.5 text-[10px] font-semibold border border-tone-blue-solid/25">
                 <Server className="h-2.5 w-2.5" />
                 SERVER AUTHORITATIVE
               </span>
             </div>
-            <p className="text-xs text-slate-500 dark:text-slate-400">
+            <p className="text-xs text-ink-muted">
               Scenario baselines and bounds are computed server-side with certified Decimal arithmetic.
             </p>
           </div>
@@ -135,7 +135,7 @@ export function SimulationWorkbench() {
             <select
               value={selectedCaseId}
               onChange={(e) => setSelectedCaseId(e.target.value)}
-              className="h-8 rounded-lg border border-slate-200 bg-white px-2 text-xs font-medium text-slate-700 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
+              className="h-8 rounded-lg border border-border bg-surface px-2 text-xs font-medium text-ink-secondary"
             >
               {cases.map((c: any) => (
                 <option key={c.id} value={c.id}>
@@ -149,7 +149,7 @@ export function SimulationWorkbench() {
             type="button"
             onClick={runServerSimulation}
             disabled={isSimulating}
-            className="inline-flex items-center gap-1.5 rounded-lg bg-[#004a80] px-3 py-1.5 text-xs font-semibold text-white hover:bg-[#003a66] disabled:opacity-50 transition-colors shadow-xs"
+            className="inline-flex items-center gap-1.5 rounded-lg bg-action px-3 py-1.5 text-xs font-semibold text-inverse hover:bg-[color:var(--action-primary-bg-hover)] disabled:opacity-50 transition-colors shadow-xs"
           >
             <RefreshCw className={`h-3.5 w-3.5 ${isSimulating ? 'animate-spin' : ''}`} />
             {isSimulating ? 'Calculating...' : 'Recalculate (Server)'}
@@ -158,7 +158,7 @@ export function SimulationWorkbench() {
       </div>
 
       {serverError && (
-        <div className="bg-amber-50 dark:bg-amber-950/50 border-b border-amber-200 dark:border-amber-800 px-5 py-2 text-xs text-amber-800 dark:text-amber-200">
+        <div className="bg-tone-amber-bg border-b border-tone-amber-solid/25 px-5 py-2 text-xs text-tone-amber-text">
           Server Calculation Note: {serverError}
         </div>
       )}
@@ -166,20 +166,20 @@ export function SimulationWorkbench() {
       {/* Simulator Grid */}
       <div className="grid gap-6 p-6 lg:grid-cols-2">
         {/* Scenario 1: Bulk Purchase vs Inventory Carrying Cost */}
-        <div className="rounded-xl border border-slate-200/80 bg-slate-50/30 p-5 dark:border-slate-800 dark:bg-slate-800/20 flex flex-col justify-between space-y-5">
+        <div className="rounded-xl border border-border/80 bg-muted/30 p-5 flex flex-col justify-between space-y-5">
           <div className="space-y-4">
-            <div className="flex items-center justify-between border-b border-slate-200/60 pb-3 dark:border-slate-750">
+            <div className="flex items-center justify-between border-b border-border/60 pb-3">
               <div className="flex items-center gap-2">
-                <Package className="h-4 w-4 text-[#004a80] dark:text-blue-400" />
-                <h4 className="text-xs sm:text-sm font-bold text-slate-900 dark:text-slate-100">
+                <Package className="h-4 w-4 text-link" />
+                <h4 className="text-xs sm:text-sm font-bold text-ink">
                   Bulk Buy vs. Carrying Cost Tradeoff (BUY_MORE)
                 </h4>
               </div>
               <span
                 className={`inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[11px] font-bold border ${
                   isViable
-                    ? 'border-emerald-200 bg-emerald-50 text-emerald-700 dark:border-emerald-900 dark:bg-emerald-950/60 dark:text-emerald-300'
-                    : 'border-rose-200 bg-rose-50 text-rose-700 dark:border-rose-900 dark:bg-rose-950/60 dark:text-rose-300'
+                    ? 'border-tone-green-solid/25 bg-tone-green-bg text-tone-green-text'
+                    : 'border-tone-red-solid/25 bg-tone-red-bg text-tone-red-text'
                 }`}
               >
                 {serverBuyMoreScenario ? (isViable ? <CheckCircle2 className="h-3 w-3" /> : <XCircle className="h-3 w-3" />) : <Server className="h-3 w-3" />}
@@ -187,7 +187,7 @@ export function SimulationWorkbench() {
               </span>
             </div>
 
-            <p className="text-xs text-slate-500 leading-relaxed">
+            <p className="text-xs text-ink-muted leading-relaxed">
               Calculates forward volume gross savings against inventory carrying cost using server deterministic bounds.
             </p>
 
@@ -195,8 +195,8 @@ export function SimulationWorkbench() {
             <div className="space-y-3.5 pt-1">
               <div>
                 <div className="flex justify-between text-xs font-semibold mb-1.5">
-                  <span className="text-slate-600 dark:text-slate-300">Simulated Purchase Volume:</span>
-                  <span className="font-bold text-[#004a80] dark:text-blue-400">
+                  <span className="text-ink-secondary">Simulated Purchase Volume:</span>
+                  <span className="font-bold text-link">
                     ₹{purchaseSpend.toLocaleString('en-IN')}
                   </span>
                 </div>
@@ -207,13 +207,13 @@ export function SimulationWorkbench() {
                   step={25000}
                   value={purchaseSpend}
                   onChange={(e) => setPurchaseSpend(Number(e.target.value))}
-                  className="h-1.5 w-full cursor-pointer accent-[#004a80]"
+                  className="h-1.5 w-full cursor-pointer accent-[color:var(--accent-blue)]"
                 />
               </div>
 
               <div className="grid grid-cols-3 gap-2.5">
                 <div>
-                  <label className="text-[10px] font-bold uppercase text-slate-500 dark:text-slate-400">
+                  <label className="text-[10px] font-bold uppercase text-ink-muted">
                     Discount (%)
                   </label>
                   <input
@@ -222,12 +222,12 @@ export function SimulationWorkbench() {
                     min={1}
                     max={50}
                     onChange={(e) => setBulkDiscount(Number(e.target.value))}
-                    className="mt-1 h-9 w-full rounded-lg border border-slate-200 bg-white px-2.5 text-xs font-bold text-slate-900 focus:border-[#004a80] focus:outline-none dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100"
+                    className="mt-1 h-9 w-full rounded-lg border border-border bg-surface px-2.5 text-xs font-bold text-ink focus:border-accent-brand focus:outline-none"
                   />
                 </div>
 
                 <div>
-                  <label className="text-[10px] font-bold uppercase text-slate-500 dark:text-slate-400">
+                  <label className="text-[10px] font-bold uppercase text-ink-muted">
                     Holding Cost (%/yr)
                   </label>
                   <input
@@ -236,12 +236,12 @@ export function SimulationWorkbench() {
                     min={5}
                     max={40}
                     onChange={(e) => setHoldingRate(Number(e.target.value))}
-                    className="mt-1 h-9 w-full rounded-lg border border-slate-200 bg-white px-2.5 text-xs font-bold text-slate-900 focus:border-[#004a80] focus:outline-none dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100"
+                    className="mt-1 h-9 w-full rounded-lg border border-border bg-surface px-2.5 text-xs font-bold text-ink focus:border-accent-brand focus:outline-none"
                   />
                 </div>
 
                 <div>
-                  <label className="text-[10px] font-bold uppercase text-slate-500 dark:text-slate-400">
+                  <label className="text-[10px] font-bold uppercase text-ink-muted">
                     Horizon (Days)
                   </label>
                   <input
@@ -250,7 +250,7 @@ export function SimulationWorkbench() {
                     min={15}
                     max={365}
                     onChange={(e) => setHorizonDays(Number(e.target.value))}
-                    className="mt-1 h-9 w-full rounded-lg border border-slate-200 bg-white px-2.5 text-xs font-bold text-slate-900 focus:border-[#004a80] focus:outline-none dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100"
+                    className="mt-1 h-9 w-full rounded-lg border border-border bg-surface px-2.5 text-xs font-bold text-ink focus:border-accent-brand focus:outline-none"
                   />
                 </div>
               </div>
@@ -258,32 +258,32 @@ export function SimulationWorkbench() {
           </div>
 
           {/* Results Summary Box from Server */}
-          <div className="rounded-xl border border-slate-200 bg-white p-3.5 dark:border-slate-700 dark:bg-slate-800 space-y-2">
-            <div className="flex items-center justify-between text-[11px] text-slate-500 pb-1 border-b border-slate-100 dark:border-slate-700">
-                    <span className="flex items-center gap-1 font-semibold text-slate-700 dark:text-slate-300">
-                      <ShieldCheck className="h-3 w-3 text-emerald-600" />
+          <div className="rounded-xl border border-border bg-surface p-3.5 space-y-2">
+            <div className="flex items-center justify-between text-[11px] text-ink-muted pb-1 border-b border-border">
+                    <span className="flex items-center gap-1 font-semibold text-ink-secondary">
+                      <ShieldCheck className="h-3 w-3 text-tone-green-text" />
                 {serverBuyMoreScenario?.formulaVersion ?? 'No server result yet'}
               </span>
-              <span className="font-medium text-slate-500">
+              <span className="font-medium text-ink-muted">
                 Provenance: {serverBuyMoreScenario?.provenance ?? '—'}
               </span>
             </div>
-            <div className="grid grid-cols-3 gap-2 text-center divide-x divide-slate-100 dark:divide-slate-700">
+            <div className="grid grid-cols-3 gap-2 text-center divide-x divide-border">
               <div>
-                <p className="text-[10px] font-bold uppercase text-slate-400">Low Case</p>
-                <p className="text-xs font-bold text-slate-700 dark:text-slate-300 mt-0.5">
+                <p className="text-[10px] font-bold uppercase text-ink-placeholder">Low Case</p>
+                <p className="text-xs font-bold text-ink-secondary mt-0.5">
                   {serverBuyMoreScenario?.lowCase?.value !== undefined ? `₹${Math.round(serverBuyMoreScenario.lowCase.value).toLocaleString('en-IN')}` : '—'}
                 </p>
               </div>
               <div className="pl-2">
-                <p className="text-[10px] font-bold uppercase text-slate-400">Base Expected</p>
-                <p className={`text-xs font-bold mt-0.5 ${isViable ? 'text-emerald-600 dark:text-emerald-400' : 'text-rose-600 dark:text-rose-400'}`}>
+                <p className="text-[10px] font-bold uppercase text-ink-placeholder">Base Expected</p>
+                <p className={`text-xs font-bold mt-0.5 ${isViable ? 'text-tone-green-text' : 'text-tone-red-text'}`}>
                   {typeof buyMoreNetGain === 'number' ? `${isViable ? '+' : ''}₹${Math.round(buyMoreNetGain).toLocaleString('en-IN')}` : '—'}
                 </p>
               </div>
               <div className="pl-2">
-                <p className="text-[10px] font-bold uppercase text-slate-400">High Case</p>
-                <p className="text-xs font-bold text-slate-700 dark:text-slate-300 mt-0.5">
+                <p className="text-[10px] font-bold uppercase text-ink-placeholder">High Case</p>
+                <p className="text-xs font-bold text-ink-secondary mt-0.5">
                   {serverBuyMoreScenario?.highCase?.value !== undefined ? `₹${Math.round(serverBuyMoreScenario.highCase.value).toLocaleString('en-IN')}` : '—'}
                 </p>
               </div>
@@ -292,21 +292,21 @@ export function SimulationWorkbench() {
         </div>
 
         {/* Scenario 2: Festive & Seasonal Surge Planning */}
-        <div className="rounded-xl border border-slate-200/80 bg-slate-50/30 p-5 dark:border-slate-800 dark:bg-slate-800/20 flex flex-col justify-between space-y-5">
+        <div className="rounded-xl border border-border/80 bg-muted/30 p-5 flex flex-col justify-between space-y-5">
           <div className="space-y-4">
-            <div className="flex items-center justify-between border-b border-slate-200/60 pb-3 dark:border-slate-750">
+            <div className="flex items-center justify-between border-b border-border/60 pb-3">
               <div className="flex items-center gap-2">
-                <TrendingUp className="h-4 w-4 text-[#004a80] dark:text-blue-400" />
-                <h4 className="text-xs sm:text-sm font-bold text-slate-900 dark:text-slate-100">
+                <TrendingUp className="h-4 w-4 text-link" />
+                <h4 className="text-xs sm:text-sm font-bold text-ink">
                   Surge Demand Modeling (PRODUCTION_INCREASE)
                 </h4>
               </div>
-              <span className="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-2.5 py-0.5 text-[11px] font-bold text-[#004a80] dark:border-blue-900 dark:bg-blue-950/60 dark:text-blue-300">
+              <span className="inline-flex items-center rounded-full border border-tone-blue-solid/25 bg-tone-blue-bg px-2.5 py-0.5 text-[11px] font-bold text-link">
                 {serverSurgeScenario ? `${(surgeMultiplier * 100 - 100).toFixed(0)}% Uplift Mode` : 'Not simulated'}
               </span>
             </div>
 
-            <p className="text-xs text-slate-500 leading-relaxed">
+            <p className="text-xs text-ink-muted leading-relaxed">
               Calculate capacity and safety stock buffers required to capture demand surges safely.
             </p>
 
@@ -314,8 +314,8 @@ export function SimulationWorkbench() {
             <div className="space-y-3.5 pt-1">
               <div>
                 <div className="flex justify-between text-xs font-semibold mb-1.5">
-                  <span className="text-slate-600 dark:text-slate-300">Baseline Monthly Net Revenue:</span>
-                  <span className="font-bold text-[#004a80] dark:text-blue-400">
+                  <span className="text-ink-secondary">Baseline Monthly Net Revenue:</span>
+                  <span className="font-bold text-link">
                     ₹{monthlySales.toLocaleString('en-IN')}
                   </span>
                 </div>
@@ -326,14 +326,14 @@ export function SimulationWorkbench() {
                   step={50000}
                   value={monthlySales}
                   onChange={(e) => setMonthlySales(Number(e.target.value))}
-                  className="h-1.5 w-full cursor-pointer accent-[#004a80]"
+                  className="h-1.5 w-full cursor-pointer accent-[color:var(--accent-blue)]"
                 />
               </div>
 
               <div>
                 <div className="flex justify-between text-xs font-semibold mb-1.5">
-                  <span className="text-slate-600 dark:text-slate-300">Expected Festive Demand Multiplier:</span>
-                  <span className="font-bold text-emerald-600 dark:text-emerald-400">
+                  <span className="text-ink-secondary">Expected Festive Demand Multiplier:</span>
+                  <span className="font-bold text-tone-green-text">
                     {surgeMultiplier.toFixed(2)}x
                   </span>
                 </div>
@@ -345,8 +345,8 @@ export function SimulationWorkbench() {
                       onClick={() => setSurgeMultiplier(mult)}
                       className={`h-9 rounded-lg border text-xs font-bold transition-all ${
                         surgeMultiplier === mult
-                          ? 'border-[#004a80] bg-[#004a80] text-white shadow-xs'
-                          : 'border-slate-200 bg-white text-slate-700 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300'
+                          ? 'border-accent-brand bg-action text-inverse shadow-xs'
+                          : 'border-border bg-surface text-ink-secondary hover:bg-muted'
                       }`}
                     >
                       {mult}x
@@ -358,26 +358,26 @@ export function SimulationWorkbench() {
           </div>
 
           {/* Results Summary Box from Server */}
-          <div className="rounded-xl border border-slate-200 bg-white p-3.5 dark:border-slate-700 dark:bg-slate-800 space-y-2">
-            <div className="flex items-center justify-between text-[11px] text-slate-500 pb-1 border-b border-slate-100 dark:border-slate-700">
-              <span className="flex items-center gap-1 font-semibold text-slate-700 dark:text-slate-300">
-                <ShieldCheck className="h-3 w-3 text-emerald-600" />
+          <div className="rounded-xl border border-border bg-surface p-3.5 space-y-2">
+            <div className="flex items-center justify-between text-[11px] text-ink-muted pb-1 border-b border-border">
+              <span className="flex items-center gap-1 font-semibold text-ink-secondary">
+                <ShieldCheck className="h-3 w-3 text-tone-green-text" />
                 {serverSurgeScenario?.formulaVersion ?? 'deterministic-decimal-scenario-v1'}
               </span>
-              <span className="font-medium text-slate-500">
+              <span className="font-medium text-ink-muted">
                 Risk: {serverSurgeScenario?.risk ?? '—'}
               </span>
             </div>
-            <div className="grid grid-cols-2 gap-2 text-center divide-x divide-slate-100 dark:divide-slate-700">
+            <div className="grid grid-cols-2 gap-2 text-center divide-x divide-border">
               <div>
-                <p className="text-[10px] font-bold uppercase text-slate-400">Expected Incremental Impact</p>
-                <p className="text-xs sm:text-sm font-bold text-[#004a80] dark:text-blue-400 mt-0.5">
+                <p className="text-[10px] font-bold uppercase text-ink-placeholder">Expected Incremental Impact</p>
+                <p className="text-xs sm:text-sm font-bold text-link mt-0.5">
                   {typeof surgeImpact === 'number' ? `₹${Math.round(surgeImpact).toLocaleString('en-IN')}` : '—'}
                 </p>
               </div>
               <div className="pl-2">
-                <p className="text-[10px] font-bold uppercase text-slate-400">Required Safety Buffer</p>
-                <p className="text-xs sm:text-sm font-bold text-amber-600 dark:text-amber-400 mt-0.5">
+                <p className="text-[10px] font-bold uppercase text-ink-placeholder">Required Safety Buffer</p>
+                <p className="text-xs sm:text-sm font-bold text-tone-amber-text mt-0.5">
                   {typeof requiredSafetyStockBuffer === 'number' ? `+${requiredSafetyStockBuffer}% Raw Materials` : '—'}
                 </p>
               </div>

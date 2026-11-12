@@ -166,7 +166,7 @@ export default function ChallanHistoryPage() {
             <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider">
               Total Dispatches
             </span>
-            <div className="rounded-xl bg-amber-500/10 p-2 text-amber-600 dark:text-amber-400 border border-amber-500/20">
+            <div className="rounded-xl bg-tone-amber-bg p-2 text-tone-amber-text border border-tone-amber-solid/25">
               <Layers className="h-4 w-4" />
             </div>
           </div>
@@ -186,7 +186,7 @@ export default function ChallanHistoryPage() {
             <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider">
               Dispatched Materials
             </span>
-            <div className="rounded-xl bg-emerald-500/10 p-2 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+            <div className="rounded-xl bg-tone-green-bg p-2 text-tone-green-text border border-tone-green-solid/25">
               <Truck className="h-4 w-4" />
             </div>
           </div>
@@ -201,7 +201,7 @@ export default function ChallanHistoryPage() {
                   <span className="font-semibold text-foreground truncate" title={m.name}>
                     {m.name}
                   </span>
-                  <span className="font-mono font-bold text-emerald-600 dark:text-emerald-400 shrink-0">
+                  <span className="font-mono font-bold text-tone-green-text shrink-0">
                     +{m.qty.toLocaleString('en-IN', { maximumFractionDigits: 4 })} {m.uom}
                   </span>
                 </div>
@@ -213,7 +213,7 @@ export default function ChallanHistoryPage() {
 
       {/* Delivery Challans Audit Table */}
       <Card className="overflow-hidden border-border bg-card shadow-xs rounded-2xl p-0">
-        <div className="p-4 border-b border-border bg-muted/30 flex items-center justify-between">
+        <div className="p-4 border-border-strong border-border bg-muted/30 flex items-center justify-between">
           <div>
             <h2 className="text-sm font-bold text-foreground">
               Delivery Challans
@@ -226,7 +226,7 @@ export default function ChallanHistoryPage() {
 
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs">
-            <thead className="bg-muted/50 text-muted-foreground uppercase font-bold border-b border-border">
+            <thead className="bg-muted/50 text-muted-foreground uppercase font-bold border-border-strong border-border">
               <tr>
                 <th className="p-3.5">#</th>
                 <th className="p-3.5">Challan Number</th>
@@ -297,7 +297,7 @@ export default function ChallanHistoryPage() {
                           <div className="text-[10px] font-mono text-muted-foreground">{itemCode}</div>
                         </td>
                         <td className="p-3.5 font-mono font-bold text-foreground">
-                          <span className="text-emerald-600 dark:text-emerald-400">
+                          <span className="text-tone-green-text">
                             +{Number(ch.quantity || 0).toLocaleString('en-IN', { maximumFractionDigits: 4 })}{' '}
                             {rowUom}
                           </span>
@@ -366,7 +366,7 @@ export default function ChallanHistoryPage() {
                   <td colSpan={2} className="p-3.5 text-xs">
                     <div className="space-y-0.5">
                       {materialSummary.map((m, idx) => (
-                        <div key={idx} className="font-mono font-black text-emerald-600 dark:text-emerald-400">
+                        <div key={idx} className="font-mono font-black text-tone-green-text">
                           +{m.qty.toLocaleString('en-IN', { maximumFractionDigits: 4 })} {m.uom} ({m.name})
                         </div>
                       ))}

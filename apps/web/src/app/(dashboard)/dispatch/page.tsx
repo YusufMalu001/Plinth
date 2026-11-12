@@ -57,7 +57,7 @@ export default function DispatchOverviewPage() {
       sub: 'Pending inventory reserve',
       href: '/dispatch/allocation',
       icon: Boxes,
-      badgeColor: 'bg-amber-500/10 text-amber-700 border-amber-200',
+      badgeColor: 'bg-tone-amber-bg text-tone-amber-text border-tone-amber-solid/25',
     },
     {
       label: 'Picking',
@@ -65,7 +65,7 @@ export default function DispatchOverviewPage() {
       sub: 'Bin & barcode scanning',
       href: '/dispatch/picking',
       icon: ClipboardCheck,
-      badgeColor: 'bg-blue-500/10 text-blue-700 border-blue-200',
+      badgeColor: 'bg-tone-blue-bg text-tone-blue-text border-tone-blue-solid/25',
     },
     {
       label: 'Packing',
@@ -73,7 +73,7 @@ export default function DispatchOverviewPage() {
       sub: 'Boxes sealed & weighed',
       href: '/dispatch/packing',
       icon: PackageCheck,
-      badgeColor: 'bg-indigo-500/10 text-indigo-700 border-indigo-200',
+      badgeColor: 'bg-tone-purple-bg text-tone-purple-text border-tone-purple-solid/25',
     },
     {
       label: 'Staging & Dispatch',
@@ -81,7 +81,7 @@ export default function DispatchOverviewPage() {
       sub: 'AWB & carrier gatepass',
       href: '/dispatch/staging',
       icon: Truck,
-      badgeColor: 'bg-purple-500/10 text-purple-700 border-purple-200',
+      badgeColor: 'bg-tone-purple-bg text-tone-purple-text border-tone-purple-solid/25',
     },
     {
       label: 'Dispatched Today',
@@ -89,7 +89,7 @@ export default function DispatchOverviewPage() {
       sub: 'Handed over to carrier',
       href: '/dispatch/dispatched',
       icon: Clock3,
-      badgeColor: 'bg-emerald-500/10 text-emerald-700 border-emerald-200',
+      badgeColor: 'bg-tone-green-bg text-tone-green-text border-tone-green-solid/25',
     },
     {
       label: 'Delivery & POD',
@@ -97,21 +97,21 @@ export default function DispatchOverviewPage() {
       sub: 'Exceptions & POD capture',
       href: '/dispatch/delivery',
       icon: AlertTriangle,
-      badgeColor: data.deliveryExceptions > 0 ? 'bg-rose-500/10 text-rose-700 border-rose-200' : 'bg-slate-500/10 text-slate-700 border-slate-200',
+      badgeColor: data.deliveryExceptions > 0 ? 'bg-tone-red-bg text-tone-red-text border-tone-red-solid/25' : 'bg-tone-grey-bg text-ink-secondary border-border',
     },
   ];
 
   const totalChannelOrders = Object.values(data.channelCounts || {}).reduce((sum, count) => sum + count, 0);
 
   const channelBadges: Record<string, { label: string; tone: string }> = {
-    AMAZON: { label: 'Amazon India', tone: 'bg-orange-500/10 text-orange-700 border-orange-200' },
-    E_TRADE: { label: 'E-Trade Direct', tone: 'bg-violet-500/10 text-violet-700 border-violet-200' },
-    PHYSICAL: { label: 'Physical / Wholesale B2B', tone: 'bg-blue-500/10 text-blue-700 border-blue-200' },
-    STORE_POS: { label: 'Store POS (Counter)', tone: 'bg-emerald-500/10 text-emerald-700 border-emerald-200' },
+    AMAZON: { label: 'Amazon India', tone: 'bg-tone-orange-bg text-tone-orange-text border-tone-orange-solid/25' },
+    E_TRADE: { label: 'E-Trade Direct', tone: 'bg-tone-purple-bg text-tone-purple-text border-tone-purple-solid/25' },
+    PHYSICAL: { label: 'Physical / Wholesale B2B', tone: 'bg-tone-blue-bg text-tone-blue-text border-tone-blue-solid/25' },
+    STORE_POS: { label: 'Store POS (Counter)', tone: 'bg-tone-green-bg text-tone-green-text border-tone-green-solid/25' },
   };
 
   return (
-    <div className="flex-1 overflow-y-auto bg-gradient-to-b from-background via-muted/10 to-muted/30 p-4 sm:p-6 lg:p-8">
+    <div className="flex-1 overflow-y-auto bg-muted p-4 sm:p-6 lg:p-8">
       <div className="mx-auto max-w-[1600px] space-y-6">
         {/* Top Header */}
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -150,7 +150,7 @@ export default function DispatchOverviewPage() {
 
         {/* Live Fulfillment Pipeline Stepper */}
         <Card className="border-border/80 shadow-sm">
-          <CardHeader className="border-b border-border/60 pb-3">
+          <CardHeader className="border-border-strong border-border/60 pb-3">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <Layers className="h-4 w-4 text-primary" />
@@ -165,7 +165,7 @@ export default function DispatchOverviewPage() {
                 const Icon = stage.icon;
                 return (
                   <Link href={stage.href} key={stage.label} className="group">
-                    <div className="relative flex flex-col justify-between rounded-xl border border-border/80 bg-card p-4 transition duration-200 hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md">
+                    <div className="relative flex flex-col justify-between rounded-xl border border-border/80 bg-card p-4 transition duration-200 hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-none">
                       <div className="flex items-center justify-between">
                         <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                           Step 0{index + 1}
@@ -197,7 +197,7 @@ export default function DispatchOverviewPage() {
         <div className="grid gap-6 xl:grid-cols-[2fr_1fr]">
           {/* Recent Carrier Handovers */}
           <Card className="overflow-hidden border-border/80 shadow-sm">
-            <CardHeader className="flex flex-row items-center justify-between border-b border-border/60 bg-muted/20 py-4">
+            <CardHeader className="flex flex-row items-center justify-between border-border-strong border-border/60 bg-muted/20 py-4">
               <div className="flex items-center gap-2">
                 <Truck className="h-4 w-4 text-primary" />
                 <CardTitle className="text-base font-bold">Recent Carrier Handovers & Dispatches</CardTitle>
@@ -269,11 +269,11 @@ export default function DispatchOverviewPage() {
                               variant="outline"
                               className={
                                 shipment.status === 'DELIVERED'
-                                  ? 'bg-emerald-500/10 text-emerald-700 border-emerald-300 font-semibold'
+                                  ? 'bg-tone-green-bg text-tone-green-text border-tone-green-solid/25 font-semibold'
                                   : shipment.status === 'HANDED_OVER' || shipment.status === 'IN_TRANSIT'
-                                  ? 'bg-blue-500/10 text-blue-700 border-blue-300 font-semibold'
+                                  ? 'bg-tone-blue-bg text-tone-blue-text border-tone-blue-solid/25 font-semibold'
                                   : shipment.status === 'DELIVERY_FAILED' || shipment.status === 'RTO_INITIATED'
-                                  ? 'bg-rose-500/10 text-rose-700 border-rose-300 font-semibold'
+                                  ? 'bg-tone-red-bg text-tone-red-text border-tone-red-solid/25 font-semibold'
                                   : 'font-semibold'
                               }
                             >
@@ -300,7 +300,7 @@ export default function DispatchOverviewPage() {
           <div className="space-y-6">
             {/* Channel Breakdown Card */}
             <Card className="border-border/80 shadow-sm">
-              <CardHeader className="border-b border-border/60 pb-3">
+              <CardHeader className="border-border-strong border-border/60 pb-3">
                 <div className="flex items-center justify-between">
                   <CardTitle className="text-base font-bold">Channel Demand Mix</CardTitle>
                   <span className="text-xs font-semibold text-muted-foreground">
@@ -339,23 +339,23 @@ export default function DispatchOverviewPage() {
 
             {/* SLA Alert Radar Card */}
             <Card className="border-border/80 shadow-sm">
-              <CardHeader className="border-b border-border/60 pb-3">
+              <CardHeader className="border-border-strong border-border/60 pb-3">
                 <div className="flex items-center gap-2">
-                  <ShieldAlert className="h-4 w-4 text-amber-600" />
+                  <ShieldAlert className="h-4 w-4 text-tone-amber-text" />
                   <CardTitle className="text-base font-bold">Delivery SLA Compliance</CardTitle>
                 </div>
               </CardHeader>
               <CardContent className="space-y-3 pt-4">
-                <div className="flex items-center justify-between rounded-xl border border-amber-500/20 bg-amber-500/5 p-4">
+                <div className="flex items-center justify-between rounded-xl border border-tone-amber-solid/25 bg-tone-amber-bg p-4">
                   <div>
-                    <div className="font-mono text-2xl font-black text-amber-700">
+                    <div className="font-mono text-2xl font-black text-tone-amber-text">
                       {data.slaBreaches}
                     </div>
-                    <div className="text-xs font-bold text-amber-800">
+                    <div className="text-xs font-bold text-tone-amber-text">
                       Active SLA Breach{data.slaBreaches === 1 ? '' : 'es'}
                     </div>
                   </div>
-                  <AlertTriangle className="h-7 w-7 text-amber-600/80" />
+                  <AlertTriangle className="h-7 w-7 text-tone-amber-text" />
                 </div>
                 <p className="text-xs text-muted-foreground">
                   Expected carrier delivery timestamp has passed without POD closure, cancellation, or returned status.

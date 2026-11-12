@@ -354,7 +354,7 @@ export function PackageDialog({
                       <div className="font-mono text-xs font-bold text-foreground">{line.sku}</div>
                       <div className="text-[11px] text-muted-foreground mt-0.5">{line.description}</div>
                     </td>
-                    <td className="px-3 py-3 text-center font-mono font-bold text-blue-600 dark:text-blue-400 align-middle">
+                    <td className="px-3 py-3 text-center font-mono font-bold text-link  align-middle">
                       {line.pickedDisplay}
                     </td>
                     <td className="px-3 py-3 text-center font-mono text-muted-foreground align-middle">

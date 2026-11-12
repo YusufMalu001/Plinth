@@ -113,7 +113,7 @@ export default function TallyExchangePage() {
           onClick={() => setActiveTab('MAPPINGS')}
           className={`rounded-xl px-4 py-1.5 text-xs font-semibold transition-all ${
             activeTab === 'MAPPINGS'
-              ? 'bg-primary text-white shadow-sm'
+              ? 'bg-primary text-inverse shadow-sm'
               : 'text-muted-foreground hover:text-foreground'
           }`}
         >
@@ -123,7 +123,7 @@ export default function TallyExchangePage() {
           onClick={() => setActiveTab('BATCHES')}
           className={`rounded-xl px-4 py-1.5 text-xs font-semibold transition-all ${
             activeTab === 'BATCHES'
-              ? 'bg-primary text-white shadow-sm'
+              ? 'bg-primary text-inverse shadow-sm'
               : 'text-muted-foreground hover:text-foreground'
           }`}
         >
@@ -134,7 +134,7 @@ export default function TallyExchangePage() {
       {/* Tab 1: Ledger Mappings */}
       {activeTab === 'MAPPINGS' && (
         <Card className="rounded-2xl border-border/80 shadow-none">
-          <CardHeader className="border-b border-border/70 p-5">
+          <CardHeader className="border-border-strong border-border/70 p-5">
             <CardTitle className="text-base font-bold">Plinth to TallyPrime Ledger Mappings</CardTitle>
             <p className="text-xs text-muted-foreground mt-0.5">
               Approved 1-to-1 account mapping between Plinth Chart of Accounts and TallyPrime master ledgers
@@ -172,7 +172,7 @@ export default function TallyExchangePage() {
                         </TableCell>
                         <TableCell className="p-3 font-sans text-muted-foreground">{m.tallyParentGroup}</TableCell>
                         <TableCell className="p-3 text-center font-sans">
-                          <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/10 px-2.5 py-0.5 text-[10px] font-bold text-emerald-700 dark:text-emerald-400">
+                          <span className="inline-flex items-center gap-1 rounded-full bg-tone-green-bg px-2.5 py-0.5 text-[10px] font-bold text-tone-green-text">
                             <CheckCircle2 className="h-3 w-3" />
                             {m.mappingStatus}
                           </span>
@@ -199,7 +199,7 @@ export default function TallyExchangePage() {
       {/* Tab 2: Export Batches */}
       {activeTab === 'BATCHES' && (
         <Card className="rounded-2xl border-border/80 shadow-none">
-          <CardHeader className="border-b border-border/70 p-5">
+          <CardHeader className="border-border-strong border-border/70 p-5">
             <CardTitle className="text-base font-bold">TallyPrime Export & Acknowledgment Log</CardTitle>
             <p className="text-xs text-muted-foreground mt-0.5">
               Audited voucher batches exported to Tally XML with per-batch error & variance reports
@@ -239,7 +239,7 @@ export default function TallyExchangePage() {
                         <TableCell className="p-3 text-right">{formatCurrency(b.totalDebit)}</TableCell>
                         <TableCell className="p-3 text-right">{formatCurrency(b.totalCredit)}</TableCell>
                         <TableCell className="p-3 text-center font-sans">
-                          <span className="rounded-full bg-emerald-500/10 px-2 py-0.5 text-[10px] font-bold text-emerald-700 dark:text-emerald-400">
+                          <span className="rounded-full bg-tone-green-bg px-2 py-0.5 text-[10px] font-bold text-tone-green-text">
                             {b.status}
                           </span>
                         </TableCell>

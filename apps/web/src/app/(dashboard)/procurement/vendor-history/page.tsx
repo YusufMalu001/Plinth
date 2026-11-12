@@ -113,7 +113,7 @@ export default function VendorHistoryPage() {
 
             {/* Order list Table */}
             <Card className="shadow-sm overflow-hidden">
-              <div className="p-4 border-b border-border bg-muted/10">
+              <div className="p-4 border-border-strong border-border bg-muted/10">
                 <h2 className="text-sm font-bold uppercase tracking-wider text-muted-foreground">Purchase Orders</h2>
               </div>
               {!history.orders || history.orders.length === 0 ? (

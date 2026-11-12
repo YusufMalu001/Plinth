@@ -121,9 +121,9 @@ export function PoSearchSelector({
               : 'text-muted-foreground hover:text-foreground'
           }`}
         >
-          <ShoppingBag className="h-3.5 w-3.5 text-blue-600 dark:text-blue-400" />
+          <ShoppingBag className="h-3.5 w-3.5 text-tone-blue-text" />
           <span>Purchase Orders</span>
-          <span className="rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 px-1.5 py-0.2 text-[10px] font-mono">
+          <span className="rounded-full bg-tone-blue-bg text-tone-blue-text px-1.5 py-0.2 text-[10px] font-mono">
             {poCount}
           </span>
         </button>
@@ -136,9 +136,9 @@ export function PoSearchSelector({
               : 'text-muted-foreground hover:text-foreground'
           }`}
         >
-          <Factory className="h-3.5 w-3.5 text-indigo-600 dark:text-indigo-400" />
+          <Factory className="h-3.5 w-3.5 text-tone-purple-text" />
           <span>Job Work</span>
-          <span className="rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 px-1.5 py-0.2 text-[10px] font-mono">
+          <span className="rounded-full bg-tone-purple-bg text-tone-purple-text px-1.5 py-0.2 text-[10px] font-mono">
             {jwCount}
           </span>
         </button>
@@ -201,7 +201,7 @@ export function PoSearchSelector({
               ))}
             </div>
           ) : filteredOptions.length === 0 ? (
-            <div className="flex flex-col items-center justify-center rounded-2xl border-2 border-dashed border-border/80 bg-muted/20 p-6 text-center">
+            <div className="flex flex-col items-center justify-center rounded-2xl border-border border-dashed border-border/80 bg-muted/20 p-6 text-center">
               <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-card border border-border text-muted-foreground">
                 <AlertCircle className="h-5 w-5" />
               </div>
@@ -253,7 +253,7 @@ export function PoSearchSelector({
                         isSelected
                           ? 'bg-primary text-primary-foreground shadow-xs'
                           : isJw
-                            ? 'bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20 group-hover:bg-indigo-500/20'
+                            ? 'bg-tone-purple-bg text-tone-purple-text border border-tone-purple-solid/25 group-hover:bg-tone-purple-bg'
                             : 'bg-muted/70 text-muted-foreground border border-border group-hover:bg-primary/10 group-hover:text-primary group-hover:border-primary/20'
                       }`}
                     >
@@ -266,12 +266,12 @@ export function PoSearchSelector({
                           {opt.number}
                         </span>
                         {opt.status && (
-                          <span className="rounded-md bg-emerald-500/10 px-2 py-0.5 font-mono text-[10px] font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+                          <span className="rounded-md bg-tone-green-bg px-2 py-0.5 font-mono text-[10px] font-bold uppercase tracking-wider text-tone-green-text border border-tone-green-solid/25">
                             {opt.status.replaceAll('_', ' ')}
                           </span>
                         )}
                         {isJw && (
-                          <span className="rounded-md bg-indigo-500/15 px-2 py-0.5 font-mono text-[10px] font-black uppercase tracking-wider text-indigo-700 dark:text-indigo-300 border border-indigo-500/30">
+                          <span className="rounded-md bg-tone-purple-bg px-2 py-0.5 font-mono text-[10px] font-black uppercase tracking-wider text-tone-purple-text border border-tone-purple-solid/25">
                             Job Work
                           </span>
                         )}

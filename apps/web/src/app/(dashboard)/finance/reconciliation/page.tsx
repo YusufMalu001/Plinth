@@ -89,8 +89,8 @@ export default function FinanceReconciliationPage() {
       <FinanceNavigationTabs />
 
       {/* Internal Labeling Notice Callout */}
-      <div className="p-4 rounded-2xl border border-blue-500/30 bg-blue-500/5 flex items-start gap-3">
-        <HelpCircle className="h-5 w-5 text-blue-600 dark:text-blue-400 shrink-0 mt-0.5" />
+      <div className="p-4 rounded-2xl border border-tone-blue-solid/25 bg-tone-blue-bg flex items-start gap-3">
+        <HelpCircle className="h-5 w-5 text-tone-blue-text shrink-0 mt-0.5" />
         <div className="text-xs space-y-1">
           <span className="font-bold text-foreground block">
             Scope Definition: Internal Self-Consistency Audit
@@ -146,7 +146,7 @@ export default function FinanceReconciliationPage() {
                       <Button
                         size="sm"
                         onClick={() => setReconItemId(item.id)}
-                        className="text-xs font-semibold gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white"
+                        className="text-xs font-semibold gap-1.5 bg-action hover:bg-[color:var(--action-primary-bg-hover)] text-inverse"
                       >
                         <ShieldCheck className="h-3.5 w-3.5" />
                         Run Check
@@ -231,8 +231,8 @@ export default function FinanceReconciliationPage() {
       {/* Run Reconcile Modal */}
       {reconItemId && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-background/80 backdrop-blur-xs p-4">
-          <Card className="w-full max-w-lg p-6 rounded-2xl shadow-xl border space-y-4 bg-card">
-            <div className="flex items-center justify-between border-b border-border/60 pb-3">
+          <Card className="w-full max-w-lg p-6 rounded-2xl shadow-popover border space-y-4 bg-card">
+            <div className="flex items-center justify-between border-border-strong border-border/60 pb-3">
               <div>
                 <h3 className="text-base font-bold text-foreground font-manrope">
                   Execute Internal Consistency Audit
@@ -276,7 +276,7 @@ export default function FinanceReconciliationPage() {
                 size="sm"
                 onClick={() => handleReconcile(reconItemId)}
                 disabled={reconcileMutation.isPending}
-                className="font-semibold text-xs bg-emerald-600 hover:bg-emerald-700 text-white"
+                className="font-semibold text-xs bg-tone-green-solid hover:bg-[color:var(--tone-green-text)] text-inverse"
               >
                 {reconcileMutation.isPending ? 'Verifying...' : 'Confirm Internal Consistency'}
               </Button>

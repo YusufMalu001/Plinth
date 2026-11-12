@@ -379,7 +379,7 @@ export function DebitCreditNoteModal({
                 >
                   {viewNote.partyType}
                 </span>
-                <span className="rounded-full bg-emerald-500/10 px-2.5 py-0.5 text-xs font-semibold text-emerald-700 dark:text-emerald-400">
+                <span className="rounded-full bg-tone-emerald-bg/10 px-2.5 py-0.5 text-xs font-semibold text-tone-green-text ">
                   {viewNote.status}
                 </span>
               </div>
@@ -573,7 +573,7 @@ export function DebitCreditNoteModal({
                 Issue {noteType === 'CREDIT' ? 'Credit Note' : 'Debit Note'}
               </h2>
               {initialInvoice && (
-                <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/10 px-2.5 py-0.5 text-xs font-semibold text-emerald-700 dark:text-emerald-400 border border-emerald-500/20">
+                <span className="inline-flex items-center gap-1 rounded-full bg-tone-emerald-bg/10 px-2.5 py-0.5 text-xs font-semibold text-tone-green-text  border border-tone-green-solid/20">
                   <CheckCircle2 className="h-3 w-3" /> Pre-filled from {partyType === 'VENDOR' ? 'Supplier Bill' : 'Tax Invoice'}
                 </span>
               )}
@@ -634,7 +634,7 @@ export function DebitCreditNoteModal({
 
           {/* Existing Bill / Invoice Dropdown Selector */}
           {!initialInvoice && (
-            <div className="rounded-2xl border border-border bg-n-50/50 p-4 dark:bg-n-950/20">
+            <div className="rounded-2xl border border-border bg-n-50/50 p-4 ">
               <div className="flex items-center justify-between gap-2 mb-2">
                 <label className="text-xs font-bold text-foreground flex items-center gap-1.5">
                   <Sparkles className="h-4 w-4 text-primary" />
@@ -872,7 +872,7 @@ export function DebitCreditNoteModal({
                         <tr
                           key={line.id}
                           className={`transition-colors ${
-                            isActive ? 'bg-n-500/5 dark:bg-n-950/20' : 'hover:bg-muted/20'
+                            isActive ? 'bg-n-500/5 ' : 'hover:bg-muted/20'
                           }`}
                         >
                           <td className="p-3 text-center text-muted-foreground">{idx + 1}</td>
@@ -900,7 +900,7 @@ export function DebitCreditNoteModal({
                               }
                               className={`w-24 rounded-lg border px-2 py-1 text-right text-xs font-mono font-bold focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary ${
                                 isActive
-                                  ? 'border-n-500 bg-background text-foreground dark:text-n-300'
+                                  ? 'border-n-500 bg-background text-foreground '
                                   : 'border-border bg-background/50 text-foreground'
                               }`}
                             />

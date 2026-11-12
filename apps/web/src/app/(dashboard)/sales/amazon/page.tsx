@@ -156,13 +156,13 @@ export default function AmazonChannelPage() {
                 <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
                   Channel Revenue
                 </span>
-                <div className="mt-2 text-3xl font-black font-mono text-emerald-600">
+                <div className="mt-2 text-3xl font-black font-mono text-tone-green-text">
                   {formatCurrency(
                     amazonOrders.reduce((s, o) => s + Number(o.grandTotal || 0), 0)
                   )}
                 </div>
               </div>
-              <div className="p-3 rounded-xl bg-emerald-500/10 text-emerald-600">
+              <div className="p-3 rounded-xl bg-tone-green-bg text-tone-green-text">
                 <CheckCircle2 className="h-6 w-6" />
               </div>
             </CardContent>
@@ -174,12 +174,12 @@ export default function AmazonChannelPage() {
                 <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
                   Adapter Status
                 </span>
-                <div className="mt-2 text-lg font-bold text-emerald-600 flex items-center gap-1.5">
-                  <span className="h-2.5 w-2.5 rounded-full bg-emerald-500 animate-pulse" />
+                <div className="mt-2 text-lg font-bold text-tone-green-text flex items-center gap-1.5">
+                  <span className="h-2.5 w-2.5 rounded-full bg-tone-green-solid animate-pulse" />
                   Live / Synchronized
                 </div>
               </div>
-              <div className="p-3 rounded-xl bg-emerald-500/10 text-emerald-600">
+              <div className="p-3 rounded-xl bg-tone-green-bg text-tone-green-text">
                 <UploadCloud className="h-6 w-6" />
               </div>
             </CardContent>
@@ -207,7 +207,7 @@ export default function AmazonChannelPage() {
                   </div>
                 )}
                 {success && (
-                  <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-2.5 text-emerald-700">
+                  <div className="rounded-lg border border-tone-green-solid/25 bg-tone-green-bg p-2.5 text-tone-green-text">
                     {success}
                   </div>
                 )}

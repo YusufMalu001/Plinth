@@ -159,7 +159,7 @@ export default function LossEventDetailPage() {
           {/* Left Column (4 Cols): Item Specs, Origin, Sourced Tolerance & Observation Details */}
           <div className="lg:col-span-4 space-y-4">
             <Card className="p-5 rounded-2xl border border-border bg-card shadow-xs space-y-4">
-              <div className="flex items-center justify-between border-b border-border pb-3">
+              <div className="flex items-center justify-between border-border-strong border-border pb-3">
                 <div className="flex items-center gap-2">
                   <Package className="w-4 h-4 text-primary" />
                   <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
@@ -212,7 +212,7 @@ export default function LossEventDetailPage() {
                 </div>
 
                 {event.stockEffectRef && (
-                  <div className="pt-2 border-t border-border/50 text-[11px] text-emerald-600 font-mono font-medium flex items-center gap-1.5">
+                  <div className="pt-2 border-t border-border/50 text-[11px] text-tone-green-text font-mono font-medium flex items-center gap-1.5">
                     <FileCheck2 className="w-3.5 h-3.5" />
                     <span>Ledger Posted: {event.stockEffectRef}</span>
                   </div>
@@ -222,7 +222,7 @@ export default function LossEventDetailPage() {
 
             {/* Observation Reason & Evidence Card */}
             <Card className="p-5 rounded-2xl border border-border bg-card shadow-xs space-y-3">
-              <div className="flex items-center gap-2 border-b border-border pb-2.5">
+              <div className="flex items-center gap-2 border-border-strong border-border pb-2.5">
                 <Trash2 className="w-4 h-4 text-primary" />
                 <h3 className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
                   Observation Reason &amp; Evidence
@@ -243,7 +243,7 @@ export default function LossEventDetailPage() {
           {/* Right Column (8 Cols): Tabbed Governance Workspace & Timeline */}
           <div className="lg:col-span-8 space-y-4">
             {/* Tab Selector */}
-            <div className="flex items-center gap-2 border-b border-border pb-2">
+            <div className="flex items-center gap-2 border-border-strong border-border pb-2">
               <button
                 onClick={() => setActiveTab('DISPOSITION')}
                 className={`px-3.5 py-1.5 text-xs font-bold rounded-xl transition-all ${

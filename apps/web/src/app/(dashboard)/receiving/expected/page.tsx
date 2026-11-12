@@ -177,19 +177,19 @@ export default function GrnExpectedReceiptsPage() {
             onClick={() => setOverdueOnly(!overdueOnly)}
             className={`rounded-xl border p-4 shadow-xs cursor-pointer transition-all ${
               overdueOnly
-                ? 'border-red-400 bg-red-50 dark:bg-red-950/20 ring-2 ring-red-400/20'
-                : 'border-border/70 bg-card hover:border-red-300'
+                ? 'border-tone-red-solid/25 bg-tone-red-solid ring-2 ring-tone-red-solid/25'
+                : 'border-border/70 bg-card hover:border-tone-red-solid/25'
             }`}
           >
             <div className="flex items-center justify-between">
-              <p className="text-[10px] font-bold uppercase tracking-wider text-red-600">
+              <p className="text-[10px] font-bold uppercase tracking-wider text-tone-red-text">
                 Overdue Inbound
               </p>
-              <div className="rounded-lg bg-red-500/10 p-1.5 text-red-600">
+              <div className="rounded-lg bg-tone-red-bg p-1.5 text-tone-red-text">
                 <AlertTriangle size={15} />
               </div>
             </div>
-            <p className="mt-2 text-2xl font-bold tracking-tight text-red-600">{overdueCount}</p>
+            <p className="mt-2 text-2xl font-bold tracking-tight text-tone-red-text">{overdueCount}</p>
             <p className="mt-0.5 text-xs text-muted-foreground">Past expected delivery date</p>
           </div>
 
@@ -262,7 +262,7 @@ export default function GrnExpectedReceiptsPage() {
               onClick={() => setOverdueOnly(!overdueOnly)}
               className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold transition-all shrink-0 ${
                 overdueOnly
-                  ? 'bg-red-600 text-white shadow-xs'
+                  ? 'bg-tone-red-solid text-inverse shadow-xs'
                   : 'border border-border/70 bg-card text-muted-foreground hover:text-foreground'
               }`}
             >
@@ -343,7 +343,7 @@ export default function GrnExpectedReceiptsPage() {
                     <TableRow
                       key={receipt.id}
                       className={`hover:bg-muted/30 transition-colors group ${
-                        isOverdue ? 'bg-red-50/20 dark:bg-red-950/10' : ''
+                        isOverdue ? 'bg-tone-red-bg' : ''
                       }`}
                     >
                       {/* PO Reference */}
@@ -393,12 +393,12 @@ export default function GrnExpectedReceiptsPage() {
                               })}
                             </span>
                             {isOverdue ? (
-                              <span className="inline-flex items-center gap-1 font-semibold text-[10px] text-red-600 mt-0.5">
+                              <span className="inline-flex items-center gap-1 font-semibold text-[10px] text-tone-red-text mt-0.5">
                                 <Clock size={11} />
                                 Overdue delivery
                               </span>
                             ) : receipt.expectedDate.split('T')[0] === todayStr ? (
-                              <span className="font-semibold text-[10px] text-amber-600 mt-0.5">
+                              <span className="font-semibold text-[10px] text-tone-amber-text mt-0.5">
                                 Due today
                               </span>
                             ) : (
@@ -464,14 +464,14 @@ export default function GrnExpectedReceiptsPage() {
               return (
                 <div key={date} className="space-y-3">
                   {/* Date Group Heading */}
-                  <div className="flex items-center gap-2 border-b border-border/60 pb-2">
+                  <div className="flex items-center gap-2 border-border-strong border-border/60 pb-2">
                     <Calendar
                       size={16}
-                      className={isOverdue ? 'text-red-500' : isToday ? 'text-amber-500' : 'text-primary'}
+                      className={isOverdue ? 'text-tone-red-text' : isToday ? 'text-tone-amber-text' : 'text-primary'}
                     />
                     <h3
                       className={`text-sm font-bold tracking-tight ${
-                        isOverdue ? 'text-red-600' : isToday ? 'text-amber-600' : 'text-foreground'
+                        isOverdue ? 'text-tone-red-text' : isToday ? 'text-tone-amber-text' : 'text-foreground'
                       }`}
                     >
                       {date === 'Unscheduled'
@@ -485,12 +485,12 @@ export default function GrnExpectedReceiptsPage() {
                     </h3>
 
                     {isOverdue && (
-                      <span className="rounded-full bg-red-100 text-red-700 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider border border-red-200">
+                      <span className="rounded-full bg-tone-red-solid text-tone-red-text px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider border border-tone-red-solid/25">
                         Overdue ({dateItems.length})
                       </span>
                     )}
                     {isToday && (
-                      <span className="rounded-full bg-amber-100 text-amber-800 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider border border-amber-200">
+                      <span className="rounded-full bg-tone-amber-solid text-tone-amber-text px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider border border-tone-amber-solid/25">
                         Due Today ({dateItems.length})
                       </span>
                     )}
@@ -514,7 +514,7 @@ export default function GrnExpectedReceiptsPage() {
                           className="rounded-2xl border border-border/80 bg-card p-4 shadow-xs hover:border-primary/40 transition-all flex flex-col justify-between gap-3 group"
                         >
                           <div>
-                            <div className="flex items-center justify-between gap-2 border-b border-border/60 pb-2.5">
+                            <div className="flex items-center justify-between gap-2 border-border-strong border-border/60 pb-2.5">
                               {targetPoId ? (
                                 <Link
                                   href={`/procurement/purchase-orders/${targetPoId}`}

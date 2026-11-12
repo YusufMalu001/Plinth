@@ -7,6 +7,7 @@ module.exports = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/config/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/features/**/*.{js,ts,jsx,tsx,mdx}",
     "../../packages/ui/src/**/*.{js,ts,jsx,tsx,mdx}"
   ],
@@ -26,6 +27,17 @@ module.exports = {
         },
         "action": "var(--action-primary-bg)",
         "border-strong": "var(--border-strong)",
+        "active": "var(--bg-active)",
+        "inverse": "var(--bg-inverse)",
+        "link": {
+          DEFAULT: "var(--text-link)",
+          hover: "var(--text-link-hover)",
+        },
+        "accent-brand": {
+          DEFAULT: "var(--accent-blue)",
+          soft: "var(--accent-soft)",
+          hover: "var(--accent-hover)",
+        },
         "tone-green-bg": "var(--tone-green-bg)",
         "tone-green-text": "var(--tone-green-text)",
         "tone-green-solid": "var(--tone-green-solid)",
@@ -143,6 +155,8 @@ module.exports = {
         xl: "calc(var(--radius) + 4px)",
         control: "var(--radius-control)",
         card: "var(--radius-card)",
+        modal: "var(--radius-modal)",
+        tooltip: "var(--radius-tooltip)",
         pill: "var(--radius-pill)",
       },
       height: {
@@ -160,6 +174,7 @@ module.exports = {
         'xl': 'var(--shadow-xl)',
         '2xl': 'var(--shadow-2xl)',
         popover: 'var(--shadow-popover)',
+        modal: 'var(--shadow-modal)',
         none: 'none',
       },
       fontFamily: {

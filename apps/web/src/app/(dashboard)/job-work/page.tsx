@@ -158,7 +158,7 @@ export default function JobWorkDashboardPage() {
                 size="sm"
                 className="font-semibold gap-2 border-border bg-background shadow-xs text-foreground"
               >
-                <RotateCcw className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
+                <RotateCcw className="h-4 w-4 text-tone-green-text" />
                 Receive Goods (Normal GRN)
               </Button>
             </Link>
@@ -215,10 +215,10 @@ export default function JobWorkDashboardPage() {
       </div>
 
       {/* Tabs Navigation */}
-      <div className="flex border-b border-border">
+      <div className="flex border-border-strong border-border">
         <button
           onClick={() => setActiveTab('orders')}
-          className={`px-4 py-2.5 text-xs font-bold border-b-2 transition ${
+          className={`px-4 py-2.5 text-xs font-bold border-border-strong-2 transition ${
             activeTab === 'orders'
               ? 'border-primary text-primary'
               : 'border-transparent text-muted-foreground hover:text-foreground'
@@ -228,7 +228,7 @@ export default function JobWorkDashboardPage() {
         </button>
         <button
           onClick={() => setActiveTab('challans')}
-          className={`px-4 py-2.5 text-xs font-bold border-b-2 transition ${
+          className={`px-4 py-2.5 text-xs font-bold border-border-strong-2 transition ${
             activeTab === 'challans'
               ? 'border-primary text-primary'
               : 'border-transparent text-muted-foreground hover:text-foreground'
@@ -238,7 +238,7 @@ export default function JobWorkDashboardPage() {
         </button>
         <button
           onClick={() => setActiveTab('balances')}
-          className={`px-4 py-2.5 text-xs font-bold border-b-2 transition ${
+          className={`px-4 py-2.5 text-xs font-bold border-border-strong-2 transition ${
             activeTab === 'balances'
               ? 'border-primary text-primary'
               : 'border-transparent text-muted-foreground hover:text-foreground'
@@ -248,7 +248,7 @@ export default function JobWorkDashboardPage() {
         </button>
         <button
           onClick={() => setActiveTab('ledger')}
-          className={`px-4 py-2.5 text-xs font-bold border-b-2 transition ${
+          className={`px-4 py-2.5 text-xs font-bold border-border-strong-2 transition ${
             activeTab === 'ledger'
               ? 'border-primary text-primary'
               : 'border-transparent text-muted-foreground hover:text-foreground'
@@ -258,7 +258,7 @@ export default function JobWorkDashboardPage() {
         </button>
         <button
           onClick={() => setActiveTab('analytics')}
-          className={`px-4 py-2.5 text-xs font-bold border-b-2 transition ${
+          className={`px-4 py-2.5 text-xs font-bold border-border-strong-2 transition ${
             activeTab === 'analytics'
               ? 'border-primary text-primary'
               : 'border-transparent text-muted-foreground hover:text-foreground'
@@ -303,7 +303,7 @@ export default function JobWorkDashboardPage() {
           <Card className="overflow-hidden border-border bg-card shadow-xs rounded-2xl p-0">
             <div className="overflow-x-auto">
               <table className="w-full text-left text-xs">
-                <thead className="bg-muted/50 text-muted-foreground uppercase font-bold border-b border-border">
+                <thead className="bg-muted/50 text-muted-foreground uppercase font-bold border-border-strong border-border">
                   <tr>
                     <th className="p-3.5">Order Number</th>
                     <th className="p-3.5">Vendor / Partner</th>
@@ -371,7 +371,7 @@ export default function JobWorkDashboardPage() {
                                 await jobWorkApi.approveOrder(order.id);
                                 refreshOrders();
                               }}
-                              className="text-xs text-emerald-600 border-emerald-500/30 hover:bg-emerald-500/10 font-bold"
+                              className="text-xs text-tone-green-text border-tone-green-solid/25 hover:bg-tone-green-bg font-bold"
                             >
                               Approve
                             </Button>
@@ -600,8 +600,8 @@ export default function JobWorkDashboardPage() {
                         <div>
                           <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-mono font-black border ${
                             item.currentBalance >= 0
-                              ? 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20'
-                              : 'bg-rose-500/10 text-rose-600 border-rose-500/20'
+                              ? 'bg-tone-green-bg text-tone-green-text border-tone-green-solid/25'
+                              : 'bg-tone-red-bg text-tone-red-text border-tone-red-solid/25'
                           }`}>
                             {Number(item.currentBalance).toLocaleString('en-IN', { maximumFractionDigits: 4 })} {uom}
                           </span>
@@ -635,7 +635,7 @@ export default function JobWorkDashboardPage() {
         <Card className="overflow-hidden border-border bg-card shadow-xs rounded-2xl p-0">
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs">
-              <thead className="bg-muted/50 text-muted-foreground uppercase font-bold border-b border-border">
+              <thead className="bg-muted/50 text-muted-foreground uppercase font-bold border-border-strong border-border">
                 <tr>
                   <th className="p-3.5">Entry #</th>
                   <th className="p-3.5">Vendor</th>
@@ -666,11 +666,11 @@ export default function JobWorkDashboardPage() {
                     const isReturn = entry.entryType === 'RETURN_PROCESSING';
                     const isAlloc = entry.entryType === 'PO_DEPOSIT_DEDUCTION';
                     const eventColor = isIssue
-                      ? 'text-emerald-700 dark:text-emerald-400 bg-emerald-500/10 border-emerald-500/20'
+                      ? 'text-tone-green-text bg-tone-green-bg border-tone-green-solid/25'
                       : isReturn
-                      ? 'text-rose-600 dark:text-rose-400 bg-rose-500/10 border-rose-500/20'
+                      ? 'text-tone-red-text bg-tone-red-bg border-tone-red-solid/25'
                       : isAlloc
-                      ? 'text-amber-600 dark:text-amber-400 bg-amber-500/10 border-amber-500/20'
+                      ? 'text-tone-amber-text bg-tone-amber-bg border-tone-amber-solid/25'
                       : 'text-muted-foreground bg-muted/50 border-border';
 
                     // Build reference cell: challan link (issue) or order link (if linked)
@@ -728,7 +728,7 @@ export default function JobWorkDashboardPage() {
                           </span>
                         </td>
                         <td className="p-3.5">
-                          <span className={`font-black ${entry.direction === 'IN' ? 'text-emerald-600 dark:text-emerald-400' : 'text-rose-600 dark:text-rose-400'}`}>
+                          <span className={`font-black ${entry.direction === 'IN' ? 'text-tone-green-text' : 'text-tone-red-text'}`}>
                             {entry.direction === 'IN' ? '+' : '-'}{entry.quantity} {entry.uom?.symbol || ''}
                           </span>
                         </td>

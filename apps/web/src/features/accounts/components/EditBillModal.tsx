@@ -210,7 +210,7 @@ export function EditBillModal({ isOpen, onClose, bill, isAdmin, onSave }: EditBi
         <div className="flex items-center justify-between border-b border-border pb-4">
           <div>
             <div className="flex items-center gap-2">
-              <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-[10px] font-bold uppercase text-foreground dark:text-primary">
+              <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-[10px] font-bold uppercase text-foreground ">
                 Accounts Modification
               </span>
               <span className="text-xs text-muted-foreground font-mono">v{bill.version}</span>
@@ -230,7 +230,7 @@ export function EditBillModal({ isOpen, onClose, bill, isAdmin, onSave }: EditBi
         </div>
 
         {/* Status Notice */}
-        <div className="mt-4 rounded-2xl border border-border bg-muted/40 p-4 text-xs text-foreground dark:border-border dark:bg-muted/40 dark:text-muted-foreground flex items-start gap-3">
+        <div className="mt-4 rounded-2xl border border-border bg-muted/40 p-4 text-xs text-foreground    flex items-start gap-3">
           <AlertTriangle className="h-5 w-5 shrink-0 text-foreground mt-0.5" />
           <div className="space-y-1">
             <p className="font-bold">
@@ -245,7 +245,7 @@ export function EditBillModal({ isOpen, onClose, bill, isAdmin, onSave }: EditBi
         </div>
 
         {error && (
-          <div className="mt-4 rounded-2xl border border-destructive/30 bg-destructive/10 p-4 text-xs font-semibold text-destructive dark:bg-destructive/10 dark:text-destructive">
+          <div className="mt-4 rounded-2xl border border-destructive/30 bg-destructive/10 p-4 text-xs font-semibold text-destructive  ">
             {error}
           </div>
         )}
@@ -452,10 +452,10 @@ export function EditBillModal({ isOpen, onClose, bill, isAdmin, onSave }: EditBi
               </div>
               <div className="border-t border-border pt-2 flex justify-between font-bold text-sm text-foreground">
                 <span>Gross Invoice Total</span>
-                <span className="font-mono text-foreground dark:text-primary">{formatCurrency(grossTotal)}</span>
+                <span className="font-mono text-foreground ">{formatCurrency(grossTotal)}</span>
               </div>
               {debitNoteDeduction > 0 && (
-                <div className="flex justify-between text-destructive dark:text-destructive font-semibold">
+                <div className="flex justify-between text-destructive  font-semibold">
                   <span>Less: Debit Notes Deductions</span>
                   <span className="font-mono">- {formatCurrency(debitNoteDeduction)}</span>
                 </div>

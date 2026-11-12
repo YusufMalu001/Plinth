@@ -221,16 +221,16 @@ export function ItemUomRelationModal({
     >
       <div className="space-y-4">
         {/* Base UOM Context Bar */}
-        <div className="flex items-center justify-between px-3.5 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-xs">
+        <div className="flex items-center justify-between px-3.5 py-2.5 rounded-xl bg-muted border border-border text-xs">
           <div className="flex items-center gap-2">
-            <span className="text-slate-500 uppercase tracking-wider font-bold text-[11px]">
+            <span className="text-ink-muted uppercase tracking-wider font-bold text-[11px]">
               Base UOM:
             </span>
-            <span className="font-bold text-slate-900 dark:text-white">
+            <span className="font-bold text-ink">
               {getUomLabel(baseUomId)}
             </span>
           </div>
-          <span className="text-[11px] font-semibold text-slate-500 dark:text-slate-400">
+          <span className="text-[11px] font-semibold text-ink-muted">
             {rows.length} {rows.length === 1 ? 'relation' : 'relations'}
           </span>
         </div>
@@ -259,11 +259,11 @@ export function ItemUomRelationModal({
             return (
               <div
                 key={row.id || index}
-                className="p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/90 shadow-2xs flex items-center gap-2.5 flex-wrap sm:flex-nowrap"
+                className="p-3 rounded-xl border border-border bg-surface shadow-2xs flex items-center gap-2.5 flex-wrap sm:flex-nowrap"
               >
                 {/* Left side: Quantity & UOM */}
                 {isBaseFrom ? (
-                  <div className="flex items-center rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 overflow-hidden w-28 shrink-0 focus-within:ring-2 focus-within:ring-primary/20 focus-within:border-primary">
+                  <div className="flex items-center rounded-lg border border-border-strong bg-muted overflow-hidden w-28 shrink-0 focus-within:ring-2 focus-within:ring-primary/20 focus-within:border-primary">
                     <input
                       type="number"
                       min="0.000001"
@@ -271,9 +271,9 @@ export function ItemUomRelationModal({
                       value={row.fromQuantity}
                       onChange={(e) => updateRow(index, { fromQuantity: e.target.value })}
                       placeholder="1"
-                      className="w-14 h-9 px-2 text-center font-mono text-xs font-bold text-slate-900 dark:text-white bg-transparent focus:outline-none"
+                      className="w-14 h-9 px-2 text-center font-mono text-xs font-bold text-ink bg-transparent focus:outline-none"
                     />
-                    <span className="flex-1 px-2 py-1 text-xs font-bold text-slate-700 dark:text-slate-300 bg-slate-200/70 dark:bg-slate-700 border-l border-slate-300 dark:border-slate-700 whitespace-nowrap text-center">
+                    <span className="flex-1 px-2 py-1 text-xs font-bold text-ink-secondary bg-active border-l border-border-strong whitespace-nowrap text-center">
                       {getUomShort(baseUomId)}
                     </span>
                   </div>
@@ -286,7 +286,7 @@ export function ItemUomRelationModal({
                       value={row.fromQuantity}
                       onChange={(e) => updateRow(index, { fromQuantity: e.target.value })}
                       placeholder="1"
-                      className="w-14 h-9 px-2 text-center rounded-lg border border-slate-300 dark:border-slate-700 font-mono text-xs font-bold text-slate-900 dark:text-white bg-slate-50 dark:bg-slate-800 focus:outline-none focus:border-primary shrink-0"
+                      className="w-14 h-9 px-2 text-center rounded-lg border border-border-strong font-mono text-xs font-bold text-ink bg-muted focus:outline-none focus:border-primary shrink-0"
                     />
                     <div className="flex-1 min-w-[140px]">
                       <SearchableSelector
@@ -307,7 +307,7 @@ export function ItemUomRelationModal({
                 )}
 
                 {/* Equals sign */}
-                <span className="text-slate-400 font-bold text-sm shrink-0">=</span>
+                <span className="text-ink-placeholder font-bold text-sm shrink-0">=</span>
 
                 {/* Right side: Equivalent Quantity & UOM */}
                 {isBaseFrom ? (
@@ -320,7 +320,7 @@ export function ItemUomRelationModal({
                         value={row.toQuantity}
                         onChange={(e) => updateRow(index, { toQuantity: e.target.value })}
                         placeholder="e.g. 0.041"
-                        className="w-full h-9 px-2.5 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 font-mono text-xs font-bold text-slate-900 dark:text-white focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+                        className="w-full h-9 px-2.5 rounded-lg border border-border-strong bg-surface font-mono text-xs font-bold text-ink focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
                       />
                     </div>
 
@@ -341,7 +341,7 @@ export function ItemUomRelationModal({
                     </div>
                   </>
                 ) : (
-                  <div className="flex items-center rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 overflow-hidden w-28 shrink-0 focus-within:ring-2 focus-within:ring-primary/20 focus-within:border-primary">
+                  <div className="flex items-center rounded-lg border border-border-strong bg-muted overflow-hidden w-28 shrink-0 focus-within:ring-2 focus-within:ring-primary/20 focus-within:border-primary">
                     <input
                       type="number"
                       min="0.000001"
@@ -349,9 +349,9 @@ export function ItemUomRelationModal({
                       value={row.toQuantity}
                       onChange={(e) => updateRow(index, { toQuantity: e.target.value })}
                       placeholder="e.g. 0.041"
-                      className="w-14 h-9 px-2 text-center font-mono text-xs font-bold text-slate-900 dark:text-white bg-transparent focus:outline-none"
+                      className="w-14 h-9 px-2 text-center font-mono text-xs font-bold text-ink bg-transparent focus:outline-none"
                     />
-                    <span className="flex-1 px-2 py-1 text-xs font-bold text-slate-700 dark:text-slate-300 bg-slate-200/70 dark:bg-slate-700 border-l border-slate-300 dark:border-slate-700 whitespace-nowrap text-center">
+                    <span className="flex-1 px-2 py-1 text-xs font-bold text-ink-secondary bg-active border-l border-border-strong whitespace-nowrap text-center">
                       {getUomShort(baseUomId)}
                     </span>
                   </div>
@@ -361,7 +361,7 @@ export function ItemUomRelationModal({
                 <button
                   type="button"
                   onClick={() => swapRow(index)}
-                  className="p-2 text-slate-400 hover:text-primary rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer shrink-0"
+                  className="p-2 text-ink-placeholder hover:text-primary rounded-lg hover:bg-muted transition-colors cursor-pointer shrink-0"
                   title="Reverse conversion order"
                 >
                   <ArrowLeftRight className="w-3.5 h-3.5" />
@@ -372,7 +372,7 @@ export function ItemUomRelationModal({
                   <button
                     type="button"
                     onClick={() => removeRow(index)}
-                    className="p-2 text-slate-400 hover:text-destructive rounded-lg hover:bg-destructive/10 transition-colors cursor-pointer shrink-0"
+                    className="p-2 text-ink-placeholder hover:text-destructive rounded-lg hover:bg-destructive/10 transition-colors cursor-pointer shrink-0"
                     title="Remove relation"
                   >
                     <Trash2 className="w-4 h-4" />
@@ -398,7 +398,7 @@ export function ItemUomRelationModal({
         </div>
 
         {/* Modal Footer Actions */}
-        <div className="flex items-center justify-end gap-3 pt-3 border-t border-slate-200 dark:border-slate-800">
+        <div className="flex items-center justify-end gap-3 pt-3 border-t border-border">
           <Button
             type="button"
             variant="outline"
@@ -410,7 +410,7 @@ export function ItemUomRelationModal({
           <Button
             type="button"
             onClick={handleSave}
-            className="h-9 px-5 rounded-xl text-xs font-bold bg-primary hover:bg-[#003c68] text-white shadow-xs"
+            className="h-9 px-5 rounded-xl text-xs font-bold bg-primary hover:bg-[color:var(--action-primary-bg-hover)] text-inverse shadow-xs"
             icon={Check}
           >
             Apply &amp; Save Relation

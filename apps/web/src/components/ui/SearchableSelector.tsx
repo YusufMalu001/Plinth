@@ -390,7 +390,7 @@ export function SearchableSelector<T extends SearchableOption>({
       <div
         className={clsx(
           'flex min-w-0 items-center gap-2',
-          opt.parentOptionId ? 'ml-3 border-l-2 border-violet-300 pl-3 dark:border-violet-700' : ''
+          opt.parentOptionId ? 'ml-3 border-l-2 border-tone-purple-solid pl-3 ' : ''
         )}
       >
         <div className="min-w-0 flex-1">
@@ -405,11 +405,11 @@ export function SearchableSelector<T extends SearchableOption>({
                     : 'text-xs sm:text-sm font-semibold text-foreground'
               )}
             >
-              {opt.parentOptionId && <span className="text-violet-500 font-bold select-none shrink-0" aria-hidden="true">↳</span>}
+              {opt.parentOptionId && <span className="text-tone-purple-text font-bold select-none shrink-0" aria-hidden="true">↳</span>}
               <span>{displayName}</span>
             </span>
             {isVar && (
-              <span className="shrink-0 rounded border border-violet-200 bg-violet-50 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide text-violet-700 dark:border-violet-800 dark:bg-violet-950/50 dark:text-violet-300">
+              <span className="shrink-0 rounded border border-tone-purple-solid bg-tone-violet-bg px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide text-tone-purple-text   ">
                 Variant
               </span>
             )}
@@ -575,7 +575,7 @@ export function SearchableSelector<T extends SearchableOption>({
                       : isSelected
                         ? 'bg-primary/10 font-semibold text-primary'
                         : option.parentOptionId
-                          ? 'text-foreground hover:bg-violet-50/80 dark:hover:bg-violet-950/20'
+                          ? 'text-foreground hover:bg-tone-violet-bg/80 '
                         : 'text-foreground hover:bg-muted/60',
                     option.disabled && 'cursor-not-allowed opacity-50 hover:bg-transparent'
                   )}

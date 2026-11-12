@@ -990,7 +990,7 @@ const DynamicText = ({
   return (
     <span
       className={cn(
-        "inline-block whitespace-pre tabular-nums [--dynamic-text-accent:var(--color-emerald-600)] dark:[--dynamic-text-accent:var(--color-emerald-400)]",
+        "inline-block whitespace-pre tabular-nums [--dynamic-text-accent:var(--color-emerald-600)] [--dynamic-text-accent:var(--color-emerald-400)]",
         className
       )}
       lang={current.lang}

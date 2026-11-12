@@ -52,8 +52,8 @@ export function LossEventTimeline({ event }: { event: LossEventDto }) {
     status: 'REPORTED',
     description: `Reported ${event.quantity} ${event.uomCode || 'units'} under reason: "${event.reason}"`,
     notes: null,
-    icon: <Clock className="w-4 h-4 text-sky-500" />,
-    iconBg: 'bg-sky-500/10 border-sky-500/30',
+    icon: <Clock className="w-4 h-4 text-tone-blue-text" />,
+    iconBg: 'bg-tone-sky-bg/10 border-tone-blue-solid/30',
   });
 
   // 2. Classified (if applicable)
@@ -67,8 +67,8 @@ export function LossEventTimeline({ event }: { event: LossEventDto }) {
       status: event.classification,
       description: `Evaluated against WastageRule ${event.appliedWastageRuleCode || 'standard'} (v${event.appliedWastageRuleVersion || 1}). Variance: ${event.varianceFromExpected ?? 0}%`,
       notes: null,
-      icon: <ShieldCheck className={`w-4 h-4 ${isAbnormal ? 'text-rose-500' : 'text-emerald-500'}`} />,
-      iconBg: isAbnormal ? 'bg-rose-500/10 border-rose-500/30' : 'bg-emerald-500/10 border-emerald-500/30',
+      icon: <ShieldCheck className={`w-4 h-4 ${isAbnormal ? 'text-tone-red-text' : 'text-tone-green-text'}`} />,
+      iconBg: isAbnormal ? 'bg-tone-rose-bg/10 border-tone-red-solid/30' : 'bg-tone-emerald-bg/10 border-tone-green-solid/30',
     });
   }
 
@@ -83,8 +83,8 @@ export function LossEventTimeline({ event }: { event: LossEventDto }) {
       status: 'REVIEWED',
       description: 'Technical and operational review completed.',
       notes: event.reviewNotes,
-      icon: <CheckCircle2 className="w-4 h-4 text-indigo-500" />,
-      iconBg: 'bg-indigo-500/10 border-indigo-500/30',
+      icon: <CheckCircle2 className="w-4 h-4 text-tone-purple-text" />,
+      iconBg: 'bg-tone-indigo-bg/10 border-tone-purple-solid/30',
     });
   }
 
@@ -115,8 +115,8 @@ export function LossEventTimeline({ event }: { event: LossEventDto }) {
       status: 'APPROVED',
       description: 'Loss write-off and disposition authorization granted.',
       notes: null,
-      icon: <CheckCircle2 className="w-4 h-4 text-emerald-600" />,
-      iconBg: 'bg-emerald-500/10 border-emerald-500/30',
+      icon: <CheckCircle2 className="w-4 h-4 text-tone-green-text" />,
+      iconBg: 'bg-tone-emerald-bg/10 border-tone-green-solid/30',
     });
   }
 
@@ -131,8 +131,8 @@ export function LossEventTimeline({ event }: { event: LossEventDto }) {
       status: 'REJECTED',
       description: 'Loss event was rejected by governance authority.',
       notes: event.rejectionReason,
-      icon: <XCircle className="w-4 h-4 text-rose-600" />,
-      iconBg: 'bg-rose-500/10 border-rose-500/30',
+      icon: <XCircle className="w-4 h-4 text-tone-red-text" />,
+      iconBg: 'bg-tone-rose-bg/10 border-tone-red-solid/30',
     });
   }
 
@@ -146,8 +146,8 @@ export function LossEventTimeline({ event }: { event: LossEventDto }) {
       status: 'POSTED',
       description: `Atomic StockAdjustment Ledger posted: ${event.stockEffectRef}`,
       notes: null,
-      icon: <FileCheck2 className="w-4 h-4 text-emerald-500" />,
-      iconBg: 'bg-emerald-500/10 border-emerald-500/30',
+      icon: <FileCheck2 className="w-4 h-4 text-tone-green-text" />,
+      iconBg: 'bg-tone-emerald-bg/10 border-tone-green-solid/30',
     });
   }
 
@@ -161,8 +161,8 @@ export function LossEventTimeline({ event }: { event: LossEventDto }) {
       status: 'REPLACED',
       description: `Replacement Challan ${event.replacementChallanRef} issued to balance shopfloor production.`,
       notes: null,
-      icon: <RefreshCw className="w-4 h-4 text-violet-500" />,
-      iconBg: 'bg-violet-500/10 border-violet-500/30',
+      icon: <RefreshCw className="w-4 h-4 text-tone-purple-text" />,
+      iconBg: 'bg-tone-violet-bg/10 border-tone-purple-solid/30',
     });
   }
 

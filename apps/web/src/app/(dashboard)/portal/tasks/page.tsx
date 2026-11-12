@@ -344,7 +344,7 @@ export default function EmployeeTasksPortalPage() {
       <div className="space-y-4">
         {loading || userLoading ? (
           <div className="bg-card p-12 rounded-2xl border border-border text-center text-muted-foreground">
-            <div className="animate-spin w-8 h-8 border-4 border-primary border-t-transparent rounded-full mx-auto mb-3" />
+            <div className="animate-spin w-8 h-8 border-accent border-primary border-t-transparent rounded-full mx-auto mb-3" />
             <p className="text-sm font-medium">Loading assigned tasks...</p>
           </div>
         ) : error ? (
@@ -363,7 +363,7 @@ export default function EmployeeTasksPortalPage() {
             {sortedTasks.map((task: EmployeeTaskDto) => (
               <div
                 key={task.id}
-                className="bg-card rounded-2xl border border-border p-5 transition-all hover:shadow-md"
+                className="bg-card rounded-2xl border border-border p-5 transition-all hover:shadow-none"
               >
                 <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
                   {/* Task Info */}
@@ -523,7 +523,7 @@ export default function EmployeeTasksPortalPage() {
               {proofForm.proofFileName && (
                 <div className="mt-3 p-2 bg-primary/10 rounded-lg text-primary text-xs font-semibold flex items-center justify-between">
                   <span className="truncate max-w-[280px]">{proofForm.proofFileName}</span>
-                  <span className="text-[10px] uppercase font-bold text-emerald-600">Attached ✓</span>
+                  <span className="text-[10px] uppercase font-bold text-tone-green-text">Attached ✓</span>
                 </div>
               )}
             </div>
@@ -554,7 +554,7 @@ export default function EmployeeTasksPortalPage() {
               variant="primary"
               size="sm"
               disabled={submitting}
-              className="gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold"
+              className="gap-2 bg-action hover:bg-[color:var(--action-primary-bg-hover)] text-inverse font-bold"
             >
               {submitting ? 'Submitting...' : 'Submit for HR Validation'}
             </Button>

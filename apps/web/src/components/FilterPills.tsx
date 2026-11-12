@@ -23,7 +23,7 @@ export interface FilterPillsProps<T extends string = string> {
  * FilterPills Component
  *
  * Implements single-click upfront filtering as depicted in ERP UX.
- * Active state: solid primary brand color (#004a80) with white text and subtle shadow.
+ * Active state: solid primary brand color (var(--accent-blue)) with white text and subtle shadow.
  * Inactive state: white/card button with border, subtle hover state, and clear text.
  */
 export function FilterPills<T extends string = string>({
@@ -61,8 +61,8 @@ export function FilterPills<T extends string = string>({
                   : 'px-3 py-1.5 text-xs'
               } ${
                 isActive
-                  ? 'bg-[#004a80] text-white border border-[#004a80] shadow-2xs font-bold'
-                  : 'bg-white dark:bg-card border border-border/80 text-foreground/80 dark:text-muted-foreground hover:bg-muted/70 hover:text-foreground hover:border-border'
+                  ? 'bg-[var(--accent-blue)] text-white border border-[var(--accent-blue)] shadow-2xs font-bold'
+                  : 'bg-white  border border-border/80 text-foreground/80  hover:bg-muted/70 hover:text-foreground hover:border-border'
               }`}
             >
               {OptionIcon && (

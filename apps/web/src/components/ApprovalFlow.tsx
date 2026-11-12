@@ -83,13 +83,13 @@ export function ApprovalFlow({
 
   if (!hasPermission) {
     return (
-      <Card className="p-5 border border-[#004a80]/20 bg-[#004a80]/5 rounded-2xl shadow-xs">
+      <Card className="p-5 border border-border bg-muted rounded-card shadow-none">
         <div className="flex items-start gap-3">
-          <div className="w-8 h-8 rounded-lg bg-[#004a80]/10 text-[#004a80] dark:text-blue-400 border border-[#004a80]/20 flex items-center justify-center shrink-0">
+          <div className="w-8 h-8 rounded-lg bg-muted text-ink border border-border flex items-center justify-center shrink-0">
             <Clock className="w-4 h-4" />
           </div>
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-[#004a80] dark:text-blue-300">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-ink ">
               Pending Validation Sign-off
             </h4>
             <p className="text-xs text-muted-foreground mt-0.5">
@@ -102,15 +102,15 @@ export function ApprovalFlow({
   }
 
   return (
-    <Card className="rounded-2xl border border-[#004a80]/30 bg-card shadow-xs overflow-hidden">
+    <Card className="rounded-2xl border border-border bg-card shadow-xs overflow-hidden">
       {/* Header with Navy Accent */}
-      <div className="bg-[#004a80]/10 border-b border-[#004a80]/20 px-5 py-3.5 flex items-center justify-between">
+      <div className="bg-muted border-b border-border px-5 py-3.5 flex items-center justify-between">
         <div className="flex items-center gap-2.5">
-          <div className="w-7 h-7 rounded-lg bg-[#004a80] text-white flex items-center justify-center shadow-xs">
+          <div className="w-7 h-7 rounded-lg bg-inverse text-inverse flex items-center justify-center shadow-none">
             <ShieldCheck className="w-4 h-4" />
           </div>
           <div>
-            <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#004a80] dark:text-blue-400 block">
+            <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-ink  block">
               Validation & Compliance Gate
             </span>
             <h3 className="text-xs font-bold text-foreground">
@@ -118,8 +118,8 @@ export function ApprovalFlow({
             </h3>
           </div>
         </div>
-        <span className="flex items-center gap-1 text-[11px] font-bold text-[#004a80] dark:text-blue-300 bg-[#004a80]/15 px-2.5 py-0.5 rounded-full border border-[#004a80]/30">
-          <span className="h-1.5 w-1.5 rounded-full bg-[#004a80] animate-pulse" />
+        <span className="flex items-center gap-1 text-[11px] font-bold text-ink  bg-tone-blue-bg px-2.5 py-0.5 rounded-full border border-border">
+          <span className="h-1.5 w-1.5 rounded-full bg-tone-blue-solid animate-pulse" />
           Sign-off Required
         </span>
       </div>
@@ -132,15 +132,15 @@ export function ApprovalFlow({
         {/* Validation Checklist Preview */}
         <div className="rounded-xl border border-border/80 bg-muted/30 p-3 space-y-2">
           <div className="flex items-center gap-2 text-foreground font-semibold">
-            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
+            <CheckCircle2 className="w-3.5 h-3.5 text-tone-green-text " />
             <span>Schema & Unique Code Verification</span>
           </div>
           <div className="flex items-center gap-2 text-foreground font-semibold">
-            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
+            <CheckCircle2 className="w-3.5 h-3.5 text-tone-green-text " />
             <span>HSN & Tax Rate Validation</span>
           </div>
           <div className="flex items-center gap-2 text-foreground font-semibold">
-            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
+            <CheckCircle2 className="w-3.5 h-3.5 text-tone-green-text " />
             <span>Unit of Measure Reference Active</span>
           </div>
         </div>
@@ -151,7 +151,7 @@ export function ApprovalFlow({
             Reviewer Remarks / Audit Note (Optional)
           </label>
           <textarea
-            className="w-full rounded-xl border border-border bg-background p-3 text-xs text-foreground placeholder:text-muted-foreground/60 outline-none focus:border-[#004a80] focus:ring-4 focus:ring-[#004a80]/10 transition-all resize-none shadow-xs"
+            className="w-full rounded-xl border border-border bg-background p-3 text-xs text-foreground placeholder:text-muted-foreground/60 outline-none focus:border-border-strong focus:ring-2 focus:ring-accent-brand transition-all resize-none shadow-xs"
             rows={2}
             value={remarks}
             onChange={(e) => setRemarks(e.target.value)}
@@ -166,9 +166,9 @@ export function ApprovalFlow({
             size="sm"
             onClick={() => rejectMutation.mutate({ remarks })}
             disabled={approveMutation.isPending || rejectMutation.isPending}
-            className="text-xs font-semibold hover:bg-red-500/10 hover:text-red-600 hover:border-red-500/30"
+            className="text-xs font-semibold hover:bg-tone-red-bg/10 hover:text-tone-red-text hover:border-tone-red-solid/30"
           >
-            <XCircle className="w-3.5 h-3.5 mr-1 text-red-500" />
+            <XCircle className="w-3.5 h-3.5 mr-1 text-tone-red-text" />
             {rejectMutation.isPending ? 'Requesting...' : 'Request Changes'}
           </Button>
 
@@ -176,7 +176,7 @@ export function ApprovalFlow({
             size="sm"
             onClick={() => approveMutation.mutate({ remarks })}
             disabled={approveMutation.isPending || rejectMutation.isPending}
-            className="bg-[#004a80] hover:bg-[#003c68] text-white font-bold shadow-xs text-xs"
+            className="bg-inverse hover:bg-[#2E2E2E] active:bg-[#000000] text-inverse font-semibold text-xs shadow-none"
           >
             <CheckCircle2 className="w-3.5 h-3.5 mr-1" />
             {approveMutation.isPending ? 'Authorizing...' : 'Approve & Activate'}
@@ -184,7 +184,7 @@ export function ApprovalFlow({
         </div>
 
         {(approveMutation.isError || rejectMutation.isError) && (
-          <div className="p-3 bg-red-500/10 text-red-600 rounded-xl border border-red-500/20 text-xs flex items-center gap-2">
+          <div className="p-3 bg-tone-red-bg/10 text-tone-red-text rounded-xl border border-tone-red-solid/20 text-xs flex items-center gap-2">
             <AlertCircle className="w-4 h-4 shrink-0" />
             <span>
               {(approveMutation.error as Error)?.message ||

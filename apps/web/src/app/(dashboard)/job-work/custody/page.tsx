@@ -147,12 +147,12 @@ export default function VendorCustodyLedgerDetailPage() {
             <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider">
               Allocated to JWs
             </span>
-            <div className="rounded-xl bg-amber-500/10 p-2 text-amber-600 dark:text-amber-400 border border-amber-500/20">
+            <div className="rounded-xl bg-tone-amber-bg p-2 text-tone-amber-text border border-tone-amber-solid/25">
               <Layers className="h-4 w-4" />
             </div>
           </div>
           <div className="mt-3">
-            <div className="text-2xl font-black text-amber-600 dark:text-amber-400 font-mono">
+            <div className="text-2xl font-black text-tone-amber-text font-mono">
               {loading ? '…' : Number(balance?.totalAllocated || 0).toLocaleString('en-IN', { maximumFractionDigits: 4 })}
               <span className="text-xs font-bold text-muted-foreground ml-1.5 font-sans">
                 {uom}
@@ -170,12 +170,12 @@ export default function VendorCustodyLedgerDetailPage() {
             <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider">
               Consumed in Output
             </span>
-            <div className="rounded-xl bg-indigo-500/10 p-2 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20">
+            <div className="rounded-xl bg-tone-purple-bg p-2 text-tone-purple-text border border-tone-purple-solid/25">
               <Scale className="h-4 w-4" />
             </div>
           </div>
           <div className="mt-3">
-            <div className="text-2xl font-black text-indigo-600 dark:text-indigo-400 font-mono">
+            <div className="text-2xl font-black text-tone-purple-text font-mono">
               {loading ? '…' : Number(balance?.totalConsumed || 0).toLocaleString('en-IN', { maximumFractionDigits: 4 })}
               <span className="text-xs font-bold text-muted-foreground ml-1.5 font-sans">
                 {uom}
@@ -195,8 +195,8 @@ export default function VendorCustodyLedgerDetailPage() {
             </span>
             <div className={`rounded-xl p-2 border ${
               (balance?.currentBalance ?? 0) >= 0
-                ? 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20'
-                : 'bg-rose-500/10 text-rose-600 border-rose-500/20'
+                ? 'bg-tone-green-bg text-tone-green-text border-tone-green-solid/25'
+                : 'bg-tone-red-bg text-tone-red-text border-tone-red-solid/25'
             }`}>
               <Building2 className="h-4 w-4" />
             </div>
@@ -204,8 +204,8 @@ export default function VendorCustodyLedgerDetailPage() {
           <div className="mt-3">
             <div className={`text-2xl font-black font-mono ${
               (balance?.currentBalance ?? 0) >= 0
-                ? 'text-emerald-600 dark:text-emerald-400'
-                : 'text-rose-600'
+                ? 'text-tone-green-text'
+                : 'text-tone-red-text'
             }`}>
               {loading ? '…' : Number(balance?.currentBalance || 0).toLocaleString('en-IN', { maximumFractionDigits: 4 })}
               <span className="text-xs font-bold text-muted-foreground ml-1.5 font-sans">
@@ -221,7 +221,7 @@ export default function VendorCustodyLedgerDetailPage() {
 
       {/* Custody Movement Entries Table */}
       <Card className="overflow-hidden border-border bg-card shadow-xs rounded-2xl p-0">
-        <div className="p-4 border-b border-border bg-muted/30 flex items-center justify-between">
+        <div className="p-4 border-border-strong border-border bg-muted/30 flex items-center justify-between">
           <h2 className="text-sm font-bold text-foreground">Custody Movements</h2>
           <span className="text-xs font-mono font-bold text-muted-foreground">
             {entries.length} record{entries.length === 1 ? '' : 's'}
@@ -230,7 +230,7 @@ export default function VendorCustodyLedgerDetailPage() {
 
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs">
-            <thead className="bg-muted/50 text-muted-foreground uppercase font-bold border-b border-border">
+            <thead className="bg-muted/50 text-muted-foreground uppercase font-bold border-border-strong border-border">
               <tr>
                 <th className="p-3.5">Entry #</th>
                 <th className="p-3.5">Item</th>
@@ -269,11 +269,11 @@ export default function VendorCustodyLedgerDetailPage() {
                   const isReturn = entry.entryType === 'RETURN_PROCESSING';
                   const isAlloc = entry.entryType === 'PO_DEPOSIT_DEDUCTION';
                   const eventColor = isIssue
-                    ? 'text-emerald-700 dark:text-emerald-400 bg-emerald-500/10 border-emerald-500/20'
+                    ? 'text-tone-green-text bg-tone-green-bg border-tone-green-solid/25'
                     : isReturn
-                    ? 'text-rose-600 dark:text-rose-400 bg-rose-500/10 border-rose-500/20'
+                    ? 'text-tone-red-text bg-tone-red-bg border-tone-red-solid/25'
                     : isAlloc
-                    ? 'text-amber-600 dark:text-amber-400 bg-amber-500/10 border-amber-500/20'
+                    ? 'text-tone-amber-text bg-tone-amber-bg border-tone-amber-solid/25'
                     : 'text-muted-foreground bg-muted/50 border-border';
 
                   const refNode = (() => {
@@ -332,7 +332,7 @@ export default function VendorCustodyLedgerDetailPage() {
                         </span>
                       </td>
                       <td className="p-3.5 font-mono">
-                        <span className={`font-black ${entry.direction === 'IN' ? 'text-emerald-600 dark:text-emerald-400' : 'text-rose-600 dark:text-rose-400'}`}>
+                        <span className={`font-black ${entry.direction === 'IN' ? 'text-tone-green-text' : 'text-tone-red-text'}`}>
                           {entry.direction === 'IN' ? '+' : '-'}{Number(entry.quantity).toLocaleString('en-IN', { maximumFractionDigits: 4 })} {rowUom}
                         </span>
                       </td>

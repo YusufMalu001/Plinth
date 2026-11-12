@@ -162,7 +162,7 @@ export default function EmployeeTaskDetailPage() {
     return (
       <div className="flex-1 w-full p-8 flex items-center justify-center">
         <div className="text-center space-y-3">
-          <div className="animate-spin w-8 h-8 border-4 border-primary border-t-transparent rounded-full mx-auto" />
+          <div className="animate-spin w-8 h-8 border-accent border-primary border-t-transparent rounded-full mx-auto" />
           <p className="text-sm font-medium text-muted-foreground">Loading task details...</p>
         </div>
       </div>
@@ -440,7 +440,7 @@ export default function EmployeeTaskDetailPage() {
                       <iframe
                         src={task.proofUrl}
                         title="Proof PDF"
-                        className="w-full h-[380px] rounded-lg border-0"
+                        className="w-full h-[380px] rounded-lg border-accent"
                       />
                     ) : (
                       <div className="text-center p-6 space-y-2">
@@ -471,7 +471,7 @@ export default function EmployeeTaskDetailPage() {
                     setIsSubmitModalOpen(true);
                   }
                 }}
-                className={`p-8 border-2 border-dashed rounded-2xl text-center space-y-3 transition-colors ${
+                className={`p-8 border-border border-dashed rounded-2xl text-center space-y-3 transition-colors ${
                   isDraggingInline
                     ? 'border-primary bg-primary/5'
                     : 'border-border bg-muted/10 hover:border-primary/50 hover:bg-muted/20'
@@ -648,7 +648,7 @@ export default function EmployeeTaskDetailPage() {
                   processUploadedFile(file);
                 }
               }}
-              className={`border-2 border-dashed rounded-xl p-5 text-center transition-colors ${
+              className={`border-border border-dashed rounded-xl p-5 text-center transition-colors ${
                 isDraggingModal
                   ? 'border-primary bg-primary/10'
                   : 'border-border hover:bg-muted/30'
@@ -684,7 +684,7 @@ export default function EmployeeTaskDetailPage() {
                     <FileText className="w-4 h-4 shrink-0" />
                     <span className="truncate">{proofForm.proofFileName}</span>
                   </div>
-                  <span className="text-[10px] uppercase font-bold text-emerald-600 shrink-0">Attached ✓</span>
+                  <span className="text-[10px] uppercase font-bold text-tone-green-text shrink-0">Attached ✓</span>
                 </div>
               )}
             </div>

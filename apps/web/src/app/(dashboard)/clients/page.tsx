@@ -121,7 +121,7 @@ export default function ClientsPage() {
               <CardTitle className="text-xs font-bold text-muted-foreground uppercase tracking-widest">
                 Active Client Accounts
               </CardTitle>
-              <div className="p-1.5 bg-blue-500/10 rounded-md text-blue-600">
+              <div className="p-1.5 bg-tone-blue-bg rounded-md text-tone-blue-text">
                 <Briefcase className="w-4 h-4" />
               </div>
             </CardHeader>
@@ -131,7 +131,7 @@ export default function ClientsPage() {
               </div>
               <div className="w-full bg-muted h-1.5 rounded-full mt-3 overflow-hidden">
                 <div
-                  className="bg-blue-500 h-full rounded-full transition-all duration-500"
+                  className="bg-tone-blue-solid h-full rounded-full transition-all duration-500"
                   style={{
                     width: `${metrics.totalClients ? Math.round((metrics.activeClients / metrics.totalClients) * 100) : 0}%`,
                   }}
@@ -150,7 +150,7 @@ export default function ClientsPage() {
               <CardTitle className="text-xs font-bold text-muted-foreground uppercase tracking-widest">
                 Total Credit Extended
               </CardTitle>
-              <div className="p-1.5 bg-emerald-500/10 rounded-md text-emerald-600">
+              <div className="p-1.5 bg-tone-green-bg rounded-md text-tone-green-text">
                 <IndianRupee className="w-4 h-4" />
               </div>
             </CardHeader>
@@ -159,7 +159,7 @@ export default function ClientsPage() {
                 {isLoading ? '...' : formatINR(metrics.totalCreditLimit)}
               </div>
               <div className="flex items-center gap-1.5 text-xs text-muted-foreground mt-2">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+                <ShieldCheck className="w-3.5 h-3.5 text-tone-green-text" />
                 <span>Accounts approved exposure</span>
               </div>
             </CardContent>
@@ -193,7 +193,7 @@ export default function ClientsPage() {
 
         {/* Clients Table */}
         <Card className="shadow-sm overflow-hidden flex flex-col p-0 border border-border">
-          <div className="p-4 border-b border-border flex justify-between items-center bg-card">
+          <div className="p-4 border-border-strong border-border flex justify-between items-center bg-card">
             <h2 className="text-sm font-bold text-foreground">Registered Clients & Dealers</h2>
             <span className="text-xs font-semibold text-muted-foreground">
               {rawCustomers.length} record{rawCustomers.length !== 1 ? 's' : ''}
@@ -202,7 +202,7 @@ export default function ClientsPage() {
           <div className="overflow-x-auto">
             <Table>
               <TableHeader>
-                <TableRow className="bg-primary/5 hover:bg-primary/5 border-b-primary/10">
+                <TableRow className="bg-primary/5 hover:bg-primary/5 border-border-strong-primary/10">
                   <TableHead className="font-bold text-primary text-xs">Client / Company Name</TableHead>
                   <TableHead className="font-bold text-primary text-xs">Type & Code</TableHead>
                   <TableHead className="font-bold text-primary text-xs">Primary Contact</TableHead>

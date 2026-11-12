@@ -491,7 +491,7 @@ export default function NewEmployeeInvitePage() {
 
       {result ? (
         <div className="bg-card border border-border rounded-xl shadow-xs p-6 space-y-6">
-          <div className="flex items-center space-x-3 text-emerald-600">
+          <div className="flex items-center space-x-3 text-tone-green-text">
             <div className="p-2.5 bg-primary/10 rounded-lg text-primary">
               <CheckCircle2 className="w-6 h-6" />
             </div>
@@ -516,7 +516,7 @@ export default function NewEmployeeInvitePage() {
 
             <div className="bg-muted/30 p-4 rounded-lg border border-border">
               <span className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground flex items-center gap-1.5">
-                <KeyRound className="w-3.5 h-3.5 text-amber-500" />
+                <KeyRound className="w-3.5 h-3.5 text-tone-amber-text" />
                 Temporary Password
               </span>
               <div className="flex items-center justify-between mt-2 bg-background px-3 py-1.5 rounded-lg border border-border">
@@ -539,7 +539,7 @@ export default function NewEmployeeInvitePage() {
 
             <div className="bg-muted/30 p-4 rounded-lg border border-border">
               <span className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground flex items-center gap-1.5">
-                <FileCheck className="w-3.5 h-3.5 text-emerald-600" />
+                <FileCheck className="w-3.5 h-3.5 text-tone-green-text" />
                 Single-Use Onboarding Link
               </span>
               <div className="flex items-center justify-between mt-2 bg-background px-3 py-1.5 rounded-lg border border-border">
@@ -565,7 +565,7 @@ export default function NewEmployeeInvitePage() {
             <>
           {/* User Access & Roles Configuration Card */}
           <div className="rounded-lg border border-border bg-card p-5 space-y-4">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-border pb-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-border-strong border-border pb-4">
               <div className="flex items-center gap-3">
                 <div className="p-2 bg-primary/10 rounded-lg text-primary">
                   <ShieldCheck className="w-5 h-5" />
@@ -575,7 +575,7 @@ export default function NewEmployeeInvitePage() {
                     Application Access & Role Allocation
                     {roleAssigned && (
                       <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-medium bg-muted text-foreground border border-border">
-                        <CheckCircle2 className="w-3 h-3 text-emerald-600" /> Active Grant
+                        <CheckCircle2 className="w-3 h-3 text-tone-green-text" /> Active Grant
                       </span>
                     )}
                   </h3>
@@ -680,7 +680,7 @@ export default function NewEmployeeInvitePage() {
             </>
           )}
           {copied && (
-            <p className="text-xs text-emerald-600 font-medium text-center bg-muted py-2 rounded-lg border border-border">
+            <p className="text-xs text-tone-green-text font-medium text-center bg-muted py-2 rounded-lg border border-border">
               Copied to clipboard!
             </p>
           )}
@@ -701,7 +701,7 @@ export default function NewEmployeeInvitePage() {
       ) : (
         <form onSubmit={handleSubmit} className="space-y-6">
           {error && (
-            <div className="p-4 bg-rose-50 border border-rose-200 text-rose-700 rounded-2xl text-xs flex items-center gap-2 font-medium">
+            <div className="p-4 bg-tone-red-solid border border-tone-red-solid/25 text-tone-red-text rounded-2xl text-xs flex items-center gap-2 font-medium">
               <AlertCircle className="w-4 h-4 flex-shrink-0" />
               <span>{error}</span>
             </div>
@@ -709,7 +709,7 @@ export default function NewEmployeeInvitePage() {
 
           {/* Section 1: Basic & Contact Details */}
           <div className="bg-card rounded-xl border border-border shadow-xs p-6 md:p-8 space-y-5">
-            <div className="flex items-center gap-2.5 text-primary border-b border-border pb-3">
+            <div className="flex items-center gap-2.5 text-primary border-border-strong border-border pb-3">
               <Briefcase className="w-5 h-5" />
               <h2 className="text-sm font-bold text-foreground">1. Basic & Identity Information</h2>
             </div>
@@ -774,7 +774,7 @@ export default function NewEmployeeInvitePage() {
 
           {/* Section 2: Organizational Hierarchy, Role & Ranking */}
           <div className="bg-card rounded-xl border border-border shadow-xs p-6 md:p-8 space-y-5">
-            <div className="flex items-center gap-2.5 text-primary border-b border-border pb-3">
+            <div className="flex items-center gap-2.5 text-primary border-border-strong border-border pb-3">
               <Layers className="w-5 h-5" />
               <h2 className="text-sm font-bold text-foreground">2. Organizational Placement & Role Hierarchy</h2>
             </div>
@@ -856,7 +856,7 @@ export default function NewEmployeeInvitePage() {
           {/* Section 3: Compensation & Access Provisioning */}
           {!workerMode && (
           <div className="bg-card rounded-xl border border-border shadow-xs p-6 md:p-8 space-y-5">
-            <div className="flex items-center gap-2.5 text-primary border-b border-border pb-3">
+            <div className="flex items-center gap-2.5 text-primary border-border-strong border-border pb-3">
               <BadgeIndianRupee className="w-5 h-5" />
               <h2 className="text-sm font-bold text-foreground">3. Compensation & Credential Generation</h2>
             </div>

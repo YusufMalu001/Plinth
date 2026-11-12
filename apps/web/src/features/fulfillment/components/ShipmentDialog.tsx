@@ -125,7 +125,7 @@ export function ShipmentDialog({
               </div>
             </div>
           </div>
-          <Badge variant="outline" className="bg-emerald-500/10 text-emerald-700 border-emerald-300">
+          <Badge variant="outline" className="bg-tone-emerald-bg/10 text-tone-green-text border-tone-green-solid">
             Sealed & Inspected
           </Badge>
         </div>

@@ -53,7 +53,7 @@ export function PoLinesTable({ lines, currency = 'INR' }: PoLinesTableProps) {
   return (
     <div className="overflow-hidden rounded-2xl border border-border/80 bg-card shadow-xs">
       {/* Header & Filter Bar */}
-      <div className="flex flex-col gap-3 border-b border-border/70 bg-muted/20 px-4 sm:px-5 py-3.5 sm:flex-row sm:items-center sm:justify-between">
+      <div className="flex flex-col gap-3 border-border-strong border-border/70 bg-muted/20 px-4 sm:px-5 py-3.5 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex items-center gap-2.5">
           <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-primary/10 text-primary border border-primary/20">
             <Layers className="h-4 w-4" />
@@ -88,7 +88,7 @@ export function PoLinesTable({ lines, currency = 'INR' }: PoLinesTableProps) {
       {/* Desktop Table View */}
       <div className="hidden max-h-72 overflow-y-auto md:block">
         <table className="w-full text-left text-xs">
-          <thead className="sticky top-0 z-10 border-b border-border/70 bg-card/95 backdrop-blur-xs text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+          <thead className="sticky top-0 z-10 border-border-strong border-border/70 bg-card/95 backdrop-blur-xs text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
             <tr>
               <th className="px-5 py-3">#</th>
               <th className="px-5 py-3">Item / Description</th>

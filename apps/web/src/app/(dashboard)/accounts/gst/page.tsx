@@ -102,7 +102,7 @@ export default function GstWorkbenchPage() {
             onClick={() => setActiveTab('GSTR1')}
             className={`rounded-xl px-4 py-1.5 text-xs font-semibold transition-all ${
               activeTab === 'GSTR1'
-                ? 'bg-primary text-white shadow-sm'
+                ? 'bg-primary text-inverse shadow-sm'
                 : 'text-muted-foreground hover:text-foreground'
             }`}
           >
@@ -112,7 +112,7 @@ export default function GstWorkbenchPage() {
             onClick={() => setActiveTab('GSTR2B')}
             className={`rounded-xl px-4 py-1.5 text-xs font-semibold transition-all ${
               activeTab === 'GSTR2B'
-                ? 'bg-primary text-white shadow-sm'
+                ? 'bg-primary text-inverse shadow-sm'
                 : 'text-muted-foreground hover:text-foreground'
             }`}
           >
@@ -122,7 +122,7 @@ export default function GstWorkbenchPage() {
             onClick={() => setActiveTab('GSTR3B')}
             className={`rounded-xl px-4 py-1.5 text-xs font-semibold transition-all ${
               activeTab === 'GSTR3B'
-                ? 'bg-primary text-white shadow-sm'
+                ? 'bg-primary text-inverse shadow-sm'
                 : 'text-muted-foreground hover:text-foreground'
             }`}
           >
@@ -168,7 +168,7 @@ export default function GstWorkbenchPage() {
       {/* Tab 1: GSTR-1 Outward Supplies Tables */}
       {activeTab === 'GSTR1' && data && (
         <Card className="rounded-2xl border-border/80 shadow-none">
-          <CardHeader className="border-b border-border/70 p-5">
+          <CardHeader className="border-border-strong border-border/70 p-5">
             <CardTitle className="text-base font-bold">GSTR-1 Outward Supply Tables</CardTitle>
             <p className="text-xs text-muted-foreground mt-0.5">
               Classified outward supplies for direct accountant review and GSTN portal filing
@@ -214,13 +214,13 @@ export default function GstWorkbenchPage() {
                     <TableCell className="p-3 font-sans font-medium text-foreground">
                       Credit / Debit Notes (CDNR Registered Adjustments)
                     </TableCell>
-                    <TableCell className="p-3 text-right text-rose-600 dark:text-rose-400">
+                    <TableCell className="p-3 text-right text-tone-red-text">
                       {formatCurrency(data.gstr1.cdnrTaxable)}
                     </TableCell>
-                    <TableCell className="p-3 text-right text-rose-600 dark:text-rose-400">
+                    <TableCell className="p-3 text-right text-tone-red-text">
                       {formatCurrency(data.gstr1.cdnrTax)}
                     </TableCell>
-                    <TableCell className="p-3 text-right font-bold text-rose-600 dark:text-rose-400">
+                    <TableCell className="p-3 text-right font-bold text-tone-red-text">
                       {formatCurrency(parseFloat(data.gstr1.cdnrTaxable) + parseFloat(data.gstr1.cdnrTax))}
                     </TableCell>
                   </TableRow>
@@ -255,7 +255,7 @@ export default function GstWorkbenchPage() {
       {/* Tab 2: GSTR-2B ITC Matching */}
       {activeTab === 'GSTR2B' && data && (
         <Card className="rounded-2xl border-border/80 shadow-none">
-          <CardHeader className="border-b border-border/70 p-5">
+          <CardHeader className="border-border-strong border-border/70 p-5">
             <CardTitle className="text-base font-bold">GSTR-2B Auto-Drafted ITC Matching</CardTitle>
             <p className="text-xs text-muted-foreground mt-0.5">
               Comparison between captured supplier bills (AP) and auto-drafted ITC statement from GSTN
@@ -264,9 +264,9 @@ export default function GstWorkbenchPage() {
           <CardContent className="p-0">
             <div className="p-5 space-y-4">
               <div className="grid gap-4 sm:grid-cols-3">
-                <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-4 text-xs">
+                <div className="rounded-2xl border border-tone-green-solid/25 bg-tone-green-bg p-4 text-xs">
                   <span className="text-muted-foreground block">Matched & Eligible ITC:</span>
-                  <span className="text-lg font-bold font-mono text-emerald-700 dark:text-emerald-400 mt-1 block">
+                  <span className="text-lg font-bold font-mono text-tone-green-text mt-1 block">
                     {formatCurrency(data.gstr2b.matchedItc)}
                   </span>
                   <p className="text-[11px] text-muted-foreground mt-1">
@@ -274,9 +274,9 @@ export default function GstWorkbenchPage() {
                   </p>
                 </div>
 
-                <div className="rounded-2xl border border-amber-500/30 bg-amber-500/5 p-4 text-xs">
+                <div className="rounded-2xl border border-tone-amber-solid/25 bg-tone-amber-bg p-4 text-xs">
                   <span className="text-muted-foreground block">Missing in 2B (Pending ITC):</span>
-                  <span className="text-lg font-bold font-mono text-amber-700 dark:text-amber-400 mt-1 block">
+                  <span className="text-lg font-bold font-mono text-tone-amber-text mt-1 block">
                     {formatCurrency(data.gstr2b.missingIn2bItc)}
                   </span>
                   <p className="text-[11px] text-muted-foreground mt-1">
@@ -302,7 +302,7 @@ export default function GstWorkbenchPage() {
       {/* Tab 3: GSTR-3B Tax Computation */}
       {activeTab === 'GSTR3B' && data && (
         <Card className="rounded-2xl border-border/80 shadow-none">
-          <CardHeader className="border-b border-border/70 p-5">
+          <CardHeader className="border-border-strong border-border/70 p-5">
             <CardTitle className="text-base font-bold">GSTR-3B Tax Liability & Settlement</CardTitle>
             <p className="text-xs text-muted-foreground mt-0.5">
               Net cash tax liability computation after cross-utilization of IGST, CGST and SGST credits

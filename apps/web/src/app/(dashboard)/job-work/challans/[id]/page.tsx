@@ -90,7 +90,7 @@ export default function JobWorkChallanViewPage() {
           <div className="flex items-center gap-2">
             <Button
               onClick={handlePrint}
-              className="bg-[#173796] hover:bg-[#122b77] text-white flex items-center gap-2 text-xs font-extrabold shadow-sm"
+              className="bg-action hover:bg-[color:var(--action-primary-bg-hover)] text-inverse flex items-center gap-2 text-xs font-extrabold shadow-sm"
             >
               <Printer className="h-4 w-4" />
               Print / Save Delivery Challan PDF
@@ -99,8 +99,8 @@ export default function JobWorkChallanViewPage() {
         </div>
 
         {/* Printable Challan Component Preview Container with standard inner margins */}
-        <div className="bg-muted/40 dark:bg-card/40 p-4 sm:p-8 rounded-2xl border border-border flex justify-center shadow-inner">
-          <div className="w-full max-w-[920px] bg-white shadow-2xl rounded-sm border border-border/40 overflow-hidden">
+        <div className="bg-muted/40 p-4 sm:p-8 rounded-2xl border border-border flex justify-center shadow-inner">
+          <div className="w-full max-w-[920px] bg-surface shadow-modal rounded-sm border border-border/40 overflow-hidden">
             <JobWorkChallanPDF ref={printRef} challan={challan} isPrintPreview />
           </div>
         </div>

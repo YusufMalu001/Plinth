@@ -52,9 +52,9 @@ const moduleConfig: Record<
     name: 'Executive Advisor',
     short: 'Executive',
     icon: Layers,
-    badgeBg: 'bg-slate-100 dark:bg-slate-800',
-    badgeText: 'text-slate-800 dark:text-slate-200',
-    accentColor: '#004a80',
+    badgeBg: 'bg-muted',
+    badgeText: 'text-ink',
+    accentColor: 'var(--tone-blue-solid)',
     prompts: [
       { label: 'Festive Surge Strategy', query: 'How should we prepare safety stock and procurement for upcoming festive surge?' },
       { label: 'Enterprise Health Pulse', query: 'Provide a comprehensive enterprise health summary across all departments with strategic focus areas.' },
@@ -65,9 +65,9 @@ const moduleConfig: Record<
     name: 'Sales & Revenue Advisor',
     short: 'Sales',
     icon: TrendingUp,
-    badgeBg: 'bg-blue-50 dark:bg-blue-950/60',
-    badgeText: 'text-[#004a80] dark:text-blue-300',
-    accentColor: '#004a80',
+    badgeBg: 'bg-tone-blue-bg',
+    badgeText: 'text-link',
+    accentColor: 'var(--tone-blue-solid)',
     prompts: [
       { label: 'Margin Leakage Audit', query: 'Where are our biggest contribution margin leakages in sales and outbound freight?' },
       { label: 'Demand Velocity Forecast', query: 'Project our quarterly revenue run rate and high-velocity SKU trends.' },
@@ -78,9 +78,9 @@ const moduleConfig: Record<
     name: 'Inventory & Stock Advisor',
     short: 'Inventory',
     icon: Package,
-    badgeBg: 'bg-amber-50 dark:bg-amber-950/60',
-    badgeText: 'text-amber-800 dark:text-amber-300',
-    accentColor: '#d97706',
+    badgeBg: 'bg-tone-amber-bg',
+    badgeText: 'text-tone-amber-text',
+    accentColor: 'var(--tone-amber-solid)',
     prompts: [
       { label: 'Stockout Exposure', query: 'What are our current replenishment risks and stock-out exposures across warehouses?' },
       { label: 'Bulk Buy Tradeoff', query: 'Simulate bulk purchase volume discount savings against our annual inventory carrying cost.' },
@@ -91,9 +91,9 @@ const moduleConfig: Record<
     name: 'Procurement & Sourcing Advisor',
     short: 'Procurement',
     icon: ShoppingCart,
-    badgeBg: 'bg-indigo-50 dark:bg-indigo-950/60',
-    badgeText: 'text-indigo-800 dark:text-indigo-300',
-    accentColor: '#4f46e5',
+    badgeBg: 'bg-tone-purple-bg',
+    badgeText: 'text-tone-purple-text',
+    accentColor: 'var(--tone-purple-solid)',
     prompts: [
       { label: 'Supplier SLA Scorecard', query: 'Score our suppliers based on on-time delivery %, lead time drift, and price variance.' },
       { label: 'Raw Material Viability', query: 'Is it financially viable to purchase raw materials in bulk given holding costs?' },
@@ -104,9 +104,9 @@ const moduleConfig: Record<
     name: 'Production & Plant Advisor',
     short: 'Production',
     icon: Factory,
-    badgeBg: 'bg-purple-50 dark:bg-purple-950/60',
-    badgeText: 'text-purple-800 dark:text-purple-300',
-    accentColor: '#9333ea',
+    badgeBg: 'bg-tone-purple-bg',
+    badgeText: 'text-tone-purple-text',
+    accentColor: 'var(--tone-purple-solid)',
     prompts: [
       { label: 'Workstation Bottlenecks', query: 'Analyze machine capacity and highlight any potential work center bottlenecks for active production plans.' },
       { label: 'Schedule Attainment', query: 'What is our current production plan schedule attainment and completion rate?' },
@@ -117,9 +117,9 @@ const moduleConfig: Record<
     name: 'Fulfillment & Logistics Advisor',
     short: 'Fulfillment',
     icon: Truck,
-    badgeBg: 'bg-teal-50 dark:bg-teal-950/60',
-    badgeText: 'text-teal-800 dark:text-teal-300',
-    accentColor: '#0d9488',
+    badgeBg: 'bg-tone-teal-bg',
+    badgeText: 'text-tone-teal-text',
+    accentColor: 'var(--tone-teal-solid)',
     prompts: [
       { label: 'Freight Consolidation', query: 'Are there any multi-order vehicle consolidation opportunities to reduce outbound freight spend?' },
       { label: 'On-Time Delivery Rate', query: 'What is our current on-time delivery rate across active logistics corridors?' },
@@ -130,9 +130,9 @@ const moduleConfig: Record<
     name: 'Quality Assurance Advisor',
     short: 'Quality',
     icon: ShieldCheck,
-    badgeBg: 'bg-rose-50 dark:bg-rose-950/60',
-    badgeText: 'text-rose-800 dark:text-rose-300',
-    accentColor: '#e11d48',
+    badgeBg: 'bg-tone-red-bg',
+    badgeText: 'text-tone-red-text',
+    accentColor: 'var(--tone-red-solid)',
     prompts: [
       { label: 'Quality Acceptance', query: 'What is our current quality acceptance rate and defect breakdown across batches?' },
     ],
@@ -141,9 +141,9 @@ const moduleConfig: Record<
     name: 'Finance & Costing Advisor',
     short: 'Finance',
     icon: TrendingUp,
-    badgeBg: 'bg-emerald-50 dark:bg-emerald-950/60',
-    badgeText: 'text-emerald-800 dark:text-emerald-300',
-    accentColor: '#059669',
+    badgeBg: 'bg-tone-green-bg',
+    badgeText: 'text-tone-green-text',
+    accentColor: 'var(--tone-green-solid)',
     prompts: [
       { label: 'Contribution Margin', query: 'Summarize tax-excluded revenue, inventory COGS, and known contribution margin.' },
     ],
@@ -152,9 +152,9 @@ const moduleConfig: Record<
     name: 'System Intelligence',
     short: 'System',
     icon: Layers,
-    badgeBg: 'bg-slate-100 dark:bg-slate-800',
-    badgeText: 'text-slate-800 dark:text-slate-200',
-    accentColor: '#64748b',
+    badgeBg: 'bg-muted',
+    badgeText: 'text-ink',
+    accentColor: 'var(--tone-grey-solid)',
     prompts: [],
   },
 };
@@ -391,21 +391,21 @@ export function AskBusinessWidget() {
   const chatContent = (
     <div className="flex flex-col h-full w-full bg-card overflow-hidden">
       {/* Sleek Top Header */}
-      <div className="flex items-center justify-between border-b border-border/80 bg-slate-50/90 px-4 py-3 dark:bg-slate-900/90 shrink-0">
+      <div className="flex items-center justify-between border-b border-border/80 bg-muted/90 px-4 py-3 shrink-0">
         <div className="flex items-center gap-3">
-          <div className="relative flex h-9 w-9 items-center justify-center rounded-xl bg-white shadow-xs border border-slate-200/90 p-1.5 dark:bg-slate-800 dark:border-slate-700">
+          <div className="relative flex h-9 w-9 items-center justify-center rounded-xl bg-surface shadow-xs border border-border/90 p-1.5">
             <span className="text-sm font-bold text-ink" aria-label="Plinth">P</span>
             <span className="absolute -bottom-0.5 -right-0.5 flex h-2.5 w-2.5">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex h-2.5 w-2.5 rounded-full border-2 border-white bg-emerald-500 dark:border-slate-800" />
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-tone-green-solid opacity-75" />
+              <span className="relative inline-flex h-2.5 w-2.5 rounded-full border-2 border-white bg-tone-green-solid" />
             </span>
           </div>
 
           <div>
             <div className="flex items-center gap-2">
               <h3 className="text-sm font-bold text-foreground tracking-tight">Plinth Advisor</h3>
-              <span className="inline-flex items-center gap-1 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-2 py-0.5 text-[9px] font-semibold text-emerald-700 dark:text-emerald-400">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="inline-flex items-center gap-1 rounded-full border border-tone-green-solid/25 bg-tone-green-solid px-2 py-0.5 text-[9px] font-semibold text-tone-green-text">
+                <span className="h-1.5 w-1.5 rounded-full bg-tone-green-solid animate-pulse" />
                 Live Snapshots
               </span>
             </div>
@@ -450,7 +450,7 @@ export function AskBusinessWidget() {
       {/* Domain Selector & Navigation Bar */}
       <div className="border-b border-border/80 bg-muted/20 px-4 py-2.5 shrink-0 flex items-center justify-between gap-3">
         <span className="text-[11px] font-bold text-muted-foreground uppercase tracking-wider flex items-center gap-1.5">
-          <Sparkles className="h-3.5 w-3.5 text-[#004a80] dark:text-blue-400" />
+          <Sparkles className="h-3.5 w-3.5 text-link" />
           Advisor Domain:
         </span>
 
@@ -466,7 +466,7 @@ export function AskBusinessWidget() {
           </button>
 
           {isModuleDropdownOpen && (
-            <div className="absolute right-0 top-full mt-2 w-72 rounded-2xl border border-border bg-popover p-1.5 shadow-2xl z-50 animate-in fade-in slide-in-from-top-2">
+            <div className="absolute right-0 top-full mt-2 w-72 rounded-2xl border border-border bg-popover p-1.5 shadow-none z-50 animate-in fade-in slide-in-from-top-2">
               <div className="px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
                 Select Intelligence Domain
               </div>
@@ -518,7 +518,7 @@ export function AskBusinessWidget() {
               className={`flex gap-3 ${isUser ? 'justify-end' : 'justify-start'} animate-in fade-in duration-200`}
             >
               {!isUser && (
-                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white p-1.5 shadow-2xs dark:border-slate-700 dark:bg-slate-800 mt-0.5">
+                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-border bg-surface p-1.5 shadow-2xs mt-0.5">
                   <span className="text-xs font-bold text-ink" aria-label="Plinth">P</span>
                 </div>
               )}
@@ -527,7 +527,7 @@ export function AskBusinessWidget() {
                 <div className="flex items-center gap-2 px-1">
                   {!isUser && (
                     <span className="inline-flex items-center gap-1 text-[11px] font-bold text-foreground">
-                      <MsgIcon className="h-3 w-3 text-[#004a80] dark:text-blue-400" />
+                      <MsgIcon className="h-3 w-3 text-link" />
                       {msgConfig.name}
                     </span>
                   )}
@@ -542,8 +542,8 @@ export function AskBusinessWidget() {
                 <div
                   className={`relative group rounded-2xl px-4 py-3 leading-relaxed shadow-xs transition-all ${
                     isUser
-                      ? 'bg-[#004a80] text-white rounded-tr-xs font-medium'
-                      : 'bg-muted/40 border border-border/80 text-foreground rounded-tl-xs dark:bg-slate-900/60'
+                      ? 'bg-action text-inverse rounded-tr-xs font-medium'
+                      : 'bg-muted/40 border border-border/80 text-foreground rounded-tl-xs'
                   }`}
                 >
                   {isUser ? (
@@ -556,7 +556,7 @@ export function AskBusinessWidget() {
                   {Array.isArray(msg.evidence) && msg.evidence.length > 0 && (
                     <div className="mt-3.5 pt-3 border-t border-border/70">
                       <div className="flex items-center gap-1.5 mb-2">
-                        <ShieldCheck className="h-3.5 w-3.5 text-emerald-600 dark:text-emerald-400" />
+                        <ShieldCheck className="h-3.5 w-3.5 text-tone-green-text" />
                         <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
                           Certified ERP Evidence (Read-only Snapshot)
                         </span>
@@ -566,9 +566,9 @@ export function AskBusinessWidget() {
                           <span
                             key={item.metricKey ? `${item.metricKey}:${idx}` : idx}
                             title={describeEvidence(item).title}
-                            className="inline-flex items-center gap-1.5 rounded-full border border-slate-200/90 bg-card px-2.5 py-1 text-[11px] font-medium text-slate-800 shadow-2xs hover:border-[#004a80] transition-colors dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
+                            className="inline-flex items-center gap-1.5 rounded-full border border-border/90 bg-card px-2.5 py-1 text-[11px] font-medium text-ink shadow-2xs hover:border-accent-brand transition-colors"
                           >
-                            <ShieldCheck className="h-3 w-3 text-[#004a80] dark:text-blue-400" />
+                            <ShieldCheck className="h-3 w-3 text-link" />
                             {describeEvidence(item).label}
                           </span>
                         ))}
@@ -592,7 +592,7 @@ export function AskBusinessWidget() {
                       className="absolute -right-2 -top-2 hidden group-hover:flex h-7 w-7 items-center justify-center rounded-full border border-border bg-background text-muted-foreground shadow-sm hover:text-foreground hover:scale-105 active:scale-95 transition-all"
                       title="Copy response"
                     >
-                      {copiedId === msg.id ? <Check className="h-3.5 w-3.5 text-emerald-600" /> : <Copy className="h-3.5 w-3.5" />}
+                      {copiedId === msg.id ? <Check className="h-3.5 w-3.5 text-tone-green-text" /> : <Copy className="h-3.5 w-3.5" />}
                     </button>
                   )}
                 </div>
@@ -604,16 +604,16 @@ export function AskBusinessWidget() {
         {/* Live Analysis in Progress */}
         {currentStatus && (
           <div className="flex gap-3 items-start animate-in fade-in duration-200">
-            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white p-1.5 shadow-2xs dark:border-slate-700 dark:bg-slate-800 animate-pulse">
+            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-border bg-surface p-1.5 shadow-2xs animate-pulse">
               <span className="text-xs font-bold text-ink" aria-label="Plinth">P</span>
             </div>
             <div className="flex flex-col gap-1.5 max-w-[85%]">
               <span className="text-[11px] font-bold text-muted-foreground">{activeConfig.short} Advisor</span>
-              <div className="rounded-2xl rounded-tl-xs border border-blue-200/80 bg-blue-50/50 p-3.5 text-xs text-slate-800 dark:border-blue-900/60 dark:bg-blue-950/40 dark:text-slate-200">
-                <div className="flex items-center gap-2 font-semibold text-[#004a80] dark:text-blue-400">
+              <div className="rounded-2xl rounded-tl-xs border border-tone-blue-solid/25 bg-tone-blue-bg p-3.5 text-xs text-ink">
+                <div className="flex items-center gap-2 font-semibold text-link">
                   <span className="relative flex h-2.5 w-2.5">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-400 opacity-75" />
-                    <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#004a80]" />
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-tone-blue-solid opacity-75" />
+                    <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-action" />
                   </span>
                   <span>Evaluating: {currentStatus}...</span>
                 </div>
@@ -640,7 +640,7 @@ export function AskBusinessWidget() {
                 key={p.label}
                 type="button"
                 onClick={() => void handleSend(p.query)}
-                className="shrink-0 rounded-full border border-border/80 bg-card px-3 py-1 text-[11px] font-medium text-foreground transition-all hover:border-[#004a80] hover:bg-[#004a80]/5 hover:text-[#004a80] active:scale-95 dark:hover:border-blue-400 dark:hover:text-blue-300"
+                className="shrink-0 rounded-full border border-border/80 bg-card px-3 py-1 text-[11px] font-medium text-foreground transition-all hover:border-accent-brand hover:bg-accent-brand-soft hover:text-link-hover active:scale-95"
               >
                 {p.label}
               </button>
@@ -656,7 +656,7 @@ export function AskBusinessWidget() {
             e.preventDefault();
             void handleSend();
           }}
-          className="relative flex flex-col gap-2 rounded-2xl border border-border/80 bg-muted/20 dark:bg-slate-900/40 p-2.5 transition-all duration-200 focus-within:border-[#004a80] focus-within:bg-background focus-within:ring-2 focus-within:ring-[#004a80]/15"
+          className="relative flex flex-col gap-2 rounded-2xl border border-border/80 bg-muted/20 p-2.5 transition-all duration-200 focus-within:border-accent-brand focus-within:bg-background focus-within:ring-2 focus-within:ring-accent-brand"
         >
           <textarea
             ref={textareaRef}
@@ -678,7 +678,7 @@ export function AskBusinessWidget() {
               type="submit"
               disabled={Boolean(currentStatus) || inputQuestion.trim().length < 1}
               aria-label="Send query"
-              className="flex h-8 w-8 sm:h-9 sm:w-9 ml-auto items-center justify-center rounded-xl bg-[#004a80] text-white shadow-sm transition-all hover:bg-[#003862] hover:scale-105 active:scale-95 disabled:opacity-30 disabled:scale-100 disabled:cursor-not-allowed"
+              className="flex h-8 w-8 sm:h-9 sm:w-9 ml-auto items-center justify-center rounded-xl bg-action text-inverse shadow-sm transition-all hover:bg-[color:var(--action-primary-bg-hover)] hover:scale-105 active:scale-95 disabled:opacity-30 disabled:scale-100 disabled:cursor-not-allowed"
             >
               <Send className="h-4 w-4" />
             </button>
@@ -687,12 +687,12 @@ export function AskBusinessWidget() {
 
         <div className="mt-2.5 flex items-center justify-between px-1 text-[11px] text-muted-foreground">
           <span className="flex items-center gap-1.5 font-medium">
-            <ShieldCheck className="h-3.5 w-3.5 text-emerald-600 dark:text-emerald-400" />
+            <ShieldCheck className="h-3.5 w-3.5 text-tone-green-text" />
             Read-only verified snapshots · 0 DB mutations
           </span>
           <Link
             href="/intelligence"
-            className="flex items-center gap-1 font-semibold text-[#004a80] dark:text-blue-400 hover:underline"
+            className="flex items-center gap-1 font-semibold text-link hover:underline"
           >
             Intelligence Hub <ExternalLink className="h-3 w-3" />
           </Link>
@@ -716,10 +716,10 @@ export function AskBusinessWidget() {
           }}
           aria-label={isOpen ? 'Close Plinth Advisor' : 'Open Plinth Advisor'}
           title="Plinth AI Advisor"
-          className="group relative flex h-14 w-14 items-center justify-center rounded-full bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-700/80 shadow-xl shadow-slate-900/10 hover:shadow-2xl hover:shadow-[#004a80]/20 hover:scale-105 active:scale-95 transition-all duration-200"
+          className="group relative flex h-14 w-14 items-center justify-center rounded-full bg-surface border border-border/90 shadow-none shadow-slate-900/10 hover:shadow-[var(--accent-blue)]/20 hover:scale-105 active:scale-95 transition-all duration-200"
         >
           {isOpen && !isExpanded ? (
-            <X className="h-6 w-6 text-slate-700 dark:text-slate-200 transition-transform group-hover:rotate-90 duration-200" />
+            <X className="h-6 w-6 text-ink-secondary transition-transform group-hover:rotate-90 duration-200" />
           ) : (
             <>
               <div className="relative flex h-8 w-8 items-center justify-center">
@@ -727,8 +727,8 @@ export function AskBusinessWidget() {
               </div>
               {/* Live Indicator Pulse Dot */}
               <span className="absolute bottom-1.5 right-1.5 flex h-3 w-3">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-                <span className="relative inline-flex h-3 w-3 rounded-full border-2 border-white dark:border-slate-900 bg-emerald-500" />
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-tone-green-solid opacity-75" />
+                <span className="relative inline-flex h-3 w-3 rounded-full border-2 border-white bg-tone-green-solid" />
               </span>
             </>
           )}
@@ -739,7 +739,7 @@ export function AskBusinessWidget() {
       {isOpen && !isExpanded && (
         <div
           style={{ bottom: '88px', right: '24px' }}
-          className="fixed z-50 flex flex-col rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-card shadow-2xl backdrop-blur-2xl ring-1 ring-black/5 dark:ring-white/10 overflow-hidden w-[440px] max-w-[calc(100vw-2rem)] h-[620px] max-h-[calc(100vh-7.5rem)] animate-in fade-in slide-in-from-bottom-4 duration-200"
+          className="fixed z-50 flex flex-col rounded-3xl border border-border/90 bg-card shadow-none backdrop-blur-2xl ring-1 overflow-hidden w-[440px] max-w-[calc(100vw-2rem)] h-[620px] max-h-[calc(100vh-7.5rem)] animate-in fade-in slide-in-from-bottom-4 duration-200"
         >
           {chatContent}
         </div>
@@ -750,7 +750,7 @@ export function AskBusinessWidget() {
         <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6 lg:p-8 animate-in fade-in duration-200">
           <div
             onClick={(e) => e.stopPropagation()}
-            className="relative w-full max-w-4xl h-[86vh] max-h-[850px] bg-card rounded-3xl border border-border shadow-2xl ring-1 ring-black/10 dark:ring-white/10 flex flex-col overflow-hidden animate-in zoom-in-95 duration-200"
+            className="relative w-full max-w-4xl h-[86vh] max-h-[850px] bg-card rounded-3xl border border-border shadow-none ring-1 flex flex-col overflow-hidden animate-in zoom-in-95 duration-200"
           >
             {chatContent}
           </div>

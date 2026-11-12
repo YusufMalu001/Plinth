@@ -304,7 +304,7 @@ export default function SalesAccountsPage() {
             Sales Invoices & Bills
             <span
               className={`rounded-full px-2 py-0.5 text-[10px] font-bold ${
-                activeTab === 'invoices' ? 'bg-white/20 text-white' : 'bg-muted text-muted-foreground'
+                activeTab === 'invoices' ? 'bg-surface/20 text-inverse' : 'bg-muted text-muted-foreground'
               }`}
             >
               {allInvoices.length}
@@ -326,7 +326,7 @@ export default function SalesAccountsPage() {
             Confirmed Sales Orders
             <span
               className={`rounded-full px-2 py-0.5 text-[10px] font-bold ${
-                activeTab === 'orders' ? 'bg-white/20 text-white' : 'bg-muted text-muted-foreground'
+                activeTab === 'orders' ? 'bg-surface/20 text-inverse' : 'bg-muted text-muted-foreground'
               }`}
             >
               {validConfirmedOrders.length}
@@ -337,7 +337,7 @@ export default function SalesAccountsPage() {
             onClick={() => setActiveTab('ledgers')}
             className={`flex items-center gap-2 rounded-xl px-3.5 py-2 text-xs font-semibold transition-all ${
               activeTab === 'ledgers'
-                ? 'bg-primary text-white shadow-sm'
+                ? 'bg-primary text-inverse shadow-sm'
                 : 'text-muted-foreground hover:bg-muted hover:text-foreground'
             }`}
           >
@@ -345,7 +345,7 @@ export default function SalesAccountsPage() {
             Customer Ledgers & Credit Limits
             <span
               className={`rounded-full px-2 py-0.5 text-[10px] font-bold ${
-                activeTab === 'ledgers' ? 'bg-white/20 text-white' : 'bg-muted text-muted-foreground'
+                activeTab === 'ledgers' ? 'bg-surface/20 text-inverse' : 'bg-muted text-muted-foreground'
               }`}
             >
               {allCustomerBalances.length}
@@ -490,7 +490,7 @@ export default function SalesAccountsPage() {
                           className="hover:bg-muted/50 transition-colors cursor-pointer group"
                         >
                           <TableCell className="p-3 font-mono font-bold text-foreground">
-                            <div className="flex items-center gap-1.5 font-mono group-hover:text-primary dark:group-hover:text-primary transition-colors">
+                            <div className="flex items-center gap-1.5 font-mono group-hover:text-primary transition-colors">
                               <span>{inv.invoiceNumber}</span>
                               <ChevronRight className="h-3.5 w-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all shrink-0 text-primary" />
                             </div>
@@ -527,11 +527,11 @@ export default function SalesAccountsPage() {
                           <TableCell className="p-3 text-right font-mono font-bold text-foreground">
                             {formatCurrency(inv.totalAmount)}
                           </TableCell>
-                          <TableCell className="p-3 text-right font-mono font-bold text-emerald-600 dark:text-emerald-400">
+                          <TableCell className="p-3 text-right font-mono font-bold text-tone-green-text">
                             {formatCurrency(inv.paidAmount)}
                           </TableCell>
                           <TableCell className={`p-3 text-right font-mono font-semibold ${
-                            outstandingNum > 0 ? 'text-amber-700 dark:text-amber-400' : 'text-emerald-600 dark:text-emerald-400'
+                            outstandingNum > 0 ? 'text-tone-amber-text' : 'text-tone-green-text'
                           }`}>
                             {formatCurrency(inv.outstandingAmount)}
                           </TableCell>
@@ -612,7 +612,7 @@ export default function SalesAccountsPage() {
                           className="hover:bg-muted/50 transition-colors cursor-pointer group"
                         >
                           <TableCell className="p-3 font-mono font-bold text-foreground">
-                            <div className="flex items-center gap-1.5 font-mono group-hover:text-primary dark:group-hover:text-primary transition-colors">
+                            <div className="flex items-center gap-1.5 font-mono group-hover:text-primary transition-colors">
                               <span>{ord.orderNumber}</span>
                               <ChevronRight className="h-3.5 w-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all shrink-0 text-primary" />
                             </div>
@@ -691,7 +691,7 @@ export default function SalesAccountsPage() {
       {/* TAB 3: Customer Ledgers & Credit Limits */}
       {activeTab === 'ledgers' && (
         <Card className="rounded-2xl border-border/80 shadow-none">
-          <CardHeader className="border-b border-border/70 p-5">
+          <CardHeader className="border-border-strong border-border/70 p-5">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
               <div>
                 <CardTitle className="text-base font-bold">Customer Directory & Running Ledgers</CardTitle>
@@ -736,7 +736,7 @@ export default function SalesAccountsPage() {
                           className="hover:bg-muted/50 transition-colors cursor-pointer group"
                         >
                           <TableCell className="p-3 font-semibold text-foreground">
-                            <div className="flex items-center gap-1.5 group-hover:text-primary dark:group-hover:text-primary transition-colors">
+                            <div className="flex items-center gap-1.5 group-hover:text-primary transition-colors">
                               <span>{cust.name}</span>
                               <ChevronRight className="h-3.5 w-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all shrink-0 text-primary" />
                             </div>
@@ -758,11 +758,11 @@ export default function SalesAccountsPage() {
                           <TableCell className="p-3 text-right font-mono text-muted-foreground">
                             {formatCurrency(cust.totalInvoiced)}
                           </TableCell>
-                          <TableCell className="p-3 text-right font-mono font-bold text-emerald-600 dark:text-emerald-400">
+                          <TableCell className="p-3 text-right font-mono font-bold text-tone-green-text">
                             {formatCurrency(cust.totalPaid)}
                           </TableCell>
                           <TableCell className={`p-3 text-right font-mono font-bold ${
-                            outstandingNum > 0 ? 'text-amber-700 dark:text-amber-400' : 'text-emerald-600 dark:text-emerald-400'
+                            outstandingNum > 0 ? 'text-tone-amber-text' : 'text-tone-green-text'
                           }`}>
                             {formatCurrency(cust.outstandingBalance)}
                           </TableCell>
@@ -779,10 +779,10 @@ export default function SalesAccountsPage() {
                                 <div
                                   className={`h-full transition-all ${
                                     cust.isCreditExceeded
-                                      ? 'bg-rose-500'
+                                      ? 'bg-tone-red-solid'
                                       : cust.utilizationPercent > 80
-                                      ? 'bg-amber-500'
-                                      : 'bg-emerald-500'
+                                      ? 'bg-tone-amber-solid'
+                                      : 'bg-tone-green-solid'
                                   }`}
                                   style={{ width: `${Math.min(100, cust.utilizationPercent)}%` }}
                                 />
@@ -791,16 +791,16 @@ export default function SalesAccountsPage() {
                           </TableCell>
                           <TableCell className="p-3 text-center">
                             {cust.isCreditExceeded ? (
-                              <span className="rounded-full bg-rose-500/10 px-2.5 py-0.5 text-[10px] font-bold text-rose-700 dark:text-rose-400 flex items-center justify-center gap-1 border border-rose-500/20">
+                              <span className="rounded-full bg-tone-red-bg px-2.5 py-0.5 text-[10px] font-bold text-tone-red-text flex items-center justify-center gap-1 border border-tone-red-solid/25">
                                 <ShieldAlert className="h-3 w-3" />
                                 Limit Exceeded
                               </span>
                             ) : cust.utilizationPercent > 80 ? (
-                              <span className="rounded-full bg-amber-500/10 px-2.5 py-0.5 text-[10px] font-bold text-amber-700 dark:text-amber-400 border border-amber-500/20">
+                              <span className="rounded-full bg-tone-amber-bg px-2.5 py-0.5 text-[10px] font-bold text-tone-amber-text border border-tone-amber-solid/25">
                                 High Usage
                               </span>
                             ) : (
-                              <span className="rounded-full bg-emerald-500/10 px-2.5 py-0.5 text-[10px] font-bold text-emerald-700 dark:text-emerald-400 border border-emerald-500/20">
+                              <span className="rounded-full bg-tone-green-bg px-2.5 py-0.5 text-[10px] font-bold text-tone-green-text border border-tone-green-solid/25">
                                 Good Standing
                               </span>
                             )}

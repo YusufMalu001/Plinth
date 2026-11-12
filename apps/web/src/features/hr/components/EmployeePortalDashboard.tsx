@@ -227,7 +227,7 @@ export function EmployeePortalDashboard({ includeProductionWork = false }: { inc
             <div className="text-2xl sm:text-3xl font-black text-foreground">{pendingTasks.length}</div>
             <span className="text-[11px] text-muted-foreground">Assigned workload items</span>
           </div>
-          <div className="p-2.5 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400">
+          <div className="p-2.5 rounded-xl bg-tone-amber-bg/10 text-tone-amber-text ">
             <Briefcase className="w-5 h-5" />
           </div>
         </div>
@@ -238,7 +238,7 @@ export function EmployeePortalDashboard({ includeProductionWork = false }: { inc
             <div className="text-2xl sm:text-3xl font-black text-foreground">{completedTasks.length}</div>
             <span className="text-[11px] text-muted-foreground">{completionRate}% completion rate</span>
           </div>
-          <div className="p-2.5 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
+          <div className="p-2.5 rounded-xl bg-tone-emerald-bg/10 text-tone-green-text ">
             <CheckCircle2 className="w-5 h-5" />
           </div>
         </div>
@@ -288,7 +288,7 @@ export function EmployeePortalDashboard({ includeProductionWork = false }: { inc
             <div className="p-8 text-center text-xs text-muted-foreground">Loading your tasks...</div>
           ) : tasks.length === 0 ? (
             <div className="p-12 text-center text-muted-foreground space-y-2">
-              <CheckCircle2 className="w-10 h-10 mx-auto text-emerald-500" />
+              <CheckCircle2 className="w-10 h-10 mx-auto text-tone-green-text" />
               <p className="text-sm font-semibold text-foreground">All caught up!</p>
               <p className="text-xs text-muted-foreground">You currently have no pending tasks assigned.</p>
             </div>
@@ -300,7 +300,7 @@ export function EmployeePortalDashboard({ includeProductionWork = false }: { inc
                     <div className="flex items-center gap-2">
                       <span className={`text-[10px] font-bold px-2 py-0.5 rounded-md ${
                         task.priority === 'URGENT' ? 'bg-destructive/10 text-destructive' :
-                        task.priority === 'HIGH' ? 'bg-amber-500/10 text-amber-600 dark:text-amber-400' :
+                        task.priority === 'HIGH' ? 'bg-tone-amber-bg/10 text-tone-amber-text ' :
                         'bg-muted text-muted-foreground'
                       }`}>
                         {task.priority}

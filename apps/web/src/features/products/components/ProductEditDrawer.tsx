@@ -224,8 +224,8 @@ export function ProductEditDrawer({ isOpen, onClose, product }: ProductEditDrawe
   ] as const;
 
   return (
-    <div className="fixed inset-0 z-50 flex justify-end bg-black/60 backdrop-blur-xs transition-opacity animate-in fade-in duration-200">
-      <div className="flex h-full w-full max-w-4xl flex-col bg-card border-l border-border shadow-2xl overflow-hidden animate-in slide-in-from-right duration-300">
+    <div className="fixed inset-0 z-50 flex justify-end bg-inverse backdrop-blur-xs transition-opacity animate-in fade-in duration-200">
+      <div className="flex h-full w-full max-w-4xl flex-col bg-card border-l border-border shadow-none overflow-hidden animate-in slide-in-from-right duration-300">
         {/* Drawer Header */}
         <div className="flex items-center justify-between border-b border-border bg-muted/30 px-6 py-4">
           <div>
@@ -602,7 +602,7 @@ export function ProductEditDrawer({ isOpen, onClose, product }: ProductEditDrawe
                     <button
                       type="button"
                       onClick={() => removeBomLine(idx)}
-                      className="rounded-lg p-2 text-red-500 hover:bg-red-500/10 transition-colors"
+                      className="rounded-lg p-2 text-tone-red-text hover:bg-tone-red-bg transition-colors"
                     >
                       <Trash2 className="h-4 w-4" />
                     </button>
@@ -666,7 +666,7 @@ export function ProductEditDrawer({ isOpen, onClose, product }: ProductEditDrawe
                         <button
                           type="button"
                           onClick={() => removeImage(idx)}
-                          className="absolute top-2 right-2 rounded-lg bg-black/70 p-1.5 text-white hover:bg-red-600 transition-colors"
+                          className="absolute top-2 right-2 rounded-lg bg-inverse p-1.5 text-inverse hover:bg-tone-red-solid transition-colors"
                         >
                           <Trash2 className="h-4 w-4" />
                         </button>

@@ -178,7 +178,7 @@ export function MaterialCreationWorkspace() {
                   size="sm"
                   onClick={handleSubmit}
                   disabled={isSaving}
-                  className="h-10 px-5 rounded-xl text-sm font-bold bg-primary hover:bg-[#003c68] text-white shadow-sm"
+                  className="h-10 px-5 rounded-xl text-sm font-bold bg-primary hover:bg-[color:var(--action-primary-bg-hover)] text-inverse shadow-sm"
                   icon={Save}
                 >
                   {isSaving ? 'Registering Material...' : 'Create Material'}
@@ -196,7 +196,7 @@ export function MaterialCreationWorkspace() {
               <div className="order-1 bg-card rounded-2xl border border-border shadow-xs overflow-hidden">
                 <div className="px-6 py-4.5 border-b border-border/70 flex items-center justify-between gap-3 bg-card">
                   <div className="flex items-center gap-3.5">
-                    <div className="flex items-center justify-center w-8 h-8 rounded-xl bg-primary text-white font-mono text-sm font-black shadow-xs ring-2 ring-primary/20">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-xl bg-primary text-inverse font-mono text-sm font-black shadow-xs ring-2 ring-primary/20">
                       01
                     </div>
                     <h2 className="text-base font-bold text-foreground tracking-tight">
@@ -310,7 +310,7 @@ export function MaterialCreationWorkspace() {
               <div className="order-3 bg-card rounded-2xl border border-border shadow-xs overflow-hidden">
                 <div className="px-6 py-4.5 border-b border-border/70 flex items-center justify-between gap-3 bg-card">
                   <div className="flex items-center gap-3.5">
-                    <div className="flex items-center justify-center w-8 h-8 rounded-xl bg-primary text-white font-mono text-sm font-black shadow-xs ring-2 ring-primary/20">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-xl bg-primary text-inverse font-mono text-sm font-black shadow-xs ring-2 ring-primary/20">
                       03
                     </div>
                     <h2 className="text-base font-bold text-foreground tracking-tight">
@@ -343,7 +343,7 @@ export function MaterialCreationWorkspace() {
               <div className="order-2 bg-card rounded-2xl border border-border shadow-xs overflow-hidden">
                 <div className="px-6 py-4.5 border-b border-border/70 flex items-center justify-between gap-3 bg-card">
                   <div className="flex items-center gap-3.5">
-                    <div className="flex items-center justify-center w-8 h-8 rounded-xl bg-primary text-white font-mono text-sm font-black shadow-xs ring-2 ring-primary/20">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-xl bg-primary text-inverse font-mono text-sm font-black shadow-xs ring-2 ring-primary/20">
                       02
                     </div>
                     <h2 className="text-base font-bold text-foreground tracking-tight">
@@ -511,7 +511,7 @@ export function MaterialCreationWorkspace() {
                 type="submit"
                 size="sm"
                 disabled={isSaving}
-                className="h-10 px-6 rounded-xl text-sm font-bold bg-primary hover:bg-[#003c68] text-white shadow-sm"
+                className="h-10 px-6 rounded-xl text-sm font-bold bg-primary hover:bg-[color:var(--action-primary-bg-hover)] text-inverse shadow-sm"
                 icon={Save}
               >
                 {isSaving ? 'Registering Material...' : 'Create Material'}

@@ -191,8 +191,8 @@ function UomEditDrawer({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex justify-end bg-black/60 backdrop-blur-xs transition-opacity animate-in fade-in duration-200">
-      <div className="flex h-full w-full max-w-xl flex-col bg-card border-l border-border shadow-2xl overflow-hidden animate-in slide-in-from-right duration-300">
+    <div className="fixed inset-0 z-50 flex justify-end bg-inverse backdrop-blur-xs transition-opacity animate-in fade-in duration-200">
+      <div className="flex h-full w-full max-w-xl flex-col bg-card border-l border-border shadow-none overflow-hidden animate-in slide-in-from-right duration-300">
         <div className="flex items-center justify-between border-b border-border bg-muted/30 px-6 py-4">
           <div>
             <h2 className="text-xl font-bold tracking-tight text-foreground">Edit {uom.name}</h2>

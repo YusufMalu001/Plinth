@@ -82,7 +82,7 @@ export default function ReportsClosePage() {
                   setSelectedPeriodToClose(openPeriods[0]);
                   setCloseModalOpen(true);
                 }}
-                className="bg-primary hover:bg-primary/90 text-white font-semibold gap-1.5 rounded-xl text-xs"
+                className="bg-primary hover:bg-primary/90 text-inverse font-semibold gap-1.5 rounded-xl text-xs"
               >
                 <Lock className="h-3.5 w-3.5" />
                 Close Period ({openPeriods[0].code})
@@ -132,7 +132,7 @@ export default function ReportsClosePage() {
               onClick={() => setReportType('TRIAL')}
               className={`rounded-xl px-3.5 py-1.5 text-xs font-semibold transition-all ${
                 reportType === 'TRIAL'
-                  ? 'bg-primary text-white shadow-sm'
+                  ? 'bg-primary text-inverse shadow-sm'
                   : 'text-muted-foreground hover:text-foreground'
               }`}
             >
@@ -142,7 +142,7 @@ export default function ReportsClosePage() {
               onClick={() => setReportType('PL')}
               className={`rounded-xl px-3.5 py-1.5 text-xs font-semibold transition-all ${
                 reportType === 'PL'
-                  ? 'bg-primary text-white shadow-sm'
+                  ? 'bg-primary text-inverse shadow-sm'
                   : 'text-muted-foreground hover:text-foreground'
               }`}
             >
@@ -152,7 +152,7 @@ export default function ReportsClosePage() {
               onClick={() => setReportType('BS')}
               className={`rounded-xl px-3.5 py-1.5 text-xs font-semibold transition-all ${
                 reportType === 'BS'
-                  ? 'bg-primary text-white shadow-sm'
+                  ? 'bg-primary text-inverse shadow-sm'
                   : 'text-muted-foreground hover:text-foreground'
               }`}
             >
@@ -162,7 +162,7 @@ export default function ReportsClosePage() {
               onClick={() => setReportType('DAYBOOK')}
               className={`rounded-xl px-3.5 py-1.5 text-xs font-semibold transition-all ${
                 reportType === 'DAYBOOK'
-                  ? 'bg-primary text-white shadow-sm'
+                  ? 'bg-primary text-inverse shadow-sm'
                   : 'text-muted-foreground hover:text-foreground'
               }`}
             >
@@ -185,7 +185,7 @@ export default function ReportsClosePage() {
       {/* Trial Balance Statement Card */}
       {reportType === 'TRIAL' && (
         <Card className="rounded-2xl border-border/80 shadow-none">
-          <CardHeader className="border-b border-border/70 p-5">
+          <CardHeader className="border-border-strong border-border/70 p-5">
             <div className="flex items-center justify-between">
               <div>
                 <CardTitle className="text-base font-bold">Official Trial Balance</CardTitle>
@@ -193,7 +193,7 @@ export default function ReportsClosePage() {
                   Double entry trial balance through {cutoffDate} (INR)
                 </p>
               </div>
-              <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary dark:text-primary">
+              <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary">
                 Balanced (Dr = Cr)
               </span>
             </div>
@@ -258,7 +258,7 @@ export default function ReportsClosePage() {
       {/* P&L View */}
       {reportType === 'PL' && (
         <Card className="rounded-2xl border-border/80 shadow-none p-6 text-xs space-y-4">
-          <div className="border-b border-border/70 pb-4">
+          <div className="border-border-strong border-border/70 pb-4">
             <h3 className="text-base font-bold text-foreground">Profit & Loss Statement (Operating Summary)</h3>
             <p className="text-muted-foreground mt-0.5">For period ending {cutoffDate}</p>
           </div>
@@ -277,7 +277,7 @@ export default function ReportsClosePage() {
                 </div>
                 <div className="flex justify-between border-t pt-2 font-bold text-foreground">
                   <span>Total Income</span>
-                  <span className="text-primary dark:text-primary">₹3,574,000.00</span>
+                  <span className="text-primary">₹3,574,000.00</span>
                 </div>
               </div>
             </div>
@@ -299,7 +299,7 @@ export default function ReportsClosePage() {
                 </div>
                 <div className="flex justify-between border-t pt-2 font-bold text-foreground">
                   <span>Total Expenses</span>
-                  <span className="text-destructive dark:text-destructive">₹2,367,000.00</span>
+                  <span className="text-destructive">₹2,367,000.00</span>
                 </div>
               </div>
             </div>
@@ -315,7 +315,7 @@ export default function ReportsClosePage() {
       {/* Balance Sheet View */}
       {reportType === 'BS' && (
         <Card className="rounded-2xl border-border/80 shadow-none p-6 text-xs space-y-4">
-          <div className="border-b border-border/70 pb-4">
+          <div className="border-border-strong border-border/70 pb-4">
             <h3 className="text-base font-bold text-foreground">Balance Sheet</h3>
             <p className="text-muted-foreground mt-0.5">As of {cutoffDate}</p>
           </div>

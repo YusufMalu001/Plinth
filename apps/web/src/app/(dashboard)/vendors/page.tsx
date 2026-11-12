@@ -47,11 +47,11 @@ import { friendlyErrorMessage } from '../../../features/auth/access-control';
 const statusBadgeStyles: Record<string, { label: string; className: string }> = {
   ACTIVE: {
     label: 'Active',
-    className: 'bg-emerald-500/10 text-emerald-700 border-emerald-500/20 dark:text-emerald-300',
+    className: 'bg-tone-green-bg text-tone-green-text border-tone-green-solid/25',
   },
   APPROVED: {
     label: 'Active',
-    className: 'bg-emerald-500/10 text-emerald-700 border-emerald-500/20 dark:text-emerald-300',
+    className: 'bg-tone-green-bg text-tone-green-text border-tone-green-solid/25',
   },
   PENDING_VALIDATION: {
     label: 'Pending Validation',
@@ -233,7 +233,7 @@ export default function VendorsPage() {
               <Link href="/vendors/new">
                 <Button
                   size="sm"
-                  className="h-9 rounded-lg text-xs font-medium bg-primary hover:bg-[#003c68] text-white shadow-none"
+                  className="h-9 rounded-lg text-xs font-medium bg-primary hover:bg-[color:var(--action-primary-bg-hover)] text-inverse shadow-none"
                   icon={Plus}
                 >
                   Create Vendor
@@ -304,10 +304,10 @@ export default function VendorsPage() {
         </div>
 
         {/* Main Table Card */}
-        <Card className="overflow-hidden border-0 bg-transparent shadow-none">
+        <Card className="overflow-hidden border-accent bg-transparent shadow-none">
           
           {/* Card Header with Filter Controls */}
-          <CardHeader className="flex flex-col gap-3.5 border-0 bg-transparent p-0 pb-4 sm:flex-row sm:items-center sm:justify-between">
+          <CardHeader className="flex flex-col gap-3.5 border-accent bg-transparent p-0 pb-4 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <CardTitle className="text-base font-bold text-foreground flex items-center gap-2">
                 <Building2 className="h-4.5 w-4.5 text-primary" />
@@ -319,7 +319,7 @@ export default function VendorsPage() {
             </div>
 
             {/* Filter and Search Bar */}
-            <div className="flex w-full flex-wrap items-center justify-start gap-2.5 border-0 bg-transparent p-0 sm:w-auto sm:justify-end">
+            <div className="flex w-full flex-wrap items-center justify-start gap-2.5 border-accent bg-transparent p-0 sm:w-auto sm:justify-end">
               {/* Search input */}
               <div className="relative min-w-[240px] flex-1 sm:flex-initial">
                 <Search className="absolute left-3 top-2.5 h-4 w-4 text-muted-foreground" />
@@ -354,7 +354,7 @@ export default function VendorsPage() {
                       role="tab"
                       aria-selected={selected}
                       onClick={() => setStatusFilter(tab.value)}
-                      className={`shrink-0 rounded-md px-3 py-1.5 text-xs font-semibold transition-colors ${selected ? 'bg-primary text-white' : 'text-muted-foreground hover:bg-muted hover:text-foreground'}`}
+                      className={`shrink-0 rounded-md px-3 py-1.5 text-xs font-semibold transition-colors ${selected ? 'bg-primary text-inverse' : 'text-muted-foreground hover:bg-muted hover:text-foreground'}`}
                     >
                       {tab.label}
                     </button>

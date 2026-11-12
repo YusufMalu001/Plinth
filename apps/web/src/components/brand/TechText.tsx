@@ -63,6 +63,10 @@ export interface TechTextProps {
   guides?: boolean;
   className?: string;
   style?: React.CSSProperties;
+  /** Fired whenever the lens "dark phase" moves to a different glyph (-1 = none). */
+  onFocusGlyph?: (index: number) => void;
+  /** When false the canvas ignores all pointer input — the sweep runs undisturbed. */
+  interactive?: boolean;
 }
 
 interface Glyph {
@@ -114,12 +118,19 @@ const TechText = ({
   introDuration = 2,
   guides = false,
   className = '',
-  style
+  style,
+  onFocusGlyph,
+  interactive = true
 }: TechTextProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const settingsRef = useRef<Settings | null>(null);
   const wakeRef = useRef<() => void>(() => {});
+  const onFocusGlyphRef = useRef(onFocusGlyph);
+
+  useEffect(() => {
+    onFocusGlyphRef.current = onFocusGlyph;
+  });
 
   useEffect(() => {
     settingsRef.current = {
@@ -166,6 +177,7 @@ const TechText = ({
     let introKind: Settings['intro'] = 'none';
     let introducing = false;
     let fontsReady = !document.fonts;
+    let reportedFocus = -2;
     let guideAlpha = 0;
     const kicks: Array<{ index: number; at: number; velocity: number }> = [];
     const press = { x: 0, y: 0, time: 0, index: -1 };
@@ -801,6 +813,10 @@ const TechText = ({
       }
 
       const focus = introducing ? typing : dragging >= 0 ? dragging : active ? glyphAt(lens.x, lens.y) : -1;
+      if (focus !== reportedFocus) {
+        reportedFocus = focus;
+        onFocusGlyphRef.current?.(focus);
+      }
       if (focus >= 0 && s.selection) {
         const glyph = glyphs[focus];
         const bx1 = glyph.box.x1 + glyph.offset.x - 6;
@@ -971,12 +987,14 @@ const TechText = ({
       wake();
     };
 
-    container.addEventListener('pointermove', onMove, { passive: true });
-    container.addEventListener('pointerenter', onMove, { passive: true });
-    container.addEventListener('pointerdown', onDown, { passive: true });
-    container.addEventListener('pointerup', onUp, { passive: true });
-    container.addEventListener('pointercancel', onUp, { passive: true });
-    container.addEventListener('pointerleave', onLeave, { passive: true });
+    if (interactive) {
+      container.addEventListener('pointermove', onMove, { passive: true });
+      container.addEventListener('pointerenter', onMove, { passive: true });
+      container.addEventListener('pointerdown', onDown, { passive: true });
+      container.addEventListener('pointerup', onUp, { passive: true });
+      container.addEventListener('pointercancel', onUp, { passive: true });
+      container.addEventListener('pointerleave', onLeave, { passive: true });
+    }
 
     const resizeObserver = new ResizeObserver(resize);
     resizeObserver.observe(container);

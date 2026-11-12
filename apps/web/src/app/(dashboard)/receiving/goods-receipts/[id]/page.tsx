@@ -322,7 +322,7 @@ export default function GrnDetailPage({ params }: PageProps) {
                 <button
                   type="button"
                   onClick={() => setViewMode('details')}
-                  className={`flex items-center gap-1.5 border-b-2 px-1 py-2 transition-colors cursor-pointer ${viewMode === 'details'
+                  className={`flex items-center gap-1.5 border-border-strong-2 px-1 py-2 transition-colors cursor-pointer ${viewMode === 'details'
                       ? 'border-primary text-primary font-bold'
                       : 'text-muted-foreground hover:text-foreground'
                     }`}
@@ -334,7 +334,7 @@ export default function GrnDetailPage({ params }: PageProps) {
                 <button
                   type="button"
                   onClick={() => setViewMode('document')}
-                  className={`flex items-center gap-1.5 border-b-2 px-1 py-2 transition-colors cursor-pointer ${viewMode === 'document'
+                  className={`flex items-center gap-1.5 border-border-strong-2 px-1 py-2 transition-colors cursor-pointer ${viewMode === 'document'
                       ? 'border-primary text-primary font-bold'
                       : 'text-muted-foreground hover:text-foreground'
                     }`}
@@ -359,7 +359,7 @@ export default function GrnDetailPage({ params }: PageProps) {
           </div>
 
           {/* Clean Executive Header Card (Matching PO Detail Page standard) */}
-          <div className="relative border-b border-border bg-background py-4 sm:py-5">
+          <div className="relative border-border-strong border-border bg-background py-4 sm:py-5">
             <div className="flex flex-col gap-4 lg:block">
               <div className="space-y-3">
                 <div className="flex flex-wrap items-center gap-3">
@@ -377,7 +377,7 @@ export default function GrnDetailPage({ params }: PageProps) {
                       title="Copy GRN Number"
                       aria-label="Copy GRN number"
                     >
-                      {copied ? <Check className="h-4 w-4 text-emerald-600" /> : <Copy className="h-4 w-4" />}
+                      {copied ? <Check className="h-4 w-4 text-tone-green-text" /> : <Copy className="h-4 w-4" />}
                     </button>
                   </div>
                   <StatusBadge status={grn.status} className="text-xs px-2.5 py-1 font-bold shadow-none" />
@@ -419,7 +419,7 @@ export default function GrnDetailPage({ params }: PageProps) {
 
                   {grn.verifiedAt && (
                     <div className="flex items-center gap-1.5">
-                      <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0" />
+                      <CheckCircle2 className="h-4 w-4 text-tone-green-text shrink-0" />
                       <span>Verified: <strong className="text-foreground">{formatIndianDate(grn.verifiedAt)}</strong></span>
                     </div>
                   )}
@@ -482,7 +482,7 @@ export default function GrnDetailPage({ params }: PageProps) {
                         size="sm"
                         onClick={() => void handleApproveAndCommit()}
                         disabled={approvalFlowPending || signOff.isPending || finalize.isPending}
-                        className="inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap bg-emerald-600 text-white shadow-none hover:bg-emerald-700"
+                        className="inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap bg-tone-green-solid text-inverse shadow-none hover:bg-[color:var(--tone-green-text)]"
                       >
                         <PackageCheck className="h-3.5 w-3.5" />
                         <span>{approvalFlowPending || signOff.isPending || finalize.isPending ? 'Approving & posting…' : 'Approve & Commit to Inventory'}</span>
@@ -495,7 +495,7 @@ export default function GrnDetailPage({ params }: PageProps) {
                         size="sm"
                         onClick={() => signOff.mutate({ id: grn.id })}
                         disabled={signOff.isPending}
-                        className="inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap bg-emerald-600 text-white shadow-none hover:bg-emerald-700"
+                        className="inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap bg-tone-green-solid text-inverse shadow-none hover:bg-tone-green-solid"
                       >
                         <CheckCircle2 className="h-3.5 w-3.5" />
                         <span>{signOff.isPending ? 'Signing off...' : 'Approve Receiving (Sign-Off)'}</span>
@@ -508,7 +508,7 @@ export default function GrnDetailPage({ params }: PageProps) {
                         size="sm"
                         onClick={() => finalize.mutate({ id: grn.id })}
                         disabled={finalize.isPending}
-                        className="inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap bg-emerald-600 text-white shadow-none hover:bg-emerald-700"
+                        className="inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap bg-tone-green-solid text-inverse shadow-none hover:bg-tone-green-solid"
                       >
                         <PackageCheck className="h-3.5 w-3.5" />
                         <span>{finalize.isPending ? 'Finalizing...' : 'Commit & Post to Inventory'}</span>
@@ -521,7 +521,7 @@ export default function GrnDetailPage({ params }: PageProps) {
           </div>
 
           {/* Quick 4-Stat Metric Strip */}
-          <div className="grid grid-cols-2 divide-x divide-y divide-border border-b border-border lg:grid-cols-4 lg:divide-y-0">
+          <div className="grid grid-cols-2 divide-x divide-y divide-border border-border-strong border-border lg:grid-cols-4 lg:divide-y-0">
             <div className="px-3 py-3 first:pl-0 lg:px-5 lg:py-3">
               <div className="flex items-center justify-between text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
                 <span>Contract Lines</span>
@@ -571,7 +571,7 @@ export default function GrnDetailPage({ params }: PageProps) {
 
             {/* Vendor & Receiving Specifications Card (styled like PO page) */}
             <section className="py-2">
-              <div className="mb-3 flex items-center justify-between border-b border-border pb-2.5">
+              <div className="mb-3 flex items-center justify-between border-border-strong border-border pb-2.5">
                 <div className="flex items-center gap-2">
                   <Building2 className="h-4 w-4 text-primary" />
                   <h2 className="text-sm font-bold tracking-tight text-foreground">
@@ -627,7 +627,7 @@ export default function GrnDetailPage({ params }: PageProps) {
                             ) : (grn as any).jobWorkReceiptReturn?.jobWorkOrder?.orderNumber ? (
                               <Link
                                 href={`/job-work/${(grn as any).jobWorkReceiptReturn.jobWorkOrder.id}`}
-                                className="mt-0.5 block truncate font-mono font-bold text-indigo-600 dark:text-indigo-400 hover:underline"
+                                className="mt-0.5 block truncate font-mono font-bold text-tone-purple-text hover:underline"
                               >
                                 {(grn as any).jobWorkReceiptReturn.jobWorkOrder.orderNumber}
                               </Link>
@@ -653,13 +653,13 @@ export default function GrnDetailPage({ params }: PageProps) {
 
             {physicalVerificationNotes.length > 0 && (
               <section className="border-y border-border py-3">
-                <div className="mb-2.5 flex items-center gap-2 border-b border-border pb-2.5">
+                <div className="mb-2.5 flex items-center gap-2 border-border-strong border-border pb-2.5">
                   <ClipboardCheck className="h-4 w-4 text-primary" />
                   <h2 className="text-xs font-bold uppercase tracking-wider text-foreground">Physical Verification Summary</h2>
                 </div>
                 <div className="space-y-2">
                   {physicalVerificationNotes.map((note, index) => (
-                    <p key={`${index}-${note}`} className="border-b border-border/70 py-2 text-sm leading-relaxed text-foreground last:border-b-0">{note}</p>
+                    <p key={`${index}-${note}`} className="border-border-strong border-border/70 py-2 text-sm leading-relaxed text-foreground last:border-border-strong-0">{note}</p>
                   ))}
                 </div>
               </section>
@@ -701,7 +701,7 @@ export default function GrnDetailPage({ params }: PageProps) {
 
             {/* Delivered Physical Line Items Console */}
             <section className="border-y border-border">
-              <div className="flex flex-col gap-3 border-b border-border py-3 sm:flex-row sm:items-center sm:justify-between">
+              <div className="flex flex-col gap-3 border-border-strong border-border py-3 sm:flex-row sm:items-center sm:justify-between">
                 <div className="flex items-center gap-2.5">
                   <div className="flex h-8 w-8 shrink-0 items-center justify-center text-primary">
                     <Package className="h-4 w-4" />
@@ -720,7 +720,7 @@ export default function GrnDetailPage({ params }: PageProps) {
               <div className="overflow-x-auto">
                 <Table className="w-full min-w-[1240px] table-fixed border-collapse text-left text-sm">
                   <TableHeader>
-                    <TableRow className="border-b border-border bg-muted/40 text-xs uppercase font-bold text-muted-foreground tracking-wider">
+                    <TableRow className="border-border-strong border-border bg-muted/40 text-xs uppercase font-bold text-muted-foreground tracking-wider">
                       <TableHead className="w-12 px-3 py-3.5 text-center font-bold">#</TableHead>
                       <TableHead className="w-[260px] px-4 py-3.5 font-bold">Product / Material</TableHead>
                       <TableHead className="w-20 px-3 py-3.5 text-center font-bold">UOM</TableHead>
@@ -769,7 +769,7 @@ export default function GrnDetailPage({ params }: PageProps) {
                             {line.acceptedQuantity}
                           </TableCell>
 
-                          <TableCell className="px-3 py-4 text-center font-mono text-sm font-semibold tabular-nums text-rose-700 dark:text-rose-400">
+                          <TableCell className="px-3 py-4 text-center font-mono text-sm font-semibold tabular-nums text-tone-red-text">
                             {rejectedDamage}
                           </TableCell>
 
@@ -832,7 +832,7 @@ export default function GrnDetailPage({ params }: PageProps) {
             {/* Unresolved Discrepancies Breakdown (if any) */}
             {openDiscrepancies.length > 0 && (
               <section className="border-y border-border py-4">
-                <div className="mb-1 flex items-center justify-between gap-3 border-b border-border pb-3">
+                <div className="mb-1 flex items-center justify-between gap-3 border-border-strong border-border pb-3">
                   <div className="flex items-center gap-2.5">
                     <AlertTriangle className="h-4 w-4 text-destructive" />
                     <h4 className="text-xs font-bold uppercase tracking-wider text-foreground">
@@ -852,7 +852,7 @@ export default function GrnDetailPage({ params }: PageProps) {
                     return (
                       <div
                         key={disc.id}
-                        className="grid grid-cols-1 gap-1.5 border-b border-border/70 py-3 last:border-b-0 sm:grid-cols-[minmax(150px,0.7fr)_minmax(130px,0.55fr)_minmax(0,2fr)] sm:items-center sm:gap-4"
+                        className="grid grid-cols-1 gap-1.5 border-border-strong border-border/70 py-3 last:border-border-strong-0 sm:grid-cols-[minmax(150px,0.7fr)_minmax(130px,0.55fr)_minmax(0,2fr)] sm:items-center sm:gap-4"
                       >
                         <span className="text-[11px] font-bold uppercase tracking-wider text-destructive">
                           {disc.type.replaceAll('_', ' ')}
@@ -872,10 +872,10 @@ export default function GrnDetailPage({ params }: PageProps) {
 
             {/* Job Work Rework & Replacement Banner */}
             {(grn as any).jobWorkReceiptReturn && grn.lines.some((l) => Number(l.rejectedQuantity || 0) + Number(l.damagedQuantity || 0) > 0) && (
-              <section className="rounded-2xl border border-indigo-200 dark:border-indigo-900/60 bg-indigo-50/50 dark:bg-indigo-950/20 p-4 sm:p-5">
+              <section className="rounded-2xl border border-tone-purple-solid/25 bg-tone-purple-bg p-4 sm:p-5">
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
                   <div className="flex items-start gap-3">
-                    <div className="rounded-xl bg-indigo-500/10 p-2 text-indigo-600 dark:text-indigo-400 mt-0.5">
+                    <div className="rounded-xl bg-tone-purple-bg p-2 text-tone-purple-text mt-0.5">
                       <PackageCheck className="h-5 w-5" />
                     </div>
                     <div>
@@ -887,7 +887,7 @@ export default function GrnDetailPage({ params }: PageProps) {
                       </p>
                     </div>
                   </div>
-                  <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-indigo-500/15 text-indigo-700 dark:text-indigo-300 border border-indigo-500/30 shrink-0">
+                  <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-tone-purple-bg text-tone-purple-text border border-tone-purple-solid/25 shrink-0">
                     Rework Automated
                   </span>
                 </div>
@@ -901,7 +901,7 @@ export default function GrnDetailPage({ params }: PageProps) {
         {viewMode === 'document' && (
           <div className="space-y-4">
             <div className="bg-muted/30 rounded-2xl border border-border p-4 sm:p-8 flex justify-center">
-              <div className="w-full max-w-[850px] bg-white shadow-xl rounded-sm border border-border/40">
+              <div className="w-full max-w-[850px] bg-surface shadow-popover rounded-sm border border-border/40">
                 <GoodsReceiptPDF grn={grn} ref={printRef} />
               </div>
             </div>
@@ -916,8 +916,8 @@ export default function GrnDetailPage({ params }: PageProps) {
           role="dialog"
           aria-modal="true"
         >
-          <div className="w-full max-w-4xl overflow-hidden rounded-2xl border border-border/80 bg-card shadow-2xl animate-in fade-in zoom-in-95 duration-150 flex flex-col max-h-[90vh]">
-            <div className="flex items-center justify-between border-b border-border/70 px-6 py-4 bg-card">
+          <div className="w-full max-w-4xl overflow-hidden rounded-2xl border border-border/80 bg-card shadow-modal animate-in fade-in zoom-in-95 duration-150 flex flex-col max-h-[90vh]">
+            <div className="flex items-center justify-between border-border-strong border-border/70 px-6 py-4 bg-card">
               <div className="flex items-center gap-2.5">
                 <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 text-primary border border-primary/20">
                   <FileText className="h-4 w-4" />
@@ -970,8 +970,8 @@ export default function GrnDetailPage({ params }: PageProps) {
           role="dialog"
           aria-modal="true"
         >
-          <div className="w-full max-w-md overflow-hidden rounded-2xl border border-border/80 bg-card shadow-2xl animate-in fade-in zoom-in-95 duration-150">
-            <div className="flex items-center justify-between border-b border-border/70 px-6 py-4 bg-card">
+          <div className="w-full max-w-md overflow-hidden rounded-2xl border border-border/80 bg-card shadow-modal animate-in fade-in zoom-in-95 duration-150">
+            <div className="flex items-center justify-between border-border-strong border-border/70 px-6 py-4 bg-card">
               <div className="flex items-center gap-2.5">
                 <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 text-primary border border-primary/20">
                   <Scale className="h-4 w-4" />

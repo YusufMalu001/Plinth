@@ -103,7 +103,7 @@ export function PaymentReceiptModal({
                   {viewPayment.paymentType === 'CUSTOMER_RECEIPT' ? 'Receipt Voucher' : 'Payment Voucher'}:{' '}
                   {viewPayment.paymentNumber}
                 </h2>
-                <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-primary dark:text-primary">
+                <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-primary ">
                   {viewPayment.status}
                 </span>
               </div>
@@ -129,7 +129,7 @@ export function PaymentReceiptModal({
               </div>
               <div>
                 <span className="text-muted-foreground">Total Amount:</span>
-                <p className="font-mono font-bold text-muted-foreground dark:text-primary mt-0.5">
+                <p className="font-mono font-bold text-muted-foreground  mt-0.5">
                   {formatCurrency(viewPayment.amount)}
                 </p>
               </div>
@@ -165,7 +165,7 @@ export function PaymentReceiptModal({
                           <TableCell className="p-2.5">{a.documentNumber}</TableCell>
                           <TableCell className="p-2.5">{a.documentDate}</TableCell>
                           <TableCell className="p-2.5 text-right">{formatCurrency(a.originalAmount)}</TableCell>
-                          <TableCell className="p-2.5 text-right font-bold text-primary dark:text-primary">
+                          <TableCell className="p-2.5 text-right font-bold text-primary ">
                             {formatCurrency(a.allocatedAmount)}
                           </TableCell>
                         </TableRow>

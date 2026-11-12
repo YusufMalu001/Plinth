@@ -6,7 +6,7 @@ import { PackageCheck, ArrowRight, ShieldAlert } from 'lucide-react';
 
 export function NoReceivablePosState() {
   return (
-    <div className="flex flex-col items-center justify-center rounded-2xl border-2 border-dashed border-border/80 bg-muted/20 p-8 text-center">
+    <div className="flex flex-col items-center justify-center rounded-2xl border-border border-dashed border-border/80 bg-muted/20 p-8 text-center">
       <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-card text-muted-foreground shadow-xs border border-border">
         <PackageCheck className="h-7 w-7 text-primary" />
       </div>
@@ -48,7 +48,7 @@ export function NoReceivablePosState() {
 export function ReceivingForbiddenState({ message }: { message?: string }) {
   return (
     <main className="flex min-h-[70vh] w-full items-center justify-center p-6">
-      <div className="max-w-md rounded-3xl border border-border/80 bg-card p-8 text-center shadow-xl">
+      <div className="max-w-md rounded-3xl border border-border/80 bg-card p-8 text-center shadow-popover">
         <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-destructive/10 text-destructive border border-destructive/20">
           <ShieldAlert className="h-8 w-8" />
         </div>

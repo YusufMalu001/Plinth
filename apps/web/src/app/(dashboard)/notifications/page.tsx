@@ -162,7 +162,7 @@ export default function NotificationsPage() {
                 <Button
                   variant="default"
                   size="sm"
-                  className="rounded-full shadow-xs bg-primary hover:bg-[#003c68] text-primary-foreground font-semibold text-xs h-9"
+                  className="rounded-full shadow-xs bg-primary hover:bg-[color:var(--action-primary-bg-hover)] text-primary-foreground font-semibold text-xs h-9"
                 >
                   <Plus size={14} className="mr-1.5" />
                   <span>Create Purchase Order</span>
@@ -203,19 +203,19 @@ export default function NotificationsPage() {
             }}
             className={`rounded-xl border p-4 shadow-xs cursor-pointer transition-all ${
               activeTab === 'inventory'
-                ? 'border-amber-400 bg-amber-50/50 dark:bg-amber-950/20 ring-2 ring-amber-400/20'
-                : 'border-border/70 bg-card hover:border-amber-300'
+                ? 'border-tone-amber-solid/25 bg-tone-amber-bg ring-2 ring-tone-amber-solid/25'
+                : 'border-border/70 bg-card hover:border-tone-amber-solid/25'
             }`}
           >
             <div className="flex items-center justify-between">
-              <p className="text-[10px] font-bold uppercase tracking-wider text-amber-600">
+              <p className="text-[10px] font-bold uppercase tracking-wider text-tone-amber-text">
                 Stock Alerts
               </p>
-              <div className="rounded-lg bg-amber-500/10 p-1.5 text-amber-600">
+              <div className="rounded-lg bg-tone-amber-bg p-1.5 text-tone-amber-text">
                 <AlertTriangle size={15} />
               </div>
             </div>
-            <p className="mt-2 text-2xl font-bold tracking-tight text-amber-600">{stockAlertsCount}</p>
+            <p className="mt-2 text-2xl font-bold tracking-tight text-tone-amber-text">{stockAlertsCount}</p>
             <p className="mt-0.5 text-xs text-muted-foreground">Reorder threshold reached</p>
           </div>
 
@@ -225,19 +225,19 @@ export default function NotificationsPage() {
             }}
             className={`rounded-xl border p-4 shadow-xs cursor-pointer transition-all ${
               activeTab === 'approvals'
-                ? 'border-blue-400 bg-blue-50/50 dark:bg-blue-950/20 ring-2 ring-blue-400/20'
-                : 'border-border/70 bg-card hover:border-blue-300'
+                ? 'border-tone-blue-solid/25 bg-tone-blue-bg ring-2 ring-accent-brand'
+                : 'border-border/70 bg-card hover:border-tone-blue-solid/25'
             }`}
           >
             <div className="flex items-center justify-between">
-              <p className="text-[10px] font-bold uppercase tracking-wider text-blue-600">
+              <p className="text-[10px] font-bold uppercase tracking-wider text-tone-blue-text">
                 Approvals
               </p>
-              <div className="rounded-lg bg-blue-500/10 p-1.5 text-blue-600">
+              <div className="rounded-lg bg-tone-blue-bg p-1.5 text-tone-blue-text">
                 <FileCheck2 size={15} />
               </div>
             </div>
-            <p className="mt-2 text-2xl font-bold tracking-tight text-blue-600">{approvalsCount}</p>
+            <p className="mt-2 text-2xl font-bold tracking-tight text-tone-blue-text">{approvalsCount}</p>
             <p className="mt-0.5 text-xs text-muted-foreground">Requisitions & orders</p>
           </div>
 
@@ -269,7 +269,7 @@ export default function NotificationsPage() {
           {/* Left Column: ERP Modules & Sections (Module Hub) */}
           <aside className="lg:col-span-4 xl:col-span-4 space-y-4">
             <Card className="rounded-2xl border border-border/80 p-4 shadow-xs bg-card">
-              <div className="flex items-center justify-between pb-3 border-b border-border/70">
+              <div className="flex items-center justify-between pb-3 border-border-strong border-border/70">
                 <div className="flex items-center gap-2">
                   <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-primary/10 text-primary">
                     <LayoutGrid size={15} />
@@ -303,7 +303,7 @@ export default function NotificationsPage() {
                       <span
                         className={`flex h-5 min-w-5 items-center justify-center rounded-full px-1.5 text-[10px] font-bold ${
                           activeModule === 'all'
-                            ? 'bg-white text-primary'
+                            ? 'bg-surface text-primary'
                             : 'bg-primary/10 text-primary'
                         }`}
                       >
@@ -334,7 +334,7 @@ export default function NotificationsPage() {
                           {sectionTitle}
                         </span>
                         {secStat.unread > 0 && (
-                          <span className="rounded-md bg-amber-500/10 border border-amber-500/20 px-1.5 py-0.2 text-[9px] font-bold text-amber-600 dark:text-amber-400">
+                          <span className="rounded-md bg-tone-amber-bg border border-tone-amber-solid/25 px-1.5 py-0.2 text-[9px] font-bold text-tone-amber-text">
                             {secStat.unread} unread
                           </span>
                         )}
@@ -354,7 +354,7 @@ export default function NotificationsPage() {
                               onClick={() => setActiveModule(mod.id)}
                               className={`group w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold transition-all ${
                                 isSelected
-                                  ? 'bg-[#004a80] text-white shadow-xs font-bold'
+                                  ? 'bg-action text-inverse shadow-xs font-bold'
                                   : 'text-foreground hover:bg-muted/60'
                               }`}
                             >
@@ -362,7 +362,7 @@ export default function NotificationsPage() {
                                 <div
                                   className={`p-1 rounded-lg shrink-0 ${
                                     isSelected
-                                      ? 'text-white'
+                                      ? 'text-inverse'
                                       : 'text-muted-foreground group-hover:text-foreground'
                                   }`}
                                 >
@@ -377,8 +377,8 @@ export default function NotificationsPage() {
                                   <span
                                     className={`flex h-4 min-w-4 items-center justify-center rounded-full px-1 text-[9px] font-bold ${
                                       isSelected
-                                        ? 'bg-white text-[#004a80]'
-                                        : 'bg-primary text-white shadow-2xs'
+                                        ? 'bg-surface text-link'
+                                        : 'bg-primary text-inverse shadow-2xs'
                                     }`}
                                     title={`${modStat.unread} remaining to view`}
                                   >
@@ -387,7 +387,7 @@ export default function NotificationsPage() {
                                 )}
                                 <span
                                   className={`text-[10px] ${
-                                    isSelected ? 'text-white/80' : 'text-muted-foreground'
+                                    isSelected ? 'text-inverse/80' : 'text-muted-foreground'
                                   }`}
                                 >
                                   {modStat.total}
@@ -395,7 +395,7 @@ export default function NotificationsPage() {
                                 <ChevronRight
                                   size={12}
                                   className={`transition-transform ${
-                                    isSelected ? 'text-white translate-x-0.5' : 'text-muted-foreground/50'
+                                    isSelected ? 'text-inverse translate-x-0.5' : 'text-muted-foreground/50'
                                   }`}
                                 />
                               </div>
@@ -589,13 +589,13 @@ export default function NotificationsPage() {
                         <div
                           className={`h-10 w-10 shrink-0 rounded-2xl flex items-center justify-center border ${
                             isStockAlert
-                              ? 'bg-amber-500/10 text-amber-600 border-amber-500/20'
+                              ? 'bg-tone-amber-bg text-tone-amber-text border-tone-amber-solid/25'
                               : notification.type === 'sales'
-                                ? 'bg-indigo-500/10 text-indigo-600 border-indigo-500/20'
+                                ? 'bg-tone-purple-bg text-tone-purple-text border-tone-purple-solid/25'
                                 : notification.type === 'approval'
-                                ? 'bg-blue-500/10 text-blue-600 border-blue-500/20'
+                                ? 'bg-tone-blue-bg text-tone-blue-text border-tone-blue-solid/25'
                                 : notification.type === 'receipt'
-                                  ? 'bg-emerald-500/10 text-emerald-600 border-emerald-500/20'
+                                  ? 'bg-tone-green-bg text-tone-green-text border-tone-green-solid/25'
                                   : 'bg-primary/10 text-primary border-primary/20'
                           }`}
                         >
@@ -626,15 +626,15 @@ export default function NotificationsPage() {
                               <span
                                 className={`rounded-md px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider ${
                                   isStockAlert
-                                    ? 'bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20'
+                                    ? 'bg-tone-amber-bg text-tone-amber-text border border-tone-amber-solid/25'
                                     : notification.type === 'sales'
-                                      ? 'bg-indigo-500/10 text-indigo-700 dark:text-indigo-400 border border-indigo-500/20'
+                                      ? 'bg-tone-purple-bg text-tone-purple-text border border-tone-purple-solid/25'
                                       : notification.type === 'approval'
-                                        ? 'bg-blue-500/10 text-blue-700 dark:text-blue-400 border border-blue-500/20'
+                                        ? 'bg-tone-blue-bg text-tone-blue-text border border-tone-blue-solid/25'
                                         : notification.type === 'receipt'
-                                          ? 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20'
+                                          ? 'bg-tone-green-bg text-tone-green-text border border-tone-green-solid/25'
                                           : notification.category === 'intelligence'
-                                            ? 'bg-violet-500/10 text-violet-700 dark:text-violet-400 border border-violet-500/20'
+                                            ? 'bg-tone-purple-bg text-tone-purple-text border border-tone-purple-solid/25'
                                           : 'bg-muted text-muted-foreground'
                                 }`}
                               >
@@ -684,8 +684,8 @@ export default function NotificationsPage() {
                                     size="sm"
                                     className={`rounded-xl shadow-xs font-semibold text-xs h-8 px-3.5 ${
                                       isStockAlert
-                                        ? 'bg-primary hover:bg-[#003c68] text-primary-foreground'
-                                        : 'bg-slate-900 hover:bg-slate-800 text-white dark:bg-slate-100 dark:text-slate-900'
+                                        ? 'bg-primary hover:bg-action text-primary-foreground'
+                                        : 'bg-inverse hover:bg-[color:var(--action-primary-bg-hover)] text-inverse'
                                     }`}
                                   >
                                     {isStockAlert ? <Plus size={13} className="mr-1" /> : null}

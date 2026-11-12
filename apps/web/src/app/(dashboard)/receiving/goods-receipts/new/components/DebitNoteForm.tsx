@@ -33,8 +33,8 @@ export function DebitNoteForm({
 
   if (isCreated) {
     return (
-      <div className="flex items-center gap-3 rounded-2xl border border-emerald-500/20 bg-emerald-500/10 p-4.5 text-xs text-emerald-950 dark:text-emerald-100 shadow-xs">
-        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-emerald-600 text-white shadow-xs">
+      <div className="flex items-center gap-3 rounded-2xl border border-tone-green-solid/25 bg-tone-green-bg p-4.5 text-xs text-tone-green-text shadow-xs">
+        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-tone-green-solid text-inverse shadow-xs">
           <Check size={18} className="stroke-[2.5]" />
         </div>
         <div className="min-w-0 flex-1">
@@ -58,7 +58,7 @@ export function DebitNoteForm({
       className="overflow-hidden rounded-2xl border border-border/80 bg-card p-5 shadow-xs space-y-4"
     >
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 border-b border-border/70 pb-3">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 border-border-strong border-border/70 pb-3">
         <div className="flex items-center gap-2.5">
           <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary border border-primary/20">
             <FileSpreadsheet size={16} />

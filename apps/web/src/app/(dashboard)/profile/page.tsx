@@ -49,7 +49,7 @@ export default function ProfilePage() {
   if (!user) {
     return (
       <div className="p-8 flex items-center justify-center h-64 w-full flex-1">
-        <div className="animate-spin w-6 h-6 border-2 border-primary border-t-transparent rounded-full" />
+        <div className="animate-spin w-6 h-6 border-border border-primary border-t-transparent rounded-full" />
       </div>
     )
   }
@@ -114,7 +114,7 @@ export default function ProfilePage() {
                 </Button>
               ) : (
                 <div className="flex gap-2 w-full">
-                  <Button onClick={handleSave} disabled={isSaving} size="sm" className="flex-1 bg-emerald-600 text-white hover:bg-emerald-700 font-semibold shadow-sm">
+                  <Button onClick={handleSave} disabled={isSaving} size="sm" className="flex-1 bg-tone-green-solid text-inverse hover:bg-[color:var(--tone-green-text)] font-semibold shadow-sm">
                     {isSaving ? "Saving..." : <><Check className="w-4 h-4 mr-1.5" /> Save</>}
                   </Button>
                   <Button onClick={() => {
@@ -142,12 +142,12 @@ export default function ProfilePage() {
         </Card>
 
         {/* Tabs */}
-        <div className="flex items-center border-b border-border overflow-x-auto no-scrollbar">
+        <div className="flex items-center border-border-strong border-border overflow-x-auto no-scrollbar">
           {tabs.map(tab => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`px-5 py-3 text-sm font-bold whitespace-nowrap border-b-2 transition-all ${
+              className={`px-5 py-3 text-sm font-bold whitespace-nowrap border-border-strong-2 transition-all ${
                 activeTab === tab
                   ? "border-primary text-primary bg-primary/5"
                   : "border-transparent text-muted-foreground hover:text-foreground hover:bg-muted/50"
@@ -165,7 +165,7 @@ export default function ProfilePage() {
               
               {/* Basic Info */}
               <Card className="rounded-xl border border-border bg-card shadow-sm overflow-hidden p-0">
-                <div className="bg-muted/30 px-6 py-4 border-b border-border flex justify-between items-center cursor-pointer hover:bg-muted/50 transition-colors">
+                <div className="bg-muted/30 px-6 py-4 border-border-strong border-border flex justify-between items-center cursor-pointer hover:bg-muted/50 transition-colors">
                   <h3 className="text-sm font-bold text-foreground">Basic Information</h3>
                   <ChevronDown className="w-4 h-4 text-muted-foreground" />
                 </div>
@@ -217,7 +217,7 @@ export default function ProfilePage() {
 
               {/* Work Info */}
               <Card className="rounded-xl border border-border bg-card shadow-sm overflow-hidden p-0">
-                <div className="bg-muted/30 px-6 py-4 border-b border-border flex justify-between items-center cursor-pointer hover:bg-muted/50 transition-colors">
+                <div className="bg-muted/30 px-6 py-4 border-border-strong border-border flex justify-between items-center cursor-pointer hover:bg-muted/50 transition-colors">
                   <h3 className="text-sm font-bold text-foreground">Work Details</h3>
                   <ChevronDown className="w-4 h-4 text-muted-foreground" />
                 </div>
@@ -246,8 +246,8 @@ export default function ProfilePage() {
                   </div>
                   <div className="flex flex-col gap-1.5">
                     <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Status</span>
-                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-600 w-fit">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1.5"></span>
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-tone-green-bg text-tone-green-text w-fit">
+                      <span className="w-1.5 h-1.5 rounded-full bg-tone-green-solid mr-1.5"></span>
                       {user.employeeStatus || "Active"}
                     </span>
                   </div>
@@ -258,7 +258,7 @@ export default function ProfilePage() {
           )}
           
           {activeTab !== "General Info" && (
-            <div className="p-16 text-center border-2 border-dashed border-border rounded-xl bg-muted/10 flex flex-col items-center justify-center">
+            <div className="p-16 text-center border-border border-dashed border-border rounded-xl bg-muted/10 flex flex-col items-center justify-center">
               <div className="w-12 h-12 bg-muted rounded-full flex items-center justify-center mb-4">
                 <ChevronDown className="w-6 h-6 text-muted-foreground" />
               </div>

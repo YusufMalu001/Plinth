@@ -51,7 +51,7 @@ export function PeriodCloseModal({ isOpen, onClose, period, onClosePeriod }: Per
               <h2 className="text-xl font-bold tracking-tight text-foreground">
                 Period Close Checklist: {period.code}
               </h2>
-              <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-primary dark:text-primary">
+              <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-primary ">
                 {period.fiscalYear}
               </span>
             </div>
@@ -125,7 +125,7 @@ export function PeriodCloseModal({ isOpen, onClose, period, onClosePeriod }: Per
             ))}
           </div>
 
-          <div className="rounded-xl border border-border bg-muted/40 p-3.5 text-xs text-foreground dark:text-muted-foreground">
+          <div className="rounded-xl border border-border bg-muted/40 p-3.5 text-xs text-foreground ">
             <p className="font-semibold flex items-center gap-1.5">
               <Lock className="h-4 w-4" />
               Period Lock Effect

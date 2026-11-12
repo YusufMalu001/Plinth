@@ -54,7 +54,7 @@ export function ProductStockTelemetry({ product, stocks }: ProductStockTelemetry
           </div>
           <div className="mt-1.5 flex items-center justify-between text-[11px] text-muted-foreground border-t border-border/50 pt-1.5 font-medium">
             <span>On-Hand: {totalOnHand}</span>
-            <span className="text-amber-600 dark:text-amber-400">Allocated: {totalReserved}</span>
+            <span className="text-tone-amber-text">Allocated: {totalReserved}</span>
           </div>
         </div>
       </div>
@@ -65,7 +65,7 @@ export function ProductStockTelemetry({ product, stocks }: ProductStockTelemetry
           <span className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
             {isRawMaterial ? 'Cost Price' : 'Assumed Selling Price (B2C/Net)'}
           </span>
-          <div className="rounded-md bg-emerald-500/10 p-1.5 text-emerald-600 dark:text-emerald-400">
+          <div className="rounded-md bg-tone-green-bg p-1.5 text-tone-green-text">
             <BadgeDollarSign className="h-4 w-4" />
           </div>
         </div>
@@ -96,8 +96,8 @@ export function ProductStockTelemetry({ product, stocks }: ProductStockTelemetry
           <div
             className={`rounded-md p-1.5 ${
               isLowStock
-                ? 'bg-amber-500/10 text-amber-600 dark:text-amber-400'
-                : 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400'
+                ? 'bg-tone-amber-bg text-tone-amber-text'
+                : 'bg-tone-green-bg text-tone-green-text'
             }`}
           >
             {isLowStock ? <AlertTriangle className="h-4 w-4" /> : <CheckCircle2 className="h-4 w-4" />}
@@ -107,7 +107,7 @@ export function ProductStockTelemetry({ product, stocks }: ProductStockTelemetry
           <div className="flex items-center gap-1.5">
             <span
               className={`h-2.5 w-2.5 rounded-full ${
-                isLowStock ? 'bg-amber-500 animate-pulse' : 'bg-emerald-500'
+                isLowStock ? 'bg-tone-amber-bg animate-pulse' : 'bg-tone-green-bg'
               }`}
             />
             <span className="text-lg font-bold text-foreground">

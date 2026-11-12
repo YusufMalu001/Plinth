@@ -472,7 +472,7 @@ export default function PODetailPage({ params }: PageProps) {
                   className="p-1 text-muted-foreground hover:text-foreground rounded transition-colors"
                   title="Copy PO Number"
                 >
-                  {copied ? <Check className="h-3.5 w-3.5 text-emerald-600" /> : <Copy className="h-3.5 w-3.5" />}
+                  {copied ? <Check className="h-3.5 w-3.5 text-tone-green-text" /> : <Copy className="h-3.5 w-3.5" />}
                 </button>
               </span>
             </nav>
@@ -652,11 +652,11 @@ export default function PODetailPage({ params }: PageProps) {
           <div className="space-y-5">
             <form id="po-inline-edit-form" onSubmit={onSaveSubmit}>
               <section className="overflow-hidden rounded-xl border border-border bg-card shadow-2xs">
-                <div className="border-b border-border bg-primary/[0.04] px-5 py-4">
+                <div className="border-border-strong border-border bg-primary/[0.04] px-5 py-4">
                   <h2 className="text-sm font-bold uppercase tracking-wide text-foreground">Purchase Order Details</h2>
                 </div>
                 <div className="overflow-x-auto">
-                  <Table className="w-full min-w-[760px] table-fixed text-sm [&_th]:border-r [&_th]:border-border [&_th]:bg-muted/60 [&_th]:px-4 [&_th]:py-4 [&_th]:text-left [&_th]:text-[11px] [&_th]:font-bold [&_th]:uppercase [&_th]:tracking-wide [&_th]:text-foreground [&_td]:px-4 [&_td]:py-4 [&_td]:align-middle [&_tr]:border-b [&_tr]:border-border/80">
+                  <Table className="w-full min-w-[760px] table-fixed text-sm [&_th]:border-r [&_th]:border-border [&_th]:bg-muted/60 [&_th]:px-4 [&_th]:py-4 [&_th]:text-left [&_th]:text-[11px] [&_th]:font-bold [&_th]:uppercase [&_th]:tracking-wide [&_th]:text-foreground [&_td]:px-4 [&_td]:py-4 [&_td]:align-middle [&_tr]:border-border-strong [&_tr]:border-border/80">
                     <colgroup><col style={{ width: '20%' }} /><col style={{ width: '30%' }} /><col style={{ width: '20%' }} /><col style={{ width: '30%' }} /></colgroup>
                     <TableBody>
                       <TableRow>
@@ -707,7 +707,7 @@ export default function PODetailPage({ params }: PageProps) {
 
               {/* Order Lines Table / Editor */}
               <div className="rounded-2xl border border-border bg-card overflow-hidden shadow-2xs">
-                <div className="flex items-center justify-between bg-muted/40 px-5 py-3.5 border-b border-border">
+                <div className="flex items-center justify-between bg-muted/40 px-5 py-3.5 border-border-strong border-border">
                   <div className="flex items-center gap-2">
                     <Package className="h-4 w-4 text-primary" />
                     <h2 className="text-xs font-bold uppercase tracking-wider text-foreground">
@@ -738,9 +738,9 @@ export default function PODetailPage({ params }: PageProps) {
                   )}
                 </div>
 
-                {isEditing && !isDraftStatus && <div className="border-b border-border p-4"><label className="mb-1 block text-[11px] font-bold uppercase tracking-wide text-muted-foreground">Reason for revision</label><Input {...register('reason')} placeholder="Reason for this revision" /></div>}
+                {isEditing && !isDraftStatus && <div className="border-border-strong border-border p-4"><label className="mb-1 block text-[11px] font-bold uppercase tracking-wide text-muted-foreground">Reason for revision</label><Input {...register('reason')} placeholder="Reason for this revision" /></div>}
                 {isEditing && isDraftStatus && supplierValidationErrors.length > 0 && <div role="alert" className="m-4 rounded-lg border border-destructive/30 bg-destructive/5 px-3 py-2 text-xs text-destructive"><p className="font-semibold">Resolve supplier and item mismatches before saving:</p><ul className="mt-1 list-inside list-disc">{supplierValidationErrors.map((message) => <li key={message}>{message}</li>)}</ul>{areSupplierCapabilitiesLoading && <p className="mt-1">Loading supplier catalog…</p>}</div>}
-                {isEditing && isDraftStatus && po.lines.some((line) => Number(line.unitPrice) <= 0 && line.pricingEvidence?.decisionReason?.includes('zero placeholder rate')) && <div className="m-4 rounded-lg border border-amber-300 bg-amber-50 px-3 py-2 text-xs text-amber-950">Hermes could not find a defensible rate for this item. Enter and save the agreed unit rate below before approving the PO.</div>}
+                {isEditing && isDraftStatus && po.lines.some((line) => Number(line.unitPrice) <= 0 && line.pricingEvidence?.decisionReason?.includes('zero placeholder rate')) && <div className="m-4 rounded-lg border border-tone-amber-solid/25 bg-tone-amber-solid px-3 py-2 text-xs text-tone-amber-text">Hermes could not find a defensible rate for this item. Enter and save the agreed unit rate below before approving the PO.</div>}
                 <div className="overflow-x-auto">
                   <Table className="w-full min-w-[1000px] table-fixed text-left text-xs border-collapse">
                     <colgroup>
@@ -800,7 +800,7 @@ export default function PODetailPage({ params }: PageProps) {
         {viewMode === 'document' && (
           <div className="space-y-4">
             <div className="rounded-2xl border border-border bg-muted/30 p-2 sm:p-4 shadow-inner flex items-start justify-center">
-              <div className="w-full max-w-[850px] bg-white shadow-2xl rounded-sm border border-border/40">
+              <div className="w-full max-w-[850px] bg-surface shadow-modal rounded-sm border border-border/40">
                 <PurchaseOrderPDF po={po as unknown as React.ComponentProps<typeof PurchaseOrderPDF>['po']} ref={printRef} />
               </div>
             </div>

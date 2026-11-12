@@ -385,10 +385,10 @@ function InventoryPageContent() {
                     const hasQualityHold = (row.conditions ?? []).some((condition) => ['QUARANTINED', 'DAMAGED', 'REJECTED'].includes(condition));
                     const stockState = hasQualityHold ? 'QC HOLD' : onHand <= 0 ? 'ZERO STOCK' : 'IN STOCK';
                     const stockStateClass = stockState === 'QC HOLD'
-                      ? 'bg-rose-500/10 text-rose-700 dark:text-rose-400 border-rose-500/20'
+                      ? 'bg-tone-red-bg text-tone-red-text border-tone-red-solid/25'
                       : stockState === 'IN STOCK'
-                        ? 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border-emerald-500/20'
-                        : 'bg-amber-500/10 text-amber-700 dark:text-amber-400 border-amber-500/20';
+                        ? 'bg-tone-green-bg text-tone-green-text border-tone-green-solid/25'
+                        : 'bg-tone-amber-bg text-tone-amber-text border-tone-amber-solid/25';
 
                     const itemHref = isProduct ? `/products/${row.itemId}` : `/inventory/materials/${row.itemId}`;
 

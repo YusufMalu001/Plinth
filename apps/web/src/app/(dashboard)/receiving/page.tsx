@@ -31,10 +31,10 @@ export default function ReceivingControlCenter() {
   if (!data) return <ErrorState error={new Error('Receiving dashboard is unavailable.')} retry={refetch} />;
 
   const cards = [
-    { label: 'Arrivals to verify', value: data.metrics.arrived + data.metrics.verifying, hint: `${data.metrics.arrived} not started`, icon: ClipboardCheck, tone: 'text-blue-600 bg-blue-500/10', href: '/receiving/goods-receipts?status=UNDER_VERIFICATION' },
-    { label: 'Discrepancies', value: data.metrics.discrepancies, hint: 'Resolution blocks sign-off', icon: AlertTriangle, tone: 'text-rose-600 bg-rose-500/10', href: '/receiving/goods-receipts?status=DISCREPANCY_PENDING' },
-    { label: 'Awaiting sign-off', value: data.metrics.awaitingSignOff, hint: 'Verified by store team', icon: ShieldCheck, tone: 'text-amber-600 bg-amber-500/10', href: '/receiving/goods-receipts?status=VERIFIED' },
-    { label: 'Ready to post', value: data.metrics.awaitingFinalize, hint: `${data.metrics.finalizedToday} finalized today`, icon: PackageCheck, tone: 'text-emerald-600 bg-emerald-500/10', href: '/receiving/goods-receipts?status=SIGNED_OFF' },
+    { label: 'Arrivals to verify', value: data.metrics.arrived + data.metrics.verifying, hint: `${data.metrics.arrived} not started`, icon: ClipboardCheck, tone: 'text-tone-blue-text bg-tone-blue-bg', href: '/receiving/goods-receipts?status=UNDER_VERIFICATION' },
+    { label: 'Discrepancies', value: data.metrics.discrepancies, hint: 'Resolution blocks sign-off', icon: AlertTriangle, tone: 'text-tone-red-text bg-tone-red-bg', href: '/receiving/goods-receipts?status=DISCREPANCY_PENDING' },
+    { label: 'Awaiting sign-off', value: data.metrics.awaitingSignOff, hint: 'Verified by store team', icon: ShieldCheck, tone: 'text-tone-amber-text bg-tone-amber-bg', href: '/receiving/goods-receipts?status=VERIFIED' },
+    { label: 'Ready to post', value: data.metrics.awaitingFinalize, hint: `${data.metrics.finalizedToday} finalized today`, icon: PackageCheck, tone: 'text-tone-green-text bg-tone-green-bg', href: '/receiving/goods-receipts?status=SIGNED_OFF' },
   ];
 
   const actionLabel = (status: string) => status === 'ARRIVED' || status === 'UNDER_VERIFICATION'
@@ -49,8 +49,8 @@ export default function ReceivingControlCenter() {
         actions={data.capabilities.receive ? <Link href="/receiving/goods-receipts/new"><Button size="sm" className="font-semibold bg-primary hover:bg-primary/90 text-primary-foreground shadow-sm">Register incoming shipment</Button></Link> : undefined}
       />
 
-      <Card className="overflow-hidden border-primary/15 bg-gradient-to-br from-card via-card to-primary/5 p-0 shadow-xs rounded-2xl w-full">
-        <div className="flex items-center justify-between border-b border-border/80 px-6 py-4">
+      <Card className="overflow-hidden border-primary/15 bg-surface p-0 shadow-xs rounded-2xl w-full">
+        <div className="flex items-center justify-between border-border-strong border-border/80 px-6 py-4">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary">Governed receiving workflow</p>
             <h2 className="mt-1 text-lg font-bold text-foreground">Arrival to auditable stock posting</h2>
@@ -101,7 +101,7 @@ export default function ReceivingControlCenter() {
 
       <div className="grid gap-6 xl:grid-cols-[1.25fr_.75fr] w-full">
         <Card className="overflow-hidden p-0 shadow-xs rounded-2xl border border-border/80 bg-card">
-          <div className="flex items-center justify-between border-b border-border/80 px-5 py-4">
+          <div className="flex items-center justify-between border-border-strong border-border/80 px-5 py-4">
             <div>
               <h2 className="font-bold text-foreground text-base">My action queue</h2>
               <p className="text-xs text-muted-foreground">Oldest open receiving work first</p>
@@ -119,7 +119,7 @@ export default function ReceivingControlCenter() {
                     <span className="font-mono text-sm font-bold text-foreground">{grn.grnNumber}</span>
                     <StatusBadge status={grn.status} />
                     {grn.isUnreferenced && (
-                      <span className="rounded-full bg-amber-500/10 border border-amber-500/20 px-2 py-0.5 text-[10px] font-bold text-amber-700 dark:text-amber-400">
+                      <span className="rounded-full bg-tone-amber-bg border border-tone-amber-solid/25 px-2 py-0.5 text-[10px] font-bold text-tone-amber-text">
                         No PO
                       </span>
                     )}
@@ -136,7 +136,7 @@ export default function ReceivingControlCenter() {
             ))}
             {!data.actionQueue.length && (
               <div className="p-10 text-center">
-                <CheckCircle2 className="mx-auto h-8 w-8 text-emerald-500" />
+                <CheckCircle2 className="mx-auto h-8 w-8 text-tone-green-text" />
                 <p className="mt-3 text-sm font-bold text-foreground">Receiving queue is clear</p>
                 <p className="mt-1 text-xs text-muted-foreground">New arrivals will appear here automatically.</p>
               </div>
@@ -145,7 +145,7 @@ export default function ReceivingControlCenter() {
         </Card>
 
         <Card className="overflow-hidden p-0 shadow-xs rounded-2xl border border-border/80 bg-card">
-          <div className="border-b border-border/80 px-5 py-4">
+          <div className="border-border-strong border-border/80 px-5 py-4">
             <h2 className="font-bold text-foreground text-base">Recently posted</h2>
             <p className="text-xs text-muted-foreground">Accepted quantity handed to inventory</p>
           </div>
@@ -160,7 +160,7 @@ export default function ReceivingControlCenter() {
                       {grn.vendor?.name || 'Unknown vendor'} · <span className="font-semibold text-foreground">{quantity.toLocaleString()}</span> accepted
                     </p>
                   </div>
-                  <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
+                  <CheckCircle2 className="h-4 w-4 text-tone-green-text shrink-0" />
                 </Link>
               );
             })}

@@ -45,7 +45,7 @@ export function PoSummaryCard({ po }: PoSummaryCardProps) {
   return (
     <div className="relative overflow-hidden rounded-2xl border border-primary/25 bg-card p-5 shadow-xs transition-all duration-200">
       {/* Ambient Gradient Header Mesh */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-primary/[0.06] to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-28 bg-transparent" />
 
       {/* Top Header */}
       <div className="relative flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
@@ -54,16 +54,16 @@ export function PoSummaryCard({ po }: PoSummaryCardProps) {
             <span className="text-[10px] font-bold uppercase tracking-wider text-primary">
               Contract Baseline
             </span>
-            <span className="flex items-center gap-1 rounded-full bg-emerald-500/10 px-2.5 py-0.5 text-[10px] font-bold text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+            <span className="flex items-center gap-1 rounded-full bg-tone-green-bg px-2.5 py-0.5 text-[10px] font-bold text-tone-green-text border border-tone-green-solid/25">
+              <span className="h-1.5 w-1.5 rounded-full bg-tone-green-solid animate-pulse" />
               {po.status.replaceAll('_', ' ')}
             </span>
             {isOutsourcedPo ? (
-              <span className="rounded-full bg-purple-500/15 px-2.5 py-0.5 text-[10px] font-black text-purple-700 dark:text-purple-300 border border-purple-500/30">
+              <span className="rounded-full bg-tone-purple-bg px-2.5 py-0.5 text-[10px] font-black text-tone-purple-text border border-tone-purple-solid/25">
                 Type: Outsourced
               </span>
             ) : (
-              <span className="rounded-full bg-blue-500/10 px-2.5 py-0.5 text-[10px] font-bold text-blue-600 dark:text-blue-400 border border-blue-500/20">
+              <span className="rounded-full bg-tone-blue-bg px-2.5 py-0.5 text-[10px] font-bold text-tone-blue-text border border-tone-blue-solid/25">
                 Type: Standard Procurement
               </span>
             )}
@@ -80,7 +80,7 @@ export function PoSummaryCard({ po }: PoSummaryCardProps) {
               className="rounded-lg p-1 text-muted-foreground transition hover:bg-muted hover:text-foreground cursor-pointer"
             >
               {copied ? (
-                <Check className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
+                <Check className="h-4 w-4 text-tone-green-text" />
               ) : (
                 <Copy className="h-4 w-4" />
               )}

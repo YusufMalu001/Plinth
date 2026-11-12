@@ -3870,11 +3870,11 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
 
   return (
     <>
-      <div className="flex-1 p-4 sm:p-6 lg:p-8 overflow-y-auto bg-slate-50/60 dark:bg-slate-950 min-h-screen">
+      <div className="flex-1 p-4 sm:p-6 lg:p-8 overflow-y-auto bg-muted min-h-screen">
         <div className="w-full max-w-[1780px] mx-auto space-y-6">
 
           {/* 1. COMPACT TOP HEADER & NAVIGATION */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-2 border-b border-slate-200/80 dark:border-slate-800">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-2 border-b border-border">
             <div>
               <nav className="flex items-center gap-2 text-xs text-muted-foreground mb-1">
                 <Link href="/products" className="hover:text-primary transition-colors text-xs font-semibold">
@@ -3882,7 +3882,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                 </Link>
                 {hierarchyCrumb && (
                   <>
-                    <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
+                    <ChevronRight className="w-3.5 h-3.5 text-ink-placeholder" />
                     <Link
                       href={hierarchyCrumb.href}
                       className="hover:text-primary transition-colors text-xs font-semibold"
@@ -3891,13 +3891,13 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                     </Link>
                   </>
                 )}
-                <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
-                <span className="font-bold text-foreground text-xs bg-slate-200/60 dark:bg-slate-800 px-2 py-0.5 rounded-md">
+                <ChevronRight className="w-3.5 h-3.5 text-ink-placeholder" />
+                <span className="font-bold text-foreground text-xs bg-active px-2 py-0.5 rounded-md">
                   {isEditMode ? 'Edit Inventory' : 'Create Inventory'}
                 </span>
               </nav>
               <div className="flex items-center gap-2.5">
-                <h1 className="text-xl font-black text-slate-900 dark:text-white tracking-tight font-manrope">
+                <h1 className="text-xl font-black text-ink tracking-tight font-manrope">
                   {isEditMode ? 'Edit Inventory' : 'Create Inventory'}
                 </h1>
                 {form.sku && isCustomSku(form.sku) && (
@@ -3906,8 +3906,8 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                   </span>
                 )}
                 {!isEditMode && draftSavedAt && (
-                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20">
-                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold bg-tone-green-bg text-tone-green-text border border-tone-green-solid">
+                    <span className="h-1.5 w-1.5 rounded-full bg-tone-green-bg animate-pulse" />
                     <span>Draft auto-saved</span>
                   </span>
                 )}
@@ -3919,7 +3919,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                 variant="outline"
                 size="sm"
                 onClick={handleBack}
-                className="h-10 rounded-xl text-xs font-bold px-4 border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800"
+                className="h-10 rounded-xl text-xs font-bold px-4 border-border hover:bg-muted"
                 icon={ArrowLeft}
               >
                 Back to Inventory
@@ -3954,7 +3954,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                     setMrp('');
                     setMeasurementVariants([createEmptyMeasurementVariant()]);
                   }}
-                  className="h-10 rounded-xl text-xs font-bold px-4 text-muted-foreground hover:text-foreground border-slate-200 dark:border-slate-800"
+                  className="h-10 rounded-xl text-xs font-bold px-4 text-muted-foreground hover:text-foreground border-border"
                   icon={RotateCcw}
                 >
                   Reset
@@ -3964,9 +3964,9 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
           </div>
           {/* RESTORED DRAFT NOTICE BANNER */}
           {!isEditMode && isDraftRestored && draftSavedAt && (
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3.5 rounded-xl bg-blue-50/80 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800 text-xs text-blue-800 dark:text-blue-300 shadow-2xs">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3.5 rounded-xl bg-tone-blue-bg border border-tone-blue-solid/25 text-xs text-tone-blue-text shadow-2xs">
               <div className="flex items-center gap-2.5">
-                <Sparkles className="h-4 w-4 text-blue-600 dark:text-blue-400 shrink-0" />
+                <Sparkles className="h-4 w-4 text-tone-blue-text shrink-0" />
                 <span>
                   <strong>Resumed Product Draft:</strong> Auto-saved progress restored from{' '}
                   <span className="font-semibold">{new Date(draftSavedAt).toLocaleString('en-IN')}</span>. You can continue filling details or discard the draft.
@@ -4008,14 +4008,14 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                       message: 'Product creation draft was cleared and form reset.',
                     });
                   }}
-                  className="px-2.5 py-1 rounded-lg font-bold text-red-600 hover:text-red-700 dark:text-red-400 hover:bg-red-100/50 dark:hover:bg-red-900/30 transition-colors cursor-pointer"
+                  className="px-2.5 py-1 rounded-lg font-bold text-tone-red-text hover:text-tone-red-text hover:bg-tone-red-bg transition-colors cursor-pointer"
                 >
                   Discard Draft
                 </button>
                 <button
                   type="button"
                   onClick={() => setIsDraftRestored(false)}
-                  className="px-2.5 py-1 rounded-lg font-bold text-blue-700 hover:text-blue-900 dark:text-blue-300 hover:bg-blue-100/60 dark:hover:bg-blue-900/40 transition-colors cursor-pointer"
+                  className="px-2.5 py-1 rounded-lg font-bold text-tone-blue-text hover:text-tone-blue-text hover:bg-tone-blue-bg transition-colors cursor-pointer"
                 >
                   Dismiss
                 </button>
@@ -4043,14 +4043,14 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                   type="button"
                   onClick={() => setActiveSectionTab(tab.id as typeof activeSectionTab)}
                   className={`px-4 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap cursor-pointer inline-flex items-center gap-2 ${isActive
-                    ? 'bg-primary text-white shadow-sm shadow-primary/25'
-                    : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 border border-transparent'
+                    ? 'bg-primary text-inverse shadow-sm shadow-primary/25'
+                    : 'text-ink-secondary hover:text-ink hover:bg-muted border border-transparent'
                     }`}
                 >
-                  <IconComponent className={`w-3.5 h-3.5 ${isActive ? 'text-white' : 'text-slate-400'}`} />
+                  <IconComponent className={`w-3.5 h-3.5 ${isActive ? 'text-inverse' : 'text-ink-placeholder'}`} />
                   <span>{tab.id === 'all' ? tab.label : `${tabIndex}. ${tab.label}`}</span>
                   {tab.badge && (
-                    <span className={`px-2 py-0.5 rounded-md text-[10px] font-mono font-bold ${isActive ? 'bg-white/20 text-white' : 'bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300'
+                    <span className={`px-2 py-0.5 rounded-md text-[10px] font-mono font-bold ${isActive ? 'bg-surface text-inverse' : 'bg-active text-ink-secondary'
                       }`}>
                       {tab.badge}
                     </span>
@@ -4070,14 +4070,14 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                 SECTION 01: GENERAL IDENTITY, TAXONOMY & PRODUCT MEDIA (INTEGRATED)
                ========================================================================= */}
             {(activeSectionTab === 'all' || activeSectionTab === 'general') && (
-              <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/90 dark:border-slate-800 shadow-sm overflow-hidden">
+              <div className="bg-surface rounded-2xl border border-border shadow-sm overflow-hidden">
                 {/* Section Header */}
-                <div className="px-6 py-4 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between gap-4 bg-slate-50/50 dark:bg-slate-800/30">
+                <div className="px-6 py-4 border-b border-border flex items-center justify-between gap-4 bg-muted">
                   <div className="flex items-center gap-3.5">
-                    <div className="flex items-center justify-center w-8 h-8 rounded-xl bg-primary text-white font-mono text-xs font-black shadow-xs ring-4 ring-primary/10 shrink-0">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-xl bg-primary text-inverse font-mono text-xs font-black shadow-xs ring-4 ring-primary/10 shrink-0">
                       01
                     </div>
-                    <h2 className="text-sm md:text-base font-bold text-slate-900 dark:text-white tracking-tight">
+                    <h2 className="text-sm md:text-base font-bold text-ink tracking-tight">
                       General Identity, Classification &amp; Media
                     </h2>
                   </div>
@@ -4096,15 +4096,15 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                       type="button"
                       onClick={() => toggleSection('general')}
                       aria-expanded={!collapsedSections.general}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-xs font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all cursor-pointer shadow-2xs"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-border bg-surface text-xs font-semibold text-ink-secondary hover:bg-muted transition-all cursor-pointer shadow-2xs"
                     >
                       <span className="text-[11px] font-medium hidden sm:inline">
                         {collapsedSections.general ? 'Expand' : 'Collapse'}
                       </span>
                       {collapsedSections.general ? (
-                        <ChevronDown className="h-3.5 w-3.5 text-slate-400" />
+                        <ChevronDown className="h-3.5 w-3.5 text-ink-placeholder" />
                       ) : (
-                        <ChevronUp className="h-3.5 w-3.5 text-slate-400" />
+                        <ChevronUp className="h-3.5 w-3.5 text-ink-placeholder" />
                       )}
                     </button>
                   </div>
@@ -4119,7 +4119,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                       {/* Row 1: Item Name */}
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
                         <div className="sm:col-span-3">
-                          <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
+                          <label className="block text-xs font-bold uppercase tracking-wider text-ink-secondary mb-1.5">
                             {itemClassification === 'PRODUCT' ? 'Product Name' : 'Material Name'} <span className="text-destructive font-black">*</span>
                           </label>
                           <input
@@ -4134,8 +4134,8 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                             }}
                             className={`w-full h-11 px-4 rounded-xl border ${fieldErrors.name
                               ? 'border-destructive ring-2 ring-destructive/20 bg-destructive/5'
-                              : 'border-slate-300 dark:border-slate-700'
-                              } bg-white dark:bg-slate-800 text-sm font-semibold text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all`}
+                              : 'border-border-strong'
+                              } bg-surface text-sm font-semibold text-ink placeholder:text-ink-placeholder focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all`}
                           />
                           {fieldErrors.name && (
                             <p className="mt-1 text-xs font-semibold text-destructive flex items-center gap-1">
@@ -4149,7 +4149,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                       {/* Row 2: Catalog SKU, Parent Category & Sub Category */}
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
                         <div>
-                          <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
+                          <label className="block text-xs font-bold uppercase tracking-wider text-ink-secondary mb-1.5">
                             {itemClassification === 'PRODUCT' ? 'Catalog SKU' : 'Material Code / SKU'}
                           </label>
                           <input
@@ -4163,8 +4163,8 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                             }}
                             className={`w-full h-11 px-4 font-mono font-bold uppercase rounded-xl border ${fieldErrors.sku
                               ? 'border-destructive ring-2 ring-destructive/20 bg-destructive/5'
-                              : 'border-slate-300 dark:border-slate-700'
-                              } bg-white dark:bg-slate-800 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all`}
+                              : 'border-border-strong'
+                              } bg-surface text-sm text-ink placeholder:text-ink-placeholder focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all`}
                           />
                           {fieldErrors.sku && (
                             <p className="mt-1 text-xs font-semibold text-destructive flex items-center gap-1">
@@ -4175,7 +4175,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                         </div>
 
                         <div>
-                          <label className="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
+                          <label className="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-ink-secondary mb-1.5">
                             <span>
                               {itemClassification === 'PRODUCT' ? 'Parent Category' : 'Category'}{' '}
                               {itemClassification === 'PRODUCT' && (
@@ -4212,8 +4212,8 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                             }}
                             className={`w-full h-11 px-4 rounded-xl border ${fieldErrors.parentCategoryId
                               ? 'border-destructive ring-2 ring-destructive/20 bg-destructive/5'
-                              : 'border-slate-300 dark:border-slate-700'
-                              } bg-white dark:bg-slate-800 text-sm font-semibold text-slate-900 dark:text-white focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all`}
+                              : 'border-border-strong'
+                              } bg-surface text-sm font-semibold text-ink focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all`}
                           >
                             <option value="">
                               {categories.isLoading ? 'Loading categories...' : 'Select Category'}
@@ -4238,7 +4238,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                         </div>
 
                         <div>
-                          <label className="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
+                          <label className="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-ink-secondary mb-1.5">
                             <span>
                               Sub Category{' '}
                               {form.parentCategoryId && (
@@ -4264,8 +4264,8 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                             disabled={!form.parentCategoryId || families.isLoading}
                             className={`w-full h-11 px-4 rounded-xl border ${fieldErrors.productFamilyId
                               ? 'border-destructive ring-2 ring-destructive/20 bg-destructive/5'
-                              : 'border-slate-300 dark:border-slate-700'
-                              } bg-white dark:bg-slate-800 text-sm font-semibold text-slate-900 dark:text-white disabled:opacity-50 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all`}
+                              : 'border-border-strong'
+                              } bg-surface text-sm font-semibold text-ink disabled:opacity-50 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all`}
                           >
                             <option value="">
                               {!form.parentCategoryId
@@ -4292,7 +4292,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                       {/* Amazon ASIN & Global EAN-13 */}
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-1">
                         <div>
-                          <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
+                          <label className="block text-xs font-bold uppercase tracking-wider text-ink-secondary mb-1.5">
                             Amazon ASIN
                           </label>
                           <input
@@ -4300,11 +4300,11 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                             placeholder="e.g. B08N5WRWNW"
                             value={form.asin}
                             onChange={(e) => handleChange('asin', e.target.value.toUpperCase())}
-                            className="w-full h-11 px-4 font-mono text-sm font-semibold rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                            className="w-full h-11 px-4 font-mono text-sm font-semibold rounded-xl border border-border-strong bg-surface text-ink placeholder:text-ink-placeholder focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
                           />
                         </div>
                         <div>
-                          <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
+                          <label className="block text-xs font-bold uppercase tracking-wider text-ink-secondary mb-1.5">
                             Global EAN-13 Barcode
                           </label>
                           <input
@@ -4312,7 +4312,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                             placeholder="e.g. 8901234567890"
                             value={form.ean13}
                             onChange={(e) => handleChange('ean13', e.target.value)}
-                            className="w-full h-11 px-4 font-mono text-sm font-semibold rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                            className="w-full h-11 px-4 font-mono text-sm font-semibold rounded-xl border border-border-strong bg-surface text-ink placeholder:text-ink-placeholder focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
                           />
                         </div>
                       </div>
@@ -4320,12 +4320,12 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                       {/* Row 4: Product / Material Description & Scope */}
                       <div className="space-y-1.5 pt-1">
                         <div className="flex items-center justify-between">
-                          <label className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">
-                            <FileText className="w-3.5 h-3.5 text-slate-400" />
+                          <label className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-ink-secondary">
+                            <FileText className="w-3.5 h-3.5 text-ink-placeholder" />
                             <span>{itemClassification === 'MATERIAL' ? 'Material Description & Scope' : 'Product Description & Scope'}</span>
                           </label>
                           <div className="flex items-center gap-1.5">
-                            <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 mr-0.5">
+                            <span className="text-[10px] font-bold uppercase tracking-wider text-ink-placeholder mr-0.5">
                               Quick:
                             </span>
                             {[
@@ -4337,7 +4337,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                                 key={chip.label}
                                 type="button"
                                 onClick={() => appendDescriptionSnippet(chip.snippet)}
-                                className="px-2 py-0.5 rounded-md text-[10px] font-semibold bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-primary hover:text-primary transition-colors cursor-pointer shadow-2xs"
+                                className="px-2 py-0.5 rounded-md text-[10px] font-semibold bg-muted border border-border text-ink-secondary hover:border-primary hover:text-primary transition-colors cursor-pointer shadow-2xs"
                               >
                                 {chip.label}
                               </button>
@@ -4353,24 +4353,24 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                           }
                           value={form.description}
                           onChange={(e) => handleChange('description', e.target.value)}
-                          className="w-full p-3.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm font-medium text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 resize-y transition-all leading-relaxed"
+                          className="w-full p-3.5 rounded-xl border border-border-strong bg-surface text-sm font-medium text-ink placeholder:text-ink-placeholder focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 resize-y transition-all leading-relaxed"
                         />
                       </div>
                     </div>
 
                     {/* RIGHT 5 COLUMNS: COMPACT & MINIMAL PRODUCT MEDIA */}
                     <div className="lg:col-span-5 space-y-3">
-                      <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 space-y-3 shadow-2xs">
-                        <div className="flex items-center justify-between pb-2 border-b border-slate-100 dark:border-slate-800">
+                      <div className="rounded-2xl border border-border bg-surface p-4 space-y-3 shadow-2xs">
+                        <div className="flex items-center justify-between pb-2 border-b border-border">
                           <div className="flex items-center gap-2">
-                            <span className="p-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">
+                            <span className="p-1 rounded-lg bg-muted text-ink-secondary">
                               <ImagePlus className="w-4 h-4" />
                             </span>
-                            <h3 className="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider">
+                            <h3 className="text-xs font-bold text-ink uppercase tracking-wider">
                               Product Media
                             </h3>
                           </div>
-                          <span className="text-[11px] font-mono font-bold text-slate-500 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded-md border border-slate-200 dark:border-slate-700">
+                          <span className="text-[11px] font-mono font-bold text-ink-muted bg-muted px-2 py-0.5 rounded-md border border-border">
                             {imagePreviews.length}/12 Photos
                           </span>
                         </div>
@@ -4394,19 +4394,19 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                           }}
                           className={`group relative flex flex-col items-center justify-center py-4 px-4 rounded-xl border-2 border-dashed transition-all cursor-pointer text-center ${isMediaDragging
                               ? 'border-primary bg-primary/10 scale-[1.01]'
-                              : 'border-slate-300 dark:border-slate-700 hover:border-primary bg-slate-50/50 dark:bg-slate-800/30 hover:bg-slate-50 dark:hover:bg-slate-800/60'
+                              : 'border-border-strong hover:border-primary bg-muted hover:bg-muted'
                             }`}
                         >
                           <div className={`w-8 h-8 rounded-lg border flex items-center justify-center mb-1.5 transition-transform shadow-2xs ${isMediaDragging
                               ? 'scale-110 bg-primary/20 border-primary text-primary'
-                              : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 group-hover:scale-105'
+                              : 'bg-surface border-border text-ink-secondary group-hover:scale-105'
                             }`}>
                             <UploadCloud className="w-4 h-4" />
                           </div>
-                          <span className="text-xs font-bold text-slate-800 dark:text-slate-200">
+                          <span className="text-xs font-bold text-ink">
                             {isMediaDragging ? 'Drop images here' : 'Click or Drag & Drop Images'}
                           </span>
-                          <span className="text-[11px] text-slate-400 dark:text-slate-500 mt-0.5">
+                          <span className="text-[11px] text-ink-placeholder mt-0.5">
                             PNG, JPG, WEBP, SVG • Max 10MB per file
                           </span>
                           <input
@@ -4421,12 +4421,12 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
 
                         {/* Existing Saved Catalog Images */}
                         {existingImages.length > 0 && (
-                          <div className="space-y-2 pt-2 border-t border-slate-100 dark:border-slate-800">
+                          <div className="space-y-2 pt-2 border-t border-border">
                             <div className="flex items-center justify-between text-[11px]">
-                              <span className="font-semibold text-slate-600 dark:text-slate-400">
+                              <span className="font-semibold text-ink-secondary">
                                 Current Catalog Images ({existingImages.length})
                               </span>
-                              <span className="text-[10px] text-slate-400">
+                              <span className="text-[10px] text-ink-placeholder">
                                 Saved in Master
                               </span>
                             </div>
@@ -4434,14 +4434,14 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                               {existingImages.map((img, idx) => (
                                 <div
                                   key={`existing-${idx}`}
-                                  className="group relative aspect-square rounded-lg border overflow-hidden bg-slate-100 dark:bg-slate-800 border-slate-200 dark:border-slate-700"
+                                  className="group relative aspect-square rounded-lg border overflow-hidden bg-muted border-border"
                                 >
                                   {/* eslint-disable-next-line @next/next/no-img-element */}
                                   <img src={img.url} alt={img.fileName || 'Catalog photo'} className="w-full h-full object-cover" />
                                   <button
                                     type="button"
                                     onClick={() => setExistingImages((prev) => prev.filter((_, i) => i !== idx))}
-                                    className="absolute right-1 top-1 p-1 rounded bg-black/75 hover:bg-destructive text-white opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer shadow-xs"
+                                    className="absolute right-1 top-1 p-1 rounded bg-inverse hover:bg-destructive text-inverse opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer shadow-xs"
                                     title="Remove photo"
                                   >
                                     <Trash2 className="w-3 h-3" />
@@ -4454,12 +4454,12 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
 
                         {/* Minimal Image Previews Grid (Only shown when new images are picked) */}
                         {imagePreviews.length > 0 ? (
-                          <div className="space-y-2 pt-2 border-t border-slate-100 dark:border-slate-800">
+                          <div className="space-y-2 pt-2 border-t border-border">
                             <div className="flex items-center justify-between text-[11px]">
-                              <span className="font-semibold text-slate-600 dark:text-slate-400">
+                              <span className="font-semibold text-ink-secondary">
                                 Newly Selected Photos ({imagePreviews.length})
                               </span>
-                              <span className="text-[10px] text-slate-400">
+                              <span className="text-[10px] text-ink-placeholder">
                                 First photo is cover
                               </span>
                             </div>
@@ -4467,15 +4467,15 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                               {imagePreviews.map(({ file, url }, idx) => (
                                 <div
                                   key={`${file.name}-${idx}`}
-                                  className={`group relative aspect-square rounded-lg border overflow-hidden bg-slate-100 dark:bg-slate-800 transition-all ${idx === 0
+                                  className={`group relative aspect-square rounded-lg border overflow-hidden bg-muted transition-all ${idx === 0
                                       ? 'border-primary ring-2 ring-primary/20'
-                                      : 'border-slate-200 dark:border-slate-700'
+                                      : 'border-border'
                                     }`}
                                 >
                                   {/* eslint-disable-next-line @next/next/no-img-element */}
                                   <img src={url} alt={file.name} className="w-full h-full object-cover" />
                                   {idx === 0 ? (
-                                    <span className="absolute left-1 top-1 text-[8px] font-black bg-primary text-white px-1.5 py-0.5 rounded shadow-xs flex items-center gap-0.5">
+                                    <span className="absolute left-1 top-1 text-[8px] font-black bg-primary text-inverse px-1.5 py-0.5 rounded shadow-xs flex items-center gap-0.5">
                                       <Star className="w-2 h-2 fill-current" />
                                       COVER
                                     </span>
@@ -4483,7 +4483,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                                     <button
                                       type="button"
                                       onClick={() => setAsPrimary(idx)}
-                                      className="absolute left-1 top-1 text-[8px] font-bold bg-black/75 hover:bg-primary text-white px-1.5 py-0.5 rounded opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer shadow-xs"
+                                      className="absolute left-1 top-1 text-[8px] font-bold bg-inverse hover:bg-primary text-inverse px-1.5 py-0.5 rounded opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer shadow-xs"
                                       title="Set as primary cover photo"
                                     >
                                       Cover
@@ -4492,13 +4492,13 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                                   <button
                                     type="button"
                                     onClick={() => removeImage(file, url)}
-                                    className="absolute right-1 top-1 p-1 rounded bg-black/75 hover:bg-destructive text-white opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer shadow-xs"
+                                    className="absolute right-1 top-1 p-1 rounded bg-inverse hover:bg-destructive text-inverse opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer shadow-xs"
                                     title="Remove photo"
                                   >
                                     <Trash2 className="w-3 h-3" />
                                   </button>
-                                  <div className="absolute inset-x-0 bottom-0 p-0.5 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
-                                    <p className="text-[8px] text-white truncate px-0.5 font-mono">
+                                  <div className="absolute inset-x-0 bottom-0 p-0.5 bg-inverse/80 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <p className="text-[8px] text-inverse truncate px-0.5 font-mono">
                                       {file.name}
                                     </p>
                                   </div>
@@ -4507,8 +4507,8 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                             </div>
                           </div>
                         ) : (
-                          <div className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-800 text-[11px] text-slate-500 dark:text-slate-400">
-                            <Camera className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+                          <div className="flex items-center gap-2 p-2 rounded-lg bg-muted border border-border text-[11px] text-ink-muted">
+                            <Camera className="w-3.5 h-3.5 text-ink-placeholder shrink-0" />
                             <span>First uploaded image will automatically serve as catalog cover.</span>
                           </div>
                         )}
@@ -4518,12 +4518,12 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                   </div>
 
                   {/* Commercial Codes & Custom Identifiers (Dynamic) */}
-                  <div className="pt-4 border-t border-slate-100 dark:border-slate-800 space-y-3">
+                  <div className="pt-4 border-t border-border space-y-3">
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                       <div>
                         <div className="flex items-center gap-2">
                           <Tag className="w-4 h-4 text-primary" />
-                          <label className="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white">
+                          <label className="text-xs font-bold uppercase tracking-wider text-ink">
                             Commercial Codes &amp; Custom Marketplace Tags
                           </label>
                         </div>
@@ -4549,20 +4549,20 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                               value={field.name}
                               onChange={(event) => updateCustomField(index, 'name', event.target.value)}
                               placeholder="e.g. Flipkart FSN, Color Code"
-                              className="h-10 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 text-sm font-semibold text-slate-900 dark:text-white focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                              className="h-10 w-full rounded-xl border border-border-strong bg-surface px-4 text-sm font-semibold text-ink focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
                             />
                             <input
                               type="text"
                               value={field.value}
                               onChange={(event) => updateCustomField(index, 'value', event.target.value)}
                               placeholder="Enter value"
-                              className="h-10 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 text-sm font-semibold text-slate-900 dark:text-white focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                              className="h-10 w-full rounded-xl border border-border-strong bg-surface px-4 text-sm font-semibold text-ink focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
                             />
                             <button
                               type="button"
                               onClick={() => removeCustomField(index)}
                               aria-label="Remove identifier"
-                              className="h-10 w-10 flex items-center justify-center rounded-xl text-slate-400 hover:bg-destructive/10 hover:text-destructive transition-colors cursor-pointer"
+                              className="h-10 w-10 flex items-center justify-center rounded-xl text-ink-placeholder hover:bg-destructive/10 hover:text-destructive transition-colors cursor-pointer"
                             >
                               <Trash2 className="h-4 w-4" />
                             </button>
@@ -4580,14 +4580,14 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                 SECTION 02: COMMERCIAL PRICING MATRIX, GLOBAL DISCOUNTS & CUSTOMER TIERS
                ========================================================================= */}
             {(activeSectionTab === 'all' || activeSectionTab === 'pricing') && (
-              <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/90 dark:border-slate-800 shadow-sm overflow-hidden">
+              <div className="bg-surface rounded-2xl border border-border shadow-sm overflow-hidden">
                 {/* Section Header */}
-                <div className="px-6 py-4 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between gap-4 bg-slate-50/50 dark:bg-slate-800/30">
+                <div className="px-6 py-4 border-b border-border flex items-center justify-between gap-4 bg-muted">
                   <div className="flex items-center gap-3.5">
-                    <div className="flex items-center justify-center w-8 h-8 rounded-xl bg-primary text-white font-mono text-xs font-black shadow-xs ring-4 ring-primary/10 shrink-0">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-xl bg-primary text-inverse font-mono text-xs font-black shadow-xs ring-4 ring-primary/10 shrink-0">
                       02
                     </div>
-                    <h2 className="text-sm md:text-base font-bold text-slate-900 dark:text-white tracking-tight">
+                    <h2 className="text-sm md:text-base font-bold text-ink tracking-tight">
                       Commercial Pricing Matrix, Customer Tiers &amp; GST
                     </h2>
                   </div>
@@ -4597,15 +4597,15 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                       type="button"
                       onClick={() => toggleSection('pricing')}
                       aria-expanded={!collapsedSections.pricing}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-xs font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all cursor-pointer shadow-2xs"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-border bg-surface text-xs font-semibold text-ink-secondary hover:bg-muted transition-all cursor-pointer shadow-2xs"
                     >
                       <span className="text-[11px] font-medium hidden sm:inline">
                         {collapsedSections.pricing ? 'Expand' : 'Collapse'}
                       </span>
                       {collapsedSections.pricing ? (
-                        <ChevronDown className="h-3.5 w-3.5 text-slate-400" />
+                        <ChevronDown className="h-3.5 w-3.5 text-ink-placeholder" />
                       ) : (
-                        <ChevronUp className="h-3.5 w-3.5 text-slate-400" />
+                        <ChevronUp className="h-3.5 w-3.5 text-ink-placeholder" />
                       )}
                     </button>
                   </div>
@@ -4614,22 +4614,22 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                 <div className={collapsedSections.pricing ? 'hidden' : 'p-6 space-y-6'}>
 
                   {/* 1. BASE PRICING CONFIGURATION */}
-                  <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-800/40 p-5 space-y-4">
-                    <div className="flex items-center gap-2 border-b border-slate-200/80 dark:border-slate-700/80 pb-3">
+                  <div className="rounded-2xl border border-border bg-muted p-5 space-y-4">
+                    <div className="flex items-center gap-2 border-b border-border pb-3">
                       <Calculator className="h-4 w-4 text-primary" />
                       <div>
-                        <h3 className="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider">
+                        <h3 className="text-xs font-bold text-ink uppercase tracking-wider">
                           Base Catalog Pricing
                         </h3>
                       </div>
                     </div>
 
                     <div className="max-w-md">
-                      <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
+                      <label className="block text-xs font-bold uppercase tracking-wider text-ink-secondary mb-1.5">
                         {isRawMaterialCategory ? 'Cost Price' : 'Maximum Retail Price (MRP)'}
                       </label>
                       <div className="relative">
-                        <span className="absolute left-4 top-3 text-sm font-bold text-slate-400">₹</span>
+                        <span className="absolute left-4 top-3 text-sm font-bold text-ink-placeholder">₹</span>
                         <input
                           id="field-mrp"
                           type="number"
@@ -4678,19 +4678,19 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                             })
                           }
                           placeholder="0.00"
-                          className="w-full h-11 pl-8 pr-4 font-mono text-sm font-black rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                          className="w-full h-11 pl-8 pr-4 font-mono text-sm font-black rounded-xl border border-border-strong bg-surface text-ink placeholder:text-ink-placeholder focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
                         />
                       </div>
                     </div>
                   </div>
 
                   {/* 2. CUSTOMER PRICING TIERS MATRIX (Dealer, E-Trade, Customer, etc.) */}
-                  <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 space-y-4 shadow-2xs">
-                    <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between border-b border-slate-100 dark:border-slate-800 pb-3">
+                  <div className="rounded-2xl border border-border bg-surface p-5 space-y-4 shadow-2xs">
+                    <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between border-b border-border pb-3">
                       <div>
                         <div className="flex items-center gap-2">
                           <BadgePercent className="h-4 w-4 text-primary" />
-                          <h3 className="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider">
+                          <h3 className="text-xs font-bold text-ink uppercase tracking-wider">
                             Customer Pricing Tiers Matrix
                           </h3>
                         </div>
@@ -4699,7 +4699,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                         <select
                           value={pricingMasterId}
                           onChange={(event) => importPricingMaster(event.target.value)}
-                          className="h-10 min-w-48 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3.5 text-xs font-semibold text-slate-900 dark:text-white focus:outline-none focus:border-primary"
+                          className="h-10 min-w-48 rounded-xl border border-border-strong bg-surface px-3.5 text-xs font-semibold text-ink focus:outline-none focus:border-primary"
                         >
                           <option value="">Choose Pricing Master</option>
                           {(Array.isArray(pricingMasters.data) ? pricingMasters.data : pricingMasters.data?.items || []).map((master) => (
@@ -4711,23 +4711,23 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                         <button
                           type="button"
                           onClick={() => setIsPricingLevelModalOpen(true)}
-                          className="inline-flex h-10 items-center gap-1.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3.5 text-xs font-bold text-slate-700 dark:text-slate-200 shadow-2xs hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors cursor-pointer"
+                          className="inline-flex h-10 items-center gap-1.5 rounded-xl border border-border-strong bg-surface px-3.5 text-xs font-bold text-ink-secondary shadow-2xs hover:bg-muted transition-colors cursor-pointer"
                         >
                           <Tag className="h-3.5 w-3.5 text-primary" /> + Level
                         </button>
                         <button
                           type="button"
                           onClick={() => router.push('/products/pricing-masters/new?from=product-draft')}
-                          className="inline-flex h-10 items-center gap-2 rounded-xl border border-primary/50 bg-primary px-3.5 text-xs font-bold text-white shadow-sm hover:bg-primary/90 transition-colors cursor-pointer"
+                          className="inline-flex h-10 items-center gap-2 rounded-xl border border-primary/50 bg-primary px-3.5 text-xs font-bold text-inverse shadow-sm hover:bg-primary/90 transition-colors cursor-pointer"
                         >
                           Open pricing master setup <ArrowUpRight className="h-4 w-4" />
                         </button>
                       </div>
                     </div>
 
-                    <div className="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-800">
+                    <div className="overflow-x-auto rounded-xl border border-border">
                       <table className="w-full min-w-[760px] text-left text-xs">
-                        <thead className="bg-slate-50 dark:bg-slate-800/80 font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 border-b border-slate-200 dark:border-slate-700">
+                        <thead className="bg-muted font-bold uppercase tracking-wider text-ink-muted border-b border-border">
                           <tr>
                             <th className="px-4 py-3.5">Customer Level / Tier</th>
                             <th className="px-4 py-3.5 w-40">Price (₹)</th>
@@ -4736,11 +4736,11 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                             <th className="w-14 px-4 py-3.5 text-center" />
                           </tr>
                         </thead>
-                        <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
+                        <tbody className="divide-y divide-border">
                           {tierPricing.map((tier, index) => {
                             const calcPrice = computeTierPrice(tier);
                             return (
-                              <tr key={tier.tierId || index} className="hover:bg-slate-50/60 dark:hover:bg-slate-800/40 transition-colors">
+                              <tr key={tier.tierId || index} className="hover:bg-muted transition-colors">
                                 <td className="px-4 py-3">
                                   <select
                                     value={tier.tierName}
@@ -4752,7 +4752,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                                         tierCode: newName ? newName.toUpperCase().replace(/[^A-Z0-9]+/g, '_') : 'CUSTOM',
                                       });
                                     }}
-                                    className="h-10 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3.5 text-sm font-bold text-slate-900 dark:text-white focus:outline-none focus:border-primary"
+                                    className="h-10 w-full rounded-xl border border-border-strong bg-surface px-3.5 text-sm font-bold text-ink focus:outline-none focus:border-primary"
                                   >
                                     <option value="" disabled>Select Level...</option>
                                     {pricingLevels.map((lvl) => (
@@ -4775,7 +4775,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                                     onWheel={(e) => handleNumberInputWheel(e, tier.masterPrice, (val) => updateTierPricingItem(index, { masterPrice: Number(val) || 0 }))}
                                     onKeyDown={(e) => handleNumberInputKeyDown(e, tier.masterPrice, (val) => updateTierPricingItem(index, { masterPrice: Number(val) || 0 }))}
                                     placeholder="0"
-                                    className="h-10 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3.5 text-sm font-black"
+                                    className="h-10 w-full rounded-xl border border-border-strong bg-surface px-3.5 text-sm font-black"
                                   />
                                 </td>
                                 <td className="px-4 py-3">
@@ -4809,9 +4809,9 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                                         )
                                       }
                                       placeholder="0"
-                                      className="h-10 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 pl-3.5 pr-7 text-sm font-black text-slate-900 dark:text-white disabled:bg-slate-100 dark:disabled:bg-slate-800 disabled:text-slate-400"
+                                      className="h-10 w-full rounded-xl border border-border-strong bg-surface pl-3.5 pr-7 text-sm font-black text-ink disabled:bg-muted disabled:text-ink-placeholder"
                                     />
-                                    <span className="absolute right-3 top-2.5 text-xs font-bold text-slate-400">%</span>
+                                    <span className="absolute right-3 top-2.5 text-xs font-bold text-ink-placeholder">%</span>
                                   </div>
                                 </td>
                                 <td className="px-4 py-3"><span className="font-mono text-sm font-black text-primary">₹{calcPrice.toFixed(2)}</span></td>
@@ -4820,7 +4820,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                                     type="button"
                                     onClick={() => removeTierPricingItem(index)}
                                     aria-label="Remove tier"
-                                    className="h-10 w-10 flex items-center justify-center text-slate-400 hover:text-destructive hover:bg-destructive/10 rounded-xl transition-colors cursor-pointer mx-auto"
+                                    className="h-10 w-10 flex items-center justify-center text-ink-placeholder hover:text-destructive hover:bg-destructive/10 rounded-xl transition-colors cursor-pointer mx-auto"
                                   >
                                     <Trash2 className="h-4 w-4" />
                                   </button>
@@ -4830,9 +4830,9 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                           })}
                           {tierPricing.length === 0 && (
                             <tr>
-                              <td colSpan={5} className="px-4 py-8 text-center text-xs text-slate-400">
+                              <td colSpan={5} className="px-4 py-8 text-center text-xs text-ink-placeholder">
                                 <div className="flex min-h-24 flex-col items-center justify-center gap-3">
-                                  <p className="font-medium text-slate-700 dark:text-slate-300">No customer pricing tiers active in this product catalog item.</p>
+                                  <p className="font-medium text-ink-secondary">No customer pricing tiers active in this product catalog item.</p>
                                   <div className="flex items-center gap-2">
                                     <button
                                       type="button"
@@ -4844,7 +4844,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                                     <button
                                       type="button"
                                       onClick={() => setIsPricingLevelModalOpen(true)}
-                                      className="inline-flex items-center gap-1.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-2.5 text-xs font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors cursor-pointer"
+                                      className="inline-flex items-center gap-1.5 rounded-xl border border-border-strong bg-surface px-4 py-2.5 text-xs font-bold text-ink-secondary hover:bg-muted transition-colors cursor-pointer"
                                     >
                                       <Tag className="h-3.5 w-3.5 text-primary" /> + Level
                                     </button>
@@ -4868,7 +4868,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                         <button
                           type="button"
                           onClick={() => setIsPricingLevelModalOpen(true)}
-                          className="inline-flex items-center gap-1.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-2.5 text-xs font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors cursor-pointer"
+                          className="inline-flex items-center gap-1.5 rounded-xl border border-border-strong bg-surface px-4 py-2.5 text-xs font-bold text-ink-secondary hover:bg-muted transition-colors cursor-pointer"
                         >
                           <Tag className="h-3.5 w-3.5 text-primary" /> Manage Levels
                         </button>
@@ -4878,32 +4878,32 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
 
                   {/* 3. CUSTOM PRICING MASTER FIELDS (If any) */}
                   {pricingFields.length > 0 && (
-                    <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-800/40 p-5 space-y-4">
+                    <div className="rounded-2xl border border-border bg-muted p-5 space-y-4">
                       <div>
-                        <h3 className="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider">
+                        <h3 className="text-xs font-bold text-ink uppercase tracking-wider">
                           Custom Master Pricing Attributes
                         </h3>
-                        <p className="text-xs text-slate-500 dark:text-slate-400">
+                        <p className="text-xs text-ink-muted">
                           Additional pricing parameters imported from the selected pricing schema.
                         </p>
                       </div>
-                      <div className="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-800">
+                      <div className="overflow-x-auto rounded-xl border border-border">
                         <table className="w-full min-w-[520px] text-left text-xs">
-                          <thead className="bg-slate-50 dark:bg-slate-800 font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 border-b border-slate-200 dark:border-slate-700">
+                          <thead className="bg-muted font-bold uppercase tracking-wider text-ink-muted border-b border-border">
                             <tr>
                               <th className="px-4 py-3">Pricing column</th>
                               <th className="px-4 py-3">Pricing value</th>
                               <th className="w-14 px-4 py-3 text-center" />
                             </tr>
                           </thead>
-                          <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
+                          <tbody className="divide-y divide-border">
                             {pricingFields.map((field, index) => (
                               <tr key={index}>
                                 <td className="px-4 py-2.5">
                                   <input
                                     readOnly
                                     value={field.name}
-                                    className="h-10 w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3.5 text-xs font-semibold text-slate-700 dark:text-slate-300"
+                                    className="h-10 w-full rounded-xl border border-border bg-muted px-3.5 text-xs font-semibold text-ink-secondary"
                                   />
                                 </td>
                                 <td className="px-4 py-2.5">
@@ -4911,7 +4911,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                                     value={field.value}
                                     onChange={(event) => updatePricingField(index, { value: event.target.value })}
                                     placeholder="Enter pricing value"
-                                    className="h-10 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3.5 text-sm font-semibold text-slate-900 dark:text-white"
+                                    className="h-10 w-full rounded-xl border border-border-strong bg-surface px-3.5 text-sm font-semibold text-ink"
                                   />
                                 </td>
                                 <td className="px-4 py-2.5 text-center">
@@ -4919,7 +4919,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                                     type="button"
                                     onClick={() => removePricingField(index)}
                                     aria-label="Remove pricing field"
-                                    className="h-10 w-10 flex items-center justify-center text-slate-400 hover:text-destructive mx-auto"
+                                    className="h-10 w-10 flex items-center justify-center text-ink-placeholder hover:text-destructive mx-auto"
                                   >
                                     <Trash2 className="h-4 w-4" />
                                   </button>
@@ -4933,11 +4933,11 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                   )}
 
                   {/* 4. STATUTORY TAX COMPLIANCE & HSN */}
-                  <div className="border-t border-slate-100 dark:border-slate-800 pt-4">
+                  <div className="border-t border-border pt-4">
                     <div className={`grid grid-cols-1 sm:grid-cols-2 gap-4 ${isTaxable ? 'md:grid-cols-4' : 'md:grid-cols-3'}`}>
                       <div id="field-hsnCode" aria-required="true" aria-invalid={Boolean(fieldErrors.hsnCode)}>
-                        <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
-                          HSN / SAC Code <span className="text-red-600" aria-hidden="true">*</span>
+                        <label className="block text-xs font-bold uppercase tracking-wider text-ink-secondary mb-1.5">
+                          HSN / SAC Code <span className="text-tone-red-text" aria-hidden="true">*</span>
                         </label>
                         <SearchableSelector
                           value={form.hsnCode}
@@ -4951,70 +4951,70 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                           allowCustom
                           renderOption={(option) => (
                             <div className="flex flex-col">
-                              <span className="font-semibold text-slate-900 dark:text-white text-xs">{option.code}</span>
-                              <span className="text-[10px] text-slate-400 line-clamp-2">{option.description}</span>
+                              <span className="font-semibold text-ink text-xs">{option.code}</span>
+                              <span className="text-[10px] text-ink-placeholder line-clamp-2">{option.description}</span>
                             </div>
                           )}
                         />
-                        <p className={`mt-1 text-xs ${selectedHsnDesc ? 'text-emerald-600 dark:text-emerald-400 font-medium' : 'text-slate-400'}`}>
+                        <p className={`mt-1 text-xs ${selectedHsnDesc ? 'text-tone-green-text font-medium' : 'text-ink-placeholder'}`}>
                           {hsnLookup.isFetching ? 'Fetching description…' : hsnDescription}
                         </p>
-                        {fieldErrors.hsnCode && <p className="mt-1 text-xs text-red-600" role="alert">{fieldErrors.hsnCode}</p>}
+                        {fieldErrors.hsnCode && <p className="mt-1 text-xs text-tone-red-text" role="alert">{fieldErrors.hsnCode}</p>}
                       </div>
 
                       <div id="field-taxability">
-                        <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
-                          Taxability <span className="text-red-600" aria-hidden="true">*</span>
+                        <label className="block text-xs font-bold uppercase tracking-wider text-ink-secondary mb-1.5">
+                          Taxability <span className="text-tone-red-text" aria-hidden="true">*</span>
                         </label>
                         <select
                           required
                           aria-invalid={Boolean(fieldErrors.taxability)}
                           value={form.taxability}
                           onChange={(e) => handleChange('taxability', e.target.value)}
-                          className="w-full h-11 px-4 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm font-semibold text-slate-900 dark:text-white focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                          className="w-full h-11 px-4 rounded-xl border border-border-strong bg-surface text-sm font-semibold text-ink focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
                         >
                           <option value="Taxable">Taxable</option>
                           <option value="Exempt">Exempt</option>
                           <option value="Nil Rated">Nil Rated</option>
                           <option value="Non-GST">Non-GST</option>
                         </select>
-                        {fieldErrors.taxability && <p className="mt-1 text-xs text-red-600" role="alert">{fieldErrors.taxability}</p>}
+                        {fieldErrors.taxability && <p className="mt-1 text-xs text-tone-red-text" role="alert">{fieldErrors.taxability}</p>}
                       </div>
 
                       {isTaxable && <div id="field-gstRate">
-                        <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
-                          GST Rate (%) <span className="text-red-600" aria-hidden="true">*</span>
+                        <label className="block text-xs font-bold uppercase tracking-wider text-ink-secondary mb-1.5">
+                          GST Rate (%) <span className="text-tone-red-text" aria-hidden="true">*</span>
                         </label>
                         <select
                           required
                           aria-invalid={Boolean(fieldErrors.gstRate)}
                           value={form.gstRate}
                           onChange={(e) => handleChange('gstRate', e.target.value)}
-                          className="w-full h-11 px-4 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm font-semibold text-slate-900 dark:text-white focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                          className="w-full h-11 px-4 rounded-xl border border-border-strong bg-surface text-sm font-semibold text-ink focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
                         >
                           <option value="18">18% (Standard Industrial Goods)</option>
                           <option value="12">12% (Concessional Articles)</option>
                           <option value="28">28% (Luxury Classification)</option>
                           <option value="5">5% (Raw Hardware Parts)</option>
                         </select>
-                        {fieldErrors.gstRate && <p className="mt-1 text-xs text-red-600" role="alert">{fieldErrors.gstRate}</p>}
+                        {fieldErrors.gstRate && <p className="mt-1 text-xs text-tone-red-text" role="alert">{fieldErrors.gstRate}</p>}
                       </div>}
 
                       <div id="field-productType">
-                        <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
-                          Product Type <span className="text-red-600" aria-hidden="true">*</span>
+                        <label className="block text-xs font-bold uppercase tracking-wider text-ink-secondary mb-1.5">
+                          Product Type <span className="text-tone-red-text" aria-hidden="true">*</span>
                         </label>
                         <select
                           required
                           aria-invalid={Boolean(fieldErrors.productType)}
                           value={form.productType}
                           onChange={(e) => handleChange('productType', e.target.value)}
-                          className="w-full h-11 px-4 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm font-semibold text-slate-900 dark:text-white focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                          className="w-full h-11 px-4 rounded-xl border border-border-strong bg-surface text-sm font-semibold text-ink focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
                         >
                           <option value="Goods">Goods (Physical Inventory)</option>
                           <option value="Services">Services</option>
                         </select>
-                        {fieldErrors.productType && <p className="mt-1 text-xs text-red-600" role="alert">{fieldErrors.productType}</p>}
+                        {fieldErrors.productType && <p className="mt-1 text-xs text-tone-red-text" role="alert">{fieldErrors.productType}</p>}
                       </div>
                     </div>
                   </div>
@@ -5027,32 +5027,32 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                 SECTION 03: PRODUCTION ROUTING & SHOP FLOOR WORKFLOW
                ========================================================================= */}
             {(activeSectionTab === 'all' || activeSectionTab === 'routing') && (
-              <div id="section-routing" className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/90 dark:border-slate-800 shadow-sm overflow-hidden scroll-mt-6">
+              <div id="section-routing" className="bg-surface rounded-2xl border border-border shadow-sm overflow-hidden scroll-mt-6">
                 {/* Section Header */}
-                <div className="px-6 py-4 border-b border-slate-100 dark:border-slate-800 flex flex-col xl:flex-row xl:items-center justify-between gap-4 bg-slate-50/50 dark:bg-slate-800/30">
+                <div className="px-6 py-4 border-b border-border flex flex-col xl:flex-row xl:items-center justify-between gap-4 bg-muted">
                   <div className="flex items-center gap-3.5">
-                    <div className="flex items-center justify-center w-8 h-8 rounded-xl bg-primary text-white font-mono text-xs font-black shadow-xs ring-4 ring-primary/10 shrink-0">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-xl bg-primary text-inverse font-mono text-xs font-black shadow-xs ring-4 ring-primary/10 shrink-0">
                       03
                     </div>
                     <div>
-                      <h2 className="text-sm md:text-base font-bold text-slate-900 dark:text-white tracking-tight">
+                      <h2 className="text-sm md:text-base font-bold text-ink tracking-tight">
                         Production Route &amp; Operations Workflow
                       </h2>
-                      <p className="mt-0.5 text-[10px] text-slate-400">Ctrl/Cmd+Alt+R: Go to route · Ctrl/Cmd+Alt+Enter: Add step</p>
+                      <p className="mt-0.5 text-[10px] text-ink-placeholder">Ctrl/Cmd+Alt+R: Go to route · Ctrl/Cmd+Alt+Enter: Add step</p>
                     </div>
                   </div>
 
                   <div className="flex w-full flex-wrap items-end gap-2.5 xl:w-auto xl:flex-nowrap">
                     {(routeSteps.length > 0 || Boolean(selectedRouteId)) && (
                       <div className="w-full sm:w-[230px] sm:flex-none">
-                        <label className="mb-1 block text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Production Route Name</label>
+                        <label className="mb-1 block text-[10px] font-bold uppercase tracking-wider text-ink-muted">Production Route Name</label>
                         <input
                           value={routeName}
                           onChange={(event) => setRouteName(event.target.value)}
                           disabled={isLoadingRoute}
                           maxLength={150}
                           placeholder="e.g. Standard Assembly Route"
-                          className="h-9 w-full rounded-xl border border-slate-300 bg-white px-3.5 text-xs font-semibold text-slate-900 dark:border-slate-700 dark:bg-slate-800 dark:text-white"
+                          className="h-9 w-full rounded-xl border border-border-strong bg-surface px-3.5 text-xs font-semibold text-ink"
                         />
                       </div>
                     )}
@@ -5081,15 +5081,15 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                         size="sm"
                         renderOption={(option) => (
                           <div className="flex flex-col">
-                            <span className="text-xs font-semibold text-slate-900 dark:text-white">{option.name}</span>
-                            <span className="text-[10px] text-slate-400">{option.stepCount} department steps</span>
+                            <span className="text-xs font-semibold text-ink">{option.name}</span>
+                            <span className="text-[10px] text-ink-placeholder">{option.stepCount} department steps</span>
                           </div>
                         )}
                       />
                     </div>
                     <Link
                       href="/inventory/routing/new?from=product-draft"
-                      className="inline-flex items-center gap-2 rounded-xl border border-primary/50 bg-primary px-3.5 py-2 text-xs font-bold text-white shadow-sm hover:bg-primary/90 transition-colors"
+                      className="inline-flex items-center gap-2 rounded-xl border border-primary/50 bg-primary px-3.5 py-2 text-xs font-bold text-inverse shadow-sm hover:bg-primary/90 transition-colors"
                     >
                       Open production route setup <ArrowUpRight className="h-4 w-4" />
                     </Link>
@@ -5098,7 +5098,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
 
                 <div className={collapsedSections.routing ? 'hidden' : 'p-6 space-y-4'}>
                   {routeSteps.length === 0 ? (
-                    <div className="flex min-h-[150px] items-center justify-center rounded-2xl border border-dashed border-slate-200 dark:border-slate-800 bg-slate-50/40 p-8 dark:bg-slate-800/20">
+                    <div className="flex min-h-[150px] items-center justify-center rounded-2xl border border-dashed border-border bg-muted p-8">
                       <button
                         type="button"
                         onClick={addRouteStep}
@@ -5110,7 +5110,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                     </div>
                   ) : (
                     <div className="space-y-3">
-                      <div className="hidden lg:grid lg:grid-cols-[48px_1.3fr_1fr_130px_44px] gap-3 px-3 text-xs font-bold uppercase tracking-wider text-slate-400">
+                      <div className="hidden lg:grid lg:grid-cols-[48px_1.3fr_1fr_130px_44px] gap-3 px-3 text-xs font-bold uppercase tracking-wider text-ink-placeholder">
                         <span className="text-center">Seq</span>
                         <span>Operation / Step Name</span>
                         <span>Assigned Department</span>
@@ -5129,10 +5129,10 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                               const from = Number(event.dataTransfer.getData('route-index'));
                               if (Number.isInteger(from) && from !== index) moveRouteStep(from, index);
                             }}
-                            className="grid gap-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/60 dark:bg-slate-800/30 p-3.5 lg:grid-cols-[48px_1.3fr_1fr_130px_44px] lg:items-center hover:border-slate-300 dark:hover:border-slate-700 transition-colors"
+                            className="grid gap-3 rounded-xl border border-border bg-muted p-3.5 lg:grid-cols-[48px_1.3fr_1fr_130px_44px] lg:items-center hover:border-border-strong transition-colors"
                           >
                             <div
-                              className="flex h-10 w-10 cursor-grab items-center justify-center rounded-xl bg-primary text-xs font-black text-white shadow-xs mx-auto"
+                              className="flex h-10 w-10 cursor-grab items-center justify-center rounded-xl bg-primary text-xs font-black text-inverse shadow-xs mx-auto"
                               title="Drag step to reorder sequence"
                             >
                               {index + 1}
@@ -5144,7 +5144,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                                 value={step.stepName}
                                 onChange={(event) => updateRouteStep(step.id, { stepName: event.target.value })}
                                 placeholder="e.g. Laser Cutting, Pipe Bending, Polishing"
-                                className="h-10 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 text-sm font-semibold text-slate-900 dark:text-white focus:outline-none focus:border-primary"
+                                className="h-10 w-full rounded-xl border border-border-strong bg-surface px-4 text-sm font-semibold text-ink focus:outline-none focus:border-primary"
                               />
                             </div>
 
@@ -5153,7 +5153,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                                 required
                                 value={step.departmentId}
                                 onChange={(event) => updateRouteStep(step.id, { departmentId: event.target.value })}
-                                className="h-10 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3.5 text-sm font-semibold text-slate-900 dark:text-white focus:outline-none focus:border-primary"
+                                className="h-10 w-full rounded-xl border border-border-strong bg-surface px-3.5 text-sm font-semibold text-ink focus:outline-none focus:border-primary"
                               >
                                 <option value="">Select Department</option>
                                 {productionDepartments.map((department) => (
@@ -5178,9 +5178,9 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                                 onWheel={(e) => handleNumberInputWheel(e, step.durationMinutes, (val) => updateRouteStep(step.id, { durationMinutes: val }))}
                                 onKeyDown={(e) => handleNumberInputKeyDown(e, step.durationMinutes, (val) => updateRouteStep(step.id, { durationMinutes: val }))}
                                 placeholder="0"
-                                className="h-10 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 pl-3.5 pr-8 font-mono text-sm font-semibold text-slate-900 dark:text-white focus:outline-none focus:border-primary"
+                                className="h-10 w-full rounded-xl border border-border-strong bg-surface pl-3.5 pr-8 font-mono text-sm font-semibold text-ink focus:outline-none focus:border-primary"
                               />
-                              <span className="absolute right-3 top-2.5 text-xs font-bold text-slate-400">min</span>
+                              <span className="absolute right-3 top-2.5 text-xs font-bold text-ink-placeholder">min</span>
                             </div>
 
                             <div className="flex justify-center">
@@ -5188,7 +5188,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                                 type="button"
                                 onClick={() => removeRouteStep(step.id)}
                                 aria-label="Remove step"
-                                className="flex h-10 w-10 items-center justify-center rounded-xl text-slate-400 hover:bg-destructive/10 hover:text-destructive cursor-pointer transition-colors"
+                                className="flex h-10 w-10 items-center justify-center rounded-xl text-ink-placeholder hover:bg-destructive/10 hover:text-destructive cursor-pointer transition-colors"
                               >
                                 <Trash2 className="h-4 w-4" />
                               </button>
@@ -5215,7 +5215,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                             setSelectedRouteId('');
                             setRouteName('');
                           }}
-                          className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 dark:border-slate-700 px-3 py-2 text-xs font-medium text-slate-500 hover:bg-destructive/10 hover:text-destructive hover:border-destructive/30 transition-colors"
+                          className="inline-flex items-center gap-1.5 rounded-xl border border-border px-3 py-2 text-xs font-medium text-ink-muted hover:bg-destructive/10 hover:text-destructive hover:border-destructive/30 transition-colors"
                           title="Clear all steps"
                         >
                           <Trash2 className="h-4 w-4" /> Clear Route
@@ -5225,11 +5225,11 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                           onClick={handleSaveAndAddRoute}
                           disabled={!canSaveRoute}
                           title={routeNameAlreadyExists ? 'Choose a different production route name.' : undefined}
-                          className="inline-flex items-center gap-1.5 rounded-xl border border-primary bg-primary px-3.5 py-2 text-xs font-bold text-white hover:bg-primary/90 disabled:cursor-not-allowed disabled:opacity-60 transition-colors"
+                          className="inline-flex items-center gap-1.5 rounded-xl border border-primary bg-primary px-3.5 py-2 text-xs font-bold text-inverse hover:bg-primary/90 disabled:cursor-not-allowed disabled:opacity-60 transition-colors"
                         >
                           <Save className="h-4 w-4" /> {isSavingRoute ? 'Saving Route…' : 'Save & Add Route'}
                         </button>
-                        {routeNameAlreadyExists && <span className="text-xs text-red-600">A production route with this name already exists. Choose a different name.</span>}
+                        {routeNameAlreadyExists && <span className="text-xs text-tone-red-text">A production route with this name already exists. Choose a different name.</span>}
                       </div>
                     </div>
                   )}
@@ -5241,14 +5241,14 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                 SECTION 04: TECHNICAL & ENGINEERING SPECIFICATIONS
                ========================================================================= */}
             {(activeSectionTab === 'all' || activeSectionTab === 'specs') && (
-              <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/90 dark:border-slate-800 shadow-sm overflow-hidden">
+              <div className="bg-surface rounded-2xl border border-border shadow-sm overflow-hidden">
                 {/* Section Header */}
-                <div className="px-6 py-4 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between gap-4 bg-slate-50/50 dark:bg-slate-800/30">
+                <div className="px-6 py-4 border-b border-border flex items-center justify-between gap-4 bg-muted">
                   <div className="flex items-center gap-3.5">
-                    <div className="flex items-center justify-center w-8 h-8 rounded-xl bg-primary text-white font-mono text-xs font-black shadow-xs ring-4 ring-primary/10 shrink-0">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-xl bg-primary text-inverse font-mono text-xs font-black shadow-xs ring-4 ring-primary/10 shrink-0">
                       04
                     </div>
-                    <h2 className="text-sm md:text-base font-bold text-slate-900 dark:text-white tracking-tight">
+                    <h2 className="text-sm md:text-base font-bold text-ink tracking-tight">
                       Engineering &amp; Technical Specifications
                     </h2>
                   </div>
@@ -5257,24 +5257,24 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                     type="button"
                     onClick={() => toggleSection('specs')}
                     aria-expanded={!collapsedSections.specs}
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-xs font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all cursor-pointer shadow-2xs"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-border bg-surface text-xs font-semibold text-ink-secondary hover:bg-muted transition-all cursor-pointer shadow-2xs"
                   >
                     <span className="text-[11px] font-medium hidden sm:inline">
                       {collapsedSections.specs ? 'Expand' : 'Collapse'}
                     </span>
                     {collapsedSections.specs ? (
-                      <ChevronDown className="h-3.5 w-3.5 text-slate-400" />
+                      <ChevronDown className="h-3.5 w-3.5 text-ink-placeholder" />
                     ) : (
-                      <ChevronUp className="h-3.5 w-3.5 text-slate-400" />
+                      <ChevronUp className="h-3.5 w-3.5 text-ink-placeholder" />
                     )}
                   </button>
                 </div>
 
                 <div className={collapsedSections.specs ? 'hidden' : 'p-6 space-y-4'}>
-                  <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/60 dark:bg-slate-800/30 p-5 space-y-4">
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-200/80 dark:border-slate-700/80 pb-3">
+                  <div className="rounded-2xl border border-border bg-muted p-5 space-y-4">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-border pb-3">
                       <div>
-                        <h3 className="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider">
+                        <h3 className="text-xs font-bold text-ink uppercase tracking-wider">
                           Custom Technical Parameters
                         </h3>
                       </div>
@@ -5298,20 +5298,20 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                             value={field.name}
                             onChange={(event) => updateTechnicalField(index, 'name', event.target.value)}
                             placeholder="e.g. Steel Grade, Pipe Diameter, Load Capacity"
-                            className="h-10 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 text-sm font-semibold text-slate-900 dark:text-white focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+                            className="h-10 w-full rounded-xl border border-border-strong bg-surface px-4 text-sm font-semibold text-ink focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
                           />
                           <input
                             type="text"
                             value={field.value}
                             onChange={(event) => updateTechnicalField(index, 'value', event.target.value)}
                             placeholder="Enter parameter value (e.g. AISI 304 High Gloss, 25mm OD)"
-                            className="h-10 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 text-sm font-semibold text-slate-900 dark:text-white focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+                            className="h-10 w-full rounded-xl border border-border-strong bg-surface px-4 text-sm font-semibold text-ink focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
                           />
                           <button
                             type="button"
                             onClick={() => removeTechnicalField(index)}
                             aria-label="Remove technical attribute"
-                            className="h-10 w-10 inline-flex items-center justify-center rounded-xl text-slate-400 hover:bg-destructive/10 hover:text-destructive cursor-pointer transition-colors"
+                            className="h-10 w-10 inline-flex items-center justify-center rounded-xl text-ink-placeholder hover:bg-destructive/10 hover:text-destructive cursor-pointer transition-colors"
                           >
                             <Trash2 className="h-4 w-4" />
                           </button>
@@ -5327,14 +5327,14 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                 SECTION 05: INVENTORY & STOCK PLANNING
                ========================================================================= */}
             {(activeSectionTab === 'all' || activeSectionTab === 'inventory') && (
-              <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/90 dark:border-slate-800 shadow-sm overflow-hidden">
+              <div className="bg-surface rounded-2xl border border-border shadow-sm overflow-hidden">
                 {/* Section Header */}
-                <div className="px-6 py-4 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between gap-4 bg-slate-50/50 dark:bg-slate-800/30">
+                <div className="px-6 py-4 border-b border-border flex items-center justify-between gap-4 bg-muted">
                   <div className="flex items-center gap-3.5">
-                    <div className="flex items-center justify-center w-8 h-8 rounded-xl bg-primary text-white font-mono text-xs font-black shadow-xs ring-4 ring-primary/10 shrink-0">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-xl bg-primary text-inverse font-mono text-xs font-black shadow-xs ring-4 ring-primary/10 shrink-0">
                       05
                     </div>
-                    <h2 className="text-sm md:text-base font-bold text-slate-900 dark:text-white tracking-tight">
+                    <h2 className="text-sm md:text-base font-bold text-ink tracking-tight">
                       Inventory &amp; Stock Planning
                     </h2>
                   </div>
@@ -5355,7 +5355,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                           }
                           setIsUomRelationModalOpen(true);
                         }}
-                        className="h-8 rounded-xl text-xs font-bold gap-1.5 border border-primary/50 bg-primary text-white shadow-sm hover:bg-primary/90 transition-colors cursor-pointer"
+                        className="h-8 rounded-xl text-xs font-bold gap-1.5 border border-primary/50 bg-primary text-inverse shadow-sm hover:bg-primary/90 transition-colors cursor-pointer"
                         icon={form.uomRelations && form.uomRelations.length > 0 ? ArrowLeftRight : Plus}
                       >
                         {form.uomRelations && form.uomRelations.length > 0
@@ -5367,15 +5367,15 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                       type="button"
                       onClick={() => toggleSection('inventory')}
                       aria-expanded={!collapsedSections.inventory}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-xs font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all cursor-pointer shadow-2xs"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-border bg-surface text-xs font-semibold text-ink-secondary hover:bg-muted transition-all cursor-pointer shadow-2xs"
                     >
                       <span className="text-[11px] font-medium hidden sm:inline">
                         {collapsedSections.inventory ? 'Expand' : 'Collapse'}
                       </span>
                       {collapsedSections.inventory ? (
-                        <ChevronDown className="h-3.5 w-3.5 text-slate-400" />
+                        <ChevronDown className="h-3.5 w-3.5 text-ink-placeholder" />
                       ) : (
-                        <ChevronUp className="h-3.5 w-3.5 text-slate-400" />
+                        <ChevronUp className="h-3.5 w-3.5 text-ink-placeholder" />
                       )}
                     </button>
                   </div>
@@ -5403,7 +5403,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                           }
                         }}
                       />
-                      <span className="text-xs font-bold text-slate-800 dark:text-slate-200 group-hover:text-primary transition-colors">
+                      <span className="text-xs font-bold text-ink group-hover:text-primary transition-colors">
                         Multiple UOM
                       </span>
                     </label>
@@ -5411,7 +5411,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                     <div>
-                      <label className="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
+                      <label className="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-ink-secondary mb-1.5">
                         <span>Primary UOM (Base) <span className="text-destructive font-black">*</span></span>
                         <button
                           type="button"
@@ -5452,7 +5452,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
+                      <label className="block text-xs font-bold uppercase tracking-wider text-ink-secondary mb-1.5">
                         Opening Stock
                       </label>
                       <input
@@ -5466,13 +5466,13 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                         onWheel={(e) => handleNumberInputWheel(e, form.initialQuantity, (val) => { handleChange('initialQuantity', val); clearFieldError('initialQuantity'); })}
                         onKeyDown={(e) => handleNumberInputKeyDown(e, form.initialQuantity, (val) => { handleChange('initialQuantity', val); clearFieldError('initialQuantity'); })}
                         aria-invalid={Boolean(fieldErrors.initialQuantity)}
-                        className="w-full h-11 px-4 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 font-mono text-sm font-semibold text-slate-900 dark:text-white focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                        className="w-full h-11 px-4 rounded-xl border border-border-strong bg-surface font-mono text-sm font-semibold text-ink focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
                       />
                       {fieldErrors.initialQuantity && <p className="mt-1 text-xs font-semibold text-destructive" role="alert">{fieldErrors.initialQuantity}</p>}
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
+                      <label className="block text-xs font-bold uppercase tracking-wider text-ink-secondary mb-1.5">
                         Safety Buffer (Min)
                       </label>
                       <input
@@ -5486,7 +5486,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                         onWheel={(e) => handleNumberInputWheel(e, form.minStockLevel, (val) => { handleChange('minStockLevel', val); clearFieldError('minStockLevel'); })}
                         onKeyDown={(e) => handleNumberInputKeyDown(e, form.minStockLevel, (val) => { handleChange('minStockLevel', val); clearFieldError('minStockLevel'); })}
                         aria-invalid={Boolean(fieldErrors.minStockLevel)}
-                        className="w-full h-11 px-4 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 font-mono text-sm font-semibold text-slate-900 dark:text-white focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                        className="w-full h-11 px-4 rounded-xl border border-border-strong bg-surface font-mono text-sm font-semibold text-ink focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
                       />
                       {fieldErrors.minStockLevel && <p className="mt-1 text-xs font-semibold text-destructive" role="alert">{fieldErrors.minStockLevel}</p>}
                     </div>
@@ -5495,7 +5495,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
 
                   {/* Multi-Unit of Measure (UOM) Established Relations */}
                   {form.hasMultipleUoms && (
-                    <div id="section-multi-uom-relations" className="pt-2 border-t border-slate-100 dark:border-slate-800 space-y-2">
+                    <div id="section-multi-uom-relations" className="pt-2 border-t border-border space-y-2">
                       {form.uomRelations && form.uomRelations.length > 0 && (
                         <div className="flex flex-wrap items-center gap-2">
                           {form.uomRelations.map((rel, idx) => {
@@ -5507,7 +5507,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                             return (
                               <div
                                 key={rel.id || idx}
-                                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-semibold text-slate-800 dark:text-slate-200 shadow-2xs"
+                                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-muted border border-border text-xs font-semibold text-ink shadow-2xs"
                               >
                                 <span className="font-mono font-bold text-primary">
                                   {rel.fromQuantity ?? 1} {fromName} = {rel.toQuantity ?? rel.factor} {toName}
@@ -5529,7 +5529,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                                       additionalUomIds: updatedSecondary,
                                     }));
                                   }}
-                                  className="text-slate-400 hover:text-destructive transition-colors cursor-pointer"
+                                  className="text-ink-placeholder hover:text-destructive transition-colors cursor-pointer"
                                   title="Remove relation"
                                 >
                                   <Trash2 className="w-3.5 h-3.5" />
@@ -5563,14 +5563,14 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                 SECTION 06: BILL OF MATERIALS (BOM FORMULATION)
                ========================================================================= */}
             {(activeSectionTab === 'all' || activeSectionTab === 'bom') && (
-              <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/90 dark:border-slate-800 shadow-sm overflow-hidden">
+              <div className="bg-surface rounded-2xl border border-border shadow-sm overflow-hidden">
                 {/* Section Header */}
-                <div className="px-6 py-4 border-b border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-slate-50/50 dark:bg-slate-800/30">
+                <div className="px-6 py-4 border-b border-border flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-muted">
                   <div className="flex items-center gap-3.5">
-                    <div className="flex items-center justify-center w-8 h-8 rounded-xl bg-primary text-white font-mono text-xs font-black shadow-xs ring-4 ring-primary/10 shrink-0">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-xl bg-primary text-inverse font-mono text-xs font-black shadow-xs ring-4 ring-primary/10 shrink-0">
                       06
                     </div>
-                    <h2 className="text-sm md:text-base font-bold text-slate-900 dark:text-white tracking-tight">
+                    <h2 className="text-sm md:text-base font-bold text-ink tracking-tight">
                       Bill of Materials (BOM Formulation Recipe)
                     </h2>
                   </div>
@@ -5578,7 +5578,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                   <div className="flex flex-wrap items-center gap-2.5">
                     <Link
                       href="/production/bom/new?from=product-draft"
-                      className="inline-flex items-center gap-2 rounded-xl border border-primary/50 bg-primary px-3.5 py-2 text-xs font-bold text-white shadow-sm hover:bg-primary/90 transition-colors"
+                      className="inline-flex items-center gap-2 rounded-xl border border-primary/50 bg-primary px-3.5 py-2 text-xs font-bold text-inverse shadow-sm hover:bg-primary/90 transition-colors"
                     >
                       Open BOM setup <ArrowUpRight className="h-4 w-4" />
                     </Link>
@@ -5586,15 +5586,15 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                       type="button"
                       onClick={() => toggleSection('bom')}
                       aria-expanded={!collapsedSections.bom}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-xs font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all cursor-pointer shadow-2xs"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-border bg-surface text-xs font-semibold text-ink-secondary hover:bg-muted transition-all cursor-pointer shadow-2xs"
                     >
                       <span className="text-[11px] font-medium hidden sm:inline">
                         {collapsedSections.bom ? 'Expand' : 'Collapse'}
                       </span>
                       {collapsedSections.bom ? (
-                        <ChevronDown className="h-3.5 w-3.5 text-slate-400" />
+                        <ChevronDown className="h-3.5 w-3.5 text-ink-placeholder" />
                       ) : (
-                        <ChevronUp className="h-3.5 w-3.5 text-slate-400" />
+                        <ChevronUp className="h-3.5 w-3.5 text-ink-placeholder" />
                       )}
                     </button>
                   </div>
@@ -5611,8 +5611,8 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
 
                     {/* Saved BOMs indicator */}
                     {savedBoms.length > 0 && (
-                      <div className="flex flex-wrap items-center gap-2 p-3 bg-primary/5 dark:bg-primary/10 rounded-xl border border-primary/20 dark:border-primary/30">
-                        <span className="text-xs font-bold text-primary dark:text-primary flex items-center gap-1.5">
+                      <div className="flex flex-wrap items-center gap-2 p-3 bg-primary/5 rounded-xl border border-primary/20">
+                        <span className="text-xs font-bold text-primary flex items-center gap-1.5">
                           <CheckCircle2 className="w-3.5 h-3.5 text-primary" /> Saved BOMs ({savedBoms.length}):
                         </span>
                         {savedBoms.map((b, idx) => {
@@ -5636,19 +5636,19 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                               className={clsx(
                                 'inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium shadow-2xs transition-all select-none',
                                 isEditingThis
-                                  ? 'bg-primary text-white border border-primary ring-2 ring-primary/30 font-bold cursor-default'
-                                  : 'bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 hover:border-primary/50 hover:bg-primary/5 dark:hover:bg-primary/10 cursor-pointer'
+                                  ? 'bg-primary text-inverse border border-primary ring-2 ring-primary/30 font-bold cursor-default'
+                                  : 'bg-surface border border-border text-ink hover:border-primary/50 hover:bg-primary/5 cursor-pointer'
                               )}
                               title={isEditingThis ? 'Currently editing this BOM' : `Click to view & edit ${b.name}`}
                             >
-                              <span className={clsx('font-bold', isEditingThis ? 'text-white' : 'text-primary')}>
+                              <span className={clsx('font-bold', isEditingThis ? 'text-inverse' : 'text-primary')}>
                                 {b.name || `BOM #${idx + 1}`}
                               </span>
-                              <span className={clsx('text-[10px] font-mono', isEditingThis ? 'text-white/80' : 'text-slate-400')}>
+                              <span className={clsx('text-[10px] font-mono', isEditingThis ? 'text-inverse' : 'text-ink-placeholder')}>
                                 ({b.lines.length} lines)
                               </span>
                               {isEditingThis && (
-                                <span className="text-[10px] bg-white/20 px-1.5 py-0.5 rounded text-white font-semibold ml-0.5">
+                                <span className="text-[10px] bg-surface px-1.5 py-0.5 rounded text-inverse font-semibold ml-0.5">
                                   Editing
                                 </span>
                               )}
@@ -5659,8 +5659,8 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                                   handleDeleteSavedBom(b.id);
                                 }}
                                 className={clsx(
-                                  'transition-colors ml-1 p-0.5 rounded hover:bg-black/10 dark:hover:bg-white/10 cursor-pointer',
-                                  isEditingThis ? 'text-white/80 hover:text-white' : 'text-slate-400 hover:text-destructive'
+                                  'transition-colors ml-1 p-0.5 rounded hover:bg-inverse cursor-pointer',
+                                  isEditingThis ? 'text-inverse hover:text-inverse' : 'text-ink-placeholder hover:text-destructive'
                                 )}
                                 title="Remove this BOM from the item; preserve the BOM record"
                               >
@@ -5687,9 +5687,9 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                     )}
 
                     {/* BOM Toolbar */}
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-slate-50 dark:bg-slate-800/50 p-3.5 rounded-xl border border-slate-200/80 dark:border-slate-700/80">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-muted p-3.5 rounded-xl border border-border">
                       <div className="flex items-center gap-2">
-                        <span className="text-xs font-bold text-slate-700 dark:text-slate-200">
+                        <span className="text-xs font-bold text-ink-secondary">
                           Recipe Lines: <strong className="font-mono text-primary text-sm">{bomLines.length} Items</strong>
                         </span>
                         {editingSavedBomId && (
@@ -5706,7 +5706,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                             value={bomName}
                             onChange={(e) => setBomName(e.target.value)}
                             placeholder="BOM Name (Auto-generated if empty)"
-                            className="h-9 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 text-xs font-semibold text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 shadow-2xs"
+                            className="h-9 w-full rounded-xl border border-border-strong bg-surface px-3 text-xs font-semibold text-ink placeholder:text-ink-placeholder focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 shadow-2xs"
                           />
                         </div>
 
@@ -5732,7 +5732,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                             type="button"
                             onClick={handleUpdateCurrentBom}
                             disabled={bomLines.length === 0}
-                            className="inline-flex items-center gap-1.5 rounded-xl border border-primary bg-primary px-3 py-2 text-xs font-bold text-white hover:bg-primary/90 transition-colors cursor-pointer shadow-2xs disabled:opacity-50 disabled:cursor-not-allowed"
+                            className="inline-flex items-center gap-1.5 rounded-xl border border-primary bg-primary px-3 py-2 text-xs font-bold text-inverse hover:bg-primary/90 transition-colors cursor-pointer shadow-2xs disabled:opacity-50 disabled:cursor-not-allowed"
                             title="Save changes to this BOM"
                           >
                             <Check className="w-4 h-4" /> Save Changes
@@ -5754,7 +5754,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
 
                     {appendedBomNames.length > 0 && (
                       <div className="flex flex-wrap items-center gap-2 px-1 text-xs">
-                        <span className="text-[11px] font-semibold text-slate-500">Appended BOMs:</span>
+                        <span className="text-[11px] font-semibold text-ink-muted">Appended BOMs:</span>
                         {appendedBomNames.map((name, i) => (
                           <span key={i} className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-lg bg-primary/10 border border-primary/20 text-primary font-mono text-[11px] font-bold">
                             {name}
@@ -5763,7 +5763,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                         <button
                           type="button"
                           onClick={() => setAppendedBomNames([])}
-                          className="text-[10px] text-slate-400 hover:text-slate-600 underline ml-1 cursor-pointer"
+                          className="text-[10px] text-ink-placeholder hover:text-ink-secondary underline ml-1 cursor-pointer"
                         >
                           Clear Tags
                         </button>
@@ -5771,9 +5771,9 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                     )}
 
                     {/* BOM Item Table */}
-                    <div className="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-800 shadow-2xs">
+                    <div className="overflow-x-auto rounded-xl border border-border shadow-2xs">
                       <table className="w-full min-w-[900px] text-left text-xs">
-                        <thead className="bg-slate-50 dark:bg-slate-800/80 font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 border-b border-slate-200 dark:border-slate-700">
+                        <thead className="bg-muted font-bold uppercase tracking-wider text-ink-muted border-b border-border">
                           <tr>
                             <th className="px-3 py-3.5 w-16 text-center">#</th>
                             <th className="px-4 py-3.5 min-w-[240px]">Item</th>
@@ -5784,10 +5784,10 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                             <th className="px-3 py-3.5 w-14 text-center">Action</th>
                           </tr>
                         </thead>
-                        <tbody className="divide-y divide-slate-100 dark:divide-slate-800 bg-white dark:bg-slate-900">
+                        <tbody className="divide-y divide-border bg-surface">
                           {bomLines.length === 0 ? (
                             <tr>
-                              <td colSpan={7} className="px-4 py-10 text-center text-slate-400 font-medium">
+                              <td colSpan={7} className="px-4 py-10 text-center text-ink-placeholder font-medium">
                                 <div className="flex min-h-24 items-center justify-center">
                                   <button
                                     type="button"
@@ -5845,8 +5845,8 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                                     setDraggedBomIndex(null);
                                   }}
                                   className={`transition-all duration-200 ease-out ${isDragging
-                                      ? 'opacity-40 bg-primary/10 shadow-lg scale-[1.008] z-20 relative ring-2 ring-primary/40 rounded-xl'
-                                      : 'hover:bg-slate-50/70 dark:hover:bg-slate-800/40'
+                                      ? 'opacity-40 bg-primary/10 shadow-none scale-[1.008] z-20 relative ring-2 ring-primary/40 rounded-xl'
+                                      : 'hover:bg-muted'
                                     }`}
                                 >
                                   <td className="px-2 py-3 text-center align-top pt-3.5">
@@ -5866,11 +5866,11 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                                         dragSourceIndexRef.current = null;
                                         setDraggedBomIndex(null);
                                       }}
-                                      className="inline-flex items-center justify-center gap-1 cursor-grab active:cursor-grabbing text-slate-400 hover:text-primary active:scale-95 transition-all py-1.5 px-2 rounded-lg hover:bg-primary/10 active:bg-primary/20 select-none"
+                                      className="inline-flex items-center justify-center gap-1 cursor-grab active:cursor-grabbing text-ink-placeholder hover:text-primary active:scale-95 transition-all py-1.5 px-2 rounded-lg hover:bg-primary/10 active:bg-primary/20 select-none"
                                       title="Click and drag to reorder line"
                                     >
-                                      <GripVertical className="w-3.5 h-3.5 shrink-0 text-slate-400 group-hover:text-primary transition-colors" />
-                                      <span className="font-bold font-mono text-xs text-slate-500 dark:text-slate-400">
+                                      <GripVertical className="w-3.5 h-3.5 shrink-0 text-ink-placeholder group-hover:text-primary transition-colors" />
+                                      <span className="font-bold font-mono text-xs text-ink-muted">
                                         {index + 1}
                                       </span>
                                     </div>
@@ -5942,19 +5942,19 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                                         isLoading={materials.isLoading || bomProducts.isLoading}
                                         placeholder="Search items across all categories..."
                                         renderOption={(item) => (
-                                          <div className={`flex min-w-0 items-center gap-2 ${item.parentOptionId ? 'ml-3 border-l-2 border-violet-300 pl-3 dark:border-violet-700' : ''}`}>
+                                          <div className={`flex min-w-0 items-center gap-2 ${item.parentOptionId ? 'ml-3 border-l-2 border-tone-purple-solid pl-3' : ''}`}>
                                             <div className="min-w-0 flex-1">
                                               <div className="flex min-w-0 items-center gap-2">
-                                                <span className={`truncate ${item.isVariant ? 'text-xs font-medium text-slate-700 dark:text-slate-200' : 'text-xs font-bold text-slate-900 dark:text-white'}`}>
+                                                <span className={`truncate ${item.isVariant ? 'text-xs font-medium text-ink-secondary' : 'text-xs font-bold text-ink'}`}>
                                                   {item.parentOptionId ? '↳ ' : ''}{item.isVariant ? getVariantLabel(item.parentItemName, item.name) : item.name}
                                                 </span>
                                                 {item.isVariant && (
-                                                  <span className="shrink-0 rounded-md border border-violet-200 bg-violet-50 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide text-violet-700 dark:border-violet-800 dark:bg-violet-950/50 dark:text-violet-300">
+                                                  <span className="shrink-0 rounded-md border border-tone-purple-solid/25 bg-tone-purple-bg px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide text-tone-purple-text">
                                                     Variant
                                                   </span>
                                                 )}
                                               </div>
-                                              {item.category?.name && <span className="block truncate text-[10px] text-slate-400">{item.category.name}</span>}
+                                              {item.category?.name && <span className="block truncate text-[10px] text-ink-placeholder">{item.category.name}</span>}
                                             </div>
                                           </div>
                                         )}
@@ -6012,8 +6012,8 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                                       placeholder="0.00"
                                       className={`h-10 w-full rounded-xl border ${fieldErrors[`bom-${index}-qty`]
                                         ? 'border-destructive ring-2 ring-destructive/20 bg-destructive/5'
-                                        : 'border-slate-300 dark:border-slate-700'
-                                        } bg-white dark:bg-slate-800 px-3 text-sm font-bold text-right font-mono text-slate-900 dark:text-white focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20`}
+                                        : 'border-border-strong'
+                                        } bg-surface px-3 text-sm font-bold text-right font-mono text-ink focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20`}
                                     />
                                     {fieldErrors[`bom-${index}-qty`] && (
                                       <p className="mt-1 text-[11px] font-semibold text-destructive flex items-center gap-1">
@@ -6080,7 +6080,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                                   {/* Editable Average Rate */}
                                   <td className="px-3 py-3 align-top">
                                     <div className="relative">
-                                      <span className="absolute left-2.5 top-2.5 text-xs font-bold text-slate-400">₹</span>
+                                      <span className="absolute left-2.5 top-2.5 text-xs font-bold text-ink-placeholder">₹</span>
                                       <input
                                         type="number"
                                         min="0"
@@ -6103,7 +6103,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                                             )
                                           );
                                         }}
-                                        className="h-10 w-full pl-6 pr-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-xs font-bold text-right font-mono text-slate-900 dark:text-white focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+                                        className="h-10 w-full pl-6 pr-2 rounded-xl border border-border-strong bg-surface text-xs font-bold text-right font-mono text-ink focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
                                       />
                                     </div>
                                   </td>
@@ -6116,7 +6116,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                                         )
                                       }
                                       placeholder="Cutting length, color code, tolerance..."
-                                      className="h-10 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3.5 text-xs font-medium text-slate-900 dark:text-white focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+                                      className="h-10 w-full rounded-xl border border-border-strong bg-surface px-3.5 text-xs font-medium text-ink focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
                                     />
                                   </td>
                                   <td className="px-3 py-3 text-center align-top">
@@ -6129,7 +6129,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                                         clearFieldError(`bom-${index}-uom`);
                                       }}
                                       aria-label="Remove BOM line"
-                                      className="h-10 w-10 flex items-center justify-center text-slate-400 hover:text-destructive hover:bg-destructive/10 rounded-xl transition-colors cursor-pointer mx-auto"
+                                      className="h-10 w-10 flex items-center justify-center text-ink-placeholder hover:text-destructive hover:bg-destructive/10 rounded-xl transition-colors cursor-pointer mx-auto"
                                     >
                                       <Trash2 className="h-4 w-4" />
                                     </button>
@@ -6157,9 +6157,9 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                         >
                           <Plus className="h-4 w-4" /> Add Item Line
                         </button>
-                        <div className="flex min-w-[240px] items-center justify-between gap-6 rounded-xl border border-slate-200 bg-slate-50 px-5 py-3 shadow-sm dark:border-slate-700 dark:bg-slate-800/70">
-                          <span className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Total Cost</span>
-                          <strong className="font-mono text-base font-bold text-slate-900 dark:text-white">
+                        <div className="flex min-w-[240px] items-center justify-between gap-6 rounded-xl border border-border bg-muted px-5 py-3 shadow-sm">
+                          <span className="text-xs font-semibold uppercase tracking-wide text-ink-muted">Total Cost</span>
+                          <strong className="font-mono text-base font-bold text-ink">
                             ₹{totalCostBasis.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                           </strong>
                         </div>
@@ -6175,7 +6175,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                               setBomLines([]);
                               setSelectedBomVersionId('');
                             }}
-                            className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 dark:border-slate-700 px-3.5 py-2.5 text-xs font-medium text-slate-500 hover:bg-destructive/10 hover:text-destructive hover:border-destructive/30 transition-colors cursor-pointer"
+                            className="inline-flex items-center gap-1.5 rounded-xl border border-border px-3.5 py-2.5 text-xs font-medium text-ink-muted hover:bg-destructive/10 hover:text-destructive hover:border-destructive/30 transition-colors cursor-pointer"
                             title="Clear all formulation lines"
                           >
                             <Trash2 className="h-4 w-4" /> Clear All
@@ -6193,14 +6193,14 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                 SECTION 07: MEASUREMENT VARIANTS
                ========================================================================= */}
             {(activeSectionTab === 'all' || activeSectionTab === 'variants') && (
-              <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/90 dark:border-slate-800 shadow-sm overflow-hidden">
+              <div className="bg-surface rounded-2xl border border-border shadow-sm overflow-hidden">
                 {/* Section Header */}
-                <div className="px-5 py-3 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between gap-4 bg-slate-50/50 dark:bg-slate-800/30">
+                <div className="px-5 py-3 border-b border-border flex items-center justify-between gap-4 bg-muted">
                   <div className="flex items-center gap-3">
-                    <div className="flex items-center justify-center w-7 h-7 rounded-lg bg-primary text-white font-mono text-xs font-black shadow-xs ring-2 ring-primary/10 shrink-0">
+                    <div className="flex items-center justify-center w-7 h-7 rounded-lg bg-primary text-inverse font-mono text-xs font-black shadow-xs ring-2 ring-primary/10 shrink-0">
                       07
                     </div>
-                    <h2 className="text-sm font-bold text-slate-900 dark:text-white tracking-tight">
+                    <h2 className="text-sm font-bold text-ink tracking-tight">
                       Measurement Variants
                     </h2>
                   </div>
@@ -6217,7 +6217,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                       <button
                         type="button"
                         onClick={() => setMeasurementVariants([createEmptyMeasurementVariant(form.uomId)])}
-                        className="inline-flex items-center gap-1 rounded-lg border border-slate-200 dark:border-slate-700 px-2.5 py-1.5 text-xs font-medium text-slate-500 hover:bg-destructive/10 hover:text-destructive hover:border-destructive/30 transition-colors cursor-pointer"
+                        className="inline-flex items-center gap-1 rounded-lg border border-border px-2.5 py-1.5 text-xs font-medium text-ink-muted hover:bg-destructive/10 hover:text-destructive hover:border-destructive/30 transition-colors cursor-pointer"
                         title="Reset to blank variant"
                       >
                         <Trash2 className="h-3.5 w-3.5" /> Clear All
@@ -6227,15 +6227,15 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                       type="button"
                       onClick={() => toggleSection('variants')}
                       aria-expanded={!collapsedSections.variants}
-                      className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-xs font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all cursor-pointer shadow-2xs"
+                      className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg border border-border bg-surface text-xs font-semibold text-ink-secondary hover:bg-muted transition-all cursor-pointer shadow-2xs"
                     >
                       <span className="text-[11px] font-medium hidden sm:inline">
                         {collapsedSections.variants ? 'Expand' : 'Collapse'}
                       </span>
                       {collapsedSections.variants ? (
-                        <ChevronDown className="h-3.5 w-3.5 text-slate-400" />
+                        <ChevronDown className="h-3.5 w-3.5 text-ink-placeholder" />
                       ) : (
-                        <ChevronUp className="h-3.5 w-3.5 text-slate-400" />
+                        <ChevronUp className="h-3.5 w-3.5 text-ink-placeholder" />
                       )}
                     </button>
                   </div>
@@ -6243,20 +6243,20 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
 
                 <div className={collapsedSections.variants ? 'hidden' : 'p-4'}>
                   {measurementVariants.length === 0 ? (
-                    <div className="py-4 px-4 text-center border border-dashed border-slate-200 dark:border-slate-800 rounded-xl bg-slate-50/50 dark:bg-slate-850/50 flex flex-col sm:flex-row items-center justify-end gap-3">
+                    <div className="py-4 px-4 text-center border border-dashed border-border rounded-xl bg-muted flex flex-col sm:flex-row items-center justify-end gap-3">
                       <button
                         type="button"
                         onClick={() => addMeasurementVariant()}
-                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary text-white text-xs font-bold hover:bg-[#003c68] transition-colors cursor-pointer shrink-0 shadow-2xs"
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary text-inverse text-xs font-bold hover:bg-[color:var(--action-primary-bg-hover)] transition-colors cursor-pointer shrink-0 shadow-2xs"
                       >
                         <Plus className="w-3.5 h-3.5" /> Add First Variant
                       </button>
                     </div>
                   ) : (
-                    <div className="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-800">
+                    <div className="overflow-x-auto rounded-xl border border-border">
                       <table className="w-full text-left border-collapse">
                         <thead>
-                          <tr className="border-b border-slate-200 dark:border-slate-800 bg-slate-50/80 dark:bg-slate-800/60 text-[11px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400">
+                          <tr className="border-b border-border bg-muted text-[11px] font-bold uppercase tracking-wider text-ink-secondary">
                             <th className="py-2.5 px-3">Variant Name *</th>
                             <th className="py-2.5 px-3 w-48">Specification / Type</th>
                             <th className="py-2.5 px-3 w-36">SKU Code</th>
@@ -6268,9 +6268,9 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                             <th className="py-2.5 px-2 w-10 text-center"></th>
                           </tr>
                         </thead>
-                        <tbody className="divide-y divide-slate-100 dark:divide-slate-800 bg-white dark:bg-slate-900">
+                        <tbody className="divide-y divide-border bg-surface">
                           {measurementVariants.map((variant, vIdx) => (
-                            <tr key={variant.id} className="hover:bg-slate-50/50 dark:hover:bg-slate-850/50">
+                            <tr key={variant.id} className="hover:bg-muted">
                               <td className="py-1.5 px-3">
                                 <input
                                   id={`field-variant-${vIdx}-name`}
@@ -6279,7 +6279,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                                   value={variant.name}
                                   onChange={(e) => { updateMeasurementVariant(vIdx, 'name', e.target.value); clearFieldError(`variant-${vIdx}-name`); }}
                                   aria-invalid={Boolean(fieldErrors[`variant-${vIdx}-name`])}
-                                  className={`w-full h-8 px-2.5 rounded-lg border ${fieldErrors[`variant-${vIdx}-name`] ? 'border-destructive' : 'border-slate-200 dark:border-slate-700'} bg-white dark:bg-slate-800 text-xs font-medium text-slate-900 dark:text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20`}
+                                  className={`w-full h-8 px-2.5 rounded-lg border ${fieldErrors[`variant-${vIdx}-name`] ? 'border-destructive' : 'border-border'} bg-surface text-xs font-medium text-ink focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20`}
                                 />
                                 {fieldErrors[`variant-${vIdx}-name`] && <p className="mt-1 text-[10px] font-semibold text-destructive" role="alert">{fieldErrors[`variant-${vIdx}-name`]}</p>}
                               </td>
@@ -6289,7 +6289,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                                   placeholder="e.g. CS-Raw with box, Online only"
                                   value={variant.measurementValue}
                                   onChange={(e) => updateMeasurementVariant(vIdx, 'measurementValue', e.target.value)}
-                                  className="w-full h-8 px-2.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-xs font-medium text-slate-900 dark:text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20"
+                                  className="w-full h-8 px-2.5 rounded-lg border border-border bg-surface text-xs font-medium text-ink focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20"
                                 />
                               </td>
                               <td className="py-1.5 px-3">
@@ -6298,7 +6298,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                                   placeholder="SKU (optional)"
                                   value={variant.sku}
                                   onChange={(e) => updateMeasurementVariant(vIdx, 'sku', e.target.value.toUpperCase())}
-                                  className="w-full h-8 px-2.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-xs font-mono text-slate-900 dark:text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20"
+                                  className="w-full h-8 px-2.5 rounded-lg border border-border bg-surface text-xs font-mono text-ink focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20"
                                 />
                               </td>
                               <td className="py-1.5 px-3">
@@ -6313,7 +6313,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                                   onWheel={(e) => handleNumberInputWheel(e, variant.openingStock, (val) => { updateMeasurementVariant(vIdx, 'openingStock', val); clearFieldError(`variant-${vIdx}-openingStock`); })}
                                   onKeyDown={(e) => handleNumberInputKeyDown(e, variant.openingStock, (val) => { updateMeasurementVariant(vIdx, 'openingStock', val); clearFieldError(`variant-${vIdx}-openingStock`); })}
                                   aria-invalid={Boolean(fieldErrors[`variant-${vIdx}-openingStock`])}
-                                  className="w-full h-8 px-2.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-xs font-mono font-medium text-slate-900 dark:text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20"
+                                  className="w-full h-8 px-2.5 rounded-lg border border-border bg-surface text-xs font-mono font-medium text-ink focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20"
                                 />
                                 {fieldErrors[`variant-${vIdx}-openingStock`] && <p className="mt-1 text-[10px] font-semibold text-destructive" role="alert">{fieldErrors[`variant-${vIdx}-openingStock`]}</p>}
                               </td>
@@ -6329,7 +6329,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                                   onWheel={(e) => handleNumberInputWheel(e, variant.minStockLevel, (val) => { updateMeasurementVariant(vIdx, 'minStockLevel', val); clearFieldError(`variant-${vIdx}-minStockLevel`); })}
                                   onKeyDown={(e) => handleNumberInputKeyDown(e, variant.minStockLevel, (val) => { updateMeasurementVariant(vIdx, 'minStockLevel', val); clearFieldError(`variant-${vIdx}-minStockLevel`); })}
                                   aria-invalid={Boolean(fieldErrors[`variant-${vIdx}-minStockLevel`])}
-                                  className="w-full h-8 px-2.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-xs font-mono text-slate-900 dark:text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20"
+                                  className="w-full h-8 px-2.5 rounded-lg border border-border bg-surface text-xs font-mono text-ink focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20"
                                 />
                                 {fieldErrors[`variant-${vIdx}-minStockLevel`] && <p className="mt-1 text-[10px] font-semibold text-destructive" role="alert">{fieldErrors[`variant-${vIdx}-minStockLevel`]}</p>}
                               </td>
@@ -6343,14 +6343,14 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                                   onChange={(e) => updateMeasurementVariant(vIdx, 'standardPrice', e.target.value)}
                                   onWheel={(e) => handleNumberInputWheel(e, variant.standardPrice, (val) => updateMeasurementVariant(vIdx, 'standardPrice', val))}
                                   onKeyDown={(e) => handleNumberInputKeyDown(e, variant.standardPrice, (val) => updateMeasurementVariant(vIdx, 'standardPrice', val))}
-                                  className="w-full h-8 px-2.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-xs font-mono text-slate-900 dark:text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20"
+                                  className="w-full h-8 px-2.5 rounded-lg border border-border bg-surface text-xs font-mono text-ink focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20"
                                 />
                               </td>
                               <td className="py-1.5 px-2 text-center">
                                 <button
                                   type="button"
                                   onClick={() => removeMeasurementVariant(vIdx)}
-                                  className="text-slate-400 hover:text-destructive p-1 rounded-md hover:bg-destructive/10 transition-colors cursor-pointer"
+                                  className="text-ink-placeholder hover:text-destructive p-1 rounded-md hover:bg-destructive/10 transition-colors cursor-pointer"
                                   title="Delete variant"
                                 >
                                   <Trash2 className="w-3.5 h-3.5" />
@@ -6375,7 +6375,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                 variant="outline"
                 size="sm"
                 onClick={handleBack}
-                className="h-10 rounded-xl text-sm font-bold px-5 border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800"
+                className="h-10 rounded-xl text-sm font-bold px-5 border-border-strong hover:bg-muted"
               >
                 Cancel
               </Button>
@@ -6383,7 +6383,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                 type="submit"
                 size="sm"
                 disabled={isSaving}
-                className="h-10 rounded-xl text-sm font-bold px-6 bg-primary hover:bg-[#003c68] text-white shadow-sm"
+                className="h-10 rounded-xl text-sm font-bold px-6 bg-primary hover:bg-[color:var(--action-primary-bg-hover)] text-inverse shadow-sm"
                 icon={Save}
               >
                 {isSaving

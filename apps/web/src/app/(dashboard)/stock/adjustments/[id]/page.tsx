@@ -38,11 +38,11 @@ interface PageProps {
 }
 
 const STATUS_CONFIG: Record<string, { label: string; badgeClass: string; icon: React.ElementType }> = {
-  PROPOSED: { label: 'Proposed', badgeClass: 'bg-amber-500/10 text-amber-700 dark:text-amber-400 border-amber-500/20', icon: Clock },
-  UNDER_REVIEW: { label: 'Under Review', badgeClass: 'bg-blue-500/10 text-blue-700 dark:text-blue-400 border-blue-500/20', icon: Clock },
+  PROPOSED: { label: 'Proposed', badgeClass: 'bg-tone-amber-bg text-tone-amber-text border-tone-amber-solid/25', icon: Clock },
+  UNDER_REVIEW: { label: 'Under Review', badgeClass: 'bg-tone-blue-bg text-tone-blue-text border-tone-blue-solid/25', icon: Clock },
   APPROVED: { label: 'Approved', badgeClass: 'bg-primary/10 text-primary border-primary/20', icon: CheckCircle2 },
-  POSTED: { label: 'Posted to Ledger', badgeClass: 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border-emerald-500/20', icon: CheckCircle2 },
-  REJECTED: { label: 'Rejected', badgeClass: 'bg-rose-500/10 text-rose-700 dark:text-rose-400 border-rose-500/20', icon: XCircle },
+  POSTED: { label: 'Posted to Ledger', badgeClass: 'bg-tone-green-bg text-tone-green-text border-tone-green-solid/25', icon: CheckCircle2 },
+  REJECTED: { label: 'Rejected', badgeClass: 'bg-tone-red-bg text-tone-red-text border-tone-red-solid/25', icon: XCircle },
 };
 
 export default function StockAdjustmentDetailPage({ params }: PageProps) {
@@ -117,12 +117,12 @@ export default function StockAdjustmentDetailPage({ params }: PageProps) {
         />
 
         {actionError && (
-          <div className="rounded-xl border border-rose-500/20 bg-rose-500/10 p-4">
+          <div className="rounded-xl border border-tone-red-solid/25 bg-tone-red-bg p-4">
             <div className="flex items-start gap-3">
-              <XCircle className="h-5 w-5 text-rose-600 mt-0.5 shrink-0" />
+              <XCircle className="h-5 w-5 text-tone-red-text mt-0.5 shrink-0" />
               <div>
-                <h4 className="text-xs font-bold text-rose-900 dark:text-rose-300">Action Failed</h4>
-                <p className="text-xs text-rose-700 dark:text-rose-400 mt-0.5">{actionError}</p>
+                <h4 className="text-xs font-bold text-tone-red-text">Action Failed</h4>
+                <p className="text-xs text-tone-red-text mt-0.5">{actionError}</p>
               </div>
             </div>
           </div>
@@ -149,8 +149,8 @@ export default function StockAdjustmentDetailPage({ params }: PageProps) {
             <div className="flex items-center gap-2">
               <span className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold ${
                 isIncrease
-                  ? 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20'
-                  : 'bg-rose-500/10 text-rose-700 dark:text-rose-400 border border-rose-500/20'
+                  ? 'bg-tone-green-bg text-tone-green-text border border-tone-green-solid/25'
+                  : 'bg-tone-red-bg text-tone-red-text border border-tone-red-solid/25'
               }`}>
                 {isIncrease ? <ArrowDownToLine className="h-4 w-4" /> : <ArrowUpFromLine className="h-4 w-4" />}
                 <span>{isIncrease ? `+${Number(adjustment.quantity)} ${adjustment.uom?.code || 'Units'}` : `−${Number(adjustment.quantity)} ${adjustment.uom?.code || 'Units'}`}</span>
@@ -168,7 +168,7 @@ export default function StockAdjustmentDetailPage({ params }: PageProps) {
 
             <div className="p-3.5 rounded-xl border border-border/70 bg-card">
               <span className="text-[10px] uppercase font-semibold text-muted-foreground">Direction &amp; Quantity</span>
-              <p className={`font-mono font-bold mt-1 ${isIncrease ? 'text-emerald-600 dark:text-emerald-400' : 'text-rose-600 dark:text-rose-400'}`}>
+              <p className={`font-mono font-bold mt-1 ${isIncrease ? 'text-tone-green-text' : 'text-tone-red-text'}`}>
                 {isIncrease ? `+${adjustment.quantity}` : `−${adjustment.quantity}`} {adjustment.uom?.code || 'Units'}
               </p>
               <p className="text-muted-foreground">{isIncrease ? 'Surplus Addition' : 'Scrap / Discrepancy Write-down'}</p>
@@ -223,7 +223,7 @@ export default function StockAdjustmentDetailPage({ params }: PageProps) {
                   size="sm"
                   onClick={() => runAction(() => reviewAdjustment.mutateAsync({ id, note: reviewNote || undefined }))}
                   disabled={reviewAdjustment.isPending}
-                  className="rounded-full shadow-xs bg-primary hover:bg-amber-600 text-primary-foreground font-semibold"
+                  className="rounded-full shadow-xs bg-primary hover:bg-[color:var(--tone-amber-solid)] text-primary-foreground font-semibold"
                 >
                   {reviewAdjustment.isPending ? 'Saving...' : 'Set to Under Review'}
                 </Button>
@@ -246,7 +246,7 @@ export default function StockAdjustmentDetailPage({ params }: PageProps) {
                     variant="outline"
                     size="sm"
                     onClick={() => setShowReject(!showReject)}
-                    className="text-rose-600 hover:text-rose-700 hover:bg-rose-50 border-rose-200 rounded-full"
+                    className="text-tone-red-text hover:text-tone-red-text hover:bg-tone-red-solid border-tone-red-solid/25 rounded-full"
                   >
                     Reject
                   </Button>
@@ -255,7 +255,7 @@ export default function StockAdjustmentDetailPage({ params }: PageProps) {
                     size="sm"
                     onClick={() => runAction(() => approveAdjustment.mutateAsync(id))}
                     disabled={approveAdjustment.isPending}
-                    className="gap-1.5 rounded-full shadow-xs bg-primary hover:bg-amber-600 text-primary-foreground font-semibold"
+                    className="gap-1.5 rounded-full shadow-xs bg-primary hover:bg-tone-amber-solid text-primary-foreground font-semibold"
                   >
                     <CheckCircle2 className="h-4 w-4" />
                     <span>{approveAdjustment.isPending ? 'Approving...' : 'Approve Adjustment'}</span>
@@ -264,8 +264,8 @@ export default function StockAdjustmentDetailPage({ params }: PageProps) {
               </div>
 
               {showReject && (
-                <div className="pt-3 border-t border-rose-500/20 space-y-3">
-                  <label className="block text-xs font-semibold uppercase text-rose-600">
+                <div className="pt-3 border-t border-tone-red-solid/25 space-y-3">
+                  <label className="block text-xs font-semibold uppercase text-tone-red-text">
                     Mandatory Rejection Reason
                   </label>
                   <div className="flex gap-2">
@@ -274,14 +274,14 @@ export default function StockAdjustmentDetailPage({ params }: PageProps) {
                       value={rejectReason}
                       onChange={(e) => setRejectReason(e.target.value)}
                       placeholder="Why is this adjustment rejected?"
-                      className="flex-1 text-sm bg-background border border-border rounded-lg p-2.5 text-foreground focus:outline-none focus:ring-2 focus:ring-rose-500 placeholder:text-muted-foreground"
+                      className="flex-1 text-sm bg-background border border-border rounded-lg p-2.5 text-foreground focus:outline-none focus:ring-2 focus:ring-tone-red-solid/25 placeholder:text-muted-foreground"
                     />
                     <Button
                       type="button"
                       size="sm"
                       onClick={() => runAction(() => rejectAdjustment.mutateAsync({ id, reason: rejectReason }))}
                       disabled={rejectAdjustment.isPending || rejectReason.length < 3}
-                      className="bg-rose-600 hover:bg-rose-700 text-white rounded-full font-semibold"
+                      className="bg-tone-red-solid hover:bg-[color:var(--tone-red-text)] text-inverse rounded-full font-semibold"
                     >
                       Confirm Rejection
                     </Button>
@@ -292,11 +292,11 @@ export default function StockAdjustmentDetailPage({ params }: PageProps) {
           )}
 
           {adjustment.status === 'APPROVED' && (
-            <div className="p-5 rounded-xl border border-emerald-500/20 bg-emerald-500/10 space-y-4">
+            <div className="p-5 rounded-xl border border-tone-green-solid/25 bg-tone-green-bg space-y-4">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-emerald-600" />
+                    <CheckCircle2 className="h-4 w-4 text-tone-green-text" />
                     <h3 className="text-sm font-semibold text-foreground">
                       Step 3: Final Atomic Posting to Perpetual Ledger
                     </h3>
@@ -310,7 +310,7 @@ export default function StockAdjustmentDetailPage({ params }: PageProps) {
                   size="sm"
                   onClick={() => runAction(() => postAdjustment.mutateAsync(id))}
                   disabled={postAdjustment.isPending}
-                  className="gap-2 rounded-full shadow-xs bg-emerald-600 hover:bg-emerald-700 text-white font-semibold whitespace-nowrap"
+                  className="gap-2 rounded-full shadow-xs bg-action hover:bg-[color:var(--action-primary-bg-hover)] text-inverse font-semibold whitespace-nowrap"
                 >
                   <Send className="h-4 w-4" />
                   <span>{postAdjustment.isPending ? 'Posting...' : 'Post to Live Ledger'}</span>
@@ -320,9 +320,9 @@ export default function StockAdjustmentDetailPage({ params }: PageProps) {
           )}
 
           {adjustment.status === 'POSTED' && (
-            <div className="p-5 rounded-xl border border-emerald-500/20 bg-emerald-500/10 flex items-center justify-between">
+            <div className="p-5 rounded-xl border border-tone-green-solid/25 bg-tone-green-bg flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <CheckCircle2 className="h-6 w-6 text-emerald-600" />
+                <CheckCircle2 className="h-6 w-6 text-tone-green-text" />
                 <div>
                   <h3 className="text-sm font-semibold text-foreground">
                     Adjustment Successfully Posted to Perpetual Ledger
@@ -336,7 +336,7 @@ export default function StockAdjustmentDetailPage({ params }: PageProps) {
                 <Button
                   variant="outline"
                   size="sm"
-                  className="rounded-full text-emerald-700 dark:text-emerald-400 border-emerald-300 hover:bg-emerald-50 gap-1.5"
+                  className="rounded-full text-tone-green-text border-tone-green-solid/25 hover:bg-tone-green-solid gap-1.5"
                 >
                   <span>View in Ledger</span>
                   <ExternalLink className="h-3.5 w-3.5" />

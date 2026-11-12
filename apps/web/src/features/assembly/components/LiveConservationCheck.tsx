@@ -118,7 +118,7 @@ export function LiveConservationCheck({
           </div>
           <div className="p-3 rounded-xl bg-background/80 border border-border">
             <span className="text-muted-foreground">Scrap Quantity:</span>
-            <p className="font-mono text-base font-bold text-amber-600 mt-0.5">
+            <p className="font-mono text-base font-bold text-tone-amber-text mt-0.5">
               {scrapQuantity || 0}
             </p>
           </div>

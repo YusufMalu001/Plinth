@@ -114,7 +114,7 @@ export default function PricingMasterDetailPage() {
         </Card>
 
         <Card className="overflow-hidden rounded-2xl border border-border bg-card shadow-xs">
-          <div className="flex flex-wrap items-center justify-between gap-4 border-b border-border px-4 py-4 sm:px-5">
+          <div className="flex flex-wrap items-center justify-between gap-4 border-border-strong border-border px-4 py-4 sm:px-5">
             <div className="flex items-center gap-2">
               <BadgePercent className="h-4 w-4 text-primary" />
               <h2 className="text-lg font-bold text-foreground">Pricing tiers</h2>
@@ -140,7 +140,7 @@ export default function PricingMasterDetailPage() {
                     const unusedLevel = pricingLevels.find((lvl) => !tiers.some((t) => t.name === lvl)) || pricingLevels[0] || 'Dealer';
                     setTiers((current) => [...current, blankTier(unusedLevel)]);
                   }}
-                  className="h-8 rounded-xl text-xs font-bold gap-1.5 border border-primary/50 bg-primary text-white shadow-sm hover:bg-primary/90 cursor-pointer"
+                  className="h-8 rounded-xl text-xs font-bold gap-1.5 border border-primary/50 bg-primary text-inverse shadow-sm hover:bg-primary/90 cursor-pointer"
                   icon={Plus}
                 >
                   Add Tier

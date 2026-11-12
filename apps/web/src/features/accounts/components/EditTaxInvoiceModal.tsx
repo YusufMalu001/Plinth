@@ -135,7 +135,7 @@ export function EditTaxInvoiceModal({
         {/* Header */}
         <div className="flex items-start justify-between border-b border-border pb-4">
           <div className="space-y-1">
-            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-bold bg-muted text-foreground border border-amber-500/30">
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-bold bg-muted text-foreground border border-tone-amber-solid/30">
               <ShieldAlert className="h-3.5 w-3.5" />
               <span>Admin Authorization Required</span>
             </div>
@@ -276,7 +276,7 @@ export function EditTaxInvoiceModal({
           {/* Totals Summary */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 rounded-xl bg-muted/40 border border-border">
             <div className="text-xs text-muted-foreground flex items-center gap-1.5">
-              <AlertCircle className="h-4 w-4 text-amber-600 shrink-0" />
+              <AlertCircle className="h-4 w-4 text-tone-amber-text shrink-0" />
               <span>
                 Changes will adjust invoice totals, General Ledger journals upon
                 posting, and remaining customer dues.

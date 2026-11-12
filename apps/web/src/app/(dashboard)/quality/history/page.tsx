@@ -80,7 +80,7 @@ export default function QualityHistoryPage() {
         {/* ======================================================== */}
         {/* 1. STREAMLINED PAGE HEADER                               */}
         {/* ======================================================== */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-border pb-5">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-border-strong border-border pb-5">
           <div>
             <div className="flex items-center gap-2 text-xs text-muted-foreground mb-1.5">
               <Link href="/quality" className="hover:text-primary transition-colors font-medium">
@@ -179,7 +179,7 @@ export default function QualityHistoryPage() {
           </div>
         ) : historyItems.length > 0 ? (
           <div className="rounded-2xl border border-border bg-card p-6 shadow-2xs space-y-6">
-            <div className="flex items-center justify-between border-b border-border pb-4">
+            <div className="flex items-center justify-between border-border-strong border-border pb-4">
               <div>
                 <h3 className="text-base font-bold text-foreground flex items-center gap-2">
                   <FileCheck2 className="w-4.5 h-4.5 text-primary" />

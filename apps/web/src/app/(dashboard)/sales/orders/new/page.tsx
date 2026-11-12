@@ -772,7 +772,7 @@ export default function CreateSalesOrderPage() {
 
       <form onSubmit={handleSubmit} className="mx-auto max-w-[1550px] space-y-6">
         {/* Navigation & Header */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-2 border-b border-border/70">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-2 border-border-strong border-border/70">
           <div className="space-y-1">
             <Link
               href="/sales"
@@ -785,7 +785,7 @@ export default function CreateSalesOrderPage() {
                 Create Sales Order
               </h1>
               {isHoldRequired && (
-                <Badge variant="outline" className="text-xs font-bold text-amber-700 dark:text-amber-400 border-amber-500/30 bg-amber-500/10">
+                <Badge variant="outline" className="text-xs font-bold text-tone-amber-text border-tone-amber-solid/25 bg-tone-amber-bg">
                   <ShieldAlert className="h-3.5 w-3.5 mr-1" /> Requires Hold Queue Approval
                 </Badge>
               )}
@@ -830,7 +830,7 @@ export default function CreateSalesOrderPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
           {/* Left Column: Customer Account (6 cols) */}
           <Card className="lg:col-span-6 rounded-2xl border-border/80 bg-card overflow-hidden shadow-xs hover:border-border transition-all">
-            <CardHeader className="bg-muted/30 border-b border-border/60 py-3.5 px-5">
+            <CardHeader className="bg-muted/30 border-border-strong border-border/60 py-3.5 px-5">
               <div className="flex items-center justify-between">
                 <CardTitle className="text-sm sm:text-base font-bold flex items-center gap-2 text-foreground">
                   <Building2 className="h-4 w-4 text-primary" /> Customer & Credit Account
@@ -900,7 +900,7 @@ export default function CreateSalesOrderPage() {
 
           {/* Right Column: Order Parameters & Commercial Metadata (6 cols) */}
           <Card className="lg:col-span-6 rounded-2xl border-border/80 bg-card overflow-hidden shadow-xs hover:border-border transition-all">
-            <CardHeader className="bg-muted/30 border-b border-border/60 py-3.5 px-5">
+            <CardHeader className="bg-muted/30 border-border-strong border-border/60 py-3.5 px-5">
               <CardTitle className="text-sm sm:text-base font-bold flex items-center gap-2 text-foreground">
                 <FileText className="h-4 w-4 text-primary" /> Order Parameters & Metadata
               </CardTitle>
@@ -984,7 +984,7 @@ export default function CreateSalesOrderPage() {
         {/* SECTION 2: FULL-WIDTH ORDER LINE ITEMS WORKSPACE              */}
         {/* ============================================================ */}
         <Card className="rounded-2xl border-border/80 bg-card overflow-hidden shadow-xs hover:border-border transition-all w-full">
-          <CardHeader className="bg-muted/30 border-b border-border/60 py-4 px-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <CardHeader className="bg-muted/30 border-border-strong border-border/60 py-4 px-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div>
               <CardTitle className="text-base font-bold flex items-center gap-2 text-foreground">
                 <Package className="h-4 w-4 text-primary" /> Order Line Items & Pricing Master Allocation
@@ -1038,7 +1038,7 @@ export default function CreateSalesOrderPage() {
 
                     return (
                       <React.Fragment key={idx}>
-                        <TableRow className={`hover:bg-muted/10 transition-colors border-b border-border/70 ${hasShortage ? 'bg-amber-500/[0.03]' : ''}`}>
+                        <TableRow className={`hover:bg-muted/10 transition-colors border-border-strong border-border/70 ${hasShortage ? 'bg-tone-amber-solid/[0.03]' : ''}`}>
                           <TableCell className="pl-5 py-3" data-sales-field="product">
                             <SearchableSelector
                               value={line.productId}
@@ -1053,13 +1053,13 @@ export default function CreateSalesOrderPage() {
                           <TableCell className="text-center py-3">
                             {line.productId ? (
                               availableStock > 0 ? (
-                                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20 whitespace-nowrap">
-                                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 shrink-0" />
+                                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-tone-green-bg text-tone-green-text border border-tone-green-solid/25 whitespace-nowrap">
+                                  <span className="h-1.5 w-1.5 rounded-full bg-tone-green-solid shrink-0" />
                                   {availableStock} {line.uom}
                                 </span>
                               ) : (
-                                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 whitespace-nowrap">
-                                  <span className="h-1.5 w-1.5 rounded-full bg-amber-500 shrink-0" />
+                                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-tone-amber-bg text-tone-amber-text border border-tone-amber-solid/25 whitespace-nowrap">
+                                  <span className="h-1.5 w-1.5 rounded-full bg-tone-amber-solid shrink-0" />
                                   0 {line.uom}
                                 </span>
                               )
@@ -1144,17 +1144,17 @@ export default function CreateSalesOrderPage() {
                         </TableRow>
 
                         {hasShortage && (
-                          <tr className="bg-amber-500/[0.04] border-b border-border/70">
+                          <tr className="bg-tone-amber-solid/[0.04] border-border-strong border-border/70">
                             <td colSpan={9} className="px-5 py-3">
-                              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3 rounded-xl bg-card border border-amber-500/20">
+                              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3 rounded-xl bg-card border border-tone-amber-solid/25">
                                 <div className="flex items-center gap-3">
-                                  <div className="h-8 w-8 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center shrink-0">
-                                    <AlertTriangle className="h-4 w-4 text-amber-600 dark:text-amber-400" />
+                                  <div className="h-8 w-8 rounded-lg bg-tone-amber-bg border border-tone-amber-solid/25 flex items-center justify-center shrink-0">
+                                    <AlertTriangle className="h-4 w-4 text-tone-amber-text" />
                                   </div>
                                   <div className="text-xs space-y-0.5">
                                     <div className="flex items-center gap-2">
                                       <span className="font-bold text-foreground">Inventory Shortage</span>
-                                      <Badge variant="outline" className="text-[10px] font-mono text-amber-700 dark:text-amber-400 border-amber-500/30">
+                                      <Badge variant="outline" className="text-[10px] font-mono text-tone-amber-text border-tone-amber-solid/25">
                                         Deficit: {shortageQty} {line.uom}
                                       </Badge>
                                     </div>
@@ -1175,7 +1175,7 @@ export default function CreateSalesOrderPage() {
                                     {notifyShortage.isPending ? (
                                       <Loader2 className="h-3.5 w-3.5 animate-spin mr-1.5" />
                                     ) : isNotified ? (
-                                      <Check className="h-3.5 w-3.5 mr-1.5 text-emerald-600" />
+                                      <Check className="h-3.5 w-3.5 mr-1.5 text-tone-green-text" />
                                     ) : (
                                       <BellRing className="h-3.5 w-3.5 mr-1.5" />
                                     )}
@@ -1285,7 +1285,7 @@ export default function CreateSalesOrderPage() {
                     </div>
 
                     {hasShortage && (
-                      <div className="p-2.5 rounded-lg bg-amber-500/10 border border-amber-500/20 text-xs text-amber-700 dark:text-amber-400 font-medium">
+                      <div className="p-2.5 rounded-lg bg-tone-amber-bg border border-tone-amber-solid/25 text-xs text-tone-amber-text font-medium">
                         Shortage: {shortageQty} {line.uom} (Store available: {availableStock})
                       </div>
                     )}
@@ -1325,7 +1325,7 @@ export default function CreateSalesOrderPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
           {/* Left Column: Delivery & Billing Addresses (7 cols) */}
           <Card className="lg:col-span-7 rounded-2xl border-border/80 bg-card overflow-hidden shadow-xs hover:border-border transition-all">
-            <CardHeader className="bg-muted/30 border-b border-border/60 py-3.5 px-5">
+            <CardHeader className="bg-muted/30 border-border-strong border-border/60 py-3.5 px-5">
               <CardTitle className="text-sm sm:text-base font-bold flex items-center gap-2 text-foreground">
                 <MapPin className="h-4 w-4 text-primary" /> Delivery & Billing Logistics
               </CardTitle>
@@ -1538,13 +1538,13 @@ export default function CreateSalesOrderPage() {
           {/* Right Column: Commercial Summary (5 cols) */}
           <div className="lg:col-span-5 space-y-6">
             <Card className="rounded-2xl border-border/80 bg-card shadow-xs hover:border-border transition-all">
-              <CardHeader className="bg-muted/30 border-b border-border/60 py-3.5 px-5">
+              <CardHeader className="bg-muted/30 border-border-strong border-border/60 py-3.5 px-5">
                 <CardTitle className="text-sm sm:text-base font-bold flex items-center gap-2 text-foreground">
                   <CreditCard className="h-4 w-4 text-primary" /> Commercial Settlement Summary
                 </CardTitle>
               </CardHeader>
               <CardContent className="p-5 space-y-4 text-xs">
-                <div className="space-y-2.5 pb-4 border-b border-border/70">
+                <div className="space-y-2.5 pb-4 border-border-strong border-border/70">
                   <div className="flex justify-between text-muted-foreground text-xs">
                     <span>Gross Subtotal</span>
                     <span className="font-mono font-semibold text-foreground">
@@ -1554,7 +1554,7 @@ export default function CreateSalesOrderPage() {
 
                   <div className="flex justify-between text-muted-foreground text-xs">
                     <span>Discount Total</span>
-                    <span className="font-mono font-semibold text-emerald-600 dark:text-emerald-400">
+                    <span className="font-mono font-semibold text-tone-green-text">
                       - {formatCurrency(totals.discountTotal)}
                     </span>
                   </div>

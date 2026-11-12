@@ -253,7 +253,7 @@ function AcceptedGrnDetailView({
               {grn.grnNumber}
             </h1>
             <div className="flex items-center gap-2">
-              <span className="inline-flex items-center gap-1 rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-bold text-primary dark:text-primary border border-primary/20">
+              <span className="inline-flex items-center gap-1 rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-bold text-primary border border-primary/20">
                 <ShieldCheck className="h-3.5 w-3.5" />
                 {grn.status.replaceAll('_', ' ')}
               </span>
@@ -290,7 +290,7 @@ function AcceptedGrnDetailView({
             <div className="flex items-center gap-2">
               <Link href={`/accounts/purchases/bills/${primaryBill.id}`}>
                 <Button
-                  className="font-semibold gap-1.5 rounded-xl text-xs px-4 py-2 bg-primary hover:bg-primary/90 text-white shadow-sm"
+                  className="font-semibold gap-1.5 rounded-xl text-xs px-4 py-2 bg-primary hover:bg-primary/90 text-inverse shadow-sm"
                 >
                   <FileText className="h-4 w-4" />
                   Open Supplier Bill ({primaryBill.supplierInvoiceNumber})
@@ -299,7 +299,7 @@ function AcceptedGrnDetailView({
             </div>
           ) : billCaptureReady ? (
             <Link href={`/accounts/purchases/bills/new?grnId=${grn.id}`}>
-              <Button className="font-semibold gap-1.5 shadow-sm rounded-xl text-xs px-4 py-2 bg-primary hover:bg-primary/90 text-white">
+              <Button className="font-semibold gap-1.5 shadow-sm rounded-xl text-xs px-4 py-2 bg-primary hover:bg-primary/90 text-inverse">
                 <Plus className="h-4 w-4" /> Record Supplier Invoice
               </Button>
             </Link>
@@ -308,9 +308,9 @@ function AcceptedGrnDetailView({
       </div>
 
       {!primaryBill && grn.billCreationIssue && (
-        <Card className="rounded-2xl border-rose-200 bg-rose-50/70 shadow-none dark:border-rose-900/50 dark:bg-rose-950/20">
+        <Card className="rounded-2xl border-tone-red-solid/25 bg-tone-red-bg shadow-none">
           <CardContent className="flex items-start gap-3 p-4">
-            <AlertCircle className="mt-0.5 h-4 w-4 shrink-0 text-rose-700 dark:text-rose-300" />
+            <AlertCircle className="mt-0.5 h-4 w-4 shrink-0 text-tone-red-text" />
             <div>
               <p className="text-sm font-semibold text-foreground">Supplier bill draft could not be created automatically</p>
               <p className="mt-1 text-xs text-muted-foreground">{grn.billCreationIssue}</p>
@@ -320,10 +320,10 @@ function AcceptedGrnDetailView({
       )}
 
       {!primaryBill && grn.status !== 'FINALIZED' && (
-        <Card className="rounded-2xl border-n-200 bg-n-50/60 shadow-none dark:border-n-900/50 dark:bg-n-950/20">
+        <Card className="rounded-2xl border-n-200 bg-n-50/60 shadow-none">
           <CardContent className="flex flex-col gap-3 p-4 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-start gap-3">
-              <Info className="mt-0.5 h-4 w-4 shrink-0 text-foreground dark:text-n-300" />
+              <Info className="mt-0.5 h-4 w-4 shrink-0 text-foreground" />
               <div>
                 <p className="text-sm font-semibold text-foreground">Supplier bill draft is waiting for GRN finalization</p>
                 <p className="mt-1 text-xs text-muted-foreground">
@@ -349,7 +349,7 @@ function AcceptedGrnDetailView({
           <CardContent className="p-5">
             <div className="flex items-center justify-between">
               <span className="text-xs font-semibold text-muted-foreground">Expected Payable</span>
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-muted dark:bg-muted text-muted-foreground border border-border dark:border-border">
+              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-muted text-muted-foreground border border-border">
                 <Receipt className="h-4 w-4" />
               </div>
             </div>
@@ -367,11 +367,11 @@ function AcceptedGrnDetailView({
           <CardContent className="p-5">
             <div className="flex items-center justify-between">
               <span className="text-xs font-semibold text-muted-foreground">Payments Recorded</span>
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary/10 dark:bg-primary/10 text-primary border border-primary/20 dark:border-emerald-900/40">
+              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary/10 text-primary border border-primary/20">
                 <CheckCircle2 className="h-4 w-4" />
               </div>
             </div>
-            <p className="mt-2 text-2xl font-bold tracking-tight text-primary dark:text-primary font-mono">
+            <p className="mt-2 text-2xl font-bold tracking-tight text-primary font-mono">
               {formatCurrency(grn.paidAmount)}
             </p>
             <p className="mt-1 text-[11px] text-muted-foreground">
@@ -388,8 +388,8 @@ function AcceptedGrnDetailView({
               <div
                 className={`flex h-9 w-9 items-center justify-center rounded-xl border ${
                   isFullyPaid
-                    ? 'bg-primary/10 dark:bg-primary/10 text-primary border-primary/20 dark:border-emerald-900/40'
-                    : 'bg-muted/40 dark:bg-muted/40 text-foreground border-border dark:border-border'
+                    ? 'bg-primary/10 text-primary border-primary/20'
+                    : 'bg-muted/40 text-foreground border-border'
                 }`}
               >
                 <Wallet className="h-4 w-4" />
@@ -399,7 +399,7 @@ function AcceptedGrnDetailView({
               className={`mt-2 text-2xl font-bold tracking-tight font-mono ${
                 isFullyPaid
                   ? 'text-foreground'
-                  : 'text-foreground dark:text-muted-foreground'
+                  : 'text-foreground'
               }`}
             >
               {formatCurrency(grn.balanceAmount)}
@@ -439,7 +439,7 @@ function AcceptedGrnDetailView({
 
       {/* Receipt and Purchase Order Details Card */}
       <Card className="rounded-2xl border-border/80 shadow-none">
-        <CardHeader className="border-b border-border/70 p-5 bg-muted/20">
+        <CardHeader className="border-border-strong border-border/70 p-5 bg-muted/20">
           <div className="flex items-center gap-2">
             <FileText className="h-4 w-4 text-muted-foreground" />
             <CardTitle className="text-sm font-bold">Receipt & Purchase Order Overview</CardTitle>
@@ -510,7 +510,7 @@ function AcceptedGrnDetailView({
 
       {/* Use the same official GRN document component as Goods Receiving. */}
       <Card className="overflow-hidden rounded-2xl border-border/80 shadow-none">
-        <CardHeader className="flex flex-row items-center justify-between gap-3 border-b border-border/70 bg-muted/20 p-5">
+        <CardHeader className="flex flex-row items-center justify-between gap-3 border-border-strong border-border/70 bg-muted/20 p-5">
           <div className="flex items-center gap-2">
             <FileText className="h-4 w-4 text-primary" />
             <div>
@@ -518,7 +518,7 @@ function AcceptedGrnDetailView({
               <p className="mt-0.5 text-[11px] text-muted-foreground">Official GRN {grn.grnNumber} · Receiving record</p>
             </div>
           </div>
-          <Button variant="default" size="sm" onClick={() => printGrn()} className="gap-1.5 bg-primary text-xs font-semibold text-white">
+          <Button variant="default" size="sm" onClick={() => printGrn()} className="gap-1.5 bg-primary text-xs font-semibold text-inverse">
             <Printer className="h-3.5 w-3.5" /> Print GRN
           </Button>
         </CardHeader>
@@ -529,7 +529,7 @@ function AcceptedGrnDetailView({
 
       {/* Accepted Line Items Table */}
       <Card className="rounded-2xl border-border/80 shadow-none">
-        <CardHeader className="border-b border-border/70 p-5 flex flex-row items-center justify-between">
+        <CardHeader className="border-border-strong border-border/70 p-5 flex flex-row items-center justify-between">
           <div className="flex items-center gap-2">
             <PackageCheck className="h-4 w-4 text-muted-foreground" />
             <div>
@@ -571,7 +571,7 @@ function AcceptedGrnDetailView({
                       {line.receivedQuantity} {line.uom}
                     </TableCell>
                     <TableCell className="p-3.5 text-center">
-                      <span className="inline-flex rounded-full bg-primary/10 px-2 py-0.5 font-mono text-xs font-bold text-primary dark:text-primary">
+                      <span className="inline-flex rounded-full bg-primary/10 px-2 py-0.5 font-mono text-xs font-bold text-primary">
                         {line.acceptedQuantity} {line.uom}
                       </span>
                     </TableCell>
@@ -612,7 +612,7 @@ function AcceptedGrnDetailView({
 
       {/* Claims from the procurement debit-note workflow, displayed against the same GRN. */}
       <Card className="rounded-2xl border-border/80 shadow-none">
-        <CardHeader className="border-b border-border/70 p-5">
+        <CardHeader className="border-border-strong border-border/70 p-5">
           <div className="flex items-center gap-2">
             <ReceiptText className="h-4 w-4 text-foreground" />
             <div>
@@ -656,7 +656,7 @@ function AcceptedGrnDetailView({
       <div className="grid gap-6 lg:grid-cols-2">
         {/* Payment History */}
         <Card className="rounded-2xl border-border/80 shadow-none">
-          <CardHeader className="border-b border-border/70 p-5 flex flex-row items-center justify-between">
+          <CardHeader className="border-border-strong border-border/70 p-5 flex flex-row items-center justify-between">
             <div className="flex items-center gap-2">
               <CreditCard className="h-4 w-4 text-primary" />
               <div>
@@ -704,7 +704,7 @@ function AcceptedGrnDetailView({
                         <TableCell className="p-3 text-muted-foreground text-[11px]">
                           {payment.recordedBy.name || payment.recordedBy.email}
                         </TableCell>
-                        <TableCell className="p-3 text-right font-mono font-bold text-primary dark:text-primary">
+                        <TableCell className="p-3 text-right font-mono font-bold text-primary">
                           {formatCurrency(payment.amount)}
                         </TableCell>
                       </TableRow>
@@ -727,7 +727,7 @@ function AcceptedGrnDetailView({
                   <Link href={`/accounts/purchases/bills/${primaryBill.id}`}>
                     <Button
                       size="sm"
-                      className="bg-primary hover:bg-primary/90 text-white text-xs rounded-xl shadow-sm px-4 gap-1.5"
+                      className="bg-primary hover:bg-primary/90 text-inverse text-xs rounded-xl shadow-sm px-4 gap-1.5"
                     >
                       <FileText className="h-3.5 w-3.5" />
                       Open Supplier Bill to Disburse Payment
@@ -741,7 +741,7 @@ function AcceptedGrnDetailView({
 
         {/* Linked Supplier Invoices */}
         <Card className="rounded-2xl border-border/80 shadow-none">
-          <CardHeader className="border-b border-border/70 p-5 flex flex-row items-center justify-between">
+          <CardHeader className="border-border-strong border-border/70 p-5 flex flex-row items-center justify-between">
             <div className="flex items-center gap-2">
               <Receipt className="h-4 w-4 text-muted-foreground" />
               <div>
@@ -753,7 +753,7 @@ function AcceptedGrnDetailView({
             </div>
             {!primaryBill && billCaptureReady && (
               <Link href={`/accounts/purchases/bills/new?grnId=${grn.id}`}>
-                <Button size="sm" className="h-7 text-xs rounded-lg px-2.5 bg-primary hover:bg-primary/90 text-white">
+                <Button size="sm" className="h-7 text-xs rounded-lg px-2.5 bg-primary hover:bg-primary/90 text-inverse">
                   <Plus className="h-3 w-3 mr-1" /> Record Supplier Invoice
                 </Button>
               </Link>
@@ -789,20 +789,20 @@ function AcceptedGrnDetailView({
                         <TableCell className="p-3 text-right font-mono font-semibold">
                           {formatCurrency(inv.amount)}
                         </TableCell>
-                        <TableCell className="p-3 text-right font-mono text-primary dark:text-primary font-semibold">
+                        <TableCell className="p-3 text-right font-mono text-primary font-semibold">
                           {formatCurrency(inv.paidAmount || '0')}
                         </TableCell>
-                        <TableCell className="p-3 text-right font-mono font-bold text-foreground dark:text-muted-foreground">
+                        <TableCell className="p-3 text-right font-mono font-bold text-foreground">
                           {formatCurrency(inv.balanceAmount || inv.amount)}
                         </TableCell>
                         <TableCell className="p-3 text-center">
                           <span
                             className={`rounded-full px-2 py-0.5 text-[10px] font-bold ${
                               inv.paymentStatus === 'PAID'
-                                ? 'bg-primary/10 text-primary dark:text-primary border border-primary/20'
+                                ? 'bg-primary/10 text-primary border border-primary/20'
                                 : inv.paymentStatus === 'PARTIALLY_PAID'
-                                ? 'bg-muted text-foreground dark:text-muted-foreground border border-border'
-                                : 'bg-muted text-foreground dark:text-muted-foreground border border-border'
+                                ? 'bg-muted text-foreground border border-border'
+                                : 'bg-muted text-foreground border border-border'
                             }`}
                           >
                             {inv.paymentStatus || 'PENDING'}
@@ -810,7 +810,7 @@ function AcceptedGrnDetailView({
                         </TableCell>
                         <TableCell className="p-3 text-right">
                           <Link href={`/accounts/purchases/bills/${inv.id}`}>
-                            <Button size="sm" className="h-6 text-[11px] px-2.5 rounded-lg bg-primary hover:bg-primary/90 text-white font-semibold gap-1">
+                            <Button size="sm" className="h-6 text-[11px] px-2.5 rounded-lg bg-primary hover:bg-primary/90 text-inverse font-semibold gap-1">
                               <FileText className="h-3 w-3" />
                               View Bill
                             </Button>
@@ -838,7 +838,7 @@ function AcceptedGrnDetailView({
                 </div>
                 {billCaptureReady && (
                   <Link href={`/accounts/purchases/bills/new?grnId=${grn.id}`}>
-                    <Button size="sm" className="bg-primary hover:bg-primary/90 text-white text-xs rounded-xl shadow-sm px-4">
+                    <Button size="sm" className="bg-primary hover:bg-primary/90 text-inverse text-xs rounded-xl shadow-sm px-4">
                       <Plus className="h-3.5 w-3.5 mr-1" /> Record Supplier Invoice
                     </Button>
                   </Link>
@@ -874,7 +874,7 @@ function AcceptedGrnDetailView({
 function PaymentStatusBadge({ status }: { status: GrnPaymentStatus }) {
   if (status === 'PAID') {
     return (
-      <span className="inline-flex items-center gap-1 rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-bold text-primary dark:text-primary border border-primary/20">
+      <span className="inline-flex items-center gap-1 rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-bold text-primary border border-primary/20">
         <CheckCircle2 className="h-3.5 w-3.5" />
         PAID
       </span>
@@ -882,7 +882,7 @@ function PaymentStatusBadge({ status }: { status: GrnPaymentStatus }) {
   }
   if (status === 'PARTIALLY_PAID') {
     return (
-      <span className="inline-flex items-center gap-1 rounded-full bg-muted px-2.5 py-0.5 text-xs font-bold text-foreground dark:text-muted-foreground border border-border">
+      <span className="inline-flex items-center gap-1 rounded-full bg-muted px-2.5 py-0.5 text-xs font-bold text-foreground border border-border">
         <Clock className="h-3.5 w-3.5" />
         PARTIALLY PAID
       </span>
@@ -896,7 +896,7 @@ function PaymentStatusBadge({ status }: { status: GrnPaymentStatus }) {
     );
   }
   return (
-    <span className="inline-flex items-center gap-1 rounded-full bg-muted px-2.5 py-0.5 text-xs font-bold text-foreground dark:text-muted-foreground border border-border">
+    <span className="inline-flex items-center gap-1 rounded-full bg-muted px-2.5 py-0.5 text-xs font-bold text-foreground border border-border">
       <AlertCircle className="h-3.5 w-3.5" />
       PENDING
     </span>

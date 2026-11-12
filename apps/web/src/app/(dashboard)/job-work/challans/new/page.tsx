@@ -495,7 +495,7 @@ export default function IssueMaterialChallanPage() {
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* Card 1: Product Selection & Outsource Vendor */}
         <Card className="p-6 border-border shadow-xs rounded-2xl bg-card space-y-5">
-          <div className="flex items-center gap-2.5 border-b border-border pb-3">
+          <div className="flex items-center gap-2.5 border-border-strong border-border pb-3">
             <Package className="h-5 w-5 text-primary" />
             <div>
               <h3 className="text-base font-extrabold text-foreground">
@@ -602,7 +602,7 @@ export default function IssueMaterialChallanPage() {
                             {o.badges.map((b, bIdx) => (
                               <span
                                 key={bIdx}
-                                className="inline-flex items-center px-1.5 py-0.2 rounded text-[9px] font-bold bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/30 transition-colors"
+                                className="inline-flex items-center px-1.5 py-0.2 rounded text-[9px] font-bold bg-tone-green-bg text-tone-green-text border border-tone-green-solid/25 transition-colors"
                               >
                                 {b.label}
                               </span>
@@ -649,7 +649,7 @@ export default function IssueMaterialChallanPage() {
 
         {/* Card 2: Standard BOM Recipe & Inventory Stock Availability */}
         <Card className="p-6 border-border shadow-xs rounded-2xl bg-card space-y-4">
-          <div className="flex items-center justify-between border-b border-border pb-3">
+          <div className="flex items-center justify-between border-border-strong border-border pb-3">
             <div className="flex items-center gap-2.5">
               <Layers className="h-5 w-5 text-primary" />
               <div>
@@ -664,7 +664,7 @@ export default function IssueMaterialChallanPage() {
             </div>
             {evaluatedBomLines.length > 0 && (
               allMaterialsAvailable ? (
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/30">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-tone-green-bg text-tone-green-text border border-tone-green-solid/25">
                   <CheckCircle2 className="h-4 w-4" /> All Materials Available in Stock
                 </span>
               ) : (
@@ -686,7 +686,7 @@ export default function IssueMaterialChallanPage() {
           ) : (
             <div className="overflow-x-auto rounded-xl border border-border bg-background">
               <table className="w-full text-left text-xs">
-                <thead className="bg-muted/50 text-muted-foreground font-bold border-b border-border">
+                <thead className="bg-muted/50 text-muted-foreground font-bold border-border-strong border-border">
                   <tr>
                     <th className="p-3 uppercase tracking-wide">Raw Material</th>
                     <th className="p-3 uppercase tracking-wide">Required Dispatched Qty</th>
@@ -711,7 +711,7 @@ export default function IssueMaterialChallanPage() {
                       </td>
                       <td className="p-3">
                         {line.isAvailable ? (
-                          <span className="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-600 dark:text-emerald-400">
+                          <span className="inline-flex items-center gap-1 text-[11px] font-bold text-tone-green-text">
                             <CheckCircle2 className="h-3.5 w-3.5" /> In Stock (+{(line.availableInInventory - line.requiredQty).toFixed(2)})
                           </span>
                         ) : (
@@ -730,7 +730,7 @@ export default function IssueMaterialChallanPage() {
 
         {/* Card 3: Transport & Transit Logistics */}
         <Card className="p-6 border-border shadow-xs rounded-2xl bg-card space-y-5">
-          <div className="flex items-center gap-2.5 border-b border-border pb-3">
+          <div className="flex items-center gap-2.5 border-border-strong border-border pb-3">
             <Truck className="h-5 w-5 text-primary" />
             <h3 className="text-base font-extrabold text-foreground">
               3. Transporter &amp; Logistics Details
@@ -816,7 +816,7 @@ export default function IssueMaterialChallanPage() {
             loading={loading}
             disabled={loading || !allMaterialsAvailable}
             title={!allMaterialsAvailable ? 'Inventory stock is insufficient for required BOM materials' : undefined}
-            className="bg-[#173796] hover:bg-[#122b77] text-white font-extrabold text-xs shadow-sm px-6 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="bg-action hover:bg-[color:var(--action-primary-bg-hover)] text-inverse font-extrabold text-xs shadow-sm px-6 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             Generate Delivery Challan &amp; Dispatch
           </Button>

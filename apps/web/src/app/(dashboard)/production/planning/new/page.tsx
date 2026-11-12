@@ -1692,8 +1692,8 @@ export default function NewProductionSchedulePage() {
         <form onSubmit={(event) => { event.preventDefault(); void handleSubmit(false); }} className="w-full space-y-6">
           {/* SECTION 01: SCHEDULE IDENTITY & PRODUCT */}
           <div className="bg-card rounded-xl border border-border shadow-none overflow-hidden">
-            <div className="px-6 py-4 border-b border-border/70 flex items-center gap-3 bg-card">
-              <div className="flex items-center justify-center w-7 h-7 rounded-lg bg-primary text-white font-mono text-xs font-black shadow-none ring-2 ring-primary/20">
+            <div className="px-6 py-4 border-border-strong border-border/70 flex items-center gap-3 bg-card">
+              <div className="flex items-center justify-center w-7 h-7 rounded-lg bg-primary text-inverse font-mono text-xs font-black shadow-none ring-2 ring-primary/20">
                 01
               </div>
               <h2 className="text-sm font-bold text-foreground tracking-tight">
@@ -1774,9 +1774,9 @@ export default function NewProductionSchedulePage() {
                       <span>Checking the current BOM quantities against available inventory...</span>
                     </div>
                   ) : stockCheckStatus === 'ready' && stockRequirements.length > 0 ? (
-                    <div className={`overflow-hidden rounded-xl border ${stockShortages.length ? 'border-destructive/40 bg-destructive/5' : 'border-emerald-500/30 bg-emerald-500/5'}`}>
-                      <div className={`flex flex-wrap items-center justify-between gap-2 border-b px-4 py-3 ${stockShortages.length ? 'border-destructive/20' : 'border-emerald-500/20'}`}>
-                        <div className={`flex items-center gap-2 text-xs font-bold ${stockShortages.length ? 'text-destructive' : 'text-emerald-700 dark:text-emerald-400'}`}>
+                    <div className={`overflow-hidden rounded-xl border ${stockShortages.length ? 'border-destructive/40 bg-destructive/5' : 'border-tone-green-solid/25 bg-tone-green-bg'}`}>
+                      <div className={`flex flex-wrap items-center justify-between gap-2 border-border-strong px-4 py-3 ${stockShortages.length ? 'border-destructive/20' : 'border-tone-green-solid/25'}`}>
+                        <div className={`flex items-center gap-2 text-xs font-bold ${stockShortages.length ? 'text-destructive' : 'text-tone-green-text'}`}>
                           {stockShortages.length ? <AlertTriangle className="h-4 w-4 shrink-0" /> : <CheckCircle2 className="h-4 w-4 shrink-0" />}
                           <span>{stockShortages.length ? `Insufficient stock for ${stockShortages.length} BOM item${stockShortages.length === 1 ? '' : 's'}` : 'All BOM requirements are available'}</span>
                         </div>
@@ -1804,7 +1804,7 @@ export default function NewProductionSchedulePage() {
                               {line.shortageQuantity > 0.000001 ? (
                                 <span className="rounded-full bg-destructive/10 px-2 py-1 text-[10px] font-bold text-destructive">Short {line.shortageQuantity.toLocaleString()} {line.uomSymbol}</span>
                               ) : (
-                                <span className="rounded-full bg-emerald-500/10 px-2 py-1 text-[10px] font-bold text-emerald-700 dark:text-emerald-400">Sufficient</span>
+                                <span className="rounded-full bg-tone-green-bg px-2 py-1 text-[10px] font-bold text-tone-green-text">Sufficient</span>
                               )}
                             </div>
                           </div>
@@ -1812,12 +1812,12 @@ export default function NewProductionSchedulePage() {
                       </div>
                     </div>
                   ) : stockCheckStatus === 'error' ? (
-                    <div className="flex items-start gap-2 rounded-xl border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-xs font-medium text-amber-800 dark:text-amber-300">
+                    <div className="flex items-start gap-2 rounded-xl border border-tone-amber-solid/25 bg-tone-amber-bg px-4 py-3 text-xs font-medium text-tone-amber-text">
                       <AlertTriangle className="w-4 h-4 shrink-0" />
                       <span>{stockCheckError || 'Inventory availability could not be verified. The schedule remains blocked until the BOM and stock check are valid.'}</span>
                     </div>
                   ) : (
-                    <div className="flex items-center gap-2 rounded-xl border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-xs font-medium text-amber-800 dark:text-amber-300">
+                    <div className="flex items-center gap-2 rounded-xl border border-tone-amber-solid/25 bg-tone-amber-bg px-4 py-3 text-xs font-medium text-tone-amber-text">
                       <AlertTriangle className="w-4 h-4 shrink-0" />
                       <span>{bomLines.length ? 'Complete all BOM lines to check material availability.' : 'Load or add a BOM to check material availability before creating the schedule.'}</span>
                     </div>
@@ -1883,9 +1883,9 @@ export default function NewProductionSchedulePage() {
              ========================================================================= */}
           <div className="bg-card rounded-xl border border-border shadow-none overflow-hidden">
             {/* Section Header */}
-            <div className="px-6 py-4 border-b border-border/70 flex items-center justify-between gap-3 bg-card">
+            <div className="px-6 py-4 border-border-strong border-border/70 flex items-center justify-between gap-3 bg-card">
               <div className="flex items-center gap-3">
-                <div className="flex items-center justify-center w-7 h-7 rounded-lg bg-primary text-white font-mono text-xs font-black shadow-none ring-2 ring-primary/20">
+                <div className="flex items-center justify-center w-7 h-7 rounded-lg bg-primary text-inverse font-mono text-xs font-black shadow-none ring-2 ring-primary/20">
                   02
                 </div>
                 <h2 className="text-sm font-bold text-foreground tracking-tight">
@@ -1914,7 +1914,7 @@ export default function NewProductionSchedulePage() {
                         key={b.id}
                         className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
                           isEditingThis
-                            ? 'bg-primary text-white ring-2 ring-primary/40 shadow-none'
+                            ? 'bg-primary text-inverse ring-2 ring-primary/40 shadow-none'
                             : 'bg-card border border-border text-foreground hover:border-primary/40'
                         }`}
                       >
@@ -2048,7 +2048,7 @@ export default function NewProductionSchedulePage() {
               {/* BOM Table Matching Image #1 */}
               <div className="overflow-x-auto rounded-xl border border-border shadow-none">
                 <table className="w-full min-w-[900px] text-left text-xs">
-                  <thead className="bg-muted/40 font-bold uppercase tracking-wider text-muted-foreground border-b border-border">
+                  <thead className="bg-muted/40 font-bold uppercase tracking-wider text-muted-foreground border-border-strong border-border">
                     <tr>
                       <th className="px-3 py-3.5 w-16 text-center">#</th>
                       <th className="px-4 py-3.5 min-w-[240px]">ITEM / COMPONENT</th>
@@ -2377,9 +2377,9 @@ export default function NewProductionSchedulePage() {
              ========================================================================= */}
           <div className="bg-card rounded-xl border border-border shadow-none overflow-hidden">
             {/* Route is selected from the reviewed route graph tied to this BOM. */}
-            <div className="px-6 py-4 border-b border-border/70 flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-card">
+            <div className="px-6 py-4 border-border-strong border-border/70 flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-card">
               <div className="flex items-center gap-3">
-                <div className="flex items-center justify-center w-7 h-7 rounded-lg bg-primary text-white font-mono text-xs font-black shadow-none ring-2 ring-primary/20">
+                <div className="flex items-center justify-center w-7 h-7 rounded-lg bg-primary text-inverse font-mono text-xs font-black shadow-none ring-2 ring-primary/20">
                   03
                 </div>
                 <h2 className="text-sm font-bold text-foreground tracking-tight">
@@ -2452,7 +2452,7 @@ export default function NewProductionSchedulePage() {
 
                 return (
                   <div className="space-y-5">
-                    <div className="flex flex-wrap items-baseline justify-between gap-2 border-b border-border pb-3">
+                    <div className="flex flex-wrap items-baseline justify-between gap-2 border-border-strong border-border pb-3">
                       <div>
                         <p className="text-sm font-semibold text-foreground">Schedule route copy · {selectedGraphRoute.name}</p>
                         <p className="mt-1 text-xs text-muted-foreground">Changes are saved on this schedule as a separate route. Original: {selectedGraphRoute.code}</p>
@@ -2556,7 +2556,7 @@ export default function NewProductionSchedulePage() {
                                         ) : (
                                           <div className="overflow-hidden rounded-lg border border-border/70 bg-background">
                                             <table className="w-full border-collapse text-left text-xs">
-                                              <thead><tr className="border-b border-border/60 bg-muted/40 font-semibold text-muted-foreground"><th className="px-3 py-1.5">BOM Material</th><th className="w-32 px-3 py-1.5">BOM Total</th><th className="w-48 px-3 py-1.5">Allotted Qty</th><th className="w-10 px-2 py-1.5 text-center">Action</th></tr></thead>
+                                              <thead><tr className="border-border-strong border-border/60 bg-muted/40 font-semibold text-muted-foreground"><th className="px-3 py-1.5">BOM Material</th><th className="w-32 px-3 py-1.5">BOM Total</th><th className="w-48 px-3 py-1.5">Allotted Qty</th><th className="w-10 px-2 py-1.5 text-center">Action</th></tr></thead>
                                               <tbody className="divide-y divide-border/40">
                                                 {stepAllocations.map((allocation) => {
                                                   const line = bomLines.find((item) => item.bomLineId === allocation.bomLineId);
@@ -2703,7 +2703,7 @@ export default function NewProductionSchedulePage() {
                       </div>
 
                       <aside className="rounded-lg border border-border">
-                        <div className="border-b border-border p-3"><p className="text-xs font-semibold text-foreground">Department catalog</p><input value={departmentSearch} onChange={(event) => setDepartmentSearch(event.target.value)} placeholder="Search departments" className="mt-2 h-8 w-full rounded-md border border-border bg-background px-2 text-xs" /></div>
+                        <div className="border-border-strong border-border p-3"><p className="text-xs font-semibold text-foreground">Department catalog</p><input value={departmentSearch} onChange={(event) => setDepartmentSearch(event.target.value)} placeholder="Search departments" className="mt-2 h-8 w-full rounded-md border border-border bg-background px-2 text-xs" /></div>
                         <div className="max-h-[520px] divide-y divide-border overflow-y-auto">
                           {departments.filter((department) => `${department.name} ${department.code}`.toLowerCase().includes(departmentSearch.toLowerCase())).map((department) => (
                             <div key={department.id} draggable onDragStart={() => setDraggingDepartmentId(department.id)} onDragEnd={() => setDraggingDepartmentId('')} className="flex cursor-grab items-center justify-between gap-2 p-3 hover:bg-muted/40">
@@ -2757,7 +2757,7 @@ export default function NewProductionSchedulePage() {
               disabled={isSaving || stockCheckStatus !== 'ready' || stockRequirements.length === 0 || stockShortages.length > 0 || !areBomLinesComplete || !form.productId}
               loading={isSaving}
               aria-busy={isSaving}
-              className="h-9 rounded-lg text-xs font-semibold bg-primary hover:bg-primary/90 text-white shadow-none"
+              className="h-9 rounded-lg text-xs font-semibold bg-primary hover:bg-primary/90 text-inverse shadow-none"
               icon={Save}
             >
               {submitAction === 'schedule'

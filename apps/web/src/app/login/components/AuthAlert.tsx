@@ -25,15 +25,15 @@ export function AuthAlert({ message, type = "error" }: AuthAlertProps) {
     <div
       role="alert"
       aria-live="polite"
-      className={`flex items-start gap-3 p-4 rounded-xl border text-[13px] leading-relaxed transition-all duration-200 ${
+      className={`flex items-start gap-3 p-4 rounded-card border text-[13px] leading-relaxed transition-all duration-200 ${
         type === "error"
-          ? "bg-[#FFF9EF] border-destructive/30 text-destructive dark:bg-destructive/10 dark:border-destructive/20"
-          : "bg-emerald-500/5 border-emerald-500/20 text-emerald-600 dark:bg-emerald-500/10 dark:border-emerald-500/20 dark:text-emerald-400"
+          ? "bg-tone-red-bg border-tone-red-solid/25 text-tone-red-text"
+          : "bg-tone-green-bg border-tone-green-solid/25 text-tone-green-text"
       }`}
     >
-      <AlertTriangle className="h-5 w-5 shrink-0 text-destructive mt-0.5" strokeWidth={2} />
+      <AlertTriangle className={`h-5 w-5 shrink-0 mt-0.5 ${type === "error" ? "text-tone-red-solid" : "text-tone-green-solid"}`} strokeWidth={2} />
       <div className="flex-1">
-        <span className="font-semibold block text-neutral-900 dark:text-white mb-0.5">
+        <span className="font-semibold block text-ink mb-0.5">
           {type === "error" ? "Authentication Failure" : "Success"}
         </span>
         <span className="font-medium">{displayMessage}</span>

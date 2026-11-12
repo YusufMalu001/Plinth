@@ -101,11 +101,11 @@ export function DiscrepancyActionModal({ data, onSave, onClose }: DiscrepancyAct
       role="dialog"
       aria-modal="true"
     >
-      <div className="w-full max-w-xl overflow-hidden rounded-3xl border border-border/80 bg-card shadow-2xl animate-in fade-in zoom-in-95 duration-150">
+      <div className="w-full max-w-xl overflow-hidden rounded-3xl border border-border/80 bg-card shadow-modal animate-in fade-in zoom-in-95 duration-150">
         {/* Modal Header */}
-        <div className="flex items-center justify-between border-b border-border/70 px-6 py-4.5 bg-card">
+        <div className="flex items-center justify-between border-border-strong border-border/70 px-6 py-4.5 bg-card">
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20 shadow-2xs">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-tone-amber-bg text-tone-amber-text border border-tone-amber-solid/25 shadow-2xs">
               <ShieldAlert className="h-5 w-5" />
             </div>
             <div>
@@ -233,7 +233,7 @@ export function DiscrepancyActionModal({ data, onSave, onClose }: DiscrepancyAct
 
             {/* Auto-balance status banner */}
             {unallocated !== 0 && (
-              <div className="mt-2.5 flex items-center justify-between text-xs text-amber-700 dark:text-amber-400 bg-amber-500/10 border border-amber-500/30 px-3.5 py-2 rounded-xl">
+              <div className="mt-2.5 flex items-center justify-between text-xs text-tone-amber-text bg-tone-amber-bg border border-tone-amber-solid/25 px-3.5 py-2 rounded-xl">
                 <span>
                   {unallocated > 0
                     ? `Remaining ${unallocated} ${data.uom} not yet allocated.`
@@ -242,7 +242,7 @@ export function DiscrepancyActionModal({ data, onSave, onClose }: DiscrepancyAct
                 <button
                   type="button"
                   onClick={() => setAccepted(Math.max(0, totalDelivered - rejected - damaged))}
-                  className="font-bold underline hover:text-amber-900 dark:hover:text-amber-200 cursor-pointer text-[11px]"
+                  className="font-bold underline hover:text-tone-amber-text cursor-pointer text-[11px]"
                 >
                   Auto-balance Accepted
                 </button>
@@ -306,7 +306,7 @@ export function DiscrepancyActionModal({ data, onSave, onClose }: DiscrepancyAct
               </button>
               <button
                 type="submit"
-                className="inline-flex items-center gap-2 rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-2.5 text-xs font-bold shadow-sm hover:shadow transition-all ring-1 ring-primary/20 cursor-pointer"
+                className="inline-flex items-center gap-2 rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-2.5 text-xs font-bold shadow-sm hover:shadow-none transition-all ring-1 ring-primary/20 cursor-pointer"
               >
                 <Check size={14} className="stroke-[2.5]" />
                 <span>Apply Discrepancy</span>

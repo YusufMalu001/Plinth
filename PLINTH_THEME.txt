@@ -1,0 +1,256 @@
+PLINTH THEME GUIDE  (v1.0)  -  SINGLE SOURCE OF TRUTH FOR ALL UI COLOURS AND STYLE
+=====================================================================================
+
+READ THIS FIRST (RULES FOR THE AI CODE EDITOR)
+----------------------------------------------
+1. This file is the only authority for colours, type, radius, shadows and spacing.
+   Do not invent, guess, "improve" or approximate any value. If a value you need
+   is not listed here, use the closest listed token and add a note to
+   REFACTOR_LOG.md. Never pick a new hex.
+2. Never write a raw colour (hex, rgb, hsl, oklch, or a Tailwind palette class such as
+   bg-blue-500, text-slate-700, bg-emerald-100) inside a component, page, email
+   template, PDF template or chart. Use ONLY the tokens defined below.
+3. The app is LIGHT ONLY. No dark mode, no dark: classes, no theme toggle.
+4. Page chrome is white and neutral. Colour is allowed ONLY for: status pills, charts,
+   alerts, tags, progress bars, links, focus rings, and the accent mark of the logo.
+5. No gradients anywhere (buttons, backgrounds, headers, login, charts). No glassmorphism,
+   no heavy shadows, no decorative blobs.
+6. Primary buttons are BLACK. The brand accent blue is NOT a button colour.
+7. If an existing screen disagrees with this file, this file wins.
+
+
+1. BRAND
+--------
+Product name:   Plinth
+Positioning:    Industrial cloud ERP for manufacturing plants
+Mood:           calm, precise, premium, trustworthy (think Linear / Stripe / Vercel)
+Logo mark:      solid black blocky "P" built from stacked blocks (base tier, pillar, upper block)
+Logo colours:   black #171717 on white  |  white on black  |  accent mark #3E63DD
+Logo rules:     keep clear space equal to the mark's height on all sides; minimum symbol
+                size 16px; never stretch, outline, add shadows or gradients; never recolour
+                outside the three approved versions above.
+
+
+2. CORE TOKENS  (define once in CSS variables, map in Tailwind, use everywhere)
+-----------------------------------------------------------------------------
+
+2.1 Surfaces
+  --bg-page        #FFFFFF   page and app background (every route)
+  --bg-surface     #FFFFFF   cards, modals, popovers, sidebar, top bar
+  --bg-muted       #F4F5F6   filled inputs, table header bar, secondary buttons, skeletons
+  --bg-hover       #F8F8F8   row hover, menu item hover
+  --bg-active      #EDEDED   pressed state, selected nav item background (use bg-muted if subtle)
+  --bg-inverse     #171717   primary buttons, tooltips, logo tile, toasts
+
+2.2 Borders
+  --border         #EDEDED   default 1px borders, dividers, card outlines
+  --border-strong  #D9D9D9   input focus outline (non-keyboard), hovered controls
+
+2.3 Text
+  --text-primary     #171717   headings, body, table first column
+  --text-secondary   #525252   labels, table headers, descriptions
+  --text-muted       #6B6B6B   timestamps, helper text, meta (still AA on white)
+  --text-placeholder #8D8D8D   input placeholder text only
+  --text-inverse     #FFFFFF   text on black or solid colour
+  --text-link        #3E63DD   inline links (hover: #2F4FB8, underline on hover)
+
+2.4 Brand accent (use sparingly)
+  --accent           #3E63DD   links, focus ring, active tab indicator, logo accent mark,
+                               selected-state outlines, info-type highlights
+  --accent-soft      #EAF3FF   subtle accent background (selected row tint, accent icon tile)
+  --accent-hover     #2F4FB8
+
+2.5 Focus
+  Keyboard focus ring: 2px solid var(--accent), offset 2px, on every interactive element.
+  Never remove outlines without replacing them.
+
+
+3. SEMANTIC COLOURS  (statuses, alerts, tags, deltas)
+-----------------------------------------------------
+Each hue has three values: soft background, readable text, solid (for dots, bars, charts).
+
+  green   bg #E4F5E9   text #18794E   solid #30A46C   -> success, completed, paid, healthy
+  red     bg #FFF0F0   text #C62828   solid #E5484D   -> error, draft, rejected, overdue, danger
+  orange  bg #FFF2E5   text #B54708   solid #F76808   -> pending action (to receive, to bill)
+  amber   bg #FFF8DB   text #946800   solid #F5B800   -> partial, warning, attention
+  blue    bg #EAF3FF   text #1D5FBF   solid #3E63DD   -> in progress, submitted, open, info
+  purple  bg #F3EEFF   text #6B3FC4   solid #8E4EC6   -> on hold, special states
+  teal    bg #E3F7F5   text #0F766E   solid #12A594   -> secondary positive, production
+  pink    bg #FFEEF7   text #B3256B   solid #D6409F   -> tags, categories
+  grey    bg #F1F1F1   text #525252   solid #8D8D8D   -> not started, unknown, inactive
+
+CSS variable naming: --green-bg, --green-text, --green-solid, and so on for every hue.
+
+
+4. STATUS MAP  (one central file: statusTones.ts; every status in the app resolves here)
+---------------------------------------------------------------------------------------
+  Draft                                   -> red
+  To Receive, To Bill, To Receive and Bill-> orange
+  Partly Received, Partly Paid, Pending   -> amber
+  Submitted, Open, In Progress, In Process-> blue
+  On Hold                                 -> purple
+  Completed, Paid, Closed, Approved,
+  Received, Delivered, Active             -> green
+  Cancelled, Rejected, Overdue, Failed,
+  Expired                                 -> red
+  Not Started, Inactive, Unknown          -> grey
+Unmapped status -> grey, and log a console warning in development.
+
+Pill spec: background <hue>-bg, text <hue>-text, 12px medium, padding 2px 8px, fully
+rounded, no border, no icon. Always render through the single <StatusPill> component.
+
+
+5. COMPONENT RECIPES
+--------------------
+Primary button      bg #171717, text #FFFFFF, hover #2E2E2E, active #000000, radius 8px,
+                    height 36px (44px on login), font 14px semibold, no gradient, no shadow.
+Secondary button    bg #F4F5F6, text #171717, hover #EDEDED, no border.
+Destructive button  bg #E5484D, text #FFFFFF, hover #C62828 (use only for delete/confirm-delete).
+Ghost button        transparent, text #525252, hover bg #F4F5F6.
+Disabled (any)      opacity 0.5, cursor not-allowed, no hover change.
+
+Input / select      bg #F4F5F6, no border, radius 8px, height 36px (44px on login),
+                    text #171717, placeholder #8D8D8D.
+                    Focus: bg #FFFFFF, outline 1px #D9D9D9, plus the 2px accent focus ring.
+                    Error: outline 1px #E5484D, message below in red text (#C62828) 12px.
+                    Label above, 12px, #525252. Required marker: small red dot (#E5484D).
+
+Card                bg #FFFFFF, border 1px #EDEDED, radius 12px, no shadow.
+Popover / dropdown  bg #FFFFFF, border 1px #EDEDED, radius 12px, shadow-popover.
+Modal               bg #FFFFFF, radius 16px, shadow-modal, backdrop rgba(23,23,23,0.40)
+                    (defined as --overlay token).
+Tooltip             bg #171717, text #FFFFFF, 12px, radius 6px.
+Toast               bg #FFFFFF, border 1px #EDEDED, shadow-popover; left icon uses the
+                    semantic solid colour. Never fill the whole toast with colour.
+
+Table (list view)   header bar bg #F4F5F6 radius 8px, header text 12px medium #525252;
+                    rows 44px, bottom border #EDEDED, hover #F8F8F8; first column bold #171717;
+                    money columns right-aligned with tabular numerals; selected row bg #EAF3FF.
+Progress bar        6px high, radius 999px, track #F4F5F6, fill green solid (#30A46C);
+                    fill amber solid for partial/at-risk, red solid for overdue/over-limit.
+Tabs                text #525252; active text #171717 with a 2px bottom bar in #3E63DD.
+Sidebar             bg #FFFFFF, 1px right border #EDEDED, items 13px #525252, hover #F4F5F6,
+                    active item bg #F4F5F6 with #171717 semibold text. Monochrome line icons.
+Top bar             bg #FFFFFF, 1px bottom border #EDEDED.
+Alert banner        soft bg + matching text from the semantic table (e.g. red-bg/red-text),
+                    1px border using the hue solid at 25% opacity, radius 12px, left icon.
+Tag / chip          soft bg + matching text of its hue, radius 999px, 12px.
+Skeleton            #F4F5F6 with a subtle pulse (no coloured shimmer).
+Scrollbar           thumb #D9D9D9, track transparent.
+
+
+6. CHARTS AND DATA VISUALISATION
+--------------------------------
+Series order (use in this order, then repeat with 60% opacity if more are needed):
+  1 blue   #3E63DD
+  2 teal   #12A594
+  3 orange #F76808
+  4 purple #8E4EC6
+  5 green  #30A46C
+  6 pink   #D6409F
+  7 amber  #F5B800
+  8 red    #E5484D
+Positive / negative deltas: green solid / red solid. Never use red and green as the only
+distinguishing feature; add labels or patterns.
+Chart styling: no chart-area background, gridlines 1px #EDEDED, axis text 12px #6B6B6B,
+bars with 4px top radius, lines 2px, area fills at 12% opacity of the line colour,
+legends below the chart, tooltips as white popovers (border #EDEDED).
+Every chart (including hand-rolled SVG and server-rendered charts) reads these tokens
+through a shared ChartTheme. Server code (emails, PDFs, dashboard services) imports the
+same constants from the shared tokens package. No second palette anywhere.
+
+
+7. TYPOGRAPHY
+-------------
+Font: Inter (via next/font), fallback system-ui, -apple-system, "Segoe UI", sans-serif.
+Mono (IDs, codes, numbers in code-like contexts): "JetBrains Mono", ui-monospace, monospace.
+  Page title        24px / 32px   semibold  (#171717)
+  Section title     16px / 24px   semibold
+  Body              14px / 20px   regular
+  Table text        13px / 20px   regular
+  Label / caption   12px / 16px   medium    (#525252)
+  Login headline    40px / 44px   semibold, tracking -0.02em
+Numbers in tables, totals and charts: font-variant-numeric: tabular-nums.
+Never use more than two font weights on one screen section.
+
+
+8. SHAPE, ELEVATION, SPACING, MOTION
+------------------------------------
+Radius:   inputs/buttons 8px | cards 12px | modals 16px | pills 999px | tooltips 6px
+Shadows:  none by default.
+          shadow-popover: 0 6px 24px rgba(0,0,0,0.08)
+          shadow-modal:   0 12px 40px rgba(0,0,0,0.12)
+Spacing:  4px base grid (4, 8, 12, 16, 20, 24, 32, 40, 48). Page padding 24px (16px mobile).
+Control heights: 32px compact, 36px default, 44px login and mobile touch targets.
+Motion:   150ms ease-out for hover and focus, 200ms for popovers. Respect
+          prefers-reduced-motion. No bounce, no parallax.
+Icons:    lucide-react, 16px in tables and buttons, 20px in navigation, stroke 1.75,
+          colour inherits text colour. Semantic colour only on status icons.
+
+
+9. LOGIN AND MARKETING SCREENS
+------------------------------
+Same tokens, no exceptions. White background, black primary button, filled grey inputs,
+blueprint-style grid pattern at 4% black opacity on the left panel only (use
+rgba(23,23,23,0.04), defined as --grid-line). Product preview cards use the standard card,
+pill and chart tokens. No blue gradient button, no coloured hero background.
+
+
+10. EMAILS, PDFS AND PRINT
+--------------------------
+Use the same tokens, resolved to hex at build time from the shared tokens package
+(emails and PDFs cannot read CSS variables). Black headings, #525252 body text,
+#EDEDED dividers, status pills with the semantic soft bg and text, accent #3E63DD for
+links only. White page background, no coloured header bands.
+
+
+11. IMPLEMENTATION (where the tokens live)
+------------------------------------------
+- CSS variables in one file (globals.css, :root only, no .dark block).
+- Tailwind theme extends colours by reading those variables, for example:
+
+    theme.extend.colors = {
+      page: 'var(--bg-page)', surface: 'var(--bg-surface)', muted: 'var(--bg-muted)',
+      hover: 'var(--bg-hover)', inverse: 'var(--bg-inverse)',
+      border: 'var(--border)', 'border-strong': 'var(--border-strong)',
+      ink: { DEFAULT: 'var(--text-primary)', secondary: 'var(--text-secondary)',
+             muted: 'var(--text-muted)', placeholder: 'var(--text-placeholder)' },
+      accent: { DEFAULT: 'var(--accent)', soft: 'var(--accent-soft)', hover: 'var(--accent-hover)' },
+      green:  { bg: 'var(--green-bg)',  text: 'var(--green-text)',  solid: 'var(--green-solid)' },
+      /* repeat for red, orange, amber, blue, purple, teal, pink, grey */
+    }
+
+- Remove the old default Tailwind palette from use: set theme.colors (not extend) so that
+  classes like bg-blue-500 or text-slate-700 do not compile.
+- The same values exist as TypeScript constants in a shared tokens package used by
+  charts, PDFs, emails and server code.
+- A lint or CI check fails the build if a raw hex/rgb/hsl/oklch literal or a default
+  Tailwind palette class appears outside the tokens files.
+
+
+12. CONTRAST AND ACCESSIBILITY
+------------------------------
+Targets WCAG AA: 4.5:1 for normal text, 3:1 for large text and UI boundaries.
+Pairings above were chosen to meet this (primary text on white is about 17:1, secondary
+about 7.9:1, muted about 5.3:1, accent blue about 5.2:1 on white). Verify the status
+pill and button pairings with an automated contrast check in CI.
+--text-placeholder (#8D8D8D) is for placeholder text only; never use it for real content.
+Never convey meaning by colour alone: statuses always include text; charts include labels.
+
+
+13. FORBIDDEN LIST (do not do any of these)
+-------------------------------------------
+- Any gradient, glow, glass blur, neon, or animated colour backgrounds.
+- Blue primary buttons, blue sidebars, blue headers, coloured page backgrounds.
+- Raw colour values or default Tailwind palette classes outside the tokens files.
+- Dark mode, dark: classes, theme toggles.
+- New colours, "slightly different" greys, or opacity tricks to invent tints. Use the tokens.
+- Coloured text for body copy, or colour used purely for decoration.
+- Different palettes per module, per tenant, or per component.
+- Copying code, styles, or assets from other ERP products.
+
+
+14. CHANGE CONTROL
+------------------
+To add or change a token, edit this file first, then the CSS variables, the Tailwind map
+and the shared constants in the same commit. Record the reason in REFACTOR_LOG.md.

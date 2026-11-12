@@ -222,7 +222,7 @@ export function SalesInvoiceModal({
             id="sales-invoice-document"
             ref={printRef}
             data-printable="true"
-            className="mt-5 space-y-5 printable-document print-target bg-white text-slate-900 dark:bg-card dark:text-foreground p-4 rounded-xl"
+            className="mt-5 space-y-5 printable-document print-target bg-white text-ink   p-4 rounded-xl"
           >
             {/* Invoice Meta Grid */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 rounded-2xl bg-muted/30 p-4 border border-border text-xs">
@@ -236,13 +236,13 @@ export function SalesInvoiceModal({
               </div>
               <div>
                 <span className="text-muted-foreground">Paid Amount:</span>
-                <p className="font-mono font-bold text-emerald-600 dark:text-emerald-400 mt-0.5">
+                <p className="font-mono font-bold text-tone-green-text  mt-0.5">
                   {formatCurrency(viewInvoice.paidAmount)}
                 </p>
               </div>
               <div>
                 <span className="text-muted-foreground">Outstanding Balance:</span>
-                <p className={`font-mono font-bold mt-0.5 ${outstandingNum > 0 ? 'text-amber-700 dark:text-amber-400' : 'text-emerald-600 dark:text-emerald-400'}`}>
+                <p className={`font-mono font-bold mt-0.5 ${outstandingNum > 0 ? 'text-tone-amber-text ' : 'text-tone-green-text '}`}>
                   {formatCurrency(viewInvoice.outstandingAmount)}
                 </p>
               </div>
@@ -345,11 +345,11 @@ export function SalesInvoiceModal({
                           <TableCell className="p-2.5 text-muted-foreground">{String(p.paymentDate).slice(0, 10)}</TableCell>
                           <TableCell className="p-2.5 font-sans font-medium">{p.paymentMode}</TableCell>
                           <TableCell className="p-2.5 font-mono">{p.reference}</TableCell>
-                          <TableCell className="p-2.5 text-right font-bold text-emerald-600 dark:text-emerald-400">
+                          <TableCell className="p-2.5 text-right font-bold text-tone-green-text ">
                             {formatCurrency(p.amount)}
                           </TableCell>
                           <TableCell className="p-2.5 text-center font-sans">
-                            <span className="rounded-full bg-emerald-500/10 px-2 py-0.5 text-[10px] font-bold text-emerald-700 dark:text-emerald-400">
+                            <span className="rounded-full bg-tone-emerald-bg/10 px-2 py-0.5 text-[10px] font-bold text-tone-green-text ">
                               {p.status}
                             </span>
                           </TableCell>
@@ -360,11 +360,11 @@ export function SalesInvoiceModal({
                           <TableCell className="p-2.5 text-muted-foreground">{String(op.paidAt || op.createdAt || '').slice(0, 10)}</TableCell>
                           <TableCell className="p-2.5 font-sans font-medium">{op.method}</TableCell>
                           <TableCell className="p-2.5 font-mono">{op.reference || '—'}</TableCell>
-                          <TableCell className="p-2.5 text-right font-bold text-emerald-600 dark:text-emerald-400">
+                          <TableCell className="p-2.5 text-right font-bold text-tone-green-text ">
                             {formatCurrency(op.amount)}
                           </TableCell>
                           <TableCell className="p-2.5 text-center font-sans">
-                            <span className="rounded-full bg-emerald-500/10 px-2 py-0.5 text-[10px] font-bold text-emerald-700 dark:text-emerald-400">
+                            <span className="rounded-full bg-tone-emerald-bg/10 px-2 py-0.5 text-[10px] font-bold text-tone-green-text ">
                               {op.status}
                             </span>
                           </TableCell>
@@ -498,7 +498,7 @@ export function SalesInvoiceModal({
               <button
                 type="button"
                 onClick={addLine}
-                className="inline-flex items-center gap-1 text-xs font-semibold text-primary hover:text-primary dark:text-primary"
+                className="inline-flex items-center gap-1 text-xs font-semibold text-primary hover:text-primary "
               >
                 <Plus className="h-3.5 w-3.5" />
                 Add Item Line
@@ -584,7 +584,7 @@ export function SalesInvoiceModal({
                         <button
                           type="button"
                           onClick={() => removeLine(idx)}
-                          className="rounded-lg p-1 text-rose-500 hover:bg-rose-500/10"
+                          className="rounded-lg p-1 text-tone-red-text hover:bg-tone-rose-bg/10"
                         >
                           <Trash2 className="h-4 w-4" />
                         </button>

@@ -635,7 +635,7 @@ export default function CreateJobWorkOrderPage() {
 
         {/* ── Card 1: Target Output Products ────────────────────────────── */}
         <Card className="p-6 border-border shadow-xs rounded-2xl bg-card space-y-5">
-          <div className="flex items-center justify-between border-b border-border pb-3">
+          <div className="flex items-center justify-between border-border-strong border-border pb-3">
             <div className="flex items-center gap-2.5">
               <Package className="h-5 w-5 text-primary" />
               <div>
@@ -776,7 +776,7 @@ export default function CreateJobWorkOrderPage() {
 
         {/* ── Card 2: Outsource Partner & Destination ────────────────────── */}
         <Card className="p-6 border-border shadow-xs rounded-2xl bg-card space-y-5">
-          <div className="flex items-center gap-2.5 border-b border-border pb-3">
+          <div className="flex items-center gap-2.5 border-border-strong border-border pb-3">
             <Building2 className="h-5 w-5 text-primary" />
             <div>
               <h3 className="text-base font-extrabold text-foreground">
@@ -844,7 +844,7 @@ export default function CreateJobWorkOrderPage() {
                             {o.badges.map((b, bIdx) => (
                               <span
                                 key={bIdx}
-                                className="inline-flex items-center px-1.5 py-0.2 rounded text-[9px] font-bold bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/30 transition-colors"
+                                className="inline-flex items-center px-1.5 py-0.2 rounded text-[9px] font-bold bg-tone-green-bg text-tone-green-text border border-tone-green-solid/25 transition-colors"
                               >
                                 {b.label}
                               </span>
@@ -880,7 +880,7 @@ export default function CreateJobWorkOrderPage() {
 
         {/* ── Card 3: Custody Verification ──────────────────────────────── */}
         <Card className="p-6 border-border shadow-xs rounded-2xl bg-card space-y-4">
-          <div className="flex items-center justify-between border-b border-border pb-3">
+          <div className="flex items-center justify-between border-border-strong border-border pb-3">
             <div className="flex items-center gap-2.5">
               <Scale className="h-5 w-5 text-primary" />
               <div>
@@ -894,11 +894,11 @@ export default function CreateJobWorkOrderPage() {
             </div>
             {custodyStatus.details.length > 0 && (
               custodyStatus.allAvailable ? (
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/30">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-tone-green-bg text-tone-green-text border border-tone-green-solid/25">
                   <CheckCircle2 className="h-4 w-4" /> All Stock Available
                 </span>
               ) : (
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/30">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-tone-amber-bg text-tone-amber-text border border-tone-amber-solid/25">
                   <AlertTriangle className="h-4 w-4" /> Stock Deficit — Issue Required
                 </span>
               )
@@ -916,7 +916,7 @@ export default function CreateJobWorkOrderPage() {
           ) : (
             <div className="overflow-x-auto rounded-xl border border-border bg-background">
               <table className="w-full text-left text-xs">
-                <thead className="bg-muted/50 text-muted-foreground font-bold border-b border-border">
+                <thead className="bg-muted/50 text-muted-foreground font-bold border-border-strong border-border">
                   <tr>
                     <th className="p-3 uppercase tracking-wide">Raw Material</th>
                     <th className="p-3 uppercase tracking-wide">Required</th>
@@ -938,7 +938,7 @@ export default function CreateJobWorkOrderPage() {
                       <td className="p-3 font-bold font-mono">{item.available} {item.uomLabel}</td>
                       <td className="p-3 font-mono font-bold">
                         {item.isAvailable ? (
-                          <span className="text-emerald-600 dark:text-emerald-400">
+                          <span className="text-tone-green-text">
                             +{(item.available - item.required).toFixed(2)} {item.uomLabel}
                           </span>
                         ) : (
@@ -949,7 +949,7 @@ export default function CreateJobWorkOrderPage() {
                       </td>
                       <td className="p-3 text-center">
                         {item.isAvailable ? (
-                          <span className="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-600 dark:text-emerald-400">
+                          <span className="inline-flex items-center gap-1 text-[11px] font-bold text-tone-green-text">
                             <CheckCircle2 className="h-3.5 w-3.5" /> Ready
                           </span>
                         ) : (
@@ -977,7 +977,7 @@ export default function CreateJobWorkOrderPage() {
 
         {/* ── Card 4: Raw Material Allocation ───────────────────────────── */}
         <Card className="p-6 border-border shadow-xs rounded-2xl bg-card space-y-6">
-          <div className="flex items-center gap-2.5 border-b border-border pb-3">
+          <div className="flex items-center gap-2.5 border-border-strong border-border pb-3">
             <Layers className="h-5 w-5 text-primary" />
             <div>
               <h3 className="text-base font-extrabold text-foreground">
@@ -997,7 +997,7 @@ export default function CreateJobWorkOrderPage() {
 
               return (
                 <div key={`alloc-${out.id}`} className="rounded-2xl border border-border/70 bg-muted/15 p-4 sm:p-5 space-y-4">
-                  <div className="flex items-center justify-between flex-wrap gap-2 pb-2 border-b border-border/50">
+                  <div className="flex items-center justify-between flex-wrap gap-2 pb-2 border-border-strong border-border/50">
                     <div className="flex items-center gap-2">
                       <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/10 text-primary font-black text-xs font-mono">
                         {outIdx + 1}
@@ -1020,7 +1020,7 @@ export default function CreateJobWorkOrderPage() {
 
                   <div className="overflow-x-auto rounded-xl border border-border bg-card">
                     <table className="w-full text-left text-xs">
-                      <thead className="bg-muted/50 text-muted-foreground font-bold border-b border-border">
+                      <thead className="bg-muted/50 text-muted-foreground font-bold border-border-strong border-border">
                         <tr>
                           <th className="p-3">Raw Material Item *</th>
                           <th className="p-3">Required Qty</th>
@@ -1125,7 +1125,7 @@ export default function CreateJobWorkOrderPage() {
                 ? 'Issue material to vendor custody first (see Card 3)'
                 : undefined
             }
-            className="bg-[#173796] hover:bg-[#122b77] text-white font-extrabold text-xs shadow-sm px-6 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="bg-action hover:bg-[color:var(--action-primary-bg-hover)] text-inverse font-extrabold text-xs shadow-sm px-6 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             Create Job Work Order
           </Button>

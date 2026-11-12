@@ -32,9 +32,9 @@ export function StockMovementSummary({
       value: `${movementSign}${formatQuantity(Math.abs(movementQuantity))}`,
       detail: 'Change from this action',
       valueClass: movementQuantity > 0
-        ? 'text-emerald-700 dark:text-emerald-400'
+        ? 'text-tone-green-text '
         : movementQuantity < 0
-          ? 'text-rose-700 dark:text-rose-400'
+          ? 'text-tone-red-text '
           : 'text-foreground',
     },
     {
@@ -42,7 +42,7 @@ export function StockMovementSummary({
       value: projectedQuantity === undefined ? '—' : formatQuantity(projectedQuantity),
       detail: projectedQuantity === undefined ? 'Select an item to calculate' : `${uomLabel || 'Units'} after this action`,
       valueClass: projectedQuantity !== undefined && projectedQuantity < 0
-        ? 'text-rose-700 dark:text-rose-400'
+        ? 'text-tone-red-text '
         : 'text-foreground',
     },
   ];

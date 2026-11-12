@@ -233,11 +233,11 @@ export function ExpectedInvoicesPanel({ embedded = false, navigation, hideHeader
         />}
 
         <ReceivingSummaryCards metrics={[
-          { label: 'All Invoices', value: summary?.total ?? total, icon: Boxes, iconClassName: 'text-slate-600 dark:text-slate-400' },
+          { label: 'All Invoices', value: summary?.total ?? total, icon: Boxes, iconClassName: 'text-ink-secondary ' },
           { label: 'Pending Intake', value: pendingCount, icon: Clock },
           { label: 'Partially Received', value: partialCount, icon: AlertCircle },
           { label: 'Completed', value: completedCount, icon: CheckCircle2 },
-          { label: 'Overdue', value: overdueCount, icon: AlertCircle, valueClassName: 'text-red-600 dark:text-red-400', iconClassName: 'text-red-500' },
+          { label: 'Overdue', value: overdueCount, icon: AlertCircle, valueClassName: 'text-tone-red-text ', iconClassName: 'text-tone-red-text' },
         ]} />
 
         <ReceivingListToolbar
@@ -387,7 +387,7 @@ export function ExpectedInvoicesPanel({ embedded = false, navigation, hideHeader
                           {/* Expected receiving date */}
                           <TableCell className="text-sm font-medium">
                             <div className="flex items-center gap-1.5">
-                              <Calendar className={`w-3.5 h-3.5 shrink-0 ${group.status === 'FULLY_RECEIVED' ? 'text-muted-foreground' : new Date(group.expectedDate).getTime() < new Date(new Date().setHours(0, 0, 0, 0)).getTime() ? 'text-red-500' : 'text-muted-foreground'}`} />
+                              <Calendar className={`w-3.5 h-3.5 shrink-0 ${group.status === 'FULLY_RECEIVED' ? 'text-muted-foreground' : new Date(group.expectedDate).getTime() < new Date(new Date().setHours(0, 0, 0, 0)).getTime() ? 'text-tone-red-text' : 'text-muted-foreground'}`} />
                               <span>
                                 {new Date(group.expectedDate).toLocaleDateString(undefined, {
                                   year: 'numeric',
@@ -396,7 +396,7 @@ export function ExpectedInvoicesPanel({ embedded = false, navigation, hideHeader
                                 })}
                               </span>
                               {group.status !== 'FULLY_RECEIVED' && new Date(group.expectedDate).getTime() < new Date(new Date().setHours(0, 0, 0, 0)).getTime() && (
-                                <span className="rounded-full bg-red-100 px-2 py-0.5 text-[10px] font-bold uppercase text-red-700 dark:bg-red-950/50 dark:text-red-300">Overdue</span>
+                                <span className="rounded-full bg-tone-red-bg px-2 py-0.5 text-[10px] font-bold uppercase text-tone-red-text  ">Overdue</span>
                               )}
                             </div>
                           </TableCell>

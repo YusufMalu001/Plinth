@@ -326,10 +326,10 @@ export default function HrReportsAndAnalyticsDashboard() {
 
   // Velocity Distribution
   const velocityBreakdown = [
-    { label: 'Fast Velocity', count: scorecards.filter((s) => s.velocityRating === 'FAST').length, color: 'bg-emerald-500' },
-    { label: 'Optimal Velocity', count: scorecards.filter((s) => s.velocityRating === 'OPTIMAL').length, color: 'bg-sky-500' },
-    { label: 'Moderate Velocity', count: scorecards.filter((s) => s.velocityRating === 'MODERATE').length, color: 'bg-amber-500' },
-    { label: 'Needs Support (Slow)', count: scorecards.filter((s) => s.velocityRating === 'SLOW').length, color: 'bg-rose-500' },
+    { label: 'Fast Velocity', count: scorecards.filter((s) => s.velocityRating === 'FAST').length, color: 'bg-tone-green-solid' },
+    { label: 'Optimal Velocity', count: scorecards.filter((s) => s.velocityRating === 'OPTIMAL').length, color: 'bg-tone-blue-solid' },
+    { label: 'Moderate Velocity', count: scorecards.filter((s) => s.velocityRating === 'MODERATE').length, color: 'bg-tone-amber-solid' },
+    { label: 'Needs Support (Slow)', count: scorecards.filter((s) => s.velocityRating === 'SLOW').length, color: 'bg-tone-red-solid' },
   ];
 
   // Pagination for Employee Scorecards Table (6 per page)
@@ -455,7 +455,7 @@ export default function HrReportsAndAnalyticsDashboard() {
             Workforce Index
           </span>
           <div className="text-2xl font-black text-foreground">{avgEfficiency}%</div>
-          <span className="text-[10px] text-emerald-600 dark:text-emerald-400 font-semibold mt-1 inline-flex items-center gap-0.5">
+          <span className="text-[10px] text-tone-green-text font-semibold mt-1 inline-flex items-center gap-0.5">
             <TrendingUp className="w-3 h-3" /> Target 85%+
           </span>
         </div>
@@ -489,7 +489,7 @@ export default function HrReportsAndAnalyticsDashboard() {
               ? Math.round((totalTasksCompleted / (totalTasksCompleted + totalTasksPending)) * 100)
               : 100}%
           </div>
-          <span className="text-[10px] text-emerald-600 dark:text-emerald-400 font-semibold mt-1 block">
+          <span className="text-[10px] text-tone-green-text font-semibold mt-1 block">
             Velocity Optimized
           </span>
         </div>
@@ -524,7 +524,7 @@ export default function HrReportsAndAnalyticsDashboard() {
         {/* Department Health & Performance Rollup */}
         <Card className="lg:col-span-2 p-5 rounded-2xl border-border bg-card shadow-xs flex flex-col justify-between">
           <div>
-            <div className="flex items-center justify-between mb-3 pb-2 border-b border-border/60">
+            <div className="flex items-center justify-between mb-3 pb-2 border-border-strong border-border/60">
               <div>
                 <h3 className="text-sm font-black uppercase tracking-wider text-foreground">
                   Departmental Velocity & Efficiency Rollup
@@ -725,7 +725,7 @@ export default function HrReportsAndAnalyticsDashboard() {
         <Card className="overflow-hidden border-border bg-card shadow-xs rounded-2xl p-0">
           {loading ? (
             <div className="p-8 text-center text-muted-foreground text-xs font-medium">
-              <div className="animate-spin w-6 h-6 border-3 border-primary border-t-transparent rounded-full mx-auto mb-2" />
+              <div className="animate-spin w-6 h-6 border-border-strong border-primary border-t-transparent rounded-full mx-auto mb-2" />
               Loading workforce analytics...
             </div>
           ) : paginatedScorecards.length === 0 ? (

@@ -119,7 +119,7 @@ export default function MarketplaceReconPage() {
 
       {/* Batches Table */}
       <Card className="rounded-2xl border-border/80 shadow-none">
-        <CardHeader className="border-b border-border/70 p-5">
+        <CardHeader className="border-border-strong border-border/70 p-5">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <CardTitle className="text-base font-bold">Marketplace Ingestion Batches</CardTitle>
@@ -183,7 +183,7 @@ export default function MarketplaceReconPage() {
                       <TableCell className="p-3 text-right text-muted-foreground">
                         {b.matchedRows} / {b.totalRows}
                         {b.varianceRows > 0 && (
-                          <span className="ml-1 text-amber-600 dark:text-amber-400 font-bold">
+                          <span className="ml-1 text-tone-amber-text font-bold">
                             ({b.varianceRows} var)
                           </span>
                         )}
@@ -192,7 +192,7 @@ export default function MarketplaceReconPage() {
                       <TableCell className="p-3 text-right text-primary">
                         {formatCurrency(b.tcsAmount)}
                       </TableCell>
-                      <TableCell className="p-3 text-right text-emerald-600 dark:text-emerald-400">
+                      <TableCell className="p-3 text-right text-tone-green-text">
                         {formatCurrency(b.tdsAmount)}
                       </TableCell>
                       <TableCell className="p-3 text-right font-bold text-foreground">{formatCurrency(b.netPayout)}</TableCell>

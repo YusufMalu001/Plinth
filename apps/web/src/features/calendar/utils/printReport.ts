@@ -47,7 +47,7 @@ export function printDayOperationsReport(summary: DayOperationalSummary, dateStr
     }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      color: #0f172a;
+      color: #171717;
       background: #ffffff;
       margin: 0;
       padding: 0;
@@ -55,7 +55,7 @@ export function printDayOperationsReport(summary: DayOperationalSummary, dateStr
       line-height: 1.4;
     }
     .header {
-      border-bottom: 2px solid #004a80;
+      border-bottom: 2px solid #3E63DD;
       padding-bottom: 12px;
       margin-bottom: 16px;
       display: flex;
@@ -65,13 +65,13 @@ export function printDayOperationsReport(summary: DayOperationalSummary, dateStr
     .brand-title {
       font-size: 20px;
       font-weight: 800;
-      color: #004a80;
+      color: #3E63DD;
       letter-spacing: -0.5px;
       margin: 0;
     }
     .brand-subtitle {
       font-size: 10px;
-      color: #64748b;
+      color: #525252;
       margin-top: 2px;
       text-transform: uppercase;
       letter-spacing: 0.5px;
@@ -79,11 +79,11 @@ export function printDayOperationsReport(summary: DayOperationalSummary, dateStr
     .report-meta {
       text-align: right;
       font-size: 10px;
-      color: #475569;
+      color: #525252;
     }
     .report-title-box {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
+      background: #F4F5F6;
+      border: 1px solid #EDEDED;
       border-radius: 6px;
       padding: 10px 14px;
       margin-bottom: 16px;
@@ -94,11 +94,11 @@ export function printDayOperationsReport(summary: DayOperationalSummary, dateStr
     .report-date {
       font-size: 14px;
       font-weight: 700;
-      color: #0f172a;
+      color: #171717;
     }
     .lead-badge {
       font-size: 10px;
-      color: #334155;
+      color: #171717;
     }
     .kpi-grid {
       display: grid;
@@ -116,23 +116,23 @@ export function printDayOperationsReport(summary: DayOperationalSummary, dateStr
       font-size: 8.5px;
       font-weight: 700;
       text-transform: uppercase;
-      color: #64748b;
+      color: #525252;
       margin-bottom: 4px;
     }
     .kpi-val {
       font-size: 13px;
       font-weight: 800;
-      color: #004a80;
+      color: #3E63DD;
     }
     .kpi-sub {
       font-size: 9px;
-      color: #64748b;
+      color: #525252;
       margin-top: 2px;
     }
     .section-title {
       font-size: 11px;
       font-weight: 700;
-      color: #004a80;
+      color: #3E63DD;
       text-transform: uppercase;
       letter-spacing: 0.5px;
       border-bottom: 1px solid #cbd5e1;
@@ -150,7 +150,7 @@ export function printDayOperationsReport(summary: DayOperationalSummary, dateStr
     }
     th {
       background: #f1f5f9;
-      color: #334155;
+      color: #171717;
       text-align: left;
       padding: 5px 8px;
       font-weight: 700;
@@ -160,11 +160,11 @@ export function printDayOperationsReport(summary: DayOperationalSummary, dateStr
     }
     td {
       padding: 5px 8px;
-      border: 1px solid #e2e8f0;
+      border: 1px solid #EDEDED;
       color: #1e293b;
     }
     tr:nth-child(even) td {
-      background: #f8fafc;
+      background: #F4F5F6;
     }
     .badge {
       display: inline-block;
@@ -177,7 +177,7 @@ export function printDayOperationsReport(summary: DayOperationalSummary, dateStr
     .badge-success { background: #dcfce7; color: #15803d; }
     .badge-info { background: #e0f2fe; color: #0369a1; }
     .badge-warning { background: #fef3c7; color: #b45309; }
-    .badge-neutral { background: #f1f5f9; color: #475569; }
+    .badge-neutral { background: #f1f5f9; color: #525252; }
     .footer-sign {
       margin-top: 24px;
       border-top: 1px solid #cbd5e1;
@@ -192,14 +192,14 @@ export function printDayOperationsReport(summary: DayOperationalSummary, dateStr
       padding-top: 6px;
       margin-top: 28px;
       font-size: 9.5px;
-      color: #64748b;
+      color: #525252;
     }
     .empty-msg {
       padding: 10px;
       color: #94a3b8;
       font-style: italic;
       text-align: center;
-      border: 1px dashed #e2e8f0;
+      border: 1px dashed #EDEDED;
       border-radius: 4px;
       margin-bottom: 10px;
     }
@@ -276,7 +276,7 @@ export function printDayOperationsReport(summary: DayOperationalSummary, dateStr
       ${summary.productionEvents.map(p => `
         <tr>
           <td><strong>${p.code}</strong></td>
-          <td>${p.productName} <br/><span style="color:#64748b;font-size:8.5px;">SKU: ${p.sku} | ${p.bomCode}</span></td>
+          <td>${p.productName} <br/><span style="color:#525252;font-size:8.5px;">SKU: ${p.sku} | ${p.bomCode}</span></td>
           <td>${p.line}</td>
           <td>${p.shift}</td>
           <td>${number.format(p.completedQuantity)} / ${number.format(p.targetQuantity)} ${p.unit} (${p.progressPct}%)</td>
@@ -370,7 +370,7 @@ export function printDayOperationsReport(summary: DayOperationalSummary, dateStr
         <tr>
           <td><strong>${d.manifestNumber}</strong></td>
           <td>${d.carrierName}</td>
-          <td>${d.vehicleNumber} <br/><span style="color:#64748b;font-size:8px;">${d.driverName}</span></td>
+          <td>${d.vehicleNumber} <br/><span style="color:#525252;font-size:8px;">${d.driverName}</span></td>
           <td>${d.destination}</td>
           <td>${d.totalWeightKg} kg</td>
           <td><span class="badge ${d.status === 'delivered' ? 'badge-success' : 'badge-info'}">${d.status.toUpperCase()}</span></td>

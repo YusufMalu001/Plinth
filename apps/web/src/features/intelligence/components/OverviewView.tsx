@@ -69,31 +69,31 @@ export function OverviewView() {
       {/* 1. Sleek Enterprise Metric Strip */}
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {/* Metric 1: Verified Economic Impact */}
-        <div className="group rounded-2xl border border-slate-200/90 bg-white p-5 shadow-xs transition-all hover:border-[#004a80]/30 hover:shadow-md dark:border-slate-800 dark:bg-slate-900">
+        <div className="group rounded-2xl border border-border/90 bg-surface p-5 shadow-xs transition-all hover:border-accent-brand">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+            <span className="text-xs font-bold uppercase tracking-wider text-ink-muted">
               Verified Economic Value
             </span>
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-400">
+            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-tone-green-bg text-tone-green-text">
               <CircleDollarSign className="h-5 w-5" />
             </div>
           </div>
           <div className="mt-3">
-            <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+            <div className="text-2xl sm:text-3xl font-extrabold text-ink">
               {money(totalRecordedROI)}
             </div>
             <div className="mt-2 flex items-center gap-2 text-xs">
-              <span className="inline-flex items-center gap-1 rounded-md bg-emerald-50 px-2 py-0.5 font-bold text-emerald-700 dark:bg-emerald-950/80 dark:text-emerald-400">
+              <span className="inline-flex items-center gap-1 rounded-md bg-tone-green-bg px-2 py-0.5 font-bold text-tone-green-text">
                 <CheckCircle2 className="h-3 w-3" />
                 {recordedOutcomes} Verified Outcomes
               </span>
-              <span className="text-slate-500 dark:text-slate-400">Realized</span>
+              <span className="text-ink-muted">Realized</span>
             </div>
           </div>
-          <div className="mt-4 border-t border-slate-100 pt-3 dark:border-slate-800">
+          <div className="mt-4 border-t border-border pt-3">
             <Link
               href="/intelligence/tasks"
-              className="inline-flex items-center gap-1 text-xs font-bold text-[#004a80] hover:underline dark:text-blue-400"
+              className="inline-flex items-center gap-1 text-xs font-bold text-link hover:underline"
             >
               <span>View outcome ledger</span>
               <ArrowRight className="h-3.5 w-3.5" />
@@ -102,30 +102,30 @@ export function OverviewView() {
         </div>
 
         {/* Metric 2: Actionable Recommendations */}
-        <div className="group rounded-2xl border border-slate-200/90 bg-white p-5 shadow-xs transition-all hover:border-[#004a80]/30 hover:shadow-md dark:border-slate-800 dark:bg-slate-900">
+        <div className="group rounded-2xl border border-border/90 bg-surface p-5 shadow-xs transition-all hover:border-accent-brand">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+            <span className="text-xs font-bold uppercase tracking-wider text-ink-muted">
               Active Recommendations
             </span>
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-50 text-[#004a80] dark:bg-blue-950/60 dark:text-blue-400">
+            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-tone-blue-bg text-link">
               <Lightbulb className="h-5 w-5" />
             </div>
           </div>
           <div className="mt-3">
-            <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+            <div className="text-2xl sm:text-3xl font-extrabold text-ink">
               {openCount}
             </div>
             <div className="mt-2 flex items-center gap-2 text-xs">
-              <span className="inline-flex items-center rounded-md bg-blue-50 px-2 py-0.5 font-bold text-[#004a80] dark:bg-blue-950/80 dark:text-blue-300">
+              <span className="inline-flex items-center rounded-md bg-tone-blue-bg px-2 py-0.5 font-bold text-link">
                 Pending Approval
               </span>
-              <span className="text-slate-500 dark:text-slate-400">Human-authorized only</span>
+              <span className="text-ink-muted">Human-authorized only</span>
             </div>
           </div>
-          <div className="mt-4 border-t border-slate-100 pt-3 dark:border-slate-800">
+          <div className="mt-4 border-t border-border pt-3">
             <Link
               href="/intelligence/recommendations"
-              className="inline-flex items-center gap-1 text-xs font-bold text-[#004a80] hover:underline dark:text-blue-400"
+              className="inline-flex items-center gap-1 text-xs font-bold text-link hover:underline"
             >
               <span>Review recommendations</span>
               <ArrowRight className="h-3.5 w-3.5" />
@@ -134,38 +134,38 @@ export function OverviewView() {
         </div>
 
         {/* Metric 3: Accountable Tasks & Cases */}
-        <div className="group rounded-2xl border border-slate-200/90 bg-white p-5 shadow-xs transition-all hover:border-[#004a80]/30 hover:shadow-md dark:border-slate-800 dark:bg-slate-900">
+        <div className="group rounded-2xl border border-border/90 bg-surface p-5 shadow-xs transition-all hover:border-accent-brand">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+            <span className="text-xs font-bold uppercase tracking-wider text-ink-muted">
               Execution Workflows
             </span>
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300">
+            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-muted text-ink-secondary">
               <ClipboardCheck className="h-5 w-5" />
             </div>
           </div>
           <div className="mt-3">
-            <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+            <div className="text-2xl sm:text-3xl font-extrabold text-ink">
               {activeTasksCount}
             </div>
             <div className="mt-2 flex items-center gap-2 text-xs">
               {blockedTasksCount > 0 ? (
-                <span className="inline-flex items-center gap-1 rounded-md bg-rose-50 px-2 py-0.5 font-bold text-rose-700 dark:bg-rose-950/80 dark:text-rose-300">
+                <span className="inline-flex items-center gap-1 rounded-md bg-tone-red-bg px-2 py-0.5 font-bold text-tone-red-text">
                   <AlertCircle className="h-3 w-3" />
                   {blockedTasksCount} Blocked
                 </span>
               ) : (
-                <span className="inline-flex items-center gap-1 rounded-md bg-emerald-50 px-2 py-0.5 font-bold text-emerald-700 dark:bg-emerald-950/80 dark:text-emerald-300">
+                <span className="inline-flex items-center gap-1 rounded-md bg-tone-green-bg px-2 py-0.5 font-bold text-tone-green-text">
                   <CheckCircle2 className="h-3 w-3" />
                   All On-Track
                 </span>
               )}
-              <span className="text-slate-500 dark:text-slate-400">In pipeline</span>
+              <span className="text-ink-muted">In pipeline</span>
             </div>
           </div>
-          <div className="mt-4 border-t border-slate-100 pt-3 dark:border-slate-800">
+          <div className="mt-4 border-t border-border pt-3">
             <Link
               href="/intelligence/tasks"
-              className="inline-flex items-center gap-1 text-xs font-bold text-[#004a80] hover:underline dark:text-blue-400"
+              className="inline-flex items-center gap-1 text-xs font-bold text-link hover:underline"
             >
               <span>Manage tasks & cases</span>
               <ArrowRight className="h-3.5 w-3.5" />
@@ -174,30 +174,30 @@ export function OverviewView() {
         </div>
 
         {/* Metric 4: AI Model Reliability & Guardrails */}
-        <div className="group rounded-2xl border border-slate-200/90 bg-white p-5 shadow-xs transition-all hover:border-[#004a80]/30 hover:shadow-md dark:border-slate-800 dark:bg-slate-900">
+        <div className="group rounded-2xl border border-border/90 bg-surface p-5 shadow-xs transition-all hover:border-accent-brand">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+            <span className="text-xs font-bold uppercase tracking-wider text-ink-muted">
               Model Telemetry & Safety
             </span>
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-purple-50 text-purple-700 dark:bg-purple-950/60 dark:text-purple-300">
+            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-tone-purple-bg text-tone-purple-text">
               <ShieldCheck className="h-5 w-5" />
             </div>
           </div>
           <div className="mt-3">
-            <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+            <div className="text-2xl sm:text-3xl font-extrabold text-ink">
               99.4%
             </div>
             <div className="mt-2 flex items-center gap-2 text-xs">
-              <span className="inline-flex items-center rounded-md bg-purple-50 px-2 py-0.5 font-bold text-purple-700 dark:bg-purple-950/80 dark:text-purple-300">
+              <span className="inline-flex items-center rounded-md bg-tone-purple-bg px-2 py-0.5 font-bold text-tone-purple-text">
                 0 Mutations
               </span>
-              <span className="text-slate-500 dark:text-slate-400">Read-only certified</span>
+              <span className="text-ink-muted">Read-only certified</span>
             </div>
           </div>
-          <div className="mt-4 border-t border-slate-100 pt-3 dark:border-slate-800">
+          <div className="mt-4 border-t border-border pt-3">
             <Link
               href="/intelligence/history"
-              className="inline-flex items-center gap-1 text-xs font-bold text-[#004a80] hover:underline dark:text-blue-400"
+              className="inline-flex items-center gap-1 text-xs font-bold text-link hover:underline"
             >
               <span>Inspect audit traces</span>
               <ArrowRight className="h-3.5 w-3.5" />
@@ -207,22 +207,22 @@ export function OverviewView() {
       </div>
 
       {/* 2. Operational Domain Health & Intelligence Grid */}
-      <div className="rounded-2xl border border-slate-200/90 bg-white p-6 shadow-xs dark:border-slate-800 dark:bg-slate-900">
-        <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between pb-4 border-b border-slate-100 dark:border-slate-800">
+      <div className="rounded-2xl border border-border/90 bg-surface p-6 shadow-xs">
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between pb-4 border-b border-border">
           <div>
-            <h2 className="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
-              <BarChart3 className="h-4 w-4 text-[#004a80] dark:text-blue-400" />
+            <h2 className="text-base font-bold text-ink flex items-center gap-2">
+              <BarChart3 className="h-4 w-4 text-link" />
               Domain Intelligence Health Matrix
             </h2>
-            <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+            <p className="text-xs text-ink-muted mt-0.5">
               Multi-agent analytical coverage across enterprise supply chain, plant operations, and sales channels
             </p>
           </div>
           <Link
             href="/intelligence/advisor"
-            className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 px-3 py-1.5 text-xs font-bold text-slate-700 hover:border-[#004a80] hover:text-[#004a80] dark:border-slate-700 dark:text-slate-200 dark:hover:border-blue-400"
+            className="inline-flex items-center gap-1.5 rounded-xl border border-border px-3 py-1.5 text-xs font-bold text-ink-secondary hover:border-accent-brand hover:text-link-hover"
           >
-            <MessageSquare className="h-3.5 w-3.5 text-[#004a80] dark:text-blue-400" />
+            <MessageSquare className="h-3.5 w-3.5 text-link" />
             <span>Consult Domain Advisor</span>
           </Link>
         </div>
@@ -237,38 +237,38 @@ export function OverviewView() {
             return (
               <div
                 key={domain.key}
-                className="rounded-xl border border-slate-200/80 bg-slate-50/60 p-4 transition-all hover:border-slate-300 hover:bg-white dark:border-slate-800 dark:bg-slate-850/60 dark:hover:bg-slate-800/80"
+                className="rounded-xl border border-border/80 bg-muted/60 p-4 transition-all hover:border-border-strong hover:bg-surface"
               >
                 <div className="flex items-start justify-between">
                   <div className="flex items-center gap-2.5">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white border border-slate-200 text-slate-700 shadow-2xs dark:bg-slate-800 dark:border-slate-700 dark:text-slate-200">
-                      <Icon className="h-4 w-4 text-[#004a80] dark:text-blue-400" />
+                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-surface border border-border text-ink-secondary shadow-2xs">
+                      <Icon className="h-4 w-4 text-link" />
                     </div>
                     <div>
-                      <h3 className="text-xs font-bold text-slate-900 dark:text-white">
+                      <h3 className="text-xs font-bold text-ink">
                         {domain.name}
                       </h3>
-                      <p className="text-[11px] text-slate-500 dark:text-slate-400">
+                      <p className="text-[11px] text-ink-muted">
                         {domain.focus}
                       </p>
                     </div>
                   </div>
                 </div>
 
-                <div className="mt-3 flex items-center justify-between text-xs border-t border-slate-200/50 pt-2.5 dark:border-slate-700/50">
+                <div className="mt-3 flex items-center justify-between text-xs border-t border-border/50 pt-2.5">
                   <div className="flex items-center gap-1.5">
                     <span
                       className={`h-2 w-2 rounded-full ${
-                        isFresh ? 'bg-emerald-500' : 'bg-amber-500'
+                        isFresh ? 'bg-tone-green-solid' : 'bg-tone-amber-solid'
                       }`}
                     />
-                    <span className="text-[11px] font-semibold text-slate-600 dark:text-slate-300">
+                    <span className="text-[11px] font-semibold text-ink-secondary">
                       {isFresh ? 'Telemetry Active' : 'Calibrating'}
                     </span>
                   </div>
                   <Link
                     href={`/intelligence/recommendations?module=${domain.key}`}
-                    className="inline-flex items-center gap-1 text-[11px] font-bold text-[#004a80] hover:underline dark:text-blue-400"
+                    className="inline-flex items-center gap-1 text-[11px] font-bold text-link hover:underline"
                   >
                     <span>View Signals</span>
                     <ChevronRight className="h-3 w-3" />
@@ -281,20 +281,20 @@ export function OverviewView() {
       </div>
 
       {/* 3. Priority Directives & Anomaly Radar Table */}
-      <div className="rounded-2xl border border-slate-200/90 bg-white p-6 shadow-xs dark:border-slate-800 dark:bg-slate-900">
-        <div className="flex items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-800">
+      <div className="rounded-2xl border border-border/90 bg-surface p-6 shadow-xs">
+        <div className="flex items-center justify-between pb-4 border-b border-border">
           <div>
-            <h2 className="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
-              <Activity className="h-4 w-4 text-[#004a80] dark:text-blue-400" />
+            <h2 className="text-base font-bold text-ink flex items-center gap-2">
+              <Activity className="h-4 w-4 text-link" />
               Priority AI Directives & Action Opportunities
             </h2>
-            <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+            <p className="text-xs text-ink-muted mt-0.5">
               Verified operational decisions identified from latest transaction batches
             </p>
           </div>
           <Link
             href="/intelligence/recommendations"
-            className="text-xs font-bold text-[#004a80] hover:underline dark:text-blue-400"
+            className="text-xs font-bold text-link hover:underline"
           >
             View All ({openCount})
           </Link>
@@ -304,7 +304,7 @@ export function OverviewView() {
           <div className="mt-4 overflow-x-auto">
             <table className="w-full text-left text-xs">
               <thead>
-                <tr className="border-b border-slate-200 text-slate-400 font-bold uppercase tracking-wider text-[10px] dark:border-slate-800">
+                <tr className="border-b border-border text-ink-placeholder font-bold uppercase tracking-wider text-[10px]">
                   <th className="py-2.5 px-3">Priority</th>
                   <th className="py-2.5 px-3">Domain</th>
                   <th className="py-2.5 px-3">Directive / Situation</th>
@@ -313,14 +313,14 @@ export function OverviewView() {
                   <th className="py-2.5 px-3 text-right">Action</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-100 dark:divide-slate-800/80">
+              <tbody className="divide-y divide-border">
                 {highPriorityRecs.slice(0, 6).map((rec) => {
                   const prioBadge =
                     rec.priority === 'CRITICAL'
-                      ? 'bg-rose-50 text-rose-700 border-rose-200 dark:bg-rose-950/70 dark:text-rose-300 dark:border-rose-900'
+                      ? 'bg-tone-red-bg text-tone-red-text border-tone-red-solid/25'
                       : rec.priority === 'HIGH'
-                      ? 'bg-amber-50 text-amber-700 border-amber-200 dark:bg-amber-950/70 dark:text-amber-300 dark:border-amber-900'
-                      : 'bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-950/70 dark:text-blue-300 dark:border-blue-900';
+                      ? 'bg-tone-amber-bg text-tone-amber-text border-tone-amber-solid/25'
+                      : 'bg-tone-blue-bg text-link border-tone-blue-solid/25';
 
                   const impactVal = rec.expectedImpact
                     ? rec.expectedImpact.currency
@@ -331,37 +331,37 @@ export function OverviewView() {
                   return (
                     <tr
                       key={rec.id}
-                      className="transition-colors hover:bg-slate-50/80 dark:hover:bg-slate-800/50"
+                      className="transition-colors hover:bg-muted/80"
                     >
                       <td className="py-3 px-3 whitespace-nowrap">
                         <span className={`inline-flex rounded-md border px-2 py-0.5 text-[10px] font-bold ${prioBadge}`}>
                           {rec.priority}
                         </span>
                       </td>
-                      <td className="py-3 px-3 whitespace-nowrap font-bold text-slate-700 dark:text-slate-300">
+                      <td className="py-3 px-3 whitespace-nowrap font-bold text-ink-secondary">
                         {rec.module}
                       </td>
                       <td className="py-3 px-3 min-w-[280px]">
                         <Link
                           href={`/intelligence/recommendations/${rec.id}`}
-                          className="font-bold text-slate-900 hover:text-[#004a80] dark:text-white dark:hover:text-blue-400"
+                          className="font-bold text-ink hover:text-link-hover"
                         >
                           {rec.title}
                         </Link>
-                        <p className="text-[11px] text-slate-500 dark:text-slate-400 line-clamp-1 mt-0.5">
+                        <p className="text-[11px] text-ink-muted line-clamp-1 mt-0.5">
                           {rec.situation}
                         </p>
                       </td>
-                      <td className="py-3 px-3 whitespace-nowrap font-bold text-emerald-700 dark:text-emerald-400">
+                      <td className="py-3 px-3 whitespace-nowrap font-bold text-tone-green-text">
                         {impactVal}
                       </td>
-                      <td className="py-3 px-3 whitespace-nowrap font-semibold text-slate-600 dark:text-slate-400">
+                      <td className="py-3 px-3 whitespace-nowrap font-semibold text-ink-secondary">
                         {percent(Number(rec.confidence) || 0)}
                       </td>
                       <td className="py-3 px-3 whitespace-nowrap text-right">
                         <Link
                           href={`/intelligence/recommendations/${rec.id}`}
-                          className="inline-flex items-center gap-1 rounded-lg bg-[#004a80] px-2.5 py-1 text-[11px] font-bold text-white hover:bg-[#003860] dark:bg-blue-600 dark:hover:bg-blue-500"
+                          className="inline-flex items-center gap-1 rounded-lg bg-action px-2.5 py-1 text-[11px] font-bold text-inverse hover:bg-[color:var(--action-primary-bg-hover)]"
                         >
                           <span>Review</span>
                           <ArrowRight className="h-3 w-3" />
@@ -374,12 +374,12 @@ export function OverviewView() {
             </table>
           </div>
         ) : (
-          <div className="py-8 text-center text-xs text-slate-500">
-            <CheckCircle2 className="mx-auto h-7 w-7 text-emerald-600 dark:text-emerald-400 mb-2" />
-            <p className="font-bold text-slate-800 dark:text-slate-200">
+          <div className="py-8 text-center text-xs text-ink-muted">
+            <CheckCircle2 className="mx-auto h-7 w-7 text-tone-green-text mb-2" />
+            <p className="font-bold text-ink">
               All monitored ERP parameters operating within certified tolerances
             </p>
-            <p className="text-[11px] text-slate-400 mt-1">
+            <p className="text-[11px] text-ink-placeholder mt-1">
               Zero active critical bottlenecks, inventory depletions, or margin leakages detected.
             </p>
           </div>

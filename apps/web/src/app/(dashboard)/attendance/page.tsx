@@ -128,7 +128,7 @@ export default function EmployeeAttendancePortal() {
   if (isLoading) {
     return (
       <div className="min-h-screen p-12 flex flex-col items-center justify-center text-muted-foreground">
-        <div className="animate-spin w-6 h-6 border-2 border-primary border-t-transparent rounded-full mb-3" />
+        <div className="animate-spin w-6 h-6 border-border border-primary border-t-transparent rounded-full mb-3" />
         <p className="text-xs font-medium">Loading attendance portal...</p>
       </div>
     );
@@ -169,7 +169,7 @@ export default function EmployeeAttendancePortal() {
 
       {punchSuccess && (
         <div className="p-3 bg-muted border border-border text-foreground rounded-lg text-xs font-medium flex items-center gap-2">
-          <Check className="w-4 h-4 text-emerald-600" />
+          <Check className="w-4 h-4 text-tone-green-text" />
           {punchSuccess}
         </div>
       )}
@@ -201,7 +201,7 @@ export default function EmployeeAttendancePortal() {
             onClick={() => handleCheckIn('HALF_DAY')}
             className="gap-1.5 text-xs"
           >
-            <Clock className="w-4 h-4 text-amber-500" />
+            <Clock className="w-4 h-4 text-tone-amber-text" />
             Mark Half Day (4h)
           </Button>
         </div>
@@ -235,7 +235,7 @@ export default function EmployeeAttendancePortal() {
       </div>
 
       {/* Navigation Tabs */}
-      <div className="flex items-center gap-2 border-b border-border pb-2">
+      <div className="flex items-center gap-2 border-border-strong border-border pb-2">
         <button
           type="button"
           onClick={() => setActiveTab('attendance')}
@@ -372,7 +372,7 @@ export default function EmployeeAttendancePortal() {
                       </span>
                     </TableCell>
                     <TableCell>
-                      <span className="px-2 py-0.5 rounded-full text-[11px] font-medium bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+                      <span className="px-2 py-0.5 rounded-full text-[11px] font-medium bg-tone-green-bg text-tone-green-text border border-tone-green-solid/25">
                         Recorded / Approved
                       </span>
                     </TableCell>
@@ -395,7 +395,7 @@ export default function EmployeeAttendancePortal() {
 
           {/* Activity Tasks List */}
           <div className="bg-card rounded-2xl border border-border shadow-xs p-6 space-y-4">
-            <div className="flex items-center justify-between border-b border-border pb-3">
+            <div className="flex items-center justify-between border-border-strong border-border pb-3">
               <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
                 <Activity className="w-4 h-4 text-primary" />
                 Recent Workstation Activity & Tasks ({tasks.length})
@@ -415,7 +415,7 @@ export default function EmployeeAttendancePortal() {
                       <p className="text-[11px] text-muted-foreground">{t.department || 'Operations'} · Priority: {t.priority}</p>
                     </div>
                     <span className={`px-2 py-0.5 rounded text-[10px] font-bold ${
-                      t.status === 'COMPLETED' ? 'bg-emerald-500/10 text-emerald-600' : 'bg-muted text-muted-foreground'
+                      t.status === 'COMPLETED' ? 'bg-tone-green-bg text-tone-green-text' : 'bg-muted text-muted-foreground'
                     }`}>
                       {t.status}
                     </span>

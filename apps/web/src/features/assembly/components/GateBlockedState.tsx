@@ -38,16 +38,16 @@ export function GateBlockedState({
       : 'Quantity Conservation Violation');
 
   return (
-    <Card className={`rounded-2xl border-2 border-amber-500/30 bg-amber-500/5 p-6 shadow-sm ${className || ''}`}>
+    <Card className={`rounded-2xl border-2 border-tone-amber-solid/30 bg-tone-amber-bg/5 p-6 shadow-sm ${className || ''}`}>
       <div className="flex flex-col sm:flex-row items-start gap-4">
-        <div className="p-3 bg-amber-500/10 text-amber-600 dark:text-amber-400 rounded-xl border border-amber-500/20 shrink-0">
+        <div className="p-3 bg-tone-amber-bg/10 text-tone-amber-text  rounded-xl border border-tone-amber-solid/20 shrink-0">
           <ShieldAlert className="w-8 h-8" />
         </div>
 
         <div className="space-y-3 flex-1">
           <div className="space-y-1">
             <div className="flex items-center gap-2">
-              <span className="font-mono text-xs font-bold px-2 py-0.5 rounded bg-amber-500/20 text-amber-700 dark:text-amber-300">
+              <span className="font-mono text-xs font-bold px-2 py-0.5 rounded bg-tone-amber-bg/20 text-tone-amber-text ">
                 GATE {gate}
               </span>
               <h3 className="text-base font-bold text-foreground">{gateTitle}</h3>
@@ -58,7 +58,7 @@ export function GateBlockedState({
           </div>
 
           {missingDetails && missingDetails.length > 0 && (
-            <div className="rounded-xl border border-amber-500/20 bg-background/80 p-3.5 space-y-2">
+            <div className="rounded-xl border border-tone-amber-solid/20 bg-background/80 p-3.5 space-y-2">
               <p className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
                 Missing Required Prerequisites:
               </p>

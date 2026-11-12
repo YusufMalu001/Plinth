@@ -112,13 +112,13 @@ export default function QualityQueuePage() {
   }, [checkpointData]);
 
   return (
-    <main className="flex-1 overflow-y-auto bg-slate-50/50 p-4 sm:p-6 lg:p-8 dark:bg-[#070b14]/70 font-manrope">
+    <main className="flex-1 overflow-y-auto bg-muted/50 p-4 sm:p-6 lg:p-8 font-manrope">
       <div className="mx-auto max-w-[1680px] space-y-5">
         
         {/* ======================================================== */}
         {/* 1. STREAMLINED PAGE HEADER & ACTIONS                     */}
         {/* ======================================================== */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-border pb-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-border-strong border-border pb-4">
           <div>
             <div className="flex items-center gap-2 text-xs text-muted-foreground mb-1">
               <span className="text-primary font-semibold uppercase tracking-wider text-[11px]">
@@ -178,7 +178,7 @@ export default function QualityQueuePage() {
             <Button
               size="sm"
               onClick={() => setShowRuleModal(true)}
-              className="h-9.5 px-4 text-xs font-bold rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground shadow-xs hover:shadow transition-all flex items-center gap-2 cursor-pointer active:scale-[0.99]"
+              className="h-9.5 px-4 text-xs font-bold rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground shadow-xs hover:shadow-none transition-all flex items-center gap-2 cursor-pointer active:scale-[0.99]"
             >
               <Plus className="w-4 h-4" />
               <span>Configure QC Rule</span>
@@ -442,7 +442,7 @@ export default function QualityQueuePage() {
             {activeItem ? (
               <div className="rounded-3xl border border-border bg-card p-6 shadow-xs space-y-6">
                 {/* Active Item Title Bar */}
-                <div className="flex items-start justify-between gap-4 border-b border-border pb-4">
+                <div className="flex items-start justify-between gap-4 border-border-strong border-border pb-4">
                   <div>
                     <div className="flex items-center gap-2">
                       <span className="font-mono text-base font-black text-foreground">
@@ -548,7 +548,7 @@ export default function QualityQueuePage() {
                                     <Button
                                       size="sm"
                                       onClick={() => setShowInspectionModal(true)}
-                                      className="h-9 px-4 text-xs font-bold rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground shadow-xs hover:shadow transition-all flex items-center gap-1.5 cursor-pointer active:scale-[0.99]"
+                                      className="h-9 px-4 text-xs font-bold rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground shadow-xs hover:shadow-none transition-all flex items-center gap-1.5 cursor-pointer active:scale-[0.99]"
                                     >
                                       <ShieldCheck className="w-4 h-4" />
                                       <span>Execute Inspection</span>

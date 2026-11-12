@@ -25,34 +25,34 @@ const moduleMeta: Record<
   IntelligenceModule,
   { label: string; icon: React.ElementType; color: string; bg: string; border: string; glow: string }
 > = {
-  EXECUTIVE: { label: 'Executive', icon: Layers, color: 'text-indigo-700 dark:text-indigo-300', bg: 'bg-indigo-50/90 dark:bg-indigo-950/50', border: 'border-indigo-200/80 dark:border-indigo-800/60', glow: 'from-indigo-500/20' },
-  SALES: { label: 'Sales', icon: TrendingUp, color: 'text-[#004a80] dark:text-blue-300', bg: 'bg-blue-50/90 dark:bg-blue-950/50', border: 'border-blue-200/80 dark:border-blue-800/60', glow: 'from-blue-500/20' },
-  INVENTORY: { label: 'Inventory', icon: Package, color: 'text-amber-700 dark:text-amber-300', bg: 'bg-amber-50/90 dark:bg-amber-950/50', border: 'border-amber-200/80 dark:border-amber-800/60', glow: 'from-amber-500/20' },
-  PROCUREMENT: { label: 'Procurement', icon: ShoppingCart, color: 'text-sky-700 dark:text-sky-300', bg: 'bg-sky-50/90 dark:bg-sky-950/50', border: 'border-sky-200/80 dark:border-sky-800/60', glow: 'from-sky-500/20' },
-  PRODUCTION: { label: 'Production', icon: Factory, color: 'text-purple-700 dark:text-purple-300', bg: 'bg-purple-50/90 dark:bg-purple-950/50', border: 'border-purple-200/80 dark:border-purple-800/60', glow: 'from-purple-500/20' },
-  FULFILLMENT: { label: 'Fulfillment', icon: Truck, color: 'text-teal-700 dark:text-teal-300', bg: 'bg-teal-50/90 dark:bg-teal-950/50', border: 'border-teal-200/80 dark:border-teal-800/60', glow: 'from-teal-500/20' },
-  QUALITY: { label: 'Quality', icon: ShieldCheck, color: 'text-rose-700 dark:text-rose-300', bg: 'bg-rose-50/90 dark:bg-rose-950/50', border: 'border-rose-200/80 dark:border-rose-800/60', glow: 'from-rose-500/20' },
-  FINANCE: { label: 'Finance', icon: TrendingUp, color: 'text-emerald-700 dark:text-emerald-300', bg: 'bg-emerald-50/90 dark:bg-emerald-950/50', border: 'border-emerald-200/80 dark:border-emerald-800/60', glow: 'from-emerald-500/20' },
-  SYSTEM: { label: 'System', icon: Bot, color: 'text-slate-700 dark:text-slate-300', bg: 'bg-slate-100 dark:bg-slate-800', border: 'border-slate-200 dark:border-slate-700', glow: 'from-slate-500/20' },
+  EXECUTIVE: { label: 'Executive', icon: Layers, color: 'text-tone-purple-text', bg: 'bg-tone-purple-bg', border: 'border-tone-purple-solid/25', glow: 'from-tone-purple-solid/20' },
+  SALES: { label: 'Sales', icon: TrendingUp, color: 'text-link', bg: 'bg-tone-blue-bg', border: 'border-tone-blue-solid/25', glow: 'from-tone-blue-solid/20' },
+  INVENTORY: { label: 'Inventory', icon: Package, color: 'text-tone-amber-text', bg: 'bg-tone-amber-bg', border: 'border-tone-amber-solid/25', glow: 'from-tone-amber-solid/20' },
+  PROCUREMENT: { label: 'Procurement', icon: ShoppingCart, color: 'text-tone-blue-text', bg: 'bg-tone-blue-bg', border: 'border-tone-blue-solid/25', glow: 'from-tone-blue-solid/20' },
+  PRODUCTION: { label: 'Production', icon: Factory, color: 'text-tone-purple-text', bg: 'bg-tone-purple-bg', border: 'border-tone-purple-solid/25', glow: 'from-tone-purple-solid/20' },
+  FULFILLMENT: { label: 'Fulfillment', icon: Truck, color: 'text-tone-teal-text', bg: 'bg-tone-teal-bg', border: 'border-tone-teal-solid/25', glow: 'from-tone-teal-solid/20' },
+  QUALITY: { label: 'Quality', icon: ShieldCheck, color: 'text-tone-red-text', bg: 'bg-tone-red-bg', border: 'border-tone-red-solid/25', glow: 'from-tone-red-solid/20' },
+  FINANCE: { label: 'Finance', icon: TrendingUp, color: 'text-tone-green-text', bg: 'bg-tone-green-bg', border: 'border-tone-green-solid/25', glow: 'from-tone-green-solid/20' },
+  SYSTEM: { label: 'System', icon: Bot, color: 'text-ink-secondary', bg: 'bg-muted', border: 'border-border', glow: 'from-tone-grey-solid' },
 };
 
 const priorityStyles: Record<
   Recommendation['priority'],
   { label: string; bg: string; text: string; border: string; stripe: string; icon: React.ElementType }
 > = {
-  CRITICAL: { label: 'Critical Action', bg: 'bg-rose-50 dark:bg-rose-950/60', text: 'text-rose-700 dark:text-rose-300', border: 'border-rose-200 dark:border-rose-800', stripe: 'bg-rose-500', icon: ShieldAlert },
-  HIGH: { label: 'High Priority', bg: 'bg-amber-50 dark:bg-amber-950/60', text: 'text-amber-700 dark:text-amber-300', border: 'border-amber-200 dark:border-amber-800', stripe: 'bg-amber-500', icon: AlertCircle },
-  MEDIUM: { label: 'Moderate', bg: 'bg-blue-50 dark:bg-blue-950/60', text: 'text-blue-700 dark:text-blue-300', border: 'border-blue-200 dark:border-blue-800', stripe: 'bg-blue-500', icon: Sparkles },
-  LOW: { label: 'Routine', bg: 'bg-slate-100 dark:bg-slate-800', text: 'text-slate-700 dark:text-slate-300', border: 'border-slate-200 dark:border-slate-700', stripe: 'bg-slate-400', icon: Bot },
+  CRITICAL: { label: 'Critical Action', bg: 'bg-tone-red-bg', text: 'text-tone-red-text', border: 'border-tone-red-solid/25', stripe: 'bg-tone-red-solid', icon: ShieldAlert },
+  HIGH: { label: 'High Priority', bg: 'bg-tone-amber-bg', text: 'text-tone-amber-text', border: 'border-tone-amber-solid/25', stripe: 'bg-tone-amber-solid', icon: AlertCircle },
+  MEDIUM: { label: 'Moderate', bg: 'bg-tone-blue-bg', text: 'text-link', border: 'border-tone-blue-solid/25', stripe: 'bg-tone-blue-solid', icon: Sparkles },
+  LOW: { label: 'Routine', bg: 'bg-muted', text: 'text-ink-secondary', border: 'border-border', stripe: 'bg-active', icon: Bot },
 };
 
 const statusStyles: Record<Recommendation['status'], { label: string; badge: string }> = {
-  OPEN: { label: 'Ready for Review', badge: 'bg-emerald-50 text-emerald-800 border-emerald-200 dark:bg-emerald-950/60 dark:text-emerald-300 dark:border-emerald-800' },
-  ACCEPTED: { label: 'Accepted & Dispatched', badge: 'bg-blue-50 text-[#004a80] border-blue-200 dark:bg-blue-950/60 dark:text-blue-300 dark:border-blue-800' },
-  DEFERRED: { label: 'Deferred', badge: 'bg-amber-50 text-amber-800 border-amber-200 dark:bg-amber-950/60 dark:text-amber-300 dark:border-amber-800' },
-  DISMISSED: { label: 'Dismissed', badge: 'bg-slate-100 text-slate-600 border-slate-200 dark:bg-slate-800 dark:text-slate-400 dark:border-slate-700' },
-  EXPIRED: { label: 'Expired', badge: 'bg-slate-100 text-slate-500 border-slate-200 dark:bg-slate-800 dark:text-slate-400 dark:border-slate-700' },
-  SUPERSEDED: { label: 'Superseded', badge: 'bg-slate-100 text-slate-500 border-slate-200 dark:bg-slate-800 dark:text-slate-400 dark:border-slate-700' },
+  OPEN: { label: 'Ready for Review', badge: 'bg-tone-green-bg text-tone-green-text border-tone-green-solid/25' },
+  ACCEPTED: { label: 'Accepted & Dispatched', badge: 'bg-tone-blue-bg text-link border-tone-blue-solid/25' },
+  DEFERRED: { label: 'Deferred', badge: 'bg-tone-amber-bg text-tone-amber-text border-tone-amber-solid/25' },
+  DISMISSED: { label: 'Dismissed', badge: 'bg-muted text-ink-secondary border-border' },
+  EXPIRED: { label: 'Expired', badge: 'bg-muted text-ink-muted border-border' },
+  SUPERSEDED: { label: 'Superseded', badge: 'bg-muted text-ink-muted border-border' },
 };
 
 export function RecommendationCard({ recommendation }: { recommendation: Recommendation }) {
@@ -64,7 +64,7 @@ export function RecommendationCard({ recommendation }: { recommendation: Recomme
   const confValue = Math.min(Math.max(Number(recommendation.confidence) || 0, 0), 1);
 
   return (
-    <div className="group relative overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-xs transition-all duration-200 hover:-translate-y-0.5 hover:border-[#004a80]/50 hover:shadow-md dark:border-slate-800 dark:bg-slate-900">
+    <div className="group relative overflow-hidden rounded-2xl border border-border/90 bg-surface shadow-xs transition-all duration-200 hover:-translate-y-0.5 hover:border-accent-brand/50">
       {/* Priority Accent Stripe */}
       <div className={`absolute left-0 top-0 bottom-0 w-1.5 ${prio.stripe}`} />
 
@@ -90,7 +90,7 @@ export function RecommendationCard({ recommendation }: { recommendation: Recomme
               </span>
 
               {recommendation.category && (
-                <span className="text-[11px] font-semibold text-slate-500 dark:text-slate-400">
+                <span className="text-[11px] font-semibold text-ink-muted">
                   · {recommendation.category}
                 </span>
               )}
@@ -100,54 +100,54 @@ export function RecommendationCard({ recommendation }: { recommendation: Recomme
             <div>
               <Link
                 href={`/intelligence/recommendations/${recommendation.id}`}
-                className="text-base sm:text-lg font-black tracking-tight text-slate-900 hover:text-[#004a80] transition-colors dark:text-slate-100 dark:hover:text-blue-400"
+                className="text-base sm:text-lg font-black tracking-tight text-ink hover:text-link-hover transition-colors"
               >
                 {recommendation.title}
               </Link>
-              <p className="mt-1.5 text-xs sm:text-sm text-slate-600 dark:text-slate-300/90 leading-relaxed line-clamp-2">
+              <p className="mt-1.5 text-xs sm:text-sm text-ink-secondary leading-relaxed line-clamp-2">
                 {recommendation.situation}
               </p>
             </div>
 
             {/* Context & Metadata Footer */}
-            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 pt-1 text-xs text-slate-500 dark:text-slate-400">
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 pt-1 text-xs text-ink-muted">
               {recommendation.suggestedOwnerRole && (
                 <span className="inline-flex items-center gap-1.5 font-medium">
-                  <UserCheck className="h-3.5 w-3.5 text-slate-400" />
-                  Target Role: <strong className="text-slate-800 dark:text-slate-200">{recommendation.suggestedOwnerRole}</strong>
+                  <UserCheck className="h-3.5 w-3.5 text-ink-placeholder" />
+                  Target Role: <strong className="text-ink">{recommendation.suggestedOwnerRole}</strong>
                 </span>
               )}
 
               {recommendation.expiresAt && (
                 <span className="inline-flex items-center gap-1.5">
-                  <Clock3 className="h-3.5 w-3.5 text-slate-400" />
+                  <Clock3 className="h-3.5 w-3.5 text-ink-placeholder" />
                   Expires {dateTime(recommendation.expiresAt)}
                 </span>
               )}
 
-              <span className="inline-flex items-center gap-1 text-[11px] font-mono text-slate-400">
+              <span className="inline-flex items-center gap-1 text-[11px] font-mono text-ink-placeholder">
                 Action Code: <strong>{recommendation.proposedActionCode}</strong>
               </span>
             </div>
           </div>
 
           {/* Right Action & Financial Impact Station */}
-          <div className="flex flex-row lg:flex-col items-center lg:items-end justify-between gap-4 shrink-0 pt-3 lg:pt-0 border-t lg:border-t-0 border-slate-100 dark:border-slate-800">
+          <div className="flex flex-row lg:flex-col items-center lg:items-end justify-between gap-4 shrink-0 pt-3 lg:pt-0 border-t lg:border-t-0 border-border">
             <div className="text-left lg:text-right">
-              <p className="text-[10px] font-black uppercase tracking-wider text-slate-400">
+              <p className="text-[10px] font-black uppercase tracking-wider text-ink-placeholder">
                 Projected Impact
               </p>
-              <p className="text-lg sm:text-xl font-black text-[#004a80] dark:text-blue-400">
+              <p className="text-lg sm:text-xl font-black text-link">
                 {impactValue(recommendation.expectedImpact)}
               </p>
 
               <div className="mt-1.5 flex items-center gap-2 justify-start lg:justify-end">
-                <span className="text-[11px] text-slate-500 font-semibold">
-                  Confidence: <strong className="text-slate-900 dark:text-slate-100">{percent(recommendation.confidence)}</strong>
+                <span className="text-[11px] text-ink-muted font-semibold">
+                  Confidence: <strong className="text-ink">{percent(recommendation.confidence)}</strong>
                 </span>
-                <div className="h-2 w-16 rounded-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
+                <div className="h-2 w-16 rounded-full bg-muted overflow-hidden">
                   <div
-                    className="h-full rounded-full bg-gradient-to-r from-emerald-500 to-teal-500"
+                    className="h-full rounded-full bg-tone-green-solid"
                     style={{ width: `${confValue * 100}%` }}
                   />
                 </div>
@@ -156,7 +156,7 @@ export function RecommendationCard({ recommendation }: { recommendation: Recomme
 
             <Link
               href={`/intelligence/recommendations/${recommendation.id}`}
-              className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#004a80] to-blue-700 hover:brightness-110 px-4 py-2 text-xs font-bold text-white shadow-xs transition-all active:scale-95"
+              className="inline-flex items-center gap-2 rounded-xl bg-action hover:brightness-110 px-4 py-2 text-xs font-bold text-inverse shadow-xs transition-all active:scale-95"
             >
               <span>Review Evidence</span>
               <ArrowRight className="h-3.5 w-3.5" />

@@ -24,12 +24,12 @@ import { showToast } from '../../../components/toast-store';
 type Answer = { text: string; evidence: Evidence[]; limitations: string[] };
 
 const moduleOptions: { key: IntelligenceModule; name: string; icon: React.ElementType; color: string; bg: string }[] = [
-  { key: 'EXECUTIVE', name: 'Executive Super Agent', icon: Bot, color: 'text-indigo-600 dark:text-indigo-400', bg: 'bg-indigo-50 dark:bg-indigo-950/50' },
-  { key: 'SALES', name: 'Sales Advisor', icon: TrendingUp, color: 'text-emerald-600 dark:text-emerald-400', bg: 'bg-emerald-50 dark:bg-emerald-950/50' },
-  { key: 'INVENTORY', name: 'Inventory Advisor', icon: Package, color: 'text-amber-600 dark:text-amber-400', bg: 'bg-amber-50 dark:bg-amber-950/50' },
-  { key: 'PROCUREMENT', name: 'Procurement Advisor', icon: ShoppingCart, color: 'text-blue-600 dark:text-blue-400', bg: 'bg-blue-50 dark:bg-blue-950/50' },
-  { key: 'PRODUCTION', name: 'Production Advisor', icon: Factory, color: 'text-purple-600 dark:text-purple-400', bg: 'bg-purple-50 dark:bg-purple-950/50' },
-  { key: 'FULFILLMENT', name: 'Fulfillment Advisor', icon: Truck, color: 'text-cyan-600 dark:text-cyan-400', bg: 'bg-cyan-50 dark:bg-cyan-950/50' },
+  { key: 'EXECUTIVE', name: 'Executive Super Agent', icon: Bot, color: 'text-tone-purple-text', bg: 'bg-tone-purple-bg' },
+  { key: 'SALES', name: 'Sales Advisor', icon: TrendingUp, color: 'text-tone-green-text', bg: 'bg-tone-green-bg' },
+  { key: 'INVENTORY', name: 'Inventory Advisor', icon: Package, color: 'text-tone-amber-text', bg: 'bg-tone-amber-bg' },
+  { key: 'PROCUREMENT', name: 'Procurement Advisor', icon: ShoppingCart, color: 'text-link', bg: 'bg-tone-blue-bg' },
+  { key: 'PRODUCTION', name: 'Production Advisor', icon: Factory, color: 'text-tone-purple-text', bg: 'bg-tone-purple-bg' },
+  { key: 'FULFILLMENT', name: 'Fulfillment Advisor', icon: Truck, color: 'text-tone-teal-text', bg: 'bg-tone-teal-bg' },
 ];
 
 export function AskBusiness() {
@@ -129,18 +129,18 @@ export function AskBusiness() {
   ];
 
   return (
-    <Card className="border-border/80 shadow-md bg-gradient-to-b from-card to-muted/10">
+    <Card className="border-border/80 shadow-none bg-surface">
       <CardHeader className="border-b border-border/60 pb-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-tr from-[#004a80] to-indigo-600 text-white shadow-md shadow-indigo-500/15">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-action text-inverse shadow-none">
               <MessageSquareText className="h-5 w-5" />
             </div>
             <div>
               <CardTitle className="text-base font-bold flex items-center gap-2">
                 Ask the Business Intelligence
-                <Badge variant="outline" className="border-indigo-200 bg-indigo-50 text-[10px] text-indigo-700 dark:border-indigo-900 dark:bg-indigo-950/40 dark:text-indigo-300">
-                  <Sparkles className="mr-1 h-2.5 w-2.5 text-indigo-500" />
+                <Badge variant="outline" className="border-tone-purple-solid/25 bg-tone-purple-bg text-[10px] text-tone-purple-text">
+                  <Sparkles className="mr-1 h-2.5 w-2.5 text-tone-purple-text" />
                   Live Advisor
                 </Badge>
               </CardTitle>
@@ -151,8 +151,8 @@ export function AskBusiness() {
           </div>
 
           <div className="flex items-center gap-2">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-200/80 bg-emerald-50/80 px-2.5 py-1 text-[11px] font-semibold text-emerald-700 dark:border-emerald-900 dark:bg-emerald-950/40 dark:text-emerald-300">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-tone-green-solid/25 bg-tone-green-bg px-2.5 py-1 text-[11px] font-semibold text-tone-green-text">
+              <span className="h-1.5 w-1.5 rounded-full bg-tone-green-solid animate-pulse" />
               6 Agents Ready
             </span>
           </div>
@@ -163,7 +163,7 @@ export function AskBusiness() {
         {/* Preset Prompt Chips */}
         <div>
           <div className="flex items-center gap-1 text-xs font-semibold text-muted-foreground mb-2">
-            <Sparkles className="h-3 w-3 text-indigo-500" />
+            <Sparkles className="h-3 w-3 text-tone-purple-text" />
             <span>Suggested strategic questions:</span>
           </div>
           <div className="flex flex-wrap items-center gap-1.5">
@@ -176,7 +176,7 @@ export function AskBusiness() {
                   setModule(chip.mod);
                   void submit(undefined, chip.q, chip.mod);
                 }}
-                className="group inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-foreground transition-all hover:border-indigo-500 hover:bg-indigo-50 hover:text-indigo-700 dark:hover:bg-indigo-950/50 dark:hover:text-indigo-300 shadow-2xs hover:shadow-xs"
+                className="group inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-foreground transition-all hover:border-tone-purple-solid/25 hover:bg-tone-purple-bg hover:text-tone-purple-text shadow-2xs hover:shadow-xs"
               >
                 <span>{chip.label}</span>
                 <ChevronRight className="h-3 w-3 opacity-40 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all" />
@@ -189,7 +189,7 @@ export function AskBusiness() {
         <form className="flex flex-col gap-2.5 sm:flex-row" onSubmit={(e) => void submit(e)}>
           <div className="relative min-w-[200px] sm:w-[220px]">
             <select
-              className="h-11 w-full rounded-xl border border-input bg-background pl-9 pr-8 text-xs font-semibold text-foreground outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/15"
+              className="h-11 w-full rounded-xl border border-input bg-background pl-9 pr-8 text-xs font-semibold text-foreground outline-none transition focus:border-border-strong focus:ring-2 focus:ring-accent-brand"
               value={module}
               onChange={(event) => setModule(event.target.value as IntelligenceModule)}
               aria-label="Target business advisor"
@@ -207,7 +207,7 @@ export function AskBusiness() {
 
           <div className="relative flex-1">
             <input
-              className="h-11 w-full rounded-xl border border-input bg-background px-4 text-xs font-medium text-foreground outline-none transition placeholder:text-muted-foreground focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/15"
+              className="h-11 w-full rounded-xl border border-input bg-background px-4 text-xs font-medium text-foreground outline-none transition placeholder:text-muted-foreground focus:border-border-strong focus:ring-2 focus:ring-accent-brand"
               value={question}
               onChange={(event) => setQuestion(event.target.value)}
               maxLength={2000}
@@ -217,7 +217,7 @@ export function AskBusiness() {
 
           <Button
             type="submit"
-            className="h-11 px-5 rounded-xl bg-[#004a80] hover:bg-indigo-700 text-white font-semibold text-xs transition-all shadow-md shadow-indigo-500/15"
+            className="h-11 px-5 rounded-xl bg-action hover:bg-[color:var(--action-primary-bg-hover)] text-inverse font-semibold text-xs transition-all shadow-none"
             icon={Send}
             loading={Boolean(status && !['COMPLETED', 'FAILED', 'REJECTED', 'DISCONNECTED'].includes(status))}
           >
@@ -227,13 +227,13 @@ export function AskBusiness() {
 
         {/* Live Analysis Indicator */}
         {status && !['COMPLETED', 'FAILED', 'REJECTED', 'DISCONNECTED'].includes(status) && (
-          <div className="flex items-center gap-3 rounded-xl border border-indigo-200/80 bg-indigo-50/50 p-3.5 text-xs text-indigo-900 dark:border-indigo-900/60 dark:bg-indigo-950/30 dark:text-indigo-200 animate-pulse">
+          <div className="flex items-center gap-3 rounded-xl border border-tone-purple-solid/25 bg-tone-purple-bg p-3.5 text-xs text-tone-purple-text animate-pulse">
             <div className="relative flex h-3 w-3">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-indigo-400 opacity-75" />
-              <span className="relative inline-flex h-3 w-3 rounded-full bg-indigo-600" />
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-tone-purple-solid opacity-75" />
+              <span className="relative inline-flex h-3 w-3 rounded-full bg-tone-purple-solid" />
             </div>
             <div className="font-semibold">
-              Running isolated <span className="underline decoration-indigo-400 font-bold">{activeModuleOption.name}</span>: {status}...
+              Running isolated <span className="underline decoration-accent-brand font-bold">{activeModuleOption.name}</span>: {status}...
             </div>
           </div>
         )}
@@ -256,7 +256,7 @@ export function AskBusiness() {
                   onClick={handleCopy}
                   className="inline-flex items-center gap-1 rounded-lg border border-border bg-card px-2.5 py-1 text-[11px] font-medium text-muted-foreground hover:text-foreground transition-colors shadow-2xs"
                 >
-                  {copied ? <Check className="h-3 w-3 text-emerald-600" /> : <Copy className="h-3 w-3" />}
+                  {copied ? <Check className="h-3 w-3 text-tone-green-text" /> : <Copy className="h-3 w-3" />}
                   <span>{copied ? 'Copied' : 'Copy'}</span>
                 </button>
               </div>
@@ -275,9 +275,9 @@ export function AskBusiness() {
                       <span
                         key={item.metricKey ? `${item.metricKey}:${item.dataTimestamp || idx}` : idx}
                         title={describeEvidence(item).title}
-                        className="inline-flex items-center gap-1.5 rounded-full border border-indigo-200/80 bg-indigo-50/80 px-3 py-1 text-xs font-medium text-indigo-700 dark:border-indigo-900 dark:bg-indigo-950/70 dark:text-indigo-300"
+                        className="inline-flex items-center gap-1.5 rounded-full border border-tone-purple-solid/25 bg-tone-purple-bg px-3 py-1 text-xs font-medium text-tone-purple-text"
                       >
-                        <ShieldCheck className="h-3 w-3 text-indigo-500" />
+                        <ShieldCheck className="h-3 w-3 text-tone-purple-text" />
                         {describeEvidence(item).label}
                       </span>
                   ))}
@@ -287,7 +287,7 @@ export function AskBusiness() {
 
             {/* Known Limitations */}
             {Array.isArray(answer.limitations) && answer.limitations.length > 0 && (
-              <div className="mt-3 rounded-xl bg-amber-500/10 border border-amber-500/20 p-3 text-xs text-amber-800 dark:text-amber-200">
+              <div className="mt-3 rounded-xl bg-tone-amber-solid border border-tone-amber-solid/25 p-3 text-xs text-tone-amber-text">
                 <strong>Limitations:</strong> {answer.limitations.join(' · ')}
               </div>
             )}

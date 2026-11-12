@@ -164,7 +164,7 @@ export default function PaymentsPage() {
 
       {/* Register Table */}
       <Card className="rounded-2xl border-border/80 shadow-none">
-        <CardHeader className="border-b border-border/70 p-5">
+        <CardHeader className="border-border-strong border-border/70 p-5">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <CardTitle className="text-base font-bold">Payments & Receipts Register</CardTitle>
@@ -231,7 +231,7 @@ export default function PaymentsPage() {
                       className="hover:bg-muted/50 transition-colors cursor-pointer group"
                     >
                       <TableCell className="p-3 font-bold text-foreground">
-                        <div className="flex items-center gap-1.5 font-mono group-hover:text-primary dark:group-hover:text-primary transition-colors">
+                        <div className="flex items-center gap-1.5 font-mono group-hover:text-primary transition-colors">
                           <span>{p.paymentNumber}</span>
                           <ChevronRight className="h-3.5 w-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all shrink-0 text-primary" />
                         </div>
@@ -257,7 +257,7 @@ export default function PaymentsPage() {
                       </TableCell>
                       <TableCell className="p-3 text-right font-bold text-foreground">{formatCurrency(p.amount)}</TableCell>
                       <TableCell className="p-3 text-center font-sans">
-                        <span className="rounded-full bg-emerald-500/10 px-2.5 py-0.5 text-[10px] font-bold text-emerald-700 dark:text-emerald-400 border border-emerald-500/20">
+                        <span className="rounded-full bg-tone-green-bg px-2.5 py-0.5 text-[10px] font-bold text-tone-green-text border border-tone-green-solid/25">
                           {p.status}
                         </span>
                       </TableCell>
