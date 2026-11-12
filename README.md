@@ -81,36 +81,27 @@ docker compose -f docker-compose.dev.yml up --build
 ---
 
 ## 📦 Directory Structure Map
-For an exhaustive explanation of the workspace folder layout, directories, and folder boundary limits, refer to the master [structure.md](file:///home/fardeen/Documents/aleyx-projects/Plinth/structure.md) file at the repository root.
-
----
-
-## 🤝 Team Area Ownership
-- **Technical Lead:** Infrastructure, Turborepo tasks, CI/CD pipelines, package configurations.
-- **Siddhi (@siddhi-database-developer):** Database layer (`database/` and Prisma schemas, indexing, seeds, migrations validation).
-- **Fardeen (@fardeen-dev):** Monolith module controllers, routes, service helpers, and Next.js frontend pages.
+For an exhaustive explanation of the workspace folder layout, directories, and folder boundary limits, refer to the master [structure.md](structure.md) file at the repository root.
 
 ---
 
 ## 🔄 Development Git Workflow & CI/CD
-- **Branch Strategy:** feature branches -> `assign/[fardeen | siddhi]` -> `stage` -> `main`.
-- **Protected Branches:** Direct pushes to `stage` and `main` are disabled. All merges require Pull Request approval, CI pipelines compliance, and area owner approvals.
+- **Branch Strategy:** feature branches -> `main`.
 - **CI Pipeline (`ci.yml`):** Runs on PRs to check lints (`npm run lint`), TypeScript checks (`npm run typecheck`), Jest unit tests (`npm run test`), and build tests (`npm run build`).
-- **Staging Deploy (`staging.yml`):** Automatically deploys staging builds on push to the `stage` branch.
-- **Production Deploy (`production.yml`):** Runs on push to the `main` branch. Deploys production builds upon manual Technical Lead review and approval.
+- **Production Deploy (`production.yml`):** Runs on push to the `main` branch.
 
 ---
 
 ## 🧠 Decision Intelligence
 
-The optional intelligence control plane is documented in the [architecture decision](file:///home/fardeen/Documents/aleyx-projects/Plinth/docs/architecture/adr-007-intelligence-control-plane.md), [implementation guide](file:///home/fardeen/Documents/aleyx-projects/Plinth/docs/implementation/intelligence-control-plane.md), [local test guide](file:///home/fardeen/Documents/aleyx-projects/Plinth/docs/operations/intelligence-local-test.md), and [production rollout runbook](file:///home/fardeen/Documents/aleyx-projects/Plinth/docs/operations/intelligence-rollout.md). Provider-backed analysis and schedules stay disabled by default; local event handling can create review-only low-stock PO drafts without calling an AI provider. Do not enable live provider calls until the rollout gates are signed off.
+The optional intelligence control plane is documented in the [architecture decision](docs/architecture/adr-007-intelligence-control-plane.md), [implementation guide](docs/implementation/intelligence-control-plane.md), [local test guide](docs/operations/intelligence-local-test.md), and [production rollout runbook](docs/operations/intelligence-rollout.md). Provider-backed analysis and schedules stay disabled by default; local event handling can create review-only low-stock PO drafts without calling an AI provider. Do not enable live provider calls until the rollout gates are signed off.
 
 ---
 
 ## 💻 Local Development & Runtime Execution Guide
 
 ### 1. One-Command Local Launcher
-The standard `npm run dev` script runs [scripts/dev-local.sh](file:///home/fardeen/Documents/aleyx-projects/Plinth/scripts/dev-local.sh), which automates the full local environment:
+The standard `npm run dev` script runs [scripts/dev-local.sh](scripts/dev-local.sh), which automates the full local environment:
 1. Provisions local PostgreSQL via `docker compose -f docker-compose.dev.yml up -d postgres` and verifies health check readiness.
 2. Generates the Prisma client (`npm run db:generate`) and applies pending schema migrations (`npm run db:deploy`).
 3. Seeds initial demo master data & user accounts (`npm run db:seed`).
