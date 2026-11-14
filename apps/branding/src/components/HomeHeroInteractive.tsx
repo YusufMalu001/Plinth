@@ -9,11 +9,11 @@ export const HomeHeroInteractive: React.FC = () => {
   const fullPrompt = 'Create purchase orders for everything below reorder level';
 
   useEffect(() => {
-    // If prefers-reduced-motion is true, show static final approved state
+    // If prefers-reduced-motion is true, show static drafted state awaiting user approval
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
     if (mediaQuery.matches) {
       setDisplayText(fullPrompt);
-      setStep('approved');
+      setStep('drafted');
       return;
     }
 
@@ -32,17 +32,14 @@ export const HomeHeroInteractive: React.FC = () => {
         return () => clearTimeout(timeout);
       }
     } else if (step === 'drafted') {
-      // Stay on drafted state for user to see, then auto-approve if no action after 5s or loop
-      const timeout = setTimeout(() => {
-        setStep('approved');
-      }, 4000);
-      return () => clearTimeout(timeout);
+      // Stay on drafted state waiting indefinitely for user to click "Approve All"
+      return;
     } else if (step === 'approved') {
-      // Loop back after 6s
+      // Once approved by user, hold confirmation for 8s then loop back to re-demonstrate
       const timeout = setTimeout(() => {
         setDisplayText('');
         setStep('typing');
-      }, 6000);
+      }, 8000);
       return () => clearTimeout(timeout);
     }
   }, [displayText, step, isPaused, fullPrompt]);
@@ -55,7 +52,7 @@ export const HomeHeroInteractive: React.FC = () => {
     <div
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
-      className="w-full max-w-xl mx-auto rounded-xl border border-border bg-surface shadow-popover overflow-hidden text-left"
+      className="w-full max-w-5xl mx-auto rounded-xl border border-border bg-surface shadow-modal overflow-hidden text-left"
     >
       {/* Top Header of Preview Card */}
       <div className="px-4 py-3 bg-muted border-b border-border flex items-center justify-between">
@@ -63,22 +60,22 @@ export const HomeHeroInteractive: React.FC = () => {
           <div className="p-1 rounded bg-surface border border-border text-accent">
             <Sparkles className="w-3.5 h-3.5" />
           </div>
-          <span className="text-xs font-semibold text-ink font-mono">
+          <span className="text-xs font-semibold text-ink ">
             Plinth AI Operator &bull; Live Preview
           </span>
         </div>
         <div className="flex items-center gap-1.5">
           <span className="w-2 h-2 rounded-full bg-green-solid animate-pulse" />
-          <span className="text-[11px] font-mono text-ink-muted">Preview Guard Active</span>
+          <span className="text-[11px] text-ink-muted">Preview Guard Active</span>
         </div>
       </div>
 
       {/* Input prompt area with typing animation */}
       <div className="p-4 sm:p-5 border-b border-border bg-surface">
-        <div className="text-xs font-mono text-ink-muted mb-1.5 uppercase tracking-wider">
+        <div className="text-xs text-ink-muted mb-1.5 uppercase tracking-wider">
           User Request (Role: Plant Procurement Manager)
         </div>
-        <div className="p-3 rounded-md bg-muted/60 border border-border flex items-center gap-2 font-mono text-xs sm:text-sm text-ink min-h-[44px]">
+        <div className="p-3 rounded-md bg-muted/60 border border-border flex items-center gap-2 text-xs sm:text-sm text-ink min-h-[44px]">
           <span className="text-accent">&gt;</span>
           <span>{displayText}</span>
           {step === 'typing' && (
@@ -142,7 +139,7 @@ export const HomeHeroInteractive: React.FC = () => {
                   <div className="font-semibold text-ink">Apex Fasteners &amp; Piping</div>
                   <div className="text-[11px] text-ink-muted">PO-2026-081 &bull; SS 304 Hex Bolts M12</div>
                 </div>
-                <div className="font-mono text-ink">2,500 pcs</div>
+                <div className="text-ink">2,500 pcs</div>
                 <div>
                   {step === 'drafted' ? (
                     <span className="px-2 py-0.5 rounded-full text-xs font-medium bg-red-bg text-red-text">
@@ -161,7 +158,7 @@ export const HomeHeroInteractive: React.FC = () => {
                   <div className="font-semibold text-ink">Bharat Steel Tubes Ltd</div>
                   <div className="text-[11px] text-ink-muted">PO-2026-082 &bull; Seamless Pipe 1/2&quot; SCH40</div>
                 </div>
-                <div className="font-mono text-ink">450 m</div>
+                <div className="text-ink">450 m</div>
                 <div>
                   {step === 'drafted' ? (
                     <span className="px-2 py-0.5 rounded-full text-xs font-medium bg-orange-bg text-orange-text">
@@ -180,7 +177,7 @@ export const HomeHeroInteractive: React.FC = () => {
                   <div className="font-semibold text-ink">Polymer Extrusions Corp</div>
                   <div className="text-[11px] text-ink-muted">PO-2026-083 &bull; PP Granules Natural</div>
                 </div>
-                <div className="font-mono text-ink">1,200 kg</div>
+                <div className="text-ink">1,200 kg</div>
                 <div>
                   {step === 'drafted' ? (
                     <span className="px-2 py-0.5 rounded-full text-xs font-medium bg-red-bg text-red-text">
@@ -196,7 +193,7 @@ export const HomeHeroInteractive: React.FC = () => {
             </div>
 
             {/* Audit trail footer */}
-            <div className="p-2.5 rounded bg-muted/60 border border-border flex items-center justify-between text-[11px] text-ink-muted font-mono">
+            <div className="p-2.5 rounded bg-muted/60 border border-border flex items-center justify-between text-[11px] text-ink-muted ">
               <span className="flex items-center gap-1">
                 <AlertCircle className="w-3 h-3 text-ink-muted" />
                 Immutable ledger event logged

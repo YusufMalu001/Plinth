@@ -8,7 +8,7 @@ import { DynamicIcon } from '../components/DynamicIcon';
 
 export const ProductsPage: React.FC = () => {
   return (
-    <div className="bg-canvas min-h-screen py-16">
+    <div className="bg-page min-h-screen py-10">
       <Helmet>
         <title>Products & Editions — Plinth Industrial Cloud ERP</title>
         <meta
@@ -18,23 +18,23 @@ export const ProductsPage: React.FC = () => {
         <link rel="canonical" href="https://plinth.erp/products" />
       </Helmet>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
         {/* Breadcrumb */}
-        <nav aria-label="Breadcrumb" className="mb-6 flex items-center space-x-2 text-sm text-subtle">
+        <nav aria-label="Breadcrumb" className="mb-6 flex items-center space-x-2 text-sm text-ink-placeholder">
           <Link to="/" className="hover:text-ink transition-colors">Home</Link>
-          <ChevronRight className="w-4 h-4 text-muted" />
+          <ChevronRight className="w-4 h-4 text-ink-secondary" />
           <span className="text-ink font-medium" aria-current="page">Products</span>
         </nav>
 
         {/* Page Header */}
         <div className="max-w-3xl mb-12">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-raised border border-border text-xs font-mono uppercase tracking-wider text-muted mb-4">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-muted border border-border text-xs uppercase tracking-wider text-ink-muted mb-4">
             <span>{BRAND.descriptor}</span>
           </div>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-ink mb-4 font-sans">
             Specialized editions on one accountable foundation.
           </h1>
-          <p className="text-lg text-muted leading-relaxed">
+          <p className="text-lg text-ink-secondary leading-relaxed">
             Every Plinth edition shares the same ledger-backed inventory core, role-based safety permissions, audit trail, and AI operator. Choose the workflow specialized for your operational footprint.
           </p>
         </div>
@@ -46,11 +46,11 @@ export const ProductsPage: React.FC = () => {
             return (
               <div
                 key={product.slug}
-                className="bg-surface rounded-xl border border-border p-6 flex flex-col justify-between shadow-card hover:border-border-strong transition-all duration-200"
+                className="bg-surface rounded-xl border border-border p-6 flex flex-col justify-between shadow-popover hover:border-border-strong transition-all duration-200"
               >
                 <div>
                   <div className="flex items-start justify-between gap-4 mb-4">
-                    <div className="w-12 h-12 rounded-lg bg-surface-raised border border-border flex items-center justify-center text-ink">
+                    <div className="w-12 h-12 rounded-lg bg-muted border border-border flex items-center justify-center text-ink">
                       <DynamicIcon name={product.modules[0]?.iconName || 'Layers'} className="w-6 h-6" />
                     </div>
                     <StatusPill status={product.status} />
@@ -61,19 +61,19 @@ export const ProductsPage: React.FC = () => {
                       {product.name}
                     </Link>
                   </h2>
-                  <p className="text-xs font-mono text-muted mb-3 uppercase tracking-wider">
+                  <p className="text-xs text-ink-muted mb-3 uppercase tracking-wider">
                     {product.audience}
                   </p>
                   <p className="text-sm font-medium text-ink mb-2">
                     {product.tagline}
                   </p>
-                  <p className="text-sm text-muted mb-6 leading-relaxed">
+                  <p className="text-sm text-ink-secondary mb-6 leading-relaxed">
                     {product.summary}
                   </p>
 
                   {/* Modules preview */}
                   <div className="border-t border-border-subtle pt-4 mb-6">
-                    <h3 className="text-xs font-mono text-muted uppercase tracking-wider mb-3">
+                    <h3 className="text-xs text-ink-muted uppercase tracking-wider mb-3">
                       Included Modules
                     </h3>
                     <ul className="space-y-2">
@@ -82,7 +82,7 @@ export const ProductsPage: React.FC = () => {
                           <CheckCircle2 className="w-3.5 h-3.5 text-accent shrink-0 mt-0.5" />
                           <div>
                             <span className="font-medium">{mod.name}</span>
-                            <span className="text-muted"> — {mod.benefit}</span>
+                            <span className="text-ink-secondary"> — {mod.benefit}</span>
                           </div>
                         </li>
                       ))}
@@ -108,7 +108,7 @@ export const ProductsPage: React.FC = () => {
                   ) : (
                     <Link
                       to={`/demo?edition=${product.slug}`}
-                      className="px-3 py-1.5 rounded-md bg-surface-raised border border-border text-ink font-medium text-xs hover:bg-canvas transition-colors"
+                      className="px-3 py-1.5 rounded-md bg-muted border border-border text-ink font-medium text-xs hover:bg-page transition-colors"
                     >
                       Join waitlist
                     </Link>
@@ -120,16 +120,16 @@ export const ProductsPage: React.FC = () => {
         </div>
 
         {/* AI Operator Banner */}
-        <div className="mt-16 bg-surface-raised border border-border rounded-xl p-8 sm:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div className="mt-16 bg-muted border border-border rounded-xl p-8 sm:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface border border-border text-xs font-mono uppercase tracking-wider text-muted mb-3">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface border border-border text-xs uppercase tracking-wider text-ink-muted mb-3">
               <Sparkles className="w-3.5 h-3.5 text-accent" />
               <span>Universal Intelligence</span>
             </div>
             <h2 className="text-xl sm:text-2xl font-bold text-ink mb-2">
               Every edition includes the Plinth AI Operator.
             </h2>
-            <p className="text-sm text-muted leading-relaxed">
+            <p className="text-sm text-ink-secondary leading-relaxed">
               {BRAND.aiClaim}
             </p>
           </div>

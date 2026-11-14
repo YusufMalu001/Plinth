@@ -84,7 +84,7 @@ export const InteractivePlatformLayers: React.FC = () => {
                   <LayerIcon className="w-4 h-4" />
                 </div>
                 <div>
-                  <div className="text-xs font-mono font-semibold uppercase tracking-wider text-ink-muted">
+                  <div className="text-xs font-semibold uppercase tracking-wider text-ink-muted">
                     {layer.name}
                   </div>
                   <div className="text-sm font-semibold text-ink">{layer.title}</div>
@@ -102,7 +102,7 @@ export const InteractivePlatformLayers: React.FC = () => {
             <Icon className="w-5 h-5" />
           </div>
           <div>
-            <span className="text-xs font-mono font-semibold uppercase tracking-wider text-accent">
+            <span className="text-xs font-semibold uppercase tracking-wider text-accent">
               {activeLayer.name}
             </span>
             <h3 className="text-lg font-bold text-ink">{activeLayer.title}</h3>
@@ -114,14 +114,14 @@ export const InteractivePlatformLayers: React.FC = () => {
         </p>
 
         <div className="border-t border-border pt-4">
-          <span className="text-xs font-mono font-semibold uppercase tracking-wider text-ink-muted block mb-3">
+          <span className="text-xs font-semibold uppercase tracking-wider text-ink-muted block mb-3">
             Core Specifications &amp; Architectural Guarantees
           </span>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
             {activeLayer.specs.map((spec, i) => (
               <div
                 key={i}
-                className="flex items-center gap-2 text-xs font-mono text-ink p-2 rounded bg-muted/60 border border-border"
+                className="flex items-center gap-2 text-xs text-ink p-2 rounded bg-muted/60 border border-border"
               >
                 <span className="w-1.5 h-1.5 rounded-full bg-accent" />
                 <span>{spec}</span>

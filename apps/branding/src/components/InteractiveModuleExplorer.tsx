@@ -53,7 +53,7 @@ export const InteractiveModuleExplorer: React.FC = () => {
             </div>
             <div>
               <span className="text-xs font-semibold text-ink block">{activeModule.name} Workspace</span>
-              <span className="text-[10px] font-mono text-ink-muted">Single System of Record</span>
+              <span className="text-[10px] text-ink-muted">Single System of Record</span>
             </div>
           </div>
           <span className="text-xs px-2 py-0.5 rounded-full font-medium bg-green-bg text-green-text">
@@ -70,7 +70,7 @@ export const InteractiveModuleExplorer: React.FC = () => {
 
           {/* Table list view */}
           <div className="border border-border rounded-lg overflow-hidden">
-            <div className="px-3 py-2 bg-muted text-[11px] font-semibold text-ink-secondary grid grid-cols-4 font-mono">
+            <div className="px-3 py-2 bg-muted text-[11px] font-semibold text-ink-secondary grid grid-cols-4 ">
               <span>Code / Item</span>
               <span>Batch / Qty</span>
               <span>Status</span>
@@ -78,34 +78,34 @@ export const InteractiveModuleExplorer: React.FC = () => {
             </div>
             <div className="divide-y divide-border text-xs">
               <div className="px-3 py-2.5 grid grid-cols-4 items-center hover:bg-hover">
-                <span className="font-semibold text-ink font-mono">MOD-2026-01</span>
-                <span className="text-ink-secondary font-mono">LOT-B01 (1,200)</span>
+                <span className="font-semibold text-ink ">MOD-2026-01</span>
+                <span className="text-ink-secondary ">LOT-B01 (1,200)</span>
                 <div>
                   <span className="px-2 py-0.5 rounded-full text-[11px] font-medium bg-green-bg text-green-text">
                     Verified
                   </span>
                 </div>
-                <span className="text-right text-ink font-mono">Bay A1 &rarr; Staging</span>
+                <span className="text-right text-ink ">Bay A1 &rarr; Staging</span>
               </div>
               <div className="px-3 py-2.5 grid grid-cols-4 items-center hover:bg-hover">
-                <span className="font-semibold text-ink font-mono">MOD-2026-02</span>
-                <span className="text-ink-secondary font-mono">LOT-B02 (450)</span>
+                <span className="font-semibold text-ink ">MOD-2026-02</span>
+                <span className="text-ink-secondary ">LOT-B02 (450)</span>
                 <div>
                   <span className="px-2 py-0.5 rounded-full text-[11px] font-medium bg-amber-bg text-amber-text">
                     Pending QC
                   </span>
                 </div>
-                <span className="text-right text-ink font-mono">In-Transit</span>
+                <span className="text-right text-ink ">In-Transit</span>
               </div>
               <div className="px-3 py-2.5 grid grid-cols-4 items-center hover:bg-hover">
-                <span className="font-semibold text-ink font-mono">MOD-2026-03</span>
-                <span className="text-ink-secondary font-mono">LOT-B03 (3,800)</span>
+                <span className="font-semibold text-ink ">MOD-2026-03</span>
+                <span className="text-ink-secondary ">LOT-B03 (3,800)</span>
                 <div>
                   <span className="px-2 py-0.5 rounded-full text-[11px] font-medium bg-blue-bg text-blue-text">
                     Active Run
                   </span>
                 </div>
-                <span className="text-right text-ink font-mono">Workstation 3</span>
+                <span className="text-right text-ink ">Workstation 3</span>
               </div>
             </div>
           </div>
@@ -114,7 +114,7 @@ export const InteractiveModuleExplorer: React.FC = () => {
           <div className="p-3.5 rounded-lg bg-muted/40 border border-border space-y-2">
             <div className="flex items-center justify-between text-xs">
               <span className="font-semibold text-ink">Daily Plant Dispatch Capacity</span>
-              <span className="font-mono text-ink-muted">82% (4,100 / 5,000 units)</span>
+              <span className="text-ink-muted">82% (4,100 / 5,000 units)</span>
             </div>
             <div className="h-1.5 w-full bg-muted rounded-full overflow-hidden">
               <div className="h-full bg-green-solid rounded-full" style={{ width: '82%' }} />

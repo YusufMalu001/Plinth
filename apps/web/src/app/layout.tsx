@@ -1,18 +1,21 @@
 import './globals.css';
 import type { Metadata, Viewport } from 'next';
-import { Inter } from 'next/font/google';
+import { Plus_Jakarta_Sans, JetBrains_Mono } from 'next/font/google';
 import { CSS_TOKENS } from '@plinth/tokens';
 
 import { Providers } from '../components/Providers';
 
-/**
- * Inter — spec Phase 2 (font) and Addendum #4. `variable` registers the font
- * stack as --font-inter on <html>; CSS_TOKENS maps --font-sans onto it with a
- * system-ui fallback.
- */
-const inter = Inter({
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ['latin'],
-  variable: '--font-inter',
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-sans',
+  display: 'swap',
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-mono',
   display: 'swap',
 });
 
@@ -42,7 +45,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable}`}>
+    <html lang="en" className={`${plusJakartaSans.variable} ${jetbrainsMono.variable}`}>
       <head>
       {/*
         Single source of truth: all design tokens come from @plinth/tokens.

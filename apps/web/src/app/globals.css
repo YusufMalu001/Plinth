@@ -28,17 +28,18 @@
     padding: 0;
     min-height: 100%;
     font-family: var(--font-sans);
-    font-weight: 500;
     font-size: 0.95rem;
     line-height: 1.5;
     color: var(--text-primary);
     background-color: var(--bg-page);
   }
 
-  *,
-  *::before,
-  *::after {
-    font-family: var(--font-sans);
+  table,
+  th,
+  td,
+  .tabular-nums,
+  [data-tabular-nums="true"] {
+    font-variant-numeric: tabular-nums;
   }
 }
 

@@ -2,8 +2,6 @@
 @import '@fontsource/plus-jakarta-sans/500.css';
 @import '@fontsource/plus-jakarta-sans/600.css';
 @import '@fontsource/plus-jakarta-sans/700.css';
-@import '@fontsource/jetbrains-mono/400.css';
-@import '@fontsource/jetbrains-mono/500.css';
 @import './tokens.css';
 
 @tailwind base;
@@ -28,6 +26,11 @@
     min-height: 100vh;
     background-color: var(--bg-page);
     color: var(--text-primary);
+    font-family: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+
+  code, kbd, samp, pre {
+    font-family: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   }
 
   :focus-visible {

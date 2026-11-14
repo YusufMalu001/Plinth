@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ShieldCheck, History, Lock, ArrowRight } from 'lucide-react';
 import { HomeHeroInteractive } from '../components/HomeHeroInteractive';
+import LiquidChrome from '../components/LiquidChrome';
 import { InteractivePlatformLayers } from '../components/InteractivePlatformLayers';
 import { InteractiveModuleExplorer } from '../components/InteractiveModuleExplorer';
 import { FaqAccordion } from '../components/FaqAccordion';
@@ -27,52 +28,71 @@ export const HomePage: React.FC = () => {
         <link rel="canonical" href="https://plintherp.com/" />
       </Helmet>
 
-      {/* 1. Hero Section */}
-      <section className="pt-16 pb-20 sm:pt-24 sm:pb-28 px-4 sm:px-6 max-w-content mx-auto text-center">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-muted border border-border text-xs font-mono font-medium text-ink-secondary mb-6">
-          <span className="w-2 h-2 rounded-full bg-accent" />
-          <span>Industrial Cloud ERP &bull; 2026 Production Edition</span>
+      {/* 1. Hero Section with Liquid Chrome Background */}
+      <section className="relative w-full overflow-hidden">
+        {/* Full-bleed Liquid Chrome canvas background with dark phase shading */}
+        <div className="absolute inset-0 pointer-events-auto z-0 bg-inverse">
+          <LiquidChrome
+            color="rgb(255, 255, 255)"
+            speed={0.2}
+            amplitude={0.3}
+            detail={4}
+            thickness={1}
+            interactive
+            frequencyX={3}
+            frequencyY={3}
+            depth={1}
+            roughness={0.3}
+            exposure={1}
+            rippleStrength={1}
+            rippleSize={1}
+            tilt={1}
+            intro
+            lightMode={false}
+          />
         </div>
 
-        <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-semibold tracking-[-0.01em] text-ink max-w-4xl mx-auto leading-[1.1] mb-6">
-          {BRAND_COPY.masterHeadline}
-        </h1>
+        <div className="relative z-10 pt-10 pb-12 sm:pt-14 sm:pb-16 px-4 sm:px-6 lg:px-8 max-w-content mx-auto text-center">
+          <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-semibold tracking-[-0.01em] text-ink-inverse max-w-5xl mx-auto leading-[1.1] mb-6 drop-shadow-md">
+            {BRAND_COPY.masterHeadline}
+          </h1>
 
-        <p className="text-lg sm:text-xl text-ink-secondary max-w-2xl mx-auto leading-relaxed mb-8">
-          {BRAND_COPY.masterSubline}
-        </p>
+          <p className="text-lg sm:text-xl text-ink-inverse max-w-3xl mx-auto leading-relaxed mb-8 font-normal drop-shadow">
+            {BRAND_COPY.masterSubline}
+          </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-16">
-          <Link
-            to="/demo"
-            className="w-full sm:w-auto inline-flex items-center justify-center h-11 px-6 rounded-md bg-inverse text-ink-inverse text-sm font-semibold hover:bg-ink-secondary/90 transition-colors"
-          >
-            Book a demo
-          </Link>
-          <Link
-            to="/products"
-            className="w-full sm:w-auto inline-flex items-center justify-center h-11 px-6 rounded-md bg-muted text-ink text-sm font-semibold hover:bg-hover transition-colors"
-          >
-            Explore products
-          </Link>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-16">
+            <Link
+              to="/demo"
+              className="w-full sm:w-auto inline-flex items-center justify-center h-11 px-6 rounded-md bg-inverse text-ink-inverse text-sm font-semibold hover:bg-ink-secondary/90 shadow-md transition-colors border border-border-strong"
+            >
+              Book a demo
+            </Link>
+            <Link
+              to="/products"
+              className="w-full sm:w-auto inline-flex items-center justify-center h-11 px-6 rounded-md bg-inverse text-ink-inverse text-sm font-semibold hover:bg-ink-secondary/90 shadow-md transition-colors border border-border-strong"
+            >
+              Explore products
+            </Link>
+          </div>
+
+          {/* Hero Interactive Simulated AI Operator Card */}
+          <HomeHeroInteractive />
         </div>
-
-        {/* Hero Interactive Simulated AI Operator Card */}
-        <HomeHeroInteractive />
       </section>
 
       {/* 2. Trust Strip */}
-      <section className="border-y border-border bg-muted/30 py-6 px-4 sm:px-6">
+      <section className="border-y border-border bg-muted/30 py-4 px-4 sm:px-6 lg:px-8">
         <div className="max-w-content mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
-          <div className="flex items-center justify-center gap-2.5 text-xs sm:text-sm font-semibold text-ink font-mono">
+          <div className="flex items-center justify-center gap-2.5 text-xs sm:text-sm font-semibold text-ink ">
             <ShieldCheck className="w-4 h-4 text-accent" />
             <span>Role-based access</span>
           </div>
-          <div className="flex items-center justify-center gap-2.5 text-xs sm:text-sm font-semibold text-ink font-mono">
+          <div className="flex items-center justify-center gap-2.5 text-xs sm:text-sm font-semibold text-ink ">
             <History className="w-4 h-4 text-accent" />
             <span>Full audit trail</span>
           </div>
-          <div className="flex items-center justify-center gap-2.5 text-xs sm:text-sm font-semibold text-ink font-mono">
+          <div className="flex items-center justify-center gap-2.5 text-xs sm:text-sm font-semibold text-ink ">
             <Lock className="w-4 h-4 text-accent" />
             <span>Data encrypted in transit</span>
           </div>
@@ -80,9 +100,9 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* 3. Editions Explorer */}
-      <section className="py-20 sm:py-28 px-4 sm:px-6 max-w-content mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="text-xs font-mono font-semibold uppercase tracking-wider text-ink-muted">
+      <section className="py-12 sm:py-10 px-4 sm:px-6 lg:px-8 max-w-content mx-auto">
+        <div className="text-center max-w-4xl mx-auto mb-8">
+          <span className="text-xs font-semibold uppercase tracking-wider text-ink-muted">
             Specialized By Operational Domain
           </span>
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-ink mt-2 mb-4">
@@ -139,7 +159,7 @@ export const HomePage: React.FC = () => {
           </p>
 
           <div>
-            <span className="text-xs font-mono font-semibold uppercase tracking-wider text-ink-muted block mb-3">
+            <span className="text-xs font-semibold uppercase tracking-wider text-ink-muted block mb-3">
               Included Core Modules
             </span>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
@@ -161,10 +181,10 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* 4. Platform Architecture Section: "One base, every operation" */}
-      <section className="py-20 sm:py-28 px-4 sm:px-6 bg-muted/30 border-y border-border">
+      <section className="py-12 sm:py-10 px-4 sm:px-6 lg:px-8 bg-muted/30 border-y border-border">
         <div className="max-w-content mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-xs font-mono font-semibold uppercase tracking-wider text-ink-muted">
+          <div className="text-center max-w-4xl mx-auto mb-10">
+            <span className="text-xs font-semibold uppercase tracking-wider text-ink-muted">
               Unified Platform
             </span>
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-ink mt-2 mb-4">
@@ -180,9 +200,9 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* 5. How It Works: 3 Steps */}
-      <section className="py-20 sm:py-28 px-4 sm:px-6 max-w-content mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-mono font-semibold uppercase tracking-wider text-ink-muted">
+      <section className="py-12 sm:py-10 px-4 sm:px-6 lg:px-8 max-w-content mx-auto">
+        <div className="text-center max-w-4xl mx-auto mb-10">
+          <span className="text-xs font-semibold uppercase tracking-wider text-ink-muted">
             Implementation &amp; Adoption
           </span>
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-ink mt-2 mb-4">
@@ -195,7 +215,7 @@ export const HomePage: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="p-6 rounded-xl border border-border bg-surface shadow-popover space-y-3">
-            <div className="w-8 h-8 rounded-lg bg-muted border border-border font-mono text-sm font-bold text-ink flex items-center justify-center">
+            <div className="w-8 h-8 rounded-lg bg-muted border border-border text-sm font-bold text-ink flex items-center justify-center">
               01
             </div>
             <h3 className="text-base font-bold text-ink">Bring your data</h3>
@@ -205,7 +225,7 @@ export const HomePage: React.FC = () => {
           </div>
 
           <div className="p-6 rounded-xl border border-border bg-surface shadow-popover space-y-3">
-            <div className="w-8 h-8 rounded-lg bg-muted border border-border font-mono text-sm font-bold text-ink flex items-center justify-center">
+            <div className="w-8 h-8 rounded-lg bg-muted border border-border text-sm font-bold text-ink flex items-center justify-center">
               02
             </div>
             <h3 className="text-base font-bold text-ink">Go live in days</h3>
@@ -215,7 +235,7 @@ export const HomePage: React.FC = () => {
           </div>
 
           <div className="p-6 rounded-xl border border-border bg-surface shadow-popover space-y-3">
-            <div className="w-8 h-8 rounded-lg bg-muted border border-border font-mono text-sm font-bold text-ink flex items-center justify-center">
+            <div className="w-8 h-8 rounded-lg bg-muted border border-border text-sm font-bold text-ink flex items-center justify-center">
               03
             </div>
             <h3 className="text-base font-bold text-ink">Run it by asking</h3>
@@ -227,10 +247,10 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* 6. Module Explorer Section */}
-      <section className="py-20 sm:py-28 px-4 sm:px-6 bg-muted/30 border-y border-border">
+      <section className="py-12 sm:py-10 px-4 sm:px-6 lg:px-8 bg-muted/30 border-y border-border">
         <div className="max-w-content mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-xs font-mono font-semibold uppercase tracking-wider text-ink-muted">
+          <div className="text-center max-w-4xl mx-auto mb-10">
+            <span className="text-xs font-semibold uppercase tracking-wider text-ink-muted">
               Deep Industrial Execution
             </span>
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-ink mt-2 mb-4">
@@ -246,9 +266,9 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* 7. Numbers / Proof Placeholder (Honesty Rule compliant) */}
-      <section className="py-20 sm:py-28 px-4 sm:px-6 max-w-content mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="text-xs font-mono font-semibold uppercase tracking-wider text-ink-muted">
+      <section className="py-12 sm:py-10 px-4 sm:px-6 lg:px-8 max-w-content mx-auto">
+        <div className="text-center max-w-4xl mx-auto mb-8">
+          <span className="text-xs font-semibold uppercase tracking-wider text-ink-muted">
             Validation &amp; Co-Design
           </span>
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-ink mt-2 mb-4">
@@ -261,7 +281,7 @@ export const HomePage: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           <div className="p-8 rounded-xl border border-border bg-surface text-center space-y-2">
-            <span className="text-xs font-mono font-semibold uppercase tracking-wider text-ink-muted">
+            <span className="text-xs font-semibold uppercase tracking-wider text-ink-muted">
               Metal Fabrication
             </span>
             <div className="text-base font-bold text-ink">Case study coming soon</div>
@@ -269,7 +289,7 @@ export const HomePage: React.FC = () => {
           </div>
 
           <div className="p-8 rounded-xl border border-border bg-surface text-center space-y-2">
-            <span className="text-xs font-mono font-semibold uppercase tracking-wider text-ink-muted">
+            <span className="text-xs font-semibold uppercase tracking-wider text-ink-muted">
               Plastics &amp; Extrusions
             </span>
             <div className="text-base font-bold text-ink">Case study coming soon</div>
@@ -277,7 +297,7 @@ export const HomePage: React.FC = () => {
           </div>
 
           <div className="p-8 rounded-xl border border-border bg-surface text-center space-y-2">
-            <span className="text-xs font-mono font-semibold uppercase tracking-wider text-ink-muted">
+            <span className="text-xs font-semibold uppercase tracking-wider text-ink-muted">
               Multi-Depot Distribution
             </span>
             <div className="text-base font-bold text-ink">Case study coming soon</div>
@@ -296,9 +316,9 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* 8. Pricing Teaser */}
-      <section className="py-20 sm:py-24 px-4 sm:px-6 bg-muted/40 border-y border-border">
+      <section className="py-12 sm:py-10 px-4 sm:px-6 lg:px-8 bg-muted/40 border-y border-border">
         <div className="max-w-content mx-auto text-center max-w-2xl">
-          <span className="text-xs font-mono font-semibold uppercase tracking-wider text-ink-muted">
+          <span className="text-xs font-semibold uppercase tracking-wider text-ink-muted">
             Predictable Economics
           </span>
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-ink mt-2 mb-3">
@@ -309,10 +329,10 @@ export const HomePage: React.FC = () => {
           </p>
 
           <div className="p-6 rounded-xl border border-border bg-surface shadow-popover mb-8 text-left sm:text-center">
-            <div className="text-xs font-mono text-ink-muted uppercase tracking-wider">
+            <div className="text-xs text-ink-muted uppercase tracking-wider">
               Plinth Manufacturing Subscription
             </div>
-            <div className="text-2xl sm:text-3xl font-bold font-mono text-ink mt-1 mb-2">
+            <div className="text-2xl sm:text-3xl font-bold text-ink mt-1 mb-2">
               From ₹{PRICING_FROM.amount.toLocaleString('en-IN')} per {PRICING_FROM.cadence}
             </div>
             <p className="text-xs text-ink-secondary max-w-md mx-auto">
@@ -330,9 +350,9 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* 9. FAQ Accordion */}
-      <section className="py-20 sm:py-28 px-4 sm:px-6 max-w-3xl mx-auto">
+      <section className="py-12 sm:py-10 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
         <div className="text-center mb-12">
-          <span className="text-xs font-mono font-semibold uppercase tracking-wider text-ink-muted">
+          <span className="text-xs font-semibold uppercase tracking-wider text-ink-muted">
             Frequently Asked Questions
           </span>
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-ink mt-2">
@@ -344,7 +364,7 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* 10. Final Call to Action */}
-      <section className="py-20 px-4 sm:px-6 border-t border-border bg-surface text-center">
+      <section className="py-12 sm:py-10 px-4 sm:px-6 lg:px-8 border-t border-border bg-surface text-center">
         <div className="max-w-2xl mx-auto space-y-6">
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-ink">
             Bring operational certainty to your plant

@@ -80,7 +80,7 @@ export default {
     },
     fontFamily: {
       sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', '"Segoe UI"', 'sans-serif'],
-      mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+      mono: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', '"Segoe UI"', 'sans-serif'],
     },
     borderRadius: {
       none: '0px',
@@ -102,7 +102,7 @@ export default {
         '18': '4.5rem',
       },
       maxWidth: {
-        content: '1200px',
+        content: '1440px',
       },
     },
   },

@@ -141,7 +141,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose 
                   <div className="flex flex-col gap-0.5">
                     <div className="flex items-center gap-2">
                       <span className="text-sm font-semibold text-ink">{item.title}</span>
-                      <span className="text-xs text-ink-muted uppercase tracking-wider font-mono">
+                      <span className="text-xs text-ink-muted uppercase tracking-wider ">
                         {item.category}
                       </span>
                       {item.badge && (
@@ -171,7 +171,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose 
           )}
         </div>
 
-        <div className="px-4 py-2 border-t border-border bg-muted/40 text-xs text-ink-muted flex items-center justify-between font-mono">
+        <div className="px-4 py-2 border-t border-border bg-muted/40 text-xs text-ink-muted flex items-center justify-between ">
           <span>Navigate: ↑↓ • Select: Enter</span>
           <span>Close: Esc</span>
         </div>
