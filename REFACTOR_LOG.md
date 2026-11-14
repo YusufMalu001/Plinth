@@ -1,3 +1,49 @@
+## Kokonut UI Morphic Navbar Integration (Website)
+
+### What changed
+- Integrated **Kokonut UI's `morphic-navbar`** as the main navigation header for the website ([apps/branding/src/components/Navigation.tsx](file:///home/yusuf/Desktop/ERPs/Manufacturing/apps/branding/src/components/Navigation.tsx)):
+  - Installed component via Kokonut UI registry into [apps/branding/src/components/kokonutui/morphic-navbar.tsx](file:///home/yusuf/Desktop/ERPs/Manufacturing/apps/branding/src/components/kokonutui/morphic-navbar.tsx).
+  - Wired full React Router navigation support across website routes (`/`, `/products`, `/platform`, `/pricing`, `/about`, `#search`, `Sign in`).
+  - Adapted active indicator and focus rings to strict PLINTH theme tokens (`--accent`, `#3E63DD`).
+  - Retained `compact={true}` scroll morphing behavior (auto-folds into a clean active pill + chevron after 80px scroll).
+  - Header lockup integrates the official Plinth logo mark on the left and a "Book a demo" action CTA on the right.
+  - Rebuilt SSG bundle and verified test suite passing (`vitest run`).
+
+---
+
+## Website Typography Unification & Layout Expansion Pass
+
+### What changed
+- **Strict Typography Unification**:
+  - Eliminated mixed font families across the entire website. Removed secondary monospace typography (`JetBrains Mono`) from headings, tags, pills, tables, and operational labels.
+  - Standardized the website exclusively on a single unified typeface: `Plus Jakarta Sans`.
+  - Updated [apps/branding/tailwind.config.js](file:///home/yusuf/Desktop/ERPs/Manufacturing/apps/branding/tailwind.config.js) and [apps/branding/src/styles/globals.css](file:///home/yusuf/Desktop/ERPs/Manufacturing/apps/branding/src/styles/globals.css) so all text elements, code/pills, and components share the exact same geometric sans-serif font.
+- **Redundant Spacing Reduction & Full-Width Layout Expansion**:
+  - Expanded content container width across the website from `1200px` to `1440px` (`max-w-content` set to `1440px`), expanding the horizontal reach so content occupies the page properly without empty margins on both sides.
+  - Expanded navigation container from `840px` to full content width (`1380px`), allowing the header to stretch gracefully across large viewports.
+  - Cut excessive vertical gaps between sections by ~45% (down from `py-20 sm:py-28` to `py-12 sm:py-16`), removing the redundant empty vertical space and creating a tight, professional, filled layout.
+  - Expanded hero simulation card (`HomeHeroInteractive`) from `max-w-3xl` to `max-w-5xl`.
+  - Rebuilt SSG static site and synced assets to `apps/web/public/branding/`.
+
+---
+
+## Plinth Brand Logo Standardization Pass (ERP & Website)
+
+### What changed
+- Enforced the official Plinth brand logo mark from the approved brand asset specification across both the ERP platform (`apps/web`) and the public marketing website (`apps/branding`):
+  - **Mark Architecture**:
+    - Grounding plinth base bar (`#171717` in light mode, `#FFFFFF` in dark/reversed contexts).
+    - Vertical architectural pillar stem (`#171717` / `#FFFFFF`).
+    - Vibrant upper-right flag block with rounded top-right corner (`#3E63DD`).
+  - **Single Source of Truth Code Updates**:
+    - [apps/web/src/config/brand.tsx](file:///home/yusuf/Desktop/ERPs/Manufacturing/apps/web/src/config/brand.tsx): Updated `PlinthMark` SVG path geometry to `viewBox="0 0 44 48"` and aligned `Logo` lockup.
+    - [apps/branding/src/components/Logo.tsx](file:///home/yusuf/Desktop/ERPs/Manufacturing/apps/branding/src/components/Logo.tsx): Standardized `PlinthMark` and `Logo` to identical vector geometry and tokens.
+    - [apps/web/public/icon.svg](file:///home/yusuf/Desktop/ERPs/Manufacturing/apps/web/public/icon.svg) & [apps/branding/public/favicon.svg](file:///home/yusuf/Desktop/ERPs/Manufacturing/apps/branding/public/favicon.svg): Updated browser favicons and app icons.
+    - [apps/branding/public/og-image.svg](file:///home/yusuf/Desktop/ERPs/Manufacturing/apps/branding/public/og-image.svg) & [apps/branding/scripts/generate-assets.js](file:///home/yusuf/Desktop/ERPs/Manufacturing/apps/branding/scripts/generate-assets.js): Updated social cards.
+    - [PLINTH_THEME.txt](file:///home/yusuf/Desktop/ERPs/Manufacturing/PLINTH_THEME.txt): Documented and locked the official brand mark specification.
+
+---
+
 ## Button Visibility & Global Color Consistency Alignment Pass
 
 ### What changed

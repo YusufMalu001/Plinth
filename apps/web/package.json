@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^5.9.1",
+    "@plinth/tokens": "*",
     "@plinth/types": "*",
     "@plinth/ui": "*",
     "@plinth/validation": "*",
@@ -23,6 +24,7 @@
     "date-fns": "^4.4.0",
     "jsbarcode": "^3.12.3",
     "lucide-react": "^0.435.0",
+    "motion": "^14.14.0",
     "next": "14.2.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -31,8 +33,7 @@
     "recharts": "^2.15.4",
     "tailwind-merge": "^2.5.2",
     "zod": "^3.23.8",
-    "zustand": "^4.5.5",
-    "@plinth/tokens": "*"
+    "zustand": "^4.5.5"
   },
   "devDependencies": {
     "@playwright/test": "^1.62.1",

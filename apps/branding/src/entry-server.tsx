@@ -6,10 +6,10 @@ import { AppRoutes } from './routes/AppRoutes';
 
 export interface RenderResult {
   html: string;
-  helmet: any;
+  helmet: unknown;
 }
 
-export function render(url: string, helmetContext: any = {}): RenderResult {
+export function render(url: string, helmetContext: Record<string, unknown> = {}): RenderResult {
   const html = ReactDOMServer.renderToString(
     <React.StrictMode>
       <HelmetProvider context={helmetContext}>

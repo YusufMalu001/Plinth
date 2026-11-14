@@ -1,9 +1,9 @@
 {
-  "name": "plinth-erp",
+  "name": "manufacturing-erp",
   "version": "1.0.0",
   "private": true,
   "packageManager": "npm@9.2.0",
-  "description": "Plinth ERP Production Boilerplate Foundation",
+  "description": "Manufacturing ERP Production Boilerplate Foundation",
   "workspaces": [
     "apps/*",
     "services/*",
