@@ -15,7 +15,7 @@ export const Navigation: React.FC = () => {
   const megaMenuRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
 
-  const appSignInUrl = import.meta.env.VITE_APP_URL || 'https://app.plintherp.com/login';
+  const appSignInUrl = import.meta.env.VITE_APP_URL || '/login';
 
   // Close menus on route change
   useEffect(() => {
