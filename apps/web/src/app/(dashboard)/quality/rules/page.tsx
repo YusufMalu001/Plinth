@@ -92,7 +92,7 @@ export default function QcRulesPage() {
   }, [rules]);
 
   return (
-    <main className="flex-1 overflow-y-auto bg-muted/50 p-4 sm:p-6 lg:p-8 font-manrope">
+    <main className="flex-1 overflow-y-auto bg-muted/50 p-4 sm:p-6 lg:p-8 font-sans">
       <div className="mx-auto max-w-[1680px] space-y-5">
         
         {/* ======================================================== */}

@@ -30,7 +30,7 @@ export default function FinanceReadinessPage() {
               Adapter: Batch File Export (Stub)
             </Badge>
           </div>
-          <h1 className="text-2xl font-extrabold text-foreground tracking-tight font-manrope">
+          <h1 className="text-2xl font-extrabold text-foreground tracking-tight font-sans">
             Integration Readiness Matrix
           </h1>
           <p className="text-xs text-muted-foreground mt-1 max-w-2xl">
@@ -112,7 +112,7 @@ export default function FinanceReadinessPage() {
                       {isActive ? <CheckCircle2 className="h-5 w-5" /> : <Lock className="h-5 w-5" />}
                     </div>
                     <div>
-                      <h3 className="text-sm font-bold text-foreground font-manrope">
+                      <h3 className="text-sm font-bold text-foreground font-sans">
                         {source.displayName}
                       </h3>
                       <span className="font-mono text-[10px] text-muted-foreground">

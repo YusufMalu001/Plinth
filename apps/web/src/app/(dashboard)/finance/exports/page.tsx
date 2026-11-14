@@ -85,7 +85,7 @@ export default function FinanceExportsPage() {
               Manual Finance Acknowledgement Required
             </Badge>
           </div>
-          <h1 className="text-2xl font-extrabold text-foreground tracking-tight font-manrope">
+          <h1 className="text-2xl font-extrabold text-foreground tracking-tight font-sans">
             Export Runs & Batch Synchronization
           </h1>
           <p className="text-xs text-muted-foreground mt-1 max-w-2xl">
@@ -324,7 +324,7 @@ export default function FinanceExportsPage() {
           <Card className="w-full max-w-lg p-6 rounded-2xl shadow-popover border space-y-4 bg-card">
             <div className="flex items-center justify-between border-border-strong border-border/60 pb-3">
               <div>
-                <h3 className="text-base font-bold text-foreground font-manrope">
+                <h3 className="text-base font-bold text-foreground font-sans">
                   Manual Finance Acknowledgement
                 </h3>
                 <span className="font-mono text-xs text-muted-foreground">

@@ -99,7 +99,7 @@ export function IntelligenceCasesView() {
   const paginatedItems = items.slice((currentPage - 1) * pageSize, currentPage * pageSize);
 
   return (
-    <div className="space-y-4 font-manrope">
+    <div className="space-y-4 font-sans">
       <div className="flex items-center justify-between px-1 text-xs text-ink-muted">
         <div>
           Active Case Files: <strong className="text-ink">{items.length}</strong>

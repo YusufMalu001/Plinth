@@ -103,7 +103,7 @@ export default function FinanceMappingsPage() {
               Segregation of Duties Enforced
             </Badge>
           </div>
-          <h1 className="text-2xl font-extrabold text-foreground tracking-tight font-manrope">
+          <h1 className="text-2xl font-extrabold text-foreground tracking-tight font-sans">
             Tally Ledger & Voucher Mappings
           </h1>
           <p className="text-xs text-muted-foreground mt-1 max-w-2xl">
@@ -137,7 +137,7 @@ export default function FinanceMappingsPage() {
               key={st.key}
               type="button"
               onClick={() => setSelectedSource(st.key)}
-              className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold font-manrope whitespace-nowrap transition-all ${
+              className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold font-sans whitespace-nowrap transition-all ${
                 isSelected
                   ? 'bg-foreground text-background shadow-xs'
                   : 'bg-muted/50 text-muted-foreground hover:bg-muted hover:text-foreground'
@@ -197,7 +197,7 @@ export default function FinanceMappingsPage() {
                         </div>
                         <div>
                           <div className="flex items-center gap-2">
-                            <h3 className="text-sm font-bold text-foreground font-manrope">
+                            <h3 className="text-sm font-bold text-foreground font-sans">
                               Version {mapConfig.version}.0 Mapping
                             </h3>
                             <StatusBadge status={mapConfig.status} />
@@ -312,7 +312,7 @@ export default function FinanceMappingsPage() {
           <Card className="w-full max-w-xl p-6 rounded-2xl shadow-popover border space-y-4 bg-card">
             <div className="flex items-center justify-between border-border-strong border-border/60 pb-3">
               <div>
-                <h3 className="text-base font-bold text-foreground font-manrope">
+                <h3 className="text-base font-bold text-foreground font-sans">
                   Draft New Mapping Version
                 </h3>
                 <span className="font-mono text-xs text-muted-foreground">

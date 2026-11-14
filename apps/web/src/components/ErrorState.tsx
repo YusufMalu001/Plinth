@@ -144,7 +144,7 @@ export function PermissionDeniedView({
  const router = useRouter()
 
  return (
- <div className="flex min-h-[520px] w-full flex-1 items-center justify-center p-4 sm:p-8 font-manrope animate-in fade-in duration-300">
+ <div className="flex min-h-[520px] w-full flex-1 items-center justify-center p-4 sm:p-8 font-sans animate-in fade-in duration-300">
  <div className="relative w-full max-w-xl overflow-hidden rounded-3xl border border-border/90 bg-white p-8 sm:p-10 text-center shadow-xl">
  {/* Glow accent */}
  <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-[var(--accent-blue)]/10 blur-3xl pointer-events-none" />
@@ -159,7 +159,7 @@ export function PermissionDeniedView({
  </div>
 
  {/* Header and Explanation */}
- <span className="rounded-full bg-[var(--accent-blue)]/15 border border-border/30 px-3 py-1 text-[11px] font-black uppercase tracking-wider text-ink font-manrope">
+ <span className="rounded-full bg-[var(--accent-blue)]/15 border border-border/30 px-3 py-1 text-[11px] font-black uppercase tracking-wider text-ink font-sans">
  Security Policy Enforced
  </span>
 
@@ -234,7 +234,7 @@ export function NetworkErrorView({
  onRetry?: () => void
 }) {
  return (
- <div className="flex min-h-[500px] w-full flex-1 items-center justify-center p-4 sm:p-8 font-manrope animate-in fade-in duration-300">
+ <div className="flex min-h-[500px] w-full flex-1 items-center justify-center p-4 sm:p-8 font-sans animate-in fade-in duration-300">
  <div className="relative w-full max-w-lg overflow-hidden rounded-3xl border border-tone-red-solid bg-white p-8 sm:p-10 text-center shadow-xl">
  {/* Glow accent */}
  <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-tone-rose-bg/10 blur-3xl pointer-events-none" />
@@ -243,7 +243,7 @@ export function NetworkErrorView({
  <WifiOff size={38} strokeWidth={2.2} />
  </div>
 
- <span className="rounded-full bg-tone-rose-bg/15 border border-tone-red-solid/30 px-3 py-1 text-[11px] font-black uppercase tracking-wider text-tone-red-text font-manrope">
+ <span className="rounded-full bg-tone-rose-bg/15 border border-tone-red-solid/30 px-3 py-1 text-[11px] font-black uppercase tracking-wider text-tone-red-text font-sans">
  Network Disconnected
  </span>
 
@@ -294,7 +294,7 @@ export function NotFoundView({
  const router = useRouter()
 
  return (
- <div className="flex min-h-[500px] w-full flex-1 items-center justify-center p-4 sm:p-8 font-manrope animate-in fade-in duration-300">
+ <div className="flex min-h-[500px] w-full flex-1 items-center justify-center p-4 sm:p-8 font-sans animate-in fade-in duration-300">
  <div className="relative w-full max-w-lg overflow-hidden rounded-3xl border border-border bg-white p-8 sm:p-10 text-center shadow-xl">
  <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-[var(--accent-blue)]/10 blur-3xl pointer-events-none" />
 
@@ -302,7 +302,7 @@ export function NotFoundView({
  <Compass size={38} strokeWidth={2.2} />
  </div>
 
- <span className="rounded-full bg-tone-blue-bg/15 border border-tone-blue-solid/30 px-3 py-1 text-[11px] font-black uppercase tracking-wider text-link font-manrope">
+ <span className="rounded-full bg-tone-blue-bg/15 border border-tone-blue-solid/30 px-3 py-1 text-[11px] font-black uppercase tracking-wider text-link font-sans">
  Error 404: Not Found
  </span>
 
@@ -354,13 +354,13 @@ export function GenericErrorView({
  const router = useRouter()
 
  return (
- <div className="flex min-h-[500px] w-full flex-1 items-center justify-center p-4 sm:p-8 font-manrope animate-in fade-in duration-300">
+ <div className="flex min-h-[500px] w-full flex-1 items-center justify-center p-4 sm:p-8 font-sans animate-in fade-in duration-300">
  <div className="relative w-full max-w-lg overflow-hidden rounded-3xl border border-border bg-white p-8 sm:p-10 text-center shadow-xl">
  <div className="relative mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-3xl bg-[var(--accent-blue)]/15 text-ink border border-border/30 shadow-md shadow-[var(--accent-blue)]/10">
  <AlertTriangle size={38} strokeWidth={2.2} />
  </div>
 
- <span className="rounded-full bg-muted border border-border px-3 py-1 text-[11px] font-black uppercase tracking-wider text-ink-secondary font-manrope">
+ <span className="rounded-full bg-muted border border-border px-3 py-1 text-[11px] font-black uppercase tracking-wider text-ink-secondary font-sans">
  System Notice
  </span>
 

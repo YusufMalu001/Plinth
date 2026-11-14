@@ -11,9 +11,9 @@ export function PageHeader({ title, description, actions, className, ...props }:
   return (
     <div className={cn("flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8", className)} {...props}>
       <div className="space-y-1.5">
-        <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground font-manrope">{title}</h1>
+        <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground font-sans">{title}</h1>
         {description && (
-          <p className="text-sm sm:text-base font-medium text-muted-foreground font-manrope leading-relaxed">{description}</p>
+          <p className="text-sm sm:text-base font-medium text-muted-foreground font-sans leading-relaxed">{description}</p>
         )}
       </div>
       {actions && (

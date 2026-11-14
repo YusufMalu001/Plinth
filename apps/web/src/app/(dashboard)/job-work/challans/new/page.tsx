@@ -470,7 +470,7 @@ export default function IssueMaterialChallanPage() {
   };
 
   return (
-    <div className="flex-1 w-full overflow-y-auto bg-muted/20 p-4 sm:p-6 lg:p-8 space-y-6 font-manrope">
+    <div className="flex-1 w-full overflow-y-auto bg-muted/20 p-4 sm:p-6 lg:p-8 space-y-6 font-sans">
       <div className="flex items-center gap-2 mb-2">
         <Link
           href="/job-work"

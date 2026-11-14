@@ -3897,7 +3897,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
                 </span>
               </nav>
               <div className="flex items-center gap-2.5">
-                <h1 className="text-xl font-black text-ink tracking-tight font-manrope">
+                <h1 className="text-xl font-black text-ink tracking-tight font-sans">
                   {isEditMode ? 'Edit Inventory' : 'Create Inventory'}
                 </h1>
                 {form.sku && isCustomSku(form.sku) && (
@@ -4063,7 +4063,7 @@ export function ProductCreationWorkspace({ defaultType, mode: initialMode, editI
           {/* MAIN FORM CONTAINER */}
           <form
             onSubmit={handleSubmit}
-            className="space-y-6 font-manrope"
+            className="space-y-6 font-sans"
           >
 
             {/* =========================================================================

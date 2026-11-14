@@ -13,7 +13,7 @@ import {
   TableHeader,
   TableRow,
 } from '@plinth/ui';
-import { StatusBadge } from '../../../components/StatusBadge';
+import { StatusPill } from '../../../components/status/StatusPill';
 import { SalesOrder } from '../types';
 
 interface SalesOrderTableProps {
@@ -31,16 +31,16 @@ const formatCurrency = (val: number | string, currency = 'INR') => {
 
 export function SalesOrderTable({ orders, onAction }: SalesOrderTableProps) {
   return (
-    <Table>
+    <Table className="w-full table-fixed">
       <TableHeader>
         <TableRow>
-          <TableHead className="w-[180px]">Order Details</TableHead>
-          <TableHead className="w-[120px]">Channel</TableHead>
-          <TableHead className="min-w-[220px]">Customer / Ship To</TableHead>
-          <TableHead className="w-[150px]">Order Status</TableHead>
-          <TableHead className="w-[160px]">Allocation</TableHead>
-          <TableHead className="w-[160px] text-right">Grand Total</TableHead>
-          <TableHead className="w-[180px] text-right">Actions</TableHead>
+          <TableHead className="w-[18%] pl-6 text-left">Order Details</TableHead>
+          <TableHead className="w-[12%] text-center">Channel</TableHead>
+          <TableHead className="w-[26%] text-left">Customer / Ship To</TableHead>
+          <TableHead className="w-[14%] text-center">Order Status</TableHead>
+          <TableHead className="w-[14%] text-center">Allocation</TableHead>
+          <TableHead className="w-[16%] text-right">Grand Total</TableHead>
+          <TableHead className="w-[14%] pr-6 text-right">Actions</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
@@ -51,10 +51,10 @@ export function SalesOrderTable({ orders, onAction }: SalesOrderTableProps) {
           return (
             <TableRow
               key={order.id}
-              className="border-b border-border/50 hover:bg-muted/30 transition-colors group"
+              className="border-b border-border/70 hover:bg-muted/30 transition-colors group"
             >
               {/* Order # & Date */}
-              <TableCell className="py-3.5">
+              <TableCell className="pl-6 py-3.5 text-left align-middle">
                 <Link
                   href={`/sales/orders/${order.id}`}
                   className="font-mono font-bold text-sm text-foreground group-hover:text-primary transition-colors hover:underline inline-block"
@@ -74,17 +74,17 @@ export function SalesOrderTable({ orders, onAction }: SalesOrderTableProps) {
               </TableCell>
 
               {/* Channel */}
-              <TableCell className="py-3.5">
+              <TableCell className="py-3.5 text-center align-middle">
                 <Badge
                   variant="outline"
-                  className="font-mono text-[11px] uppercase tracking-wider bg-background/60 font-semibold px-2 py-0.5 border-border/80"
+                  className="font-mono text-[11px] uppercase tracking-wider bg-background/60 font-semibold px-2 py-0.5 border-border/80 inline-flex items-center justify-center"
                 >
                   {order.channel.replace('_', ' ')}
                 </Badge>
               </TableCell>
 
               {/* Customer / Destination */}
-              <TableCell className="py-3.5">
+              <TableCell className="py-3.5 text-left align-middle">
                 <div className="font-semibold text-sm text-foreground line-clamp-1">
                   {customerDisplay}
                 </div>
@@ -100,18 +100,22 @@ export function SalesOrderTable({ orders, onAction }: SalesOrderTableProps) {
                 )}
               </TableCell>
 
-              {/* Status Badges */}
-              <TableCell className="py-3.5">
-                <StatusBadge status={order.status as any} />
+              {/* Status Pills */}
+              <TableCell className="py-3.5 text-center align-middle">
+                <div className="flex items-center justify-center">
+                  <StatusPill status={order.status} />
+                </div>
               </TableCell>
 
-              <TableCell className="py-3.5">
-                <StatusBadge status={order.allocationStatus as any} />
+              <TableCell className="py-3.5 text-center align-middle">
+                <div className="flex items-center justify-center">
+                  <StatusPill status={order.allocationStatus} />
+                </div>
               </TableCell>
 
               {/* Grand Total */}
-              <TableCell className="text-right py-3.5">
-                <div className="font-mono font-bold text-sm text-foreground">
+              <TableCell className="text-right py-3.5 align-middle">
+                <div className="font-mono font-bold text-sm text-foreground tabular-nums">
                   {formatCurrency(order.grandTotal, order.currency)}
                 </div>
                 <div className="text-xs text-muted-foreground mt-0.5">
@@ -120,7 +124,7 @@ export function SalesOrderTable({ orders, onAction }: SalesOrderTableProps) {
               </TableCell>
 
               {/* Actions */}
-              <TableCell className="text-right py-3.5">
+              <TableCell className="text-right pr-6 py-3.5 align-middle">
                 <div className="flex items-center justify-end gap-1.5">
                   <Link href={`/sales/orders/${order.id}`}>
                     <Button

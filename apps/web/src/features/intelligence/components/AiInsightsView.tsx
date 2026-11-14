@@ -110,7 +110,7 @@ export function AiInsightsView() {
   if (query.isError) return <div className="rounded-xl border border-border bg-surface p-5 text-sm text-ink-secondary">Daily brief is temporarily unavailable. <button onClick={() => void query.refetch()} className="ml-2 font-semibold text-primary underline">Retry</button></div>;
 
   return (
-    <div className="space-y-5 font-manrope">
+    <div className="space-y-5 font-sans">
       <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-border bg-surface p-4">
         <div>
           <div className="flex items-center gap-2 text-sm font-semibold text-ink"><Sparkles className="h-4 w-4 text-link" /> Daily executive brief</div>

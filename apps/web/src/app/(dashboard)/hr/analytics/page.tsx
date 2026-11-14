@@ -344,7 +344,7 @@ export default function HrReportsAndAnalyticsDashboard() {
   }, [searchTerm, sortBy]);
 
   return (
-    <div className="flex-1 w-full overflow-y-auto bg-muted/20 p-4 sm:p-6 lg:p-8 space-y-6 font-manrope">
+    <div className="flex-1 w-full overflow-y-auto bg-muted/20 p-4 sm:p-6 lg:p-8 space-y-6 font-sans">
       {/* Top Header */}
       <header className="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
         <div>
@@ -902,7 +902,7 @@ export default function HrReportsAndAnalyticsDashboard() {
           title={`Performance Report: ${selectedEvaluation.employee.firstName} ${selectedEvaluation.employee.lastName}`}
           className="max-w-2xl"
         >
-          <div className="space-y-4 text-xs font-manrope">
+          <div className="space-y-4 text-xs font-sans">
             {/* Header badge ribbon */}
             <div className="flex items-center justify-between p-3.5 rounded-xl bg-muted/40 border border-border">
               <div>

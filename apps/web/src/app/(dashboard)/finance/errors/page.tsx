@@ -67,7 +67,7 @@ export default function FinanceErrorsPage() {
               Audited Retry Workflow
             </Badge>
           </div>
-          <h1 className="text-2xl font-extrabold text-foreground tracking-tight font-manrope">
+          <h1 className="text-2xl font-extrabold text-foreground tracking-tight font-sans">
             Error & Retry Queue
           </h1>
           <p className="text-xs text-muted-foreground mt-1 max-w-2xl">
@@ -176,7 +176,7 @@ export default function FinanceErrorsPage() {
           <Card className="w-full max-w-lg p-6 rounded-2xl shadow-popover border space-y-4 bg-card">
             <div className="flex items-center justify-between border-border-strong border-border/60 pb-3">
               <div>
-                <h3 className="text-base font-bold text-foreground font-manrope">
+                <h3 className="text-base font-bold text-foreground font-sans">
                   Controlled Retry & Resolution
                 </h3>
                 <span className="font-mono text-xs text-muted-foreground">

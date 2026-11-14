@@ -193,6 +193,8 @@ export default function SalesPage() {
                   setPage(1);
                 }}
                 filterOptions={statusOptions}
+                filterVariant="dropdown"
+                filterLabel="Filter by status"
               />
               <select
                 aria-label="Filter by channel"
@@ -201,7 +203,7 @@ export default function SalesPage() {
                   setChannel(e.target.value as SalesChannel | '');
                   setPage(1);
                 }}
-                className="h-9 rounded-lg border border-border/80 bg-background px-3 text-xs text-foreground focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary shadow-none"
+                className="h-9 rounded-lg border border-border/80 bg-background px-3 text-xs font-medium text-foreground focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary shadow-none"
               >
                 <option value="">All Channels</option>
                 <option value="E_TRADE">E-trade</option>

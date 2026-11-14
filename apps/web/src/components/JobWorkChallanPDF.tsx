@@ -14,7 +14,7 @@ export const JobWorkChallanPDF = React.forwardRef<HTMLDivElement, JobWorkChallan
  <div
  ref={ref}
  data-printable="true"
- className={`printable-document print-target w-full bg-white text-ink font-manrope ${
+ className={`printable-document print-target w-full bg-white text-ink font-sans ${
  isPrintPreview
  ? 'p-8 max-w-4xl mx-auto shadow-xl border border-border'
  : 'p-8 w-full'

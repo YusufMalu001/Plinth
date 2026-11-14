@@ -95,6 +95,6 @@ echo "Starting web on http://localhost:3000..."
 PORT="${WEB_PORT:-3000}" API_PORT="${API_PORT:-5000}" NEXT_PUBLIC_API_URL="http://localhost:${API_PORT:-5000}/api/v1" npm run dev --workspace=@plinth/web &
 pids+=("$!")
 
-echo "Plinth local environment is running. Press Ctrl+C to stop API and web."
+echo "Manufacturing ERP local environment is running. Press Ctrl+C to stop API and web."
 wait -n "${pids[@]}"
 exit $?

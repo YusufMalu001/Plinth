@@ -641,7 +641,7 @@ export function UserAccess() {
  const totalPermissionsCount = allPermissions.length
 
  return (
- <div className="w-full space-y-6 font-manrope">
+ <div className="w-full space-y-6 font-sans">
  {/* 1. Header Banner & Quick Stats */}
  <div className="relative overflow-hidden rounded-2xl border border-border bg-white p-6 shadow-sm">
  <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
@@ -651,10 +651,10 @@ export function UserAccess() {
  <ShieldCheck size={24} strokeWidth={2.2} />
  </div>
  <div>
- <h1 className="text-xl sm:text-2xl font-black tracking-tight text-ink font-manrope">
+ <h1 className="text-xl sm:text-2xl font-black tracking-tight text-ink font-sans">
  User Access & Security Control
  </h1>
- <p className="text-xs sm:text-sm font-semibold text-ink-secondary font-manrope">
+ <p className="text-xs sm:text-sm font-semibold text-ink-secondary font-sans">
  Provision workspace members, define custom roles, and fine-tune granular module capabilities.
  </p>
  </div>
@@ -866,7 +866,7 @@ export function UserAccess() {
  {/* Full Width Users Table */}
  <div className="w-full overflow-hidden rounded-2xl border border-border bg-white shadow-sm">
  <div className="overflow-x-auto">
- <table className="w-full text-left text-xs font-manrope border-collapse">
+ <table className="w-full text-left text-xs font-sans border-collapse">
  <thead>
  <tr className="border-b border-border bg-muted/80 text-[11px] font-black uppercase tracking-wider text-ink-secondary ">
  <th className="py-3.5 px-6 min-w-[280px]">User Profile</th>
@@ -1193,7 +1193,7 @@ export function UserAccess() {
  {/* Clean, Consistent Matrix Table */}
  <div className="w-full overflow-hidden rounded-2xl border border-border bg-white shadow-sm">
  <div className="overflow-x-auto">
- <table className="w-full text-left text-xs font-manrope border-collapse">
+ <table className="w-full text-left text-xs font-sans border-collapse">
  <thead>
  <tr className="border-b border-border bg-muted/90 text-[11px] font-black uppercase tracking-wider text-ink-secondary ">
  <th className="py-4 px-6 min-w-[280px]">Module / Service</th>
@@ -1367,7 +1367,7 @@ export function UserAccess() {
  error={dialogError}
  close={() => setUserOpen(false)}
  >
- <form onSubmit={createUser} className="space-y-4 font-manrope">
+ <form onSubmit={createUser} className="space-y-4 font-sans">
  <div>
  <label className="block text-xs font-bold text-ink-secondary mb-1">
  Full Name
@@ -1461,7 +1461,7 @@ export function UserAccess() {
  error={dialogError}
  close={() => setRoleOpen(false)}
  >
- <form onSubmit={createRole} className="space-y-4 font-manrope">
+ <form onSubmit={createRole} className="space-y-4 font-sans">
  <div>
  <label className="block text-xs font-bold text-ink-secondary mb-1">
  Role Display Name <span className="text-tone-red-text">*</span>
@@ -1686,7 +1686,7 @@ function Modal({
 
  return createPortal(
  <div
- className="fixed inset-0 top-0 left-0 right-0 bottom-0 z-[999999] flex items-center justify-center bg-[color:var(--overlay)] p-4 backdrop-blur-xs font-manrope"
+ className="fixed inset-0 top-0 left-0 right-0 bottom-0 z-[999999] flex items-center justify-center bg-[color:var(--overlay)] p-4 backdrop-blur-xs font-sans"
  style={{ margin: 0, padding: "1rem" }}
  onMouseDown={close}
  >
@@ -1700,11 +1700,11 @@ function Modal({
  <p className="text-[10px] font-black uppercase tracking-widest text-[var(--accent-blue)] ">
  Access & Security Control
  </p>
- <h2 className="mt-0.5 text-lg font-black text-ink font-manrope">
+ <h2 className="mt-0.5 text-lg font-black text-ink font-sans">
  {title}
  </h2>
  {subtitle && (
- <p className="text-xs text-ink-secondary font-manrope">{subtitle}</p>
+ <p className="text-xs text-ink-secondary font-sans">{subtitle}</p>
  )}
  </div>
  <button

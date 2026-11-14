@@ -1,0 +1,6568 @@
+{
+  "products": [
+    {
+      "sku": "CC1",
+      "asin": "B08ZD8RPYS",
+      "name": "PLINTH - Heavy Duty Rust Free Stainless Steel Cloth Clips/Cloth Peg/Cloth Drying Pins/Pegs for Hanger/Rods/Ropes/Drying Clothes (18 Clips with Box) (SY-CC1)",
+      "mrp": 699,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CE-ACC",
+      "asin": "B0BFBP7J2L",
+      "name": "Plinth - Spare Rope and Pulley-Hook Set for Full Dropdown Ceiling Dryer(30 Feet Polyester Rope + 2 Nylon Pulley)",
+      "mrp": 999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CE-ROPE",
+      "asin": "B0DNJVSD8B",
+      "name": "Plinth Spare Rope for Full Dropdown Ceiling Dryer (30 Feet Polyester Rope), White",
+      "mrp": 999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CE1",
+      "asin": "B08CZ3PKPK",
+      "name": "Plinth - 6 Pipes x 4 Feet - Heavy Duty Stainless Steel Ceiling Cloth Dryer/Cloth Hanger/Cloth Drying Stand for Balcony/Clothes Stand for Drying/Cloth Drying Rope with Pulley - (SY-CE1)",
+      "mrp": 5599,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CE2",
+      "asin": "B08CZQSJSY",
+      "name": "Plinth - 6 Pipes x 5 Feet - Heavy Duty Stainless Steel Ceiling Cloth Dryer/Cloth Hanger/Cloth Drying Stand for Balcony/Clothes Stand for Drying/Cloth Drying Rope with Pulley - (SY-CE2)",
+      "mrp": 5799,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CE3",
+      "asin": "B08GG5XMRJ",
+      "name": "Plinth - 6 Pipes x 6 Feet - Heavy Duty Stainless Steel Ceiling Cloth Dryer/Cloth Hanger/Cloth Drying Stand for Balcony/Clothes Stand for Drying/Cloth Drying Rope with Pulley - (SY-CE3)",
+      "mrp": 5999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CL-ACC-4P",
+      "asin": "B0GMY6BTKR",
+      "name": "Plinth - Spare Ropes and Caps for 4 Pipes Individual Drop Down Ceiling Cloth Dryer (CL-ACC-4P)",
+      "mrp": 999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CL-ACC-6P",
+      "asin": "B0GMY95D4Y",
+      "name": "Plinth - Spare Ropes and Caps for 6 Pipes Individual Drop Down Ceiling Cloth Dryer (CL-ACC-6P)",
+      "mrp": 999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CL-ACC-8P",
+      "asin": "B0GMYDRM42",
+      "name": "Plinth - Spare Ropes and Caps for 8 Pipes Individual Drop Down Ceiling Cloth Dryer (CL-ACC-8P)",
+      "mrp": 999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CL1",
+      "asin": "B07PG2WLJJ",
+      "name": "Plinth - 6 Pipes x 4 Feet - Heavy Duty - Stainless Steel Ceiling Cloth Dryer/Cloth Hanger/Cloth Drying Stand for Balcony/Clothes Stand for Drying/Cloth Drying Rope with Pulley - (SY-CL1)",
+      "mrp": 6599,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CL1-4P",
+      "asin": "B0BX924HNC",
+      "name": "Plinth - 4 Pipes x 4 Feet - Heavy Duty - Stainless Steel Ceiling Cloth Dryer/Cloth Hanger/Cloth Drying Stand for Balcony/Clothes Stand for Drying/Cloth Drying Rope with Pulley - (SY-CL1-4P)",
+      "mrp": 5999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CL1-8P",
+      "asin": "B0BX8ZXTND",
+      "name": "Plinth - 8 Pipes x 4 Feet - Heavy Duty - Stainless Steel Ceiling Clothes Hanger/Cloth Dryer with UV Protected Rope and Individual Drop Down Railers (SY-CL1-8P)",
+      "mrp": 7899,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CL2",
+      "asin": "B07PF4SHV7",
+      "name": "Plinth - 6 Pipes x 5 Feet - Heavy Duty - Stainless Steel Ceiling Cloth Dryer/Cloth Hanger/Cloth Drying Stand for Balcony/Clothes Stand for Drying/Cloth Drying Rope with Pulley - (SY-CL2)",
+      "mrp": 6699,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CL2-4P",
+      "asin": "B0BX8ZKZ21",
+      "name": "Plinth - 4 Pipes x 5 Feet - Heavy Duty - Stainless Steel Ceiling Clothes Hanger/Cloth Dryer with UV Protected Rope and Individual Drop Down Railers (SY-CL2-4P)",
+      "mrp": 6499,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CL2-8P",
+      "asin": "B0BX91JNRK",
+      "name": "Plinth - 8 Pipes x 5 Feet - Heavy Duty - Stainless Steel Ceiling Clothes Hanger/Cloth Dryer with UV Protected Rope and Individual Drop Down Railers (SY-CL2-8P)",
+      "mrp": 7999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CL3",
+      "asin": "B07PF4SGJ1",
+      "name": "Plinth - 6 Pipes x 6 Feet - Heavy Duty - Stainless Steel Ceiling Cloth Dryer/Cloth Hanger/Cloth Drying Stand for Balcony/Clothes Stand for Drying/Cloth Drying Rope with Pulley - (SY-CL3)",
+      "mrp": 6999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CL3-4P",
+      "asin": "B0BX91Y7NP",
+      "name": "Plinth - 4 Pipes x 6 Feet - Heavy Duty - Stainless Steel Ceiling Clothes Hanger/Cloth Dryer with UV Protected Rope and Individual Drop Down Railers (SY-CL3-4P)",
+      "mrp": 5999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CL3-8P",
+      "asin": "B0BX8YXRMD",
+      "name": "Plinth - 8 Pipes x 6 Feet - Heavy Duty - Stainless Steel Ceiling Clothes Hanger/Cloth Dryer with UV Protected Rope and Individual Drop Down Railers (SY-CL3-8P)",
+      "mrp": 8499,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CL4-4P",
+      "asin": "B0BX93J54T",
+      "name": "Plinth - 4 Pipes x 7 Feet - Heavy Duty - Stainless Steel Ceiling Clothes Hanger/Cloth Dryer with UV Protected Rope and Individual Drop Down Railers (SY-CL4-4P)",
+      "mrp": 6999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CL4-8P",
+      "asin": "B0BX9237XQ",
+      "name": "Plinth - 8 Pipes x 7 Feet - Heavy Duty - Stainless Steel Ceiling Clothes Hanger/Cloth Dryer with UV Protected Nylon Rope and Individual Drop Down Railers (SY-CL4-8P)",
+      "mrp": 8999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CL4",
+      "asin": "B094CR4Y9F",
+      "name": "Plinth - 6 Pipes x 7 Feet - Heavy Duty - Stainless Steel Ceiling Cloth Dryer/Cloth Hanger/Cloth Drying Stand for Balcony/Clothes Stand for Drying/Cloth Drying Rope with Pulley - (SY-CL4.2)",
+      "mrp": 6999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CL5",
+      "asin": "B085774F7G",
+      "name": "Plinth - 6 Pipes x 8 Feet - Heavy Duty - Stainless Steel Ceiling Cloth Dryer/Cloth Hanger/Cloth Drying Stand for Balcony/Clothes Stand for Drying/Cloth Drying Rope with Pulley - (SY-CL5)",
+      "mrp": 6999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CL5-4P",
+      "asin": "B0GMYF9N8W",
+      "name": "Plinth - 4 Pipes x 8 Feet - Heavy Duty - Stainless Steel Ceiling Cloth Dryer for Balcony | Cloth Drying Rope with Pulley | Cloth Hanging Stand | Clothes Drying Stand Wall Mounted - (SY-CL5-4P)",
+      "mrp": 7299,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CL5-8P",
+      "asin": "B0GMYFSH67",
+      "name": "Plinth - 8 Pipes x 8 Feet - Heavy Duty - Stainless Steel Ceiling Cloth Dryer for Balcony | Cloth Drying Rope with Pulley | Cloth Hanging Stand | Clothes Drying Stand Wall Mounted - (SY-CL5-8P)",
+      "mrp": 9499,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CS10",
+      "asin": "B07QWF4NJ9",
+      "name": "Plinth - Super Heavy Duty - Large Stainless Steel Foldable Wing Style Cloth Dryer/Clothes Drying Stand (SY-CS10)",
+      "mrp": 10999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CS12",
+      "asin": "B079T5TLJK",
+      "name": "Plinth - Super Heavy Duty 3 Tier Stainless Steel Foldable Cloth Dryer/Clothes Drying Stand (SY-CS12)",
+      "mrp": 10999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CS15",
+      "asin": "B07P963NPC",
+      "name": "Plinth 25 Clips Stainless Steel Square Cloth Hanger/Clothes Stand for Drying/Clothes Drying Stand/Hanger with Clips/Baby Clothes Dryer/Undergarments Hanger (SY-CS15)",
+      "mrp": 999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CS16",
+      "asin": "B07TYCY8X5",
+      "name": "Plinth 27 Clips Stainless Steel Hexagon Cloth Hanger/Clothes Stand for Drying/Clothes Drying Stand/Hanger with Clips/Baby Clothes Dryer/Undergarments Hanger/Stand for Drying Clothes (SY-CS16)",
+      "mrp": 999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CS17",
+      "asin": "B07TZJSXHX",
+      "name": "Plinth 24 Clips Stainless Steel Round Cloth Hanger/Clothes Stand for Drying/Clothes Drying Stand/Hanger with Clips/Baby Clothes Dryer/Undergarments Hanger/Stand for Drying Clothes (SY-CS17)",
+      "mrp": 999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CS18",
+      "asin": "B07V45R84G",
+      "name": "Plinth - Super Heavy Duty - Stainless Steel Foldable Wing Style Cloth Dryer/Clothes Drying Stand (SY-CS18)",
+      "mrp": 10999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CS19",
+      "asin": "B081NNSSFX",
+      "name": "Plinth - Premium Heavy Duty Stainless Steel Clothes Drying Stand/Cloth Dryer Stand/Cloth Stand for Drying Clothes Foldable/Cloth Stand/Cloth Drying Stand (3 Tier) Blue - SY-CS19",
+      "mrp": 8499,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CS19-L2",
+      "asin": "B09Q16WVGX",
+      "name": "Plinth - Premium Heavy Duty Stainless Steel Clothes Drying Stand/Cloth Dryer Stand/Cloth Stand for Drying Clothes Foldable/Cloth Stand/Cloth Drying Stand (2 Tier) Blue - SY-CS19-L2",
+      "mrp": 7999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CS19-L4",
+      "asin": "B09Q8TPLYP",
+      "name": "Plinth - Premium Heavy Duty Stainless Steel Clothes Drying Stand/Cloth Dryer Stand/Cloth Stand for Drying Clothes Foldable/Cloth Stand/Cloth Drying Stand (4 Tier) Blue - SY-CS19-L4",
+      "mrp": 8999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CS21",
+      "asin": "B082MJGM7W",
+      "name": "Plinth - Premium Heavy Duty Stainless Steel Clothes Drying Stand/Cloth Dryer Stand/Cloth Stand for Drying Clothes Foldable/Cloth Stand/Cloth Drying Stand (3 Tier) White - SY-CS21",
+      "mrp": 8499,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CS21-CMBO",
+      "asin": "B0BY4KBNP4",
+      "name": "Plinth - Premium Heavy Duty Stainless Steel Clothes Drying Stand/Cloth Dryer Stand/Cloth Stand for Drying Clothes Foldable with EZEE Cloth Clipper Combo (3 Tier) White - SY-CS21-COMBO",
+      "mrp": 8999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CS21-L2",
+      "asin": "B0BSSV5Z7C",
+      "name": "Plinth - Premium Heavy Duty Stainless Steel Clothes Drying Stand/Cloth Dryer Stand/Cloth Stand for Drying Clothes Foldable/Cloth Stand/Cloth Drying Stand (2 Tier) White - SY-CS21-L2",
+      "mrp": 7999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CS21-L4",
+      "asin": "B0BWDB7N73",
+      "name": "Plinth - Premium Heavy Duty Stainless Steel Clothes Drying Stand/Cloth Dryer Stand/Cloth Stand for Drying Clothes Foldable/Cloth Stand/Cloth Drying Stand (4 Tier) White - SY-CS21-L4",
+      "mrp": 8999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CS20-COMBO",
+      "asin": "B0GVKKLXP7",
+      "name": "Plinth - Premium Heavy Duty Stainless Steel Clothes Drying Stand with EZEE Clipper for Hanging Undergarments, Socks, Baby Clothes (3-Tier) Grey - SY-CS20-COMBO",
+      "mrp": 8999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CS20",
+      "asin": "B0GV798BND",
+      "name": "Plinth - Premium Heavy Duty Stainless Steel Clothes Drying Stand | Cloth Dryer Stand | Cloth Stand for Drying Clothes Foldable | Cloth Hanging Stand | Cloth Drying Stand (3-Tier) Grey - SY-CS20",
+      "mrp": 8499,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CS20-L2",
+      "asin": "B0GV8TC89Z",
+      "name": "Plinth - Premium Heavy Duty Stainless Steel Clothes Drying Stand | Cloth Dryer Stand | Cloth Stand for Drying Clothes Foldable | Cloth Hanging Stand | Cloth Drying Stand (2-Tier) Grey - SY-CS20-L2",
+      "mrp": 7999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CS20-L4",
+      "asin": "B0GVND5JHC",
+      "name": "Plinth - Premium Heavy Duty Stainless Steel Clothes Drying Stand | Cloth Dryer Stand | Cloth Stand for Drying Clothes Foldable | Cloth Hanging Stand | Cloth Drying Stand (4-Tier) Grey - SY-CS20-L4",
+      "mrp": 8999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CS3-COMBO",
+      "asin": "B08HXWG94T",
+      "name": "Plinth - 7 Rods - Heavy Duty Stainless Steel Foldable Wall Mount/Mounted Cloth Dryer/Clothes Drying Stand with EZEE Cloth Clipper Combo [SY-CS3-COMBO]",
+      "mrp": 5499,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CS3",
+      "asin": "B07FZ13YBC",
+      "name": "Plinth 7 Rod - Premium Heavy Duty Stainless Steel Clothes Drying Stand, Wall Mounted Cloth Drying Stand, Cloth Stand for Drying Clothes Foldable, Wall Mount Cloth Drying Stand Folding [SY-CS3]",
+      "mrp": 4999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CS19-CMBO",
+      "asin": "B07DJBS9Y1",
+      "name": "Plinth - Premium Heavy Duty Stainless Steel Clothes Drying Stand/Cloth Dryer Stand/Cloth Stand for Drying Clothes Foldable with EZEE Cloth Clipper Combo (3 Tier) Blue - SY-CS5.3",
+      "mrp": 8999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CS6",
+      "asin": "B089S2HKZW",
+      "name": "Plinth 9 Rod - Premium Heavy Duty Stainless Steel Clothes Drying Stand, Wall Mounted Cloth Drying Stand, Cloth Stand for Drying Clothes Foldable, Wall Mount Cloth Drying Stand Folding [SY-CS6]",
+      "mrp": 4999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CS6-COMBO",
+      "asin": "B08HHSPYFR",
+      "name": "Plinth 9 Rod - Premium Heavy Duty tainless Steel Foldable Wall Mount/Mounted/Mounting Clothes Drying Stand/Cloth Dryer Racks for Balcony/Indoor/Outdoor with EZEE Cloth Clipper Combo",
+      "mrp": 5499,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CS7",
+      "asin": "B08NVK1TC4",
+      "name": "PLINTH - Heavy Duty Stainless Steel Multipurpose Cloth Clips | Cloth Peg | Cloth Drying Clips | Pegs for Hanger/Ropes/Drying Clothes | Cloth Hangers [EZEE Cloth Clipper]",
+      "mrp": 699,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CS8",
+      "asin": "B0791H9TD6",
+      "name": "Plinth - Super Heavy Duty - Extra Large 3 Tier Stainless Steel Foldable Cloth Dryer/Clothes Drying Stand (SY-CS8)",
+      "mrp": 11999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "GL1-3P",
+      "asin": "B0G5FQGC74",
+      "name": "Plinth - 3 Pipes x 2 Feet - Stainless Steel Wall Mounted Cloth Drying Stand, Cloth Stand for Drying Clothes Foldable, Wall Mount Cloth Drying Stand Folding, Clothes Drying Stand [SY-GL1-3P]",
+      "mrp": 3999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "GL1-4P",
+      "asin": "B0DTZ3Y75C",
+      "name": "Plinth - 4 Pipes x 2 Feet - Stainless Steel Wall Mounted Cloth Drying Stand, Cloth Stand for Drying Clothes Foldable, Wall Mount Cloth Drying Stand Folding, Clothes Drying Stand [SY-G1-4P]",
+      "mrp": 3999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "GL1",
+      "asin": "B08H2GGWVN",
+      "name": "Plinth - 5 Pipes x 2 Feet - Stainless Steel Wall Mounted Cloth Drying Stand, Cloth Stand for Drying Clothes Foldable, Wall Mount Cloth Drying Stand Folding, Clothes Drying Stand [SY-GL1]",
+      "mrp": 4299,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "GL11",
+      "asin": "B08JKNJ53T",
+      "name": "Plinth - 6 Pipes x 2 Feet - Stainless Steel Wall Mounted Cloth Drying Stand, Cloth Stand for Drying Clothes Foldable, Wall Mount Cloth Drying Stand Folding, Clothes Drying Stand [SY-G11]",
+      "mrp": 4699,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "GL12",
+      "asin": "B08JKM43RM",
+      "name": "Plinth - 6 Pipes x 3 Feet - Stainless Steel Wall Mounted Cloth Drying Stand, Cloth Stand for Drying Clothes Foldable, Wall Mount Cloth Drying Stand Folding, Clothes Drying Stand [SY-G12]",
+      "mrp": 4899,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "GL13",
+      "asin": "B08JKR33V3",
+      "name": "Plinth - 6 Pipes x 4 Feet - Stainless Steel Wall Mounted Cloth Drying Stand, Cloth Stand for Drying Clothes Foldable, Wall Mount Cloth Drying Stand Folding, Clothes Drying Stand [SY-G13]",
+      "mrp": 4999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "GL14",
+      "asin": "B08JLLX6MJ",
+      "name": "Plinth - 6 Pipes x 5 Feet - Stainless Steel Wall Mounted Cloth Drying Stand, Cloth Stand for Drying Clothes Foldable, Wall Mount Cloth Drying Stand Folding, Clothes Drying Stand [SY-G14]",
+      "mrp": 5999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "GL15",
+      "asin": "B0G5FJ7V1C",
+      "name": "Plinth - 6 Pipes x 6 Feet - Stainless Steel Wall Mounted Cloth Drying Stand, Cloth Stand for Drying Clothes Foldable, Wall Mount Cloth Drying Stand Folding, Clothes Drying Stand [SY-G15]",
+      "mrp": 6999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "GL2-3P",
+      "asin": "B0G5FNP9LX",
+      "name": "Plinth - 3 Pipes x 3 Feet - Stainless Steel Wall Mounted Cloth Drying Stand, Cloth Stand for Drying Clothes Foldable, Wall Mount Cloth Drying Stand Folding, Clothes Drying Stand [SY-GL2-3P]",
+      "mrp": 4899,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "GL2-4P",
+      "asin": "B0DTZ3YX1T",
+      "name": "Plinth - 4 Pipes x 3 Feet - Stainless Steel Wall Mounted Cloth Drying Stand, Cloth Stand for Drying Clothes Foldable, Wall Mount Cloth Drying Stand Folding, Clothes Drying Stand [SY-G2-4P]",
+      "mrp": 4899,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "GL2",
+      "asin": "B08HHHQD6Z",
+      "name": "Plinth - 5 Pipes x 3 Feet - Stainless Steel Wall Mounted Cloth Drying Stand, Cloth Stand for Drying Clothes Foldable, Wall Mount Cloth Drying Stand Folding, Clothes Drying Stand [SY-GL2]",
+      "mrp": 4899,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "GL3",
+      "asin": "B07M7YVXNX",
+      "name": "Plinth - 5 Pipes x 4 Feet - Stainless Steel Wall Mounted Cloth Drying Stand, Cloth Stand for Drying Clothes Foldable, Wall Mount Cloth Drying Stand Folding, Clothes Drying Stand [SY-GL3]",
+      "mrp": 4999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "GL3-3P",
+      "asin": "B0G5FR8CBH",
+      "name": "Plinth - 3 Pipes x 4 Feet - Stainless Steel Wall Mounted Cloth Drying Stand, Cloth Stand for Drying Clothes Foldable, Wall Mount Cloth Drying Stand Folding, Clothes Drying Stand [SY-GL3-3P]",
+      "mrp": 4999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "GL3-4P",
+      "asin": "B0DTZ2DNGY",
+      "name": "Plinth - 4 Pipes x 4 Feet - Stainless Steel Wall Mounted Cloth Drying Stand, Cloth Stand for Drying Clothes Foldable, Wall Mount Cloth Drying Stand Folding, Clothes Drying Stand [SY-G3-4P]",
+      "mrp": 4999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "GL4-3P",
+      "asin": "B0G5FNW175",
+      "name": "Plinth - 3 Pipes x 5 Feet - Stainless Steel Wall Mounted Cloth Drying Stand, Cloth Stand for Drying Clothes Foldable, Wall Mount Cloth Drying Stand Folding, Clothes Drying Stand [SY-GL4-3P]",
+      "mrp": 5999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "GL4-4P",
+      "asin": "B0DTZ2YHQG",
+      "name": "Plinth - 4 Pipes x 5 Feet - Stainless Steel Wall Mounted Cloth Drying Stand, Cloth Stand for Drying Clothes Foldable, Wall Mount Cloth Drying Stand Folding, Clothes Drying Stand [SY-G4-4P]",
+      "mrp": 5999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "GL4",
+      "asin": "B08PQNF6XT",
+      "name": "Plinth - 5 Pipes x 5 Feet - Stainless Steel Wall Mounted Cloth Drying Stand, Cloth Stand for Drying Clothes Foldable, Wall Mount Cloth Drying Stand Folding, Clothes Drying Stand [SY-GL4]",
+      "mrp": 5999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "GL5",
+      "asin": "B0G5FMKFN4",
+      "name": "Plinth - 5 Pipes x 6 Feet - Stainless Steel Wall Mounted Cloth Drying Stand, Cloth Stand for Drying Clothes Foldable, Wall Mount Cloth Drying Stand Folding, Clothes Drying Stand [SY-GL5]",
+      "mrp": 6999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "GL5-3P",
+      "asin": "B0G5FR7WSR",
+      "name": "Plinth - 3 Pipes x 6 Feet - Stainless Steel Wall Mounted Cloth Drying Stand, Cloth Stand for Drying Clothes Foldable, Wall Mount Cloth Drying Stand Folding, Clothes Drying Stand [SY-GL5-3P]",
+      "mrp": 6999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "GL5-4P",
+      "asin": "B0G5FKVL44",
+      "name": "Plinth - 4 Pipes x 6 Feet - Stainless Steel Wall Mounted Cloth Drying Stand, Cloth Stand for Drying Clothes Foldable, Wall Mount Cloth Drying Stand Folding, Clothes Drying Stand [SY-G5-4P]",
+      "mrp": 6999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "ST-3L",
+      "asin": "B0CRPDQ9XV",
+      "name": "Plinth Kitchen Trolley Kitchen Organizer Kitchen Storage Rack Square Design Fruits & Vegetable Onion Cutlery Jars Container Kitchen Trolley with Wheels (3 Layer) SY-ST-3L",
+      "mrp": 5999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "ST-4L",
+      "asin": "B0CRPCJYQQ",
+      "name": "Plinth Kitchen Trolley Kitchen Organizer Kitchen Storage Rack Square Design Fruits & Vegetable Onion Cutlery Jars Container Kitchen Trolley with Wheels (4 Layer) SY-ST-4L",
+      "mrp": 9999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "ST-5L",
+      "asin": "B0CRPCMJYC",
+      "name": "Plinth Kitchen Trolley Kitchen Organizer Kitchen Storage Rack Square Design Fruits & Vegetable Onion Cutlery Jars Container Kitchen Trolley with Wheels (5 Layer) SY-ST-5L",
+      "mrp": 10999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "TH12",
+      "asin": "B084JJKVWY",
+      "name": "PLINTH - Premium - Stainless Steel 24 Inch Towel Rod/Towel Rods for Bathroom/Towel Bars/Hangers/Stands/Towel Holders/Bathroom Accessories (Chrome Finish) SY-TH12",
+      "mrp": 999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "TH14",
+      "asin": "B091YHTCPM",
+      "name": "Plinth Stainless Steel 1-Tier Bathroom Shelf/Kitchen Shelf/Bathroom Rack/Bathroom Accessories [SY-TH14]",
+      "mrp": 1599,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CC2",
+      "asin": "B08ZNCZ4QB",
+      "name": "PLINTH - Heavy Duty Rust Free Cloth Peg/Clothes Clip/Cloth Drying Pins/Pegs for Hanger/Rods/Ropes/Drying Clothes (18 Clips with Box) - SY-CC2",
+      "mrp": 699,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CS1",
+      "asin": "B07KXKPFGV",
+      "name": "Plinth - Super Heavy Duty - Extra Large Stainless Steel Foldable Cloth Dryer/Clothes Drying Stand (SY-CS1)",
+      "mrp": 11999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CS11",
+      "asin": "B078HB6TM9",
+      "name": "Plinth - Super Heavy Duty - Stainless Steel Foldable Cloth Dryer/Clothes Drying Stand Stand with Collapsible Design (SY-CS11)",
+      "mrp": 10999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CS13",
+      "asin": "B089MG15L2",
+      "name": "Plinth 25 Clips Stainless Steel Heavy Duty Square Cloth Hanger/Clothes Stand for Drying/Clothes Drying Stand/Hanger with Clips/Baby Clothes Dryer/Undergarments Hanger (SY-CS13)",
+      "mrp": 999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "IM1",
+      "asin": "B07C1MY6G1",
+      "name": "PLINTH Extra Large Ironing Mat with Silicon Iron Mat for use as Ironing Board (SY-IM1)",
+      "mrp": 1699,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "IM2",
+      "asin": "B07JDYS7N2",
+      "name": "Plinth Extra Large Ironing Mat with Aluminised Heat Reflective Coating and Silicon for Use as Ironing Board (SY-IM2, Silver)",
+      "mrp": 1799,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "ST-2L",
+      "asin": "B0CRPD8TTJ",
+      "name": "Plinth Kitchen Trolley Kitchen Organizer Kitchen Storage Rack Square Design Fruits & Vegetable Onion Cutlery Jars Container Kitchen Trolley with Wheels (2 Layer) SY-ST-2L",
+      "mrp": 4999,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "SY-TH9",
+      "asin": "B07Y5GXK43",
+      "name": "PLINTH - 304 Grade 24 Inch Stainless Steel Dual Folding Towel Rack for Bathroom/Towel Stand/Hanger/Bathroom Accessories (SY-TH9)",
+      "mrp": 2499,
+      "source": "MRP PROJECT.xlsm - Masters"
+    },
+    {
+      "sku": "CB1-RAW",
+      "asin": null,
+      "name": "CHOPPING BOARD CB1 - RAW",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "CS11 - 853mm",
+      "asin": null,
+      "name": "CS11 - SS 1/2\" x 0.6mm - 853mm",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "CS11 - 883mm",
+      "asin": null,
+      "name": "CS11 - SS 1/2\" x 0.6mm - 883mm",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "CS9 - 753mm",
+      "asin": null,
+      "name": "CS9 - SS 1/2\" x 0.6mm - 753mm",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "CS9 - 783mm",
+      "asin": null,
+      "name": "CS9 - SS 1/2\" x 0.6mm - 783mm",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CE-ACC",
+      "asin": null,
+      "name": "ECONOMY ACCESSORIES SY-CE-ACC",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CE-ROPE",
+      "asin": null,
+      "name": "ECONOMY SPARE ROPE CE-ROPE",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CL-ACC",
+      "asin": null,
+      "name": "LUXURY ACCESSORIES SET SY-CL-ACC",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CS7",
+      "asin": null,
+      "name": "PAIR OF EZEE CLOTH CLIPPER SY-CS7",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "PP - NATURAL",
+      "asin": null,
+      "name": "PLASTIC GRANULES PP - NATURAL",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "CS12 - 748mm",
+      "asin": null,
+      "name": "SS 1/2\" x 0.6mm CS12 - 748mm PIPE",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "CS12 - 776mm",
+      "asin": null,
+      "name": "SS 1/2\" x 0.6mm CS12 - 776mm PIPE",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "CS8 - 827mm",
+      "asin": null,
+      "name": "SS 1/2\" x 0.6mm CS8 - 827mm",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "CS8 - 860mm",
+      "asin": null,
+      "name": "SS 1/2\" x 0.6mm CS8 - 860mm",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CB1",
+      "asin": null,
+      "name": "PLINTH 10\" x 14\" TEAK CHOPPING BOARD SY-CB1",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CB21",
+      "asin": null,
+      "name": "PLINTH 10 x 14\" ACACIA CHOPPING BOARD SY-CB21",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CB22L",
+      "asin": null,
+      "name": "PLINTH 16\" x 11\" ACACIA CHOPPING BOARD SY-CB22L",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CC1",
+      "asin": null,
+      "name": "PLINTH 18 PCS SS CLOTH CLIP WITH GRIP SY-CC1",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CS19-L1",
+      "asin": null,
+      "name": "PLINTH - 1 TIER - FLOOR CLOTH DRYER SY-CS19-L1",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CS20-L1",
+      "asin": null,
+      "name": "PLINTH - 1-TIER-FLOOR CLOTH DRYER SY-CS20-L1",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-ST1",
+      "asin": null,
+      "name": "PLINTH 2-LAYER SQUARE TROLLEY SY-ST1",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CS20-L2",
+      "asin": null,
+      "name": "PLINTH 2-TIER CLOTH STAND GREY SY-CS20-L2",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CS19-L2",
+      "asin": null,
+      "name": "PLINTH 2-TIER CLOTH STAND SY-CS19-L2",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CS21-L2",
+      "asin": null,
+      "name": "PLINTH 2 TIER CLOTH STAND SY-CS21-L2",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-TH15",
+      "asin": null,
+      "name": "PLINTH 2-TIER SHELF SY-TH15",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-TH13",
+      "asin": null,
+      "name": "PLINTH 3IN1 DOUBLE SHELF SY-TH13",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-ST-3L",
+      "asin": null,
+      "name": "PLINTH 3 LAYER SQUARE TROLLEY SY-ST-3L",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CS19",
+      "asin": null,
+      "name": "PLINTH 3 TIER CLOTH STAND BLUE SY-CS19",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CS21",
+      "asin": null,
+      "name": "PLINTH 3 TIER CLOTH STAND WHITE SY-CS21",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-TH10",
+      "asin": null,
+      "name": "PLINTH 4 ARM TOWEL HOLDER SY-TH10",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-ST-4L",
+      "asin": null,
+      "name": "PLINTH 4 LAYER SQUARE TROLLEY SY-ST-4L",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CL-ACC-4P",
+      "asin": null,
+      "name": "PLINTH 4 PIPES LUXURY ACCESSORIES SY-CL-ACC-4P",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CL1-4P",
+      "asin": null,
+      "name": "PLINTH 4 PIPES x 4 FEET LUXURY SY-CL1-4P",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CL2-4P",
+      "asin": null,
+      "name": "PLINTH 4 PIPES x 5 FEET LUXURY SY-CL2-4P",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CL3-4P",
+      "asin": null,
+      "name": "PLINTH 4 PIPES x 6 FEET LUXURY SY-CL3-4P",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CL4-4P",
+      "asin": null,
+      "name": "PLINTH 4 PIPES x 7 FEET LUXURY SY-CL4-4P",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CL5-4P",
+      "asin": null,
+      "name": "PLINTH 4 PIPES x 8 FEET LUXURY SY-CL5-4P",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CS20-L4",
+      "asin": null,
+      "name": "PLINTH 4-TIER CLOTH STAND GREY SY-CS20-L4",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CS19-L4",
+      "asin": null,
+      "name": "PLINTH 4-TIER CLOTH STAND SY-CS19-L4",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CS21-L4",
+      "asin": null,
+      "name": "PLINTH 4-TIER CLOTH STAND SY-CS21-L4",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-ST-5L",
+      "asin": null,
+      "name": "PLINTH 5 LAYER SQUARE TROLLEY SY-ST-5L",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CL-ACC-6P",
+      "asin": null,
+      "name": "PLINTH 6 PIPES LUXURY ACCESSORIES SY-CL-ACC-6P",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CS3",
+      "asin": null,
+      "name": "PLINTH 7 ROD WALL MOUNT CLOTH DRYER SY-CS3",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CL-ACC-8P",
+      "asin": null,
+      "name": "PLINTH 8 PIPES LUXURY ACCESSORIES SY-CL-ACC-8P",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CL1-8P",
+      "asin": null,
+      "name": "PLINTH 8 PIPES x 4 FEET LUXURY SY-CL1-8P",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CL2-8P",
+      "asin": null,
+      "name": "PLINTH 8 PIPES x 5 FEET LUXURY SY-CL2-8P",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CL3-8P",
+      "asin": null,
+      "name": "PLINTH 8 PIPES x 6 FEET LUXURY SY-CL3-8P",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CL4-8P",
+      "asin": null,
+      "name": "PLINTH 8 PIPES x 7 FEET LUXURY SY-CL4-8P",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CL5-8P",
+      "asin": null,
+      "name": "PLINTH 8 PIPES x 8 FEET LUXURY SY-CL5-8P",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CS6",
+      "asin": null,
+      "name": "PLINTH 9 ROD WALL MOUNT CLOTH DRYER SY-CS6",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-IM2",
+      "asin": null,
+      "name": "PLINTH ALUMINISED IRONING MAT SY-IM2",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "CS10 - ONLINE",
+      "asin": null,
+      "name": "PLINTH BED STYLE CLOTH DRYER CS10 - ONLINE",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "CS10 - RAW",
+      "asin": null,
+      "name": "PLINTH BED STYLE CLOTH DRYER SY-CS10 - RAW",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CS19-304",
+      "asin": null,
+      "name": "PLINTH CLOTH STAND SY-CS19 - 304",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "CS20- COMBO",
+      "asin": null,
+      "name": "PLINTH CLOTH STAND SY-CS20- COMBO",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CS20",
+      "asin": null,
+      "name": "PLINTH CLOTH STAND SY-CS20 GREY",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CS21-304",
+      "asin": null,
+      "name": "PLINTH CLOTH STAND SY-CS21 - 304",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CS21-COMBO",
+      "asin": null,
+      "name": "PLINTH CLOTH STAND SY-CS21-COMBO",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-TH1",
+      "asin": null,
+      "name": "PLINTH DOUBLE TOWEL ROD CHROME SY-TH1",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-TH5",
+      "asin": null,
+      "name": "PLINTH DOUBLE TOWEL ROD STRAIGHT SY-TH5",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-TH2",
+      "asin": null,
+      "name": "PLINTH DOUBLE TOWEL ROD SY-TH2",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CE3-304",
+      "asin": null,
+      "name": "PLINTH ECONOMY 6 PIPE x 6 FEET SY-CE3-304",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CE2",
+      "asin": null,
+      "name": "PLINTH ECONOMY PULLEY 6 PIPES x 5 FEET SY-CE2",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CE1",
+      "asin": null,
+      "name": "PLINTH ECONOMY PULLEY 6 PIPE x 4 FEET SY-CE1",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CE3",
+      "asin": null,
+      "name": "PLINTH ECONOMY PULLEY 6 PIPE x 6 FEET SY-CE3",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-GL1-3P",
+      "asin": null,
+      "name": "PLINTH GLIDER 3 PIPE x 2 FEET SY-GL1-3P",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-GL2-3P",
+      "asin": null,
+      "name": "PLINTH GLIDER 3 PIPE x 3 FEET SY-GL2-3P",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-GL3-3P",
+      "asin": null,
+      "name": "PLINTH GLIDER 3 PIPE x 4 FEET SY-GL3-3P",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-GL4-3P",
+      "asin": null,
+      "name": "PLINTH GLIDER 3 PIPE x 5 FEET SY-GL4-3P",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-GL5-3P",
+      "asin": null,
+      "name": "PLINTH GLIDER 3 PIPE x 6 FEET SY-GL5-3P",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-GL1-4P",
+      "asin": null,
+      "name": "PLINTH GLIDER 4 PIPE x 2 FEET SY-GL1-4P",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-GL2-4P",
+      "asin": null,
+      "name": "PLINTH GLIDER 4 PIPE x 3 FEET SY-GL2-4P",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-GL3-4P",
+      "asin": null,
+      "name": "PLINTH GLIDER 4 PIPE x 4 FEET SY-GL3-4P",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-GL4-4P",
+      "asin": null,
+      "name": "PLINTH GLIDER 4 PIPE x 5 FEET SY-GL4-4P",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-GL5-4P",
+      "asin": null,
+      "name": "PLINTH GLIDER 4 PIPE x 6 FEET SY-GL5-4P",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-GL1",
+      "asin": null,
+      "name": "PLINTH GLIDER 5 PIPE x 2 FEET SY-GL1",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-GL2",
+      "asin": null,
+      "name": "PLINTH GLIDER 5 PIPE x 3 FEET SY-GL2",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-GL3",
+      "asin": null,
+      "name": "PLINTH GLIDER 5 PIPE x 4 FEET SY-GL3",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-GL4",
+      "asin": null,
+      "name": "PLINTH GLIDER 5 PIPE x 5 FEET SY-GL4",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-GL5",
+      "asin": null,
+      "name": "PLINTH GLIDER 5 PIPE x 6 FEET SY-GL5",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-GL11",
+      "asin": null,
+      "name": "PLINTH GLIDER 6 PIPE x 2 FEET SY-GL11",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-GL12",
+      "asin": null,
+      "name": "PLINTH GLIDER 6 PIPE x 3 FEET SY-GL12",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-GL13",
+      "asin": null,
+      "name": "PLINTH GLIDER 6 PIPE x 4 FEET SY-GL13",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-GL14",
+      "asin": null,
+      "name": "PLINTH GLIDER 6 PIPE x 5 FEET SY-GL14",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-GL15",
+      "asin": null,
+      "name": "PLINTH GLIDER 6 PIPE x 6 FEET SY-GL15",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-IM1",
+      "asin": null,
+      "name": "PLINTH IRONING MAT SY-IM1",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CL1",
+      "asin": null,
+      "name": "PLINTH LUXURY CEILING PULLEY 4 FEET SY-CL1",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CL2",
+      "asin": null,
+      "name": "PLINTH LUXURY CEILING PULLEY 5 FEET SY-CL2",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CL3",
+      "asin": null,
+      "name": "PLINTH LUXURY CEILING PULLEY 6 FEET SY-CL3",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CL4",
+      "asin": null,
+      "name": "PLINTH LUXURY CEILING PULLEY 7 FEET SY-CL4",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CL5",
+      "asin": null,
+      "name": "PLINTH LUXURY CEILING PULLEY 8 FEET SY-CL5",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-KA1",
+      "asin": null,
+      "name": "PLINTH OVEN STAND BROWN SY-KA1",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-KA2",
+      "asin": null,
+      "name": "PLINTH OVEN STAND WHITE SY-KA2",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CC2",
+      "asin": null,
+      "name": "PLINTH PLASTIC CLIPS SY-CC2",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-TH11",
+      "asin": null,
+      "name": "PLINTH PREMIUM DOUBLE TOWEL ROD SY-TH11",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-TH12",
+      "asin": null,
+      "name": "PLINTH PREMIUM STRAIGHT TOWEL ROD SY-TH12",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-TH3",
+      "asin": null,
+      "name": "PLINTH RECTANGLE SINGLE TOWEL ROD SY-TH3",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CB2",
+      "asin": null,
+      "name": "PLINTH ROUND CHOPPING BOARD SY-CB2",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-TH14",
+      "asin": null,
+      "name": "PLINTH SINGLE SHELF SY-TH14",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-TH6",
+      "asin": null,
+      "name": "PLINTH SINGLE TOWEL ROD SY-TH6",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-TH8",
+      "asin": null,
+      "name": "PLINTH SS304 24 INCH TOWEL RACK SY-TH8",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CB12",
+      "asin": null,
+      "name": "PLINTH SS304 CHOPPING BOARD 10x13.5\" SY-CB12",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CB13",
+      "asin": null,
+      "name": "PLINTH SS304 CHOPPING BOARD 12x20\" SY-CB13",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CB11",
+      "asin": null,
+      "name": "PLINTH SS304 CHOPPING BOARD 8x12\" SY-CB11",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CS8 - RAW",
+      "asin": null,
+      "name": "PLINTH SS 3 TIER CLOTH DRYER SY-CS8",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CS9 - RAW",
+      "asin": null,
+      "name": "PLINTH SS CLOTH DRYER 11 RODS - SY-CS9",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CS11 - RAW",
+      "asin": null,
+      "name": "PLINTH SS CLOTH DRYER 17 RODS SY-CS11",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CS12 - RAW",
+      "asin": null,
+      "name": "PLINTH SS CLOTH STAND 13 RODS SY-CS12",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CS11 - ONLINE",
+      "asin": null,
+      "name": "PLINTH SS DIAMOND 17 RODS W/H OUTER BOX",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CS5",
+      "asin": null,
+      "name": "PLINTH SS DOUBLE POLE CLOTH STAND COMBO SY-CS5.3",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CS12 - ONLINE",
+      "asin": null,
+      "name": "PLINTH SS STAND 13 RODS W/H OUTER BOX SY-CS12",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CS18",
+      "asin": null,
+      "name": "PLINTH SS WING DRYER SY-CS18",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CS1",
+      "asin": null,
+      "name": "PLINTH SS WING DRYER SY-CS1",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CS13",
+      "asin": null,
+      "name": "PLINTH SY-CS13 HEAVY CLIP CLOTH HANGER (25 CLIPS)",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CS15",
+      "asin": null,
+      "name": "PLINTH SY-CS15 REGULAR CLIP CLOTH HANGER (25 CLIPS)",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CS16",
+      "asin": null,
+      "name": "PLINTH SY-CS16 REGULAR CLIP HEXAGON CLOTH HANGER (27 CLIPS)",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CS17",
+      "asin": null,
+      "name": "PLINTH SY-CS17 REGULAR CLIP ROUND CLOTH HANGER (24 CLIPS)",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CS3-COMBO",
+      "asin": null,
+      "name": "PLINTH SY-CS3-COMBO",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CS6-COMBO",
+      "asin": null,
+      "name": "PLINTH SY-CS6-COMBO",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CS8 - ONLINE",
+      "asin": null,
+      "name": "PLINTH SY-CS8 - ONLINE",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-TH7",
+      "asin": null,
+      "name": "PLINTH TOWEL RACK 1.5 FEET SY-TH7",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-TH4",
+      "asin": null,
+      "name": "PLINTH TOWEL RACK SY-TH4",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "SY-CS2",
+      "asin": null,
+      "name": "PLINTH WALL MOUNTING CLOTH DRYER SY-CS2",
+      "mrp": null,
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "sku": "CS19-COMBO",
+      "asin": null,
+      "name": "CS19-COMBO",
+      "mrp": null,
+      "source": "FLOOR AUDIT NEW.xlsm"
+    },
+    {
+      "sku": "CS21-COMBO",
+      "asin": null,
+      "name": "CS21-COMBO",
+      "mrp": null,
+      "source": "FLOOR AUDIT NEW.xlsm"
+    },
+    {
+      "sku": "CS3COMBO",
+      "asin": null,
+      "name": "CS3COMBO",
+      "mrp": null,
+      "source": "FLOOR AUDIT NEW.xlsm"
+    },
+    {
+      "sku": "CS6COMBO",
+      "asin": null,
+      "name": "CS6COMBO",
+      "mrp": null,
+      "source": "FLOOR AUDIT NEW.xlsm"
+    },
+    {
+      "sku": "CS-13 - RAW",
+      "asin": null,
+      "name": "JHUMER - CS-13 - RAW",
+      "mrp": null,
+      "source": "FLOOR AUDIT NEW.xlsm"
+    },
+    {
+      "sku": "CS13 - ONLINE",
+      "asin": null,
+      "name": "CS13 - ONLINE",
+      "mrp": null,
+      "source": "FLOOR AUDIT NEW.xlsm"
+    },
+    {
+      "sku": "CS-15 - RAW",
+      "asin": null,
+      "name": "CS-15 - RAW",
+      "mrp": null,
+      "source": "FLOOR AUDIT NEW.xlsm"
+    },
+    {
+      "sku": "CS15 - ONLINE",
+      "asin": null,
+      "name": "CS15 - ONLINE",
+      "mrp": null,
+      "source": "FLOOR AUDIT NEW.xlsm"
+    },
+    {
+      "sku": "CS-16 -RAW",
+      "asin": null,
+      "name": "CS-16 -RAW",
+      "mrp": null,
+      "source": "FLOOR AUDIT NEW.xlsm"
+    },
+    {
+      "sku": "CS16 - ONLINE",
+      "asin": null,
+      "name": "CS16 - ONLINE",
+      "mrp": null,
+      "source": "FLOOR AUDIT NEW.xlsm"
+    },
+    {
+      "sku": "CS-17 - RAW",
+      "asin": null,
+      "name": "CS-17 - RAW",
+      "mrp": null,
+      "source": "FLOOR AUDIT NEW.xlsm"
+    },
+    {
+      "sku": "CS-17 - ONLINE",
+      "asin": null,
+      "name": "CS-17 - ONLINE",
+      "mrp": null,
+      "source": "FLOOR AUDIT NEW.xlsm"
+    },
+    {
+      "sku": "CS1- RAW",
+      "asin": null,
+      "name": "SS STAND - CS1- RAW",
+      "mrp": null,
+      "source": "FLOOR AUDIT NEW.xlsm"
+    },
+    {
+      "sku": "CS1 - ONLINE",
+      "asin": null,
+      "name": "CS1 - ONLINE",
+      "mrp": null,
+      "source": "FLOOR AUDIT NEW.xlsm"
+    },
+    {
+      "sku": "CS8 - RAW",
+      "asin": null,
+      "name": "CS8 - RAW",
+      "mrp": null,
+      "source": "FLOOR AUDIT NEW.xlsm"
+    },
+    {
+      "sku": "CS8 - ONLINE",
+      "asin": null,
+      "name": "CS8 - ONLINE",
+      "mrp": null,
+      "source": "FLOOR AUDIT NEW.xlsm"
+    },
+    {
+      "sku": "CS12 - RAW",
+      "asin": null,
+      "name": "CS12 - RAW",
+      "mrp": null,
+      "source": "FLOOR AUDIT NEW.xlsm"
+    },
+    {
+      "sku": "CS12 - ONLINE",
+      "asin": null,
+      "name": "CS12 - ONLINE",
+      "mrp": null,
+      "source": "FLOOR AUDIT NEW.xlsm"
+    },
+    {
+      "sku": "CS18 - RAW",
+      "asin": null,
+      "name": "CS18 - RAW",
+      "mrp": null,
+      "source": "FLOOR AUDIT NEW.xlsm"
+    },
+    {
+      "sku": "CS18 - ONLINE",
+      "asin": null,
+      "name": "CS18 - ONLINE",
+      "mrp": null,
+      "source": "FLOOR AUDIT NEW.xlsm"
+    },
+    {
+      "sku": "CS11 - RAW",
+      "asin": null,
+      "name": "CS11 - RAW",
+      "mrp": null,
+      "source": "FLOOR AUDIT NEW.xlsm"
+    },
+    {
+      "sku": "CS11 - ONLINE",
+      "asin": null,
+      "name": "CS11 - ONLINE",
+      "mrp": null,
+      "source": "FLOOR AUDIT NEW.xlsm"
+    },
+    {
+      "sku": "CS9 - RAW",
+      "asin": null,
+      "name": "CS9 - RAW",
+      "mrp": null,
+      "source": "FLOOR AUDIT NEW.xlsm"
+    },
+    {
+      "sku": "CS9 - ONLINE",
+      "asin": null,
+      "name": "CS9 - ONLINE",
+      "mrp": null,
+      "source": "FLOOR AUDIT NEW.xlsm"
+    },
+    {
+      "sku": "ST-3L -PACKED",
+      "asin": null,
+      "name": "TROLLY - ST-3L -PACKED",
+      "mrp": null,
+      "source": "FLOOR AUDIT NEW.xlsm"
+    },
+    {
+      "sku": "ST-4L - PACKED",
+      "asin": null,
+      "name": "ST-4L - PACKED",
+      "mrp": null,
+      "source": "FLOOR AUDIT NEW.xlsm"
+    },
+    {
+      "sku": "ST-5L - PACKED",
+      "asin": null,
+      "name": "ST-5L - PACKED",
+      "mrp": null,
+      "source": "FLOOR AUDIT NEW.xlsm"
+    }
+  ],
+  "materials": [
+    {
+      "code": "10-20-SEMI-ROUND-CAP",
+      "name": "10*20 SEMI ROUND CAP",
+      "specs": "10*20 SEMI ROUND CAP",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "16-16-SQUARE-TOP-CAP",
+      "name": "16*16 SQUARE TOP CAP",
+      "specs": "16*16 SQUARE TOP CAP",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "18-18-SQUARE-BOTTOM-CAP",
+      "name": "18*18 SQUARE BOTTOM CAP",
+      "specs": "18*18 SQUARE BOTTOM CAP",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "18-18-SQUARE-TOP-CAP",
+      "name": "18*18 SQUARE TOP CAP",
+      "specs": "18*18 SQUARE TOP CAP",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "ABS-NATURAL-MATERIAL",
+      "name": "ABS NATURAL MATERIAL",
+      "specs": "ABS NATURAL MATERIAL",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "ADI-JUNIOR-CLOTH-CLIPS",
+      "name": "ADI JUNIOR CLOTH CLIPS",
+      "specs": "ADI JUNIOR CLOTH CLIPS",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CB1-BOX",
+      "name": "CB1 - BOX",
+      "specs": "CB1 - BOX",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CB-2L-BOX",
+      "name": "CB-2L BOX",
+      "specs": "CB-2L BOX",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CC1-BOX",
+      "name": "CC1 BOX",
+      "specs": "CC1 BOX",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CC1-CLIPS-RAW",
+      "name": "CC1 CLIPS - RAW",
+      "specs": "CC1 CLIPS - RAW",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CHOPPING-BOARD-CB21-RAW",
+      "name": "CHOPPING BOARD CB21 - RAW",
+      "specs": "CHOPPING BOARD CB21 - RAW",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CHOPPING-BOARD-CB-22L-RAW",
+      "name": "CHOPPING BOARD CB-22L - RAW",
+      "specs": "CHOPPING BOARD CB-22L - RAW",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CHOPPING-BOARD-CB-2L-RAW",
+      "name": "CHOPPING BOARD CB-2L - RAW",
+      "specs": "CHOPPING BOARD CB-2L - RAW",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CONNECTING-TUBE-5-16",
+      "name": "CONNECTING TUBE 5/16\"",
+      "specs": "CONNECTING TUBE 5/16\"",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CONNECTOR-SCREW-4-12",
+      "name": "CONNECTOR SCREW 4*12",
+      "specs": "CONNECTOR SCREW 4*12",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS10-BOTTOM-CAP",
+      "name": "CS10 - BOTTOM CAP",
+      "specs": "CS10 - BOTTOM CAP",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS10-BOTTOM-LEGS-FRAME-2200",
+      "name": "CS10 - BOTTOM LEGS FRAME - 2200",
+      "specs": "CS10 - BOTTOM LEGS FRAME - 2200",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS10-HOLDING-PLATE",
+      "name": "CS10 - HOLDING PLATE",
+      "specs": "CS10 - HOLDING PLATE",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS10-HOLDING-TUBE",
+      "name": "CS10 - HOLDING TUBE",
+      "specs": "CS10 - HOLDING TUBE",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS10-MAIN-RODS-9-5-1135",
+      "name": "CS10 - MAIN RODS (9.5) - 1135",
+      "specs": "CS10 - MAIN RODS (9.5) - 1135",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS10-OUTER-BOX",
+      "name": "CS10 - OUTER BOX",
+      "specs": "CS10 - OUTER BOX",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS10-SIDE-WING-1388",
+      "name": "CS10 - SIDE WING - 1388",
+      "specs": "CS10 - SIDE WING - 1388",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS10-SQUARE-CAP",
+      "name": "CS10-SQUARE CAP",
+      "specs": "CS10-SQUARE CAP",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS10-TOP-FRAME-3205",
+      "name": "CS10 - TOP FRAME - 3205",
+      "specs": "CS10 - TOP FRAME - 3205",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS10-WING-RODS-9-5-523",
+      "name": "CS10 - WING RODS (9.5) - 523",
+      "specs": "CS10 - WING RODS (9.5) - 523",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS11-CHAIN-3MM",
+      "name": "CS11 CHAIN 3mm",
+      "specs": "CS11 CHAIN 3mm",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS11-LEG",
+      "name": "CS11 LEG",
+      "specs": "CS11 LEG",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS11-MAIN-BOX",
+      "name": "CS11 MAIN BOX",
+      "specs": "CS11 MAIN BOX",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS11-PIPE-1-18X18-1200MM",
+      "name": "CS11 - PIPE 1 - (18x18) - 1200mm",
+      "specs": "CS11 - PIPE 1 - (18x18) - 1200mm",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS11-PIPE-2-18X18-1200MM",
+      "name": "CS11 - PIPE 2 - (18x18) - 1200mm",
+      "specs": "CS11 - PIPE 2 - (18x18) - 1200mm",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS11-PIPE-3-10X20-450MM",
+      "name": "CS11 - PIPE 3 - (10x20) - 450mm",
+      "specs": "CS11 - PIPE 3 - (10x20) - 450mm",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS11-PIPE-4-10X20-650MM",
+      "name": "CS11 - PIPE 4 - (10x20) - 650mm",
+      "specs": "CS11 - PIPE 4 - (10x20) - 650mm",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS11-PIPE-5-10X20-450MM",
+      "name": "CS11 - PIPE 5 - (10x20) - 450mm",
+      "specs": "CS11 - PIPE 5 - (10x20) - 450mm",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS11-PIPE-6-10X20-250MM",
+      "name": "CS11 - PIPE 6 - (10x20) - 250mm",
+      "specs": "CS11 - PIPE 6 - (10x20) - 250mm",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS11-PIPE-7-10X20-450MM",
+      "name": "CS11 - PIPE 7 - (10x20) - 450mm",
+      "specs": "CS11 - PIPE 7 - (10x20) - 450mm",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS11-PIPE-8-10X20-650MM",
+      "name": "CS11 - PIPE 8 - (10x20) - 650mm",
+      "specs": "CS11 - PIPE 8 - (10x20) - 650mm",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS12-JACKET-BOX",
+      "name": "CS12 - JACKET BOX",
+      "specs": "CS12 - JACKET BOX",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS12-LOWER-FRAME-WITHOUT-RODS-2710",
+      "name": "CS12 - LOWER FRAME WITHOUT RODS (2710)",
+      "specs": "CS12 - LOWER FRAME WITHOUT RODS (2710)",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS12-LOWER-FRAME-WITH-RODS-2660",
+      "name": "CS12 - LOWER FRAME WITH RODS (2660)",
+      "specs": "CS12 - LOWER FRAME WITH RODS (2660)",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS12-MAIN-BOX",
+      "name": "CS12 - MAIN BOX",
+      "specs": "CS12 - MAIN BOX",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS12-OUTER-BOX",
+      "name": "CS12 - OUTER BOX",
+      "specs": "CS12 - OUTER BOX",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS12-TOP-FRAME-WITHOUT-RODS-2720",
+      "name": "CS12 - TOP FRAME WITHOUT RODS (2720)",
+      "specs": "CS12 - TOP FRAME WITHOUT RODS (2720)",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS12-TOP-FRAME-WITH-RODS-2670",
+      "name": "CS12 - TOP FRAME WITH RODS (2670)",
+      "specs": "CS12 - TOP FRAME WITH RODS (2670)",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS12-TOP-ROD",
+      "name": "CS12 - TOP ROD",
+      "specs": "CS12 - TOP ROD",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS15-BOX",
+      "name": "CS15 BOX",
+      "specs": "CS15 BOX",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS18-RAW",
+      "name": "CS18 - RAW",
+      "specs": "CS18 - RAW",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS19-A-ROD",
+      "name": "CS19 - A-ROD",
+      "specs": "CS19 - A-ROD",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS19-BASE",
+      "name": "CS19 - BASE",
+      "specs": "CS19 - BASE",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS19-B-ROD",
+      "name": "CS19 - B-ROD",
+      "specs": "CS19 - B-ROD",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS19-B-ROD-304",
+      "name": "CS19 - B ROD - 304",
+      "specs": "CS19 - B ROD - 304",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS19-B-ROD-L1",
+      "name": "CS19 - B ROD - L1",
+      "specs": "CS19 - B ROD - L1",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS19-C-ROD",
+      "name": "CS19 - C-ROD",
+      "specs": "CS19 - C-ROD",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS19-C-ROD-304",
+      "name": "CS19 - C-ROD - 304",
+      "specs": "CS19 - C-ROD - 304",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS19-D-ROD-L4",
+      "name": "CS19 - D ROD - L4",
+      "specs": "CS19 - D ROD - L4",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS19-E-ROD-L4",
+      "name": "CS19 - E ROD - L4",
+      "specs": "CS19 - E ROD - L4",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS19-F-ROD-L4",
+      "name": "CS19 - F ROD - L4",
+      "specs": "CS19 - F ROD - L4",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS19-HANGER-HOLDER",
+      "name": "CS19 - HANGER HOLDER",
+      "specs": "CS19 - HANGER HOLDER",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS19-INNER-BOX",
+      "name": "CS19 - INNER BOX",
+      "specs": "CS19 - INNER BOX",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS19-L-CONNECTOR",
+      "name": "CS19 - L CONNECTOR",
+      "specs": "CS19 - L CONNECTOR",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS19-L-NUT-L4",
+      "name": "CS19 - L NUT - L4",
+      "specs": "CS19 - L NUT - L4",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS19-MIDDLE-CONNECTOR",
+      "name": "CS19 - MIDDLE CONNECTOR",
+      "specs": "CS19 - MIDDLE CONNECTOR",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS19-NUT-5MM-LOCKNUT",
+      "name": "CS19 - NUT - 5mm LOCKNUT",
+      "specs": "CS19 - NUT - 5mm LOCKNUT",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS19-OUTER-BOX",
+      "name": "CS19 - OUTER BOX",
+      "specs": "CS19 - OUTER BOX",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS19-SCREW",
+      "name": "CS19 - SCREW",
+      "specs": "CS19 - SCREW",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS19-TOP-CONNECTOR",
+      "name": "CS19 - TOP CONNECTOR",
+      "specs": "CS19 - TOP CONNECTOR",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS19-WHEELS-WITH-LOCK",
+      "name": "CS19 - WHEELS WITH LOCK",
+      "specs": "CS19 - WHEELS WITH LOCK",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS19-WHEELS-WITHOUT-LOCK",
+      "name": "CS19 - WHEELS WITHOUT LOCK",
+      "specs": "CS19 - WHEELS WITHOUT LOCK",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS19-WING-PATTI",
+      "name": "CS19 - WING PATTI",
+      "specs": "CS19 - WING PATTI",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS19-WING-ROD",
+      "name": "CS19 - WING ROD",
+      "specs": "CS19 - WING ROD",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS19-WING-ROD-304",
+      "name": "CS19 - WING ROD - 304",
+      "specs": "CS19 - WING ROD - 304",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS1-RAW",
+      "name": "CS1 - RAW",
+      "specs": "CS1 - RAW",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS20-BASE",
+      "name": "CS20 - BASE",
+      "specs": "CS20 - BASE",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS20-HANGER-HOLDER",
+      "name": "CS20 - HANGER HOLDER",
+      "specs": "CS20 - HANGER HOLDER",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS20-L-CONNECTOR",
+      "name": "CS20 L-CONNECTOR",
+      "specs": "CS20 L-CONNECTOR",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS20-L-NUT-L4",
+      "name": "CS20 - L NUT - L4",
+      "specs": "CS20 - L NUT - L4",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS20-MIDDLE-CONNECTOR",
+      "name": "CS20 - MIDDLE CONNECTOR",
+      "specs": "CS20 - MIDDLE CONNECTOR",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS20-TOP-CONNECTOR",
+      "name": "CS20 - TOP CONNECTOR",
+      "specs": "CS20 - TOP CONNECTOR",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS20-WING-PATTI",
+      "name": "CS20 - WING PATTI",
+      "specs": "CS20 - WING PATTI",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS21-BASE",
+      "name": "CS21 - BASE",
+      "specs": "CS21 - BASE",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS21-HANGER-HOLDER",
+      "name": "CS21 - HANGER HOLDER",
+      "specs": "CS21 - HANGER HOLDER",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS21-L-CONNECTOR",
+      "name": "CS21 - L CONNECTOR",
+      "specs": "CS21 - L CONNECTOR",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS21-L-NUT-L4",
+      "name": "CS21 - L NUT - L4",
+      "specs": "CS21 - L NUT - L4",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS21-MIDDLE-CONNECTOR",
+      "name": "CS21 - MIDDLE CONNECTOR",
+      "specs": "CS21 - MIDDLE CONNECTOR",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS21-TOP-CONNECTOR",
+      "name": "CS21 - TOP CONNECTOR",
+      "specs": "CS21 - TOP CONNECTOR",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS21-WING-PATTI",
+      "name": "CS21 - WING PATTI",
+      "specs": "CS21 - WING PATTI",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS3-BEND-LHS",
+      "name": "CS3 BEND LHS",
+      "specs": "CS3 BEND LHS",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS3-BEND-RHS",
+      "name": "CS3 BEND RHS",
+      "specs": "CS3 BEND RHS",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS3-INNER-BOX",
+      "name": "CS3 INNER BOX",
+      "specs": "CS3 INNER BOX",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS3-LONG-PATTI",
+      "name": "CS3 - LONG PATTI",
+      "specs": "CS3 - LONG PATTI",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS3-OUTER-BOX",
+      "name": "CS3 OUTER BOX",
+      "specs": "CS3 OUTER BOX",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS3-SHORT-PATTI",
+      "name": "CS3 - SHORT PATTI",
+      "specs": "CS3 - SHORT PATTI",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS8-BOTTOM-CAP-RUBBER",
+      "name": "CS8 - BOTTOM CAP (RUBBER)",
+      "specs": "CS8 - BOTTOM CAP (RUBBER)",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS8-JACKET-BOX",
+      "name": "CS8 - JACKET BOX",
+      "specs": "CS8 - JACKET BOX",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS8-LOWER-FRAME-WITHOUT-RODS-3070",
+      "name": "CS8 - LOWER FRAME WITHOUT RODS (3070)",
+      "specs": "CS8 - LOWER FRAME WITHOUT RODS (3070)",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS8-LOWER-FRAME-WITH-RODS-3020",
+      "name": "CS8 - LOWER FRAME WITH RODS (3020)",
+      "specs": "CS8 - LOWER FRAME WITH RODS (3020)",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS8-MAIN-BOX",
+      "name": "CS8 - MAIN BOX",
+      "specs": "CS8 - MAIN BOX",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS8-SIDE-CAP",
+      "name": "CS8 - SIDE CAP",
+      "specs": "CS8 - SIDE CAP",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS8-TOP-FRAME-WITHOUT-RODS-3080",
+      "name": "CS8 - TOP FRAME WITHOUT RODS (3080)",
+      "specs": "CS8 - TOP FRAME WITHOUT RODS (3080)",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS8-TOP-FRAME-WITH-RODS-3030",
+      "name": "CS8 - TOP FRAME WITH RODS (3030)",
+      "specs": "CS8 - TOP FRAME WITH RODS (3030)",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS8-TOP-ROD",
+      "name": "CS8 - TOP ROD",
+      "specs": "CS8 - TOP ROD",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CS9-PIPE-1-18X18-1200MM",
+      "name": "CS9 - PIPE 1 - (18x18) - 1200mm",
+      "specs": "CS9 - PIPE 1 - (18x18) - 1200mm",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CUNCIL-SS-HAVY-8481",
+      "name": "CUNCIL SS HAVY [8481]",
+      "specs": "CUNCIL SS HAVY [8481]",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CUSTOMISED-GLIDER",
+      "name": "CUSTOMISED GLIDER",
+      "specs": "CUSTOMISED GLIDER",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "CUSTOMISED-RODS",
+      "name": "CUSTOMISED RODS",
+      "specs": "CUSTOMISED RODS",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "ECONOMY-6-PIPES-ACCESSORIES",
+      "name": "ECONOMY - 6 PIPES - ACCESSORIES",
+      "specs": "ECONOMY - 6 PIPES - ACCESSORIES",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "ECONOMY-6-PIPES-FRAME-PACKED",
+      "name": "ECONOMY - 6 PIPES - FRAME PACKED",
+      "specs": "ECONOMY - 6 PIPES - FRAME PACKED",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "ECONOMY-ACCESSORIES-BOX",
+      "name": "ECONOMY ACCESSORIES BOX",
+      "specs": "ECONOMY ACCESSORIES BOX",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "ECONOMY-FRAME-RAW",
+      "name": "ECONOMY - FRAME RAW",
+      "specs": "ECONOMY - FRAME RAW",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "ECONOMY-FRAME-ROPE",
+      "name": "ECONOMY FRAME ROPE",
+      "specs": "ECONOMY FRAME ROPE",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "ECONOMY-HOOK",
+      "name": "ECONOMY HOOK",
+      "specs": "ECONOMY HOOK",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "ECONOMY-PACKET",
+      "name": "ECONOMY PACKET",
+      "specs": "ECONOMY PACKET",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "ECONOMY-PULLEY-DOUBLE",
+      "name": "ECONOMY PULLEY - DOUBLE",
+      "specs": "ECONOMY PULLEY - DOUBLE",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "ECONOMY-PULLEY-SINGLE",
+      "name": "ECONOMY PULLEY - SINGLE",
+      "specs": "ECONOMY PULLEY - SINGLE",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "ECONOMY-ROPE-BRAIDED-5MM-CUT",
+      "name": "ECONOMY ROPE BRAIDED 5mm - CUT",
+      "specs": "ECONOMY ROPE BRAIDED 5mm - CUT",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "ECONOMY-ROPE-BRAIDED-5MM-RAW",
+      "name": "ECONOMY ROPE BRAIDED 5mm - RAW",
+      "specs": "ECONOMY ROPE BRAIDED 5mm - RAW",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "ECONOMY-SIDE-CAP",
+      "name": "ECONOMY SIDE CAP",
+      "specs": "ECONOMY SIDE CAP",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "ECONOMY-SS-RING",
+      "name": "ECONOMY SS RING",
+      "specs": "ECONOMY SS RING",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "EZEE-CLOTH-CLIPPER",
+      "name": "EZEE CLOTH CLIPPER",
+      "specs": "EZEE CLOTH CLIPPER",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "GLIDER-3-PIPES-FRAME-PACKED",
+      "name": "GLIDER - 3 PIPES - FRAME PACKED",
+      "specs": "GLIDER - 3 PIPES - FRAME PACKED",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "GLIDER-3-PIPES-RAW-LHS",
+      "name": "GLIDER - 3 PIPES - RAW LHS",
+      "specs": "GLIDER - 3 PIPES - RAW LHS",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "GLIDER-3-PIPES-RAW-RHS",
+      "name": "GLIDER - 3 PIPES - RAW RHS",
+      "specs": "GLIDER - 3 PIPES - RAW RHS",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "GLIDER-3-ROD-PACKET",
+      "name": "GLIDER 3 ROD PACKET",
+      "specs": "GLIDER 3 ROD PACKET",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "GLIDER-4-PIPES-FRAME-PACKED",
+      "name": "GLIDER - 4 PIPES - FRAME PACKED",
+      "specs": "GLIDER - 4 PIPES - FRAME PACKED",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "GLIDER-4-PIPES-RAW-LHS",
+      "name": "GLIDER - 4 PIPES - RAW LHS",
+      "specs": "GLIDER - 4 PIPES - RAW LHS",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "GLIDER-4-PIPES-RAW-RHS",
+      "name": "GLIDER - 4 PIPES - RAW RHS",
+      "specs": "GLIDER - 4 PIPES - RAW RHS",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "GLIDER-4-ROD-PACKET",
+      "name": "GLIDER 4 ROD PACKET",
+      "specs": "GLIDER 4 ROD PACKET",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "GLIDER-5-PIPES-FRAME-PACKED",
+      "name": "GLIDER - 5 PIPES - FRAME PACKED",
+      "specs": "GLIDER - 5 PIPES - FRAME PACKED",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "GLIDER-5-PIPES-RAW-LHS",
+      "name": "GLIDER - 5 PIPES - RAW LHS",
+      "specs": "GLIDER - 5 PIPES - RAW LHS",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "GLIDER-5-PIPES-RAW-RHS",
+      "name": "GLIDER - 5 PIPES - RAW RHS",
+      "specs": "GLIDER - 5 PIPES - RAW RHS",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "GLIDER-5-ROD-PACKET",
+      "name": "GLIDER 5 ROD PACKET",
+      "specs": "GLIDER 5 ROD PACKET",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "GLIDER-6-PIPES-FRAME-PACKED",
+      "name": "GLIDER - 6 PIPES - FRAME PACKED",
+      "specs": "GLIDER - 6 PIPES - FRAME PACKED",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "GLIDER-6-PIPES-RAW-LHS",
+      "name": "GLIDER - 6 PIPES - RAW LHS",
+      "specs": "GLIDER - 6 PIPES - RAW LHS",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "GLIDER-6-PIPES-RAW-RHS",
+      "name": "GLIDER - 6 PIPES - RAW RHS",
+      "specs": "GLIDER - 6 PIPES - RAW RHS",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "GLIDER-6-ROD-PACKET",
+      "name": "GLIDER 6 ROD PACKET",
+      "specs": "GLIDER 6 ROD PACKET",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "GLIDER-FRONT-CAP-WHITE",
+      "name": "GLIDER FRONT CAP - WHITE",
+      "specs": "GLIDER FRONT CAP - WHITE",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "GLIDER-SCREW-10-50-CSK-PHILIPS",
+      "name": "GLIDER SCREW 10*50 CSK PHILIPS",
+      "specs": "GLIDER SCREW 10*50 CSK PHILIPS",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "GLIDER-SS-6-25-PAN-PHILIPS-MACHINE-SCREW",
+      "name": "GLIDER SS 6*25 PAN PHILIPS MACHINE SCREW",
+      "specs": "GLIDER SS 6*25 PAN PHILIPS MACHINE SCREW",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "GLIDER-SS-BRACKET",
+      "name": "GLIDER SS BRACKET",
+      "specs": "GLIDER SS BRACKET",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "GLIDER-WALL-PLUG-50-12",
+      "name": "GLIDER WALL PLUG 50*12",
+      "specs": "GLIDER WALL PLUG 50*12",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "GL-NYLON-ROPE-TWISTED",
+      "name": "GL NYLON ROPE TWISTED",
+      "specs": "GL NYLON ROPE TWISTED",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "IFB-WHITE",
+      "name": "IFB WHITE",
+      "specs": "IFB WHITE",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "IRON-BAR-72142090",
+      "name": "IRON BAR - 72142090",
+      "specs": "IRON BAR - 72142090",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "IRONING-BOARD-TABLE",
+      "name": "IRONING BOARD TABLE",
+      "specs": "IRONING BOARD TABLE",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "IRONING-MAT-IM1-RAW",
+      "name": "IRONING MAT IM1 - RAW",
+      "specs": "IRONING MAT IM1 - RAW",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "IRONING-MAT-IM2-RAW",
+      "name": "IRONING MAT IM2 - RAW",
+      "specs": "IRONING MAT IM2 - RAW",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "JALI-BUNBLE-73143900",
+      "name": "JALI BUNBLE - 73143900",
+      "specs": "JALI BUNBLE - 73143900",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "JET-BLACK",
+      "name": "JET BLACK",
+      "specs": "JET BLACK",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "JHUMER-SY-CS13-RAW",
+      "name": "JHUMER SY-CS13 - RAW",
+      "specs": "JHUMER SY-CS13 - RAW",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "JHUMER-SY-CS14-4MM-RAW",
+      "name": "JHUMER SY-CS14 (4mm) - RAW",
+      "specs": "JHUMER SY-CS14 (4mm) - RAW",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "JHUMER-SY-CS15-RAW",
+      "name": "JHUMER SY-CS15 - RAW",
+      "specs": "JHUMER SY-CS15 - RAW",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "JHUMER-SY-CS16-RAW",
+      "name": "JHUMER SY-CS16 - RAW",
+      "specs": "JHUMER SY-CS16 - RAW",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "JHUMER-SY-CS17-RAW",
+      "name": "JHUMER SY-CS17 - RAW",
+      "specs": "JHUMER SY-CS17 - RAW",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "LUXURY-4-PIPE-PACKET",
+      "name": "LUXURY 4 PIPE PACKET",
+      "specs": "LUXURY 4 PIPE PACKET",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "LUXURY-4-PIPES-ACCESSORIES",
+      "name": "LUXURY - 4 PIPES - ACCESSORIES",
+      "specs": "LUXURY - 4 PIPES - ACCESSORIES",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "LUXURY-4-PIPES-FRAME-PACKED",
+      "name": "LUXURY - 4 PIPES - FRAME PACKED",
+      "specs": "LUXURY - 4 PIPES - FRAME PACKED",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "LUXURY-4-PIPES-FRAME-RAW",
+      "name": "LUXURY - 4 PIPES - FRAME RAW",
+      "specs": "LUXURY - 4 PIPES - FRAME RAW",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "LUXURY-6-PIPE-PACKET",
+      "name": "LUXURY 6 PIPE PACKET",
+      "specs": "LUXURY 6 PIPE PACKET",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "LUXURY-6-PIPES-ACCESSORIES",
+      "name": "LUXURY - 6 PIPES - ACCESSORIES",
+      "specs": "LUXURY - 6 PIPES - ACCESSORIES",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "LUXURY-6-PIPES-FRAME-PACKED",
+      "name": "LUXURY - 6 PIPES - FRAME PACKED",
+      "specs": "LUXURY - 6 PIPES - FRAME PACKED",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "LUXURY-6-PIPES-FRAME-RAW",
+      "name": "LUXURY - 6 PIPES - FRAME RAW",
+      "specs": "LUXURY - 6 PIPES - FRAME RAW",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "LUXURY-8-PIPE-PACKET",
+      "name": "LUXURY 8 PIPE PACKET",
+      "specs": "LUXURY 8 PIPE PACKET",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "LUXURY-8-PIPES-ACCESSORIES",
+      "name": "LUXURY - 8 PIPES - ACCESSORIES",
+      "specs": "LUXURY - 8 PIPES - ACCESSORIES",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "LUXURY-8-PIPES-FRAME-PACKED",
+      "name": "LUXURY - 8 PIPES - FRAME PACKED",
+      "specs": "LUXURY - 8 PIPES - FRAME PACKED",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "LUXURY-8-PIPES-FRAME-RAW",
+      "name": "LUXURY - 8 PIPES - FRAME RAW",
+      "specs": "LUXURY - 8 PIPES - FRAME RAW",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "LUXURY-ACCESSORIES-BOX",
+      "name": "LUXURY ACCESSORIES BOX",
+      "specs": "LUXURY ACCESSORIES BOX",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "LUXURY-BIG-CAP-12MM",
+      "name": "LUXURY BIG CAP - 12mm",
+      "specs": "LUXURY BIG CAP - 12mm",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "LUXURY-BIG-CAP-16MM",
+      "name": "LUXURY BIG CAP - 16mm",
+      "specs": "LUXURY BIG CAP - 16mm",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "LUXURY-CUSTOM-ORDER",
+      "name": "LUXURY CUSTOM ORDER",
+      "specs": "LUXURY CUSTOM ORDER",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "LUXURY-FRAME-BOX",
+      "name": "LUXURY FRAME BOX",
+      "specs": "LUXURY FRAME BOX",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "LUXURY-INNER-BOX-BIG",
+      "name": "LUXURY INNER BOX - BIG",
+      "specs": "LUXURY INNER BOX - BIG",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "LUXURY-INNER-BOX-SMALL",
+      "name": "LUXURY INNER BOX - SMALL",
+      "specs": "LUXURY INNER BOX - SMALL",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "LUXURY-ROPE-BRAIDED-3MM-CUT",
+      "name": "LUXURY ROPE BRAIDED 3mm - CUT",
+      "specs": "LUXURY ROPE BRAIDED 3mm - CUT",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "LUXURY-ROPE-BRAIDED-3MM-RAW",
+      "name": "LUXURY ROPE BRAIDED 3mm - RAW",
+      "specs": "LUXURY ROPE BRAIDED 3mm - RAW",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "LUXURY-SCREW-8-38-MS-PAN-HEAD",
+      "name": "LUXURY SCREW 8*38 MS PAN HEAD",
+      "specs": "LUXURY SCREW 8*38 MS PAN HEAD",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "LUXURY-SMALL-CAP",
+      "name": "LUXURY SMALL CAP",
+      "specs": "LUXURY SMALL CAP",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "LUXURY-TOP-CAP-BOX",
+      "name": "LUXURY TOP-CAP BOX",
+      "specs": "LUXURY TOP-CAP BOX",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "LUXURY-WALL-PLUG-35MM",
+      "name": "LUXURY WALL PLUG 35mm",
+      "specs": "LUXURY WALL PLUG 35mm",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "NO-2-CLIPS",
+      "name": "NO 2 # CLIPS",
+      "specs": "NO 2 # CLIPS",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "NUT-BOLT-3-16-8302",
+      "name": "NUT BOLT 3*16 [8302]",
+      "specs": "NUT BOLT 3*16 [8302]",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "PLASTIC-BOX-55",
+      "name": "PLASTIC BOX #55",
+      "specs": "PLASTIC BOX #55",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "PLASTIC-PROCESSING-FEE",
+      "name": "PLASTIC PROCESSING FEE",
+      "specs": "PLASTIC PROCESSING FEE",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "PLASTIC-WASHER-8MM",
+      "name": "PLASTIC WASHER 8mm",
+      "specs": "PLASTIC WASHER 8mm",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "PLYWOOD-4412",
+      "name": "PLYWOOD - 4412",
+      "specs": "PLYWOOD - 4412",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "ROUND-TROLLEY-4-LAYERS-ST4L-RAW",
+      "name": "ROUND TROLLEY 4 LAYERS ST4L - RAW",
+      "specs": "ROUND TROLLEY 4 LAYERS ST4L - RAW",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SCREWS-38-8-1202",
+      "name": "SCREWS 38*8 [ 1202]",
+      "specs": "SCREWS 38*8 [ 1202]",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SILICON-BUMPER",
+      "name": "SILICON BUMPER",
+      "specs": "SILICON BUMPER",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SPOT-WELD-748MM-CS12",
+      "name": "SPOT WELD - 748mm CS12",
+      "specs": "SPOT WELD - 748mm CS12",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SPOT-WELD-776MM-CS12",
+      "name": "SPOT WELD - 776mm CS12",
+      "specs": "SPOT WELD - 776mm CS12",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SPOT-WELD-SS-1-2-PIPE-2-FEET",
+      "name": "SPOT WELD - SS 1/2\" PIPE - 2 FEET",
+      "specs": "SPOT WELD - SS 1/2\" PIPE - 2 FEET",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SPOT-WELD-SS-1-2-PIPE-3-FEET",
+      "name": "SPOT WELD - SS 1/2\" PIPE - 3 FEET",
+      "specs": "SPOT WELD - SS 1/2\" PIPE - 3 FEET",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SPOT-WELD-SS-1-2-PIPE-4-FEET",
+      "name": "SPOT WELD - SS 1/2\" PIPE - 4 FEET",
+      "specs": "SPOT WELD - SS 1/2\" PIPE - 4 FEET",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SPOT-WELD-SS-1-2-PIPE-5-FEET",
+      "name": "SPOT WELD - SS 1/2\" PIPE - 5 FEET",
+      "specs": "SPOT WELD - SS 1/2\" PIPE - 5 FEET",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SPOT-WELD-SS-1-2-PIPE-6-FEET",
+      "name": "SPOT WELD - SS 1/2\" PIPE - 6 FEET",
+      "specs": "SPOT WELD - SS 1/2\" PIPE - 6 FEET",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SPOT-WELD-SS-9-5MM-X-0-6-2-FEET",
+      "name": "SPOT WELD - SS 9.5mm x 0.6 - 2 FEET",
+      "specs": "SPOT WELD - SS 9.5mm x 0.6 - 2 FEET",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SQUARE-TROLLEY-3-LAYER-ST-3L-RAW",
+      "name": "SQUARE TROLLEY 3 LAYER ST-3L - RAW",
+      "specs": "SQUARE TROLLEY 3 LAYER ST-3L - RAW",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SQUARE-TROLLEY-4-LAYER-ST-4L-RAW",
+      "name": "SQUARE TROLLEY 4 LAYER ST-4L - RAW",
+      "specs": "SQUARE TROLLEY 4 LAYER ST-4L - RAW",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SQUARE-TROLLEY-5-LAYER-ST-5L-RAW",
+      "name": "SQUARE TROLLEY 5 LAYER ST-5L - RAW",
+      "specs": "SQUARE TROLLEY 5 LAYER ST-5L - RAW",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-10-20-X-0-6MM-SQ-PIPE",
+      "name": "SS (10*20) x 0.6mm SQ PIPE",
+      "specs": "SS (10*20) x 0.6mm SQ PIPE",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-1-2-PIPE-2-FEET",
+      "name": "SS 1/2\" PIPE - 2 FEET",
+      "specs": "SS 1/2\" PIPE - 2 FEET",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-1-2-PIPE-3-FEET",
+      "name": "SS 1/2\" PIPE - 3 FEET",
+      "specs": "SS 1/2\" PIPE - 3 FEET",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-1-2-PIPE-3-FEET-304",
+      "name": "SS 1/2\" PIPE - 3 FEET - 304",
+      "specs": "SS 1/2\" PIPE - 3 FEET - 304",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-1-2-PIPE-4-FEET",
+      "name": "SS 1/2\" PIPE - 4 FEET",
+      "specs": "SS 1/2\" PIPE - 4 FEET",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-1-2-PIPE-4-FEET-304",
+      "name": "SS 1/2\" PIPE - 4 FEET - 304",
+      "specs": "SS 1/2\" PIPE - 4 FEET - 304",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-1-2-PIPE-5-FEET",
+      "name": "SS 1/2\" PIPE - 5 FEET",
+      "specs": "SS 1/2\" PIPE - 5 FEET",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-1-2-PIPE-5-FEET-304",
+      "name": "SS 1/2\" PIPE - 5 FEET - 304",
+      "specs": "SS 1/2\" PIPE - 5 FEET - 304",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-1-2-PIPE-6-FEET",
+      "name": "SS 1/2\" PIPE - 6 FEET",
+      "specs": "SS 1/2\" PIPE - 6 FEET",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-1-2-PIPE-6-FEET-304",
+      "name": "SS 1/2\" PIPE - 6 FEET - 304",
+      "specs": "SS 1/2\" PIPE - 6 FEET - 304",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-1-2-PIPE-7-FEET",
+      "name": "SS 1/2\" PIPE - 7 FEET",
+      "specs": "SS 1/2\" PIPE - 7 FEET",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-1-2-PIPE-7-FEET-304",
+      "name": "SS 1/2\" PIPE - 7 FEET - 304",
+      "specs": "SS 1/2\" PIPE - 7 FEET - 304",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-1-2-PIPE-8-FEET",
+      "name": "SS 1/2\" PIPE - 8 FEET",
+      "specs": "SS 1/2\" PIPE - 8 FEET",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-1-2-PIPE-8-FEET-304",
+      "name": "SS 1/2\" PIPE - 8 FEET - 304",
+      "specs": "SS 1/2\" PIPE - 8 FEET - 304",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-1-2-X-0-6MM-PIPE",
+      "name": "SS 1/2\" x 0.6mm PIPE",
+      "specs": "SS 1/2\" x 0.6mm PIPE",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-1-2-X-0-8MM-10-FEET",
+      "name": "SS 1/2\" x 0.8mm - 10 Feet",
+      "specs": "SS 1/2\" x 0.8mm - 10 Feet",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-1-2-X-0-8MM-12-FEET",
+      "name": "SS 1/2\" x 0.8mm - 12 Feet",
+      "specs": "SS 1/2\" x 0.8mm - 12 Feet",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-1-2-X-0-8MM-PIPE",
+      "name": "SS 1/2\" x 0.8mm PIPE",
+      "specs": "SS 1/2\" x 0.8mm PIPE",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-1-2-X-0-8MM-RANDOM",
+      "name": "SS 1/2\" x 0.8mm - Random",
+      "specs": "SS 1/2\" x 0.8mm - Random",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-1-2-X-0-9MM-PIPE",
+      "name": "SS 1/2\" x 0.9mm PIPE",
+      "specs": "SS 1/2\" x 0.9mm PIPE",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-1-2-X-0-9MM-PIPE-304",
+      "name": "SS 1/2\" x 0.9mm PIPE - 304",
+      "specs": "SS 1/2\" x 0.9mm PIPE - 304",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-12MM-X-0-3MM-PIPE",
+      "name": "SS 12mm x 0.3mm PIPE",
+      "specs": "SS 12mm x 0.3mm PIPE",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-12MM-X-0-4-MM-PIPE-304",
+      "name": "SS 12mm x 0.4 mm Pipe - 304",
+      "specs": "SS 12mm x 0.4 mm Pipe - 304",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-12X12-X-0-6MM-SQ-PIPE",
+      "name": "SS (12x12) x 0.6mm SQ PIPE",
+      "specs": "SS (12x12) x 0.6mm SQ PIPE",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-1-5MM-SHEET-202",
+      "name": "SS 1.5mm SHEET (202)",
+      "specs": "SS 1.5mm SHEET (202)",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-16MM-X-0-3MM-PIPE",
+      "name": "SS 16mm x 0.3mm PIPE",
+      "specs": "SS 16mm x 0.3mm PIPE",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-16X16-X-0-6MM-SQ-PIPE",
+      "name": "SS (16x16) x 0.6mm SQ PIPE",
+      "specs": "SS (16x16) x 0.6mm SQ PIPE",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-18-18-X-0-6MM-SQ-PIPE",
+      "name": "SS (18*18) x 0.6mm SQ PIPE",
+      "specs": "SS (18*18) x 0.6mm SQ PIPE",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-19MM-X-0-3MM-PIPE",
+      "name": "SS 19mm x 0.3mm PIPE",
+      "specs": "SS 19mm x 0.3mm PIPE",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-19MM-X-0-4-MM-PIPE-304",
+      "name": "SS 19mm x 0.4 mm PIPE -304",
+      "specs": "SS 19mm x 0.4 mm PIPE -304",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-20X40-X-0-7MM-PIPE",
+      "name": "SS (20x40) x 0.7mm PIPE",
+      "specs": "SS (20x40) x 0.7mm PIPE",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-20X40-X-0-9MM-PIPE",
+      "name": "SS (20x40) x 0.9mm PIPE",
+      "specs": "SS (20x40) x 0.9mm PIPE",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-2MM-SHEET-202",
+      "name": "SS 2mm SHEET (202)",
+      "specs": "SS 2mm SHEET (202)",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-3-4-X-0-6MM-PIPE",
+      "name": "SS 3/4\" X 0.6mm PIPE",
+      "specs": "SS 3/4\" X 0.6mm PIPE",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-3-4-X-0-8MM-PIPE",
+      "name": "SS 3/4\" x 0.8mm PIPE",
+      "specs": "SS 3/4\" x 0.8mm PIPE",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-5-8-X-0-7MM-10-FEET",
+      "name": "SS 5/8\" x 0.7mm - 10 Feet",
+      "specs": "SS 5/8\" x 0.7mm - 10 Feet",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-5-8-X-0-7MM-12-FEET",
+      "name": "SS 5/8\" x 0.7mm - 12 Feet",
+      "specs": "SS 5/8\" x 0.7mm - 12 Feet",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-5-8-X-0-7MM-14-FEET",
+      "name": "SS 5/8\" x 0.7mm - 14 Feet",
+      "specs": "SS 5/8\" x 0.7mm - 14 Feet",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-5-8-X-0-7MM-16-FEET",
+      "name": "SS 5/8\" x 0.7mm - 16 Feet",
+      "specs": "SS 5/8\" x 0.7mm - 16 Feet",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-5-8-X-0-7MM-20-FEET",
+      "name": "SS 5/8\" x 0.7mm - 20 Feet",
+      "specs": "SS 5/8\" x 0.7mm - 20 Feet",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-5-8-X-0-7MM-PIPE",
+      "name": "SS 5/8\" x 0.7mm PIPE",
+      "specs": "SS 5/8\" x 0.7mm PIPE",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-5-8-X-0-7MM-PIPE-4-FEET",
+      "name": "SS 5/8\" x 0.7mm PIPE - 4 FEET",
+      "specs": "SS 5/8\" x 0.7mm PIPE - 4 FEET",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-5-8-X-0-7MM-PIPE-5-FEET",
+      "name": "SS 5/8\" x 0.7mm PIPE - 5 FEET",
+      "specs": "SS 5/8\" x 0.7mm PIPE - 5 FEET",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-5-8-X-0-7MM-PIPE-6-FEET",
+      "name": "SS 5/8\" x 0.7mm PIPE - 6 FEET",
+      "specs": "SS 5/8\" x 0.7mm PIPE - 6 FEET",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-5-8-X-0-7MM-PIPE-7-FEET",
+      "name": "SS 5/8\" x 0.7mm PIPE - 7 FEET",
+      "specs": "SS 5/8\" x 0.7mm PIPE - 7 FEET",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-5-8-X-0-7MM-PIPE-8-FEET",
+      "name": "SS 5/8\" x 0.7mm PIPE - 8 FEET",
+      "specs": "SS 5/8\" x 0.7mm PIPE - 8 FEET",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-5-8-X-0-7MM-RANDOM",
+      "name": "SS 5/8\" x 0.7mm - Random",
+      "specs": "SS 5/8\" x 0.7mm - Random",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-6-25-PAN-PHILIPS-SHEET-SCREW-ECONOMY",
+      "name": "SS 6*25 PAN PHILIPS SHEET SCREW - ECONOMY",
+      "specs": "SS 6*25 PAN PHILIPS SHEET SCREW - ECONOMY",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-8-38-PAN-PHILIPS-SCREW-CS3",
+      "name": "SS 8*38 PAN PHILIPS SCREW - CS3",
+      "specs": "SS 8*38 PAN PHILIPS SCREW - CS3",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-8MM-X-0-6MM-PIPE",
+      "name": "SS 8mm x 0.6mm PIPE",
+      "specs": "SS 8mm x 0.6mm PIPE",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-9-5MM-CS11-853",
+      "name": "SS 9.5mm CS11 - 853",
+      "specs": "SS 9.5mm CS11 - 853",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-9-5MM-CS11-883",
+      "name": "SS 9.5mm CS11 - 883",
+      "specs": "SS 9.5mm CS11 - 883",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-9-5MM-PIPE-2-FEET",
+      "name": "SS 9.5mm PIPE - 2 FEET",
+      "specs": "SS 9.5mm PIPE - 2 FEET",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-9-5MM-X-0-6MM-PIPE",
+      "name": "SS 9.5mm x 0.6mm PIPE",
+      "specs": "SS 9.5mm x 0.6mm PIPE",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "S-S-CARRIAGE-BOLY-50-MM-8302",
+      "name": "S.S CARRIAGE BOLY 50 MM [8302]",
+      "specs": "S.S CARRIAGE BOLY 50 MM [8302]",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-CHAIN-3MM",
+      "name": "SS CHAIN 3mm",
+      "specs": "SS CHAIN 3mm",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-DOME-NUT-6MM",
+      "name": "SS DOME NUT 6mm",
+      "specs": "SS DOME NUT 6mm",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-HEX-BOLT-5-12",
+      "name": "SS HEX BOLT 5*12",
+      "specs": "SS HEX BOLT 5*12",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-HEX-BOLT-5-16",
+      "name": "SS HEX BOLT 5*16",
+      "specs": "SS HEX BOLT 5*16",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-HEX-BOLT-5-20",
+      "name": "SS HEX BOLT 5*20",
+      "specs": "SS HEX BOLT 5*20",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-HEX-BOLT-5-35",
+      "name": "SS HEX BOLT 5*35",
+      "specs": "SS HEX BOLT 5*35",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-HEX-BOLT-6-30",
+      "name": "SS HEX BOLT 6*30",
+      "specs": "SS HEX BOLT 6*30",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-HEX-BOLT-6-40",
+      "name": "SS HEX BOLT 6*40",
+      "specs": "SS HEX BOLT 6*40",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-HEX-BOLT-6-50",
+      "name": "SS HEX BOLT 6*50",
+      "specs": "SS HEX BOLT 6*50",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-HEX-BOLT-6-60",
+      "name": "SS HEX BOLT 6*60",
+      "specs": "SS HEX BOLT 6*60",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-HEX-BOLT-6-70",
+      "name": "SS HEX BOLT 6*70",
+      "specs": "SS HEX BOLT 6*70",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-HEX-NUT-6MM",
+      "name": "SS HEX NUT 6mm",
+      "specs": "SS HEX NUT 6mm",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-HEX-NUT-8MM",
+      "name": "SS HEX NUT 8mm",
+      "specs": "SS HEX NUT 8mm",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-NYLOCK-NUT-5MM",
+      "name": "SS NYLOCK NUT 5mm",
+      "specs": "SS NYLOCK NUT 5mm",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-NYLOCK-NUT-6MM",
+      "name": "SS NYLOCK NUT 6mm",
+      "specs": "SS NYLOCK NUT 6mm",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-PAN-PHILIPS-SHEET-SCREW-6-32",
+      "name": "SS PAN PHILIPS SHEET SCREW 6*32",
+      "specs": "SS PAN PHILIPS SHEET SCREW 6*32",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-PAN-PHILIPS-SHEET-SCREW-6-50",
+      "name": "SS PAN PHILIPS SHEET SCREW 6*50",
+      "specs": "SS PAN PHILIPS SHEET SCREW 6*50",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-PLAIN-WASHER-10MM",
+      "name": "SS PLAIN WASHER 10mm",
+      "specs": "SS PLAIN WASHER 10mm",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-PLAIN-WASHER-6-12MM",
+      "name": "SS PLAIN WASHER 6*12mm",
+      "specs": "SS PLAIN WASHER 6*12mm",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-PLAIN-WASHER-6-16MM",
+      "name": "SS PLAIN WASHER 6*16mm",
+      "specs": "SS PLAIN WASHER 6*16mm",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "SS-STAND-CS1-OUTER-BOX",
+      "name": "SS STAND CS1 - OUTER BOX",
+      "specs": "SS STAND CS1 - OUTER BOX",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "ST-3L-TROLLEY-BOX-OFFLINE",
+      "name": "ST-3L TROLLEY BOX-OFFLINE",
+      "specs": "ST-3L TROLLEY BOX-OFFLINE",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "ST-3-TROLLEY-BOX",
+      "name": "ST- 3 TROLLEY BOX",
+      "specs": "ST- 3 TROLLEY BOX",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "ST-4L-TROLLEY-BOX-OFFLINE",
+      "name": "ST-4L TROLLEY BOX-OFFLINE",
+      "specs": "ST-4L TROLLEY BOX-OFFLINE",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "ST-4-TROLLEY-BOX",
+      "name": "ST- 4 TROLLEY BOX",
+      "specs": "ST- 4 TROLLEY BOX",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "ST-5-TROLLEY-BOX",
+      "name": "ST - 5 TROLLEY BOX",
+      "specs": "ST - 5 TROLLEY BOX",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "PLINTH-3-RODS-WALL-MOUNTING-CLOTH-DRYER",
+      "name": "PLINTH 3 RODS WALL MOUNTING CLOTH DRYER",
+      "specs": "PLINTH 3 RODS WALL MOUNTING CLOTH DRYER",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "PLINTH-ANTIQUE-TOWEL-RACK-24-INCHES",
+      "name": "PLINTH ANTIQUE TOWEL RACK 24 INCHES",
+      "specs": "PLINTH ANTIQUE TOWEL RACK 24 INCHES",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "PLINTH-CLOTH-STHAND-SY-CS20-L2-BLACK",
+      "name": "PLINTH CLOTH STHAND SY- CS20-L2 BLACK",
+      "specs": "PLINTH CLOTH STHAND SY- CS20-L2 BLACK",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "PLINTH-OVAL-TOWEL-RING",
+      "name": "PLINTH OVAL TOWEL RING",
+      "specs": "PLINTH OVAL TOWEL RING",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "PLINTH-SQUARE-TOWEL-RING",
+      "name": "PLINTH SQUARE TOWEL RING",
+      "specs": "PLINTH SQUARE TOWEL RING",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "PLINTH-TOWEL-RACK-NEW",
+      "name": "PLINTH TOWEL RACK NEW",
+      "specs": "PLINTH TOWEL RACK NEW",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "PLINTH-TOWEL-ROD-1-5-FEET",
+      "name": "PLINTH TOWEL ROD 1.5 FEET",
+      "specs": "PLINTH TOWEL ROD 1.5 FEET",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "PLINTH-TRINGLE-TOWEL-RING",
+      "name": "PLINTH TRINGLE TOWEL RING",
+      "specs": "PLINTH TRINGLE TOWEL RING",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "TPR-RUBBER-MATERIAL",
+      "name": "TPR RUBBER MATERIAL",
+      "specs": "TPR RUBBER MATERIAL",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "TROLLY-WHEEL-WITHOUT-LOCK-1-5",
+      "name": "TROLLY WHEEL WITHOUT LOCK 1.5\"",
+      "specs": "TROLLY WHEEL WITHOUT LOCK 1.5\"",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "WALL-MOUNT-SY-CS3-RAW",
+      "name": "WALL MOUNT SY-CS3 - RAW",
+      "specs": "WALL MOUNT SY-CS3 - RAW",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "WALL-MOUNT-SY-CS6-RAW",
+      "name": "WALL MOUNT SY-CS6 - RAW",
+      "specs": "WALL MOUNT SY-CS6 - RAW",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "GRAND-TOTAL",
+      "name": "Grand Total",
+      "specs": "Grand Total",
+      "unit": "PCS",
+      "source": "StkSum_SKU_Cleaned.xlsx"
+    },
+    {
+      "code": "ABSOLAC-920",
+      "name": "ABSOLAC 920",
+      "specs": "Raw Material Injection Grade",
+      "unit": "KG",
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "NATASHA-CAST",
+      "name": "NATASHA CAST",
+      "specs": "ABS Moulding Raw Material",
+      "unit": "KG",
+      "rate": null,
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "RAJASTHAN-PLASTICS",
+      "name": "RAJASTHAN PLASTICS",
+      "specs": "ABS Moulding Raw Material",
+      "unit": "KG",
+      "rate": null,
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "MASTER-BATCH",
+      "name": "MASTER BATCH",
+      "specs": "Raw Material Injection Grade",
+      "unit": "KG",
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "HIMALAYA-MASTER-B",
+      "name": "HIMALAYA MASTER B",
+      "specs": "Raw Material Injection Grade",
+      "unit": "KG",
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "MASTER-BLUE",
+      "name": "MASTER - BLUE",
+      "specs": "Raw Material Injection Grade",
+      "unit": "KG",
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "MASTER-WHITE",
+      "name": "MASTER - WHITE",
+      "specs": "Raw Material Injection Grade",
+      "unit": "KG",
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "MASTERBATCH",
+      "name": "MASTERBATCH",
+      "specs": "Raw Material Injection Grade",
+      "unit": "KG",
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "HIMALAYA-MASTER",
+      "name": "HIMALAYA MASTER",
+      "specs": "Raw Material Injection Grade",
+      "unit": "KG",
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "SCRAP",
+      "name": "SCRAP",
+      "specs": "Raw Material Injection Grade",
+      "unit": "KG",
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "BLUE",
+      "name": "BLUE",
+      "specs": "Raw Material Injection Grade",
+      "unit": "KG",
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "WHITE",
+      "name": "WHITE",
+      "specs": "Raw Material Injection Grade",
+      "unit": "KG",
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "BALANCE-C-F",
+      "name": "BALANCE C/F",
+      "specs": "Raw Material Injection Grade",
+      "unit": "KG",
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "NATASA-CAST",
+      "name": "NATASA CAST",
+      "specs": "ABS Moulding Raw Material",
+      "unit": "KG",
+      "rate": null,
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "MAK",
+      "name": "MAK",
+      "specs": "ABS Moulding Raw Material",
+      "unit": "KG",
+      "rate": null,
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "VIKAS-POLYMERS",
+      "name": "VIKAS POLYMERS",
+      "specs": "ABS Moulding Raw Material",
+      "unit": "KG",
+      "rate": null,
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "HIMALYA-MASTER",
+      "name": "HIMALYA MASTER",
+      "specs": "ABS Moulding Raw Material",
+      "unit": "KG",
+      "rate": 275,
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "SCRAPE",
+      "name": "SCRAPE",
+      "specs": "Raw Material Injection Grade",
+      "unit": "KG",
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "NATASA",
+      "name": "NATASA",
+      "specs": "ABS Moulding Raw Material",
+      "unit": "KG",
+      "rate": null,
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "ATUL",
+      "name": "ATUL",
+      "specs": "ABS Moulding Raw Material",
+      "unit": "KG",
+      "rate": null,
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "WHITE-SCRAP",
+      "name": "WHITE SCRAP",
+      "specs": "Raw Material Injection Grade",
+      "unit": "KG",
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "NATASHA",
+      "name": "NATASHA",
+      "specs": "ABS Moulding Raw Material",
+      "unit": "KG",
+      "rate": null,
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "IBF-WHITE",
+      "name": "IBF WHITE",
+      "specs": "ABS Moulding Raw Material",
+      "unit": "KG",
+      "rate": 166,
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "HIMALYA-MASTER-BATCH",
+      "name": "HIMALYA MASTER BATCH",
+      "specs": "Raw Material Injection Grade",
+      "unit": "KG",
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "BLUE-SCRAP",
+      "name": "BLUE SCRAP",
+      "specs": "Raw Material Injection Grade",
+      "unit": "KG",
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "HIMALAYA-MASTERBATCH",
+      "name": "HIMALAYA MASTERBATCH",
+      "specs": "Raw Material Injection Grade",
+      "unit": "KG",
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "BLUE-MASTERBATCH",
+      "name": "BLUE MASTERBATCH",
+      "specs": "Raw Material Injection Grade",
+      "unit": "KG",
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "BLUE-MASTERBATHC",
+      "name": "BLUE MASTERBATHC",
+      "specs": "ABS Moulding Raw Material",
+      "unit": "KG",
+      "rate": 250,
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "ATUL-ENTERPRISE",
+      "name": "ATUL ENTERPRISE",
+      "specs": "ABS Moulding Raw Material",
+      "unit": "KG",
+      "rate": null,
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "ABSOLAC-920-TAITA",
+      "name": "ABSOLAC 920 (TAITA)",
+      "specs": "Raw Material Injection Grade",
+      "unit": "KG",
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "NATASH",
+      "name": "NATASH",
+      "specs": "ABS Moulding Raw Material",
+      "unit": "KG",
+      "rate": null,
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "W-O-RAJASTHAN-PLASTIC",
+      "name": "W/O RAJASTHAN PLASTIC",
+      "specs": "ABS Moulding Raw Material",
+      "unit": "KG",
+      "rate": null,
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "VIKAS-AND-NATASHA",
+      "name": "VIKAS AND NATASHA",
+      "specs": "ABS Moulding Raw Material",
+      "unit": "KG",
+      "rate": null,
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "WHITE-SCRP",
+      "name": "WHITE SCRP",
+      "specs": "Raw Material Injection Grade",
+      "unit": "KG",
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "NATASHA-MAK",
+      "name": "NATASHA /MAK",
+      "specs": "ABS Moulding Raw Material",
+      "unit": "KG",
+      "rate": null,
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "WHITE-MASTERBATCH",
+      "name": "WHITE MASTERBATCH",
+      "specs": "Raw Material Injection Grade",
+      "unit": "KG",
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "VIKASH-POLYMERS",
+      "name": "VIKASH POLYMERS",
+      "specs": "ABS Moulding Raw Material",
+      "unit": "KG",
+      "rate": null,
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "ADJUSTMENT-ENTRY",
+      "name": "ADJUSTMENT ENTRY",
+      "specs": "ABS Moulding Raw Material",
+      "unit": "KG",
+      "rate": null,
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "NATASHA-CAST-SYSTEM",
+      "name": "NATASHA CAST SYSTEM",
+      "specs": "ABS Moulding Raw Material",
+      "unit": "KG",
+      "rate": null,
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "W-O-MAK",
+      "name": "W/O MAK",
+      "specs": "ABS Moulding Raw Material",
+      "unit": "KG",
+      "rate": null,
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "RAINBOW-MASTERBATCH",
+      "name": "RAINBOW MASTERBATCH",
+      "specs": "ABS Moulding Raw Material",
+      "unit": "KG",
+      "rate": 335,
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "RAINBOW-COLOR-MASTER-BATCHES",
+      "name": "RAINBOW COLOR MASTER BATCHES",
+      "specs": "ABS Moulding Raw Material",
+      "unit": "KG",
+      "rate": null,
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "IFB-MASTERBATCH",
+      "name": "IFB MASTERBATCH",
+      "specs": "Raw Material Injection Grade",
+      "unit": "KG",
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "NATURAL-MATERIAL",
+      "name": "NATURAL MATERIAL",
+      "specs": "ABS Moulding Raw Material",
+      "unit": "KG",
+      "rate": 149,
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "MAK-W-O",
+      "name": "MAK W/O",
+      "specs": "ABS Moulding Raw Material",
+      "unit": "KG",
+      "rate": null,
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "FAKE-PURCHASE",
+      "name": "FAKE PURCHASE",
+      "specs": "ABS Moulding Raw Material",
+      "unit": "KG",
+      "rate": null,
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "NATURAL-MASTERBATCH",
+      "name": "NATURAL MASTERBATCH",
+      "specs": "Raw Material Injection Grade",
+      "unit": "KG",
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "WHITE-MATERIAL",
+      "name": "WHITE MATERIAL",
+      "specs": "Raw Material Injection Grade",
+      "unit": "KG",
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "RETURN-FROM-SACHIN-SONI",
+      "name": "RETURN FROM SACHIN SONI",
+      "specs": "ABS Moulding Raw Material",
+      "unit": "KG",
+      "rate": null,
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "RAINBOW",
+      "name": "RAINBOW",
+      "specs": "ABS Moulding Raw Material",
+      "unit": "KG",
+      "rate": null,
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "ABS-NATURAL-DANA",
+      "name": "ABS NATURAL DANA",
+      "specs": "Raw Material Injection Grade",
+      "unit": "KG",
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "APEX-TECHNO",
+      "name": "APEX TECHNO",
+      "specs": "ABS Moulding Raw Material",
+      "unit": "KG",
+      "rate": null,
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "RAINBOW-COLOR",
+      "name": "RAINBOW COLOR",
+      "specs": "ABS Moulding Raw Material",
+      "unit": "KG",
+      "rate": null,
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "NATASHA-CAST-SYSTEMS",
+      "name": "NATASHA CAST SYSTEMS",
+      "specs": "ABS Moulding Raw Material",
+      "unit": "KG",
+      "rate": null,
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "APEX-TECHNOPOLYMER",
+      "name": "APEX TECHNOPOLYMER",
+      "specs": "ABS Moulding Raw Material",
+      "unit": "KG",
+      "rate": null,
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "BLUE-MASTER-BATCH",
+      "name": "BLUE MASTER BATCH",
+      "specs": "Raw Material Injection Grade",
+      "unit": "KG",
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "HIMALAYA-WHITE",
+      "name": "HIMALAYA WHITE",
+      "specs": "Raw Material Injection Grade",
+      "unit": "KG",
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "APEX",
+      "name": "APEX",
+      "specs": "ABS Moulding Raw Material",
+      "unit": "KG",
+      "rate": null,
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "WHITE-SCRAPE",
+      "name": "WHITE SCRAPE",
+      "specs": "Raw Material Injection Grade",
+      "unit": "KG",
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "BLUE-SCRAPE",
+      "name": "BLUE SCRAPE",
+      "specs": "Raw Material Injection Grade",
+      "unit": "KG",
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "RAINBOW-WHITE",
+      "name": "RAINBOW - WHITE",
+      "specs": "Raw Material Injection Grade",
+      "unit": "KG",
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "RAINBOW-GREY",
+      "name": "RAINBOW - GREY",
+      "specs": "Raw Material Injection Grade",
+      "unit": "KG",
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "GREY-MASTERBATCH",
+      "name": "GREY MASTERBATCH",
+      "specs": "Raw Material Injection Grade",
+      "unit": "KG",
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "CS21-BASE-RETURN",
+      "name": "CS21- BASE RETURN",
+      "specs": "Raw Material Injection Grade",
+      "unit": "KG",
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "CS20-BASE-RETURN",
+      "name": "CS20-BASE RETURN",
+      "specs": "Raw Material Injection Grade",
+      "unit": "KG",
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "BLACK-SCRAP",
+      "name": "BLACK SCRAP",
+      "specs": "Raw Material Injection Grade",
+      "unit": "KG",
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "GREY-SCRAP",
+      "name": "GREY SCRAP",
+      "specs": "Raw Material Injection Grade",
+      "unit": "KG",
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "RAJASTHAN-PLASTICS-IND",
+      "name": "RAJASTHAN PLASTICS IND.",
+      "specs": "ABS Moulding Raw Material",
+      "unit": "KG",
+      "rate": null,
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "code": "CS19-5MM-LOCKNUT",
+      "name": "CS19 5mm LOCKNUT",
+      "specs": "SCREWS - System: 14317, Actual: 14317",
+      "unit": "PCS",
+      "category": "SCREWS",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "GLIDER-SS-PAN-PHILIPS-MACHINE-SCREW-6-25",
+      "name": "GLIDER SS PAN PHILIPS MACHINE SCREW 6*25",
+      "specs": "SCREWS - System: 2273, Actual: 2273",
+      "unit": "PCS",
+      "category": "SCREWS",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "LUXURY-SCREW-8X38-MS-PAN-HEAD",
+      "name": "LUXURY SCREW 8x38 MS PAN HEAD",
+      "specs": "SCREWS - System: 1834, Actual: 1834",
+      "unit": "PCS",
+      "category": "SCREWS",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "MS-NYLOCK-NUT-5MM",
+      "name": "MS NYLOCK NUT 5mm",
+      "specs": "SCREWS - System: 2500, Actual: 2500",
+      "unit": "PCS",
+      "category": "SCREWS",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "SS-6-25-PAN-PHILIPS-SHEET-SCREW-ECO",
+      "name": "SS 6*25 PAN PHILIPS SHEET SCREW - ECO",
+      "specs": "SCREWS - System: 4229, Actual: 4203",
+      "unit": "PCS",
+      "category": "SCREWS",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "SS-PAN-PHILIPS-SHEET-SCREW-6X32",
+      "name": "SS PAN PHILIPS SHEET SCREW 6x32",
+      "specs": "SCREWS - System: 657, Actual: 657",
+      "unit": "PCS",
+      "category": "SCREWS",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "SS-PAN-PHILIPS-SHEET-SCREW-6X50",
+      "name": "SS PAN PHILIPS SHEET SCREW 6x50",
+      "specs": "SCREWS - System: 352, Actual: 352",
+      "unit": "PCS",
+      "category": "SCREWS",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "ACCESSORIES",
+      "name": "ACCESSORIES",
+      "specs": "FRAMES - System: 84, Actual: 84",
+      "unit": "PCS",
+      "category": "FRAMES",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "PACKED",
+      "name": "PACKED",
+      "specs": "FRAMES - System: 84, Actual: 84",
+      "unit": "PCS",
+      "category": "FRAMES",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "RAW",
+      "name": "RAW",
+      "specs": "FRAMES - System: 0, Actual: 0",
+      "unit": "PCS",
+      "category": "FRAMES",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "RAW-RHS",
+      "name": "RAW - RHS",
+      "specs": "FRAMES - System: 57, Actual: 57",
+      "unit": "PCS",
+      "category": "FRAMES",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "RAW-LHS",
+      "name": "RAW - LHS",
+      "specs": "FRAMES - System: 57, Actual: 57",
+      "unit": "PCS",
+      "category": "FRAMES",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "2-FEET",
+      "name": "2 FEET",
+      "specs": "PIPES - 1/2\" x 0.8mm - System: 3093, Actual: 3093",
+      "unit": "PCS",
+      "category": "PIPES - 1/2\" x 0.8mm",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "3-FEET",
+      "name": "3 FEET",
+      "specs": "PIPES - 1/2\" x 0.8mm - System: 25, Actual: 25",
+      "unit": "PCS",
+      "category": "PIPES - 1/2\" x 0.8mm",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "4-FEET",
+      "name": "4 FEET",
+      "specs": "PIPES - 1/2\" x 0.8mm - System: 108, Actual: 108",
+      "unit": "PCS",
+      "category": "PIPES - 1/2\" x 0.8mm",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "5-FEET",
+      "name": "5 FEET",
+      "specs": "PIPES - 1/2\" x 0.8mm - System: 104, Actual: 104",
+      "unit": "PCS",
+      "category": "PIPES - 1/2\" x 0.8mm",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "6-FEET",
+      "name": "6 FEET",
+      "specs": "PIPES - 1/2\" x 0.8mm - System: 144, Actual: 144",
+      "unit": "PCS",
+      "category": "PIPES - 1/2\" x 0.8mm",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "7-FEET",
+      "name": "7 FEET",
+      "specs": "PIPES - 1/2\" x 0.8mm - System: 0, Actual: 0",
+      "unit": "PCS",
+      "category": "PIPES - 1/2\" x 0.8mm",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "8-FEET",
+      "name": "8 FEET",
+      "specs": "PIPES - 1/2\" x 0.8mm - System: 0, Actual: 0",
+      "unit": "PCS",
+      "category": "PIPES - 1/2\" x 0.8mm",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "CS11-853MM",
+      "name": "CS11 - 853mm",
+      "specs": "PIPES - 1/2\" x 0.6mm - System: 0, Actual: 0",
+      "unit": "PCS",
+      "category": "PIPES - 1/2\" x 0.6mm",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "CS11-883MM",
+      "name": "CS11 - 883mm",
+      "specs": "PIPES - 1/2\" x 0.6mm - System: 0, Actual: 0",
+      "unit": "PCS",
+      "category": "PIPES - 1/2\" x 0.6mm",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "2-FEET-SPOT-WELD",
+      "name": "2 FEET - SPOT WELD",
+      "specs": "PIPES - SPOT WELDING - System: 1077, Actual: 1077",
+      "unit": "PCS",
+      "category": "PIPES - SPOT WELDING",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "A-ROD",
+      "name": "A ROD",
+      "specs": "PIPES - CS19/21 - System: 1005, Actual: 1005",
+      "unit": "PCS",
+      "category": "PIPES - CS19/21",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "B-ROD",
+      "name": "B ROD",
+      "specs": "PIPES - CS19/21 - System: 5067, Actual: 5067",
+      "unit": "PCS",
+      "category": "PIPES - CS19/21",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "C-ROD",
+      "name": "C ROD",
+      "specs": "PIPES - CS19/21 - System: 3046, Actual: 3046",
+      "unit": "PCS",
+      "category": "PIPES - CS19/21",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "D-ROD-L4",
+      "name": "D ROD - L4",
+      "specs": "PIPES - CS19/21 - System: 650, Actual: 650",
+      "unit": "PCS",
+      "category": "PIPES - CS19/21",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "E-ROD-L4",
+      "name": "E ROD - L4",
+      "specs": "PIPES - CS19/21 - System: 3537, Actual: 3537",
+      "unit": "PCS",
+      "category": "PIPES - CS19/21",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "F-ROD-L4",
+      "name": "F ROD - L4",
+      "specs": "PIPES - CS19/21 - System: 110, Actual: 110",
+      "unit": "PCS",
+      "category": "PIPES - CS19/21",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "WING-ROD",
+      "name": "WING ROD",
+      "specs": "PIPES - CS19/21 - System: 7455, Actual: 7455",
+      "unit": "PCS",
+      "category": "PIPES - CS19/21",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "CUT",
+      "name": "CUT",
+      "specs": "ROPES - System: 95, Actual: 95",
+      "unit": "PCS",
+      "category": "ROPES",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "CS13-RAW",
+      "name": "CS13 - RAW",
+      "specs": "JHUMER - System: 0, Actual: 0",
+      "unit": "PCS",
+      "category": "JHUMER",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "CS15-RAW",
+      "name": "CS15 - RAW",
+      "specs": "JHUMER - System: 8, Actual: 8",
+      "unit": "PCS",
+      "category": "JHUMER",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "CS16-RAW",
+      "name": "CS16 - RAW",
+      "specs": "JHUMER - System: 149, Actual: 149",
+      "unit": "PCS",
+      "category": "JHUMER",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "CS17-RAW",
+      "name": "CS17 - RAW",
+      "specs": "JHUMER - System: 0, Actual: 0",
+      "unit": "PCS",
+      "category": "JHUMER",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "CS3-RAW",
+      "name": "CS3 - RAW",
+      "specs": "WALL MOUNT - System: 0, Actual: 0",
+      "unit": "PCS",
+      "category": "WALL MOUNT",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "CS6-RAW",
+      "name": "CS6 - RAW",
+      "specs": "WALL MOUNT - System: 0, Actual: 0",
+      "unit": "PCS",
+      "category": "WALL MOUNT",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "WHEELS-WITH-LOCK",
+      "name": "WHEELS WITH LOCK",
+      "specs": "WHEELS - System: 1330, Actual: 1330",
+      "unit": "PCS",
+      "category": "WHEELS",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "WHEELS-WITHOUT-LOCK",
+      "name": "WHEELS WITHOUT LOCK",
+      "specs": "WHEELS - System: 1633, Actual: 1633",
+      "unit": "PCS",
+      "category": "WHEELS",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "KITCHEN-TROLLEY-WHEELS",
+      "name": "KITCHEN TROLLEY WHEELS",
+      "specs": "WHEELS - System: 106, Actual: 106",
+      "unit": "PCS",
+      "category": "WHEELS",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "PP-MATERIAL",
+      "name": "PP MATERIAL",
+      "specs": "PLASTIC MATERIAL (ABS FILE) - System: 6.4, Actual: 6.4",
+      "unit": "PCS",
+      "category": "PLASTIC MATERIAL (ABS FILE)",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "CS8-TOP-BOX",
+      "name": "CS8 - TOP BOX",
+      "specs": "BOXES - System: 0, Actual: 0",
+      "unit": "PCS",
+      "category": "BOXES",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "ECONOMY-ACC-BOX",
+      "name": "ECONOMY ACC. BOX",
+      "specs": "BOXES - System: 431, Actual: 431",
+      "unit": "PCS",
+      "category": "BOXES",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "LUXURY-ACC-BOX",
+      "name": "LUXURY ACC. BOX",
+      "specs": "BOXES - System: 918, Actual: 918",
+      "unit": "PCS",
+      "category": "BOXES",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "LUXURY-INNER-BOX",
+      "name": "LUXURY INNER BOX",
+      "specs": "BOXES - System: 1194, Actual: 1194",
+      "unit": "PCS",
+      "category": "BOXES",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "LUXURY-TOP-CAP",
+      "name": "LUXURY TOP CAP",
+      "specs": "BOXES - System: 918, Actual: 918",
+      "unit": "PCS",
+      "category": "BOXES",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "CS1-BOX",
+      "name": "CS1 -BOX",
+      "specs": "BOXES - System: 13, Actual: 13",
+      "unit": "PCS",
+      "category": "BOXES",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "CS8-RAW",
+      "name": "CS8 - RAW",
+      "specs": "SS STAND - RAW - System: 61, Actual: 61",
+      "unit": "PCS",
+      "category": "SS STAND - RAW",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "CS12-RAW",
+      "name": "CS12 - RAW",
+      "specs": "SS STAND - RAW - System: 5, Actual: 5",
+      "unit": "PCS",
+      "category": "SS STAND - RAW",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "CS9-RAW",
+      "name": "CS9 - RAW",
+      "specs": "SS STAND - RAW - System: 1, Actual: 1",
+      "unit": "PCS",
+      "category": "SS STAND - RAW",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "CS11-RAW",
+      "name": "CS11 - RAW",
+      "specs": "SS STAND - RAW - System: 5, Actual: 5",
+      "unit": "PCS",
+      "category": "SS STAND - RAW",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "CS10-RAW",
+      "name": "CS10 - RAW",
+      "specs": "SS STAND - RAW - System: 0, Actual: 0",
+      "unit": "PCS",
+      "category": "SS STAND - RAW",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "DOUBLE-PULLEY",
+      "name": "DOUBLE PULLEY",
+      "specs": "ECONOMY SPARES - System: 1098, Actual: 1098",
+      "unit": "PCS",
+      "category": "ECONOMY SPARES",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "SINGLE-PULLEY",
+      "name": "SINGLE PULLEY",
+      "specs": "ECONOMY SPARES - System: 1108, Actual: 1108",
+      "unit": "PCS",
+      "category": "ECONOMY SPARES",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "BASE",
+      "name": "BASE",
+      "specs": "CS21 PARTS - System: 1467, Actual: 1467",
+      "unit": "PCS",
+      "category": "CS21 PARTS",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "HANGER-HOLDER",
+      "name": "HANGER HOLDER",
+      "specs": "CS21 PARTS - System: 2088, Actual: 2088",
+      "unit": "PCS",
+      "category": "CS21 PARTS",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "L-CONNECTOR",
+      "name": "L-CONNECTOR",
+      "specs": "CS21 PARTS - System: 3840, Actual: 3840",
+      "unit": "PCS",
+      "category": "CS21 PARTS",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "L-NUT",
+      "name": "L-NUT",
+      "specs": "CS21 PARTS - System: 9046, Actual: 9046",
+      "unit": "PCS",
+      "category": "CS21 PARTS",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "MIDDLE-CONNECTOR",
+      "name": "MIDDLE CONNECTOR",
+      "specs": "CS21 PARTS - System: 3557, Actual: 3557",
+      "unit": "PCS",
+      "category": "CS21 PARTS",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "TOP-CONNECTOR",
+      "name": "TOP CONNECTOR",
+      "specs": "CS21 PARTS - System: 2468, Actual: 2468",
+      "unit": "PCS",
+      "category": "CS21 PARTS",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "WING-PATTI",
+      "name": "WING PATTI",
+      "specs": "CS21 PARTS - System: 9266, Actual: 9266",
+      "unit": "PCS",
+      "category": "CS21 PARTS",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "HIMALAYA-MASTER-BATCH-WHITE",
+      "name": "HIMALAYA MASTER BATCH (WHITE)",
+      "specs": "MASTER BATCH (ABS FILE) - System: 1626.89, Actual: 1626.89",
+      "unit": "PCS",
+      "category": "MASTER BATCH (ABS FILE)",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "GLIDER-FRONT-CAP",
+      "name": "GLIDER FRONT CAP",
+      "specs": "PLASTIC CAPS - System: 1460, Actual: 1460",
+      "unit": "PCS",
+      "category": "PLASTIC CAPS",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "LF-WITHOUT-RODS-3070",
+      "name": "LF WITHOUT RODS (3070)",
+      "specs": "CS8 - RAW MATERIAL - System: 52, Actual: 52",
+      "unit": "PCS",
+      "category": "CS8 - RAW MATERIAL",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "LF-WITH-RODS-3020",
+      "name": "LF WITH RODS (3020)",
+      "specs": "CS8 - RAW MATERIAL - System: 54, Actual: 54",
+      "unit": "PCS",
+      "category": "CS8 - RAW MATERIAL",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "TOP-FRAME-WITHOUT-RODS-3080",
+      "name": "TOP FRAME WITHOUT RODS (3080)",
+      "specs": "CS8 - RAW MATERIAL - System: 51, Actual: 51",
+      "unit": "PCS",
+      "category": "CS8 - RAW MATERIAL",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "TOP-FRAME-WITH-RODS-3030",
+      "name": "TOP FRAME WITH RODS (3030)",
+      "specs": "CS8 - RAW MATERIAL - System: 56, Actual: 56",
+      "unit": "PCS",
+      "category": "CS8 - RAW MATERIAL",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "CS8-827MM",
+      "name": "CS8 - 827mm",
+      "specs": "CS8 - RAW MATERIAL - System: 396, Actual: 396",
+      "unit": "PCS",
+      "category": "CS8 - RAW MATERIAL",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "CS8-860MM",
+      "name": "CS8 - 860mm",
+      "specs": "CS8 - RAW MATERIAL - System: 320, Actual: 320",
+      "unit": "PCS",
+      "category": "CS8 - RAW MATERIAL",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "LF-WITHOUT-RODS-2710",
+      "name": "LF WITHOUT RODS (2710)",
+      "specs": "CS12 - RAW MATERIAL - System: 2, Actual: 2",
+      "unit": "PCS",
+      "category": "CS12 - RAW MATERIAL",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "LF-WITH-RODS-2660",
+      "name": "LF WITH RODS (2660)",
+      "specs": "CS12 - RAW MATERIAL - System: 1, Actual: 1",
+      "unit": "PCS",
+      "category": "CS12 - RAW MATERIAL",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "TOP-FRAME-WITHOUR-RODS-2720",
+      "name": "TOP FRAME WITHOUR RODS (2720)",
+      "specs": "CS12 - RAW MATERIAL - System: 2, Actual: 2",
+      "unit": "PCS",
+      "category": "CS12 - RAW MATERIAL",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "TOP-FRAME-WITH-RODS-2670",
+      "name": "TOP FRAME WITH RODS (2670)",
+      "specs": "CS12 - RAW MATERIAL - System: 1, Actual: 1",
+      "unit": "PCS",
+      "category": "CS12 - RAW MATERIAL",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "CS12-748MM",
+      "name": "CS12 - 748mm",
+      "specs": "CS12 - RAW MATERIAL - System: 435, Actual: 435",
+      "unit": "PCS",
+      "category": "CS12 - RAW MATERIAL",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "CS12-776MM",
+      "name": "CS12 - 776mm",
+      "specs": "CS12 - RAW MATERIAL - System: 839, Actual: 839",
+      "unit": "PCS",
+      "category": "CS12 - RAW MATERIAL",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "CS10-BOTTOM-LEGS-2200",
+      "name": "CS10 - BOTTOM LEGS - 2200",
+      "specs": "CS10 RAW MATERIAL - System: 466, Actual: 464",
+      "unit": "PCS",
+      "category": "CS10 RAW MATERIAL",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "CS10-MAIN-RODS-1135",
+      "name": "CS10 - MAIN RODS - 1135",
+      "specs": "CS10 RAW MATERIAL - System: 429, Actual: 424",
+      "unit": "PCS",
+      "category": "CS10 RAW MATERIAL",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "CS10-SIDE-WINGS-1388",
+      "name": "CS10 - SIDE WINGS - 1388",
+      "specs": "CS10 RAW MATERIAL - System: 379, Actual: 377",
+      "unit": "PCS",
+      "category": "CS10 RAW MATERIAL",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "CS10-TOP-WING-3205",
+      "name": "CS10 - TOP WING - 3205",
+      "specs": "CS10 RAW MATERIAL - System: 259, Actual: 258",
+      "unit": "PCS",
+      "category": "CS10 RAW MATERIAL",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "CS10-WING-RODS-523",
+      "name": "CS10 - WING RODS - 523",
+      "specs": "CS10 RAW MATERIAL - System: 911, Actual: 903",
+      "unit": "PCS",
+      "category": "CS10 RAW MATERIAL",
+      "source": "DAILY STOCK AUDIT - RAW.xlsm"
+    },
+    {
+      "code": "CS3",
+      "name": "CS3",
+      "specs": "CS3",
+      "unit": "PCS",
+      "source": "PS - CS3-CS6.xlsm - CS3-CS6"
+    },
+    {
+      "code": "CS6",
+      "name": "CS6",
+      "specs": "CS6",
+      "unit": "PCS",
+      "source": "PS - CS3-CS6.xlsm - CS3-CS6"
+    },
+    {
+      "code": "CS3-FULL-PACK",
+      "name": "CS3 FULL PACK",
+      "specs": "CS3 FULL PACK",
+      "unit": "Pcs",
+      "source": "PS - CS3-CS6.xlsm - MAT - COMBO"
+    },
+    {
+      "code": "EZEE-CLIPPER",
+      "name": "EZEE CLIPPER",
+      "specs": "EZEE CLIPPER",
+      "unit": "Pcs",
+      "source": "PS - CS3-CS6.xlsm - MAT - COMBO"
+    },
+    {
+      "code": "CS6-FULL-PACK",
+      "name": "CS6 FULL PACK",
+      "specs": "CS6 FULL PACK",
+      "unit": "Pcs",
+      "source": "PS - CS3-CS6.xlsm - MAT - COMBO"
+    },
+    {
+      "code": "CS3-RHS-BEND",
+      "name": "CS3 RHS BEND",
+      "specs": "CS3 RHS BEND",
+      "unit": "Pcs",
+      "source": "PS - CS3-CS6.xlsm - MAT - CS3"
+    },
+    {
+      "code": "CS3-LHS-BEND",
+      "name": "CS3 LHS BEND",
+      "specs": "CS3 LHS BEND",
+      "unit": "Pcs",
+      "source": "PS - CS3-CS6.xlsm - MAT - CS3"
+    },
+    {
+      "code": "SPOT-WELD-9-5MM-RODS-2-FEET",
+      "name": "SPOT WELD 9.5mm RODS - 2 FEET",
+      "specs": "SPOT WELD 9.5mm RODS - 2 FEET",
+      "unit": "Pcs",
+      "source": "PS - CS3-CS6.xlsm - MAT - CS3"
+    },
+    {
+      "code": "SS-HEX-BOLT-5X12",
+      "name": "SS HEX BOLT 5x12",
+      "specs": "SS HEX BOLT 5x12",
+      "unit": "Pcs",
+      "source": "PS - CS3-CS6.xlsm - MAT - CS3"
+    },
+    {
+      "code": "20-PCS-PACKET",
+      "name": "20 Pcs / Packet",
+      "specs": "20 Pcs / Packet",
+      "unit": "PCS",
+      "source": "PS - CS3-CS6.xlsm - MAT - CS3"
+    },
+    {
+      "code": "SS-HEX-BOLT-5X20",
+      "name": "SS HEX BOLT 5x20",
+      "specs": "SS HEX BOLT 5x20",
+      "unit": "Pcs",
+      "source": "PS - CS3-CS6.xlsm - MAT - CS3"
+    },
+    {
+      "code": "4-PCS-PACKET",
+      "name": "4 Pcs / Packet",
+      "specs": "4 Pcs / Packet",
+      "unit": "PCS",
+      "source": "PS - CS3-CS6.xlsm - MAT - CS3"
+    },
+    {
+      "code": "SS-PLAIN-WASHER-6MM",
+      "name": "SS PLAIN WASHER 6mm",
+      "specs": "SS PLAIN WASHER 6mm",
+      "unit": "Pcs",
+      "source": "PS - CS3-CS6.xlsm - MAT - CS3"
+    },
+    {
+      "code": "64-PCS-PACKET",
+      "name": "64 Pcs / Packet",
+      "specs": "64 Pcs / Packet",
+      "unit": "PCS",
+      "source": "PS - CS3-CS6.xlsm - MAT - CS3"
+    },
+    {
+      "code": "10-PCS-PACKET",
+      "name": "10 Pcs / Packet",
+      "specs": "10 Pcs / Packet",
+      "unit": "PCS",
+      "source": "PS - CS3-CS6.xlsm - MAT - CS3"
+    },
+    {
+      "code": "SS-SCREW-8-38-CSK",
+      "name": "SS SCREW 8*38 CSK",
+      "specs": "SS SCREW 8*38 CSK",
+      "unit": "Pcs",
+      "source": "PS - CS3-CS6.xlsm - MAT - CS3"
+    },
+    {
+      "code": "LUXURY-WALL-PLUG",
+      "name": "LUXURY WALL PLUG",
+      "specs": "LUXURY WALL PLUG",
+      "unit": "Pcs",
+      "source": "PS - CS3-CS6.xlsm - MAT - CS3"
+    },
+    {
+      "code": "22-PCS-PACKET",
+      "name": "22 Pcs / Packet",
+      "specs": "22 Pcs / Packet",
+      "unit": "PCS",
+      "source": "PS - CS3-CS6.xlsm - MAT - CS6"
+    },
+    {
+      "code": "SS-HEX-BOLT-5X16",
+      "name": "SS HEX BOLT 5x16",
+      "specs": "SS HEX BOLT 5x16",
+      "unit": "Pcs",
+      "source": "PS - CS3-CS6.xlsm - MAT - CS6"
+    },
+    {
+      "code": "2-PCS-PACKET",
+      "name": "2 Pcs / Packet",
+      "specs": "2 Pcs / Packet",
+      "unit": "PCS",
+      "source": "PS - CS3-CS6.xlsm - MAT - CS6"
+    },
+    {
+      "code": "74-PCS-PACKET",
+      "name": "74 Pcs / Packet",
+      "specs": "74 Pcs / Packet",
+      "unit": "PCS",
+      "source": "PS - CS3-CS6.xlsm - MAT - CS6"
+    },
+    {
+      "code": "SS-3-4-X-0-8MM-PIPE-12-FEET",
+      "name": "SS 3/4\" x 0.8mm PIPE - 12 Feet",
+      "specs": "233.1 Kgs",
+      "unit": "Pipes",
+      "source": "PS - CS8.xlsm - Material - 12 Feet"
+    },
+    {
+      "code": "LOWER-FRAME-WITH-RODS",
+      "name": "Lower Frame with Rods",
+      "specs": "Lower Frame with Rods",
+      "unit": "Pipes",
+      "source": "PS - CS8.xlsm - Mat - Tube Bend"
+    },
+    {
+      "code": "LOWER-FRAME-WITHOUT-RODS",
+      "name": "Lower Frame without Rods",
+      "specs": "Lower Frame without Rods",
+      "unit": "Pipes",
+      "source": "PS - CS8.xlsm - Mat - Tube Bend"
+    },
+    {
+      "code": "TOP-FRAME-WITH-RODS",
+      "name": "Top Frame with Rods",
+      "specs": "Top Frame with Rods",
+      "unit": "Pipes",
+      "source": "PS - CS8.xlsm - Mat - Tube Bend"
+    },
+    {
+      "code": "TOP-FRAME-WITHOUT-RODS",
+      "name": "Top Frame without Rods",
+      "specs": "Top Frame without Rods",
+      "unit": "Pipes",
+      "source": "PS - CS8.xlsm - Mat - Tube Bend"
+    },
+    {
+      "code": "RAW-MATERIAL-LEFT",
+      "name": "RAW MATERIAL LEFT:",
+      "specs": "RAW MATERIAL LEFT:",
+      "unit": "PCS",
+      "source": "PS - CS8.xlsm - CS8 - Rods Cutting 12 Feet"
+    },
+    {
+      "code": "RAW-MATERIAL-HANDOVER",
+      "name": "RAW MATERIAL HANDOVER:",
+      "specs": "RAW MATERIAL HANDOVER:",
+      "unit": "PCS",
+      "source": "PS - CS8.xlsm - CS8 - Rods Cutting 12 Feet"
+    },
+    {
+      "code": "TIME",
+      "name": "TIME:",
+      "specs": "TIME:",
+      "unit": "PCS",
+      "source": "PS - CS8.xlsm - CS8 - Rods Cutting 12 Feet"
+    },
+    {
+      "code": "BUNDLE-ID",
+      "name": "BUNDLE ID:",
+      "specs": "BUNDLE ID:",
+      "unit": "PCS",
+      "source": "PS - CS8.xlsm - CS8 - Rods Cutting 12 Feet"
+    },
+    {
+      "code": "WEIGHT",
+      "name": "WEIGHT:",
+      "specs": "WEIGHT:",
+      "unit": "PCS",
+      "source": "PS - CS8.xlsm - CS8 - Rods Cutting 12 Feet"
+    },
+    {
+      "code": "CS8-LOWER-FRAME-WITH-RODS",
+      "name": "CS8 - Lower Frame with Rods",
+      "specs": "CS8 - Lower Frame with Rods",
+      "unit": "Nos.",
+      "source": "PS - CS8.xlsm - Assembly"
+    },
+    {
+      "code": "CS8-LOWER-FRAME-WITHOUT-RODS",
+      "name": "CS8 - Lower Frame without Rods",
+      "specs": "CS8 - Lower Frame without Rods",
+      "unit": "Nos.",
+      "source": "PS - CS8.xlsm - Assembly"
+    },
+    {
+      "code": "CS8-TOP-FRAME-WITH-RODS",
+      "name": "CS8 - Top Frame with Rods",
+      "specs": "CS8 - Top Frame with Rods",
+      "unit": "Nos.",
+      "source": "PS - CS8.xlsm - Assembly"
+    },
+    {
+      "code": "CS8-TOP-FRAME-WITHOUT-RODS",
+      "name": "CS8 - Top Frame without Rods",
+      "specs": "CS8 - Top Frame without Rods",
+      "unit": "Nos.",
+      "source": "PS - CS8.xlsm - Assembly"
+    },
+    {
+      "code": "CS8-827MM-PIPE",
+      "name": "CS8 - 827mm Pipe",
+      "specs": "CS8 - 827mm Pipe",
+      "unit": "Nos.",
+      "source": "PS - CS8.xlsm - Assembly"
+    },
+    {
+      "code": "CS8-860MM-PIPE",
+      "name": "CS8 - 860mm Pipe",
+      "specs": "CS8 - 860mm Pipe",
+      "unit": "Nos.",
+      "source": "PS - CS8.xlsm - Assembly"
+    },
+    {
+      "code": "CS8-BOTTOM-CAP",
+      "name": "CS8 - BOTTOM CAP",
+      "specs": "CS8 - BOTTOM CAP",
+      "unit": "Nos.",
+      "source": "PS - CS8.xlsm - Assembly"
+    },
+    {
+      "code": "SS-HEX-BOLT-6-X-40",
+      "name": "SS HEX BOLT 6 x 40",
+      "specs": "SS HEX BOLT 6 x 40",
+      "unit": "Nos.",
+      "source": "PS - CS8.xlsm - Assembly"
+    },
+    {
+      "code": "SS-HEX-BOLT-6-X-50",
+      "name": "SS HEX BOLT 6 x 50",
+      "specs": "SS HEX BOLT 6 x 50",
+      "unit": "Nos.",
+      "source": "PS - CS8.xlsm - Assembly"
+    },
+    {
+      "code": "SS-HEX-BOLT-6-X-60",
+      "name": "SS HEX BOLT 6 x 60",
+      "specs": "SS HEX BOLT 6 x 60",
+      "unit": "Nos.",
+      "source": "PS - CS8.xlsm - Assembly"
+    },
+    {
+      "code": "SS-HEX-BOLT-6-X-70",
+      "name": "SS HEX BOLT 6 x 70",
+      "specs": "SS HEX BOLT 6 x 70",
+      "unit": "PCS",
+      "source": "PS - CS8.xlsm - Assembly"
+    },
+    {
+      "code": "ECONOMY-SS-SCREWS",
+      "name": "ECONOMY SS SCREWS",
+      "specs": "ECONOMY SS SCREWS",
+      "unit": "Nos.",
+      "source": "PS - CS8.xlsm - Assembly"
+    },
+    {
+      "code": "SS-8MM-HEX-NUT",
+      "name": "SS 8mm HEX NUT",
+      "specs": "SS 8mm HEX NUT",
+      "unit": "Nos.",
+      "source": "PS - CS8.xlsm - Assembly"
+    },
+    {
+      "code": "SS-6MM-HEX-NUT",
+      "name": "SS 6mm HEX NUT",
+      "specs": "SS 6mm HEX NUT",
+      "unit": "Nos.",
+      "source": "PS - CS8.xlsm - Assembly"
+    },
+    {
+      "code": "PIPE-1-18X18-1200MM",
+      "name": "PIPE 1 (18x18) - 1200mm",
+      "specs": "PIPE 1 (18x18) - 1200mm",
+      "unit": "PCS",
+      "source": "PS - CS9.xlsm - CS9 - Laser"
+    },
+    {
+      "code": "PIPE-2-18X18-1200MM",
+      "name": "PIPE 2 (18x18) - 1200mm",
+      "specs": "PIPE 2 (18x18) - 1200mm",
+      "unit": "PCS",
+      "source": "PS - CS9.xlsm - CS9 - Laser"
+    },
+    {
+      "code": "TOTAL-INCLUDING-RAW-MATERIAL-LEFT",
+      "name": "TOTAL (Including Raw Material Left)",
+      "specs": "TOTAL (Including Raw Material Left)",
+      "unit": "PCS",
+      "source": "PS - CS9.xlsm - CS9 - Laser"
+    },
+    {
+      "code": "PIPE-3-10X20-450MM",
+      "name": "PIPE 3 (10x20) - 450mm",
+      "specs": "PIPE 3 (10x20) - 450mm",
+      "unit": "PCS",
+      "source": "PS - CS9.xlsm - CS9 - Laser"
+    },
+    {
+      "code": "PIPE-6-10X20-250MM",
+      "name": "PIPE 6 (10x20) - 250mm",
+      "specs": "PIPE 6 (10x20) - 250mm",
+      "unit": "PCS",
+      "source": "PS - CS9.xlsm - CS9 - Laser"
+    },
+    {
+      "code": "PIPE-7-10X20-450MM",
+      "name": "PIPE 7 (10x20) - 450mm",
+      "specs": "PIPE 7 (10x20) - 450mm",
+      "unit": "PCS",
+      "source": "PS - CS9.xlsm - CS9 - Laser"
+    },
+    {
+      "code": "BUFFING-POLISHING",
+      "name": "BUFFING / POLISHING",
+      "specs": "BUFFING / POLISHING",
+      "unit": "PCS",
+      "source": "PS - CS9.xlsm - CS9 - Laser"
+    },
+    {
+      "code": "DIFFERENCE-18X18",
+      "name": "DIFFERENCE - 18x18",
+      "specs": "DIFFERENCE - 18x18",
+      "unit": "PCS",
+      "source": "PS - CS9.xlsm - CS9 - Laser"
+    },
+    {
+      "code": "DIFFERENCE-20X10",
+      "name": "DIFFERENCE - 20x10",
+      "specs": "DIFFERENCE - 20x10",
+      "unit": "PCS",
+      "source": "PS - CS9.xlsm - CS9 - Laser"
+    },
+    {
+      "code": "TOTAL-WEIGHT-BEFORE-CUTTING-SYSTEM-WEIGHT-MATERIAL-LEFT",
+      "name": "Total Weight Before Cutting - {System Weight + Material Left}",
+      "specs": "Total Weight Before Cutting - {System Weight + Material Left}",
+      "unit": "PCS",
+      "source": "PS - CS9.xlsm - CS9 - Laser"
+    },
+    {
+      "code": "SS-18X18-X-0-6MM-SQ-PIPE",
+      "name": "SS (18x18) x 0.6mm SQ PIPE",
+      "specs": "SS (18x18) x 0.6mm SQ PIPE",
+      "unit": "Pipes",
+      "source": "PS - CS9.xlsm - Material 1"
+    },
+    {
+      "code": "SS-20X10-X-0-6MM-SQ-PIPE",
+      "name": "SS (20x10) x 0.6mm SQ PIPE",
+      "specs": "SS (20x10) x 0.6mm SQ PIPE",
+      "unit": "Pipes",
+      "source": "PS - CS9.xlsm - Material 1"
+    },
+    {
+      "code": "STORE-MATERIAL-HANDOVER",
+      "name": "STORE MATERIAL HANDOVER:",
+      "specs": "STORE MATERIAL HANDOVER:",
+      "unit": "PCS",
+      "source": "PS - CS9.xlsm - BUFFING"
+    },
+    {
+      "code": "CS9-PIPE-2-18X18-1200MM",
+      "name": "CS9 - PIPE 2 (18x18) - 1200mm",
+      "specs": "CS9 - PIPE 2 (18x18) - 1200mm",
+      "unit": "PCS",
+      "source": "PS - CS9.xlsm - Laser - Single"
+    },
+    {
+      "code": "SCRAP-18X18",
+      "name": "SCRAP (18x18)",
+      "specs": "SCRAP (18x18)",
+      "unit": "PCS",
+      "source": "PS - CS9.xlsm - Laser - Single"
+    },
+    {
+      "code": "CS9-PIPE-3-10X20-450MM",
+      "name": "CS9 - PIPE 3 (10x20) - 450mm",
+      "specs": "CS9 - PIPE 3 (10x20) - 450mm",
+      "unit": "PCS",
+      "source": "PS - CS9.xlsm - Laser - Single"
+    },
+    {
+      "code": "CS9-PIPE-6-10X20-250MM",
+      "name": "CS9 - PIPE 6 (10x20) - 250mm",
+      "specs": "CS9 - PIPE 6 (10x20) - 250mm",
+      "unit": "PCS",
+      "source": "PS - CS9.xlsm - Laser - Single"
+    },
+    {
+      "code": "CS9-PIPE-7-10X20-450MM",
+      "name": "CS9 - PIPE 7 (10x20) - 450mm",
+      "specs": "CS9 - PIPE 7 (10x20) - 450mm",
+      "unit": "PCS",
+      "source": "PS - CS9.xlsm - Laser - Single"
+    },
+    {
+      "code": "SCRAP-10X20",
+      "name": "SCRAP (10x20)",
+      "specs": "SCRAP (10x20)",
+      "unit": "PCS",
+      "source": "PS - CS9.xlsm - Laser - Single"
+    },
+    {
+      "code": "MAK-W-O-ENTRY-RS-2-5-PER-PC",
+      "name": "MAK W/O ENTRY (Rs. 2.5/- Per Pc)",
+      "specs": "MAK W/O ENTRY (Rs. 2.5/- Per Pc)",
+      "unit": "PCS",
+      "source": "PS - CS9.xlsm - Laser - Single"
+    },
+    {
+      "code": "PIPE-CUTTING",
+      "name": "PIPE CUTTING",
+      "specs": "Cutting Pipe/Rod specification from PIPE CUTTING",
+      "unit": "PCS",
+      "source": "PS - CS9.xlsm - PIPE CUTTING"
+    },
+    {
+      "code": "PARTICULARS",
+      "name": "PARTICULARS",
+      "specs": "Cutting Pipe/Rod specification from PIPE CUTTING",
+      "unit": "PCS",
+      "source": "PS - CS9.xlsm - PIPE CUTTING"
+    },
+    {
+      "code": "753MM",
+      "name": "753mm",
+      "specs": "Cutting Pipe/Rod specification from PIPE CUTTING",
+      "unit": "PCS",
+      "source": "PS - CS9.xlsm - PIPE CUTTING"
+    },
+    {
+      "code": "783MM",
+      "name": "783mm",
+      "specs": "Cutting Pipe/Rod specification from PIPE CUTTING",
+      "unit": "PCS",
+      "source": "PS - CS9.xlsm - PIPE CUTTING"
+    },
+    {
+      "code": "DIFFERENCE-SYSTEM-WEIGHT-RAW-MATERIAL-LEFT-TOTAL-WEIGHT-BEFO",
+      "name": "DIFFERENCE (System Weight + Raw Material Left) - Total Weight Before Cutting",
+      "specs": "Cutting Pipe/Rod specification from PIPE CUTTING",
+      "unit": "PCS",
+      "source": "PS - CS9.xlsm - PIPE CUTTING"
+    },
+    {
+      "code": "REMARKS",
+      "name": "REMARKS:",
+      "specs": "Cutting Pipe/Rod specification from PIPE CUTTING",
+      "unit": "PCS",
+      "source": "PS - CS9.xlsm - PIPE CUTTING"
+    },
+    {
+      "code": "CUTTING-MATERIAL-HANDOVER",
+      "name": "CUTTING MATERIAL HANDOVER",
+      "specs": "Cutting Pipe/Rod specification from PIPE CUTTING",
+      "unit": "PCS",
+      "source": "PS - CS9.xlsm - PIPE CUTTING"
+    },
+    {
+      "code": "CS9-PIPE-753MM",
+      "name": "CS9 PIPE - 753mm",
+      "specs": "CS9 PIPE - 753mm",
+      "unit": "Nos.",
+      "source": "PS - CS9.xlsm - Material - Assembly"
+    },
+    {
+      "code": "CS9-PIPE-783MM",
+      "name": "CS9 PIPE - 783mm",
+      "specs": "CS9 PIPE - 783mm",
+      "unit": "Nos.",
+      "source": "PS - CS9.xlsm - Material - Assembly"
+    },
+    {
+      "code": "10X20-SEMI-ROUND-CAP",
+      "name": "10x20 Semi Round Cap",
+      "specs": "10x20 Semi Round Cap",
+      "unit": "Nos.",
+      "source": "PS - CS9.xlsm - Material - Assembly"
+    },
+    {
+      "code": "18X18-SQUARE-BOTTOM-CAP",
+      "name": "18x18 Square Bottom Cap",
+      "specs": "18x18 Square Bottom Cap",
+      "unit": "Nos.",
+      "source": "PS - CS9.xlsm - Material - Assembly"
+    },
+    {
+      "code": "18X18-SQUARE-TOP-CAP",
+      "name": "18x18 Square Top Cap",
+      "specs": "18x18 Square Top Cap",
+      "unit": "PCS",
+      "source": "PS - CS9.xlsm - Material - Assembly"
+    },
+    {
+      "code": "8MM-PLASTIC-WASHER",
+      "name": "8mm Plastic Washer",
+      "specs": "8mm Plastic Washer",
+      "unit": "PCS",
+      "source": "PS - CS9.xlsm - Material - Assembly"
+    },
+    {
+      "code": "SS-PAN-HEAD-SCREW-6X32",
+      "name": "SS Pan Head Screw 6x32",
+      "specs": "SS Pan Head Screw 6x32",
+      "unit": "Nos.",
+      "source": "PS - CS9.xlsm - Material - Assembly"
+    },
+    {
+      "code": "SS-PAN-HEAD-SCREW-6X50",
+      "name": "SS Pan Head Screw 6x50",
+      "specs": "SS Pan Head Screw 6x50",
+      "unit": "PCS",
+      "source": "PS - CS9.xlsm - Material - Assembly"
+    },
+    {
+      "code": "SS-PLAIN-WASHER-6X16MM",
+      "name": "SS Plain Washer 6x16mm",
+      "specs": "SS Plain Washer 6x16mm",
+      "unit": "PCS",
+      "source": "PS - CS9.xlsm - Material - Assembly"
+    },
+    {
+      "code": "CS11-CHAIN-3MM-9-KADI",
+      "name": "CS11 Chain 3mm (9 Kadi)",
+      "specs": "CS11 Chain 3mm (9 Kadi)",
+      "unit": "Nos.",
+      "source": "PS - CS9.xlsm - Material - Assembly"
+    },
+    {
+      "code": "CS10-FRAME-RODS-1135MM",
+      "name": "CS10 FRAME RODS - 1135mm",
+      "specs": "CS10 FRAME RODS - 1135mm",
+      "unit": "PCS",
+      "source": "PS - CS10.xlsm - CS10 - 9.5mm RODS CUTTING"
+    },
+    {
+      "code": "CS10-WING-RODS-523MM",
+      "name": "CS10 WING RODS - 523mm",
+      "specs": "CS10 WING RODS - 523mm",
+      "unit": "PCS",
+      "source": "PS - CS10.xlsm - CS10 - 9.5mm RODS CUTTING"
+    },
+    {
+      "code": "PIPE-4-10X20-650MM",
+      "name": "PIPE 4 (10x20) - 650mm",
+      "specs": "PIPE 4 (10x20) - 650mm",
+      "unit": "PCS",
+      "source": "PS - CS11.xlsm - BUFFING"
+    },
+    {
+      "code": "PIPE-5-10X20-450MM",
+      "name": "PIPE 5 (10x20) - 450mm",
+      "specs": "PIPE 5 (10x20) - 450mm",
+      "unit": "PCS",
+      "source": "PS - CS11.xlsm - BUFFING"
+    },
+    {
+      "code": "PIPE-8-10X20-650MM",
+      "name": "PIPE 8 (10x20) - 650mm",
+      "specs": "PIPE 8 (10x20) - 650mm",
+      "unit": "PCS",
+      "source": "PS - CS11.xlsm - BUFFING"
+    },
+    {
+      "code": "PIPE-CUTTING-853MM",
+      "name": "PIPE CUTTING - 853mm",
+      "specs": "PIPE CUTTING - 853mm",
+      "unit": "PCS",
+      "source": "PS - CS11.xlsm - CS11 - 853mm"
+    },
+    {
+      "code": "SS-1-2-X-0-6MM",
+      "name": "SS 1/2\" x 0.6mm",
+      "specs": "SS 1/2\" x 0.6mm",
+      "unit": "Pipes",
+      "source": "PS - CS11.xlsm - Material 2 (2)"
+    },
+    {
+      "code": "PIPE-CUTTING-883MM",
+      "name": "PIPE CUTTING - 883mm",
+      "specs": "PIPE CUTTING - 883mm",
+      "unit": "PCS",
+      "source": "PS - CS11.xlsm - CS11 - 883mm"
+    },
+    {
+      "code": "1-2-X0-6MM-2-FEET",
+      "name": "1/2\"x0.6mm - 2 Feet",
+      "specs": "1/2\"x0.6mm - 2 Feet",
+      "unit": "PCS",
+      "source": "PS - CS11.xlsm - CS11 - 883mm"
+    },
+    {
+      "code": "CS11-PIPE-853MM",
+      "name": "CS11 PIPE - 853mm",
+      "specs": "CS11 PIPE - 853mm",
+      "unit": "Nos.",
+      "source": "PS - CS11.xlsm - Material - Assembly"
+    },
+    {
+      "code": "CS11-PIPE-883MM",
+      "name": "CS11 PIPE - 883mm",
+      "specs": "CS11 PIPE - 883mm",
+      "unit": "Nos.",
+      "source": "PS - CS11.xlsm - Material - Assembly"
+    },
+    {
+      "code": "CS12-LOWER-FRAME-WITH-RODS",
+      "name": "CS12 - Lower Frame with Rods",
+      "specs": "CS12 - Lower Frame with Rods",
+      "unit": "Nos.",
+      "source": "PS - CS12.xlsm - Assembly"
+    },
+    {
+      "code": "CS12-LOWER-FRAME-WITHOUT-RODS",
+      "name": "CS12 - Lower Frame without Rods",
+      "specs": "CS12 - Lower Frame without Rods",
+      "unit": "Nos.",
+      "source": "PS - CS12.xlsm - Assembly"
+    },
+    {
+      "code": "CS12-TOP-FRAME-WITH-RODS",
+      "name": "CS12 - Top Frame with Rods",
+      "specs": "CS12 - Top Frame with Rods",
+      "unit": "Nos.",
+      "source": "PS - CS12.xlsm - Assembly"
+    },
+    {
+      "code": "CS12-TOP-FRAME-WITHOUT-RODS",
+      "name": "CS12 - Top Frame without Rods",
+      "specs": "CS12 - Top Frame without Rods",
+      "unit": "Nos.",
+      "source": "PS - CS12.xlsm - Assembly"
+    },
+    {
+      "code": "CS12-748MM-PIPE",
+      "name": "CS12 - 748mm Pipe",
+      "specs": "CS12 - 748mm Pipe",
+      "unit": "Nos.",
+      "source": "PS - CS12.xlsm - Assembly"
+    },
+    {
+      "code": "CS12-776MM-PIPE",
+      "name": "CS12 - 776mm Pipe",
+      "specs": "CS12 - 776mm Pipe",
+      "unit": "Nos.",
+      "source": "PS - CS12.xlsm - Assembly"
+    },
+    {
+      "code": "ECONOMY-FRAME",
+      "name": "ECONOMY FRAME",
+      "specs": "ECONOMY FRAME",
+      "unit": "PCS",
+      "source": "PS - Laser ECONOMY.xlsm - ECONOMY FRAME - RAW"
+    },
+    {
+      "code": "GLIDER-5-PIPE-LHS",
+      "name": "GLIDER 5 PIPE LHS",
+      "specs": "GLIDER 5 PIPE LHS",
+      "unit": "PCS",
+      "source": "PS - Laser ECONOMY.xlsm - ECONOMY FRAME - RAW"
+    },
+    {
+      "code": "GLIDER-5-PIPE-RHS",
+      "name": "GLIDER 5 PIPE RHS",
+      "specs": "GLIDER 5 PIPE RHS",
+      "unit": "PCS",
+      "source": "PS - Laser ECONOMY.xlsm - ECONOMY FRAME - RAW"
+    },
+    {
+      "code": "COMPLETED-BY",
+      "name": "COMPLETED BY:",
+      "specs": "COMPLETED BY:",
+      "unit": "PCS",
+      "source": "PS - Laser ECONOMY.xlsm - ECONOMY FRAME - RAW"
+    },
+    {
+      "code": "SS-20-X-40MM-0-7-MM-PIPE",
+      "name": "SS 20 x 40mm 0.7 mm PIPE",
+      "specs": "-",
+      "unit": "Pipes",
+      "source": "PS - Laser ECONOMY.xlsm - MATERIAL 4"
+    },
+    {
+      "code": "SS-1-2-X-0-6MM-PIPES",
+      "name": "SS 1/2\" x 0.6mm PIPES",
+      "specs": "SS 1/2\" x 0.6mm PIPES",
+      "unit": "Pipes",
+      "source": "PS - Laser ECONOMY.xlsm - MATERIAL 5"
+    },
+    {
+      "code": "GLIDER-5-PIPES-LHS",
+      "name": "GLIDER 5 PIPES - LHS",
+      "specs": "GLIDER 5 PIPES - LHS",
+      "unit": "PCS",
+      "source": "PS - Laser GLIDER.xlsm - GLIDER SINGLE"
+    },
+    {
+      "code": "GLIDER-5-PIPES-RHS",
+      "name": "GLIDER 5 PIPES - RHS",
+      "specs": "GLIDER 5 PIPES - RHS",
+      "unit": "PCS",
+      "source": "PS - Laser GLIDER.xlsm - GLIDER SINGLE"
+    },
+    {
+      "code": "GLIDER-6-PIPES-LHS",
+      "name": "GLIDER 6 PIPES - LHS",
+      "specs": "GLIDER 6 PIPES - LHS",
+      "unit": "PCS",
+      "source": "PS - Laser GLIDER.xlsm - GLIDER LASER"
+    },
+    {
+      "code": "GLIDER-6-PIPES-RHS",
+      "name": "GLIDER 6 PIPES - RHS",
+      "specs": "GLIDER 6 PIPES - RHS",
+      "unit": "PCS",
+      "source": "PS - Laser GLIDER.xlsm - GLIDER LASER"
+    },
+    {
+      "code": "GLIDER-3-PIPES-RHS",
+      "name": "GLIDER 3 PIPES - RHS",
+      "specs": "GLIDER 3 PIPES - RHS",
+      "unit": "PCS",
+      "source": "PS - Laser GLIDER.xlsm - GLIDER LASER"
+    },
+    {
+      "code": "GLIDER-3-PIPES-LHS",
+      "name": "GLIDER 3 PIPES - LHS",
+      "specs": "GLIDER 3 PIPES - LHS",
+      "unit": "PCS",
+      "source": "PS - Laser GLIDER.xlsm - GLIDER LASER"
+    },
+    {
+      "code": "SS-20-X-40-X-0-7-MM-PIPE-20-FEET",
+      "name": "SS (20 x 40) x 0.7 mm PIPE - 20 Feet",
+      "specs": "59.28 Kgs",
+      "unit": "Pipes",
+      "source": "PS - Laser GLIDER.xlsm - MATERIAL 4"
+    },
+    {
+      "code": "GLIDER-BRACKET",
+      "name": "GLIDER BRACKET",
+      "specs": "GLIDER BRACKET",
+      "unit": "PCS",
+      "source": "PS - Laser GLIDER.xlsm - GLIDER BRACKET"
+    },
+    {
+      "code": "2MM-SS-SHEET",
+      "name": "2mm SS Sheet",
+      "specs": "2mm SS Sheet",
+      "unit": "Nos.",
+      "source": "PS - Laser GLIDER.xlsm - MATERIAL 6"
+    },
+    {
+      "code": "MATERIAL-RECEIVED-BY",
+      "name": "MATERIAL RECEIVED BY:",
+      "specs": "MATERIAL RECEIVED BY:",
+      "unit": "PCS",
+      "source": "PS - Laser GLIDER.xlsm - MATERIAL 6"
+    },
+    {
+      "code": "NAME",
+      "name": "NAME:",
+      "specs": "NAME:",
+      "unit": "PCS",
+      "source": "PS - Laser GLIDER.xlsm - MATERIAL 6"
+    },
+    {
+      "code": "SIGN",
+      "name": "SIGN:",
+      "specs": "SIGN:",
+      "unit": "PCS",
+      "source": "PS - Laser GLIDER.xlsm - MATERIAL 6"
+    },
+    {
+      "code": "4-PIPES",
+      "name": "4 PIPES",
+      "specs": "4 PIPES",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - LUX-ECO-GLIDER"
+    },
+    {
+      "code": "6-PIPES",
+      "name": "6 PIPES",
+      "specs": "6 PIPES",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - LUX-ECO-GLIDER"
+    },
+    {
+      "code": "8-PIPES",
+      "name": "8 PIPES",
+      "specs": "8 PIPES",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - LUX-ECO-GLIDER"
+    },
+    {
+      "code": "3-RODS",
+      "name": "3 RODS",
+      "specs": "3 RODS",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - LUX-ECO-GLIDER"
+    },
+    {
+      "code": "4-RODS",
+      "name": "4 RODS",
+      "specs": "4 RODS",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - LUX-ECO-GLIDER"
+    },
+    {
+      "code": "5-RODS",
+      "name": "5 RODS",
+      "specs": "5 RODS",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - LUX-ECO-GLIDER"
+    },
+    {
+      "code": "6-RODS",
+      "name": "6 RODS",
+      "specs": "6 RODS",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - LUX-ECO-GLIDER"
+    },
+    {
+      "code": "SCREW-10-50-CSK-PHILLIPS",
+      "name": "SCREW 10*50 CSK PHILLIPS",
+      "specs": "-",
+      "unit": "-",
+      "source": "PS - REGULAR.xlsm - MAT - GLIDER"
+    },
+    {
+      "code": "4-PCS-SET",
+      "name": "4 Pcs / Set",
+      "specs": "4 Pcs / Set",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - MAT - GLIDER"
+    },
+    {
+      "code": "2-PCS-SET",
+      "name": "2 Pcs / Set",
+      "specs": "2 Pcs / Set",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - MAT - GLIDER"
+    },
+    {
+      "code": "SS-HEX-BOLT-6X40",
+      "name": "SS HEX BOLT 6x40",
+      "specs": "-",
+      "unit": "-",
+      "source": "PS - REGULAR.xlsm - MAT - GLIDER"
+    },
+    {
+      "code": "SS-6X25-PAN-PHILIPS-M-C-SCREW",
+      "name": "SS 6x25 PAN PHILIPS M/C SCREW",
+      "specs": "0 Grams",
+      "unit": "Pcs",
+      "source": "PS - REGULAR.xlsm - MAT - GLIDER"
+    },
+    {
+      "code": "3-PIPES-6-PCS-SET",
+      "name": "3 PIPES - 6 Pcs / Set",
+      "specs": "3 PIPES - 6 Pcs / Set",
+      "unit": "-",
+      "source": "PS - REGULAR.xlsm - MAT - GLIDER"
+    },
+    {
+      "code": "4-PIPES-8-PCS-SET",
+      "name": "4 PIPES - 8 Pcs / Set",
+      "specs": "4 PIPES - 8 Pcs / Set",
+      "unit": "-",
+      "source": "PS - REGULAR.xlsm - MAT - GLIDER"
+    },
+    {
+      "code": "5-PIPES-10-PCS-SET",
+      "name": "5 PIPES - 10 Pcs / Set",
+      "specs": "5 PIPES - 10 Pcs / Set",
+      "unit": "-",
+      "source": "PS - REGULAR.xlsm - MAT - GLIDER"
+    },
+    {
+      "code": "6-PIPES-12-PCS-SET",
+      "name": "6 PIPES - 12 Pcs / Set",
+      "specs": "6 PIPES - 12 Pcs / Set",
+      "unit": "-",
+      "source": "PS - REGULAR.xlsm - MAT - GLIDER"
+    },
+    {
+      "code": "LUXURY-ROPE",
+      "name": "LUXURY ROPE",
+      "specs": "-",
+      "unit": "-",
+      "source": "PS - REGULAR.xlsm - MAT - LUXURY"
+    },
+    {
+      "code": "LUXURY-BIG-CAP",
+      "name": "LUXURY BIG CAP",
+      "specs": "LUXURY BIG CAP",
+      "unit": "Pcs",
+      "source": "PS - REGULAR.xlsm - MAT - LUXURY"
+    },
+    {
+      "code": "4-PIPES-10-PCS-SET",
+      "name": "4 PIPES - 10 Pcs / Set",
+      "specs": "4 PIPES - 10 Pcs / Set",
+      "unit": "-",
+      "source": "PS - REGULAR.xlsm - MAT - LUXURY"
+    },
+    {
+      "code": "6-PIPES-14-PCS-SET",
+      "name": "6 PIPES - 14 Pcs / Set",
+      "specs": "6 PIPES - 14 Pcs / Set",
+      "unit": "Pcs",
+      "source": "PS - REGULAR.xlsm - MAT - LUXURY"
+    },
+    {
+      "code": "8-PIPES-18-PCS-SET",
+      "name": "8 PIPES - 18 Pcs / Set",
+      "specs": "8 PIPES - 18 Pcs / Set",
+      "unit": "-",
+      "source": "PS - REGULAR.xlsm - MAT - LUXURY"
+    },
+    {
+      "code": "4-PIPES-08-PCS-SET",
+      "name": "4 PIPES - 08 Pcs / Set",
+      "specs": "4 PIPES - 08 Pcs / Set",
+      "unit": "-",
+      "source": "PS - REGULAR.xlsm - MAT - LUXURY"
+    },
+    {
+      "code": "8-PIPES-16-PCS-SET",
+      "name": "8 PIPES - 16 Pcs / Set",
+      "specs": "8 PIPES - 16 Pcs / Set",
+      "unit": "-",
+      "source": "PS - REGULAR.xlsm - MAT - LUXURY"
+    },
+    {
+      "code": "LUXURY-8-38-SCREW",
+      "name": "LUXURY 8*38 SCREW",
+      "specs": "2448 Grams",
+      "unit": "Pcs",
+      "source": "PS - REGULAR.xlsm - MAT - LUXURY"
+    },
+    {
+      "code": "4-PIPES-11-PCS-SET",
+      "name": "4 PIPES - 11 Pcs / Set",
+      "specs": "4 PIPES - 11 Pcs / Set",
+      "unit": "-",
+      "source": "PS - REGULAR.xlsm - MAT - LUXURY"
+    },
+    {
+      "code": "6-PIPES-17-PCS-SET",
+      "name": "6 PIPES - 17 Pcs / Set",
+      "specs": "6 PIPES - 17 Pcs / Set",
+      "unit": "Pcs",
+      "source": "PS - REGULAR.xlsm - MAT - LUXURY"
+    },
+    {
+      "code": "8-PIPES-19-PCS-SET",
+      "name": "8 PIPES - 19 Pcs / Set",
+      "specs": "8 PIPES - 19 Pcs / Set",
+      "unit": "-",
+      "source": "PS - REGULAR.xlsm - MAT - LUXURY"
+    },
+    {
+      "code": "ECONOMY-ROPE-30-FEET",
+      "name": "ECONOMY ROPE - 30 FEET",
+      "specs": "-",
+      "unit": "-",
+      "source": "PS - REGULAR.xlsm - MAT - ECONOMY"
+    },
+    {
+      "code": "ECONOMY-SINGLE-PULLEY",
+      "name": "ECONOMY SINGLE PULLEY",
+      "specs": "ECONOMY SINGLE PULLEY",
+      "unit": "-",
+      "source": "PS - REGULAR.xlsm - MAT - ECONOMY"
+    },
+    {
+      "code": "ECONOMY-DOUBLE-PULLEY",
+      "name": "ECONOMY DOUBLE PULLEY",
+      "specs": "ECONOMY DOUBLE PULLEY",
+      "unit": "-",
+      "source": "PS - REGULAR.xlsm - MAT - ECONOMY"
+    },
+    {
+      "code": "13-PCS-SET",
+      "name": "13 Pcs / Set",
+      "specs": "13 Pcs / Set",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - MAT - ECONOMY"
+    },
+    {
+      "code": "LUXURY-3MM-BRAIDED-ROPE-RAW",
+      "name": "LUXURY 3mm BRAIDED ROPE - RAW",
+      "specs": "LUXURY 3mm BRAIDED ROPE - RAW",
+      "unit": "Kgs",
+      "source": "PS - REGULAR.xlsm - MAT - ROPE"
+    },
+    {
+      "code": "ECONOMY-5MM-BRAIDED-ROPE-RAW",
+      "name": "ECONOMY 5mm BRAIDED ROPE - RAW",
+      "specs": "ECONOMY 5mm BRAIDED ROPE - RAW",
+      "unit": "Kgs",
+      "source": "PS - REGULAR.xlsm - MAT - ROPE"
+    },
+    {
+      "code": "CL-ACC-4P",
+      "name": "CL-ACC-4P",
+      "specs": "CL-ACC-4P",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - ACC-LUXURY"
+    },
+    {
+      "code": "CL-ACC-6P",
+      "name": "CL-ACC-6P",
+      "specs": "CL-ACC-6P",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - ACC-LUXURY"
+    },
+    {
+      "code": "CL-ACC-8P",
+      "name": "CL-ACC-8P",
+      "specs": "CL-ACC-8P",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - ACC-LUXURY"
+    },
+    {
+      "code": "CE-ACC",
+      "name": "CE-ACC",
+      "specs": "CE-ACC",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - ACCESSORIES"
+    },
+    {
+      "code": "CE-ROPE",
+      "name": "CE-ROPE",
+      "specs": "CE-ROPE",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - ACCESSORIES"
+    },
+    {
+      "code": "CS7",
+      "name": "CS7",
+      "specs": "CS7",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - ACCESSORIES"
+    },
+    {
+      "code": "IM1",
+      "name": "IM1",
+      "specs": "IM1",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - ACCESSORIES"
+    },
+    {
+      "code": "IM2",
+      "name": "IM2",
+      "specs": "IM2",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - ACCESSORIES"
+    },
+    {
+      "code": "ECONOMY-30-FEET-ROPE",
+      "name": "ECONOMY 30 FEET ROPE",
+      "specs": "ECONOMY 30 FEET ROPE",
+      "unit": "-",
+      "source": "PS - REGULAR.xlsm - MATERIAL - ACC"
+    },
+    {
+      "code": "IM1-RAW",
+      "name": "IM1-RAW",
+      "specs": "IM1-RAW",
+      "unit": "-",
+      "source": "PS - REGULAR.xlsm - MATERIAL - ACC"
+    },
+    {
+      "code": "IM2-RAW",
+      "name": "IM2 - RAW",
+      "specs": "IM2 - RAW",
+      "unit": "-",
+      "source": "PS - REGULAR.xlsm - MATERIAL - ACC"
+    },
+    {
+      "code": "CS13",
+      "name": "CS13",
+      "specs": "CS13",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - JHUMER"
+    },
+    {
+      "code": "CS14",
+      "name": "CS14",
+      "specs": "CS14",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - JHUMER"
+    },
+    {
+      "code": "CS15",
+      "name": "CS15",
+      "specs": "CS15",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - JHUMER"
+    },
+    {
+      "code": "CS16",
+      "name": "CS16",
+      "specs": "CS16",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - JHUMER"
+    },
+    {
+      "code": "CS17",
+      "name": "CS17",
+      "specs": "CS17",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - JHUMER"
+    },
+    {
+      "code": "JHUMER-SY-CS14-RAW",
+      "name": "JHUMER SY-CS14 - RAW",
+      "specs": "JHUMER SY-CS14 - RAW",
+      "unit": "-",
+      "source": "PS - REGULAR.xlsm - MAT - JHUMER"
+    },
+    {
+      "code": "CS19-FAMILY",
+      "name": "CS19 FAMILY",
+      "specs": "CS19 FAMILY",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - CS19-21"
+    },
+    {
+      "code": "CS21-FAMILY",
+      "name": "CS21 FAMILY",
+      "specs": "CS21 FAMILY",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - CS19-21"
+    },
+    {
+      "code": "CS20-FAMILY",
+      "name": "CS20 FAMILY",
+      "specs": "CS20 FAMILY",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - CS19-21"
+    },
+    {
+      "code": "D-ROD",
+      "name": "D - ROD",
+      "specs": "-",
+      "unit": "-",
+      "source": "PS - REGULAR.xlsm - MAT - CS19"
+    },
+    {
+      "code": "E-ROD",
+      "name": "E - ROD",
+      "specs": "-",
+      "unit": "-",
+      "source": "PS - REGULAR.xlsm - MAT - CS19"
+    },
+    {
+      "code": "F-ROD",
+      "name": "F - ROD",
+      "specs": "-",
+      "unit": "-",
+      "source": "PS - REGULAR.xlsm - MAT - CS19"
+    },
+    {
+      "code": "SCREW",
+      "name": "SCREW",
+      "specs": "-",
+      "unit": "-",
+      "source": "PS - REGULAR.xlsm - MAT - CS19"
+    },
+    {
+      "code": "5MM-LOCKNUT",
+      "name": "5mm LOCKNUT",
+      "specs": "5mm LOCKNUT",
+      "unit": "-",
+      "source": "PS - REGULAR.xlsm - MAT - CS19"
+    },
+    {
+      "code": "EZEE-CLIPER",
+      "name": "EZEE CLIPER",
+      "specs": "EZEE CLIPER",
+      "unit": "-",
+      "source": "PS - REGULAR.xlsm - MAT - CS19"
+    },
+    {
+      "code": "GREY-BASE",
+      "name": "GREY BASE",
+      "specs": "-",
+      "unit": "-",
+      "source": "PS - REGULAR.xlsm - MAT - CS20"
+    },
+    {
+      "code": "GREY-MIDDLE-CONNECTOR",
+      "name": "GREY MIDDLE CONNECTOR",
+      "specs": "-",
+      "unit": "-",
+      "source": "PS - REGULAR.xlsm - MAT - CS20"
+    },
+    {
+      "code": "GREY-TOP-CONNECTOR",
+      "name": "GREY TOP CONNECTOR",
+      "specs": "-",
+      "unit": "-",
+      "source": "PS - REGULAR.xlsm - MAT - CS20"
+    },
+    {
+      "code": "GREY-HANGER-HOLDER",
+      "name": "GREY HANGER HOLDER",
+      "specs": "-",
+      "unit": "-",
+      "source": "PS - REGULAR.xlsm - MAT - CS20"
+    },
+    {
+      "code": "GREY-WING-PATTI",
+      "name": "GREY WING PATTI",
+      "specs": "-",
+      "unit": "-",
+      "source": "PS - REGULAR.xlsm - MAT - CS20"
+    },
+    {
+      "code": "GREY-L-CONNECTOR",
+      "name": "GREY L - CONNECTOR",
+      "specs": "-",
+      "unit": "-",
+      "source": "PS - REGULAR.xlsm - MAT - CS20"
+    },
+    {
+      "code": "GREY-L-NUT",
+      "name": "GREY L - NUT",
+      "specs": "-",
+      "unit": "-",
+      "source": "PS - REGULAR.xlsm - MAT - CS20"
+    },
+    {
+      "code": "5MM-MS-LOCKNUT",
+      "name": "5mm MS LOCKNUT",
+      "specs": "5mm MS LOCKNUT",
+      "unit": "-",
+      "source": "PS - REGULAR.xlsm - MAT - CS20"
+    },
+    {
+      "code": "CS1",
+      "name": "CS1",
+      "specs": "CS1",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - SS STANDS"
+    },
+    {
+      "code": "CS10",
+      "name": "CS10",
+      "specs": "CS10",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - SS STANDS"
+    },
+    {
+      "code": "CS11",
+      "name": "CS11",
+      "specs": "CS11",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - SS STANDS"
+    },
+    {
+      "code": "CS18",
+      "name": "CS18",
+      "specs": "CS18",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - SS STANDS"
+    },
+    {
+      "code": "CS12",
+      "name": "CS12",
+      "specs": "CS12",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - SS STANDS"
+    },
+    {
+      "code": "CS8",
+      "name": "CS8",
+      "specs": "CS8",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - SS STANDS"
+    },
+    {
+      "code": "CS10-BOX",
+      "name": "CS10 - BOX",
+      "specs": "CS10 - BOX",
+      "unit": "Pcs",
+      "source": "PS - REGULAR.xlsm - MAT - SS STAND"
+    },
+    {
+      "code": "CS8-BOX",
+      "name": "CS8 - BOX",
+      "specs": "CS8 - BOX",
+      "unit": "Pcs",
+      "source": "PS - REGULAR.xlsm - MAT - SS STAND"
+    },
+    {
+      "code": "LUXURY-4-PIPES",
+      "name": "LUXURY - 4 PIPES",
+      "specs": "LUXURY - 4 PIPES",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - DANDE - LUX-ECO"
+    },
+    {
+      "code": "LUXURY-6-PIPES",
+      "name": "LUXURY - 6 PIPES",
+      "specs": "LUXURY - 6 PIPES",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - DANDE - LUX-ECO"
+    },
+    {
+      "code": "LUXURY-8-PIPES",
+      "name": "LUXURY - 8 PIPES",
+      "specs": "LUXURY - 8 PIPES",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - DANDE - LUX-ECO"
+    },
+    {
+      "code": "ECONOMY-6-PIPES",
+      "name": "ECONOMY - 6 PIPES",
+      "specs": "ECONOMY - 6 PIPES",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - DANDE - LUX-ECO"
+    },
+    {
+      "code": "LUXURY-4-PIPES-ACCESSORIES-PACKED",
+      "name": "LUXURY 4 PIPES ACCESSORIES - PACKED",
+      "specs": "LUXURY 4 PIPES ACCESSORIES - PACKED",
+      "unit": "-",
+      "source": "PS - REGULAR.xlsm - MAT -LUXURY"
+    },
+    {
+      "code": "LUXURY-TOP-BOX",
+      "name": "LUXURY TOP BOX",
+      "specs": "LUXURY TOP BOX",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - MAT -LUXURY"
+    },
+    {
+      "code": "LUXURY-6-PIPES-ACCESSORIES-PACKED",
+      "name": "LUXURY 6 PIPES ACCESSORIES - PACKED",
+      "specs": "LUXURY 6 PIPES ACCESSORIES - PACKED",
+      "unit": "-",
+      "source": "PS - REGULAR.xlsm - MAT -LUXURY"
+    },
+    {
+      "code": "LUXURY-8-PIPE-FRAME-PACKED",
+      "name": "LUXURY 8 PIPE FRAME - PACKED",
+      "specs": "LUXURY 8 PIPE FRAME - PACKED",
+      "unit": "-",
+      "source": "PS - REGULAR.xlsm - MAT -LUXURY"
+    },
+    {
+      "code": "LUXURY-8-PIPE-ACCESSORIES-PACKED",
+      "name": "LUXURY 8 PIPE ACCESSORIES - PACKED",
+      "specs": "LUXURY 8 PIPE ACCESSORIES - PACKED",
+      "unit": "-",
+      "source": "PS - REGULAR.xlsm - MAT -LUXURY"
+    },
+    {
+      "code": "ECONOMY-FRAME-PACKED",
+      "name": "ECONOMY FRAME - PACKED",
+      "specs": "ECONOMY FRAME - PACKED",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - MAT - ECO"
+    },
+    {
+      "code": "ECONOMY-ACCESSORIES-PACKED",
+      "name": "ECONOMY ACCESSORIES - PACKED",
+      "specs": "ECONOMY ACCESSORIES - PACKED",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - MAT - ECO"
+    },
+    {
+      "code": "SUN-AUG-30-2026-23-59-50-GMT-0530-INDIA-STANDARD-TIME",
+      "name": "Sun Aug 30 2026 23:59:50 GMT+0530 (India Standard Time)",
+      "specs": "Sun Aug 30 2026 23:59:50 GMT+0530 (India Standard Time)",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - MAT - ECO"
+    },
+    {
+      "code": "SUFIYAN-MIRZA",
+      "name": "SUFIYAN MIRZA",
+      "specs": "SUFIYAN MIRZA",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - MAT - ECO"
+    },
+    {
+      "code": "SS-1-2-PIPE-0-9MM-SPOT-WELD",
+      "name": "SS 1/2\" PIPE 0.9mm - SPOT WELD",
+      "specs": "SS 1/2\" PIPE 0.9mm - SPOT WELD",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - MAT - ECO"
+    },
+    {
+      "code": "GLIDER-3-PIPES",
+      "name": "GLIDER - 3 PIPES",
+      "specs": "GLIDER - 3 PIPES",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - DANDE - GLIDER"
+    },
+    {
+      "code": "GLIDER-4-PIPES",
+      "name": "GLIDER - 4 PIPES",
+      "specs": "GLIDER - 4 PIPES",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - DANDE - GLIDER"
+    },
+    {
+      "code": "GLIDER-5-PIPES",
+      "name": "GLIDER - 5 PIPES",
+      "specs": "GLIDER - 5 PIPES",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - DANDE - GLIDER"
+    },
+    {
+      "code": "GLIDER-6-PIPES",
+      "name": "GLIDER - 6 PIPES",
+      "specs": "GLIDER - 6 PIPES",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - DANDE - GLIDER"
+    },
+    {
+      "code": "SS-1-2-X-0-8MM-SPOT-WELD",
+      "name": "SS 1/2\" x 0.8mm - SPOT WELD",
+      "specs": "SS 1/2\" x 0.8mm - SPOT WELD",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - MAT -GLIDER"
+    },
+    {
+      "code": "CC1",
+      "name": "CC1",
+      "specs": "CC1",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - CLIPS"
+    },
+    {
+      "code": "CC1-HEAVY-CLIPS",
+      "name": "CC1 HEAVY CLIPS",
+      "specs": "CC1 HEAVY CLIPS",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - MAT - CLIPS"
+    },
+    {
+      "code": "55-PLASTIC-BOX",
+      "name": "#55 PLASTIC BOX",
+      "specs": "#55 PLASTIC BOX",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - MAT - CLIPS"
+    },
+    {
+      "code": "2-FEET-CS3-ROD",
+      "name": "2 FEET CS3 ROD",
+      "specs": "2 FEET CS3 ROD",
+      "unit": "Pcs",
+      "source": "PS - REGULAR.xlsm - MAT - SPOT"
+    },
+    {
+      "code": "RETURN-MATERIAL-HANDOVER-TO-STORE",
+      "name": "RETURN MATERIAL HANDOVER TO STORE:",
+      "specs": "RETURN MATERIAL HANDOVER TO STORE:",
+      "unit": "PCS",
+      "source": "PS - REGULAR.xlsm - RETURN LOSS"
+    },
+    {
+      "code": "TOTAL-NO-OF-BUNDLES",
+      "name": "TOTAL NO. OF BUNDLES:",
+      "specs": "TOTAL NO. OF BUNDLES:",
+      "unit": "PCS",
+      "source": "PS - RODS CUTTING.xlsm - 1-2 x 0.8mm"
+    },
+    {
+      "code": "BUNDLE",
+      "name": "Bundle",
+      "specs": "Bundle",
+      "unit": "PCS",
+      "source": "PS - RODS CUTTING.xlsm - 1-2 x 0.8mm"
+    },
+    {
+      "code": "C-ROD-684MM",
+      "name": "C ROD - 684mm",
+      "specs": "C ROD - 684mm",
+      "unit": "PCS",
+      "source": "PS - RODS CUTTING.xlsm - 12mm x 0.3mm"
+    },
+    {
+      "code": "WING-ROD-727MM",
+      "name": "WING ROD - 727mm",
+      "specs": "WING ROD - 727mm",
+      "unit": "PCS",
+      "source": "PS - RODS CUTTING.xlsm - 12mm x 0.3mm"
+    },
+    {
+      "code": "B-ROD-518MM",
+      "name": "B ROD - 518mm",
+      "specs": "B ROD - 518mm",
+      "unit": "PCS",
+      "source": "PS - RODS CUTTING.xlsm - 19mm x 0.3mm"
+    },
+    {
+      "code": "D-ROD-148MM",
+      "name": "D ROD - 148mm",
+      "specs": "D ROD - 148mm",
+      "unit": "PCS",
+      "source": "PS - RODS CUTTING.xlsm - 19mm x 0.3mm"
+    },
+    {
+      "code": "E-ROD-255MM",
+      "name": "E ROD - 255mm",
+      "specs": "E ROD - 255mm",
+      "unit": "PCS",
+      "source": "PS - RODS CUTTING.xlsm - 19mm x 0.3mm"
+    },
+    {
+      "code": "F-ROD-636MM",
+      "name": "F ROD - 636mm",
+      "specs": "F ROD - 636mm",
+      "unit": "PCS",
+      "source": "PS - RODS CUTTING.xlsm - 19mm x 0.3mm"
+    },
+    {
+      "code": "A-ROD-727MM",
+      "name": "A ROD - 727mm",
+      "specs": "A ROD - 727mm",
+      "unit": "PCS",
+      "source": "PS - RODS CUTTING.xlsm - 16mm x 0.3mm"
+    }
+  ],
+  "departments": [
+    {
+      "name": "Moulding Department",
+      "code": "MOULDING",
+      "incharge": null
+    },
+    {
+      "code": "WALL-MOUNT-CS3-CS6",
+      "name": "WALL MOUNT CS3-CS6",
+      "source": "PS - CS3-CS6.xlsm"
+    },
+    {
+      "code": "LUXURY-ECONOMY-GLIDER-FRAME",
+      "name": "LUXURY/ECONOMY/GLIDER - FRAME",
+      "source": "PS - REGULAR.xlsm"
+    },
+    {
+      "code": "LUXURY-ACCESSORIES",
+      "name": "LUXURY ACCESSORIES",
+      "source": "PS - REGULAR.xlsm"
+    },
+    {
+      "code": "ACCESSORIES-IRONING-MAT",
+      "name": "ACCESSORIES + IRONING MAT",
+      "source": "PS - REGULAR.xlsm"
+    },
+    {
+      "code": "JHUMER",
+      "name": "JHUMER",
+      "source": "PS - REGULAR.xlsm"
+    },
+    {
+      "code": "CS19-21-SS-STANDS",
+      "name": "CS19-21 / SS STANDS",
+      "source": "PS - REGULAR.xlsm"
+    },
+    {
+      "code": "SS-STANDS",
+      "name": "SS STANDS",
+      "source": "PS - REGULAR.xlsm"
+    },
+    {
+      "code": "LUXURY-ECONOMY-FULL-PACK",
+      "name": "LUXURY/ECONOMY - FULL PACK",
+      "source": "PS - REGULAR.xlsm"
+    },
+    {
+      "code": "GLIDER-FULL-PACK",
+      "name": "GLIDER - FULL PACK",
+      "source": "PS - REGULAR.xlsm"
+    },
+    {
+      "code": "CC1-CLIPS",
+      "name": "CC1 - CLIPS",
+      "source": "PS - REGULAR.xlsm"
+    },
+    {
+      "code": "SPOT-WELDING",
+      "name": "SPOT WELDING",
+      "source": "PS - REGULAR.xlsm"
+    },
+    {
+      "code": "RETURNS",
+      "name": "RETURNS",
+      "source": "PS - REGULAR.xlsm"
+    }
+  ],
+  "uoms": [
+    {
+      "code": "PCS",
+      "name": "PCS"
+    },
+    {
+      "code": "BOX",
+      "name": "Box"
+    },
+    {
+      "code": "PIPES",
+      "name": "Pipes"
+    },
+    {
+      "code": "NOS",
+      "name": "Nos."
+    },
+    {
+      "code": "KGS",
+      "name": "Kgs"
+    },
+    {
+      "code": "UNIT",
+      "name": "UNIT"
+    }
+  ],
+  "parties": [
+    {
+      "name": "RAVI MISHRA",
+      "role": "SUPPLIER",
+      "materialType": "RAW_MATERIAL",
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "name": "SACHIN SONI",
+      "role": "SUPPLIER",
+      "materialType": "RAW_MATERIAL",
+      "source": "ABS MATERIAL REPORT.xlsx"
+    },
+    {
+      "name": "ALI ASGER RAJOD",
+      "role": "SUPPLIER",
+      "materialType": "RAW_MATERIAL",
+      "source": "ABS MATERIAL REPORT.xlsx"
+    }
+  ],
+  "employees": [
+    {
+      "name": "SUFIYAN MIRZA",
+      "role": "STORE INCHARGE",
+      "source": "PS - REGULAR.xlsm"
+    },
+    {
+      "name": "JITENDRA ALAWA",
+      "role": "INCHARGE",
+      "source": "PS - CS3-CS6.xlsm"
+    },
+    {
+      "name": "HAIDER BHANPURAWALA",
+      "role": "PRODUCTION INCHARGE",
+      "source": "PS - CS12.xlsm"
+    },
+    {
+      "name": "ASHRAF ANSARI",
+      "role": "INCHARGE",
+      "source": "PS - Laser GLIDER.xlsm"
+    },
+    {
+      "name": "SHYAM YADAV",
+      "role": "CUTTING INCHARGE",
+      "source": "PS - RODS CUTTING.xlsm"
+    },
+    {
+      "name": "SIDDHANT",
+      "role": "INCHARGE",
+      "source": "PS - CS8.xlsm"
+    },
+    {
+      "name": "SYHAM YADAV",
+      "role": "INCHARGE",
+      "source": "PS - CS11.xlsm"
+    },
+    {
+      "name": "MANISH YADAV",
+      "role": "STORE INCHARGE",
+      "source": "PS - RODS CUTTING.xlsm"
+    },
+    {
+      "name": "JITENDRA",
+      "role": "INCHARGE",
+      "source": "PS - REGULAR.xlsm"
+    },
+    {
+      "name": "MANISH",
+      "role": "INCHARGE",
+      "source": "PS - REGULAR.xlsm"
+    },
+    {
+      "name": "RITESH",
+      "role": "INCHARGE",
+      "source": "PS - REGULAR.xlsm"
+    },
+    {
+      "name": "SIDDHANTH",
+      "role": "INCHARGE",
+      "source": "PS - REGULAR.xlsm"
+    },
+    {
+      "name": "SHUBHAM",
+      "role": "INCHARGE",
+      "source": "PS - REGULAR.xlsm"
+    },
+    {
+      "name": "HAIDER",
+      "role": "INCHARGE",
+      "source": "PS - REGULAR.xlsm"
+    },
+    {
+      "name": "SIDANT",
+      "role": "INCHARGE",
+      "source": "PS - REGULAR.xlsm"
+    }
+  ],
+  "bomEntriesCount": 865,
+  "stockAuditsCount": 291
+}

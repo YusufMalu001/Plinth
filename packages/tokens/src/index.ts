@@ -82,12 +82,15 @@ export const CHART_PALETTE: string[] = [
 /** Type */
 export const TYPE_SCALES = {
   fontFamily:
-    "'Inter', 'Inter Fallback', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
-  base: '14px/20px',
-  pageTitle: '24px semibold',
-  sectionTitle: '16px semibold',
-  tableText: '13px',
-  labels: '12px',
+    "'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
+  fontMono:
+    "'JetBrains Mono', ui-monospace, monospace",
+  base: '14px/20px regular',
+  pageTitle: '24px/32px semibold',
+  sectionTitle: '16px/24px semibold',
+  tableText: '13px/20px regular',
+  labels: '12px/16px medium',
+  loginHeadline: '40px/44px semibold',
 } as const;
 
 /** Shape & spacing */
@@ -194,6 +197,5 @@ export const CSS_TOKENS = `
   --control-height: ${SHAPE.controlHeight};
   --shadow-popover: ${SHADOWS.popover};
   --shadow-modal: ${SHADOWS.modal};
-  --font-sans: ${TYPE_SCALES.fontFamily};
 }
 `.trim();

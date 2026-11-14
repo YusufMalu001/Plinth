@@ -676,7 +676,7 @@ function ProductsPageContent() {
  <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
  <div className="space-y-1.5">
  <div className="flex flex-wrap items-center gap-2.5">
- <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground font-manrope">
+ <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground font-sans">
  {selectedFamily.name}
  </h1>
  {selectedFamily.code && (
@@ -704,7 +704,7 @@ function ProductsPageContent() {
  /* Root Catalog View Header */
  <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
  <div className="shrink-0">
- <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground font-manrope">
+ <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground font-sans">
  Inventory
  </h1>
  </div>

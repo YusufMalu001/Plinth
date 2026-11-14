@@ -90,7 +90,7 @@ export default function FinanceQueuePage() {
               Duplicate Prevention (SHA-256)
             </Badge>
           </div>
-          <h1 className="text-2xl font-extrabold text-foreground tracking-tight font-manrope">
+          <h1 className="text-2xl font-extrabold text-foreground tracking-tight font-sans">
             Eligible Transaction Queue
           </h1>
           <p className="text-xs text-muted-foreground mt-1 max-w-2xl">
@@ -141,7 +141,7 @@ export default function FinanceQueuePage() {
                 setSelectedSource(st.key);
                 setSelectedIds([]);
               }}
-              className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold font-manrope whitespace-nowrap transition-all ${
+              className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold font-sans whitespace-nowrap transition-all ${
                 isSelected
                   ? 'bg-foreground text-background shadow-xs'
                   : 'bg-muted/50 text-muted-foreground hover:bg-muted hover:text-foreground'

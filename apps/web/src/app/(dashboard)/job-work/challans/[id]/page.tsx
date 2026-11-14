@@ -45,7 +45,7 @@ export default function JobWorkChallanViewPage() {
 
   if (loading) {
     return (
-      <div className="flex-1 w-full bg-muted/20 p-8 flex items-center justify-center font-manrope">
+      <div className="flex-1 w-full bg-muted/20 p-8 flex items-center justify-center font-sans">
         <div className="text-center text-xs font-semibold text-muted-foreground animate-pulse">
           Loading delivery challan document...
         </div>
@@ -55,7 +55,7 @@ export default function JobWorkChallanViewPage() {
 
   if (error || !challan) {
     return (
-      <div className="flex-1 w-full bg-muted/20 p-6 sm:p-8 font-manrope">
+      <div className="flex-1 w-full bg-muted/20 p-6 sm:p-8 font-sans">
         <div className="max-w-[1600px] mx-auto space-y-4">
           <div className="rounded-xl border border-destructive/20 bg-destructive/10 p-4 text-xs font-bold text-destructive">
             {error || 'Unable to display challan'}
@@ -69,7 +69,7 @@ export default function JobWorkChallanViewPage() {
   }
 
   return (
-    <div className="flex-1 w-full min-h-screen overflow-y-auto bg-muted/20 p-4 sm:p-6 lg:p-8 font-manrope">
+    <div className="flex-1 w-full min-h-screen overflow-y-auto bg-muted/20 p-4 sm:p-6 lg:p-8 font-sans">
       <div className="max-w-[1600px] mx-auto space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>

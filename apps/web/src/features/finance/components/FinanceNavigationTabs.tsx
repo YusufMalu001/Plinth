@@ -37,7 +37,7 @@ export function FinanceNavigationTabs() {
           <Link key={tab.href} href={tab.href}>
             <button
               type="button"
-              className={`flex items-center gap-2 rounded-xl px-3.5 py-2 text-xs font-bold font-manrope transition-all ${
+              className={`flex items-center gap-2 rounded-xl px-3.5 py-2 text-xs font-bold font-sans transition-all ${
                 isActive
                   ? 'bg-primary text-primary-foreground shadow-xs'
                   : 'bg-muted/60 text-muted-foreground hover:bg-muted hover:text-foreground'

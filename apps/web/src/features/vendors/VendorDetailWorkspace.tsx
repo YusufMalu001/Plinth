@@ -177,7 +177,7 @@ export function VendorDetailWorkspace({ id }: VendorDetailWorkspaceProps) {
         <div className="bg-card p-6 rounded-2xl border border-border shadow-xs">
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
             <div className="space-y-2.5">
-              <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-foreground font-manrope">
+              <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-foreground font-sans">
                 {vendor.name}
               </h1>
               <p className="text-sm text-muted-foreground flex flex-wrap items-center gap-2.5 font-medium">

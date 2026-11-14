@@ -84,7 +84,7 @@ export function RecommendationsView() {
   };
 
   return (
-    <div className="space-y-6 font-manrope">
+    <div className="space-y-6 font-sans">
       {/* Filter & View Deck */}
       <div className="rounded-2xl border border-border/90 bg-surface p-5 shadow-xs space-y-4">
         <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">

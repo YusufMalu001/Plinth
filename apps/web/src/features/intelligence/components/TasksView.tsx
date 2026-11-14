@@ -88,7 +88,7 @@ export function TasksView() {
   };
 
   return (
-    <div className="space-y-5 font-manrope">
+    <div className="space-y-5 font-sans">
       <div className="flex justify-end">
         <Link href="/intelligence/cases" className="inline-flex items-center gap-2 rounded-lg border border-border bg-surface px-3 py-2 text-xs font-semibold text-ink-secondary hover:border-accent-brand hover:text-link-hover">
           View case investigations <ArrowRight className="h-3.5 w-3.5" />

@@ -42,7 +42,7 @@ export function ProductMediaGallery({ product, images, name, onOpenEdit }: Produ
   };
 
   return (
-    <div className="flex flex-col rounded-2xl border border-border bg-surface shadow-sm overflow-hidden font-manrope">
+    <div className="flex flex-col rounded-2xl border border-border bg-surface shadow-sm overflow-hidden font-sans">
       
       {/* Main Image Showcase Stage */}
       <div

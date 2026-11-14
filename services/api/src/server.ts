@@ -14,7 +14,7 @@ import { servicePrincipalService } from './modules/intelligence/services/service
 
 async function startServer() {
   try {
-    logger.info('🚀 Initializing Plinth ERP backend api...');
+    logger.info('🚀 Initializing Manufacturing ERP backend api...');
 
     // Run connection test to database
     const dbStatus = await testDbConnection();

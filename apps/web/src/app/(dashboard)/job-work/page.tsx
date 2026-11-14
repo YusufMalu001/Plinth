@@ -868,7 +868,7 @@ export default function JobWorkDashboardPage() {
           title={`Outsourcing Scorecard: ${selectedEvaluation.vendorName}`}
           className="max-w-2xl"
         >
-          <div className="space-y-4 text-xs font-manrope">
+          <div className="space-y-4 text-xs font-sans">
             {/* Top Banner Ribbon */}
             <div className="flex items-center justify-between p-4 rounded-xl bg-muted/40 border border-border">
               <div>
