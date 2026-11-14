@@ -4,42 +4,50 @@ import { Link } from 'react-router-dom';
 interface LogoProps {
   className?: string;
   showText?: boolean;
+  tone?: 'ink' | 'paper';
 }
 
-export const Logo: React.FC<LogoProps> = ({ className = '', showText = true }) => {
+export const PlinthMark: React.FC<{ className?: string; tone?: 'ink' | 'paper' }> = ({
+  className = '',
+  tone = 'ink',
+}) => {
+  const ink = tone === 'ink' ? 'var(--bg-inverse)' : 'var(--text-inverse)';
+  return (
+    <svg
+      viewBox="0 0 44 48"
+      className={`shrink-0 ${className}`}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      {/* Base Plinth bar */}
+      <rect x="0" y="43" width="44" height="5" rx="1" fill={ink} />
+      {/* Vertical Pillar stem */}
+      <rect x="3" y="0" width="13" height="38" rx="1" fill={ink} />
+      {/* Upper-right accent block */}
+      <path
+        d="M20 0 H33 C37.42 0 41 3.58 41 8 V26 H20 V0 Z"
+        fill="var(--accent)"
+      />
+    </svg>
+  );
+};
+
+export const Logo: React.FC<LogoProps> = ({
+  className = '',
+  showText = true,
+  tone = 'ink',
+}) => {
+  const textColor = tone === 'ink' ? 'text-ink' : 'text-surface';
   return (
     <Link
       to="/"
       aria-label="Plinth Home"
       className={`inline-flex items-center gap-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm ${className}`}
     >
-      {/* 
-        Inline SVG Logo built from approved brand rules:
-        Solid black blocky "P" built from stacked blocks:
-        - Base tier
-        - Pillar
-        - Upper block with accent mark
-      */}
-      <svg
-        width="28"
-        height="28"
-        viewBox="0 0 32 32"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className="shrink-0"
-        aria-hidden="true"
-      >
-        {/* Base Tier block */}
-        <rect x="5" y="23" width="22" height="4" rx="1" fill="var(--bg-inverse)" />
-        {/* Pillar column */}
-        <rect x="7" y="9" width="6" height="14" fill="var(--bg-inverse)" />
-        {/* Upper block */}
-        <rect x="13" y="9" width="12" height="9" rx="1" fill="var(--bg-inverse)" />
-        {/* Accent mark inside upper block */}
-        <rect x="16" y="11" width="6" height="5" rx="0.5" fill="var(--accent)" />
-      </svg>
+      <PlinthMark className="w-[24px] h-[26px]" tone={tone} />
       {showText && (
-        <span className="text-xl font-bold tracking-tight text-ink">
+        <span className={`text-xl font-bold tracking-tight ${textColor}`}>
           Plinth
         </span>
       )}

@@ -16,8 +16,12 @@ const ogSvg = `<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none"
 
   <!-- Brand Block Mark -->
   <g transform="translate(100, 100)">
-    <rect width="48" height="48" rx="8" fill="#171717"/>
-    <path d="M14 34V14H24C29.5228 14 34 18.4772 34 24C34 29.5228 29.5228 34 24 34H14Z" fill="#FFFFFF"/>
+    <!-- Base Plinth bar -->
+    <rect x="0" y="43" width="44" height="5" rx="1" fill="#171717"/>
+    <!-- Vertical Pillar stem -->
+    <rect x="3" y="0" width="13" height="38" rx="1" fill="#171717"/>
+    <!-- Upper-right accent block -->
+    <path d="M20 0 H33 C37.42 0 41 3.58 41 8 V26 H20 V0 Z" fill="#3E63DD"/>
     <text x="64" y="34" font-family="Plus Jakarta Sans, sans-serif" font-size="32" font-weight="800" fill="#171717" letter-spacing="-0.03em">Plinth</text>
   </g>
 

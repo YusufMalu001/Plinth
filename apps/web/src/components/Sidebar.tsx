@@ -703,9 +703,9 @@ export function Sidebar({
  item={visibleChildren(item)}
  collapsed={isCollapsed}
  pathname={pathname}
- expanded={item.id === 'good-receiving' ? goodReceivingExpanded : false}
+ expanded={item.id === 'procurement' || item.id === 'good-receiving' ? goodReceivingExpanded : false}
  onExpand={() => {
- if (item.id === 'good-receiving') {
+ if (item.id === 'procurement' || item.id === 'good-receiving') {
  setGoodReceivingExpanded((prev) => !prev);
  }
  }}

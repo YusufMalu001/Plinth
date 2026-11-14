@@ -42,12 +42,12 @@ export function AuthShell({ children }: AuthShellProps) {
 
         <div className="space-y-4">
           <div className="max-w-xl">
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight text-white uppercase leading-[1.12]">
-              Precision operations.<br />
-              Intelligent telemetry.
+            <h1 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold tracking-[-0.01em] text-white uppercase leading-[1.1]">
+              STRUCTURED OPERATIONS.<br />
+              ACCOUNTABLE OUTPUT.
             </h1>
             <p className="mt-2 text-sm text-[#a1a1aa]">
-              Enterprise resource planning for manufacturing and commerce.
+              Industrial cloud ERP for manufacturing plants.
             </p>
           </div>
 
