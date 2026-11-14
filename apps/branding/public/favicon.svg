@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <rect width="32" height="32" fill="#FFFFFF"/>
+  <!-- Base Tier -->
+  <rect x="6" y="22" width="20" height="4" rx="1" fill="#171717"/>
+  <!-- Pillar -->
+  <rect x="8" y="10" width="5" height="12" fill="#171717"/>
+  <!-- Upper block -->
+  <rect x="13" y="10" width="11" height="8" rx="1" fill="#171717"/>
+  <!-- Accent Mark -->
+  <rect x="16" y="12" width="5" height="4" fill="#3E63DD"/>
+</svg>

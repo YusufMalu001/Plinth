@@ -1,0 +1,66 @@
+:root {
+  /* Surfaces */
+  --bg-page: #FFFFFF;
+  --bg-surface: #FFFFFF;
+  --bg-muted: #F4F5F6;
+  --bg-hover: #F8F8F8;
+  --bg-active: #EDEDED;
+  --bg-inverse: #171717;
+
+  /* Borders */
+  --border: #EDEDED;
+  --border-strong: #D9D9D9;
+
+  /* Text */
+  --text-primary: #171717;
+  --text-secondary: #525252;
+  --text-muted: #6B6B6B;
+  --text-placeholder: #8D8D8D;
+  --text-inverse: #FFFFFF;
+  --text-link: #3E63DD;
+
+  /* Brand accent */
+  --accent: #3E63DD;
+  --accent-soft: #EAF3FF;
+  --accent-hover: #2F4FB8;
+
+  /* Overlay */
+  --overlay: rgba(23, 23, 23, 0.40);
+
+  /* Semantic Hues */
+  --green-bg: #E4F5E9;
+  --green-text: #18794E;
+  --green-solid: #30A46C;
+
+  --red-bg: #FFF0F0;
+  --red-text: #C62828;
+  --red-solid: #E5484D;
+
+  --orange-bg: #FFF2E5;
+  --orange-text: #B54708;
+  --orange-solid: #F76808;
+
+  --amber-bg: #FFF8DB;
+  --amber-text: #946800;
+  --amber-solid: #F5B800;
+
+  --blue-bg: #EAF3FF;
+  --blue-text: #1D5FBF;
+  --blue-solid: #3E63DD;
+
+  --purple-bg: #F3EEFF;
+  --purple-text: #6B3FC4;
+  --purple-solid: #8E4EC6;
+
+  --teal-bg: #E3F7F5;
+  --teal-text: #0F766E;
+  --teal-solid: #12A594;
+
+  --pink-bg: #FFEEF7;
+  --pink-text: #B3256B;
+  --pink-solid: #D6409F;
+
+  --grey-bg: #F1F1F1;
+  --grey-text: #525252;
+  --grey-solid: #8D8D8D;
+}

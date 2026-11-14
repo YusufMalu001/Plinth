@@ -1,0 +1,58 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const rootDir = path.resolve(__dirname, '..');
+const publicDir = path.resolve(rootDir, 'public');
+
+// Generate SVG social card (1200x630) using strictly PLINTH_THEME.txt tokens
+const ogSvg = `<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background canvas -->
+  <rect width="1200" height="630" fill="#FFFFFF"/>
+  
+  <!-- Subtle grid border -->
+  <rect x="40" y="40" width="1120" height="550" rx="16" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="2"/>
+
+  <!-- Brand Block Mark -->
+  <g transform="translate(100, 100)">
+    <rect width="48" height="48" rx="8" fill="#171717"/>
+    <path d="M14 34V14H24C29.5228 14 34 18.4772 34 24C34 29.5228 29.5228 34 24 34H14Z" fill="#FFFFFF"/>
+    <text x="64" y="34" font-family="Plus Jakarta Sans, sans-serif" font-size="32" font-weight="800" fill="#171717" letter-spacing="-0.03em">Plinth</text>
+  </g>
+
+  <!-- Tagline Pill -->
+  <g transform="translate(100, 200)">
+    <rect width="220" height="36" rx="18" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <text x="20" y="23" font-family="JetBrains Mono, monospace" font-size="13" font-weight="600" fill="#64748B" letter-spacing="0.05em">INDUSTRIAL CLOUD ERP</text>
+  </g>
+
+  <!-- Headline -->
+  <text x="100" y="310" font-family="Plus Jakarta Sans, sans-serif" font-size="52" font-weight="800" fill="#171717" letter-spacing="-0.02em">
+    STRUCTURED OPERATIONS.
+  </text>
+  <text x="100" y="375" font-family="Plus Jakarta Sans, sans-serif" font-size="52" font-weight="800" fill="#171717" letter-spacing="-0.02em">
+    ACCOUNTABLE OUTPUT.
+  </text>
+
+  <!-- Subline -->
+  <text x="100" y="450" font-family="Plus Jakarta Sans, sans-serif" font-size="24" font-weight="500" fill="#64748B">
+    The operations platform for businesses that make, move and sell.
+  </text>
+
+  <!-- Features Footer -->
+  <g transform="translate(100, 510)">
+    <circle cx="6" cy="6" r="6" fill="#0D9488"/>
+    <text x="22" y="10" font-family="Plus Jakarta Sans, sans-serif" font-size="15" font-weight="600" fill="#171717">Double-entry stock ledger</text>
+
+    <circle cx="280" cy="6" r="6" fill="#0D9488"/>
+    <text x="296" y="10" font-family="Plus Jakarta Sans, sans-serif" font-size="15" font-weight="600" fill="#171717">Audited AI operator</text>
+
+    <circle cx="530" cy="6" r="6" fill="#0D9488"/>
+    <text x="546" y="10" font-family="Plus Jakarta Sans, sans-serif" font-size="15" font-weight="600" fill="#171717">Flat monthly per plant</text>
+  </g>
+</svg>
+`;
+
+fs.writeFileSync(path.resolve(publicDir, 'og-image.svg'), ogSvg, 'utf-8');
+console.log('✓ Generated public/og-image.svg');
